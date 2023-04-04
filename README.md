@@ -1,3 +1,5 @@
+![Logo](https://github.com/italomandara/CXPatcher/raw/main/pacher%20icon.png)
+
 # CXPatcher
 A patcher to upgrade Crossover dependencies and improve compatibility
 
