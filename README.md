@@ -3,7 +3,7 @@
 # CXPatcher
 A patcher to upgrade Crossover dependencies and improve compatibility
 
-This is an **unofficial patcher** for Crossover and codeweavers is not - by any means - involved in this or has anything to do with this app, and although has been tested, this software may render the app unusable or unstable, **USE AT YOUR OWN RISK**, this also will void any official support from Codeweavers.
+This is an **unofficial patcher** for Crossover and codeweavers is not - by any means - involved in this or has anything to do with this app, and although has been tested, this software may render the app unusable or unstable, **USE AT YOUR OWN RISK**, this also will void any official support from Codeweavers, If you still need support from codeweavers, download the original unmodified app and please don't report problems to them after your app is patched.
 
 if you have any issues after your app has been patched you can download a new copy of Crossover.
 
