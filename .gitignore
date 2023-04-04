@@ -36,4 +36,10 @@
 ehthumbs.db
 Thumbs.db
 
+# Xcode
+######################
+
 build/
+*.xcuserstate
+project.xcworkspace/
+xcuserdata/
