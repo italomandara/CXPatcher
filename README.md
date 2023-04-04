@@ -1,4 +1,4 @@
-![Logo](https://github.com/italomandara/CXPatcher/raw/main/pacher%20icon.png)
+<img src="https://github.com/italomandara/CXPatcher/raw/main/pacher%20icon.png" width="100" height="100" />
 
 # CXPatcher
 A patcher to upgrade Crossover dependencies and improve compatibility
