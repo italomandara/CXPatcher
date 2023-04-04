@@ -1,0 +1,402 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		381F7DC929DA391900FE9869 /* 32 in Resources */ = {isa = PBXBuildFile; fileRef = 381F7DC529DA35FD00FE9869 /* 32 */; };
+		381F7DCA29DA391C00FE9869 /* 64 in Resources */ = {isa = PBXBuildFile; fileRef = 381F7DC429DA35FD00FE9869 /* 64 */; };
+		382F4C0729DA516C00824358 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382F4C0629DA516C00824358 /* Utils.swift */; };
+		38ACB39529D773CA00A450A0 /* Crossover_patcherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ACB39429D773CA00A450A0 /* Crossover_patcherApp.swift */; };
+		38ACB39729D773CA00A450A0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ACB39629D773CA00A450A0 /* ContentView.swift */; };
+		38C678A229DAEF8500EB19BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38ACB39829D773CA00A450A0 /* Assets.xcassets */; };
+		38C678A629DB3FE800EB19BE /* Instructions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C678A529DB3FE800EB19BE /* Instructions.swift */; };
+		38C678A829DB9DB600EB19BE /* wine64-preloader in Resources */ = {isa = PBXBuildFile; fileRef = 38C678A729DB9DB600EB19BE /* wine64-preloader */; };
+		38C678AA29DB9DDD00EB19BE /* libMoltenVK.dylib in Resources */ = {isa = PBXBuildFile; fileRef = 38C678A929DB9DC700EB19BE /* libMoltenVK.dylib */; };
+		38D93E5829DC4E4F00D4B0D8 /* Disclaimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D93E5729DC4E4F00D4B0D8 /* Disclaimer.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		381F7DC429DA35FD00FE9869 /* 64 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = 64; path = dxvk/64; sourceTree = SOURCE_ROOT; };
+		381F7DC529DA35FD00FE9869 /* 32 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = 32; path = dxvk/32; sourceTree = SOURCE_ROOT; };
+		382F4C0629DA516C00824358 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		38ACB39129D773CA00A450A0 /* Crossover patcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Crossover patcher.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		38ACB39429D773CA00A450A0 /* Crossover_patcherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crossover_patcherApp.swift; sourceTree = "<group>"; };
+		38ACB39629D773CA00A450A0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		38ACB39829D773CA00A450A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "Crossover patcher/Assets.xcassets"; sourceTree = SOURCE_ROOT; };
+		38ACB39B29D773CA00A450A0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		38ACB39D29D773CA00A450A0 /* Crossover_patcher.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Crossover_patcher.entitlements; sourceTree = "<group>"; };
+		38C678A129DADD5300EB19BE /* Crossover-patcher-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Crossover-patcher-Info.plist"; sourceTree = SOURCE_ROOT; };
+		38C678A529DB3FE800EB19BE /* Instructions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instructions.swift; sourceTree = "<group>"; };
+		38C678A729DB9DB600EB19BE /* wine64-preloader */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "wine64-preloader"; sourceTree = SOURCE_ROOT; };
+		38C678A929DB9DC700EB19BE /* libMoltenVK.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libMoltenVK.dylib; sourceTree = SOURCE_ROOT; };
+		38D93E5729DC4E4F00D4B0D8 /* Disclaimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disclaimer.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		381F7DBD29DA2BFB00FE9869 /* dxvk */ = {
+			isa = PBXGroup;
+			children = (
+				38C678A929DB9DC700EB19BE /* libMoltenVK.dylib */,
+				38C678A729DB9DB600EB19BE /* wine64-preloader */,
+				381F7DC529DA35FD00FE9869 /* 32 */,
+				381F7DC429DA35FD00FE9869 /* 64 */,
+			);
+			path = dxvk;
+			sourceTree = "<group>";
+		};
+		38ACB38829D773CA00A450A0 = {
+			isa = PBXGroup;
+			children = (
+				38ACB39329D773CA00A450A0 /* Crossover patcher */,
+				38ACB39229D773CA00A450A0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		38ACB39229D773CA00A450A0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				38ACB39129D773CA00A450A0 /* Crossover patcher.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		38ACB39329D773CA00A450A0 /* Crossover patcher */ = {
+			isa = PBXGroup;
+			children = (
+				38C678A129DADD5300EB19BE /* Crossover-patcher-Info.plist */,
+				38ACB3A329D77ECE00A450A0 /* Resources */,
+				38ACB39429D773CA00A450A0 /* Crossover_patcherApp.swift */,
+				38ACB39629D773CA00A450A0 /* ContentView.swift */,
+				38ACB39829D773CA00A450A0 /* Assets.xcassets */,
+				38ACB39D29D773CA00A450A0 /* Crossover_patcher.entitlements */,
+				38ACB39A29D773CA00A450A0 /* Preview Content */,
+				382F4C0629DA516C00824358 /* Utils.swift */,
+				38C678A529DB3FE800EB19BE /* Instructions.swift */,
+				38D93E5729DC4E4F00D4B0D8 /* Disclaimer.swift */,
+			);
+			path = "Crossover patcher";
+			sourceTree = "<group>";
+		};
+		38ACB39A29D773CA00A450A0 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				38ACB39B29D773CA00A450A0 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		38ACB3A329D77ECE00A450A0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				38ACB3A729D77F0600A450A0 /* lib */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		38ACB3A729D77F0600A450A0 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				381F7DBD29DA2BFB00FE9869 /* dxvk */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		38ACB39029D773CA00A450A0 /* Crossover patcher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 38ACB3A029D773CA00A450A0 /* Build configuration list for PBXNativeTarget "Crossover patcher" */;
+			buildPhases = (
+				38ACB38D29D773CA00A450A0 /* Sources */,
+				381F7DC829DA391400FE9869 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Crossover patcher";
+			productName = "Crossover patcher";
+			productReference = 38ACB39129D773CA00A450A0 /* Crossover patcher.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		38ACB38929D773CA00A450A0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					38ACB39029D773CA00A450A0 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = 38ACB38C29D773CA00A450A0 /* Build configuration list for PBXProject "Crossover patcher" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 38ACB38829D773CA00A450A0;
+			productRefGroup = 38ACB39229D773CA00A450A0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				38ACB39029D773CA00A450A0 /* Crossover patcher */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		381F7DC829DA391400FE9869 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38C678AA29DB9DDD00EB19BE /* libMoltenVK.dylib in Resources */,
+				38C678A829DB9DB600EB19BE /* wine64-preloader in Resources */,
+				381F7DCA29DA391C00FE9869 /* 64 in Resources */,
+				38C678A229DAEF8500EB19BE /* Assets.xcassets in Resources */,
+				381F7DC929DA391900FE9869 /* 32 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		38ACB38D29D773CA00A450A0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38ACB39729D773CA00A450A0 /* ContentView.swift in Sources */,
+				38ACB39529D773CA00A450A0 /* Crossover_patcherApp.swift in Sources */,
+				38D93E5829DC4E4F00D4B0D8 /* Disclaimer.swift in Sources */,
+				382F4C0729DA516C00824358 /* Utils.swift in Sources */,
+				38C678A629DB3FE800EB19BE /* Instructions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		38ACB39E29D773CA00A450A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		38ACB39F29D773CA00A450A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		38ACB3A129D773CA00A450A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Crossover patcher/Crossover_patcher.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Crossover patcher/Preview Content\"";
+				DEVELOPMENT_TEAM = S5P3AKN3YC;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Crossover-patcher-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Crossover patcher";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Crossover\\ patcher/Resources/lib",
+					"$(PROJECT_DIR)/Crossover\\ patcher/Resources",
+					"$(PROJECT_DIR)",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.italomandara.Crossover-patcher";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		38ACB3A229D773CA00A450A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Crossover patcher/Crossover_patcher.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Crossover patcher/Preview Content\"";
+				DEVELOPMENT_TEAM = S5P3AKN3YC;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Crossover-patcher-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Crossover patcher";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Crossover\\ patcher/Resources/lib",
+					"$(PROJECT_DIR)/Crossover\\ patcher/Resources",
+					"$(PROJECT_DIR)",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.italomandara.Crossover-patcher";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		38ACB38C29D773CA00A450A0 /* Build configuration list for PBXProject "Crossover patcher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				38ACB39E29D773CA00A450A0 /* Debug */,
+				38ACB39F29D773CA00A450A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		38ACB3A029D773CA00A450A0 /* Build configuration list for PBXNativeTarget "Crossover patcher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				38ACB3A129D773CA00A450A0 /* Debug */,
+				38ACB3A229D773CA00A450A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 38ACB38929D773CA00A450A0 /* Project object */;
+}
