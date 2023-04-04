@@ -71,11 +71,9 @@ func applyPatch(url: URL, status: inout Status) {
     if(isCrossoverApp(url: url)) {
         print("it's a crossover app")
         let destMVKPath = url.path + DEST_ROOT + "/lib64/libMoltenVK"
-        let destWine64PrePath = url.path + DEST_ROOT + "/CrossOver-Hosted Application/wine64-preloader"
         let dest64dxvkPath = url.path + DEST_ROOT + "/lib64/wine/dxvk"
         let dest32dxvkPath = url.path + DEST_ROOT + "/lib/wine/dxvk"
         safeResCopy(res: "libMoltenVK", dest: destMVKPath, ext: "dylib")
-        safeResCopy(res: "wine64-preloader", dest: destWine64PrePath)
         safeResCopy(res: "64", dest: dest64dxvkPath)
         safeResCopy(res: "32", dest: dest32dxvkPath)
         status = .success
