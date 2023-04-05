@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [ "main" ]
     
-env: |
+env:
   XCODE_DEVPATH: "/Applications/Xcode14.app/Contents/Developer"
 
 jobs:
