@@ -140,6 +140,6 @@ func getTextBy(status: Status) -> String {
     case .success:
         return "Your App is Updated"
     case .alreadyPatched:
-        return "Your App has been already been patched"
+        return "Your App has already been patched"
     }
 }
