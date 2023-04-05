@@ -17,6 +17,7 @@ You need to have an unmodified version of Crossover, you can download it at: htt
 
 # Credits
 Many thanks to the developers behind DXVK and MoltenVK patches: 
-@gcenx (https://github.com/Gcenx)
-@nastys (https://github.com/nastys)
-for the great help and for providing the latest binaries.
+- @gcenx (https://github.com/Gcenx)
+- @nastys (https://github.com/nastys)
+
+thanks for the great help and for providing the latest binaries.
