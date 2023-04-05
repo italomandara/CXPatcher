@@ -48,38 +48,61 @@ private func isAlreadyPatched(url: URL) -> Bool {
     return false
 }
 
-private func isCrossoverApp(url: URL) -> Bool {
+struct CXPlist: Decodable {
+    private enum CodingKeys: String, CodingKey {
+        case CFBundleIdentifier, CFBundleShortVersionString
+    }
+
+    let CFBundleIdentifier: String
+    let CFBundleShortVersionString: String
+}
+
+func parseCXPlist(plistPath: String) -> CXPlist {
+    let data = try! Data(contentsOf: URL(filePath: plistPath))
+    let decoder = PropertyListDecoder()
+    return try! decoder.decode(CXPlist.self, from: data)
+}
+
+private func isCrossoverApp(url: URL, version: String? = nil) -> Bool {
+    let plistPath = url.path + "/Contents/info.plist"
     let destMVKPath = url.path + DEST_ROOT + "/lib64/libMoltenVK.dylib"
     let dest64dxvkPath = url.path + DEST_ROOT + "/lib64/wine/dxvk"
     let dest32dxvkPath = url.path + DEST_ROOT + "/lib/wine/dxvk"
     if (f.fileExists(atPath: url.path + DEST_ROOT) &&
         f.fileExists(atPath: destMVKPath) &&
         f.fileExists(atPath: dest64dxvkPath) &&
-        f.fileExists(atPath: dest32dxvkPath)
+        f.fileExists(atPath: dest32dxvkPath) &&
+        f.fileExists(atPath: plistPath)
     ) {
-        return true
+        let plist = parseCXPlist(plistPath: plistPath)
+        if (plist.CFBundleIdentifier == "com.codeweavers.CrossOver" && plist.CFBundleShortVersionString == "22.1.1") {
+            print("app version is ok: \(plist.CFBundleShortVersionString)")
+            return true
+        }
     }
     return false
 }
 
 func applyPatch(url: URL, status: inout Status) {
+    if(!isCrossoverApp(url: url)) {
+        print("it' s not crossover.app")
+        status = .unpatched
+        return
+    }
     if (isAlreadyPatched(url: url)) {
-        print("it' s Already patched")
+        print("App is already patched")
         status = .alreadyPatched
         return
     }
-    if(isCrossoverApp(url: url)) {
-        print("it's a crossover app")
-        let destMVKPath = url.path + DEST_ROOT + "/lib64/libMoltenVK"
-        let dest64dxvkPath = url.path + DEST_ROOT + "/lib64/wine/dxvk"
-        let dest32dxvkPath = url.path + DEST_ROOT + "/lib/wine/dxvk"
-        safeResCopy(res: "libMoltenVK", dest: destMVKPath, ext: "dylib")
-        safeResCopy(res: "64", dest: dest64dxvkPath)
-        safeResCopy(res: "32", dest: dest32dxvkPath)
-        status = .success
-        return
-    }
-    status = .unpatched
+    print("it's a crossover app")
+    let destMVKPath = url.path + DEST_ROOT + "/lib64/libMoltenVK"
+    let dest64dxvkPath = url.path + DEST_ROOT + "/lib64/wine/dxvk"
+    let dest32dxvkPath = url.path + DEST_ROOT + "/lib/wine/dxvk"
+    safeResCopy(res: "libMoltenVK", dest: destMVKPath, ext: "dylib")
+    safeResCopy(res: "64", dest: dest64dxvkPath)
+    safeResCopy(res: "32", dest: dest32dxvkPath)
+    status = .success
+    return
 }
 
 struct FileDropDelegate: DropDelegate {
