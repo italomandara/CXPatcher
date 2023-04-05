@@ -7,7 +7,7 @@ on:
     branches: [ "main" ]
     
 env:
-  XCODE_DEVPATH: "/Applications/Xcode14.app/Contents/Developer"
+  XCODE_DEVPATH: /Applications/Xcode_12.1.app/Contents/Developer
 
 jobs:
   build:
@@ -17,7 +17,7 @@ jobs:
     steps:
       - name: Select Xcode version 
         run: |
-          sudo xcode-select -switch $XCODE_DEV_PATH
+          sudo xcode-select -switch '$XCODE_DEV_PATH'
       - name: Checkout
         uses: actions/checkout@v3
       - name: Set Default Scheme
