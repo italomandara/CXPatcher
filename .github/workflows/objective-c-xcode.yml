@@ -1,11 +1,13 @@
 name: Xcode - Build and Analyze
-env: |
-  XCODE_DEVPATH: "/Applications/Xcode14.app/Contents/Developer"
+
 on:
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+    
+env: |
+  XCODE_DEVPATH: "/Applications/Xcode14.app/Contents/Developer"
 
 jobs:
   build:
