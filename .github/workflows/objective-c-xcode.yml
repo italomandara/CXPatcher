@@ -7,7 +7,7 @@ on:
     branches: [ "main" ]
     
 env:
-  XCODE_DEVPATH: /Applications/Xcode_12.1.app/Contents/Developer
+  XCODE_DEVPATH: /Applications/Xcode_14.1.app/Contents/Developer
 
 jobs:
   build:
