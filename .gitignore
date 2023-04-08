@@ -2,10 +2,8 @@
 ###################
 *.com
 *.class
-*.dll
 *.exe
 *.o
-*.so
 
 # Packages #
 ############
@@ -41,6 +39,6 @@ Thumbs.db
 
 build/
 *.xcuserstate
-project.xcworkspace/
-xcuserdata/
-*/xcuserdata/italomandara.xcuserdatad/UserInterfaceState.xcuserstate
+project.xcworkspace/*
+xcuserdata/*
+UserInterfaceState.xcuserstate
