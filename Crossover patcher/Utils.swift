@@ -12,6 +12,7 @@ enum Status {
     case alreadyPatched
     case success
     case unpatched
+    case error
 }
 
 var f = FileManager()
@@ -63,10 +64,13 @@ func parseCXPlist(plistPath: String) -> CXPlist {
     return try! decoder.decode(CXPlist.self, from: data)
 }
 
-private func isCrossoverApp(url: URL, version: String? = nil) -> Bool {
+private func isCrossoverApp(url: URL, version: String? = nil, skipVersionCheck: Bool? = false) -> Bool {
     let plistPath = url.path + "/Contents/info.plist"
     if (f.fileExists(atPath: plistPath)) {
         let plist = parseCXPlist(plistPath: plistPath)
+        if (plist.CFBundleIdentifier == "com.codeweavers.CrossOver" && skipVersionCheck == true) {
+            return true
+        }
         if (plist.CFBundleIdentifier == "com.codeweavers.CrossOver" && plist.CFBundleShortVersionString == "22.1.1") {
             print("app version is ok: \(plist.CFBundleShortVersionString)")
             return true
@@ -75,15 +79,15 @@ private func isCrossoverApp(url: URL, version: String? = nil) -> Bool {
     return false
 }
 
-func applyPatch(url: URL, status: inout Status) {
-    if(!isCrossoverApp(url: url)) {
-        print("it' s not crossover.app")
-        status = .unpatched
-        return
-    }
+func applyPatch(url: URL, status: inout Status, skipVersionCheck: Bool? = nil) {
     if (isAlreadyPatched(url: url)) {
         print("App is already patched")
         status = .alreadyPatched
+        return
+    }
+    if(!isCrossoverApp(url: url, skipVersionCheck: skipVersionCheck)) {
+        print("it' s not crossover.app")
+        status = .error
         return
     }
     print("it's a crossover app")
@@ -103,12 +107,13 @@ func applyPatch(url: URL, status: inout Status) {
 
 struct FileDropDelegate: DropDelegate {
     @Binding var status: Status
+    @Binding var skipVersionCheck: Bool
     
     func performDrop(info: DropInfo) -> Bool {
         if let item = info.itemProviders(for: [.fileURL]).first {
             let _ = item.loadObject(ofClass: URL.self) { object, error in
                 if let url = object {
-                    applyPatch(url: url, status: &status)
+                    applyPatch(url: url, status: &status, skipVersionCheck: skipVersionCheck)
                 }
             }
         } else {
@@ -126,11 +131,15 @@ func getColorBy(status: Status) -> Color {
         return .green
     case .alreadyPatched:
         return .orange
+    case .error:
+        return .red
     }
 }
 
 func getTextBy(status: Status) -> String {
     switch status {
+    case .error:
+        return "Can't patch this app, please check your app version and make sure it's Crossover.app"
     case .unpatched:
         return "Drop your Crossover app Here"
     case .success:

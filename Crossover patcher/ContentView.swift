@@ -11,6 +11,7 @@ struct ContentView: View {
     @Environment(\.openWindow) var openWindow
     @State private var showDisclaimer = true
     @State public var status: Status = .unpatched
+    @State public var skipVersionCheck: Bool = false
     
     var body: some View {
         VStack(alignment: .center) {
@@ -41,7 +42,10 @@ struct ContentView: View {
                         .fontWeight(.bold)
                         .multilineTextAlignment(.center)
                         .padding(20.0))
-                    .onDrop(of: [.fileURL], delegate: FileDropDelegate(status: $status))
+                    .onDrop(of: [.fileURL], delegate: FileDropDelegate(status: $status, skipVersionCheck: $skipVersionCheck))
+                Toggle("Patch any Crossover version", isOn: $skipVersionCheck)
+                    .padding(.top, 13.0)
+                    .toggleStyle(.switch)
             }
         }.padding(20)
         .frame(width: 400.0)
