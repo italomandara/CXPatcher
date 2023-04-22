@@ -40,5 +40,3 @@ Thumbs.db
 build/
 *.xcuserstate
 project.xcworkspace/*
-xcuserdata/*
-UserInterfaceState.xcuserstate
