@@ -16,19 +16,62 @@ enum Status {
 }
 
 var f = FileManager()
-let DEST_ROOT = "/Contents/SharedSupport/CrossOver"
+let SHARED_SUPPORT_PATH = "/Contents/SharedSupport/CrossOver"
+
+private func  getFileListFrom(url: URL) -> [String] {
+    return [
+        url.path + SHARED_SUPPORT_PATH + "/lib64/libMoltenVK_orig.dylib",
+        url.path + SHARED_SUPPORT_PATH + "/lib64/wine/dxvk_orig",
+        url.path + SHARED_SUPPORT_PATH + "/lib/wine/dxvk_orig",
+        url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_32on64-unix/ntdll_orig.so",
+        url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-unix/ntdll_orig.so",
+    ]
+}
+
+private func getResourcesListFrom(url: URL) -> [(String, String, String?)]{
+    return [
+        (
+            "libMoltenVK",
+            url.path + SHARED_SUPPORT_PATH + "/lib64/libMoltenVK",
+            "dylib"
+        ),
+        (
+            "64",
+            url.path + SHARED_SUPPORT_PATH + "/lib64/wine/dxvk",
+            nil
+        ),
+        (
+            "32",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/dxvk",
+            nil
+        ),
+        (
+            "x86_32on64-unix/ntdll.so",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_32on64-unix/ntdll.so",
+            nil
+        ),
+        (
+            "x86_64-unix/ntdll.so",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-unix/ntdll.so",
+            nil
+        ),
+    ]
+}
+
+private func maybeExt(_ ext: String?) -> String {
+    return ext != nil ? "." + ext! : ""
+}
 
 private func safeResCopy(res: String, dest: String, ext: String? = nil) {
-    let maybeExt = ext != nil ? "." + ext! : ""
-    print("moving \(dest + maybeExt)")
-    if(f.fileExists(atPath: dest + maybeExt )) {
-        do {try f.moveItem(atPath: dest + maybeExt, toPath: dest + "_orig" + maybeExt)
+    print("moving \(dest + maybeExt(ext))")
+    if(f.fileExists(atPath: dest + maybeExt(ext))) {
+        do {try f.moveItem(atPath: dest + maybeExt(ext), toPath: dest + "_orig" + maybeExt(ext))
         } catch {
             print("unexpected error")
         }
     }
     if let sourceUrl = Bundle.main.url(forResource: res, withExtension: ext) {
-        do { try f.copyItem(at: sourceUrl, to: URL(filePath: dest + maybeExt))
+        do { try f.copyItem(at: sourceUrl, to: URL(filePath: dest + maybeExt(ext)))
             print("\(res) copied")
         } catch {
             print(error)
@@ -36,17 +79,35 @@ private func safeResCopy(res: String, dest: String, ext: String? = nil) {
     }
 }
 
-private func isAlreadyPatched(url: URL) -> Bool {
-    let origMVKPath = url.path + DEST_ROOT + "/lib64/libMoltenVK_orig.dylib"
-    let orig64dxvkPath = url.path + DEST_ROOT + "/lib64/wine/dxvk_orig"
-    let orig32dxvkPath = url.path + DEST_ROOT + "/lib/wine/dxvk_orig"
-    if (f.fileExists(atPath: origMVKPath) ||
-        f.fileExists(atPath: orig64dxvkPath) ||
-        f.fileExists(atPath: orig32dxvkPath)
-    ) {
-        return true
+private func restoreFile(dest: String, ext: String? = nil) {
+    if(f.fileExists(atPath: dest + maybeExt(ext) )) {
+        do {try f.removeItem(atPath: dest + maybeExt(ext))
+            print("deleting \(dest)")
+        } catch {
+            print("can't delete file doesn't exist")
+        }
     }
-    return false
+    if(f.fileExists(atPath: dest + "_orig" + maybeExt(ext) )) {
+        do {try f.moveItem(atPath: dest + "_orig" + maybeExt(ext), toPath: dest + maybeExt(ext))
+            print("copying \(dest)")
+        } catch {
+            print("can't move file doesn't exist")
+        }
+    }
+}
+
+func restoreApp(url: URL) {
+    let filesToRestore = getResourcesListFrom(url: url)
+    filesToRestore.forEach {
+        restoreFile(dest: $0.1, ext: $0.2)
+    }
+}
+
+func isAlreadyPatched(url: URL) -> Bool {
+    let filesToCheck = getFileListFrom(url: url)
+    return filesToCheck.contains { path in
+        return f.fileExists(atPath: path)
+    }
 }
 
 struct CXPlist: Decodable {
@@ -64,7 +125,7 @@ func parseCXPlist(plistPath: String) -> CXPlist {
     return try! decoder.decode(CXPlist.self, from: data)
 }
 
-private func isCrossoverApp(url: URL, version: String? = nil, skipVersionCheck: Bool? = false) -> Bool {
+func isCrossoverApp(url: URL, version: String? = nil, skipVersionCheck: Bool? = false) -> Bool {
     let plistPath = url.path + "/Contents/info.plist"
     if (f.fileExists(atPath: plistPath)) {
         let plist = parseCXPlist(plistPath: plistPath)
@@ -91,16 +152,10 @@ func applyPatch(url: URL, status: inout Status, skipVersionCheck: Bool? = nil) {
         return
     }
     print("it's a crossover app")
-    let destMVKPath = url.path + DEST_ROOT + "/lib64/libMoltenVK"
-    let dest64dxvkPath = url.path + DEST_ROOT + "/lib64/wine/dxvk"
-    let dest32dxvkPath = url.path + DEST_ROOT + "/lib/wine/dxvk"
-    let dest32on64UnixdxvkPath = url.path + DEST_ROOT + "/lib/wine/x86_32on64-unix/ntdll.so"
-    let dest64UnixPath = url.path + DEST_ROOT + "/lib/wine/x86_64-unix/ntdll.so"
-    safeResCopy(res: "libMoltenVK", dest: destMVKPath, ext: "dylib")
-    safeResCopy(res: "64", dest: dest64dxvkPath)
-    safeResCopy(res: "32", dest: dest32dxvkPath)
-    safeResCopy(res: "x86_32on64-unix/ntdll.so", dest: dest32on64UnixdxvkPath)
-    safeResCopy(res: "x86_64-unix/ntdll.so", dest: dest64UnixPath)
+    let resources = getResourcesListFrom(url: url)
+    resources.forEach {
+        safeResCopy(res: $0.0, dest: $0.1, ext: $0.2)
+    }
     status = .success
     return
 }
