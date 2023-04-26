@@ -18,16 +18,6 @@ enum Status {
 var f = FileManager()
 let SHARED_SUPPORT_PATH = "/Contents/SharedSupport/CrossOver"
 
-private func  getFileListFrom(url: URL) -> [String] {
-    return [
-        url.path + SHARED_SUPPORT_PATH + "/lib64/libMoltenVK_orig.dylib",
-        url.path + SHARED_SUPPORT_PATH + "/lib64/wine/dxvk_orig",
-        url.path + SHARED_SUPPORT_PATH + "/lib/wine/dxvk_orig",
-        url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_32on64-unix/ntdll_orig.so",
-        url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-unix/ntdll_orig.so",
-    ]
-}
-
 private func getResourcesListFrom(url: URL) -> [(String, String, String?)]{
     return [
         (
@@ -60,6 +50,12 @@ private func getResourcesListFrom(url: URL) -> [(String, String, String?)]{
 
 private func maybeExt(_ ext: String?) -> String {
     return ext != nil ? "." + ext! : ""
+}
+
+private func  getBackupListFrom(url: URL) -> [String] {
+    return getResourcesListFrom(url: url).map { (_, path, ext) in
+        path + "_orig" + maybeExt(ext)
+    }
 }
 
 private func safeResCopy(res: String, dest: String, ext: String? = nil) {
@@ -104,7 +100,8 @@ func restoreApp(url: URL) {
 }
 
 func isAlreadyPatched(url: URL) -> Bool {
-    let filesToCheck = getFileListFrom(url: url)
+    let filesToCheck = getBackupListFrom(url: url)
+    print(filesToCheck)
     return filesToCheck.contains { path in
         return f.fileExists(atPath: path)
     }
