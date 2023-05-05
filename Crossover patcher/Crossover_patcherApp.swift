@@ -28,8 +28,8 @@ struct Crossover_patcherApp: App {
                     panel.canChooseDirectories = false
                     let response =  panel.runModal()
                     if (response == .OK && panel.urls.first != nil){
-                        if(isCrossoverApp(url: panel.url!) && isAlreadyPatched(url: panel.url!)) {
-                            restoreApp(url: panel.url!.absoluteURL)
+                        let restoreResult = restoreApp(url: panel.url!.absoluteURL)
+                        if(restoreResult) {
                             message = "Your App has been restored!"
                             showingAlert = true
                         } else {

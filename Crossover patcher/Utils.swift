@@ -92,13 +92,6 @@ private func restoreFile(dest: String, ext: String? = nil) {
     }
 }
 
-func restoreApp(url: URL) {
-    let filesToRestore = getResourcesListFrom(url: url)
-    filesToRestore.forEach {
-        restoreFile(dest: $0.1, ext: $0.2)
-    }
-}
-
 func isAlreadyPatched(url: URL) -> Bool {
     let filesToCheck = getBackupListFrom(url: url)
     print(filesToCheck)
@@ -135,26 +128,6 @@ func isCrossoverApp(url: URL, version: String? = nil, skipVersionCheck: Bool? = 
         }
     }
     return false
-}
-
-func applyPatch(url: URL, status: inout Status, skipVersionCheck: Bool? = nil) {
-    if (isAlreadyPatched(url: url)) {
-        print("App is already patched")
-        status = .alreadyPatched
-        return
-    }
-    if(!isCrossoverApp(url: url, skipVersionCheck: skipVersionCheck)) {
-        print("it' s not crossover.app")
-        status = .error
-        return
-    }
-    print("it's a crossover app")
-    let resources = getResourcesListFrom(url: url)
-    resources.forEach {
-        safeResCopy(res: $0.0, dest: $0.1, ext: $0.2)
-    }
-    status = .success
-    return
 }
 
 struct FileDropDelegate: DropDelegate {
@@ -199,4 +172,40 @@ func getTextBy(status: Status) -> String {
     case .alreadyPatched:
         return "Your App has already been patched"
     }
+}
+
+func patch(url: URL) {
+    let resources = getResourcesListFrom(url: url)
+    resources.forEach {
+        safeResCopy(res: $0.0, dest: $0.1, ext: $0.2)
+    }
+}
+
+func applyPatch(url: URL, status: inout Status, skipVersionCheck: Bool? = nil) {
+    if (isAlreadyPatched(url: url)) {
+        print("App is already patched")
+        status = .alreadyPatched
+        return
+    }
+    if(!isCrossoverApp(url: url, skipVersionCheck: skipVersionCheck)) {
+        print("it' s not crossover.app")
+        status = .error
+        return
+    }
+    print("it's a crossover app")
+    patch(url: url)
+    status = .success
+    return
+}
+
+func restoreApp(url: URL) -> Bool {
+    if(!isAlreadyPatched(url: url) && !isCrossoverApp(url: url)) {
+        print("it' s not crossover.app or it's not patched")
+        return false
+    }
+    let filesToRestore = getResourcesListFrom(url: url)
+    filesToRestore.forEach {
+        restoreFile(dest: $0.1, ext: $0.2)
+    }
+    return true
 }
