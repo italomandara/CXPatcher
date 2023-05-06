@@ -25,7 +25,9 @@ You can restore by going to the `file -> restore menu`
 
 **examples:**
 
-**disable color profiles (old greyish colors but may improve performance or fix dark or oversaturated colors)**
+**disable color profiles** 
+
+(old greyish colors but may improve performance or fix dark or oversaturated colors)
 
 `NAS_TONEMAP_C=0`
 
