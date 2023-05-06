@@ -17,7 +17,8 @@ You need to have an unmodified version of Crossover, you can download it at: htt
 
 ## Restoring a patched app to the original app
 Maybe you changed your mind and prefer to use your original crossover app.
-You can restore by going to the file -> restore menu 
+You can restore by going to the `file -> restore menu`
+
 <img width="399" alt="Screenshot 2023-04-25 at 21 32 58" src="https://user-images.githubusercontent.com/12135454/234406600-f7a903fe-c34f-4d11-8154-476028870053.png">
 
 # Credits
