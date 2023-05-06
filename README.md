@@ -21,6 +21,22 @@ You can restore by going to the `file -> restore menu`
 
 <img width="399" alt="Screenshot 2023-04-25 at 21 32 58" src="https://user-images.githubusercontent.com/12135454/234406600-f7a903fe-c34f-4d11-8154-476028870053.png">
 
+## Color profiles for UE4 games:
+
+**examples:**
+
+**disable color profiles (old greyish colors but may improve performance or fix dark or oversaturated colors)**
+
+`NAS_TONEMAP_C=0`
+
+**Color profile for Stray**
+
+`NAS_TONEMAP_C=clamp({inputColor} * float3x3( 0.2126 + 0.7874 * 1.5, 0.7152 - 0.7152 * 1.5, 0.0722 - 0.0722 * 1.5, 0.2126 - 0.2126 * 1.5, 0.7152 + 0.2848 * 1.5, 0.0722 - 0.0722 * 1.5, 0.2126 - 0.2126 * 1.5, 0.7152 - 0.7152 * 1.5, 0.0722 + 0.9278 * 1.5 ) * 2 - float3(0.28, 0.2, 0.16), 0.0, 1.0)`
+
+`NAS_TONEMAP_C` uses standard MSL shading language, as long as it's done in one line, you can use {inputColor} as a variable and modify the colors, or give any effect you like using matrix transforms, have fun!
+
+**Note:** `NAS_TONEMAP_C` only works for UE4 games that needs the Tonemapping workaround
+
 # Credits
 Many thanks to the developers behind DXVK and MoltenVK patches: 
 - @gcenx (https://github.com/Gcenx)
