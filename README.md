@@ -13,7 +13,7 @@ for more info: https://www.codeweavers.com/support/forums/general/?t=27;msg=2578
 This patcher will upgrade your crossover app with the latest dxvk and moltenvk patched for improved compatibility, and fix the current issue with the latest Ventura update
 
 # Instructions
-You need to have an unmodified version of Crossover, you can download it at: https://www.codeweavers.com/account/downloads, please make sure the app has been registered or ran at least once, to make sure the latest dxvk is activated properly You may need to switch off dxvk and on again, if you don't you will need to re-download it. If the patcher renders the app unusable you can download it again from the website, it doesn't do any permanent modifications to any bottle
+You need to have an unmodified version of Crossover, you can download it at: https://www.codeweavers.com/account/downloads, please make sure the app has been registered or ran at least once, to make sure the latest dxvk is activated properly You may need to switch off dxvk and on again, if you don't you will need to re-download it. If the patcher renders the app unusable you can either use the restore function (see instructions below) or download it again from the website, it doesn't do any permanent modifications to any bottle
 
 ## Restoring a patched app to the original app
 Maybe you changed your mind and prefer to use your original crossover app.
