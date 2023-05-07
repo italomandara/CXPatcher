@@ -22,7 +22,7 @@ You can restore by going to the `file -> restore menu`
 <img width="399" alt="Screenshot 2023-04-25 at 21 32 58" src="https://user-images.githubusercontent.com/12135454/234406600-f7a903fe-c34f-4d11-8154-476028870053.png">
 
 ## Patching other versions of crossover
-by default this app doesn't patch Crossver versions other than 22.1.1, but if you need you can force patching the other versions using the toggle "Patch any crossover version", then you can just drag an drop.
+By default this app doesn't patch Crossver versions other than 22.1.1, but if you need you can force patching the other versions using the toggle "Patch any crossover version", then you can just drag an drop.
 
 ![Screenshot 2023-05-07 at 11 41 48](https://user-images.githubusercontent.com/12135454/236672964-d99d2664-3110-4a87-9da1-53faddad60de.jpg)
 
