@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38255F1B2A07E62B005AF0FC /* i386-windows in Resources */ = {isa = PBXBuildFile; fileRef = 38255F1A2A07E62B005AF0FC /* i386-windows */; };
+		38255F1D2A07E633005AF0FC /* x86_64-windows in Resources */ = {isa = PBXBuildFile; fileRef = 38255F1C2A07E633005AF0FC /* x86_64-windows */; };
 		382F4C0729DA516C00824358 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382F4C0629DA516C00824358 /* Utils.swift */; };
 		3869AF7229E1FE260049427E /* 64 in Resources */ = {isa = PBXBuildFile; fileRef = 3869AF7029E1FE260049427E /* 64 */; };
 		3869AF7329E1FE270049427E /* 32 in Resources */ = {isa = PBXBuildFile; fileRef = 3869AF7129E1FE260049427E /* 32 */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		38255F1A2A07E62B005AF0FC /* i386-windows */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "i386-windows"; path = "lib/i386-windows"; sourceTree = SOURCE_ROOT; };
+		38255F1C2A07E633005AF0FC /* x86_64-windows */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "x86_64-windows"; path = "lib/x86_64-windows"; sourceTree = SOURCE_ROOT; };
 		382F4C0629DA516C00824358 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		3869AF7029E1FE260049427E /* 64 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = 64; path = lib/dxvk/64; sourceTree = SOURCE_ROOT; };
 		3869AF7129E1FE260049427E /* 32 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = 32; path = lib/dxvk/32; sourceTree = SOURCE_ROOT; };
@@ -100,6 +104,8 @@
 		38ACB3A729D77F0600A450A0 /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				38255F1C2A07E633005AF0FC /* x86_64-windows */,
+				38255F1A2A07E62B005AF0FC /* i386-windows */,
 				38D7857329EA07DC00874A73 /* libMoltenVK.dylib */,
 				3869AF7429E1FE510049427E /* x86_32on64-unix */,
 				3869AF7529E1FE510049427E /* x86_64-unix */,
@@ -170,6 +176,8 @@
 				3869AF7229E1FE260049427E /* 64 in Resources */,
 				3869AF7629E1FE510049427E /* x86_32on64-unix in Resources */,
 				38C678A229DAEF8500EB19BE /* Assets.xcassets in Resources */,
+				38255F1B2A07E62B005AF0FC /* i386-windows in Resources */,
+				38255F1D2A07E633005AF0FC /* x86_64-windows in Resources */,
 				3869AF7729E1FE510049427E /* x86_64-unix in Resources */,
 				3869AF7329E1FE270049427E /* 32 in Resources */,
 			);
@@ -337,7 +345,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_ASSET_PATHS = "\"Crossover patcher/Preview Content\"";
 				DEVELOPMENT_TEAM = S5P3AKN3YC;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -357,7 +365,7 @@
 					"$(PROJECT_DIR)/Crossover\\ patcher/Resources",
 					"$(PROJECT_DIR)",
 				);
-				MARKETING_VERSION = 0.2.8;
+				MARKETING_VERSION = 0.2.9;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.italomandara.Crossover-patcher";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -376,7 +384,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_ASSET_PATHS = "\"Crossover patcher/Preview Content\"";
 				DEVELOPMENT_TEAM = S5P3AKN3YC;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -396,7 +404,7 @@
 					"$(PROJECT_DIR)/Crossover\\ patcher/Resources",
 					"$(PROJECT_DIR)",
 				);
-				MARKETING_VERSION = 0.2.8;
+				MARKETING_VERSION = 0.2.9;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.italomandara.Crossover-patcher";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
