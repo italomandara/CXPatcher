@@ -45,6 +45,16 @@ private func getResourcesListFrom(url: URL) -> [(String, String, String?)]{
             url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-unix/ntdll.so",
             nil
         ),
+        (
+            "i386-windows/ntdll.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/ntdll.dll",
+            nil
+        ),
+        (
+            "x86_64-windows/ntdll.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/ntdll.dll",
+            nil
+        ),
     ]
 }
 
