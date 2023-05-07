@@ -43,7 +43,7 @@ You can change the way the colors are processed in ue4 games.
 
 `NAS_TONEMAP_C` uses standard MSL shading language, as long as it's done in one line, you can use {inputColor} as a variable and modify the colors, or give any effect you like using matrix transforms, have fun!
 
-**Note:** `NAS_TONEMAP_C` only works for UE4 games that needs the Tonemapping workaround
+**Note:** `NAS_TONEMAP_C` only works for UE4 games
 
 # Credits
 Many thanks to the developers behind DXVK and MoltenVK patches: 
