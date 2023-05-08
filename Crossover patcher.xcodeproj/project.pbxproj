@@ -357,7 +357,7 @@
 					"$(PROJECT_DIR)/Crossover\\ patcher/Resources",
 					"$(PROJECT_DIR)",
 				);
-				MARKETING_VERSION = 0.2.8;
+				MARKETING_VERSION = 0.2.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.italomandara.Crossover-patcher";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -381,6 +381,7 @@
 				DEVELOPMENT_TEAM = S5P3AKN3YC;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				GCC_OPTIMIZATION_LEVEL = z;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Crossover-patcher-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Crossover patcher";
@@ -396,7 +397,7 @@
 					"$(PROJECT_DIR)/Crossover\\ patcher/Resources",
 					"$(PROJECT_DIR)",
 				);
-				MARKETING_VERSION = 0.2.8;
+				MARKETING_VERSION = 0.2.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.italomandara.Crossover-patcher";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
