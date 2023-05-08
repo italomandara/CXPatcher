@@ -13,7 +13,7 @@ for more info: https://www.codeweavers.com/support/forums/general/?t=27;msg=2578
 This patcher will upgrade your crossover app with the latest dxvk and moltenvk patched for improved compatibility, and fix the current issue with the latest Ventura update
 
 # Instructions
-You need to have an unmodified version of Crossover, you can download it at: https://www.codeweavers.com/account/downloads, please make sure the app has been registered or ran at least once, to make sure the latest dxvk is activated properly You may need to switch off dxvk and on again, if you don't you will need to re-download it. If the patcher renders the app unusable you can download it again from the website, it doesn't do any permanent modifications to any bottle
+You need to have an unmodified version of Crossover, you can download it at: https://www.codeweavers.com/account/downloads, please make sure the app has been registered or ran at least once, to make sure the latest dxvk is activated properly You may need to switch off dxvk and on again, if you don't you will need to re-download it. If the patcher renders the app unusable you can either use the restore function (see instructions below) or download it again from the website, it doesn't do any permanent modifications to your 'bottles'.
 
 ## Restoring a patched app to the original app
 Maybe you changed your mind and prefer to use your original crossover app.
@@ -21,7 +21,13 @@ You can restore by going to the `file -> restore menu`
 
 <img width="399" alt="Screenshot 2023-04-25 at 21 32 58" src="https://user-images.githubusercontent.com/12135454/234406600-f7a903fe-c34f-4d11-8154-476028870053.png">
 
+## Patching other versions of crossover
+By default this app doesn't patch Crossver versions other than 22.1.1, but if you need you can force patching the other versions using the toggle "Patch any crossover version", then you can just drag an drop.
+
+![Screenshot 2023-05-07 at 11 41 48](https://user-images.githubusercontent.com/12135454/236672964-d99d2664-3110-4a87-9da1-53faddad60de.jpg)
+
 ## Color profiles for UE4 games:
+You can change the way the colors are processed in ue4 games.
 
 **examples:**
 
@@ -37,7 +43,7 @@ You can restore by going to the `file -> restore menu`
 
 `NAS_TONEMAP_C` uses standard MSL shading language, as long as it's done in one line, you can use {inputColor} as a variable and modify the colors, or give any effect you like using matrix transforms, have fun!
 
-**Note:** `NAS_TONEMAP_C` only works for UE4 games that needs the Tonemapping workaround
+**Note:** `NAS_TONEMAP_C` only works for UE4 games
 
 # Credits
 Many thanks to the developers behind DXVK and MoltenVK patches: 
