@@ -389,6 +389,7 @@
 				DEVELOPMENT_TEAM = S5P3AKN3YC;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				GCC_OPTIMIZATION_LEVEL = z;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Crossover-patcher-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Crossover patcher";
