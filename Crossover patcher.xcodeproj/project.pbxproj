@@ -345,7 +345,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 0.2.10;
 				DEVELOPMENT_ASSET_PATHS = "\"Crossover patcher/Preview Content\"";
 				DEVELOPMENT_TEAM = S5P3AKN3YC;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -365,7 +365,7 @@
 					"$(PROJECT_DIR)/Crossover\\ patcher/Resources",
 					"$(PROJECT_DIR)",
 				);
-				MARKETING_VERSION = 0.2.9;
+				MARKETING_VERSION = 0.2.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.italomandara.Crossover-patcher";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -384,7 +384,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 0.2.10;
 				DEVELOPMENT_ASSET_PATHS = "\"Crossover patcher/Preview Content\"";
 				DEVELOPMENT_TEAM = S5P3AKN3YC;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -404,7 +404,7 @@
 					"$(PROJECT_DIR)/Crossover\\ patcher/Resources",
 					"$(PROJECT_DIR)",
 				);
-				MARKETING_VERSION = 0.2.9;
+				MARKETING_VERSION = 0.2.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.italomandara.Crossover-patcher";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
