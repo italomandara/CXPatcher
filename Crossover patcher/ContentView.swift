@@ -58,7 +58,7 @@ struct ContentView: View {
                     Divider()
                     Toggle(isOn: $repatch) {
                         HStack(alignment: .center) {
-                            Text("Allow repatch / Upgrade")
+                            Text("Allow repatch / upgrade")
                             Spacer()
                         }
                     }
