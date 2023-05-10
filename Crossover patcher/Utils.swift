@@ -132,7 +132,7 @@ func isCrossoverApp(url: URL, version: String? = nil, skipVersionCheck: Bool? = 
         if (plist.CFBundleIdentifier == "com.codeweavers.CrossOver" && skipVersionCheck == true) {
             return true
         }
-        if (plist.CFBundleIdentifier == "com.codeweavers.CrossOver" && plist.CFBundleShortVersionString.starts(with: "22.1.1") ) {
+        if (plist.CFBundleIdentifier == "com.codeweavers.CrossOver" && plist.CFBundleShortVersionString.starts(with: "22") ) {
             print("app version is ok: \(plist.CFBundleShortVersionString)")
             return true
         }
