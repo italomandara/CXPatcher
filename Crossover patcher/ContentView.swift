@@ -12,6 +12,7 @@ struct ContentView: View {
     @State private var showDisclaimer = true
     @State public var status: Status = .unpatched
     @State public var skipVersionCheck: Bool = false
+    @State public var repatch: Bool = false
     
     var body: some View {
         VStack(alignment: .center) {
@@ -42,10 +43,33 @@ struct ContentView: View {
                         .fontWeight(.bold)
                         .multilineTextAlignment(.center)
                         .padding(20.0))
-                    .onDrop(of: [.fileURL], delegate: FileDropDelegate(status: $status, skipVersionCheck: $skipVersionCheck))
-                Toggle("Patch any Crossover version", isOn: $skipVersionCheck)
-                    .padding(.top, 13.0)
+                    .onDrop(of: [.fileURL], delegate: FileDropDelegate(status: $status, skipVersionCheck: $skipVersionCheck, repatch: $repatch))
+                VStack(alignment: .center) {
+                    Divider()
+                    Toggle(isOn: $skipVersionCheck) {
+                        HStack(alignment: .center) {
+                            Text("Patch Crossover 21")
+                            Spacer()
+                        }
+                    }
+                    .padding(.vertical, 6.0)
                     .toggleStyle(.switch)
+                    .controlSize(/*@START_MENU_TOKEN@*/.mini/*@END_MENU_TOKEN@*/)
+                    Divider()
+                    Toggle(isOn: $repatch) {
+                        HStack(alignment: .center) {
+                            Text("Allow repatch / Upgrade")
+                            Spacer()
+                        }
+                    }
+                    .padding(.vertical, 6.0)
+                    .toggleStyle(.switch)
+                    .controlSize(/*@START_MENU_TOKEN@*/.mini/*@END_MENU_TOKEN@*/)
+                    Divider()
+                    RestoreButtonDialog()
+                        .padding(.top, 6.0)
+                }
+                .padding(.top, 12.0)
             }
         }.padding(20)
         .frame(width: 400.0)
