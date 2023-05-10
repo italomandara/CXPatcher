@@ -22,9 +22,16 @@ You can restore by going to the `file -> restore menu`
 <img width="399" alt="Screenshot 2023-04-25 at 21 32 58" src="https://user-images.githubusercontent.com/12135454/234406600-f7a903fe-c34f-4d11-8154-476028870053.png">
 
 ## Patching other versions of crossover
-By default this app doesn't patch Crossver versions other than 22.1.1, but if you need you can force patching the other versions using the toggle "Patch any crossover version", then you can just drag an drop.
+By default this app doesn't patch Crossver versions other than 22.1.1, but if you need you can force patching the other versions using the toggle "Patch crossover 21", then you can just drag an drop.
 
-![Screenshot 2023-05-07 at 11 41 48](https://user-images.githubusercontent.com/12135454/236672964-d99d2664-3110-4a87-9da1-53faddad60de.jpg)
+![Screenshot 2023-05-10 at 10 55 37](https://github.com/italomandara/CXPatcher/assets/12135454/d83c9635-45ce-473d-83c2-06da33d5cd6f)
+
+
+## Upgrade from an old patch
+If you patched from an old version and you just want to update the patched crossover app just turn on the option and drag 'n drop
+
+![Screenshot 2023-05-10 at 10 55 42](https://github.com/italomandara/CXPatcher/assets/12135454/5bb3c410-0a02-42d0-9024-eb3dfde5ed96)
+
 
 ## Color profiles for UE4 games:
 You can change the way the colors are processed in ue4 games.
