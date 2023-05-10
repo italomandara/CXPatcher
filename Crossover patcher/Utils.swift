@@ -143,11 +143,15 @@ func isCrossoverApp(url: URL, version: String? = nil, skipVersionCheck: Bool? = 
 struct FileDropDelegate: DropDelegate {
     @Binding var status: Status
     @Binding var skipVersionCheck: Bool
+    @Binding var repatch: Bool
     
     func performDrop(info: DropInfo) -> Bool {
         if let item = info.itemProviders(for: [.fileURL]).first {
             let _ = item.loadObject(ofClass: URL.self) { object, error in
                 if let url = object {
+                    if(repatch && restoreApp(url: url)) {
+                        print("Restoring first...")
+                    }
                     applyPatch(url: url, status: &status, skipVersionCheck: skipVersionCheck)
                 }
             }
@@ -209,7 +213,7 @@ func applyPatch(url: URL, status: inout Status, skipVersionCheck: Bool? = nil) {
 }
 
 func restoreApp(url: URL) -> Bool {
-    if(!isAlreadyPatched(url: url) && !isCrossoverApp(url: url)) {
+    if(!isAlreadyPatched(url: url) || !isCrossoverApp(url: url)) {
         print("it' s not crossover.app or it's not patched")
         return false
     }

@@ -8,36 +8,15 @@
 import SwiftUI
 
 @main
-struct Crossover_patcherApp: App {
-    @State private var showingAlert = false
-    @State private var message = ""
-    
+struct Crossover_patcherApp: App {    
     var body: some Scene {
         WindowGroup {
             ContentView().fixedSize()
-            .alert(isPresented: $showingAlert) {
-                Alert(title: Text("Restore Crossover App"), message: Text(message), dismissButton: .default(Text("Cool!")))
-            }
         }
         .windowResizability(.contentSize)
         .commands {
             CommandGroup(after: .newItem) {
-                Button("Restore") {
-                    let panel = NSOpenPanel()
-                    panel.allowsMultipleSelection = false
-                    panel.canChooseDirectories = false
-                    let response =  panel.runModal()
-                    if (response == .OK && panel.urls.first != nil){
-                        let restoreResult = restoreApp(url: panel.url!.absoluteURL)
-                        if(restoreResult) {
-                            message = "Your App has been restored!"
-                            showingAlert = true
-                        } else {
-                            message = "This isn't a patched Crossover App or the version of the patcher you used doesn't match"
-                            showingAlert = true
-                        }
-                    }
-                }
+                RestoreButtonDialog()
             }
         }
         Window("Instructions", id: "instructions") {

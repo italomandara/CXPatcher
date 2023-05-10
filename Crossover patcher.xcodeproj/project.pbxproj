@@ -18,6 +18,7 @@
 		38ACB39729D773CA00A450A0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ACB39629D773CA00A450A0 /* ContentView.swift */; };
 		38C678A229DAEF8500EB19BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38ACB39829D773CA00A450A0 /* Assets.xcassets */; };
 		38C678A629DB3FE800EB19BE /* Instructions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C678A529DB3FE800EB19BE /* Instructions.swift */; };
+		38CB035A2A0ACF7200AE3637 /* RestoreButtonDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CB03592A0ACF7200AE3637 /* RestoreButtonDialog.swift */; };
 		38D7857429EA07F400874A73 /* libMoltenVK.dylib in Resources */ = {isa = PBXBuildFile; fileRef = 38D7857329EA07DC00874A73 /* libMoltenVK.dylib */; };
 		38D93E5829DC4E4F00D4B0D8 /* Disclaimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D93E5729DC4E4F00D4B0D8 /* Disclaimer.swift */; };
 /* End PBXBuildFile section */
@@ -38,6 +39,7 @@
 		38ACB39D29D773CA00A450A0 /* Crossover_patcher.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Crossover_patcher.entitlements; sourceTree = "<group>"; };
 		38C678A129DADD5300EB19BE /* Crossover-patcher-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Crossover-patcher-Info.plist"; sourceTree = SOURCE_ROOT; };
 		38C678A529DB3FE800EB19BE /* Instructions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instructions.swift; sourceTree = "<group>"; };
+		38CB03592A0ACF7200AE3637 /* RestoreButtonDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestoreButtonDialog.swift; sourceTree = "<group>"; };
 		38D7857329EA07DC00874A73 /* libMoltenVK.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libMoltenVK.dylib; path = lib/libMoltenVK.dylib; sourceTree = SOURCE_ROOT; };
 		38D93E5729DC4E4F00D4B0D8 /* Disclaimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disclaimer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,6 +83,7 @@
 				382F4C0629DA516C00824358 /* Utils.swift */,
 				38C678A529DB3FE800EB19BE /* Instructions.swift */,
 				38D93E5729DC4E4F00D4B0D8 /* Disclaimer.swift */,
+				38CB03592A0ACF7200AE3637 /* RestoreButtonDialog.swift */,
 			);
 			path = "Crossover patcher";
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 				38ACB39529D773CA00A450A0 /* Crossover_patcherApp.swift in Sources */,
 				38D93E5829DC4E4F00D4B0D8 /* Disclaimer.swift in Sources */,
 				382F4C0729DA516C00824358 /* Utils.swift in Sources */,
+				38CB035A2A0ACF7200AE3637 /* RestoreButtonDialog.swift in Sources */,
 				38C678A629DB3FE800EB19BE /* Instructions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -347,7 +351,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Crossover patcher/Preview Content\"";
 				DEVELOPMENT_TEAM = S5P3AKN3YC;
@@ -368,7 +372,7 @@
 					"$(PROJECT_DIR)/Crossover\\ patcher/Resources",
 					"$(PROJECT_DIR)",
 				);
-				MARKETING_VERSION = 0.2.10;
+				MARKETING_VERSION = "$(CURRENT_PROJECT_VERSION)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.italomandara.Crossover-patcher";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -387,7 +391,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Crossover patcher/Preview Content\"";
 				DEVELOPMENT_TEAM = S5P3AKN3YC;
@@ -409,7 +413,7 @@
 					"$(PROJECT_DIR)/Crossover\\ patcher/Resources",
 					"$(PROJECT_DIR)",
 				);
-				MARKETING_VERSION = 0.2.10;
+				MARKETING_VERSION = "$(CURRENT_PROJECT_VERSION)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.italomandara.Crossover-patcher";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
