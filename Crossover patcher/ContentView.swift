@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+let ENABLE_SKIP_VERSION_CHECK_TOGGLE = false
+
 struct ContentView: View {
     @Environment(\.openWindow) var openWindow
     @State private var showDisclaimer = true
@@ -46,16 +48,18 @@ struct ContentView: View {
                     .onDrop(of: [.fileURL], delegate: FileDropDelegate(status: $status, skipVersionCheck: $skipVersionCheck, repatch: $repatch))
                 VStack(alignment: .center) {
                     Divider()
-                    Toggle(isOn: $skipVersionCheck) {
-                        HStack(alignment: .center) {
-                            Text("Patch Crossover 21")
-                            Spacer()
+                    if(ENABLE_SKIP_VERSION_CHECK_TOGGLE) {
+                        Toggle(isOn: $skipVersionCheck) {
+                            HStack(alignment: .center) {
+                                Text("Force Patch")
+                                Spacer()
+                            }
                         }
+                        .padding(.vertical, 6.0)
+                        .toggleStyle(.switch)
+                        .controlSize(/*@START_MENU_TOKEN@*/.mini/*@END_MENU_TOKEN@*/)
+                        Divider()
                     }
-                    .padding(.vertical, 6.0)
-                    .toggleStyle(.switch)
-                    .controlSize(/*@START_MENU_TOKEN@*/.mini/*@END_MENU_TOKEN@*/)
-                    Divider()
                     Toggle(isOn: $repatch) {
                         HStack(alignment: .center) {
                             Text("Allow repatch / upgrade")
