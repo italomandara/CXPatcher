@@ -44,13 +44,13 @@ You can change the way the colors are processed in ue4 games.
 
 `NAS_TONEMAP_C=0`
 
-**Color profile for Stray**
+**Example: Color profile for Stray**
 
 `NAS_TONEMAP_C=clamp({inputColor} * float3x3( 0.2126 + 0.7874 * 1.5, 0.7152 - 0.7152 * 1.5, 0.0722 - 0.0722 * 1.5, 0.2126 - 0.2126 * 1.5, 0.7152 + 0.2848 * 1.5, 0.0722 - 0.0722 * 1.5, 0.2126 - 0.2126 * 1.5, 0.7152 - 0.7152 * 1.5, 0.0722 + 0.9278 * 1.5 ) * 2 - float3(0.28, 0.2, 0.16), 0.0, 1.0)`
 
-`NAS_TONEMAP_C` uses standard MSL shading language, as long as it's done in one line, you can use {inputColor} as a variable and modify the colors, or give any effect you like using matrix transforms, have fun!
+`NAS_TONEMAP_C` uses standard MSL shading language, as long as it's done in one line, you can use {inputColor} as a variable and modify the colors, or give any effect you like using matrix transforms, WARNING: do not copy paste any code from unknown sources, and do this only if you know what you're doing, otherwise, have fun! 
 
-**Note:** `NAS_TONEMAP_C` only works for UE4 games
+**Note:** you may need to use `CXPATCHER_SKIP_DXVK_ENV=1` to override built in settings for games that already have a profile `NAS_TONEMAP_C`, also only works for UE4 games.
 
 # Credits
 Many thanks to the developers behind DXVK and MoltenVK patches: 
