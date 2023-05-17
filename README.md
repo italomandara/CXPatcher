@@ -10,7 +10,11 @@ if you have any issues after your app has been patched you can download a new co
 for more info: https://www.codeweavers.com/support/forums/general/?t=27;msg=257865
 
 # What does it do?
-This patcher will upgrade your crossover app with the latest dxvk and moltenvk patched for improved compatibility, and fix the current issue with the latest Ventura update
+This patcher will upgrade your crossover app with the latest dxvk and moltenvk patched for improved compatibility, and dramatically extends compatibility with Unreal enine 4 games.
+
+# What does it NOT do?
+- Games with anti-cheat anti tamper will not work
+- Dx12 games will not work unless playable via the popular -dx11 option
 
 # Instructions
 You need to have an unmodified version of Crossover, you can download it at: https://www.codeweavers.com/account/downloads, please make sure the app has been registered or ran at least once, to make sure the latest dxvk is activated properly You may need to switch off dxvk and on again, if you don't you will need to re-download it. If the patcher renders the app unusable you can either use the restore function (see instructions below) or download it again from the website, it doesn't do any permanent modifications to your 'bottles'.
