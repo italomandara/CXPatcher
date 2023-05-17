@@ -34,6 +34,11 @@ If you patched from an old version and you just want to update the patched cross
 ![Screenshot 2023-05-10 at 10 55 42](https://github.com/italomandara/CXPatcher/assets/12135454/5bb3c410-0a02-42d0-9024-eb3dfde5ed96)
 
 
+## Troubleshoting
+
+**my env var don't work anymore**: use the env variable `CXPATCHER_SKIP_NTDLLHACKS=1`
+
+
 ## Color profiles for UE4 games:
 You can change the way the colors are processed in ue4 games.
 
