@@ -36,7 +36,7 @@ If you patched from an old version and you just want to update the patched cross
 
 ## Troubleshoting
 
-**my env var doesn't work anymore or can't enable disable fast math**: use the env variable `CXPATCHER_SKIP_NTDLLHACKS=1` and then any env var should work as usual
+**my env var doesn't work anymore or can't enable/disable fast math**: use the env variable `CXPATCHER_SKIP_NTDLLHACKS=1` and then any env var should work as usual
 
 
 ## Color profiles for UE4 games:
