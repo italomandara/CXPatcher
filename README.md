@@ -13,7 +13,7 @@ for more info: https://www.codeweavers.com/support/forums/general/?t=27;msg=2578
 This patcher will upgrade your crossover app with the latest dxvk and moltenvk patched for improved compatibility, and dramatically extends compatibility with Unreal enine 4 games.
 
 # What does it NOT do?
-- Games with anti-cheat anti tamper will not work
+- Games with anti-cheat or anti-tamper will not work
 - Dx12 games will not work unless playable via the popular -dx11 option
 
 # Instructions
