@@ -10,7 +10,7 @@ if you have any issues after your app has been patched you can download a new co
 for more info: https://www.codeweavers.com/support/forums/general/?t=27;msg=257865
 
 # What does it do?
-This patcher will upgrade your crossover app with the latest dxvk and moltenvk patched for improved compatibility, and dramatically extends compatibility with Unreal enine 4 games.
+This patcher will upgrade your crossover app with the latest dxvk and moltenvk patched for improved compatibility, and dramatically extends compatibility with Unreal engine 4 games.
 
 # What does it NOT do?
 - Games with anti-cheat or anti-tamper will not work
