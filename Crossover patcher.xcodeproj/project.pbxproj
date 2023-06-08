@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38029FC72A32461600459BA2 /* wine64-preloader in Resources */ = {isa = PBXBuildFile; fileRef = 38029FC62A32461600459BA2 /* wine64-preloader */; };
 		38255F1B2A07E62B005AF0FC /* i386-windows in Resources */ = {isa = PBXBuildFile; fileRef = 38255F1A2A07E62B005AF0FC /* i386-windows */; };
 		38255F1D2A07E633005AF0FC /* x86_64-windows in Resources */ = {isa = PBXBuildFile; fileRef = 38255F1C2A07E633005AF0FC /* x86_64-windows */; };
 		382F4C0729DA516C00824358 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382F4C0629DA516C00824358 /* Utils.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		38029FC62A32461600459BA2 /* wine64-preloader */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "wine64-preloader"; sourceTree = "<group>"; };
 		38255F1A2A07E62B005AF0FC /* i386-windows */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "i386-windows"; path = "lib/i386-windows"; sourceTree = SOURCE_ROOT; };
 		38255F1C2A07E633005AF0FC /* x86_64-windows */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "x86_64-windows"; path = "lib/x86_64-windows"; sourceTree = SOURCE_ROOT; };
 		382F4C0629DA516C00824358 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 		38ACB3A729D77F0600A450A0 /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				38029FC62A32461600459BA2 /* wine64-preloader */,
 				38255F1C2A07E633005AF0FC /* x86_64-windows */,
 				38255F1A2A07E62B005AF0FC /* i386-windows */,
 				38D7857329EA07DC00874A73 /* libMoltenVK.dylib */,
@@ -183,6 +186,7 @@
 				38255F1D2A07E633005AF0FC /* x86_64-windows in Resources */,
 				3869AF7729E1FE510049427E /* x86_64-unix in Resources */,
 				3869AF7329E1FE270049427E /* 32 in Resources */,
+				38029FC72A32461600459BA2 /* wine64-preloader in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

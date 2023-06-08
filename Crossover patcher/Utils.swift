@@ -55,6 +55,11 @@ private func getResourcesListFrom(url: URL) -> [(String, String, String?)]{
             url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/ntdll.dll",
             nil
         ),
+        (
+            "wine64-preloader",
+            url.path + SHARED_SUPPORT_PATH + "/CrossOver-Hosted Application/wine64-preloader",
+            nil
+        ),
     ]
 }
 
@@ -73,8 +78,10 @@ private func safeResCopy(res: String, dest: String, ext: String? = nil) {
     if(f.fileExists(atPath: dest + maybeExt(ext))) {
         do {try f.moveItem(atPath: dest + maybeExt(ext), toPath: dest + "_orig" + maybeExt(ext))
         } catch {
-            print("unexpected error")
+            print("\(dest + maybeExt(ext)) does not exist!")
         }
+    } else {
+        print("unexpected error")
     }
     if let sourceUrl = Bundle.main.url(forResource: res, withExtension: ext) {
         do { try f.copyItem(at: sourceUrl, to: URL(filePath: dest + maybeExt(ext)))
