@@ -17,6 +17,22 @@ enum Status {
 
 var f = FileManager()
 let SHARED_SUPPORT_PATH = "/Contents/SharedSupport/CrossOver"
+let LIB_PATH = "/lib/"
+let EXTERNAL_FRAMEWORK_PATH = "/lib/external"
+let EXTERNAL_WINE_PATHS: [String] = [
+    "/lib/wine/x86_64-unix/atidxx64.so",
+    "/lib/wine/x86_64-unix/d3d9.so",
+    "/lib/wine/x86_64-unix/d3d10.so",
+    "/lib/wine/x86_64-unix/d3d11.so",
+    "/lib/wine/x86_64-unix/d3d12.so",
+    "/lib/wine/x86_64-unix/dxgi.so",
+    "/lib/wine/x86_64-windows/atidxx64.dll",
+    "/lib/wine/x86_64-windows/d3d9.dll",
+    "/lib/wine/x86_64-windows/d3d10.dll",
+    "/lib/wine/x86_64-windows/d3d11.dll",
+    "/lib/wine/x86_64-windows/d3d12.dll",
+    "/lib/wine/x86_64-windows/dxgi.dll",
+]
 
 private func getResourcesListFrom(url: URL) -> [(String, String, String?)]{
     return [
@@ -46,6 +62,11 @@ private func getResourcesListFrom(url: URL) -> [(String, String, String?)]{
             nil
         ),
         (
+            "x86_64-unix/ntdll.so",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-unix/winemac.drv.so",
+            nil
+        ),
+        (
             "i386-windows/ntdll.dll",
             url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/ntdll.dll",
             nil
@@ -56,6 +77,11 @@ private func getResourcesListFrom(url: URL) -> [(String, String, String?)]{
             nil
         ),
         (
+            "x86_64-windows/ntdll.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/winemac.drv",
+            nil
+        ),
+        (
             "wine64-preloader",
             url.path + SHARED_SUPPORT_PATH + "/CrossOver-Hosted Application/wine64-preloader",
             nil
@@ -63,14 +89,27 @@ private func getResourcesListFrom(url: URL) -> [(String, String, String?)]{
     ]
 }
 
+private func getExternalResourcesList(fromUrl: URL, toUrl: URL) -> [(String, String)]{
+    return EXTERNAL_WINE_PATHS.map { path in
+        (
+            fromUrl.path + path,
+            toUrl.path + SHARED_SUPPORT_PATH + path
+        )
+    }
+}
+
 private func maybeExt(_ ext: String?) -> String {
     return ext != nil ? "." + ext! : ""
 }
 
 private func  getBackupListFrom(url: URL) -> [String] {
-    return getResourcesListFrom(url: url).map { (_, path, ext) in
+    let externalRes = EXTERNAL_WINE_PATHS.map { path in
+        url.path + "_orig" + SHARED_SUPPORT_PATH + path
+    }
+    let internalRes = getResourcesListFrom(url: url).map { (_, path, ext) in
         path + "_orig" + maybeExt(ext)
     }
+    return internalRes + externalRes
 }
 
 private func safeResCopy(res: String, dest: String, ext: String? = nil) {
@@ -90,6 +129,25 @@ private func safeResCopy(res: String, dest: String, ext: String? = nil) {
             print(error)
         }
     }
+}
+
+private func safeFileCopy(source: String, dest: String, ext: String? = nil) {
+    print("moving \(dest + maybeExt(ext))")
+    if(f.fileExists(atPath: dest + maybeExt(ext))) {
+        do {try f.moveItem(atPath: dest + maybeExt(ext), toPath: dest + "_orig" + maybeExt(ext))
+        } catch {
+            print("\(dest + maybeExt(ext)) does not exist!")
+        }
+    } else {
+        print("unexpected error")
+    }
+
+    do { try f.copyItem(at: URL(filePath: source), to: URL(filePath: dest + maybeExt(ext)))
+        print("\(source) copied")
+    } catch {
+        print(error)
+    }
+
 }
 
 private func restoreFile(dest: String, ext: String? = nil) {
@@ -148,6 +206,7 @@ func isCrossoverApp(url: URL, version: String? = nil, skipVersionCheck: Bool? = 
 }
 
 struct FileDropDelegate: DropDelegate {
+    @Binding var externalUrl: URL?
     @Binding var status: Status
     @Binding var skipVersionCheck: Bool
     @Binding var repatch: Bool
@@ -159,7 +218,7 @@ struct FileDropDelegate: DropDelegate {
                     if(repatch && restoreApp(url: url)) {
                         print("Restoring first...")
                     }
-                    applyPatch(url: url, status: &status, skipVersionCheck: skipVersionCheck)
+                    applyPatch(url: url, status: &status, externalUrl: externalUrl, skipVersionCheck: skipVersionCheck)
                 }
             }
         } else {
@@ -195,14 +254,30 @@ func getTextBy(status: Status) -> String {
     }
 }
 
-func patch(url: URL) {
+func patch(url: URL, externalUrl: URL? = nil) {
     let resources = getResourcesListFrom(url: url)
-    resources.forEach {
-        safeResCopy(res: $0.0, dest: $0.1, ext: $0.2)
+    if(externalUrl != nil) {
+        let at = URL(filePath: externalUrl!.path + EXTERNAL_FRAMEWORK_PATH)
+        let to = URL(filePath: url.path + SHARED_SUPPORT_PATH + EXTERNAL_FRAMEWORK_PATH)
+        print(at.path)
+        print(to.path)
+        do { try f.copyItem(at: at, to: to)
+            print("\(at.path) copied")
+        } catch {
+            print(error)
+            return
+        }
+        let externalResources = getExternalResourcesList(fromUrl: externalUrl!, toUrl: url)
+        externalResources.forEach { resource in
+            safeFileCopy(source: resource.0, dest: resource.1)
+        }
+    }
+    resources.forEach { resource in
+        safeResCopy(res: resource.0, dest: resource.1, ext: resource.2)
     }
 }
 
-func applyPatch(url: URL, status: inout Status, skipVersionCheck: Bool? = nil) {
+func applyPatch(url: URL, status: inout Status, externalUrl: URL? = nil, skipVersionCheck: Bool? = nil) {
     if (isAlreadyPatched(url: url)) {
         print("App is already patched")
         status = .alreadyPatched
@@ -214,8 +289,12 @@ func applyPatch(url: URL, status: inout Status, skipVersionCheck: Bool? = nil) {
         return
     }
     print("it's a crossover app")
-    patch(url: url)
-    status = .success
+    if (externalUrl != nil){
+        patch(url: url, externalUrl: externalUrl)
+        status = .success
+    } else {
+        print("Error: no input external folder given")
+    }
     return
 }
 
@@ -225,8 +304,12 @@ func restoreApp(url: URL) -> Bool {
         return false
     }
     let filesToRestore = getResourcesListFrom(url: url)
-    filesToRestore.forEach {
-        restoreFile(dest: $0.1, ext: $0.2)
+    let externalFilesToRestore = getExternalResourcesList(fromUrl: url, toUrl: url)
+    externalFilesToRestore.forEach { file in
+        restoreFile(dest: file.1, ext: nil)
+    }
+    filesToRestore.forEach { file in
+        restoreFile(dest: file.1, ext: file.2)
     }
     return true
 }
