@@ -24,6 +24,7 @@ struct ContentView: View {
             Text("Crossover Patcher")
                 .font(.title)
                 .padding(.vertical, 1.0)
+            
             if(showDisclaimer) {
                 Disclaimer()
                 Button("Agree and proceed") {
@@ -35,17 +36,32 @@ struct ContentView: View {
                 }
                 .padding(.bottom, 15.0)
                 .buttonStyle(.borderedProminent)
+                
                 RoundedRectangle(cornerRadius: 25)
                     .stroke(getColorBy(status: status), style: StrokeStyle(lineWidth: 6, dash: [11.7]))
                     .foregroundColor(Color.black.opacity(0.5))
                     .frame(width: 340, height: 300)
-                    .overlay(                Text(getTextBy(status: status))
-                        .foregroundColor(getColorBy(status: status))
-                        .font(.title2)
-                        .fontWeight(.bold)
-                        .multilineTextAlignment(.center)
-                        .padding(20.0))
-                    .onDrop(of: [.fileURL], delegate: FileDropDelegate(status: $status, skipVersionCheck: $skipVersionCheck, repatch: $repatch))
+                    .overlay(
+                        VStack(spacing: 10) {
+                            Text(getTextBy(status: status))
+                                .foregroundColor(getColorBy(status: status))
+                                .font(.title2)
+                                .fontWeight(.bold)
+                                .multilineTextAlignment(.center)
+                        }
+                            .padding(20)
+                    )
+                    .contentShape(Rectangle())
+                    .onTapGesture {
+                        if let url = openAppSelectorPanel() {
+                            restoreAndPatch(repatch: repatch, url: url, status: &status, skipVersionCheck: skipVersionCheck)
+                        }
+                    }
+                    .onDrop(
+                        of: [.fileURL],
+                        delegate: FileDropDelegate(status: $status, skipVersionCheck: $skipVersionCheck, repatch: $repatch)
+                    )
+                
                 VStack(alignment: .center) {
                     Divider()
                     if(ENABLE_SKIP_VERSION_CHECK_TOGGLE) {
@@ -57,7 +73,7 @@ struct ContentView: View {
                         }
                         .padding(.vertical, 6.0)
                         .toggleStyle(.switch)
-                        .controlSize(/*@START_MENU_TOKEN@*/.mini/*@END_MENU_TOKEN@*/)
+                        .controlSize(.mini)
                         Divider()
                     }
                     Toggle(isOn: $repatch) {
@@ -68,14 +84,15 @@ struct ContentView: View {
                     }
                     .padding(.vertical, 6.0)
                     .toggleStyle(.switch)
-                    .controlSize(/*@START_MENU_TOKEN@*/.mini/*@END_MENU_TOKEN@*/)
+                    .controlSize(.mini)
                     Divider()
                     RestoreButtonDialog()
                         .padding(.top, 6.0)
                 }
                 .padding(.top, 12.0)
             }
-        }.padding(20)
+        }
+        .padding(20)
         .frame(width: 400.0)
         .fixedSize()
     }

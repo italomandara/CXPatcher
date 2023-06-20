@@ -156,10 +156,7 @@ struct FileDropDelegate: DropDelegate {
         if let item = info.itemProviders(for: [.fileURL]).first {
             let _ = item.loadObject(ofClass: URL.self) { object, error in
                 if let url = object {
-                    if(repatch && restoreApp(url: url)) {
-                        print("Restoring first...")
-                    }
-                    applyPatch(url: url, status: &status, skipVersionCheck: skipVersionCheck)
+                    restoreAndPatch(repatch: repatch, url: url, status: &status, skipVersionCheck: skipVersionCheck)
                 }
             }
         } else {
@@ -167,6 +164,15 @@ struct FileDropDelegate: DropDelegate {
         }
         return true
     }
+}
+
+func openAppSelectorPanel() -> URL? {
+    let panel = NSOpenPanel()
+    panel.title = "Select the CrossOver app";
+    panel.allowsMultipleSelection = false;
+    panel.canChooseDirectories = false;
+    panel.allowedContentTypes = [.application]
+    return panel.runModal() == .OK ? panel.url?.absoluteURL : nil
 }
 
 func getColorBy(status: Status) -> Color {
@@ -187,7 +193,7 @@ func getTextBy(status: Status) -> String {
     case .error:
         return "Can't patch this app, please check your app version and make sure it's Crossover.app"
     case .unpatched:
-        return "Drop your Crossover app Here"
+        return "Drop your Crossover app here\nor click to select it in Finder"
     case .success:
         return "Your App is Updated"
     case .alreadyPatched:
@@ -229,4 +235,11 @@ func restoreApp(url: URL) -> Bool {
         restoreFile(dest: $0.1, ext: $0.2)
     }
     return true
+}
+
+func restoreAndPatch(repatch: Bool, url: URL, status: inout Status, skipVersionCheck: Bool?) {
+    if repatch && restoreApp(url: url) {
+        print("Restoring first...")
+    }
+    applyPatch(url: url, status: &status, skipVersionCheck: skipVersionCheck)
 }
