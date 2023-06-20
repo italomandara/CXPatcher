@@ -13,13 +13,9 @@ struct RestoreButtonDialog: View {
     
     var body: some View {
         Button("Restore") {
-            let panel = NSOpenPanel()
-            panel.allowsMultipleSelection = false
-            panel.canChooseDirectories = false
-            let response =  panel.runModal()
-            if (response == .OK && panel.urls.first != nil){
-                let restoreResult = restoreApp(url: panel.url!.absoluteURL)
-                if(restoreResult) {
+            if let url = openAppSelectorPanel() {
+                let restoreResult = restoreApp(url: url)
+                if restoreResult {
                     message = "Your App has been restored!"
                     showingAlert = true
                 } else {
