@@ -62,7 +62,7 @@ private func getResourcesListFrom(url: URL) -> [(String, String, String?)]{
             nil
         ),
         (
-            "x86_64-unix/ntdll.so",
+            "x86_64-unix/winemac.drv.so",
             url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-unix/winemac.drv.so",
             nil
         ),
@@ -77,7 +77,7 @@ private func getResourcesListFrom(url: URL) -> [(String, String, String?)]{
             nil
         ),
         (
-            "x86_64-windows/ntdll.dll",
+            "x86_64-windows/winemac.drv",
             url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/winemac.drv",
             nil
         ),
