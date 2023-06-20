@@ -139,7 +139,7 @@ private func safeFileCopy(source: String, dest: String, ext: String? = nil) {
             print("\(dest + maybeExt(ext)) does not exist!")
         }
     } else {
-        print("unexpected error")
+        print("file doesn't exist I'll just copy then")
     }
 
     do { try f.copyItem(at: URL(filePath: source), to: URL(filePath: dest + maybeExt(ext)))
