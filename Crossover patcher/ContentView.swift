@@ -8,11 +8,14 @@
 import SwiftUI
 
 let ENABLE_SKIP_VERSION_CHECK_TOGGLE = false
+let ENABLE_REPATCH_TOGGLE = false
+let ENABLE_RESTORE = false
 
 struct ContentView: View {
     @Environment(\.openWindow) var openWindow
     @State private var showDisclaimer = true
     @State public var status: Status = .unpatched
+    @State public var externalUrl: URL? = nil
     @State public var skipVersionCheck: Bool = false
     @State public var repatch: Bool = false
     
@@ -35,20 +38,24 @@ struct ContentView: View {
                 }
                 .padding(.bottom, 15.0)
                 .buttonStyle(.borderedProminent)
-                RoundedRectangle(cornerRadius: 25)
-                    .stroke(getColorBy(status: status), style: StrokeStyle(lineWidth: 6, dash: [11.7]))
-                    .foregroundColor(Color.black.opacity(0.5))
-                    .frame(width: 340, height: 300)
-                    .overlay(                Text(getTextBy(status: status))
-                        .foregroundColor(getColorBy(status: status))
-                        .font(.title2)
-                        .fontWeight(.bold)
-                        .multilineTextAlignment(.center)
-                        .padding(20.0))
-                    .onDrop(of: [.fileURL], delegate: FileDropDelegate(status: $status, skipVersionCheck: $skipVersionCheck, repatch: $repatch))
+                if(externalUrl != nil) {
+                    RoundedRectangle(cornerRadius: 25)
+                        .stroke(getColorBy(status: status), style: StrokeStyle(lineWidth: 6, dash: [11.7]))
+                        .foregroundColor(Color.black.opacity(0.5))
+                        .frame(width: 340, height: 300)
+                        .overlay(                Text(getTextBy(status: status))
+                            .foregroundColor(getColorBy(status: status))
+                            .font(.title2)
+                            .fontWeight(.bold)
+                            .multilineTextAlignment(.center)
+                            .padding(20.0))
+                        .onDrop(of: [.fileURL], delegate: FileDropDelegate(externalUrl: $externalUrl, status: $status, skipVersionCheck: $skipVersionCheck, repatch: $repatch))
+                }
                 VStack(alignment: .center) {
-                    Divider()
+                    ExternalResButtonDialog(externalUrl: $externalUrl)
+                        .padding(.top, 6.0)
                     if(ENABLE_SKIP_VERSION_CHECK_TOGGLE) {
+                        Divider()
                         Toggle(isOn: $skipVersionCheck) {
                             HStack(alignment: .center) {
                                 Text("Force Patch")
@@ -58,20 +65,25 @@ struct ContentView: View {
                         .padding(.vertical, 6.0)
                         .toggleStyle(.switch)
                         .controlSize(/*@START_MENU_TOKEN@*/.mini/*@END_MENU_TOKEN@*/)
+                    }
+                    if(ENABLE_REPATCH_TOGGLE) {
                         Divider()
-                    }
-                    Toggle(isOn: $repatch) {
-                        HStack(alignment: .center) {
-                            Text("Allow repatch / upgrade")
-                            Spacer()
+                        Toggle(isOn: $repatch) {
+                            HStack(alignment: .center) {
+                                Text("Allow repatch / upgrade")
+                                Spacer()
+                            }
                         }
+                        .padding(.vertical, 6.0)
+                        .toggleStyle(.switch)
+                        .controlSize(/*@START_MENU_TOKEN@*/.mini/*@END_MENU_TOKEN@*/)
+                        Divider()
+                        
                     }
-                    .padding(.vertical, 6.0)
-                    .toggleStyle(.switch)
-                    .controlSize(/*@START_MENU_TOKEN@*/.mini/*@END_MENU_TOKEN@*/)
-                    Divider()
-                    RestoreButtonDialog()
-                        .padding(.top, 6.0)
+                    if(ENABLE_RESTORE) {
+                        RestoreButtonDialog()
+                            .padding(.top, 6.0)
+                    }
                 }
                 .padding(.top, 12.0)
             }
