@@ -155,15 +155,19 @@ private func restoreFile(dest: String, ext: String? = nil) {
         do {try f.removeItem(atPath: dest + maybeExt(ext))
             print("deleting \(dest)")
         } catch {
-            print("can't delete file doesn't exist")
+            print("can't delete file \(dest)")
         }
+    } else {
+        print("file \(dest) doesn't exist... ignoring and deleting just _orig if found")
     }
     if(f.fileExists(atPath: dest + "_orig" + maybeExt(ext) )) {
         do {try f.moveItem(atPath: dest + "_orig" + maybeExt(ext), toPath: dest + maybeExt(ext))
             print("copying \(dest)")
         } catch {
-            print("can't move file doesn't exist")
+            print("can't move file \(dest)")
         }
+    } else {
+        print("file \(dest) doesn't exist... ignoring")
     }
 }
 
