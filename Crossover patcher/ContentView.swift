@@ -53,10 +53,21 @@ struct ContentView: View {
                             .multilineTextAlignment(.center)
                             .padding(20.0))
                         .onDrop(of: [.fileURL], delegate: FileDropDelegate(externalUrl: $externalUrl, status: $status, skipVersionCheck: $skipVersionCheck, repatch: $repatch))
-                }
-                if(integrateExternals) {
-                    ExternalResButtonDialog(externalUrl: $externalUrl)
-                        .padding(.top, 6.0)
+                } else {
+                    RoundedRectangle(cornerRadius: 25)
+                        .foregroundColor(Color.white.opacity(0.5))
+                        .frame(width: 340, height: 200)
+                        .overlay(
+                            VStack(alignment: .center) {
+                                Text("External resources")
+                                    .font(.title2)
+                                Text("Please locate the\n\"external resources\" drive\nusing the button below")
+                                    .padding(.vertical, 1.0)
+                                    .multilineTextAlignment(.center)
+                                ExternalResButtonDialog(externalUrl: $externalUrl)
+                                    .padding(.top, 6.0).controlSize(.large)
+                            }
+                        )
                 }
                 VStack(alignment: .center) {
                     Divider()
