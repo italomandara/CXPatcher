@@ -28,7 +28,7 @@ struct Instructions: View {
                 .font(.title2)
                 .multilineTextAlignment(.center)
                 .padding(.top, 20.0)
-            Text("You need to have an unmodified version of Crossover, you can download it at: \n https://www.codeweavers.com/account/downloads\n please make sure the app has been registered or ran at least once, to make sure the latest dxvk is activated properly You may need to switch off dxvk and on again, if you don't you will need to re-download it. If the patcher renders the app unusable you can download it again from the website, it doesn't do any permanent modifications to any bottle")
+            Text("You need to have an unmodified version of Crossover, you can download it at: \n https://www.codeweavers.com/account/downloads\n please make sure the app has been registered or ran at least once, to make sure the latest dxvk is activated properly You may need to switch off dxvk and on again, if you don't you will need to re-download it.\n If the patcher renders the app unusable you can download it again from the website, it doesn't do any permanent modifications to any bottle")
                 .multilineTextAlignment(.center)
                 .padding(.top, 1.0)
             Text("Credits:")

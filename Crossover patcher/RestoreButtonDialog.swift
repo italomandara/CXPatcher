@@ -16,6 +16,7 @@ struct RestoreButtonDialog: View {
             let panel = NSOpenPanel()
             panel.allowsMultipleSelection = false
             panel.canChooseDirectories = false
+            panel.canChooseFiles = true
             let response =  panel.runModal()
             if (response == .OK && panel.urls.first != nil){
                 let restoreResult = restoreApp(url: panel.url!.absoluteURL)
