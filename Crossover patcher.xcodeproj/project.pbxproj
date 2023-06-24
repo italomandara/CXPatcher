@@ -10,12 +10,13 @@
 		38255F1B2A07E62B005AF0FC /* i386-windows in Resources */ = {isa = PBXBuildFile; fileRef = 38255F1A2A07E62B005AF0FC /* i386-windows */; };
 		38255F1D2A07E633005AF0FC /* x86_64-windows in Resources */ = {isa = PBXBuildFile; fileRef = 38255F1C2A07E633005AF0FC /* x86_64-windows */; };
 		382F4C0729DA516C00824358 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382F4C0629DA516C00824358 /* Utils.swift */; };
-		3869AF7229E1FE260049427E /* 64 in Resources */ = {isa = PBXBuildFile; fileRef = 3869AF7029E1FE260049427E /* 64 */; };
-		3869AF7329E1FE270049427E /* 32 in Resources */ = {isa = PBXBuildFile; fileRef = 3869AF7129E1FE260049427E /* 32 */; };
 		3869AF7629E1FE510049427E /* x86_32on64-unix in Resources */ = {isa = PBXBuildFile; fileRef = 3869AF7429E1FE510049427E /* x86_32on64-unix */; };
 		3869AF7729E1FE510049427E /* x86_64-unix in Resources */ = {isa = PBXBuildFile; fileRef = 3869AF7529E1FE510049427E /* x86_64-unix */; };
 		3880CC7E2A43759C00180A67 /* wine64-preloader in Resources */ = {isa = PBXBuildFile; fileRef = 3880CC7D2A43759C00180A67 /* wine64-preloader */; };
 		38998DFA2A3BAD6400F1963A /* ExternalResButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38998DF92A3BAD6400F1963A /* ExternalResButton.swift */; };
+		389D6BCF2A47599900A4C8EB /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389D6BCE2A47599900A4C8EB /* Config.swift */; };
+		389D6BE42A4766FD00A4C8EB /* 32 in Resources */ = {isa = PBXBuildFile; fileRef = 389D6BE22A4766FD00A4C8EB /* 32 */; };
+		389D6BE52A4766FD00A4C8EB /* 64 in Resources */ = {isa = PBXBuildFile; fileRef = 389D6BE32A4766FD00A4C8EB /* 64 */; };
 		38ACB39529D773CA00A450A0 /* Crossover_patcherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ACB39429D773CA00A450A0 /* Crossover_patcherApp.swift */; };
 		38ACB39729D773CA00A450A0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ACB39629D773CA00A450A0 /* ContentView.swift */; };
 		38C678A229DAEF8500EB19BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38ACB39829D773CA00A450A0 /* Assets.xcassets */; };
@@ -29,12 +30,13 @@
 		38255F1A2A07E62B005AF0FC /* i386-windows */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "i386-windows"; path = "lib/i386-windows"; sourceTree = SOURCE_ROOT; };
 		38255F1C2A07E633005AF0FC /* x86_64-windows */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "x86_64-windows"; path = "lib/x86_64-windows"; sourceTree = SOURCE_ROOT; };
 		382F4C0629DA516C00824358 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		3869AF7029E1FE260049427E /* 64 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = 64; path = lib/dxvk/64; sourceTree = SOURCE_ROOT; };
-		3869AF7129E1FE260049427E /* 32 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = 32; path = lib/dxvk/32; sourceTree = SOURCE_ROOT; };
 		3869AF7429E1FE510049427E /* x86_32on64-unix */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "x86_32on64-unix"; path = "lib/x86_32on64-unix"; sourceTree = SOURCE_ROOT; };
 		3869AF7529E1FE510049427E /* x86_64-unix */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "x86_64-unix"; path = "lib/x86_64-unix"; sourceTree = SOURCE_ROOT; };
 		3880CC7D2A43759C00180A67 /* wine64-preloader */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "wine64-preloader"; path = "lib/wine64-preloader"; sourceTree = SOURCE_ROOT; };
 		38998DF92A3BAD6400F1963A /* ExternalResButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalResButton.swift; sourceTree = "<group>"; };
+		389D6BCE2A47599900A4C8EB /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		389D6BE22A4766FD00A4C8EB /* 32 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = 32; path = lib/dxvk/32; sourceTree = SOURCE_ROOT; };
+		389D6BE32A4766FD00A4C8EB /* 64 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = 64; path = lib/dxvk/64; sourceTree = SOURCE_ROOT; };
 		38ACB39129D773CA00A450A0 /* Crossover patcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Crossover patcher.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		38ACB39429D773CA00A450A0 /* Crossover_patcherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crossover_patcherApp.swift; sourceTree = "<group>"; };
 		38ACB39629D773CA00A450A0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -49,13 +51,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
-		3869AF6F29E1FD1D0049427E /* dxvk */ = {
+		389D6BE12A47636200A4C8EB /* dxvk */ = {
 			isa = PBXGroup;
 			children = (
-				3869AF7129E1FE260049427E /* 32 */,
-				3869AF7029E1FE260049427E /* 64 */,
+				389D6BE22A4766FD00A4C8EB /* 32 */,
+				389D6BE32A4766FD00A4C8EB /* 64 */,
 			);
-			path = dxvk;
+			name = dxvk;
+			path = 64;
 			sourceTree = "<group>";
 		};
 		38ACB38829D773CA00A450A0 = {
@@ -80,6 +83,7 @@
 				38C678A129DADD5300EB19BE /* Crossover-patcher-Info.plist */,
 				38ACB3A329D77ECE00A450A0 /* Resources */,
 				38ACB39429D773CA00A450A0 /* Crossover_patcherApp.swift */,
+				389D6BCE2A47599900A4C8EB /* Config.swift */,
 				38ACB39629D773CA00A450A0 /* ContentView.swift */,
 				38ACB39829D773CA00A450A0 /* Assets.xcassets */,
 				38ACB39D29D773CA00A450A0 /* Crossover_patcher.entitlements */,
@@ -112,13 +116,13 @@
 		38ACB3A729D77F0600A450A0 /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				389D6BE12A47636200A4C8EB /* dxvk */,
 				3880CC7D2A43759C00180A67 /* wine64-preloader */,
 				38255F1C2A07E633005AF0FC /* x86_64-windows */,
 				38255F1A2A07E62B005AF0FC /* i386-windows */,
 				38D7857329EA07DC00874A73 /* libMoltenVK.dylib */,
 				3869AF7429E1FE510049427E /* x86_32on64-unix */,
 				3869AF7529E1FE510049427E /* x86_64-unix */,
-				3869AF6F29E1FD1D0049427E /* dxvk */,
 			);
 			path = lib;
 			sourceTree = "<group>";
@@ -182,14 +186,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				38D7857429EA07F400874A73 /* libMoltenVK.dylib in Resources */,
-				3869AF7229E1FE260049427E /* 64 in Resources */,
 				3880CC7E2A43759C00180A67 /* wine64-preloader in Resources */,
 				3869AF7629E1FE510049427E /* x86_32on64-unix in Resources */,
+				389D6BE42A4766FD00A4C8EB /* 32 in Resources */,
 				38C678A229DAEF8500EB19BE /* Assets.xcassets in Resources */,
 				38255F1B2A07E62B005AF0FC /* i386-windows in Resources */,
+				389D6BE52A4766FD00A4C8EB /* 64 in Resources */,
 				38255F1D2A07E633005AF0FC /* x86_64-windows in Resources */,
 				3869AF7729E1FE510049427E /* x86_64-unix in Resources */,
-				3869AF7329E1FE270049427E /* 32 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,6 +231,7 @@
 				38998DFA2A3BAD6400F1963A /* ExternalResButton.swift in Sources */,
 				382F4C0729DA516C00824358 /* Utils.swift in Sources */,
 				38CB035A2A0ACF7200AE3637 /* RestoreButtonDialog.swift in Sources */,
+				389D6BCF2A47599900A4C8EB /* Config.swift in Sources */,
 				38C678A629DB3FE800EB19BE /* Instructions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -16,7 +16,9 @@ struct Crossover_patcherApp: App {
         .windowResizability(.contentSize)
         .commands {
             CommandGroup(after: .newItem) {
-                RestoreButtonDialog()
+                if(ENABLE_RESTORE) {
+                    RestoreButtonDialog()
+                }
             }
         }
         Window("Instructions", id: "instructions") {

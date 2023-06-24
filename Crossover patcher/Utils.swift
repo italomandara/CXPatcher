@@ -103,17 +103,21 @@ private func maybeExt(_ ext: String?) -> String {
 }
 
 private func  getBackupListFrom(url: URL) -> [String] {
-    let externalRes = EXTERNAL_WINE_PATHS.map { path in
-        url.path + "_orig" + SHARED_SUPPORT_PATH + path
-    }
     let internalRes = getResourcesListFrom(url: url).map { (_, path, ext) in
         path + "_orig" + maybeExt(ext)
     }
-    return internalRes + externalRes
+    return internalRes
+}
+
+private func  getExternalBackupListFrom(url: URL) -> [String] {
+    let externalRes = EXTERNAL_WINE_PATHS.map { path in
+        url.path + "_orig" + SHARED_SUPPORT_PATH + path
+    }
+    return externalRes
 }
 
 private func safeResCopy(res: String, dest: String, ext: String? = nil) {
-    print("moving \(dest + maybeExt(ext))")
+//    print("moving \(dest + maybeExt(ext))")
     if(f.fileExists(atPath: dest + maybeExt(ext))) {
         do {try f.moveItem(atPath: dest + maybeExt(ext), toPath: dest + "_orig" + maybeExt(ext))
         } catch {
@@ -128,11 +132,13 @@ private func safeResCopy(res: String, dest: String, ext: String? = nil) {
         } catch {
             print(error)
         }
+    } else {
+        print("\(res) not found")
     }
 }
 
 private func safeFileCopy(source: String, dest: String, ext: String? = nil) {
-    print("moving \(dest + maybeExt(ext))")
+//    print("moving \(dest + maybeExt(ext))")
     if(f.fileExists(atPath: dest + maybeExt(ext))) {
         do {try f.moveItem(atPath: dest + maybeExt(ext), toPath: dest + "_orig" + maybeExt(ext))
         } catch {
@@ -173,7 +179,7 @@ private func restoreFile(dest: String, ext: String? = nil) {
 
 func isAlreadyPatched(url: URL) -> Bool {
     let filesToCheck = getBackupListFrom(url: url)
-    print(filesToCheck)
+//    print(filesToCheck)
     return filesToCheck.contains { path in
         return f.fileExists(atPath: path)
     }
@@ -258,6 +264,15 @@ func getTextBy(status: Status) -> String {
     }
 }
 
+func getExternalPathFrom(url: URL) -> String {
+    return url.path + SHARED_SUPPORT_PATH + EXTERNAL_FRAMEWORK_PATH
+}
+
+func hasExternal(url: URL) -> Bool{
+    let path = getExternalPathFrom(url: url)
+    return f.fileExists(atPath: path)
+}
+
 func patch(url: URL, externalUrl: URL? = nil) {
     let resources = getResourcesListFrom(url: url)
     if(externalUrl != nil) {
@@ -297,20 +312,35 @@ func applyPatch(url: URL, status: inout Status, externalUrl: URL? = nil, skipVer
         patch(url: url, externalUrl: externalUrl)
         status = .success
     } else {
-        print("Error: no input external folder given")
+        patch(url: url)
+        status = .success
     }
     return
 }
 
 func restoreApp(url: URL) -> Bool {
     if(!isAlreadyPatched(url: url) || !isCrossoverApp(url: url)) {
-        print("it' s not crossover.app or it's not patched")
+        if(!isAlreadyPatched(url: url)) {
+            print("it's not patched")
+        }
+        if (!isCrossoverApp(url: url)){
+            print("it isn't a crossover app")
+        }
+        
         return false
     }
     let filesToRestore = getResourcesListFrom(url: url)
-    let externalFilesToRestore = getExternalResourcesList(fromUrl: url, toUrl: url)
-    externalFilesToRestore.forEach { file in
-        restoreFile(dest: file.1, ext: nil)
+    if(hasExternal(url: url)) {
+        let externalFilesToRestore = getExternalResourcesList(fromUrl: url, toUrl: url)
+        let externalPath = getExternalPathFrom(url: url)
+        do {try f.removeItem(atPath: externalPath)
+            print("deleting external")
+        } catch {
+            print("can't delete file external")
+        }
+        externalFilesToRestore.forEach { file in
+            restoreFile(dest: file.1, ext: nil)
+        }
     }
     filesToRestore.forEach { file in
         restoreFile(dest: file.1, ext: file.2)

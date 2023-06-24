@@ -24,7 +24,7 @@ struct ExternalResButtonDialog: View {
                 } else {
                     print("aborted by user")
                 }
-            }
+            }.buttonStyle(.borderedProminent)
         }
     }
 }

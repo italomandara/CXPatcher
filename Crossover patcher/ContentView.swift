@@ -7,10 +7,6 @@
 
 import SwiftUI
 
-let ENABLE_SKIP_VERSION_CHECK_TOGGLE = false
-let ENABLE_REPATCH_TOGGLE = false
-let ENABLE_RESTORE = false
-
 struct ContentView: View {
     @Environment(\.openWindow) var openWindow
     @State private var showDisclaimer = true
@@ -18,6 +14,13 @@ struct ContentView: View {
     @State public var externalUrl: URL? = nil
     @State public var skipVersionCheck: Bool = false
     @State public var repatch: Bool = false
+    @State private var integrateExternals:Bool = false
+    var shouldshowAppSelector: Bool {
+        if(integrateExternals) {
+            return externalUrl != nil
+        }
+        return true
+    }
     
     var body: some View {
         VStack(alignment: .center) {
@@ -38,7 +41,7 @@ struct ContentView: View {
                 }
                 .padding(.bottom, 15.0)
                 .buttonStyle(.borderedProminent)
-                if(externalUrl != nil) {
+                if(shouldshowAppSelector) {
                     RoundedRectangle(cornerRadius: 25)
                         .stroke(getColorBy(status: status), style: StrokeStyle(lineWidth: 6, dash: [11.7]))
                         .foregroundColor(Color.black.opacity(0.5))
@@ -50,10 +53,33 @@ struct ContentView: View {
                             .multilineTextAlignment(.center)
                             .padding(20.0))
                         .onDrop(of: [.fileURL], delegate: FileDropDelegate(externalUrl: $externalUrl, status: $status, skipVersionCheck: $skipVersionCheck, repatch: $repatch))
+                } else {
+                    RoundedRectangle(cornerRadius: 25)
+                        .foregroundColor(Color.white.opacity(0.5))
+                        .frame(width: 340, height: 200)
+                        .overlay(
+                            VStack(alignment: .center) {
+                                Text("External resources")
+                                    .font(.title2)
+                                Text("Please locate the\n\"external resources\" drive\nusing the button below")
+                                    .padding(.vertical, 1.0)
+                                    .multilineTextAlignment(.center)
+                                ExternalResButtonDialog(externalUrl: $externalUrl)
+                                    .padding(.top, 6.0).controlSize(.large)
+                            }
+                        )
                 }
                 VStack(alignment: .center) {
-                    ExternalResButtonDialog(externalUrl: $externalUrl)
-                        .padding(.top, 6.0)
+                    Divider()
+                    Toggle(isOn: $integrateExternals) {
+                        HStack(alignment: .center) {
+                            Text("Integrate external resources")
+                            Spacer()
+                        }
+                    }
+                    .padding(.vertical, 6.0)
+                    .toggleStyle(.switch)
+                    .controlSize(/*@START_MENU_TOKEN@*/.mini/*@END_MENU_TOKEN@*/)
                     if(ENABLE_SKIP_VERSION_CHECK_TOGGLE) {
                         Divider()
                         Toggle(isOn: $skipVersionCheck) {
