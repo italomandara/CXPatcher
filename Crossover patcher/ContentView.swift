@@ -30,6 +30,7 @@ struct ContentView: View {
             Text("Crossover Patcher")
                 .font(.title)
                 .padding(.vertical, 1.0)
+            
             if(showDisclaimer) {
                 Disclaimer()
                 Button("Agree and proceed") {
@@ -52,6 +53,11 @@ struct ContentView: View {
                             .fontWeight(.bold)
                             .multilineTextAlignment(.center)
                             .padding(20.0))
+                        .onTapGesture {
+                            if let url = openAppSelectorPanel() {
+                                restoreAndPatch(repatch: repatch, url: url, status: &status, externalUrl: externalUrl, skipVersionCheck: skipVersionCheck)
+                            }
+                        }
                         .onDrop(of: [.fileURL], delegate: FileDropDelegate(externalUrl: $externalUrl, status: $status, skipVersionCheck: $skipVersionCheck, repatch: $repatch))
                 } else {
                     RoundedRectangle(cornerRadius: 25)
@@ -113,7 +119,8 @@ struct ContentView: View {
                 }
                 .padding(.top, 12.0)
             }
-        }.padding(20)
+        }
+        .padding(20)
         .frame(width: 400.0)
         .fixedSize()
     }
