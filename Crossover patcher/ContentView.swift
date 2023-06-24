@@ -27,17 +27,17 @@ struct ContentView: View {
             Image("Logo")
                 .resizable(resizingMode: .stretch)
                 .frame(width: 80.0, height: 80.0)
-            Text("Crossover Patcher")
+            Text(localizedCXPatcherString(forKey: "CXPatcherName"))
                 .font(.title)
                 .padding(.vertical, 1.0)
             
             if(showDisclaimer) {
                 Disclaimer()
-                Button("Agree and proceed") {
+                Button(localizedCXPatcherString(forKey: "AgreeAndProceedButtonText")) {
                     showDisclaimer = false
                 }.padding(.vertical, 20.0).buttonStyle(.borderedProminent)
             } else {
-                Button("Instructions") {
+                Button(localizedCXPatcherString(forKey: "InstructionsButtonText")) {
                     openWindow(id: "instructions")
                 }
                 .padding(.bottom, 15.0)
@@ -65,9 +65,9 @@ struct ContentView: View {
                         .frame(width: 340, height: 200)
                         .overlay(
                             VStack(alignment: .center) {
-                                Text("External resources")
+                                Text(localizedCXPatcherString(forKey: "ExternalResourcesLabel"))
                                     .font(.title2)
-                                Text("Please locate the\n\"external resources\" drive\nusing the button below")
+                                Text(localizedCXPatcherString(forKey: "ExternalResourcesLocateText"))
                                     .padding(.vertical, 1.0)
                                     .multilineTextAlignment(.center)
                                 ExternalResButtonDialog(externalUrl: $externalUrl)
@@ -79,7 +79,7 @@ struct ContentView: View {
                     Divider()
                     Toggle(isOn: $integrateExternals) {
                         HStack(alignment: .center) {
-                            Text("Integrate external resources")
+                            Text(localizedCXPatcherString(forKey: "ExternalResourcesToggle"))
                             Spacer()
                         }
                     }
@@ -90,7 +90,7 @@ struct ContentView: View {
                         Divider()
                         Toggle(isOn: $skipVersionCheck) {
                             HStack(alignment: .center) {
-                                Text("Force Patch")
+                                Text(localizedCXPatcherString(forKey: "ForcePatch"))
                                 Spacer()
                             }
                         }
@@ -102,7 +102,7 @@ struct ContentView: View {
                         Divider()
                         Toggle(isOn: $repatch) {
                             HStack(alignment: .center) {
-                                Text("Allow repatch / upgrade")
+                                Text(localizedCXPatcherString(forKey: "AllowRepatchUpgradeToggle"))
                                 Spacer()
                             }
                         }

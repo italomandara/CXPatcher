@@ -16,16 +16,16 @@ struct RestoreButtonDialog: View {
             if let url = openAppSelectorPanel() {
                 let restoreResult = restoreApp(url: url)
                 if restoreResult {
-                    message = "Your App has been restored!"
+                    message = localizedCXPatcherString(forKey: "RestoreSuccess")
                     showingAlert = true
                 } else {
-                    message = "This isn't a patched Crossover App or the version of the patcher you used doesn't match"
+                    message = localizedCXPatcherString(forKey: "RestoreFailure")
                     showingAlert = true
                 }
             }
         }
         .alert(isPresented: $showingAlert) {
-            Alert(title: Text("Restore Crossover App"), message: Text(message), dismissButton: .default(Text("Cool!")))
+            Alert(title: Text(localizedCXPatcherString(forKey: "RestoreStatusLabel")), message: Text(message), dismissButton: .default(Text(localizedCXPatcherString(forKey: "RestoreConfirm"))))
         }
     }
 }

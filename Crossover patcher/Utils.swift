@@ -260,13 +260,13 @@ func getColorBy(status: Status) -> Color {
 func getTextBy(status: Status) -> String {
     switch status {
     case .error:
-        return "Can't patch this app, please check your app version and make sure it's Crossover.app"
+        return localizedCXPatcherString(forKey: "PatchStatusError")
     case .unpatched:
-        return "Drop your Crossover app here\nor click to select it in Finder"
+        return localizedCXPatcherString(forKey: "PatchStatusReady")
     case .success:
-        return "Your App is Updated"
+        return localizedCXPatcherString(forKey: "PatchStatusSuccess")
     case .alreadyPatched:
-        return "Your App has already been patched"
+        return localizedCXPatcherString(forKey: "PatchStatusAlreadyPatched")
     }
 }
 
@@ -359,4 +359,14 @@ func restoreAndPatch(repatch: Bool, url: URL, status: inout Status, externalUrl:
         print("Restoring first...")
     }
     applyPatch(url: url, status: &status, externalUrl: externalUrl, skipVersionCheck: skipVersionCheck)
+}
+
+func localizedCXPatcherString(forKey key: String) -> String {
+    var message = Bundle.main.localizedString(forKey: key, value: nil, table: "Localizable")
+    if message == key {
+        let enPath = Bundle.main.path(forResource: "en", ofType: "lproj")
+        let enBundle = Bundle(path: enPath!)
+        message = enBundle?.localizedString(forKey: key, value: nil, table: "Localizable") ?? key
+    }
+    return message
 }

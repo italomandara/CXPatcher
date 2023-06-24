@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "38ACB39029D773CA00A450A0"
-               BuildableName = "Crossover patcher.app"
-               BlueprintName = "Crossover patcher"
+               BuildableName = "CXPatcher.app"
+               BlueprintName = "CXPatcher"
                ReferencedContainer = "container:Crossover patcher.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,8 +45,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "38ACB39029D773CA00A450A0"
-            BuildableName = "Crossover patcher.app"
-            BlueprintName = "Crossover patcher"
+            BuildableName = "CXPatcher.app"
+            BlueprintName = "CXPatcher"
             ReferencedContainer = "container:Crossover patcher.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -62,8 +62,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "38ACB39029D773CA00A450A0"
-            BuildableName = "Crossover patcher.app"
-            BlueprintName = "Crossover patcher"
+            BuildableName = "CXPatcher.app"
+            BlueprintName = "CXPatcher"
             ReferencedContainer = "container:Crossover patcher.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

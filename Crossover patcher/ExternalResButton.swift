@@ -11,9 +11,9 @@ struct ExternalResButtonDialog: View {
     @Binding var externalUrl: URL?
     var body: some View {
         if(externalUrl != nil) {
-            Text("External Res Path: \(externalUrl!.path)")
+            Text("\(localizedCXPatcherString(forKey: "ExternalResourcesPathLabelText")): \(externalUrl!.path)")
         } else {
-            Button("Locate external resources") {
+            Button(localizedCXPatcherString(forKey: "ExternalResourcesButtonText")) {
                 let panel = NSOpenPanel()
                 panel.allowsMultipleSelection = false
                 panel.canChooseDirectories = true
