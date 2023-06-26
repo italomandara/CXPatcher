@@ -52,7 +52,9 @@ struct ContentView: View {
                             .font(.title2)
                             .fontWeight(.bold)
                             .multilineTextAlignment(.center)
-                            .padding(20.0))
+                            .padding(20.0)
+                        )
+                        .contentShape(RoundedRectangle(cornerRadius: 25))
                         .onTapGesture {
                             if let url = openAppSelectorPanel() {
                                 restoreAndPatch(repatch: repatch, url: url, status: &status, externalUrl: externalUrl, skipVersionCheck: skipVersionCheck)
