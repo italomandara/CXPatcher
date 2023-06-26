@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D9AC2C22A49F96000101F43 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0D9AC2C42A49F96000101F43 /* Localizable.strings */; };
 		38255F1B2A07E62B005AF0FC /* i386-windows in Resources */ = {isa = PBXBuildFile; fileRef = 38255F1A2A07E62B005AF0FC /* i386-windows */; };
 		38255F1D2A07E633005AF0FC /* x86_64-windows in Resources */ = {isa = PBXBuildFile; fileRef = 38255F1C2A07E633005AF0FC /* x86_64-windows */; };
 		382F4C0729DA516C00824358 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382F4C0629DA516C00824358 /* Utils.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D9AC2C32A49F96000101F43 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		38255F1A2A07E62B005AF0FC /* i386-windows */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "i386-windows"; path = "lib/i386-windows"; sourceTree = SOURCE_ROOT; };
 		38255F1C2A07E633005AF0FC /* x86_64-windows */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "x86_64-windows"; path = "lib/x86_64-windows"; sourceTree = SOURCE_ROOT; };
 		382F4C0629DA516C00824358 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
@@ -37,7 +39,7 @@
 		389D6BCE2A47599900A4C8EB /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		389D6BE22A4766FD00A4C8EB /* 32 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = 32; path = lib/dxvk/32; sourceTree = SOURCE_ROOT; };
 		389D6BE32A4766FD00A4C8EB /* 64 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = 64; path = lib/dxvk/64; sourceTree = SOURCE_ROOT; };
-		38ACB39129D773CA00A450A0 /* Crossover patcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Crossover patcher.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		38ACB39129D773CA00A450A0 /* CXPatcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CXPatcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38ACB39429D773CA00A450A0 /* Crossover_patcherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crossover_patcherApp.swift; sourceTree = "<group>"; };
 		38ACB39629D773CA00A450A0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		38ACB39829D773CA00A450A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "Crossover patcher/Assets.xcassets"; sourceTree = SOURCE_ROOT; };
@@ -72,7 +74,7 @@
 		38ACB39229D773CA00A450A0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				38ACB39129D773CA00A450A0 /* Crossover patcher.app */,
+				38ACB39129D773CA00A450A0 /* CXPatcher.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -108,6 +110,7 @@
 		38ACB3A329D77ECE00A450A0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0D9AC2C42A49F96000101F43 /* Localizable.strings */,
 				38ACB3A729D77F0600A450A0 /* lib */,
 			);
 			path = Resources;
@@ -130,9 +133,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		38ACB39029D773CA00A450A0 /* Crossover patcher */ = {
+		38ACB39029D773CA00A450A0 /* CXPatcher */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 38ACB3A029D773CA00A450A0 /* Build configuration list for PBXNativeTarget "Crossover patcher" */;
+			buildConfigurationList = 38ACB3A029D773CA00A450A0 /* Build configuration list for PBXNativeTarget "CXPatcher" */;
 			buildPhases = (
 				38ACB38D29D773CA00A450A0 /* Sources */,
 				381F7DC829DA391400FE9869 /* Resources */,
@@ -142,9 +145,9 @@
 			);
 			dependencies = (
 			);
-			name = "Crossover patcher";
+			name = CXPatcher;
 			productName = "Crossover patcher";
-			productReference = 38ACB39129D773CA00A450A0 /* Crossover patcher.app */;
+			productReference = 38ACB39129D773CA00A450A0 /* CXPatcher.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -175,7 +178,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				38ACB39029D773CA00A450A0 /* Crossover patcher */,
+				38ACB39029D773CA00A450A0 /* CXPatcher */,
 			);
 		};
 /* End PBXProject section */
@@ -187,6 +190,7 @@
 			files = (
 				38D7857429EA07F400874A73 /* libMoltenVK.dylib in Resources */,
 				3880CC7E2A43759C00180A67 /* wine64-preloader in Resources */,
+				0D9AC2C22A49F96000101F43 /* Localizable.strings in Resources */,
 				3869AF7629E1FE510049427E /* x86_32on64-unix in Resources */,
 				389D6BE42A4766FD00A4C8EB /* 32 in Resources */,
 				38C678A229DAEF8500EB19BE /* Assets.xcassets in Resources */,
@@ -237,6 +241,18 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		0D9AC2C42A49F96000101F43 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0D9AC2C32A49F96000101F43 /* en */,
+			);
+			name = Localizable.strings;
+			path = "Crossover patcher";
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		38ACB39E29D773CA00A450A0 /* Debug */ = {
@@ -361,18 +377,19 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Crossover patcher/Crossover_patcher.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development: italomandara@gmail.com (8728ENA4AR)";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 0.2.15;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Crossover patcher/Preview Content\"";
 				DEVELOPMENT_TEAM = S5P3AKN3YC;
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = 6E383BMF5Y;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Crossover-patcher-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Crossover patcher";
+				INFOPLIST_KEY_CFBundleDisplayName = "CrossOver Patcher";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -401,19 +418,20 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Crossover patcher/Crossover_patcher.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development: italomandara@gmail.com (8728ENA4AR)";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 0.2.15;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Crossover patcher/Preview Content\"";
 				DEVELOPMENT_TEAM = S5P3AKN3YC;
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = 6E383BMF5Y;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GCC_OPTIMIZATION_LEVEL = z;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Crossover-patcher-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Crossover patcher";
+				INFOPLIST_KEY_CFBundleDisplayName = "CrossOver Patcher";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -447,7 +465,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		38ACB3A029D773CA00A450A0 /* Build configuration list for PBXNativeTarget "Crossover patcher" */ = {
+		38ACB3A029D773CA00A450A0 /* Build configuration list for PBXNativeTarget "CXPatcher" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				38ACB3A129D773CA00A450A0 /* Debug */,

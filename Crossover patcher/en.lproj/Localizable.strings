@@ -1,0 +1,39 @@
+"AgreeAndProceedButtonText" = "Agree and Proceed";
+"AllowRepatchUpgradeToggle" = "Allow repatch / upgrade";
+"Credits" = "Credits:";
+"CreditsLinks" = "[@gcenx](https://github.com/Gcenx)
+[@nastys](https://github.com/nastys)";
+"CreditsText" = "Many thanks to the developers behind the DXVK and MoltenVK patches for their great help and for providing the binaries.";
+"CrossOverDownloadURL" = "https://codeweavers.com/account/downloads";
+"CrossOverDownloadURLText" = "CodeWeavers Downloads Page";
+"CrossOverPatcher" = "CrossOver Patcher";
+"CWForums" = "CodeWeavers forums";
+"CWForumsURL" = "https://www.codeweavers.com/support/forums/general/?t=27;msg=257865";
+"CWWebsite" = "For more info, see the";
+"CXPatcherName" = "CrossOver Patcher";
+"DisclaimerPleaseNoteLabelText" = "Please note:";
+"DisclaimerText" = "This is an unofficial patching program for CrossOver, and CodeWeavers is in no way involved in its development. Although it has been tested, this software may render your CrossOver installation unusable or unstable. USE AT YOUR OWN RISK. Use of this patcher will also void any official support from CodeWeavers.
+
+If you face any issues after your installation has been patched, you may download a new copy of CrossOver from the CodeWeavers website.
+";
+"ExternalResourcesButtonText" = "Locate external resources";
+"ExternalResourcesLabel" = "External resources";
+"ExternalResourcesLocateText" = "Locate the 'external resources' drive using the button below:";
+"ExternalResourcesPathLabelText" = "External resources path:";
+"ExternalResourcesToggle" = "Integrate external resources";
+"ForcePatch" = "Force Patch";
+"InstructionsAskWhatDo" = "What does this program do?";
+"InstructionsButtonText" = "Instructions";
+"InstructionsFunctionDescription" = "This patcher modifies your CrossOver installation to use updated and tweaked versions of DXVK and MoltenVK, which in some instances will improve compatibility or performance for some games.";
+"InstructionsText" = "Ensure you have an unmodified release version of CrossOver, as downloaded from your CodeWeavers account page. Make sure CrossOver has been registered and run at least once, to make sure the latest DXVK is activated properly. You may need to toggle DXVK off and on within CrossOver. If for any reason your CrossOver install has been rendered unusable, it can be downloaded again from the CodeWeavers website; this patcher will not make any permanent modifications to your CrossOver bottles.";
+"PatchStatusAlreadyPatched" = "This CrossOver.app has already been patched!";
+"PatchStatusError" = "Could not patch CrossOver.app. Please verify that you are attempting to patch the release version of CrossOver.app from the CodeWeavers website.";
+"PatchStatusReady" = "Drag and drop your CrossOver.app here";
+"PatchStatusSuccess" = "CrossOver.app has been successfully patched";
+"RestoreButtonLabel" = "Restore";
+"RestoreConfirm" = "Cool!";
+"RestoreFailure" = "Either this CrossOver.app is unpatched, or was patched with an incompatible version of CrossOver Patcher.";
+"RestoreStatusLabel" = "CrossOver.app Restore";
+"RestoreSuccess" = "CrossOver.app has been successfully restored.";
+"GcenxURL" = "https://github.com/Gcenx";
+"nastysURL" = "https://github.com/nastys";
