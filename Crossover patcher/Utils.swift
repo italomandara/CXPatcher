@@ -117,41 +117,41 @@ private func  getExternalBackupListFrom(url: URL) -> [String] {
 }
 
 private func safeResCopy(res: String, dest: String, ext: String? = nil) {
-//    print("moving \(dest + maybeExt(ext))")
+    Logger.info("moving \(dest + maybeExt(ext))")
     if(f.fileExists(atPath: dest + maybeExt(ext))) {
         do {try f.moveItem(atPath: dest + maybeExt(ext), toPath: dest + "_orig" + maybeExt(ext))
         } catch {
-            print("\(dest + maybeExt(ext)) does not exist!")
+            Logger.error(error.localizedDescription)
         }
     } else {
-        print("unexpected error")
+        Logger.error("unexpected error")
     }
     if let sourceUrl = Bundle.main.url(forResource: res, withExtension: ext) {
         do { try f.copyItem(at: sourceUrl, to: URL(filePath: dest + maybeExt(ext)))
-            print("\(res) copied")
+            Logger.info("\(res) copied")
         } catch {
-            print(error)
+            Logger.error(error.localizedDescription)
         }
     } else {
-        print("\(res) not found")
+        Logger.error("\(res) not found")
     }
 }
 
 private func safeFileCopy(source: String, dest: String, ext: String? = nil) {
-//    print("moving \(dest + maybeExt(ext))")
+    Logger.info("moving \(dest + maybeExt(ext))")
     if(f.fileExists(atPath: dest + maybeExt(ext))) {
         do {try f.moveItem(atPath: dest + maybeExt(ext), toPath: dest + "_orig" + maybeExt(ext))
         } catch {
-            print("\(dest + maybeExt(ext)) does not exist!")
+            Logger.error(error.localizedDescription)
         }
     } else {
-        print("file doesn't exist I'll just copy then")
+        Logger.info("file doesn't exist I'll just copy then")
     }
 
     do { try f.copyItem(at: URL(filePath: source), to: URL(filePath: dest + maybeExt(ext)))
-        print("\(source) copied")
+        Logger.info("\(source) copied")
     } catch {
-        print(error)
+        Logger.info(error.localizedDescription)
     }
 
 }
@@ -159,27 +159,26 @@ private func safeFileCopy(source: String, dest: String, ext: String? = nil) {
 private func restoreFile(dest: String, ext: String? = nil) {
     if(f.fileExists(atPath: dest + maybeExt(ext) )) {
         do {try f.removeItem(atPath: dest + maybeExt(ext))
-            print("deleting \(dest)")
+            Logger.info("deleting \(dest)")
         } catch {
-            print("can't delete file \(dest)")
+            Logger.error("can't delete file \(dest) " + error.localizedDescription)
         }
     } else {
-        print("file \(dest) doesn't exist... ignoring and deleting just _orig if found")
+        Logger.error("file \(dest) doesn't exist... ignoring and deleting just _orig if found")
     }
     if(f.fileExists(atPath: dest + "_orig" + maybeExt(ext) )) {
         do {try f.moveItem(atPath: dest + "_orig" + maybeExt(ext), toPath: dest + maybeExt(ext))
-            print("copying \(dest)")
+            Logger.info("copying \(dest)")
         } catch {
-            print("can't move file \(dest)")
+            Logger.error("can't move file \(dest) " + error.localizedDescription)
         }
     } else {
-        print("file \(dest) doesn't exist... ignoring")
+        Logger.info("file \(dest) doesn't exist... ignoring")
     }
 }
 
 func isAlreadyPatched(url: URL) -> Bool {
     let filesToCheck = getBackupListFrom(url: url)
-//    print(filesToCheck)
     return filesToCheck.contains { path in
         return f.fileExists(atPath: path)
     }
@@ -208,7 +207,7 @@ func isCrossoverApp(url: URL, version: String? = nil, skipVersionCheck: Bool? = 
             return true
         }
         if (plist.CFBundleIdentifier == "com.codeweavers.CrossOver" && plist.CFBundleShortVersionString.starts(with: "22") ) {
-            print("app version is ok: \(plist.CFBundleShortVersionString)")
+            Logger.info("app version is ok: \(plist.CFBundleShortVersionString)")
             return true
         }
     }
@@ -284,12 +283,10 @@ func patch(url: URL, externalUrl: URL? = nil) {
     if(externalUrl != nil) {
         let at = URL(filePath: externalUrl!.path + EXTERNAL_FRAMEWORK_PATH)
         let to = URL(filePath: url.path + SHARED_SUPPORT_PATH + EXTERNAL_FRAMEWORK_PATH)
-        print(at.path)
-        print(to.path)
         do { try f.copyItem(at: at, to: to)
-            print("\(at.path) copied")
+            Logger.info("\(at.path) copied to \(to.path)")
         } catch {
-            print(error)
+            Logger.error(error.localizedDescription)
             return
         }
         let externalResources = getExternalResourcesList(fromUrl: externalUrl!, toUrl: url)
@@ -304,16 +301,16 @@ func patch(url: URL, externalUrl: URL? = nil) {
 
 func applyPatch(url: URL, status: inout Status, externalUrl: URL? = nil, skipVersionCheck: Bool? = nil) {
     if (isAlreadyPatched(url: url)) {
-        print("App is already patched")
+        Logger.error("App is already patched")
         status = .alreadyPatched
         return
     }
     if(!isCrossoverApp(url: url, skipVersionCheck: skipVersionCheck)) {
-        print("it' s not crossover.app")
+        Logger.error("it' s not crossover.app")
         status = .error
         return
     }
-    print("it's a crossover app")
+    Logger.info("it's a crossover app")
     if (externalUrl != nil){
         patch(url: url, externalUrl: externalUrl)
         status = .success
@@ -327,10 +324,10 @@ func applyPatch(url: URL, status: inout Status, externalUrl: URL? = nil, skipVer
 func restoreApp(url: URL) -> Bool {
     if(!isAlreadyPatched(url: url) || !isCrossoverApp(url: url)) {
         if(!isAlreadyPatched(url: url)) {
-            print("it's not patched")
+            Logger.info("it's not patched")
         }
         if (!isCrossoverApp(url: url)){
-            print("it isn't a crossover app")
+            Logger.error("it isn't a crossover app")
         }
         
         return false
@@ -340,9 +337,9 @@ func restoreApp(url: URL) -> Bool {
         let externalFilesToRestore = getExternalResourcesList(fromUrl: url, toUrl: url)
         let externalPath = getExternalPathFrom(url: url)
         do {try f.removeItem(atPath: externalPath)
-            print("deleting external")
+            Logger.info("deleting external")
         } catch {
-            print("can't delete file external")
+            Logger.error("can't delete file external")
         }
         externalFilesToRestore.forEach { file in
             restoreFile(dest: file.1, ext: nil)
@@ -356,7 +353,7 @@ func restoreApp(url: URL) -> Bool {
 
 func restoreAndPatch(repatch: Bool, url: URL, status: inout Status, externalUrl: URL? = nil, skipVersionCheck: Bool?) {
     if repatch && restoreApp(url: url) {
-        print("Restoring first...")
+        Logger.info("Restoring first...")
     }
     applyPatch(url: url, status: &status, externalUrl: externalUrl, skipVersionCheck: skipVersionCheck)
 }
@@ -369,4 +366,13 @@ func localizedCXPatcherString(forKey key: String) -> String {
         message = enBundle?.localizedString(forKey: key, value: nil, table: "Localizable") ?? key
     }
     return message
+}
+
+class Logger {
+    static func error(_ error: String) {
+        print(error)
+    }
+    static func info(_ info: String) {
+        print(info)
+    }
 }

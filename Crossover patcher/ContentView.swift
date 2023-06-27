@@ -9,12 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     @Environment(\.openWindow) var openWindow
-    @State private var showDisclaimer = true
+    @State public var showDebug = false
+    @State public var showDisclaimer = true
     @State public var status: Status = .unpatched
     @State public var externalUrl: URL? = nil
     @State public var skipVersionCheck: Bool = false
     @State public var repatch: Bool = false
-    @State private var integrateExternals:Bool = false
+    @State public var integrateExternals:Bool = false
     var shouldshowAppSelector: Bool {
         if(integrateExternals) {
             return externalUrl != nil
@@ -111,9 +112,18 @@ struct ContentView: View {
                         .padding(.vertical, 6.0)
                         .toggleStyle(.switch)
                         .controlSize(/*@START_MENU_TOKEN@*/.mini/*@END_MENU_TOKEN@*/)
-                        Divider()
-                        
                     }
+                    Divider()
+                    Toggle(isOn: $showDebug) {
+                        HStack(alignment: .center) {
+                            Text(localizedCXPatcherString(forKey: "ShowDebug"))
+                            Spacer()
+                        }
+                    }
+                    .padding(.vertical, 6.0)
+                    .toggleStyle(.switch)
+                    .controlSize(/*@START_MENU_TOKEN@*/.mini/*@END_MENU_TOKEN@*/)
+                    Divider()
                     if(ENABLE_RESTORE) {
                         RestoreButtonDialog()
                             .padding(.top, 6.0)

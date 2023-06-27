@@ -18,6 +18,7 @@ struct ExternalResButtonDialog: View {
                 panel.allowsMultipleSelection = false
                 panel.canChooseDirectories = true
                 panel.canChooseFiles = false
+                panel.allowedContentTypes = [.volume]
                 let response =  panel.runModal()
                 if (response == .OK && panel.urls.first != nil){
                     externalUrl = panel.urls.first!

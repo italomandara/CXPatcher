@@ -37,3 +37,4 @@ If you face any issues after your installation has been patched, you may downloa
 "RestoreSuccess" = "CrossOver.app has been successfully restored.";
 "GcenxURL" = "https://github.com/Gcenx";
 "nastysURL" = "https://github.com/nastys";
+"ShowDebug" = "Show debug logs";
