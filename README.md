@@ -19,6 +19,20 @@ This patcher will upgrade your crossover app with the latest dxvk and moltenvk p
 # Instructions
 You need to have an unmodified version of Crossover, you can download it at: https://www.codeweavers.com/account/downloads, please make sure the app has been registered or ran at least once, to make sure the latest dxvk is activated properly You may need to switch off dxvk and on again, if you don't you will need to re-download it. If the patcher renders the app unusable you can either use the restore function (see instructions below) or download it again from the website, it doesn't do any permanent modifications to your 'bottles'.
 
+## Patching with a new external framework
+There are new upcoming technologies developed this year that are capable of running directx 12 games and now you can have those embedded in crossover!
+in order to integrate that in crossover you need to:
+- download the dmg image file (gptk)
+- mount the dmg image
+- switch on "integrate external resources"
+<img width="300" alt="Screenshot 2023-06-24 at 22 51 53" src="https://github.com/italomandara/CXPatcher/assets/12135454/12b5413e-5f50-468c-8c82-28e8e237f408">
+
+- click the "locate external resources" button and select the volume you just mounted
+<img width="300" alt="Screenshot 2023-06-24 at 22 51 58" src="https://github.com/italomandara/CXPatcher/assets/12135454/8b5a0f55-8058-467d-a143-475e1abab0f7">
+
+- now you can patch CrossOver as usual via either drag'n'drop or file selector (click in the drop area)
+- enjoy your dx12 games!
+
 ## Restoring a patched app to the original app
 Maybe you changed your mind and prefer to use your original crossover app.
 You can restore by going to the `file -> restore menu`
