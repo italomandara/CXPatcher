@@ -14,7 +14,8 @@ This patcher will upgrade your crossover app with the latest dxvk and moltenvk p
 
 # What does it NOT do?
 - Games with anti-cheat or anti-tamper will not work
-- Dx12 games will not work unless playable via the popular -dx11 option
+
+~- Dx12 games will not work unless playable via the popular -dx11 option~
 
 # Instructions
 You need to have an unmodified version of Crossover, you can download it at: https://www.codeweavers.com/account/downloads, please make sure the app has been registered or ran at least once, to make sure the latest dxvk is activated properly You may need to switch off dxvk and on again, if you don't you will need to re-download it. If the patcher renders the app unusable you can either use the restore function (see instructions below) or download it again from the website, it doesn't do any permanent modifications to your 'bottles'.
