@@ -61,6 +61,11 @@ struct ContentView: View {
                             }
                         }
                         .onDrop(of: [.fileURL], delegate: FileDropDelegate(externalUrl: $externalUrl, status: $status, skipVersionCheck: $skipVersionCheck, repatch: $repatch))
+                    if(externalUrl != nil) {
+                        Text("\(localizedCXPatcherString(forKey:"ExternalPath")): \(externalUrl!.path)")
+                        .padding(.top, 2)
+                    }
+
                 } else {
                     RoundedRectangle(cornerRadius: 25)
                         .foregroundColor(Color.white.opacity(0.5))
