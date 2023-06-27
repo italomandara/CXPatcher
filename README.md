@@ -28,20 +28,6 @@ You can restore by going to the `file -> restore menu`
 ## Patching other versions of crossover
 From V0.2.12 I'm dropping support for Crossover 21, it lacks the base work for the hacked ntdll and dxvk.
 
-## Patching with a new external framework
-There are new upcoming technologies developed this year that are capable of running directx 12 games and now you can have those embedded in crossover!
-in order to integrate that in crossover you need to:
-- download the dmg image file (gptk)
-- mount the dmg image
-- switch on "integrate external resources"
-<img width="300" alt="Screenshot 2023-06-24 at 22 51 53" src="https://github.com/italomandara/CXPatcher/assets/12135454/12b5413e-5f50-468c-8c82-28e8e237f408">
-
-- click the "locate external resources" button and select the volume you just mounted
-<img width="300" alt="Screenshot 2023-06-24 at 22 51 58" src="https://github.com/italomandara/CXPatcher/assets/12135454/8b5a0f55-8058-467d-a143-475e1abab0f7">
-
-- now you can patch CrossOver as usual via either drag'n'drop or file selector (click in the drop area)
-- enjoy your dx12 games!
-
 ## Upgrade from an old patch
 If you patched from an old version and you just want to update the patched crossover app just turn on the option and drag 'n drop
 
