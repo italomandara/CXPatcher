@@ -48,6 +48,7 @@
 		38C678A129DADD5300EB19BE /* Crossover-patcher-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Crossover-patcher-Info.plist"; sourceTree = SOURCE_ROOT; };
 		38C678A529DB3FE800EB19BE /* Instructions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instructions.swift; sourceTree = "<group>"; };
 		38CB03592A0ACF7200AE3637 /* RestoreButtonDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestoreButtonDialog.swift; sourceTree = "<group>"; };
+		38D1F6C42A4CA3E9006C89B6 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		38D7857329EA07DC00874A73 /* libMoltenVK.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libMoltenVK.dylib; path = lib/libMoltenVK.dylib; sourceTree = SOURCE_ROOT; };
 		38D93E5729DC4E4F00D4B0D8 /* Disclaimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disclaimer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -172,6 +173,7 @@
 			knownRegions = (
 				en,
 				Base,
+				pl,
 			);
 			mainGroup = 38ACB38829D773CA00A450A0;
 			productRefGroup = 38ACB39229D773CA00A450A0 /* Products */;
@@ -247,6 +249,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				0D9AC2C32A49F96000101F43 /* en */,
+				38D1F6C42A4CA3E9006C89B6 /* pl */,
 			);
 			name = Localizable.strings;
 			path = "Crossover patcher";
@@ -259,6 +262,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -320,6 +324,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
