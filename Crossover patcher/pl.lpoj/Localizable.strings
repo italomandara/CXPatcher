@@ -1,8 +1,8 @@
 "AgreeAndProceedButtonText" = "Zgadzam się i kontynuuj";
 "AllowRepatchUpgradeToggle" = "Zezwalaj na ponowne łatanie / aktualizację";
 "Credits" = "Podziękowania:";
-"CreditsLinks" = "@gcenx
-@nastys";
+"CreditsLinks" = "[@gcenx](https://github.com/Gcenx)
+[@nastys](https://github.com/nastys)";
 "CreditsText" = "Szczególne podziękowania dla deweloperów odpowiedzialnych za łatki DXVK oraz MoltenVK za ich ogromną pomoc i udostępnienie niezbędnych plików.";
 "CrossOverDownloadURL" = "https://codeweavers.com/account/downloads";
 "CrossOverDownloadURLText" = "stronę pobierania CodeWeavers";
