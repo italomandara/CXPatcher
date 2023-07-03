@@ -72,6 +72,41 @@ private func getResourcesListFrom(url: URL) -> [(String, String, String?)]{
             nil
         ),
         (
+            "i386-windows/api-ms-win-core-psm-appnotify-l1-1-0.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/api-ms-win-core-psm-appnotify-l1-1-0.dll",
+            nil
+        ),
+        (
+            "i386-windows/api-ms-win-power-base-l1-1-0.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/api-ms-win-power-base-l1-1-0.dll",
+            nil
+        ),
+        (
+            "i386-windows/atiadlxx.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/atiadlxx.dll",
+            nil
+        ),
+        (
+            "i386-windows/kernel32.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/kernel32.dll",
+            nil
+        ),
+        (
+            "i386-windows/kernelbase.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/kernelbase.dll",
+            nil
+        ),
+        (
+            "i386-windows/windows.gaming.input.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/windows.gaming.input.dll",
+            nil
+        ),
+        (
+            "i386-windows/windows.gaming.ui.gamebar.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/windows.gaming.ui.gamebar.dll",
+            nil
+        ),
+        (
             "x86_64-windows/ntdll.dll",
             url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/ntdll.dll",
             nil
@@ -79,6 +114,41 @@ private func getResourcesListFrom(url: URL) -> [(String, String, String?)]{
         (
             "x86_64-windows/winemac.drv",
             url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/winemac.drv",
+            nil
+        ),
+        (
+            "x86_64-windows/api-ms-win-core-psm-appnotify-l1-1-0.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/api-ms-win-core-psm-appnotify-l1-1-0.dll",
+            nil
+        ),
+        (
+            "x86_64-windows/api-ms-win-power-base-l1-1-0.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/api-ms-win-power-base-l1-1-0.dll",
+            nil
+        ),
+        (
+            "x86_64-windows/atiadlxx.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/atiadlxx.dll",
+            nil
+        ),
+        (
+            "x86_64-windows/kernel32.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/kernel32.dll",
+            nil
+        ),
+        (
+            "x86_64-windows/kernelbase.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/kernelbase.dll",
+            nil
+        ),
+        (
+            "x86_64-windows/windows.gaming.input.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/windows.gaming.input.dll",
+            nil
+        ),
+        (
+            "x86_64-windows/windows.gaming.ui.gamebar.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/windows.gaming.ui.gamebar.dll",
             nil
         ),
         (
