@@ -47,12 +47,13 @@ struct ContentView: View {
                         .stroke(getColorBy(status: status), style: StrokeStyle(lineWidth: 6, dash: [11.7]))
                         .foregroundColor(Color.black.opacity(0.5))
                         .frame(width: 340, height: 300)
-                        .overlay(                Text(getTextBy(status: status))
-                            .foregroundColor(getColorBy(status: status))
-                            .font(.title2)
-                            .fontWeight(.bold)
-                            .multilineTextAlignment(.center)
-                            .padding(20.0)
+                        .overlay(
+                            Text(getTextBy(status: status))
+                                .foregroundColor(getColorBy(status: status))
+                                .font(.title2)
+                                .fontWeight(.bold)
+                                .multilineTextAlignment(.center)
+                                .padding(20.0)
                         )
                         .contentShape(RoundedRectangle(cornerRadius: 25))
                         .onTapGesture {
@@ -61,6 +62,9 @@ struct ContentView: View {
                             }
                         }
                         .onDrop(of: [.fileURL], delegate: FileDropDelegate(externalUrl: $externalUrl, status: $status, skipVersionCheck: $skipVersionCheck, repatch: $repatch))
+                    if(externalUrl != nil) {
+                        Text("External: \(externalUrl!.path)").padding(.top, 5.0)
+                    }
                 } else {
                     RoundedRectangle(cornerRadius: 25)
                         .foregroundColor(Color.white.opacity(0.5))

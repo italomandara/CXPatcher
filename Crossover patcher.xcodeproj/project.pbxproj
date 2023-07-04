@@ -14,6 +14,7 @@
 		3869AF7629E1FE510049427E /* x86_32on64-unix in Resources */ = {isa = PBXBuildFile; fileRef = 3869AF7429E1FE510049427E /* x86_32on64-unix */; };
 		3869AF7729E1FE510049427E /* x86_64-unix in Resources */ = {isa = PBXBuildFile; fileRef = 3869AF7529E1FE510049427E /* x86_64-unix */; };
 		3880CC7E2A43759C00180A67 /* wine64-preloader in Resources */ = {isa = PBXBuildFile; fileRef = 3880CC7D2A43759C00180A67 /* wine64-preloader */; };
+		389374202A54BF84001A5D01 /* wine.inf in Resources */ = {isa = PBXBuildFile; fileRef = 3893741F2A54BF84001A5D01 /* wine.inf */; };
 		38998DFA2A3BAD6400F1963A /* ExternalResButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38998DF92A3BAD6400F1963A /* ExternalResButton.swift */; };
 		389D6BCF2A47599900A4C8EB /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389D6BCE2A47599900A4C8EB /* Config.swift */; };
 		389D6BE42A4766FD00A4C8EB /* 32 in Resources */ = {isa = PBXBuildFile; fileRef = 389D6BE22A4766FD00A4C8EB /* 32 */; };
@@ -35,6 +36,7 @@
 		3869AF7429E1FE510049427E /* x86_32on64-unix */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "x86_32on64-unix"; path = "lib/x86_32on64-unix"; sourceTree = SOURCE_ROOT; };
 		3869AF7529E1FE510049427E /* x86_64-unix */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "x86_64-unix"; path = "lib/x86_64-unix"; sourceTree = SOURCE_ROOT; };
 		3880CC7D2A43759C00180A67 /* wine64-preloader */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "wine64-preloader"; path = "lib/wine64-preloader"; sourceTree = SOURCE_ROOT; };
+		3893741F2A54BF84001A5D01 /* wine.inf */ = {isa = PBXFileReference; lastKnownFileType = file; name = wine.inf; path = lib/wine.inf; sourceTree = SOURCE_ROOT; };
 		38998DF92A3BAD6400F1963A /* ExternalResButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalResButton.swift; sourceTree = "<group>"; };
 		389D6BCE2A47599900A4C8EB /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		389D6BE22A4766FD00A4C8EB /* 32 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = 32; path = lib/dxvk/32; sourceTree = SOURCE_ROOT; };
@@ -120,6 +122,7 @@
 		38ACB3A729D77F0600A450A0 /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				3893741F2A54BF84001A5D01 /* wine.inf */,
 				389D6BE12A47636200A4C8EB /* dxvk */,
 				3880CC7D2A43759C00180A67 /* wine64-preloader */,
 				38255F1C2A07E633005AF0FC /* x86_64-windows */,
@@ -195,6 +198,7 @@
 				0D9AC2C22A49F96000101F43 /* Localizable.strings in Resources */,
 				3869AF7629E1FE510049427E /* x86_32on64-unix in Resources */,
 				389D6BE42A4766FD00A4C8EB /* 32 in Resources */,
+				389374202A54BF84001A5D01 /* wine.inf in Resources */,
 				38C678A229DAEF8500EB19BE /* Assets.xcassets in Resources */,
 				38255F1B2A07E62B005AF0FC /* i386-windows in Resources */,
 				389D6BE52A4766FD00A4C8EB /* 64 in Resources */,

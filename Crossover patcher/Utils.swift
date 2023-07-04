@@ -194,7 +194,7 @@ private func safeResCopy(res: String, dest: String, ext: String? = nil) {
             print("\(dest + maybeExt(ext)) does not exist!")
         }
     } else {
-        print("unexpected error")
+        print("unexpected error: \(dest + maybeExt(ext)) doesn't have an original copy will just copy then")
     }
     if let sourceUrl = Bundle.main.url(forResource: res, withExtension: ext) {
         do { try f.copyItem(at: sourceUrl, to: URL(filePath: dest + maybeExt(ext)))
@@ -295,7 +295,7 @@ struct FileDropDelegate: DropDelegate {
         if let item = info.itemProviders(for: [.fileURL]).first {
             let _ = item.loadObject(ofClass: URL.self) { object, error in
                 if let url = object {
-                    restoreAndPatch(repatch: repatch, url: url, status: &status, skipVersionCheck: skipVersionCheck)
+                    restoreAndPatch(repatch: repatch, url: url, status: &status, externalUrl: externalUrl, skipVersionCheck: skipVersionCheck)
                 }
             }
         } else {
@@ -352,6 +352,7 @@ func hasExternal(url: URL) -> Bool{
 func patch(url: URL, externalUrl: URL? = nil) {
     let resources = getResourcesListFrom(url: url)
     if(externalUrl != nil) {
+        print("copying externals...")
         let at = URL(filePath: externalUrl!.path + EXTERNAL_FRAMEWORK_PATH)
         let to = URL(filePath: url.path + SHARED_SUPPORT_PATH + EXTERNAL_FRAMEWORK_PATH)
         print(at.path)
