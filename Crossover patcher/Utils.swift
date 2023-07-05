@@ -52,8 +52,28 @@ private func getResourcesListFrom(url: URL) -> [(String, String, String?)]{
             nil
         ),
         (
+            "x86_32on64-unix/crypt32.so",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_32on64-unix/crypt32.so",
+            nil
+        ),
+        (
             "x86_32on64-unix/ntdll.so",
             url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_32on64-unix/ntdll.so",
+            nil
+        ),
+        (
+            "x86_32on64-unix/qcap.so",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_32on64-unix/qcap.so",
+            nil
+        ),
+        (
+            "x86_32on64-unix/winegstreamer.so",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_32on64-unix/winegstreamer.so",
+            nil
+        ),
+        (
+            "x86_64-unix/crypt32.so",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-unix/crypt32.so",
             nil
         ),
         (
@@ -62,13 +82,23 @@ private func getResourcesListFrom(url: URL) -> [(String, String, String?)]{
             nil
         ),
         (
+            "x86_64-unix/qcap.so",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-unix/qcap.so",
+            nil
+        ),
+        (
+            "x86_64-unix/winegstreamer.so",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-unix/winegstreamer.so",
+            nil
+        ),
+        (
             "x86_64-unix/winemac.drv.so",
             url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-unix/winemac.drv.so",
             nil
         ),
         (
-            "i386-windows/ntdll.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/ntdll.dll",
+            "i386-windows/advapi32.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/advapi32.dll",
             nil
         ),
         (
@@ -87,6 +117,11 @@ private func getResourcesListFrom(url: URL) -> [(String, String, String?)]{
             nil
         ),
         (
+            "i386-windows/crypt32.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/crypt32.dll",
+            nil
+        ),
+        (
             "i386-windows/kernel32.dll",
             url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/kernel32.dll",
             nil
@@ -94,6 +129,36 @@ private func getResourcesListFrom(url: URL) -> [(String, String, String?)]{
         (
             "i386-windows/kernelbase.dll",
             url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/kernelbase.dll",
+            nil
+        ),
+        (
+            "i386-windows/mfmediaengine.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/mfmediaengine.dll",
+            nil
+        ),
+        (
+            "i386-windows/mfplat.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/mfplat.dll",
+            nil
+        ),
+        (
+            "i386-windows/mfreadwrite.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/mfreadwrite.dll",
+            nil
+        ),
+        (
+            "i386-windows/ntdll.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/ntdll.dll",
+            nil
+        ),
+        (
+            "i386-windows/qcap.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/qcap.dll",
+            nil
+        ),
+        (
+            "i386-windows/quartz.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/quartz.dll",
             nil
         ),
         (
@@ -107,13 +172,23 @@ private func getResourcesListFrom(url: URL) -> [(String, String, String?)]{
             nil
         ),
         (
-            "x86_64-windows/ntdll.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/ntdll.dll",
+            "i386-windows/wined3d.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/wined3d.dll",
             nil
         ),
         (
-            "x86_64-windows/winemac.drv",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/winemac.drv",
+            "i386-windows/winegstreamer.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/winegstreamer.dll",
+            nil
+        ),
+        (
+            "i386-windows/wintrust.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/wintrust.dll",
+            nil
+        ),
+        (
+            "x86_64-windows/advapi32.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/advapi32.dll",
             nil
         ),
         (
@@ -132,6 +207,11 @@ private func getResourcesListFrom(url: URL) -> [(String, String, String?)]{
             nil
         ),
         (
+            "x86_64-windows/crypt32.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/crypt32.dll",
+            nil
+        ),
+        (
             "x86_64-windows/kernel32.dll",
             url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/kernel32.dll",
             nil
@@ -142,6 +222,36 @@ private func getResourcesListFrom(url: URL) -> [(String, String, String?)]{
             nil
         ),
         (
+            "x86_64-windows/mfmediaengine.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/mfmediaengine.dll",
+            nil
+        ),
+        (
+            "x86_64-windows/mfplat.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/mfplat.dll",
+            nil
+        ),
+        (
+            "x86_64-windows/mfreadwrite.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/mfreadwrite.dll",
+            nil
+        ),
+        (
+            "x86_64-windows/ntdll.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/ntdll.dll",
+            nil
+        ),
+        (
+            "x86_64-windows/qcap.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/qcap.dll",
+            nil
+        ),
+        (
+            "x86_64-windows/quartz.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/quartz.dll",
+            nil
+        ),
+        (
             "x86_64-windows/windows.gaming.input.dll",
             url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/windows.gaming.input.dll",
             nil
@@ -149,6 +259,26 @@ private func getResourcesListFrom(url: URL) -> [(String, String, String?)]{
         (
             "x86_64-windows/windows.gaming.ui.gamebar.dll",
             url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/windows.gaming.ui.gamebar.dll",
+            nil
+        ),
+        (
+            "x86_64-windows/wined3d.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/wined3d.dll",
+            nil
+        ),
+        (
+            "x86_64-windows/winegstreamer.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/winegstreamer.dll",
+            nil
+        ),
+        (
+            "x86_64-windows/winemac.drv",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/winemac.drv",
+            nil
+        ),
+        (
+            "x86_64-windows/wintrust.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/wintrust.dll",
             nil
         ),
         (
