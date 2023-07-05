@@ -286,6 +286,16 @@ private func getResourcesListFrom(url: URL) -> [(String, String, String?)]{
             url.path + SHARED_SUPPORT_PATH + "/CrossOver-Hosted Application/wine64-preloader",
             nil
         ),
+        (
+            "crossover.inf",
+            url.path + SHARED_SUPPORT_PATH + "/share/crossover/bottle_data/crossover.inf",
+            nil
+        ),
+        (
+            "wine.inf",
+            url.path + SHARED_SUPPORT_PATH + "/share/wine/wine.inf",
+            nil
+        ),
     ]
 }
 
