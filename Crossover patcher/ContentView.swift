@@ -65,6 +65,12 @@ struct ContentView: View {
                     if(externalUrl != nil) {
                         Text("External: \(externalUrl!.path)").padding(.top, 5.0)
                     }
+                    Text(localizedCXPatcherString(forKey: "MediaFoundation"))
+                        .padding(.top, 6.0)
+                        .frame(maxWidth: .infinity, alignment: .center)
+                    Text("https://gstreamer.freedesktop.org/data/pkg/osx/1.22.4/gstreamer-1.0-1.22.4-universal.pkg")
+                        .padding(.top, 6.0)
+                        .frame(maxWidth: .infinity, alignment: .center)
                 } else {
                     RoundedRectangle(cornerRadius: 25)
                         .foregroundColor(Color.white.opacity(0.5))
