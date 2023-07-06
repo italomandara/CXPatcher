@@ -37,7 +37,7 @@
 		3869AF7429E1FE510049427E /* x86_32on64-unix */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "x86_32on64-unix"; path = "lib/x86_32on64-unix"; sourceTree = SOURCE_ROOT; };
 		3869AF7529E1FE510049427E /* x86_64-unix */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "x86_64-unix"; path = "lib/x86_64-unix"; sourceTree = SOURCE_ROOT; };
 		3880CC7D2A43759C00180A67 /* wine64-preloader */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "wine64-preloader"; path = "lib/wine64-preloader"; sourceTree = SOURCE_ROOT; };
-		3884409B2A561FD8001BD895 /* crossover.inf */ = {isa = PBXFileReference; lastKnownFileType = file; name = crossover.inf; path = lib/crossover.inf; sourceTree = SOURCE_ROOT; };
+		3884409B2A561FD8001BD895 /* crossover.inf */ = {isa = PBXFileReference; lastKnownFileType = text; name = crossover.inf; path = lib/crossover.inf; sourceTree = SOURCE_ROOT; };
 		3893741F2A54BF84001A5D01 /* wine.inf */ = {isa = PBXFileReference; lastKnownFileType = text; name = wine.inf; path = lib/wine.inf; sourceTree = SOURCE_ROOT; };
 		38998DF92A3BAD6400F1963A /* ExternalResButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalResButton.swift; sourceTree = "<group>"; };
 		389D6BCE2A47599900A4C8EB /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
@@ -393,7 +393,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 0.2.15;
+				CURRENT_PROJECT_VERSION = 0.2.16;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Crossover patcher/Preview Content\"";
 				DEVELOPMENT_TEAM = S5P3AKN3YC;
@@ -415,7 +415,7 @@
 					"$(PROJECT_DIR)/Crossover\\ patcher/Resources",
 					"$(PROJECT_DIR)",
 				);
-				MARKETING_VERSION = 0.2.15;
+				MARKETING_VERSION = 0.2.16;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.italomandara.Crossover-patcher";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -434,7 +434,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 0.2.15;
+				CURRENT_PROJECT_VERSION = 0.2.16;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Crossover patcher/Preview Content\"";
 				DEVELOPMENT_TEAM = S5P3AKN3YC;
@@ -457,7 +457,7 @@
 					"$(PROJECT_DIR)/Crossover\\ patcher/Resources",
 					"$(PROJECT_DIR)",
 				);
-				MARKETING_VERSION = 0.2.15;
+				MARKETING_VERSION = 0.2.16;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.italomandara.Crossover-patcher";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
