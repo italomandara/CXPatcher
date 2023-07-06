@@ -67,10 +67,11 @@ struct ContentView: View {
                     }
                     Text(localizedCXPatcherString(forKey: "MediaFoundation"))
                         .padding(.top, 6.0)
-                        .frame(maxWidth: .infinity, alignment: .center)
-                    Text("https://gstreamer.freedesktop.org/data/pkg/osx/1.22.4/gstreamer-1.0-1.22.4-universal.pkg")
+                        .frame(alignment: .center)
+                    Link(localizedCXPatcherString(forKey: "DownloadGStreamer"), destination: URL(string: "https://gstreamer.freedesktop.org/data/pkg/osx/1.22.4/gstreamer-1.0-1.22.4-universal.pkg")!)
                         .padding(.top, 6.0)
-                        .frame(maxWidth: .infinity, alignment: .center)
+                        .frame(alignment: .center)
+                        .buttonStyle(.borderedProminent)
                 } else {
                     RoundedRectangle(cornerRadius: 25)
                         .foregroundColor(Color.white.opacity(0.5))
@@ -98,6 +99,13 @@ struct ContentView: View {
                     .padding(.vertical, 6.0)
                     .toggleStyle(.switch)
                     .controlSize(/*@START_MENU_TOKEN@*/.mini/*@END_MENU_TOKEN@*/)
+                    .disabled(isVentura)
+                    .help(isVentura ? "GPTK is supported on Sonoma only" : "Enables installation of D3dMetal")
+                    .onChange(of: integrateExternals) { value in
+                        if (value == false) {
+                            externalUrl = nil
+                        }
+                    }
                     if(ENABLE_SKIP_VERSION_CHECK_TOGGLE) {
                         Divider()
                         Toggle(isOn: $skipVersionCheck) {

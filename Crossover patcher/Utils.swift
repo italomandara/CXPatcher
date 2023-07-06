@@ -5,6 +5,10 @@
 //  Created by Italo Mandara on 03/04/2023.
 //
 
+var isVentura: Bool {
+    SKIP_VENTURA_CHECK ? false : ProcessInfo().operatingSystemVersion.majorVersion < 14
+}
+
 import Foundation
 import SwiftUI
 
@@ -490,7 +494,9 @@ func hasExternal(url: URL) -> Bool{
 }
 
 func patch(url: URL, externalUrl: URL? = nil) {
-    let resources = getResourcesListFrom(url: url)
+    let resources = externalUrl != nil ? getResourcesListFrom(url: url) : getResourcesListFrom(url: url).filter { elem in
+        elem.0 != "crossover.inf"
+    }
     if(externalUrl != nil) {
         print("copying externals...")
         let at = URL(filePath: externalUrl!.path + EXTERNAL_FRAMEWORK_PATH)
