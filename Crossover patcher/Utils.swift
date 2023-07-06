@@ -5,6 +5,10 @@
 //  Created by Italo Mandara on 03/04/2023.
 //
 
+var isVentura: Bool {
+    SKIP_VENTURA_CHECK ? false : ProcessInfo().operatingSystemVersion.majorVersion < 14
+}
+
 import Foundation
 import SwiftUI
 
@@ -52,8 +56,28 @@ private func getResourcesListFrom(url: URL) -> [(String, String, String?)]{
             nil
         ),
         (
+            "x86_32on64-unix/crypt32.so",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_32on64-unix/crypt32.so",
+            nil
+        ),
+        (
             "x86_32on64-unix/ntdll.so",
             url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_32on64-unix/ntdll.so",
+            nil
+        ),
+        (
+            "x86_32on64-unix/qcap.so",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_32on64-unix/qcap.so",
+            nil
+        ),
+        (
+            "x86_32on64-unix/winegstreamer.so",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_32on64-unix/winegstreamer.so",
+            nil
+        ),
+        (
+            "x86_64-unix/crypt32.so",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-unix/crypt32.so",
             nil
         ),
         (
@@ -62,8 +86,68 @@ private func getResourcesListFrom(url: URL) -> [(String, String, String?)]{
             nil
         ),
         (
+            "x86_64-unix/qcap.so",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-unix/qcap.so",
+            nil
+        ),
+        (
+            "x86_64-unix/winegstreamer.so",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-unix/winegstreamer.so",
+            nil
+        ),
+        (
             "x86_64-unix/winemac.drv.so",
             url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-unix/winemac.drv.so",
+            nil
+        ),
+        (
+            "i386-windows/advapi32.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/advapi32.dll",
+            nil
+        ),
+        (
+            "i386-windows/api-ms-win-core-psm-appnotify-l1-1-0.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/api-ms-win-core-psm-appnotify-l1-1-0.dll",
+            nil
+        ),
+        (
+            "i386-windows/api-ms-win-power-base-l1-1-0.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/api-ms-win-power-base-l1-1-0.dll",
+            nil
+        ),
+        (
+            "i386-windows/atiadlxx.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/atiadlxx.dll",
+            nil
+        ),
+        (
+            "i386-windows/crypt32.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/crypt32.dll",
+            nil
+        ),
+        (
+            "i386-windows/kernel32.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/kernel32.dll",
+            nil
+        ),
+        (
+            "i386-windows/kernelbase.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/kernelbase.dll",
+            nil
+        ),
+        (
+            "i386-windows/mfmediaengine.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/mfmediaengine.dll",
+            nil
+        ),
+        (
+            "i386-windows/mfplat.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/mfplat.dll",
+            nil
+        ),
+        (
+            "i386-windows/mfreadwrite.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/mfreadwrite.dll",
             nil
         ),
         (
@@ -72,8 +156,123 @@ private func getResourcesListFrom(url: URL) -> [(String, String, String?)]{
             nil
         ),
         (
+            "i386-windows/qcap.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/qcap.dll",
+            nil
+        ),
+        (
+            "i386-windows/quartz.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/quartz.dll",
+            nil
+        ),
+        (
+            "i386-windows/windows.gaming.input.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/windows.gaming.input.dll",
+            nil
+        ),
+        (
+            "i386-windows/windows.gaming.ui.gamebar.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/windows.gaming.ui.gamebar.dll",
+            nil
+        ),
+        (
+            "i386-windows/wined3d.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/wined3d.dll",
+            nil
+        ),
+        (
+            "i386-windows/winegstreamer.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/winegstreamer.dll",
+            nil
+        ),
+        (
+            "i386-windows/wintrust.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/wintrust.dll",
+            nil
+        ),
+        (
+            "x86_64-windows/advapi32.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/advapi32.dll",
+            nil
+        ),
+        (
+            "x86_64-windows/api-ms-win-core-psm-appnotify-l1-1-0.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/api-ms-win-core-psm-appnotify-l1-1-0.dll",
+            nil
+        ),
+        (
+            "x86_64-windows/api-ms-win-power-base-l1-1-0.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/api-ms-win-power-base-l1-1-0.dll",
+            nil
+        ),
+        (
+            "x86_64-windows/atiadlxx.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/atiadlxx.dll",
+            nil
+        ),
+        (
+            "x86_64-windows/crypt32.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/crypt32.dll",
+            nil
+        ),
+        (
+            "x86_64-windows/kernel32.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/kernel32.dll",
+            nil
+        ),
+        (
+            "x86_64-windows/kernelbase.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/kernelbase.dll",
+            nil
+        ),
+        (
+            "x86_64-windows/mfmediaengine.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/mfmediaengine.dll",
+            nil
+        ),
+        (
+            "x86_64-windows/mfplat.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/mfplat.dll",
+            nil
+        ),
+        (
+            "x86_64-windows/mfreadwrite.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/mfreadwrite.dll",
+            nil
+        ),
+        (
             "x86_64-windows/ntdll.dll",
             url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/ntdll.dll",
+            nil
+        ),
+        (
+            "x86_64-windows/qcap.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/qcap.dll",
+            nil
+        ),
+        (
+            "x86_64-windows/quartz.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/quartz.dll",
+            nil
+        ),
+        (
+            "x86_64-windows/windows.gaming.input.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/windows.gaming.input.dll",
+            nil
+        ),
+        (
+            "x86_64-windows/windows.gaming.ui.gamebar.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/windows.gaming.ui.gamebar.dll",
+            nil
+        ),
+        (
+            "x86_64-windows/wined3d.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/wined3d.dll",
+            nil
+        ),
+        (
+            "x86_64-windows/winegstreamer.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/winegstreamer.dll",
             nil
         ),
         (
@@ -82,8 +281,23 @@ private func getResourcesListFrom(url: URL) -> [(String, String, String?)]{
             nil
         ),
         (
+            "x86_64-windows/wintrust.dll",
+            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/wintrust.dll",
+            nil
+        ),
+        (
             "wine64-preloader",
             url.path + SHARED_SUPPORT_PATH + "/CrossOver-Hosted Application/wine64-preloader",
+            nil
+        ),
+        (
+            "crossover.inf",
+            url.path + SHARED_SUPPORT_PATH + "/share/crossover/bottle_data/crossover.inf",
+            nil
+        ),
+        (
+            "wine.inf",
+            url.path + SHARED_SUPPORT_PATH + "/share/wine/wine.inf",
             nil
         ),
     ]
@@ -124,7 +338,7 @@ private func safeResCopy(res: String, dest: String, ext: String? = nil) {
             print("\(dest + maybeExt(ext)) does not exist!")
         }
     } else {
-        print("unexpected error")
+        print("unexpected error: \(dest + maybeExt(ext)) doesn't have an original copy will just copy then")
     }
     if let sourceUrl = Bundle.main.url(forResource: res, withExtension: ext) {
         do { try f.copyItem(at: sourceUrl, to: URL(filePath: dest + maybeExt(ext)))
@@ -225,7 +439,7 @@ struct FileDropDelegate: DropDelegate {
         if let item = info.itemProviders(for: [.fileURL]).first {
             let _ = item.loadObject(ofClass: URL.self) { object, error in
                 if let url = object {
-                    restoreAndPatch(repatch: repatch, url: url, status: &status, skipVersionCheck: skipVersionCheck)
+                    restoreAndPatch(repatch: repatch, url: url, status: &status, externalUrl: externalUrl, skipVersionCheck: skipVersionCheck)
                 }
             }
         } else {
@@ -280,8 +494,11 @@ func hasExternal(url: URL) -> Bool{
 }
 
 func patch(url: URL, externalUrl: URL? = nil) {
-    let resources = getResourcesListFrom(url: url)
+    let resources = externalUrl != nil ? getResourcesListFrom(url: url) : getResourcesListFrom(url: url).filter { elem in
+        elem.0 != "crossover.inf"
+    }
     if(externalUrl != nil) {
+        print("copying externals...")
         let at = URL(filePath: externalUrl!.path + EXTERNAL_FRAMEWORK_PATH)
         let to = URL(filePath: url.path + SHARED_SUPPORT_PATH + EXTERNAL_FRAMEWORK_PATH)
         print(at.path)

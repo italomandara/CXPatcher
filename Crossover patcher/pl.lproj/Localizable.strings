@@ -16,11 +16,11 @@
 
 Jeśli napotkasz jakiekolwiek problemy z instalacją CrossOver, możesz pobrać nową kopię CrossOver ze strony CodeWeavers.
 ";
-"ExternalResourcesButtonText" = "Zlokalizuj zewnętrzne źródła";
-"ExternalResourcesLabel" = "Zewnętrzne źródła";
-"ExternalResourcesLocateText" = "Zlokalizuj dysk z 'źródłami zewnętrznymi'";
-"ExternalResourcesPathLabelText" = "Ścieżka zewnętrznych źródeł:";
-"ExternalResourcesToggle" = "Integruj źródło zewnętrzne";
+"ExternalResourcesButtonText" = "Zlokalizuj dysk GPTK";
+"ExternalResourcesLabel" = "Zainstaluj zewnętrzną platformę";
+"ExternalResourcesLocateText" = "Zlokalizuj dysk GPTK za pomocą poniższego przycisku:";
+"ExternalResourcesPathLabelText" = "Ścieżka dysku zewnętrznego zasobu:";
+"ExternalResourcesToggle" = "Integracja D3DMetal (GPTK)";
 "ForcePatch" = "Wymuś łatanie";
 "InstructionsAskWhatDo" = "Co umożliwia ten program?";
 "InstructionsButtonText" = "Instrukcja";
@@ -37,3 +37,5 @@ Jeśli napotkasz jakiekolwiek problemy z instalacją CrossOver, możesz pobrać 
 "RestoreSuccess" = "CrossOver.app został pomyślnie przywrócony.";
 "GcenxURL" = "https://github.com/Gcenx";
 "nastysURL" = "https://github.com/nastys";
+"MediaFoundation" = "Aby Media Foundation działały, musisz zainstalować GStreamer (zalecana instalacja dla wszystkich użytkowników)";
+"DownloadGStreamer" = "Pobieranie Gstreamer";

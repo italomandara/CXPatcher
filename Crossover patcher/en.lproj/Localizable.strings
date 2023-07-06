@@ -16,11 +16,11 @@
 
 If you face any issues after your installation has been patched, you may download a new copy of CrossOver from the CodeWeavers website.
 ";
-"ExternalResourcesButtonText" = "Locate external resources";
-"ExternalResourcesLabel" = "External resources";
-"ExternalResourcesLocateText" = "Locate the 'external resources' drive using the button below:";
-"ExternalResourcesPathLabelText" = "External resources path:";
-"ExternalResourcesToggle" = "Integrate external resources";
+"ExternalResourcesButtonText" = "Locate GPTK drive";
+"ExternalResourcesLabel" = "Install external framework";
+"ExternalResourcesLocateText" = "Locate the GPTK drive using the button below:";
+"ExternalResourcesPathLabelText" = "External resource drive path:";
+"ExternalResourcesToggle" = "Integrate D3DMetal (GPTK)";
 "ForcePatch" = "Force Patch";
 "InstructionsAskWhatDo" = "What does this program do?";
 "InstructionsButtonText" = "Instructions";
@@ -37,3 +37,5 @@ If you face any issues after your installation has been patched, you may downloa
 "RestoreSuccess" = "CrossOver.app has been successfully restored.";
 "GcenxURL" = "https://github.com/Gcenx";
 "nastysURL" = "https://github.com/nastys";
+"MediaFoundation" = "In order to make Media foundation libraries work you'll have to install GStreamer (Install for all users recommended)";
+"DownloadGStreamer" = "Download GStreamer";
