@@ -9,13 +9,12 @@
 "CrossOverPatcher" = "CrossOver Patcher";
 "CWForums" = "CodeWeavers forums";
 "CWForumsURL" = "https://www.codeweavers.com/support/forums/general/?t=27;msg=257865";
-"CWWebsite" = "For more info, see the";
+"CWWebsite" = "Codeweavers doesn't support patched or modified crossover apps, see the";
 "CXPatcherName" = "CrossOver Patcher";
 "DisclaimerPleaseNoteLabelText" = "Please note:";
 "DisclaimerText" = "This is an unofficial patching program for CrossOver, and CodeWeavers is in no way involved in its development. Although it has been tested, this software may render your CrossOver installation unusable or unstable. USE AT YOUR OWN RISK. Use of this patcher will also void any official support from CodeWeavers.
 
-If you face any issues after your installation has been patched, you may download a new copy of CrossOver from the CodeWeavers website.
-";
+If you face any issues after your installation has been patched, you may download a new copy of CrossOver from the CodeWeavers website.";
 "ExternalResourcesButtonText" = "Locate GPTK drive";
 "ExternalResourcesLabel" = "Install external framework";
 "ExternalResourcesLocateText" = "Locate the GPTK drive using the button below:";
@@ -28,7 +27,7 @@ If you face any issues after your installation has been patched, you may downloa
 "InstructionsText" = "Ensure you have an unmodified release version of CrossOver, as downloaded from your CodeWeavers account page. Make sure CrossOver has been registered and run at least once, to make sure the latest DXVK is activated properly. You may need to toggle DXVK off and on within CrossOver. If for any reason your CrossOver install has been rendered unusable, it can be downloaded again from the CodeWeavers website; this patcher will not make any permanent modifications to your CrossOver bottles.";
 "PatchStatusAlreadyPatched" = "This CrossOver.app has already been patched!";
 "PatchStatusError" = "Could not patch CrossOver.app. Please verify that you are attempting to patch the release version of CrossOver.app from the CodeWeavers website.";
-"PatchStatusReady" = "Drag and drop your CrossOver.app here";
+"PatchStatusReady" = "Drop your CrossOver.app here \nor click to select it in Finder";
 "PatchStatusSuccess" = "CrossOver.app has been successfully patched";
 "RestoreButtonLabel" = "Restore";
 "RestoreConfirm" = "Cool!";
@@ -37,5 +36,9 @@ If you face any issues after your installation has been patched, you may downloa
 "RestoreSuccess" = "CrossOver.app has been successfully restored.";
 "GcenxURL" = "https://github.com/Gcenx";
 "nastysURL" = "https://github.com/nastys";
-"MediaFoundation" = "In order to make Media foundation libraries work you'll have to install GStreamer (Install for all users recommended)";
+"MediaFoundation" = "In order to make Media foundation libraries work you'll have to install GStreamer IF YOU HAVEN'T DONE IT ALREADY (Install for all users required)";
 "DownloadGStreamer" = "Download GStreamer";
+"GStreamerInstalled" = "GStreamer is already Installed";
+"waitFor" = "Waiting for you to read the disclaimer and confirm";
+"confirmationValue" = "I will not ask Codeweavers for support or refund";
+"confirmation" =  "Please type 'I will not ask Codeweavers for support or refund' in the input field below end press the enter key";

@@ -426,6 +426,14 @@ func isCrossoverApp(url: URL, version: String? = nil, skipVersionCheck: Bool? = 
             return true
         }
     }
+    print("file doesn't exist at \(plistPath)")
+    return false
+}
+
+func isGStreamerInstalled() -> Bool {
+    if(f.fileExists(atPath: "/Library/Frameworks/GStreamer.framework")) {
+        return true
+    }
     return false
 }
 
@@ -470,6 +478,21 @@ func getColorBy(status: Status) -> Color {
         return .red
     }
 }
+
+func getIconBy(status: Status) -> String {
+    switch status {
+    case .unpatched:
+        return "plus.app"
+    case .success:
+        return "checkmark.circle.fill"
+    case .alreadyPatched:
+        return "hand.raised.app.fill"
+    case .error:
+        return "x.circle.fill"
+    }
+}
+
+
 
 func getTextBy(status: Status) -> String {
     switch status {
@@ -586,4 +609,11 @@ func localizedCXPatcherString(forKey key: String) -> String {
         message = enBundle?.localizedString(forKey: key, value: nil, table: "Localizable") ?? key
     }
     return message
+}
+
+func validate(input: String) -> Bool {
+    if(input == localizedCXPatcherString(forKey:"confirmationValue")) {
+        return true
+    }
+    return false
 }

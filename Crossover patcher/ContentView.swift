@@ -15,6 +15,8 @@ struct ContentView: View {
     @State public var skipVersionCheck: Bool = false
     @State public var repatch: Bool = false
     @State private var integrateExternals:Bool = false
+    @State public var inputText: String = ""
+    @State private var valid: Bool = false
     var shouldshowAppSelector: Bool {
         if(integrateExternals) {
             return externalUrl != nil
@@ -33,12 +35,39 @@ struct ContentView: View {
             
             if(showDisclaimer) {
                 Disclaimer()
-                Button(localizedCXPatcherString(forKey: "AgreeAndProceedButtonText")) {
+                Text(localizedCXPatcherString(forKey:"confirmation"))
+                    .padding(.vertical, 20)
+                    .fontWeight(.bold)
+                    .foregroundColor(.red)
+                
+                TextField("",
+                    text: $inputText
+                )
+                .onChange(of: inputText) { newValue in
+                    valid = validate(input: newValue)
+                }
+                .disableAutocorrection(true)
+                Button() {
                     showDisclaimer = false
-                }.padding(.vertical, 20.0).buttonStyle(.borderedProminent)
+                } label: {
+                    Image(systemName: "exclamationmark.triangle.fill")
+                    if(valid) {
+                        Text(localizedCXPatcherString(forKey: "AgreeAndProceedButtonText"))
+                    } else {
+                        Text("\(localizedCXPatcherString(forKey: "waitFor"))")
+                    }
+                }
+                .padding(.vertical, 20.0)
+                .buttonStyle(.borderedProminent)
+                .tint(.red)
+                .controlSize(.large)
+                .disabled(!valid)
             } else {
-                Button(localizedCXPatcherString(forKey: "InstructionsButtonText")) {
+                Button() {
                     openWindow(id: "instructions")
+                } label: {
+                    Image(systemName: "info.circle.fill")
+                    Text(localizedCXPatcherString(forKey: "InstructionsButtonText"))
                 }
                 .padding(.bottom, 15.0)
                 .buttonStyle(.borderedProminent)
@@ -48,12 +77,16 @@ struct ContentView: View {
                         .foregroundColor(Color.black.opacity(0.5))
                         .frame(width: 340, height: 300)
                         .overlay(
-                            Text(getTextBy(status: status))
-                                .foregroundColor(getColorBy(status: status))
-                                .font(.title2)
-                                .fontWeight(.bold)
-                                .multilineTextAlignment(.center)
+                            VStack() {
+                                Image(systemName: getIconBy(status: status)).foregroundColor(getColorBy(status: status)).font(.system(size: 60))
+                                Text(getTextBy(status: status))
+                                    .foregroundColor(getColorBy(status: status))
+                                    .font(.title2)
+                                    .fontWeight(.bold)
+                                    .multilineTextAlignment(.center)
                                 .padding(20.0)
+                                
+                            }
                         )
                         .contentShape(RoundedRectangle(cornerRadius: 25))
                         .onTapGesture {
@@ -63,15 +96,26 @@ struct ContentView: View {
                         }
                         .onDrop(of: [.fileURL], delegate: FileDropDelegate(externalUrl: $externalUrl, status: $status, skipVersionCheck: $skipVersionCheck, repatch: $repatch))
                     if(externalUrl != nil) {
-                        Text("External: \(externalUrl!.path)").padding(.top, 5.0)
+                        HStack(alignment: .center) {
+                            Image(systemName: "externaldrive.fill.badge.checkmark")
+                            Text("External: \(externalUrl!.path)")
+                        }
+                        .padding(.top, 5.0)
                     }
                     Text(localizedCXPatcherString(forKey: "MediaFoundation"))
                         .padding(.top, 6.0)
                         .frame(alignment: .center)
                     Link(localizedCXPatcherString(forKey: "DownloadGStreamer"), destination: URL(string: "https://gstreamer.freedesktop.org/data/pkg/osx/1.22.4/gstreamer-1.0-1.22.4-universal.pkg")!)
                         .padding(.top, 6.0)
-                        .frame(alignment: .center)
                         .buttonStyle(.borderedProminent)
+                    
+                    if(isGStreamerInstalled()) {
+                        HStack(alignment: .center) {
+                            Image(systemName: "checkmark.seal.fill").foregroundColor(.green)
+                            Text(localizedCXPatcherString(forKey: "GStreamerInstalled"))
+                        }
+                        .padding(.top, 6.0)
+                    }
                 } else {
                     RoundedRectangle(cornerRadius: 25)
                         .foregroundColor(Color.white.opacity(0.5))
@@ -92,6 +136,7 @@ struct ContentView: View {
                     Divider()
                     Toggle(isOn: $integrateExternals) {
                         HStack(alignment: .center) {
+                            Image(systemName: "wand.and.stars")
                             Text(localizedCXPatcherString(forKey: "ExternalResourcesToggle"))
                             Spacer()
                         }
@@ -110,6 +155,7 @@ struct ContentView: View {
                         Divider()
                         Toggle(isOn: $skipVersionCheck) {
                             HStack(alignment: .center) {
+                                Image(systemName: "hazardsign.fill")
                                 Text(localizedCXPatcherString(forKey: "ForcePatch"))
                                 Spacer()
                             }
@@ -122,6 +168,7 @@ struct ContentView: View {
                         Divider()
                         Toggle(isOn: $repatch) {
                             HStack(alignment: .center) {
+                                Image(systemName: "arrow.3.trianglepath")
                                 Text(localizedCXPatcherString(forKey: "AllowRepatchUpgradeToggle"))
                                 Spacer()
                             }

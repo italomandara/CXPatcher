@@ -14,8 +14,7 @@
 "DisclaimerPleaseNoteLabelText" = "Uwaga:";
 "DisclaimerText" = "To jest nieoficjalny program umożliwiający łatanie programu CrossOver. CodeWeavers nie jest w żaden sposób związane z pracami i rozwojem tego programu. Pomimo przeprowadzonych testów, to oprogramowanie może spowodować, że CrossOver będzie działał w nieprawidłowy sposób. KORZYSTASZ NA WŁASNE RYZYKO. Korzystanie z tego oprogramowania narusza warunki oficjalnego wsparcia ze strony CodeWeavers.
 
-Jeśli napotkasz jakiekolwiek problemy z instalacją CrossOver, możesz pobrać nową kopię CrossOver ze strony CodeWeavers.
-";
+Jeśli napotkasz jakiekolwiek problemy z instalacją CrossOver, możesz pobrać nową kopię CrossOver ze strony CodeWeavers.";
 "ExternalResourcesButtonText" = "Zlokalizuj dysk GPTK";
 "ExternalResourcesLabel" = "Zainstaluj zewnętrzną platformę";
 "ExternalResourcesLocateText" = "Zlokalizuj dysk GPTK za pomocą poniższego przycisku:";
@@ -28,7 +27,7 @@ Jeśli napotkasz jakiekolwiek problemy z instalacją CrossOver, możesz pobrać 
 "InstructionsText" = "Upewnij się, że masz niezmodyfikowaną wydanie CrossOver pobraną ze strony swojego konta w CodeWeavers. Upewnij się, że CrossOver został zarejestrowany i uruchomiony przynajmniej raz, aby upewnić się, że najnowsza wersja DXVK została poprawnie aktywowana. Może być konieczne przełączenie DXVK na wyłączony i ponownie włączony w CrossOver. Jeśli z jakiegoś powodu Twoja instalacja CrossOver stała się nieużywalna, można ją ponownie pobrać ze strony internetowej CodeWeavers. Ten program łatający nie wprowadzi żadnych trwałych modyfikacji do Twoich butelek CrossOver.";
 "PatchStatusAlreadyPatched" = "Ta wersja CrossOver.app została juz wcześniej załatana!";
 "PatchStatusError" = "Nie udało się załatać CrossOver.app. Proszę upewnij się, że próbujesz załatać stabilną wersję CrossOver.app ze strony CodeWeavers.";
-"PatchStatusReady" = "Przeciągnij i upuść CrossOver.app tutaj";
+"PatchStatusReady" = "Upuść CrossOver.app tutaj \nlub kliknij, aby ją zaznaczyć w Finderze";
 "PatchStatusSuccess" = "CrossOver.app został załatany pomyślnie";
 "RestoreButtonLabel" = "Przywróć";
 "RestoreConfirm" = "Super!";
@@ -37,5 +36,9 @@ Jeśli napotkasz jakiekolwiek problemy z instalacją CrossOver, możesz pobrać 
 "RestoreSuccess" = "CrossOver.app został pomyślnie przywrócony.";
 "GcenxURL" = "https://github.com/Gcenx";
 "nastysURL" = "https://github.com/nastys";
-"MediaFoundation" = "Aby Media Foundation działały, musisz zainstalować GStreamer (zalecana instalacja dla wszystkich użytkowników)";
+"MediaFoundation" = "Aby Media Foundation działały, musisz zainstalować GStreamer JEŚLI JUŻ TEGO NIE ZROBIŁEŚ (wymagana instalacja dla wszystkich użytkowników)";
 "DownloadGStreamer" = "Pobieranie Gstreamer";
+"GStreamerInstalled" = "GStreamer jest już zainstalowany";
+"waitFor" = "Czekam na przeczytanie zastrzeżenia i potwierdzenie";
+"confirmationValue" = "Nie będę prosić Codeweavers o wsparcie ani zwrot pieniędzy";
+"confirmation" =  "Wpisz 'Nie poproszę Codeweavers o wsparcie ani o zwrot pieniędzy' w polu wejściowym poniżej i naciśnij klawisz Enter";
