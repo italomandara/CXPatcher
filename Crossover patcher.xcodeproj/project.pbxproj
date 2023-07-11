@@ -27,6 +27,12 @@
 		38CB035A2A0ACF7200AE3637 /* RestoreButtonDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CB03592A0ACF7200AE3637 /* RestoreButtonDialog.swift */; };
 		38D7857429EA07F400874A73 /* libMoltenVK.dylib in Resources */ = {isa = PBXBuildFile; fileRef = 38D7857329EA07DC00874A73 /* libMoltenVK.dylib */; };
 		38D93E5829DC4E4F00D4B0D8 /* Disclaimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D93E5729DC4E4F00D4B0D8 /* Disclaimer.swift */; };
+		38F7B2172A5DCF7500CD9511 /* AppSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F7B2162A5DCF7500CD9511 /* AppSelector.swift */; };
+		38F7B2192A5DD19D00CD9511 /* ExternalResourcesSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F7B2182A5DD19D00CD9511 /* ExternalResourcesSelector.swift */; };
+		38F7B21B2A5DD33A00CD9511 /* Logo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F7B21A2A5DD33A00CD9511 /* Logo.swift */; };
+		38F7B21D2A5DD4E100CD9511 /* IntegrateExternalsToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F7B21C2A5DD4E100CD9511 /* IntegrateExternalsToggle.swift */; };
+		38F7B21F2A5DD58600CD9511 /* SkipVersionCheckToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F7B21E2A5DD58600CD9511 /* SkipVersionCheckToggle.swift */; };
+		38F7B2212A5DD60000CD9511 /* RepatchToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F7B2202A5DD60000CD9511 /* RepatchToggle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +61,12 @@
 		38D1F6C42A4CA3E9006C89B6 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		38D7857329EA07DC00874A73 /* libMoltenVK.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libMoltenVK.dylib; path = lib/libMoltenVK.dylib; sourceTree = SOURCE_ROOT; };
 		38D93E5729DC4E4F00D4B0D8 /* Disclaimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disclaimer.swift; sourceTree = "<group>"; };
+		38F7B2162A5DCF7500CD9511 /* AppSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSelector.swift; sourceTree = "<group>"; };
+		38F7B2182A5DD19D00CD9511 /* ExternalResourcesSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalResourcesSelector.swift; sourceTree = "<group>"; };
+		38F7B21A2A5DD33A00CD9511 /* Logo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logo.swift; sourceTree = "<group>"; };
+		38F7B21C2A5DD4E100CD9511 /* IntegrateExternalsToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegrateExternalsToggle.swift; sourceTree = "<group>"; };
+		38F7B21E2A5DD58600CD9511 /* SkipVersionCheckToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkipVersionCheckToggle.swift; sourceTree = "<group>"; };
+		38F7B2202A5DD60000CD9511 /* RepatchToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepatchToggle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -98,8 +110,10 @@
 				382F4C0629DA516C00824358 /* Utils.swift */,
 				38C678A529DB3FE800EB19BE /* Instructions.swift */,
 				38D93E5729DC4E4F00D4B0D8 /* Disclaimer.swift */,
-				38CB03592A0ACF7200AE3637 /* RestoreButtonDialog.swift */,
-				38998DF92A3BAD6400F1963A /* ExternalResButton.swift */,
+				38F7B2242A5DD73700CD9511 /* Buttons */,
+				38F7B2232A5DD72500CD9511 /* Selectors */,
+				38F7B21A2A5DD33A00CD9511 /* Logo.swift */,
+				38F7B2222A5DD70F00CD9511 /* Toggles */,
 			);
 			path = "Crossover patcher";
 			sourceTree = "<group>";
@@ -135,6 +149,34 @@
 				3869AF7529E1FE510049427E /* x86_64-unix */,
 			);
 			path = lib;
+			sourceTree = "<group>";
+		};
+		38F7B2222A5DD70F00CD9511 /* Toggles */ = {
+			isa = PBXGroup;
+			children = (
+				38F7B21C2A5DD4E100CD9511 /* IntegrateExternalsToggle.swift */,
+				38F7B2202A5DD60000CD9511 /* RepatchToggle.swift */,
+				38F7B21E2A5DD58600CD9511 /* SkipVersionCheckToggle.swift */,
+			);
+			path = Toggles;
+			sourceTree = "<group>";
+		};
+		38F7B2232A5DD72500CD9511 /* Selectors */ = {
+			isa = PBXGroup;
+			children = (
+				38F7B2162A5DCF7500CD9511 /* AppSelector.swift */,
+				38F7B2182A5DD19D00CD9511 /* ExternalResourcesSelector.swift */,
+			);
+			path = Selectors;
+			sourceTree = "<group>";
+		};
+		38F7B2242A5DD73700CD9511 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				38CB03592A0ACF7200AE3637 /* RestoreButtonDialog.swift */,
+				38998DF92A3BAD6400F1963A /* ExternalResButton.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,14 +281,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38F7B21F2A5DD58600CD9511 /* SkipVersionCheckToggle.swift in Sources */,
+				38F7B2212A5DD60000CD9511 /* RepatchToggle.swift in Sources */,
 				38ACB39729D773CA00A450A0 /* ContentView.swift in Sources */,
 				38ACB39529D773CA00A450A0 /* Crossover_patcherApp.swift in Sources */,
 				38D93E5829DC4E4F00D4B0D8 /* Disclaimer.swift in Sources */,
 				38998DFA2A3BAD6400F1963A /* ExternalResButton.swift in Sources */,
+				38F7B21D2A5DD4E100CD9511 /* IntegrateExternalsToggle.swift in Sources */,
+				38F7B21B2A5DD33A00CD9511 /* Logo.swift in Sources */,
 				382F4C0729DA516C00824358 /* Utils.swift in Sources */,
 				38CB035A2A0ACF7200AE3637 /* RestoreButtonDialog.swift in Sources */,
+				38F7B2172A5DCF7500CD9511 /* AppSelector.swift in Sources */,
 				389D6BCF2A47599900A4C8EB /* Config.swift in Sources */,
 				38C678A629DB3FE800EB19BE /* Instructions.swift in Sources */,
+				38F7B2192A5DD19D00CD9511 /* ExternalResourcesSelector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
