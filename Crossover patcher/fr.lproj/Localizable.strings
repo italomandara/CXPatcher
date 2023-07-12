@@ -1,0 +1,44 @@
+"AgreeAndProceedButtonText" = "Accepter et continuer";
+"AllowRepatchUpgradeToggle" = "Autoriser le repatch / la mise à niveau";
+"Credits" = "Crédits :";
+"CreditsLinks" = "[@gcenx](https://github.com/Gcenx)
+[@nastys](https://github.com/nastys)";
+"CreditsText" = "Un grand merci aux développeurs derrière les correctifs DXVK et MoltenVK pour leur précieuse aide et la fourniture des binaires.";
+"CrossOverDownloadURL" = "https://codeweavers.com/account/downloads";
+"CrossOverDownloadURLText" = "Page de téléchargements de CodeWeavers";
+"CrossOverPatcher" = "Patch CrossOver";
+"CWForums" = "Forums de CodeWeavers";
+"CWForumsURL" = "https://www.codeweavers.com/support/forums/general/?t=27;msg=257865";
+"CWWebsite" = "CodeWeavers ne prend pas en charge les applications CrossOver modifiées ou patchées, voir";
+"CXPatcherName" = "Patch CrossOver";
+"DisclaimerPleaseNoteLabelText" = "Veuillez noter :";
+"DisclaimerText" = "Il s'agit d'un programme de patch non officiel pour CrossOver, et CodeWeavers n'est en aucun cas impliqué dans son développement. Bien qu'il ait été testé, ce logiciel peut rendre votre installation de CrossOver inutilisable ou instable. UTILISEZ À VOS PROPRES RISQUES. L'utilisation de ce patch annulera également tout support officiel de la part de CodeWeavers.
+
+Si vous rencontrez des problèmes après avoir appliqué le patch, vous pouvez télécharger une nouvelle copie de CrossOver depuis le site web de CodeWeavers.";
+"ExternalResourcesButtonText" = "Localiser le lecteur GPTK";
+"ExternalResourcesLabel" = "Installer le framework externe";
+"ExternalResourcesLocateText" = "Localisez le lecteur GPTK à l'aide du bouton ci-dessous :";
+"ExternalResourcesPathLabelText" = "Chemin du lecteur de ressources externe :";
+"ExternalResourcesToggle" = "Intégrer D3DMetal (GPTK)";
+"ForcePatch" = "Forcer le patch";
+"InstructionsAskWhatDo" = "Que fait ce programme ?";
+"InstructionsButtonText" = "Instructions";
+"InstructionsFunctionDescription" = "Ce patch modifie votre installation de CrossOver pour utiliser des versions mises à jour et optimisées de DXVK et MoltenVK, ce qui améliorera parfois la compatibilité ou les performances pour certains jeux.";
+"InstructionsText" = "Assurez-vous d'avoir une version non modifiée de CrossOver téléchargée depuis votre page de compte CodeWeavers. Assurez-vous que CrossOver est enregistré et exécuté au moins une fois, pour vous assurer que la dernière version de DXVK est activée correctement. Vous devrez peut-être activer et désactiver DXVK dans CrossOver. Si, pour une raison quelconque, votre installation de CrossOver devient inutilisable, vous pouvez la télécharger à nouveau depuis le site web de CodeWeavers ; ce patch ne fera aucune modification permanente à vos conteneurs CrossOver.";
+"PatchStatusAlreadyPatched" = "Cette application CrossOver.app a déjà été patchée !";
+"PatchStatusError" = "Impossible de patcher CrossOver.app. Veuillez vérifier que vous tentez de patcher la version de sortie de CrossOver.app à partir du site web de CodeWeavers.";
+"PatchStatusReady" = "Déposez votre CrossOver.app ici\nou cliquez pour la sélectionner dans Finder";
+"PatchStatusSuccess" = "CrossOver.app a été correctement patchée";
+"RestoreButtonLabel" = "Restaurer";
+"RestoreConfirm" = "Bien !";
+"RestoreFailure" = "Soit cette CrossOver.app n'est pas patchée, soit elle a été patchée avec une version incompatible de CrossOver Patcher.";
+"RestoreStatusLabel" = "Restauration de CrossOver.app";
+"RestoreSuccess" = "CrossOver.app a été restaurée avec succès.";
+"GcenxURL" = "https://github.com/Gcenx";
+"nastysURL" = "https://github.com/nastys";
+"MediaFoundation" = "Pour que les bibliothèques Media Foundation fonctionnent, vous devrez installer GStreamer SI VOUS NE L'AVEZ PAS ENCORE FAIT (installation requise pour tous les utilisateurs)";
+"DownloadGStreamer" = "Télécharger GStreamer";
+"GStreamerInstalled" = "GStreamer est déjà installé";
+"waitFor" = "En attente de votre lecture de la clause de non-responsabilité et de votre confirmation";
+"confirmationValue" = "Je ne demanderai pas de support ou de remboursement à Codeweavers";
+"confirmation" = "Veuillez taper 'Je ne demanderai pas de support ou de remboursement à Codeweavers' dans le champ de saisie ci-dessous";

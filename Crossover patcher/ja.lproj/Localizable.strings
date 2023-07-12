@@ -1,0 +1,44 @@
+"AgreeAndProceedButtonText" = "同意して進む";
+"AllowRepatchUpgradeToggle" = "リパッチ/アップグレードを許可する";
+"Credits" = "クレジット：";
+"CreditsLinks" = "[@gcenx](https://github.com/Gcenx)
+[@nastys](https://github.com/nastys)";
+"CreditsText" = "DXVKとMoltenVKのパッチを開発してくれた開発者に感謝の意を表します。彼らの素晴らしい助けとバイナリの提供に感謝します。";
+"CrossOverDownloadURL" = "https://codeweavers.com/account/downloads";
+"CrossOverDownloadURLText" = "CodeWeaversダウンロードページ";
+"CrossOverPatcher" = "CrossOverパッチャー";
+"CWForums" = "CodeWeaversフォーラム";
+"CWForumsURL" = "https://www.codeweavers.com/support/forums/general/?t=27;msg=257865";
+"CWWebsite" = "CodeWeaversはパッチされたまたは変更されたCrossoverアプリをサポートしていません。以下を参照してください";
+"CXPatcherName" = "CrossOverパッチャー";
+"DisclaimerPleaseNoteLabelText" = "ご注意ください：";
+"DisclaimerText" = "これはCrossOverの非公式のパッチプログラムであり、CodeWeaversはその開発に一切関与していません。テストされていますが、このソフトウェアはCrossOverのインストールを使用不能または不安定にする可能性があります。自己責任で使用してください。このパッチャーの使用により、CodeWeaversの公式サポートは無効になります。
+
+インストールがパッチされた後に問題が発生した場合は、CodeWeaversのウェブサイトから新しいCrossOverのコピーをダウンロードできます。";
+"ExternalResourcesButtonText" = "GPTKドライブの場所を特定する";
+"ExternalResourcesLabel" = "外部フレームワークをインストール";
+"ExternalResourcesLocateText" = "以下のボタンを使用してGPTKドライブを特定してください：";
+"ExternalResourcesPathLabelText" = "外部リソースドライブのパス：";
+"ExternalResourcesToggle" = "D3DMetal（GPTK）を統合する";
+"ForcePatch" = "パッチを強制する";
+"InstructionsAskWhatDo" = "このプログラムは何をするのですか？";
+"InstructionsButtonText" = "手順";
+"InstructionsFunctionDescription" = "このパッチャーは、CrossOverのインストールを更新および調整されたバージョンのDXVKとMoltenVKを使用するように変更します。これにより、一部のゲームの互換性やパフォーマンスが向上する場合があります。";
+"InstructionsText" = "CodeWeaversアカウントページからダウンロードした未変更のリリース版CrossOverを使用してください。最新のDXVKが正しくアクティブ化されるように、CrossOverを登録して少なくとも1回実行してください。CrossOver内でDXVKをオンとオフに切り替える必要があるかもしれません。何らかの理由でCrossOverのインストールが使用不能になった場合は、CodeWeaversのウェブサイトから再度ダウンロードすることができます。このパッチャーはCrossOverのボトルに永続的な変更を加えません。";
+"PatchStatusAlreadyPatched" = "このCrossOver.appはすでにパッチが適用されています！";
+"PatchStatusError" = "CrossOver.appのパッチを適用できませんでした。CodeWeaversのウェブサイトからリリースバージョンのCrossOver.appをパッチしようとしていることを確認してください。";
+"PatchStatusReady" = "CrossOver.appをここにドロップする\nまたはFinderで選択するためにクリックしてください";
+"PatchStatusSuccess" = "CrossOver.appは正常にパッチが適用されました";
+"RestoreButtonLabel" = "元に戻す";
+"RestoreConfirm" = "完了！";
+"RestoreFailure" = "このCrossOver.appは未パッチであるか、CrossOver Patcherの互換性のないバージョンでパッチが適用されています。";
+"RestoreStatusLabel" = "CrossOver.appの復元";
+"RestoreSuccess" = "CrossOver.appは正常に復元されました。";
+"GcenxURL" = "https://github.com/Gcenx";
+"nastysURL" = "https://github.com/nastys";
+"MediaFoundation" = "Media Foundationのライブラリを動作させるためには、すでにインストールされていない場合にはGStreamerをインストールする必要があります（すべてのユーザーに対してのインストールが必要です）";
+"DownloadGStreamer" = "GStreamerをダウンロード";
+"GStreamerInstalled" = "GStreamerはすでにインストールされています";
+"waitFor" = "免責事項を読んで確認するのを待っています";
+"confirmationValue" = "Codeweaversにサポートや返金を要求しないでください";
+"confirmation" = "以下の入力欄に「Codeweaversにサポートや返金を要求しないでください」と入力してください";

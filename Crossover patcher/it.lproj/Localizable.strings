@@ -1,0 +1,44 @@
+"AgreeAndProceedButtonText" = "Accetta e Procedi";
+"AllowRepatchUpgradeToggle" = "Consenti ripatch / aggiornamento";
+"Credits" = "Crediti:";
+"CreditsLinks" = "[@gcenx](https://github.com/Gcenx)
+[@nastys](https://github.com/nastys)";
+"CreditsText" = "Un grande ringraziamento agli sviluppatori dietro le patch DXVK e MoltenVK per il loro grande aiuto e per la fornitura delle librerie.";
+"CrossOverDownloadURL" = "https://codeweavers.com/account/downloads";
+"CrossOverDownloadURLText" = "Pagina dei download di CodeWeavers";
+"CrossOverPatcher" = "CrossOver Patcher";
+"CWForums" = "Forum di CodeWeavers";
+"CWForumsURL" = "https://www.codeweavers.com/support/forums/general/?t=27;msg=257865";
+"CWWebsite" = "CodeWeavers non supporta applicazioni CrossOver patchate o modificate, consulta il link:";
+"CXPatcherName" = "CrossOver Patcher";
+"DisclaimerPleaseNoteLabelText" = "Nota bene:";
+"DisclaimerText" = "Questo è un programma di patching non ufficiale per CrossOver, e CodeWeavers non è in alcun modo coinvolto nel suo sviluppo. Sebbene sia stato testato, questo software potrebbe rendere la tua installazione di CrossOver inutilizzabile o instabile. USALO A TUO RISCHIO. L'utilizzo di questo patcher annullerà anche qualsiasi supporto ufficiale da parte di CodeWeavers.
+
+Se incontri problemi dopo aver patchato la tua installazione, puoi scaricare una nuova copia di CrossOver dal sito web di CodeWeavers.";
+"ExternalResourcesButtonText" = "Imposta drive GPTK";
+"ExternalResourcesLabel" = "Installa framework esterno";
+"ExternalResourcesLocateText" = "Cerca il drive GPTK utilizzando il pulsante sottostante:";
+"ExternalResourcesPathLabelText" = "Percorso dell'unità di risorse esterne:";
+"ExternalResourcesToggle" = "Integra D3DMetal (GPTK)";
+"ForcePatch" = "Forza Patch";
+"InstructionsAskWhatDo" = "Cosa fa questo programma?";
+"InstructionsButtonText" = "Istruzioni";
+"InstructionsFunctionDescription" = "Questo patcher modifica la tua installazione di CrossOver utilizzando versioni aggiornate e ottimizzate di DXVK e MoltenVK, che in alcuni casi miglioreranno la compatibilità o le prestazioni per alcuni giochi.";
+"InstructionsText" = "Assicurati di avere una versione non modificata di CrossOver, scaricata dalla pagina del tuo account CodeWeavers. Assicurati che CrossOver sia stato registrato ed eseguito almeno una volta, per assicurarti che l'ultima versione di DXVK sia attivata correttamente. Potrebbe essere necessario attivare e disattivare DXVK all'interno di CrossOver. Se per qualsiasi motivo la tua installazione di CrossOver diventa inutilizzabile, puoi scaricarla nuovamente dal sito web di CodeWeavers; questo patcher non apporterà modifiche permanenti alle tue bottiglie di CrossOver.";
+"PatchStatusAlreadyPatched" = "Questa applicazione CrossOver.app è già stata patchata!";
+"PatchStatusError" = "Impossibile applicare la patch a CrossOver.app. Verifica di stai cercando di applicare la patch alla versione ufficiale di CrossOver.app dal sito web di CodeWeavers.";
+"PatchStatusReady" = "Trascina qui la tua applicazione CrossOver.app \no fai clic per selezionarla in Finder";
+"PatchStatusSuccess" = "CrossOver.app è stata patchata con successo";
+"RestoreButtonLabel" = "Ripristina";
+"RestoreConfirm" = "Fatto!";
+"RestoreFailure" = "Questa applicazione CrossOver.app non è stata patchata o è stata patchata con una versione incompatibile di CrossOver Patcher.";
+"RestoreStatusLabel" = "Ripristino di CrossOver.app";
+"RestoreSuccess" = "CrossOver.app è stata ripristinata con successo.";
+"GcenxURL" = "https://github.com/Gcenx";
+"nastysURL" = "https://github.com/nastys";
+"MediaFoundation" = "Per far funzionare le librerie di Media Foundation, dovrai installare GStreamer SE NON LO HAI ANCORA FATTO (l'installazione per tutti gli utenti è richiesta)";
+"DownloadGStreamer" = "Scarica GStreamer";
+"GStreamerInstalled" = "GStreamer è già installato";
+"waitFor" = "In attesa che tu legga il disclaimer e confermi";
+"confirmationValue" = "Non chiederò supporto o rimborso a Codeweavers";
+"confirmation" = "Per favore, digita 'Non chiederò supporto o rimborso a Codeweavers' nel campo di input sottostante";

@@ -1,0 +1,44 @@
+"AgreeAndProceedButtonText" = "同意并继续";
+"AllowRepatchUpgradeToggle" = "允许重新打补丁/升级";
+"Credits" = "鸣谢：";
+"CreditsLinks" = "[@gcenx](https://github.com/Gcenx)
+[@nastys](https://github.com/nastys)";
+"CreditsText" = "非常感谢DXVK和MoltenVK补丁背后的开发者，他们提供了巨大的帮助和二进制文件。";
+"CrossOverDownloadURL" = "https://codeweavers.com/account/downloads";
+"CrossOverDownloadURLText" = "CodeWeavers 下载页面";
+"CrossOverPatcher" = "CrossOver 补丁程序";
+"CWForums" = "CodeWeavers 论坛";
+"CWForumsURL" = "https://www.codeweavers.com/support/forums/general/?t=27;msg=257865";
+"CWWebsite" = "CodeWeavers 不支持修改或打补丁的 Crossover 应用，请参阅";
+"CXPatcherName" = "CrossOver 补丁程序";
+"DisclaimerPleaseNoteLabelText" = "请注意：";
+"DisclaimerText" = "这是一个非官方的 CrossOver 打补丁程序，CodeWeavers 在其开发中没有任何参与。尽管经过了测试，但此软件可能会导致您的 CrossOver 安装无法使用或不稳定。请自行承担风险。使用此打补丁程序还会使您失去 CodeWeavers 的官方支持。
+
+如果在打补丁后遇到任何问题，您可以从 CodeWeavers 网站下载新的 CrossOver 副本。";
+"ExternalResourcesButtonText" = "定位 GPTK 驱动器";
+"ExternalResourcesLabel" = "安装外部框架";
+"ExternalResourcesLocateText" = "使用下方按钮定位 GPTK 驱动器：";
+"ExternalResourcesPathLabelText" = "外部资源驱动器路径：";
+"ExternalResourcesToggle" = "集成 D3DMetal（GPTK）";
+"ForcePatch" = "强制打补丁";
+"InstructionsAskWhatDo" = "这个程序是做什么的？";
+"InstructionsButtonText" = "说明";
+"InstructionsFunctionDescription" = "此补丁程序修改您的 CrossOver 安装，使用更新和优化版本的 DXVK 和 MoltenVK，有时会提高某些游戏的兼容性或性能。";
+"InstructionsText" = "请确保您从 CodeWeavers 账户页面下载了未经修改的 CrossOver 发布版本。确保 CrossOver 已注册并至少运行一次，以确保最新的 DXVK 已正确激活。您可能需要在 CrossOver 中切换 DXVK 的启用和禁用。如果由于任何原因您的 CrossOver 安装变得无法使用，您可以从 CodeWeavers 网站重新下载它；此补丁程序不会对您的 CrossOver 容器进行任何永久性修改。";
+"PatchStatusAlreadyPatched" = "此 CrossOver.app 已经打过补丁！";
+"PatchStatusError" = "无法对 CrossOver.app 打补丁。请确保您尝试从 CodeWeavers 网站打补丁的是发布版本的 CrossOver.app。";
+"PatchStatusReady" = "将您的 CrossOver.app 拖到此处\n或点击以在 Finder 中选择它";
+"PatchStatusSuccess" = "已成功为 CrossOver.app 打过补丁";
+"RestoreButtonLabel" = "恢复";
+"RestoreConfirm" = "完成！";
+"RestoreFailure" = "此 CrossOver.app 未打过补丁，或者使用不兼容的 CrossOver 补丁程序版本打过补丁。";
+"RestoreStatusLabel" = "恢复 CrossOver.app";
+"RestoreSuccess" = "已成功恢复 CrossOver.app。";
+"GcenxURL" = "https://github.com/Gcenx";
+"nastysURL" = "https://github.com/nastys";
+"MediaFoundation" = "为使媒体基础库正常工作，您需要安装 GStreamer，如果尚未安装（需要为所有用户安装）";
+"DownloadGStreamer" = "下载 GStreamer";
+"GStreamerInstalled" = "GStreamer 已安装";
+"waitFor" = "等待您阅读免责声明并确认";
+"confirmationValue" = "我不会向 Codeweavers 请求支持或退款";
+"confirmation" = "请在下方输入框中输入“我不会向 Codeweavers 请求支持或退款”";

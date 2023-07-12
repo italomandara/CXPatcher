@@ -40,6 +40,12 @@
 		38255F1A2A07E62B005AF0FC /* i386-windows */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "i386-windows"; path = "lib/i386-windows"; sourceTree = SOURCE_ROOT; };
 		38255F1C2A07E633005AF0FC /* x86_64-windows */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "x86_64-windows"; path = "lib/x86_64-windows"; sourceTree = SOURCE_ROOT; };
 		382F4C0629DA516C00824358 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		384E11E42A5E1EF300850EBF /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
+		384E11E52A5E21A300850EBF /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		384E11E62A5E29B100850EBF /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		384E11E72A5E2A2200850EBF /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		384E11E82A5E2A7400850EBF /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		384E11E92A5E2CF200850EBF /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3869AF7429E1FE510049427E /* x86_32on64-unix */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "x86_32on64-unix"; path = "lib/x86_32on64-unix"; sourceTree = SOURCE_ROOT; };
 		3869AF7529E1FE510049427E /* x86_64-unix */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "x86_64-unix"; path = "lib/x86_64-unix"; sourceTree = SOURCE_ROOT; };
 		3880CC7D2A43759C00180A67 /* wine64-preloader */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "wine64-preloader"; path = "lib/wine64-preloader"; sourceTree = SOURCE_ROOT; };
@@ -222,6 +228,12 @@
 				en,
 				Base,
 				pl,
+				it,
+				ja,
+				es,
+				fr,
+				"zh-Hans",
+				uk,
 			);
 			mainGroup = 38ACB38829D773CA00A450A0;
 			productRefGroup = 38ACB39229D773CA00A450A0 /* Products */;
@@ -306,6 +318,12 @@
 			children = (
 				0D9AC2C32A49F96000101F43 /* en */,
 				38D1F6C42A4CA3E9006C89B6 /* pl */,
+				384E11E42A5E1EF300850EBF /* it */,
+				384E11E52A5E21A300850EBF /* ja */,
+				384E11E62A5E29B100850EBF /* es */,
+				384E11E72A5E2A2200850EBF /* fr */,
+				384E11E82A5E2A7400850EBF /* zh-Hans */,
+				384E11E92A5E2CF200850EBF /* uk */,
 			);
 			name = Localizable.strings;
 			path = "Crossover patcher";

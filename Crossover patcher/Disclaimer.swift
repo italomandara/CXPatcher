@@ -29,32 +29,45 @@ struct Disclaimer: View {
         Text("\(localizedCXPatcherString(forKey: "CWWebsite")) [CodeWeavers forums](https://www.codeweavers.com/support/forums/general/?t=27;msg=257865)")
             .multilineTextAlignment(.center)
             .padding(.top, 1.0)
-        Text(localizedCXPatcherString(forKey:"confirmation"))
-            .padding(.vertical, 20)
-            .fontWeight(.bold)
-            .foregroundColor(.red)
-        
-        TextField("",
-            text: $inputText
-        )
-        .onChange(of: inputText) { newValue in
-            valid = validate(input: newValue)
-        }
-        .disableAutocorrection(true)
-        Button() {
-            showDisclaimer = false
-        } label: {
-            Image(systemName: "exclamationmark.triangle.fill")
-            if(valid) {
+        if(SKIP_DISCLAIMER_CHECK) {
+            Button() {
+                showDisclaimer = false
+            } label: {
+                Image(systemName: "exclamationmark.triangle.fill")
                 Text(localizedCXPatcherString(forKey: "AgreeAndProceedButtonText"))
-            } else {
-                Text("\(localizedCXPatcherString(forKey: "waitFor"))")
             }
+            .padding(.vertical, 20.0)
+            .buttonStyle(.borderedProminent)
+            .tint(.red)
+            .controlSize(.large)
+        } else {
+            Text(localizedCXPatcherString(forKey:"confirmation"))
+                .padding(.vertical, 20)
+                .fontWeight(.bold)
+                .foregroundColor(.red)
+            
+            TextField("",
+                      text: $inputText
+            )
+            .onChange(of: inputText) { newValue in
+                valid = validate(input: newValue)
+            }
+            .disableAutocorrection(true)
+            Button() {
+                showDisclaimer = false
+            } label: {
+                Image(systemName: "exclamationmark.triangle.fill")
+                if(valid) {
+                    Text(localizedCXPatcherString(forKey: "AgreeAndProceedButtonText"))
+                } else {
+                    Text("\(localizedCXPatcherString(forKey: "waitFor"))")
+                }
+            }
+            .padding(.vertical, 20.0)
+            .buttonStyle(.borderedProminent)
+            .tint(.red)
+            .controlSize(.large)
+            .disabled(!valid)
         }
-        .padding(.vertical, 20.0)
-        .buttonStyle(.borderedProminent)
-        .tint(.red)
-        .controlSize(.large)
-        .disabled(!valid)
     }
 }

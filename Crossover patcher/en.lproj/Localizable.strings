@@ -41,4 +41,4 @@ If you face any issues after your installation has been patched, you may downloa
 "GStreamerInstalled" = "GStreamer is already Installed";
 "waitFor" = "Waiting for you to read the disclaimer and confirm";
 "confirmationValue" = "I will not ask Codeweavers for support or refund";
-"confirmation" =  "Please type 'I will not ask Codeweavers for support or refund' in the input field below end press the enter key";
+"confirmation" =  "Please type 'I will not ask Codeweavers for support or refund' in the input field below";

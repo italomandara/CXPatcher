@@ -1,0 +1,44 @@
+"AgreeAndProceedButtonText" = "Aceptar y continuar";
+"AllowRepatchUpgradeToggle" = "Permitir reparche / actualización";
+"Credits" = "Créditos:";
+"CreditsLinks" = "[@gcenx](https://github.com/Gcenx)
+[@nastys](https://github.com/nastys)";
+"CreditsText" = "Muchas gracias a los desarrolladores detrás de las parches DXVK y MoltenVK por su gran ayuda y por proporcionar los binarios.";
+"CrossOverDownloadURL" = "https://codeweavers.com/account/downloads";
+"CrossOverDownloadURLText" = "Página de descargas de CodeWeavers";
+"CrossOverPatcher" = "CrossOver Patcher";
+"CWForums" = "Foros de CodeWeavers";
+"CWForumsURL" = "https://www.codeweavers.com/support/forums/general/?t=27;msg=257865";
+"CWWebsite" = "CodeWeavers no ofrece soporte para aplicaciones de Crossover parcheadas o modificadas. Ver";
+"CXPatcherName" = "CrossOver Patcher";
+"DisclaimerPleaseNoteLabelText" = "Ten en cuenta:";
+"DisclaimerText" = "Este es un programa de parcheo no oficial para CrossOver, y CodeWeavers no está involucrado de ninguna manera en su desarrollo. Aunque ha sido probado, este software puede hacer que tu instalación de CrossOver no sea utilizable o inestable. ÚSALO BAJO TU PROPIO RIESGO. El uso de este parcheador también anulará cualquier soporte oficial de CodeWeavers.
+
+Si encuentras algún problema después de parchear tu instalación, puedes descargar una nueva copia de CrossOver desde el sitio web de CodeWeavers.";
+"ExternalResourcesButtonText" = "Localizar unidad GPTK";
+"ExternalResourcesLabel" = "Instalar framework externo";
+"ExternalResourcesLocateText" = "Localiza la unidad GPTK utilizando el botón siguiente:";
+"ExternalResourcesPathLabelText" = "Ruta de la unidad de recursos externos:";
+"ExternalResourcesToggle" = "Integrar D3DMetal (GPTK)";
+"ForcePatch" = "Forzar parche";
+"InstructionsAskWhatDo" = "¿Qué hace este programa?";
+"InstructionsButtonText" = "Instrucciones";
+"InstructionsFunctionDescription" = "Este parcheador modifica tu instalación de CrossOver para usar versiones actualizadas y ajustadas de DXVK y MoltenVK, lo que en algunos casos mejorará la compatibilidad o el rendimiento para algunos juegos.";
+"InstructionsText" = "Asegúrate de tener una versión sin modificar de CrossOver descargada de tu página de cuenta de CodeWeavers. Asegúrate de que CrossOver esté registrado y se haya ejecutado al menos una vez, para asegurarte de que la última versión de DXVK esté activada correctamente. Es posible que debas desactivar y volver a activar DXVK dentro de CrossOver. Si por alguna razón tu instalación de CrossOver se vuelve no utilizable, puedes descargarla nuevamente desde el sitio web de CodeWeavers; este parcheador no realizará modificaciones permanentes en tus botellas de CrossOver.";
+"PatchStatusAlreadyPatched" = "¡Esta aplicación CrossOver.app ya ha sido parcheada!";
+"PatchStatusError" = "No se pudo parchear CrossOver.app. Por favor, verifica que estás intentando parchear la versión de lanzamiento de CrossOver.app desde el sitio web de CodeWeavers.";
+"PatchStatusReady" = "Suelta tu CrossOver.app aquí \no haz clic para seleccionarlo en Finder";
+"PatchStatusSuccess" = "CrossOver.app ha sido parcheada correctamente";
+"RestoreButtonLabel" = "Restaurar";
+"RestoreConfirm" = "¡Listo!";
+"RestoreFailure" = "Esta CrossOver.app no está parcheada o fue parcheada con una versión incompatible de CrossOver Patcher.";
+"RestoreStatusLabel" = "Restaurar CrossOver.app";
+"RestoreSuccess" = "CrossOver.app ha sido restaurada correctamente.";
+"GcenxURL" = "https://github.com/Gcenx";
+"nastysURL" = "https://github.com/nastys";
+"MediaFoundation" = "Para que las bibliotecas de Media Foundation funcionen, debes instalar GStreamer SI AÚN NO LO HAS HECHO (se requiere instalación para todos los usuarios)";
+"DownloadGStreamer" = "Descargar GStreamer";
+"GStreamerInstalled" = "GStreamer ya está instalado";
+"waitFor" = "Esperando a que leas el descargo de responsabilidad y confirmes";
+"confirmationValue" = "No solicitaré soporte ni reembolso a Codeweavers";
+"confirmation" = "Por favor, escribe 'No solicitaré soporte ni reembolso a Codeweavers' en el campo de entrada a continuación";
