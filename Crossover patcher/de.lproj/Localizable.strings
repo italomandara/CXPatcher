@@ -1,0 +1,44 @@
+"AgreeAndProceedButtonText" = "Zustimmen und Fortfahren";
+"AllowRepatchUpgradeToggle" = "Repatch/Upgrade erlauben";
+"Credits" = "Danksagungen:";
+"CreditsLinks" = "[@gcenx](https://github.com/Gcenx)
+[@nastys](https://github.com/nastys)";
+"CreditsText" = "Vielen Dank an die Entwickler hinter den DXVK- und MoltenVK-Patches für ihre großartige Hilfe und die Bereitstellung der Binärdateien.";
+"CrossOverDownloadURL" = "https://codeweavers.com/account/downloads";
+"CrossOverDownloadURLText" = "CodeWeavers-Downloadseite";
+"CrossOverPatcher" = "CrossOver Patcher";
+"CWForums" = "CodeWeavers-Foren";
+"CWForumsURL" = "https://www.codeweavers.com/support/forums/general/?t=27;msg=257865";
+"CWWebsite" = "CodeWeavers unterstützt keine modifizierten oder gepatchten CrossOver-Apps, siehe";
+"CXPatcherName" = "CrossOver Patcher";
+"DisclaimerPleaseNoteLabelText" = "Bitte beachten Sie:";
+"DisclaimerText" = "Dies ist ein inoffizielles Patchprogramm für CrossOver, und CodeWeavers ist in keiner Weise in dessen Entwicklung involviert. Obwohl es getestet wurde, kann diese Software Ihre CrossOver-Installation unbrauchbar oder instabil machen. VERWENDUNG AUF EIGENE GEFAHR. Die Verwendung dieses Patcher führt auch zum Verlust jeglicher offizieller Unterstützung seitens CodeWeavers.
+
+Falls nach der Patch-Installation Probleme auftreten, können Sie eine neue Kopie von CrossOver von der CodeWeavers-Website herunterladen.";
+"ExternalResourcesButtonText" = "GPTK-Laufwerk finden";
+"ExternalResourcesLabel" = "Externes Framework installieren";
+"ExternalResourcesLocateText" = "Das GPTK-Laufwerk über die untenstehende Schaltfläche finden:";
+"ExternalResourcesPathLabelText" = "Pfad zum externen Ressourcenlaufwerk:";
+"ExternalResourcesToggle" = "D3DMetal integrieren (GPTK)";
+"ForcePatch" = "Patch erzwingen";
+"InstructionsAskWhatDo" = "Was macht dieses Programm?";
+"InstructionsButtonText" = "Anleitung";
+"InstructionsFunctionDescription" = "Dieser Patcher modifiziert Ihre CrossOver-Installation, um aktualisierte und optimierte Versionen von DXVK und MoltenVK zu verwenden, was in einigen Fällen die Kompatibilität oder Leistungsfähigkeit für bestimmte Spiele verbessern kann.";
+"InstructionsText" = "Stellen Sie sicher, dass Sie eine unveränderte Version von CrossOver haben, die von Ihrem CodeWeavers-Konto heruntergeladen wurde. Stellen Sie sicher, dass CrossOver registriert und mindestens einmal ausgeführt wurde, um sicherzustellen, dass die neueste DXVK-Version ordnungsgemäß aktiviert ist. Möglicherweise müssen Sie DXVK in CrossOver ein- und ausschalten. Falls Ihre CrossOver-Installation aus irgendeinem Grund unbrauchbar wird, können Sie sie erneut von der CodeWeavers-Website herunterladen. Dieser Patcher nimmt keine dauerhaften Änderungen an Ihren CrossOver-Containern vor.";
+"PatchStatusAlreadyPatched" = "Diese CrossOver.app wurde bereits gepatcht!";
+"PatchStatusError" = "CrossOver.app konnte nicht gepatcht werden. Bitte stellen Sie sicher, dass Sie die Release-Version von CrossOver.app von der CodeWeavers-Website patchen.";
+"PatchStatusReady" = "Ziehen Sie Ihre CrossOver.app hierhin \noder klicken Sie hier, um sie im Finder auszuwählen";
+"PatchStatusSuccess" = "CrossOver.app wurde erfolgreich gepatcht";
+"RestoreButtonLabel" = "Wiederherstellen";
+"RestoreConfirm" = "Cool!";
+"RestoreFailure" = "Entweder diese CrossOver.app ist nicht gepatcht oder sie wurde mit einer inkompatiblen Version des CrossOver Patchers gepatcht.";
+"RestoreStatusLabel" = "CrossOver.app wiederherstellen";
+"RestoreSuccess" = "CrossOver.app wurde erfolgreich wiederhergestellt.";
+"GcenxURL" = "https://github.com/Gcenx";
+"nastysURL" = "https://github.com/nastys";
+"MediaFoundation" = "Um die Media Foundation-Bibliotheken zum Laufen zu bringen, müssen Sie GStreamer installieren, SOFERN SIE ES NOCH NICHT GETAN HABEN (Installation für alle Benutzer erforderlich)";
+"DownloadGStreamer" = "GStreamer herunterladen";
+"GStreamerInstalled" = "GStreamer ist bereits installiert";
+"waitFor" = "Bitte lesen Sie den Haftungsausschluss und bestätigen Sie";
+"confirmationValue" = "Ich werde CodeWeavers nicht um Unterstützung oder Rückerstattung bitten";
+"confirmation" = "Bitte geben Sie 'Ich werde CodeWeavers nicht um Unterstützung oder Rückerstattung bitten' in das Eingabefeld unten ein";

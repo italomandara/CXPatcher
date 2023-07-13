@@ -1,0 +1,44 @@
+"AgreeAndProceedButtonText" = "Acord și Continuă";
+"AllowRepatchUpgradeToggle" = "Permite repatch / upgrade";
+"Credits" = "Credite:";
+"CreditsLinks" = "[@gcenx](https://github.com/Gcenx)
+[@nastys](https://github.com/nastys)";
+"CreditsText" = "Mulțumiri multe dezvoltatorilor din spatele patch-urilor DXVK și MoltenVK pentru ajutorul lor deosebit și pentru furnizarea binarelor.";
+"CrossOverDownloadURL" = "https://codeweavers.com/account/downloads";
+"CrossOverDownloadURLText" = "Pagina de Descărcări CodeWeavers";
+"CrossOverPatcher" = "CrossOver Patcher";
+"CWForums" = "Forumurile CodeWeavers";
+"CWForumsURL" = "https://www.codeweavers.com/support/forums/general/?t=27;msg=257865";
+"CWWebsite" = "CodeWeavers nu oferă suport pentru aplicații CrossOver modificate sau patch-ate, consultați";
+"CXPatcherName" = "CrossOver Patcher";
+"DisclaimerPleaseNoteLabelText" = "Vă rugăm să rețineți:";
+"DisclaimerText" = "Acesta este un program de patch neoficial pentru CrossOver, iar CodeWeavers nu este în niciun fel implicată în dezvoltarea acestuia. Deși a fost testat, acest software poate face instalarea CrossOver inutilizabilă sau instabilă. FOLOSIȚI PE RISCUL PROPRIU. Utilizarea acestui patcher va anula și orice suport oficial oferit de CodeWeavers.
+
+Dacă întâmpinați probleme după ce instalația a fost patch-uită, puteți descărca o nouă copie a CrossOver de pe site-ul CodeWeavers.";
+"ExternalResourcesButtonText" = "Localizați unitatea GPTK";
+"ExternalResourcesLabel" = "Instalare framework extern";
+"ExternalResourcesLocateText" = "Localizați unitatea GPTK utilizând butonul de mai jos:";
+"ExternalResourcesPathLabelText" = "Calea unității de resurse externe:";
+"ExternalResourcesToggle" = "Integrare D3DMetal (GPTK)";
+"ForcePatch" = "Forțează Patch-ul";
+"InstructionsAskWhatDo" = "Ce face acest program?";
+"InstructionsButtonText" = "Instrucțiuni";
+"InstructionsFunctionDescription" = "Acest patcher modifică instalarea dvs. CrossOver pentru a utiliza versiuni actualizate și ajustate ale DXVK și MoltenVK, ceea ce în unele cazuri va îmbunătăți compatibilitatea sau performanța pentru anumite jocuri.";
+"InstructionsText" = "Asigurați-vă că aveți o versiune neluată în modificare a CrossOver, descărcată de pe pagina contului dvs. CodeWeavers. Asigurați-vă că CrossOver a fost înregistrat și rulat cel puțin o dată, pentru a vă asigura că DXVK-ul cel mai recent este activat corect. S-ar putea să fie necesar să dezactivați și să reactivați DXVK în CrossOver. Dacă, din orice motiv, instalarea CrossOver devine inutilizabilă, o puteți descărca din nou de pe site-ul CodeWeavers; acest patcher nu va face modificări permanente în recipienții CrossOver.";
+"PatchStatusAlreadyPatched" = "Acest CrossOver.app a fost deja patch-uit!";
+"PatchStatusError" = "Nu s-a putut face patch-ul CrossOver.app. Vă rugăm să verificați că încercați să faceți patch la versiunea de lansare a CrossOver.app de pe site-ul CodeWeavers.";
+"PatchStatusReady" = "Trageți CrossOver.app aici \nsau faceți clic pentru a-l selecta în Finder";
+"PatchStatusSuccess" = "CrossOver.app a fost patch-uit cu succes";
+"RestoreButtonLabel" = "Restabilire";
+"RestoreConfirm" = "Foarte bine!";
+"RestoreFailure" = "Fie acest CrossOver.app nu are patch sau a fost patch-uit cu o versiune incompatibilă a CrossOver Patcher.";
+"RestoreStatusLabel" = "Restabilire CrossOver.app";
+"RestoreSuccess" = "CrossOver.app a fost restabilit cu succes.";
+"GcenxURL" = "https://github.com/Gcenx";
+"nastysURL" = "https://github.com/nastys";
+"MediaFoundation" = "Pentru a face bibliotecile Media Foundation să funcționeze, va trebui să instalați GStreamer DACĂ NU AȚI FĂCUT-O DEJA (instalarea pentru toți utilizatorii este necesară)";
+"DownloadGStreamer" = "Descărcați GStreamer";
+"GStreamerInstalled" = "GStreamer este deja instalat";
+"waitFor" = "Așteptăm să citiți avertismentul și să confirmați";
+"confirmationValue" = "Nu voi solicita suport sau rambursare de la Codeweavers";
+"confirmation" = "Vă rugăm să tastați „Nu voi solicita suport sau rambursare de la Codeweavers” în câmpul de introducere de mai jos";

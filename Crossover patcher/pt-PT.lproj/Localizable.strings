@@ -1,0 +1,44 @@
+"AgreeAndProceedButtonText" = "Concordar e Proceder";
+"AllowRepatchUpgradeToggle" = "Permitir repatch / upgrade";
+"Credits" = "Créditos:";
+"CreditsLinks" = "[@gcenx](https://github.com/Gcenx)
+[@nastys](https://github.com/nastys)";
+"CreditsText" = "Muito obrigado aos desenvolvedores por trás dos patches DXVK e MoltenVK por sua grande ajuda e por fornecer os binários.";
+"CrossOverDownloadURL" = "https://codeweavers.com/account/downloads";
+"CrossOverDownloadURLText" = "Página de Downloads do CodeWeavers";
+"CrossOverPatcher" = "Patcher do CrossOver";
+"CWForums" = "Fóruns do CodeWeavers";
+"CWForumsURL" = "https://www.codeweavers.com/support/forums/general/?t=27;msg=257865";
+"CWWebsite" = "A Codeweavers não suporta aplicativos CrossOver modificados ou patcheados, consulte o";
+"CXPatcherName" = "Patcher do CrossOver";
+"DisclaimerPleaseNoteLabelText" = "Por favor, observe:";
+"DisclaimerText" = "Este é um programa de patch não oficial para o CrossOver, e a CodeWeavers não está de forma alguma envolvida em seu desenvolvimento. Embora tenha sido testado, este software pode tornar sua instalação do CrossOver inutilizável ou instável. USE POR SUA CONTA E RISCO. O uso deste patcher também anulará qualquer suporte oficial da CodeWeavers.
+
+Se você enfrentar problemas após a instalação ser patcheada, você pode baixar uma nova cópia do CrossOver no site da CodeWeavers.";
+"ExternalResourcesButtonText" = "Localizar unidade GPTK";
+"ExternalResourcesLabel" = "Instalar framework externo";
+"ExternalResourcesLocateText" = "Localize a unidade GPTK usando o botão abaixo:";
+"ExternalResourcesPathLabelText" = "Caminho da unidade de recursos externos:";
+"ExternalResourcesToggle" = "Integrar D3DMetal (GPTK)";
+"ForcePatch" = "Forçar Patch";
+"InstructionsAskWhatDo" = "O que este programa faz?";
+"InstructionsButtonText" = "Instruções";
+"InstructionsFunctionDescription" = "Este patcher modifica sua instalação do CrossOver para usar versões atualizadas e ajustadas do DXVK e MoltenVK, o que em alguns casos melhorará a compatibilidade ou desempenho para alguns jogos.";
+"InstructionsText" = "Certifique-se de ter uma versão de lançamento não modificada do CrossOver, baixada em sua página de conta da CodeWeavers. Certifique-se de que o CrossOver tenha sido registrado e executado pelo menos uma vez, para garantir que o DXVK mais recente seja ativado corretamente. Talvez seja necessário ativar e desativar o DXVK dentro do CrossOver. Se, por algum motivo, sua instalação do CrossOver ficar inutilizável, você poderá baixá-lo novamente no site da CodeWeavers; este patcher não fará modificações permanentes em seus recipientes do CrossOver.";
+"PatchStatusAlreadyPatched" = "Este CrossOver.app já foi patcheado!";
+"PatchStatusError" = "Não foi possível patchear o CrossOver.app. Verifique se você está tentando patchear a versão de lançamento do CrossOver.app do site da CodeWeavers.";
+"PatchStatusReady" = "Arraste seu CrossOver.app aqui \nou clique para selecioná-lo no Finder";
+"PatchStatusSuccess" = "CrossOver.app foi patcheado com sucesso";
+"RestoreButtonLabel" = "Restaurar";
+"RestoreConfirm" = "Ótimo!";
+"RestoreFailure" = "Este CrossOver.app está sem patch ou foi patcheado com uma versão incompatível do CrossOver Patcher.";
+"RestoreStatusLabel" = "Restaurar CrossOver.app";
+"RestoreSuccess" = "CrossOver.app foi restaurado com sucesso.";
+"GcenxURL" = "https://github.com/Gcenx";
+"nastysURL" = "https://github.com/nastys";
+"MediaFoundation" = "Para fazer as bibliotecas do Media Foundation funcionarem, você precisará instalar o GStreamer SE VOCÊ AINDA NÃO O FEZ (instalação para todos os usuários é necessária)";
+"DownloadGStreamer" = "Baixar GStreamer";
+"GStreamerInstalled" = "GStreamer já está instalado";
+"waitFor" = "Aguardando você ler o aviso legal e confirmar";
+"confirmationValue" = "Eu não solicitarei suporte ou reembolso à Codeweavers";
+"confirmation" = "Digite 'Eu não solicitarei suporte ou reembolso à Codeweavers' no campo de entrada abaixo";
