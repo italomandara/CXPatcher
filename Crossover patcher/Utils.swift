@@ -549,7 +549,7 @@ func applyPatch(url: URL, status: inout Status, externalUrl: URL? = nil, skipVer
         return
     }
     if(!isCrossoverApp(url: url, skipVersionCheck: skipVersionCheck)) {
-        print("it' s not crossover.app")
+        print("it's not crossover.app")
         status = .error
         return
     }
