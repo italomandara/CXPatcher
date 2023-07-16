@@ -36,7 +36,7 @@ If you face any issues after your installation has been patched, you may downloa
 "RestoreSuccess" = "CrossOver.app has been successfully restored.";
 "GcenxURL" = "https://github.com/Gcenx";
 "nastysURL" = "https://github.com/nastys";
-"MediaFoundation" = "In order to make Media foundation libraries work you'll have to install GStreamer IF YOU HAVEN'T DONE IT ALREADY (Install for all users required)";
+"MediaFoundation" = "In order to make Media foundation libraries work you'll have to install GStreamer (Install for all users required)";
 "DownloadGStreamer" = "Download GStreamer";
 "GStreamerInstalled" = "GStreamer is already Installed";
 "waitFor" = "Waiting for you to read the disclaimer and confirm";
