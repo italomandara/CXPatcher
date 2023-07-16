@@ -15,7 +15,6 @@
 		3869AF7729E1FE510049427E /* x86_64-unix in Resources */ = {isa = PBXBuildFile; fileRef = 3869AF7529E1FE510049427E /* x86_64-unix */; };
 		3880CC7E2A43759C00180A67 /* wine64-preloader in Resources */ = {isa = PBXBuildFile; fileRef = 3880CC7D2A43759C00180A67 /* wine64-preloader */; };
 		3884409C2A561FD8001BD895 /* crossover.inf in Resources */ = {isa = PBXBuildFile; fileRef = 3884409B2A561FD8001BD895 /* crossover.inf */; };
-		389374202A54BF84001A5D01 /* wine.inf in Resources */ = {isa = PBXBuildFile; fileRef = 3893741F2A54BF84001A5D01 /* wine.inf */; };
 		38998DFA2A3BAD6400F1963A /* ExternalResButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38998DF92A3BAD6400F1963A /* ExternalResButton.swift */; };
 		389D6BCF2A47599900A4C8EB /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389D6BCE2A47599900A4C8EB /* Config.swift */; };
 		389D6BE42A4766FD00A4C8EB /* 32 in Resources */ = {isa = PBXBuildFile; fileRef = 389D6BE22A4766FD00A4C8EB /* 32 */; };
@@ -263,7 +262,6 @@
 				0D9AC2C22A49F96000101F43 /* Localizable.strings in Resources */,
 				3869AF7629E1FE510049427E /* x86_32on64-unix in Resources */,
 				389D6BE42A4766FD00A4C8EB /* 32 in Resources */,
-				389374202A54BF84001A5D01 /* wine.inf in Resources */,
 				38C678A229DAEF8500EB19BE /* Assets.xcassets in Resources */,
 				38255F1B2A07E62B005AF0FC /* i386-windows in Resources */,
 				389D6BE52A4766FD00A4C8EB /* 64 in Resources */,
