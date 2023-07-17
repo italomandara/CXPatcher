@@ -40,5 +40,10 @@ Jeśli napotkasz jakiekolwiek problemy z instalacją CrossOver, możesz pobrać 
 "DownloadGStreamer" = "Pobieranie Gstreamer";
 "GStreamerInstalled" = "GStreamer jest już zainstalowany";
 "waitFor" = "Czekam na przeczytanie zastrzeżenia i potwierdzenie";
+<<<<<<< Updated upstream
 "confirmationValue" = "Nie będę prosić Codeweavers o pomoc techniczną ani zwrot pieniędzy";
 "confirmation" =  "Wpisz 'Nie będę prosić Codeweavers o pomoc techniczną ani zwrot pieniędzy' w polu wejściowym poniżej";
+=======
+"confirmationValue" = "Nie będę prosić Codeweavers o wsparcie ani zwrot pieniędzy";
+"confirmation" =  "Wpisz 'Nie będę prosić Codeweavers o wsparcie ani zwrot pieniędzy' w polu wejściowym poniżej";
+>>>>>>> Stashed changes
