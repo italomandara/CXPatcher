@@ -9,6 +9,9 @@ if you have any issues after your app has been patched you can download a new co
 
 for more info: https://www.codeweavers.com/support/forums/general/?t=27;msg=257865
 
+# What version of crossover does it support?
+Currently only 22.x.x
+
 # What does it do?
 This patcher will upgrade your crossover app with the latest dxvk and moltenvk patched for improved compatibility, and dramatically extends compatibility with Unreal engine 4 games.
 
