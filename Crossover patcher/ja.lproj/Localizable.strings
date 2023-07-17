@@ -36,7 +36,7 @@
 "RestoreSuccess" = "CrossOver.appは正常に復元されました。";
 "GcenxURL" = "https://github.com/Gcenx";
 "nastysURL" = "https://github.com/nastys";
-"MediaFoundation" = "Media Foundationのライブラリを動作させるためには、すでにインストールされていない場合にはGStreamerをインストールする必要があります（すべてのユーザーに対してのインストールが必要です）";
+"MediaFoundation" = "Media Foundation ライブラリを動作させるためには、GStreamer をインストールする必要があります（すべてのユーザーに対してインストールが必要です）";
 "DownloadGStreamer" = "GStreamerをダウンロード";
 "GStreamerInstalled" = "GStreamerはすでにインストールされています";
 "waitFor" = "免責事項を読んで確認するのを待っています";

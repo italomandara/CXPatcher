@@ -36,7 +36,7 @@ Om du stöter på problem efter att din installation har blivit patchad kan du l
 "RestoreSuccess" = "CrossOver.app har återställts framgångsrikt.";
 "GcenxURL" = "https://github.com/Gcenx";
 "nastysURL" = "https://github.com/nastys";
-"MediaFoundation" = "För att få Media Foundation-biblioteken att fungera måste du installera GStreamer OM DU INTE REDAN HAR GJORT DET (installering för alla användare krävs)";
+"MediaFoundation" = "För att få Media Foundation-biblioteken att fungera måste du installera GStreamer (Installation krävs för alla användare)";
 "DownloadGStreamer" = "Ladda ner GStreamer";
 "GStreamerInstalled" = "GStreamer är redan installerat";
 "waitFor" = "Väntar på att du läser igenom friskrivningsklausulen och bekräftar";

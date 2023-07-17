@@ -36,7 +36,7 @@ Si encuentras algún problema después de parchear tu instalación, puedes desca
 "RestoreSuccess" = "CrossOver.app ha sido restaurada correctamente.";
 "GcenxURL" = "https://github.com/Gcenx";
 "nastysURL" = "https://github.com/nastys";
-"MediaFoundation" = "Para que las bibliotecas de Media Foundation funcionen, debes instalar GStreamer SI AÚN NO LO HAS HECHO (se requiere instalación para todos los usuarios)";
+"MediaFoundation" = "Para hacer que las bibliotecas de Media Foundation funcionen, debes instalar GStreamer (Instalación requerida para todos los usuarios)";
 "DownloadGStreamer" = "Descargar GStreamer";
 "GStreamerInstalled" = "GStreamer ya está instalado";
 "waitFor" = "Esperando a que leas el descargo de responsabilidad y confirmes";
