@@ -47,19 +47,20 @@ struct AppSelector: View {
             }
             .padding(.top, 5.0)
         }
-        Text(localizedCXPatcherString(forKey: "MediaFoundation"))
-            .padding(.top, 6.0)
-            .frame(alignment: .center)
-        Link(localizedCXPatcherString(forKey: "DownloadGStreamer"), destination: URL(string: "https://gstreamer.freedesktop.org/data/pkg/osx/1.22.4/gstreamer-1.0-1.22.4-universal.pkg")!)
-            .padding(.top, 6.0)
-            .buttonStyle(.borderedProminent)
         
         if(isGStreamerInstalled()) {
             HStack(alignment: .center) {
                 Image(systemName: "checkmark.seal.fill").foregroundColor(.green)
                 Text(localizedCXPatcherString(forKey: "GStreamerInstalled"))
             }
-            .padding(.top, 6.0)
+            .padding(.top, 16.0)
+        } else {
+            Text(localizedCXPatcherString(forKey: "MediaFoundation"))
+                .padding(.top, 6.0)
+                .frame(alignment: .center)
+            Link(localizedCXPatcherString(forKey: "DownloadGStreamer"), destination: URL(string: "https://gstreamer.freedesktop.org/data/pkg/osx/1.22.4/gstreamer-1.0-1.22.4-universal.pkg")!)
+                .padding(.top, 6.0)
+                .buttonStyle(.borderedProminent)
         }
     }
 }

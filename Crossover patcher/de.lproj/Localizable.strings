@@ -36,7 +36,7 @@ Falls nach der Patch-Installation Probleme auftreten, können Sie eine neue Kopi
 "RestoreSuccess" = "CrossOver.app wurde erfolgreich wiederhergestellt.";
 "GcenxURL" = "https://github.com/Gcenx";
 "nastysURL" = "https://github.com/nastys";
-"MediaFoundation" = "Um die Media Foundation-Bibliotheken zum Laufen zu bringen, müssen Sie GStreamer installieren, SOFERN SIE ES NOCH NICHT GETAN HABEN (Installation für alle Benutzer erforderlich)";
+"MediaFoundation" = "Um die Media Foundation-Bibliotheken zum Laufen zu bringen, müssen Sie GStreamer installieren (Installation für alle Benutzer erforderlich)";
 "DownloadGStreamer" = "GStreamer herunterladen";
 "GStreamerInstalled" = "GStreamer ist bereits installiert";
 "waitFor" = "Bitte lesen Sie den Haftungsausschluss und bestätigen Sie";
