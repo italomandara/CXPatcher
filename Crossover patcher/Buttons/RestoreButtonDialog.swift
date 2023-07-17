@@ -12,7 +12,7 @@ struct RestoreButtonDialog: View {
     @State private var message = ""
     
     var body: some View {
-        Button("Restore") {
+        Button {
             if let url = openAppSelectorPanel() {
                 let restoreResult = restoreApp(url: url)
                 if restoreResult {
@@ -23,6 +23,9 @@ struct RestoreButtonDialog: View {
                     showingAlert = true
                 }
             }
+        } label: {
+            Image(systemName: "arrow.uturn.backward")
+            Text(localizedCXPatcherString(forKey: "RestoreButtonLabel"))
         }
         .alert(isPresented: $showingAlert) {
             Alert(title: Text(localizedCXPatcherString(forKey: "RestoreStatusLabel")), message: Text(message), dismissButton: .default(Text(localizedCXPatcherString(forKey: "RestoreConfirm"))))
