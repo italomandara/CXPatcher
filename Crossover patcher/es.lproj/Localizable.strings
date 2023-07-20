@@ -42,3 +42,4 @@ Si encuentras algún problema después de parchear CrossOver, puedes descargar u
 "waitFor" = "Esperando lectura y confirmación de descargo de responsabilidad";
 "confirmationValue" = "No demandaré ayuda a CodeWeavers por soporte o reembolso";
 "confirmation" = "Por favor, escribe en el campo inferior 'No demandaré ayuda a CodeWeavers por soporte o reembolso'.";
+"unsupported" = "sin apoyo";
