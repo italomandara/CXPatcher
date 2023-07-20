@@ -42,3 +42,4 @@ Dacă întâmpinați probleme după ce instalația a fost patch-uită, puteți d
 "waitFor" = "Așteptăm să citiți avertismentul și să confirmați";
 "confirmationValue" = "Nu voi solicita suport sau rambursare de la Codeweavers";
 "confirmation" = "Vă rugăm să tastați „Nu voi solicita suport sau rambursare de la Codeweavers” în câmpul de introducere de mai jos";
+"unsupported" = "nesuportat";

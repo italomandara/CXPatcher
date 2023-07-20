@@ -42,3 +42,4 @@
 "waitFor" = "等待您阅读免责声明并确认";
 "confirmationValue" = "我不会向 Codeweavers 请求支持或退款";
 "confirmation" = "请在下方输入框中输入“我不会向 Codeweavers 请求支持或退款”";
+"unsupported" = "不支持的";

@@ -42,3 +42,4 @@ Falls nach der Patch-Installation Probleme auftreten, können Sie eine neue Kopi
 "waitFor" = "Bitte lesen Sie den Haftungsausschluss und bestätigen Sie";
 "confirmationValue" = "Ich werde CodeWeavers nicht um Unterstützung oder Rückerstattung bitten";
 "confirmation" = "Bitte geben Sie 'Ich werde CodeWeavers nicht um Unterstützung oder Rückerstattung bitten' in das Eingabefeld unten ein";
+"unsupported" = "nicht unterstützt";

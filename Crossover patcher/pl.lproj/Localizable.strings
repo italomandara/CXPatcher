@@ -42,3 +42,4 @@ Jeśli napotkasz jakiekolwiek problemy z instalacją CrossOver, możesz pobrać 
 "waitFor" = "Czekam na przeczytanie zastrzeżenia i potwierdzenie";
 "confirmationValue" = "Nie będę prosić Codeweavers o wsparcie ani zwrot pieniędzy";
 "confirmation" =  "Wpisz 'Nie będę prosić Codeweavers o wsparcie ani zwrot pieniędzy' w polu wejściowym poniżej";
+"unsupported" = "nieobsługiwany";

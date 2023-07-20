@@ -42,3 +42,4 @@
 "waitFor" = "免責事項を読んで確認するのを待っています";
 "confirmationValue" = "Codeweaversにサポートや返金を要求しないでください";
 "confirmation" = "以下の入力欄に「Codeweaversにサポートや返金を要求しないでください」と入力してください";
+"unsupported" = "サポートされていない";

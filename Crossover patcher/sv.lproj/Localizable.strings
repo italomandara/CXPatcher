@@ -42,3 +42,4 @@ Om du stöter på problem efter att din installation har blivit patchad kan du l
 "waitFor" = "Väntar på att du läser igenom friskrivningsklausulen och bekräftar";
 "confirmationValue" = "Jag kommer inte att begära support eller återbetalning från Codeweavers";
 "confirmation" = "Skriv 'Jag kommer inte att begära support eller återbetalning från Codeweavers' i inmatningsfältet nedan";
+"unsupported" = "utan stöd";

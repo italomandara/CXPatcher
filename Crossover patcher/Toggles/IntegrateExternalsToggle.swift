@@ -14,10 +14,18 @@ struct IntegrateExternalsToggle: View {
     
     var body: some View {
         Toggle(isOn: $integrateExternals) {
-            HStack(alignment: .center) {
-                Image(systemName: "wand.and.stars")
-                Text(localizedCXPatcherString(forKey: "ExternalResourcesToggle"))
-                Spacer()
+            VStack(alignment: .leading) {
+                HStack(alignment: .center) {
+                    Image(systemName: "wand.and.stars")
+                    Text(localizedCXPatcherString(forKey: "ExternalResourcesToggle"))
+                    Spacer()
+                }
+                if(isVentura) {
+                    HStack(alignment: .center) {
+                        Image(systemName: "exclamationmark.triangle.fill")
+                        Text("MacOS \(String(ProcessInfo().operatingSystemVersion.majorVersion)) \(localizedCXPatcherString(forKey: "unsupported"))")
+                    }.foregroundColor(.red)
+                }
             }
         }
         .padding(.vertical, 6.0)

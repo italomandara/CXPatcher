@@ -42,3 +42,4 @@ Se você enfrentar problemas após a instalação ser patcheada, você pode baix
 "waitFor" = "Aguardando você ler o aviso legal e confirmar";
 "confirmationValue" = "Eu não solicitarei suporte ou reembolso à Codeweavers";
 "confirmation" = "Digite 'Eu não solicitarei suporte ou reembolso à Codeweavers' no campo de entrada abaixo";
+"unsupported" = "sem suporte";

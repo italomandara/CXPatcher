@@ -42,3 +42,4 @@ Se incontri problemi dopo aver patchato la tua installazione, puoi scaricare una
 "waitFor" = "In attesa che tu legga il disclaimer e confermi";
 "confirmationValue" = "Non chiederò supporto o rimborso a Codeweavers";
 "confirmation" = "Per favore, digita 'Non chiederò supporto o rimborso a Codeweavers' nel campo di input sottostante";
+"unsupported" = "non supportatato";
