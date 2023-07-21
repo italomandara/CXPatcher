@@ -6,11 +6,11 @@
 "CreditsText" = "Stort tack till utvecklarna bakom DXVK- och MoltenVK-patcharna för deras stora hjälp och för att de tillhandahåller binärerna.";
 "CrossOverDownloadURL" = "https://codeweavers.com/account/downloads";
 "CrossOverDownloadURLText" = "CodeWeavers nedladdningssida";
-"CrossOverPatcher" = "CrossOver Patcher";
+"CrossOverPatcher" = "CXPatcher";
 "CWForums" = "CodeWeavers-forum";
 "CWForumsURL" = "https://www.codeweavers.com/support/forums/general/?t=27;msg=257865";
 "CWWebsite" = "CodeWeavers stöder inte modifierade eller patchade CrossOver-appar, se";
-"CXPatcherName" = "CrossOver Patcher";
+"CXPatcherName" = "CXPatcher";
 "DisclaimerPleaseNoteLabelText" = "Observera:";
 "DisclaimerText" = "Detta är ett inofficiellt patchningsprogram för CrossOver, och CodeWeavers är inte på något sätt involverade i dess utveckling. Även om det har testats kan denna programvara göra din CrossOver-installation oanvändbar eller instabil. ANVÄND PÅ EGEN RISK. Användning av denna patcher kommer också att ogiltigförklara all officiell support från CodeWeavers.
 
@@ -31,7 +31,7 @@ Om du stöter på problem efter att din installation har blivit patchad kan du l
 "PatchStatusSuccess" = "CrossOver.app har blivit framgångsrikt patchad";
 "RestoreButtonLabel" = "Återställ";
 "RestoreConfirm" = "Bra!";
-"RestoreFailure" = "Antingen är denna CrossOver.app inte patchad eller så har den blivit patchad med en inkompatibel version av CrossOver Patcher.";
+"RestoreFailure" = "Antingen är denna CrossOver.app inte patchad eller så har den blivit patchad med en inkompatibel version av CXPatcher.";
 "RestoreStatusLabel" = "Återställ CrossOver.app";
 "RestoreSuccess" = "CrossOver.app har återställts framgångsrikt.";
 "GcenxURL" = "https://github.com/Gcenx";
@@ -40,6 +40,6 @@ Om du stöter på problem efter att din installation har blivit patchad kan du l
 "DownloadGStreamer" = "Ladda ner GStreamer";
 "GStreamerInstalled" = "GStreamer är redan installerat";
 "waitFor" = "Väntar på att du läser igenom friskrivningsklausulen och bekräftar";
-"confirmationValue" = "Jag kommer inte att begära support eller återbetalning från Codeweavers";
-"confirmation" = "Skriv 'Jag kommer inte att begära support eller återbetalning från Codeweavers' i inmatningsfältet nedan";
+"confirmationValue" = "Jag kommer inte att begära support eller återbetalning från CodeWeavers";
+"confirmation" = "Skriv 'Jag kommer inte att begära support eller återbetalning från CodeWeavers' i inmatningsfältet nedan";
 "unsupported" = "utan stöd";

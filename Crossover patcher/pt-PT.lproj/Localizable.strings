@@ -6,11 +6,11 @@
 "CreditsText" = "Muito obrigado aos desenvolvedores por trás dos patches DXVK e MoltenVK por sua grande ajuda e por fornecer os binários.";
 "CrossOverDownloadURL" = "https://codeweavers.com/account/downloads";
 "CrossOverDownloadURLText" = "Página de Downloads do CodeWeavers";
-"CrossOverPatcher" = "Patcher do CrossOver";
+"CrossOverPatcher" = "CXPatcher";
 "CWForums" = "Fóruns do CodeWeavers";
 "CWForumsURL" = "https://www.codeweavers.com/support/forums/general/?t=27;msg=257865";
-"CWWebsite" = "A Codeweavers não suporta aplicativos CrossOver modificados ou patcheados, consulte o";
-"CXPatcherName" = "Patcher do CrossOver";
+"CWWebsite" = "A CodeWeavers não suporta aplicativos CrossOver modificados ou patcheados, consulte o";
+"CXPatcherName" = "CXPatcher";
 "DisclaimerPleaseNoteLabelText" = "Por favor, observe:";
 "DisclaimerText" = "Este é um programa de patch não oficial para o CrossOver, e a CodeWeavers não está de forma alguma envolvida em seu desenvolvimento. Embora tenha sido testado, este software pode tornar sua instalação do CrossOver inutilizável ou instável. USE POR SUA CONTA E RISCO. O uso deste patcher também anulará qualquer suporte oficial da CodeWeavers.
 
@@ -31,7 +31,7 @@ Se você enfrentar problemas após a instalação ser patcheada, você pode baix
 "PatchStatusSuccess" = "CrossOver.app foi patcheado com sucesso";
 "RestoreButtonLabel" = "Restaurar";
 "RestoreConfirm" = "Ótimo!";
-"RestoreFailure" = "Este CrossOver.app está sem patch ou foi patcheado com uma versão incompatível do CrossOver Patcher.";
+"RestoreFailure" = "Este CrossOver.app está sem patch ou foi patcheado com uma versão incompatível do CXPatcher.";
 "RestoreStatusLabel" = "Restaurar CrossOver.app";
 "RestoreSuccess" = "CrossOver.app foi restaurado com sucesso.";
 "GcenxURL" = "https://github.com/Gcenx";
@@ -40,6 +40,6 @@ Se você enfrentar problemas após a instalação ser patcheada, você pode baix
 "DownloadGStreamer" = "Baixar GStreamer";
 "GStreamerInstalled" = "GStreamer já está instalado";
 "waitFor" = "Aguardando você ler o aviso legal e confirmar";
-"confirmationValue" = "Eu não solicitarei suporte ou reembolso à Codeweavers";
-"confirmation" = "Digite 'Eu não solicitarei suporte ou reembolso à Codeweavers' no campo de entrada abaixo";
+"confirmationValue" = "Eu não solicitarei suporte ou reembolso à CodeWeavers";
+"confirmation" = "Digite 'Eu não solicitarei suporte ou reembolso à CodeWeavers' no campo de entrada abaixo";
 "unsupported" = "sem suporte";

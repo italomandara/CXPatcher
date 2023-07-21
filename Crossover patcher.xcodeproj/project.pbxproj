@@ -478,7 +478,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Crossover-patcher-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "CrossOver Patcher";
+				INFOPLIST_KEY_CFBundleDisplayName = CXPatcher;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -520,7 +520,7 @@
 				GCC_OPTIMIZATION_LEVEL = z;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Crossover-patcher-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "CrossOver Patcher";
+				INFOPLIST_KEY_CFBundleDisplayName = CXPatcher;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
