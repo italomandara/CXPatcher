@@ -17,7 +17,8 @@ copy of CrossOver.
 
 For more info: [https://www.codeweavers.com/support/forums/general/?t=27;msg=257865](https://www.codeweavers.com/support/forums/general/?t=27;msg=257865)
 
-## What version of crossover does it support?
+## What version of CrossOver does it support?
+
 Currently only 22.x.x
 
 ## What does it do?
@@ -31,32 +32,44 @@ Unreal engine 4 games.
 - Games with anti-cheat or anti-tamper will not work
 
 - ~DX12 games will not work unless playable via the popular -dx11 option~
-DX12 games will now work via gptk
+DX12 games will now work via GPTK
 
 ## Instructions
 
 You need to have an unmodified version of CrossOver, you can download it at:
-[https://www.codeweavers.com/account/downloads](https://www.codeweavers.com/account/downloads),
-please make sure the app has been registered or ran at least once, to make sure
-the latest CodeWeavers is activated properly You may need to switch off CodeWeavers and on
-again, if you don't you will need to re-download it. If the patcher renders the
-app unusable you can either use the restore function (see instructions below)
-or download it again from the website, it doesn't do any permanent
-modifications to your 'bottles'.
+[https://www.codeweavers.com/account/downloads](https://www.codeweavers.com/account/downloads).
+Please make sure the app has been registered or ran at least once, to make sure
+the latest DXVK is activated properly. You may need to switch off
+DXVK and on again, if you don't you will need to re-download it. If the
+patcher renders the app unusable you can either use the restore function (see
+instructions below) or download it again from the website, it doesn't do any
+permanent modifications to your 'bottles'.
+
+## Installation
+
+### Direct Download
+
+You can download the latest version directly from the [Release Page](https://github.com/italomandara/CXPatcher/releases).
+
+### Homebrew
+
+Alternatively, you may use Homebrew. See the
+[homebrew-CXPatcher repo](https://github.com/italomandara/homebrew-CXPatcher)
+for detailed instructions.
 
 ## Patching with a new external framework
 
 There are new upcoming technologies developed this year that are capable of
 running DirectX 12 games and now you can have those embedded in CrossOver!
-in order to integrate that in CrossOver you need to:
+In order to integrate that in CrossOver you need to:
 
-- download the dmg image file (gptk)
+- [download](https://developer.apple.com/download/all/?q=game%20porting%20toolkit) the dmg image file (GPTK)
 - mount the dmg image
-- switch on "integrate external resources"
+- switch on "Integrate D3DMetal (GPTK)"
 
 <img width="300" alt="integrate external resources" src="https://github.com/italomandara/CXPatcher/assets/12135454/12b5413e-5f50-468c-8c82-28e8e237f408">
 
-- click the "locate external resources" button and select the volume you just mounted
+- click the "Locate external resources" button and select the volume you just mounted
 
 <img width="300" alt="locate external resources" src="https://github.com/italomandara/CXPatcher/assets/12135454/8b5a0f55-8058-467d-a143-475e1abab0f7">
 
@@ -70,11 +83,6 @@ Maybe you changed your mind and prefer to use your original CrossOver app.
 You can restore by going to the `file -> restore menu`
 
 <img width="399" alt="restore" src="https://user-images.githubusercontent.com/12135454/234406600-f7a903fe-c34f-4d11-8154-476028870053.png">
-
-## Patching other versions of CrossOver
-
-From V0.2.12 I'm dropping support for CrossOver 21, it lacks the base work for
-the hacked ntdll and CodeWeavers.
 
 ## Upgrade from an old patch
 
@@ -93,7 +101,7 @@ try: `NAS_DISABLE_UE4_HACK=1`
 
 ## Color profiles for UE4 games
 
-You can change the way the colors are processed in ue4 games.
+You can change the way the colors are processed in UE4 games.
 
 ### Examples
 
