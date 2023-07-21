@@ -6,11 +6,11 @@
 "CreditsText" = "Muchas gracias a los desarrolladores que están detrás de los parches DXVK y MoltenVK por su gran ayuda y su proporción de los binarios.";
 "CrossOverDownloadURL" = "https://codeweavers.com/account/downloads";
 "CrossOverDownloadURLText" = "Página de descarga de CodeWeavers";
-"CrossOverPatcher" = "CrossOver Patcher";
+"CrossOverPatcher" = "CXPatcher";
 "CWForums" = "Foros de CodeWeavers";
 "CWForumsURL" = "https://www.codeweavers.com/support/forums/general/?t=27;msg=257865";
 "CWWebsite" = "CodeWeavers no ofrece soporte para versiones de su software parcheado o modificado. Ver";
-"CXPatcherName" = "CrossOver Patcher";
+"CXPatcherName" = "CXPatcher";
 "DisclaimerPleaseNoteLabelText" = "Ten en cuenta:";
 "DisclaimerText" = "Este software de parcheo no es oficial de CrossOver, por ende CodeWeavers no está involucrado en ningún ámbito del desarrollo. Aunque el software ha sido probado, puede generar que tu instalación de CrossOver se vuelva inutilizable o inestable. ÚSELO BAJO SU PROPIO RIESGO. El uso de éste parche anulará todo soporte oficial de CodeWeavers.
 

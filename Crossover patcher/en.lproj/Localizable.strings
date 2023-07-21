@@ -6,11 +6,11 @@
 "CreditsText" = "Many thanks to the developers behind the DXVK and MoltenVK patches for their great help and for providing the binaries.";
 "CrossOverDownloadURL" = "https://codeweavers.com/account/downloads";
 "CrossOverDownloadURLText" = "CodeWeavers Downloads Page";
-"CrossOverPatcher" = "CrossOver Patcher";
+"CrossOverPatcher" = "CXPatcher";
 "CWForums" = "CodeWeavers forums";
 "CWForumsURL" = "https://www.codeweavers.com/support/forums/general/?t=27;msg=257865";
-"CWWebsite" = "Codeweavers doesn't support patched or modified crossover apps, see the";
-"CXPatcherName" = "CrossOver Patcher";
+"CWWebsite" = "CodeWeavers doesn't support patched or modified CrossOver apps, see the";
+"CXPatcherName" = "CXPatcher";
 "DisclaimerPleaseNoteLabelText" = "Please note:";
 "DisclaimerText" = "This is an unofficial patching program for CrossOver, and CodeWeavers is in no way involved in its development. Although it has been tested, this software may render your CrossOver installation unusable or unstable. USE AT YOUR OWN RISK. Use of this patcher will also void any official support from CodeWeavers.
 
@@ -31,7 +31,7 @@ If you face any issues after your installation has been patched, you may downloa
 "PatchStatusSuccess" = "CrossOver.app has been successfully patched";
 "RestoreButtonLabel" = "Restore";
 "RestoreConfirm" = "Cool!";
-"RestoreFailure" = "Either this CrossOver.app is unpatched, or was patched with an incompatible version of CrossOver Patcher.";
+"RestoreFailure" = "Either this CrossOver.app is unpatched, or was patched with an incompatible version of CXPatcher.";
 "RestoreStatusLabel" = "CrossOver.app Restore";
 "RestoreSuccess" = "CrossOver.app has been successfully restored.";
 "GcenxURL" = "https://github.com/Gcenx";
@@ -40,6 +40,6 @@ If you face any issues after your installation has been patched, you may downloa
 "DownloadGStreamer" = "Download GStreamer";
 "GStreamerInstalled" = "GStreamer is already Installed";
 "waitFor" = "Waiting for you to read the disclaimer and confirm";
-"confirmationValue" = "I will not ask Codeweavers for support or refund";
-"confirmation" =  "Please type 'I will not ask Codeweavers for support or refund' in the input field below";
+"confirmationValue" = "I will not ask CodeWeavers for support or refund";
+"confirmation" =  "Please type 'I will not ask CodeWeavers for support or refund' in the input field below";
 "unsupported" = "unsupported";

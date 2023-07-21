@@ -6,11 +6,11 @@
 "CreditsText" = "DXVKとMoltenVKのパッチを開発してくれた開発者に感謝の意を表します。彼らの素晴らしい助けとバイナリの提供に感謝します。";
 "CrossOverDownloadURL" = "https://codeweavers.com/account/downloads";
 "CrossOverDownloadURLText" = "CodeWeaversダウンロードページ";
-"CrossOverPatcher" = "CrossOverパッチャー";
+"CrossOverPatcher" = "CXパッチャー";
 "CWForums" = "CodeWeaversフォーラム";
 "CWForumsURL" = "https://www.codeweavers.com/support/forums/general/?t=27;msg=257865";
-"CWWebsite" = "CodeWeaversはパッチされたまたは変更されたCrossoverアプリをサポートしていません。以下を参照してください";
-"CXPatcherName" = "CrossOverパッチャー";
+"CWWebsite" = "CodeWeaversはパッチされたまたは変更されたCrossOverアプリをサポートしていません。以下を参照してください";
+"CXPatcherName" = "CXパッチャー";
 "DisclaimerPleaseNoteLabelText" = "ご注意ください：";
 "DisclaimerText" = "これはCrossOverの非公式のパッチプログラムであり、CodeWeaversはその開発に一切関与していません。テストされていますが、このソフトウェアはCrossOverのインストールを使用不能または不安定にする可能性があります。自己責任で使用してください。このパッチャーの使用により、CodeWeaversの公式サポートは無効になります。
 
@@ -31,7 +31,7 @@
 "PatchStatusSuccess" = "CrossOver.appは正常にパッチが適用されました";
 "RestoreButtonLabel" = "元に戻す";
 "RestoreConfirm" = "完了！";
-"RestoreFailure" = "このCrossOver.appは未パッチであるか、CrossOver Patcherの互換性のないバージョンでパッチが適用されています。";
+"RestoreFailure" = "このCrossOver.appは未パッチであるか、CXPatcherの互換性のないバージョンでパッチが適用されています。";
 "RestoreStatusLabel" = "CrossOver.appの復元";
 "RestoreSuccess" = "CrossOver.appは正常に復元されました。";
 "GcenxURL" = "https://github.com/Gcenx";
@@ -40,6 +40,6 @@
 "DownloadGStreamer" = "GStreamerをダウンロード";
 "GStreamerInstalled" = "GStreamerはすでにインストールされています";
 "waitFor" = "免責事項を読んで確認するのを待っています";
-"confirmationValue" = "Codeweaversにサポートや返金を要求しないでください";
-"confirmation" = "以下の入力欄に「Codeweaversにサポートや返金を要求しないでください」と入力してください";
+"confirmationValue" = "CodeWeaversにサポートや返金を要求しないでください";
+"confirmation" = "以下の入力欄に「CodeWeaversにサポートや返金を要求しないでください」と入力してください";
 "unsupported" = "サポートされていない";

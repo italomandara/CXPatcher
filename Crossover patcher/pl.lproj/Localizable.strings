@@ -6,11 +6,11 @@
 "CreditsText" = "Szczególne podziękowania dla deweloperów odpowiedzialnych za łatki DXVK oraz MoltenVK za ich ogromną pomoc i udostępnienie niezbędnych plików.";
 "CrossOverDownloadURL" = "https://codeweavers.com/account/downloads";
 "CrossOverDownloadURLText" = "stronę pobierania CodeWeavers";
-"CrossOverPatcher" = "CrossOver Patcher";
+"CrossOverPatcher" = "CXPatcher";
 "CWForums" = "forum CodeWeavers";
 "CWForumsURL" = "https://www.codeweavers.com/support/forums/general/?t=27;msg=257865";
 "CWWebsite" = "Aby uzyskać więcej informacji, odwiedź";
-"CXPatcherName" = "CrossOver Patcher";
+"CXPatcherName" = "CXPatcher";
 "DisclaimerPleaseNoteLabelText" = "Uwaga:";
 "DisclaimerText" = "To jest nieoficjalny program umożliwiający łatanie programu CrossOver. CodeWeavers nie jest w żaden sposób związane z pracami i rozwojem tego programu. Pomimo przeprowadzonych testów, to oprogramowanie może spowodować, że CrossOver będzie działał w nieprawidłowy sposób. KORZYSTASZ NA WŁASNE RYZYKO. Korzystanie z tego oprogramowania narusza warunki oficjalnego wsparcia ze strony CodeWeavers.
 
@@ -31,7 +31,7 @@ Jeśli napotkasz jakiekolwiek problemy z instalacją CrossOver, możesz pobrać 
 "PatchStatusSuccess" = "CrossOver.app został załatany pomyślnie";
 "RestoreButtonLabel" = "Przywróć";
 "RestoreConfirm" = "Super!";
-"RestoreFailure" = "Ta wersja CrossOver.app jest nie załatana, lub była załatana przez nieaktualną wersję CrossOver Patcher.";
+"RestoreFailure" = "Ta wersja CrossOver.app jest nie załatana, lub była załatana przez nieaktualną wersję CXPatcher.";
 "RestoreStatusLabel" = "Przywracanie CrossOver.app";
 "RestoreSuccess" = "CrossOver.app został pomyślnie przywrócony.";
 "GcenxURL" = "https://github.com/Gcenx";
@@ -40,6 +40,6 @@ Jeśli napotkasz jakiekolwiek problemy z instalacją CrossOver, możesz pobrać 
 "DownloadGStreamer" = "Pobieranie Gstreamer";
 "GStreamerInstalled" = "GStreamer jest już zainstalowany";
 "waitFor" = "Czekam na przeczytanie zastrzeżenia i potwierdzenie";
-"confirmationValue" = "Nie będę prosić Codeweavers o wsparcie ani zwrot pieniędzy";
-"confirmation" =  "Wpisz 'Nie będę prosić Codeweavers o wsparcie ani zwrot pieniędzy' w polu wejściowym poniżej";
+"confirmationValue" = "Nie będę prosić CodeWeavers o wsparcie ani zwrot pieniędzy";
+"confirmation" =  "Wpisz 'Nie będę prosić CodeWeavers o wsparcie ani zwrot pieniędzy' w polu wejściowym poniżej";
 "unsupported" = "nieobsługiwany";

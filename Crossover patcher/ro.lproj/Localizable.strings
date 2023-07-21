@@ -6,11 +6,11 @@
 "CreditsText" = "Mulțumiri multe dezvoltatorilor din spatele patch-urilor DXVK și MoltenVK pentru ajutorul lor deosebit și pentru furnizarea binarelor.";
 "CrossOverDownloadURL" = "https://codeweavers.com/account/downloads";
 "CrossOverDownloadURLText" = "Pagina de Descărcări CodeWeavers";
-"CrossOverPatcher" = "CrossOver Patcher";
+"CrossOverPatcher" = "CXPatcher";
 "CWForums" = "Forumurile CodeWeavers";
 "CWForumsURL" = "https://www.codeweavers.com/support/forums/general/?t=27;msg=257865";
 "CWWebsite" = "CodeWeavers nu oferă suport pentru aplicații CrossOver modificate sau patch-ate, consultați";
-"CXPatcherName" = "CrossOver Patcher";
+"CXPatcherName" = "CXPatcher";
 "DisclaimerPleaseNoteLabelText" = "Vă rugăm să rețineți:";
 "DisclaimerText" = "Acesta este un program de patch neoficial pentru CrossOver, iar CodeWeavers nu este în niciun fel implicată în dezvoltarea acestuia. Deși a fost testat, acest software poate face instalarea CrossOver inutilizabilă sau instabilă. FOLOSIȚI PE RISCUL PROPRIU. Utilizarea acestui patcher va anula și orice suport oficial oferit de CodeWeavers.
 
@@ -31,7 +31,7 @@ Dacă întâmpinați probleme după ce instalația a fost patch-uită, puteți d
 "PatchStatusSuccess" = "CrossOver.app a fost patch-uit cu succes";
 "RestoreButtonLabel" = "Restabilire";
 "RestoreConfirm" = "Foarte bine!";
-"RestoreFailure" = "Fie acest CrossOver.app nu are patch sau a fost patch-uit cu o versiune incompatibilă a CrossOver Patcher.";
+"RestoreFailure" = "Fie acest CrossOver.app nu are patch sau a fost patch-uit cu o versiune incompatibilă a CXPatcher.";
 "RestoreStatusLabel" = "Restabilire CrossOver.app";
 "RestoreSuccess" = "CrossOver.app a fost restabilit cu succes.";
 "GcenxURL" = "https://github.com/Gcenx";
@@ -40,6 +40,6 @@ Dacă întâmpinați probleme după ce instalația a fost patch-uită, puteți d
 "DownloadGStreamer" = "Descărcați GStreamer";
 "GStreamerInstalled" = "GStreamer este deja instalat";
 "waitFor" = "Așteptăm să citiți avertismentul și să confirmați";
-"confirmationValue" = "Nu voi solicita suport sau rambursare de la Codeweavers";
-"confirmation" = "Vă rugăm să tastați „Nu voi solicita suport sau rambursare de la Codeweavers” în câmpul de introducere de mai jos";
+"confirmationValue" = "Nu voi solicita suport sau rambursare de la CodeWeavers";
+"confirmation" = "Vă rugăm să tastați „Nu voi solicita suport sau rambursare de la CodeWeavers” în câmpul de introducere de mai jos";
 "unsupported" = "nesuportat";
