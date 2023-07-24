@@ -21,6 +21,11 @@ For more info: [https://www.codeweavers.com/support/forums/general/?t=27;msg=257
 
 Currently only 22.x.x
 
+## What MacOS does it support
+
+Ventura (13) or newer
+Currently GPTK requires MacOS Sonoma
+
 ## What does it do?
 
 This patcher will upgrade your CrossOver app with the latest DXVK and MoltenVK
