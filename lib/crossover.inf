@@ -447,7 +447,6 @@ HKCU,"Software\Wine\AppDefaults\winewrapper.exe\DllOverrides","crypt32",,"builti
 HKCU,"Software\Wine\AppDefaults\winewrapper.exe\DllOverrides","rsabase",,"builtin"
 HKCU,"Software\Wine\AppDefaults\winewrapper.exe\DllOverrides","rsaenh",,"builtin"
 
-HKCU,"Software\Wine\DllOverrides","*atiadlxx",,""
 HKCU,"Software\Wine\DllOverrides","*dxgi",,"native, builtin"
 
 
