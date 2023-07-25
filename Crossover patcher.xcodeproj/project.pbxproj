@@ -32,6 +32,7 @@
 		38F7B21D2A5DD4E100CD9511 /* IntegrateExternalsToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F7B21C2A5DD4E100CD9511 /* IntegrateExternalsToggle.swift */; };
 		38F7B21F2A5DD58600CD9511 /* SkipVersionCheckToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F7B21E2A5DD58600CD9511 /* SkipVersionCheckToggle.swift */; };
 		38F7B2212A5DD60000CD9511 /* RepatchToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F7B2202A5DD60000CD9511 /* RepatchToggle.swift */; };
+		38FAFE132A6FB4C90084F81F /* wine.inf in Resources */ = {isa = PBXBuildFile; fileRef = 3893741F2A54BF84001A5D01 /* wine.inf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -267,6 +268,7 @@
 				389D6BE52A4766FD00A4C8EB /* 64 in Resources */,
 				38255F1D2A07E633005AF0FC /* x86_64-windows in Resources */,
 				3884409C2A561FD8001BD895 /* crossover.inf in Resources */,
+				38FAFE132A6FB4C90084F81F /* wine.inf in Resources */,
 				3869AF7729E1FE510049427E /* x86_64-unix in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
