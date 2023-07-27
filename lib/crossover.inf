@@ -447,8 +447,6 @@ HKCU,"Software\Wine\AppDefaults\winewrapper.exe\DllOverrides","crypt32",,"builti
 HKCU,"Software\Wine\AppDefaults\winewrapper.exe\DllOverrides","rsabase",,"builtin"
 HKCU,"Software\Wine\AppDefaults\winewrapper.exe\DllOverrides","rsaenh",,"builtin"
 
-HKCU,"Software\Wine\DllOverrides","*dxgi",,"native, builtin"
-
 
 [WineDllOverridesReg9x]
 ;;HKCU,"Software\Wine\DllOverrides","oleaut32",,"native, builtin"  ;;will be set by reboot.exe
