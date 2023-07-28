@@ -40,3 +40,4 @@ Thumbs.db
 build/
 *.xcuserstate
 project.xcworkspace/*
+.nova
