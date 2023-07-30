@@ -5204,7 +5204,6 @@ HKLM,Software\Wine\LicenseInformation,"Shell-InBoxGames-Shanghai-EnableGame",0x1
 HKLM,Software\Wine\LicenseInformation,"Shell-InBoxGames-Solitaire-EnableGame",0x10001,0x00000001
 HKLM,Software\Wine\LicenseInformation,"Shell-InBoxGames-SpiderSolitaire-EnableGame",0x10001,0x00000001
 HKLM,Software\Wine\LicenseInformation,"Shell-PremiumInBoxGames-Chess-EnableGame",0x10001,0x00000001
-HKCU,Software\Wine\DllOverrides,"atiadlxx",,""
 
 [ColorFiles]
 srgb color space profile.icm,"@%11%\mscms.dll,-1"
