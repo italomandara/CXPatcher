@@ -72,11 +72,15 @@ In order to integrate that in CrossOver you need to:
 - mount the dmg image
 - switch on "Integrate D3DMetal (GPTK)"
 
-<img width="300" alt="integrate external resources" src="https://github.com/italomandara/CXPatcher/assets/12135454/12b5413e-5f50-468c-8c82-28e8e237f408">
+<img width="300" alt="integrate external resources" src="https://github.com/italomandara/CXPatcher/assets/12135454/0da08a95-5003-46c1-985c-80f2ff6dd256">
+<img width="401" alt="integrate external resources" src="https://github.com/italomandara/CXPatcher/assets/12135454/9f709365-cd25-4d34-a737-6f68ff2bb491">
+
+
 
 - click the "Locate external resources" button and select the volume you just mounted
 
-<img width="300" alt="locate external resources" src="https://github.com/italomandara/CXPatcher/assets/12135454/8b5a0f55-8058-467d-a143-475e1abab0f7">
+<img width="300" alt="locate external resources" src="https://github.com/italomandara/CXPatcher/assets/12135454/fb624623-de5e-4af1-bb83-2346e9a81897">
+
 
 - now you can patch CrossOver as usual via either drag'n'drop or file selector
 (click in the drop area)
@@ -87,14 +91,15 @@ In order to integrate that in CrossOver you need to:
 Maybe you changed your mind and prefer to use your original CrossOver app.
 You can restore by going to the `file -> restore menu`
 
-<img width="399" alt="restore" src="https://user-images.githubusercontent.com/12135454/234406600-f7a903fe-c34f-4d11-8154-476028870053.png">
+<img width="168" alt="restore" src="https://github.com/italomandara/CXPatcher/assets/12135454/81a09c09-4209-4af1-911b-461efcaf2421">
+
 
 ## Upgrade from an old patch
 
 If you patched from an old version and you just want to update the patched
 CrossOver app just turn on the option and drag 'n drop
 
-![Screenshot 2023-05-10 at 10 55 42](https://github.com/italomandara/CXPatcher/assets/12135454/5bb3c410-0a02-42d0-9024-eb3dfde5ed96)
+<img width="399" alt="repatch" src="https://github.com/italomandara/CXPatcher/assets/12135454/8f8295ed-5da3-4a5f-93c0-4daa4851b0ec">
 
 ## Troubleshoting
 
