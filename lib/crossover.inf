@@ -448,6 +448,7 @@ HKCU,"Software\Wine\AppDefaults\winewrapper.exe\DllOverrides","rsabase",,"builti
 HKCU,"Software\Wine\AppDefaults\winewrapper.exe\DllOverrides","rsaenh",,"builtin"
 
 HKCU,"Software\Wine\DllOverrides","*dxgi",,"native, builtin"
+HKCU,"Software\Wine\AppDefaults\steamwebhelper.exe\DllOverrides","dxgi",,"builtin"
 
 
 [WineDllOverridesReg9x]
