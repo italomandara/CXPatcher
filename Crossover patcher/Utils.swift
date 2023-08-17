@@ -415,7 +415,7 @@ func parseCXPlist(plistPath: String) -> CXPlist {
 }
 
 func isCrossoverApp(url: URL, version: String? = nil, skipVersionCheck: Bool? = false) -> Bool {
-    let plistPath = url.path + "/Contents/info.plist"
+    let plistPath = url.path + "/Contents/Info.plist"
     if (f.fileExists(atPath: plistPath)) {
         let plist = parseCXPlist(plistPath: plistPath)
         if (plist.CFBundleIdentifier == "com.codeweavers.CrossOver" && skipVersionCheck == true) {
