@@ -26,7 +26,7 @@ Jeśli napotkasz jakiekolwiek problemy z instalacją CrossOver, możesz pobrać 
 "InstructionsFunctionDescription" = "Ten program poprzez łatkę modyfikuje Twoją instalację CrossOver, aby używała zaktualizowanych i dostosowanych wersji DXVK i MoltenVK, co w niektórych przypadkach poprawia kompatybilność lub wydajność niektórych gier.";
 "InstructionsText" = "Upewnij się, że masz niezmodyfikowaną wydanie CrossOver pobraną ze strony swojego konta w CodeWeavers. Upewnij się, że CrossOver został zarejestrowany i uruchomiony przynajmniej raz, aby upewnić się, że najnowsza wersja DXVK została poprawnie aktywowana. Może być konieczne przełączenie DXVK na wyłączony i ponownie włączony w CrossOver. Jeśli z jakiegoś powodu Twoja instalacja CrossOver stała się nieużywalna, można ją ponownie pobrać ze strony internetowej CodeWeavers. Ten program łatający nie wprowadzi żadnych trwałych modyfikacji do Twoich butelek CrossOver.";
 "PatchStatusAlreadyPatched" = "Ta wersja CrossOver.app została juz wcześniej załatana!";
-"PatchStatusError" = "Nie udało się załatać CrossOver.app. Proszę upewnij się, że próbujesz załatać stabilną wersję CrossOver.app ze strony CodeWeavers.";
+"PatchStatusError" = "Nie udało się załatać CrossOver.app. Proszę upewnij się, że próbujesz załatać stabilną wersję CrossOver 22 ze strony CodeWeavers.";
 "PatchStatusReady" = "Upuść CrossOver.app tutaj \nlub kliknij, aby ją zaznaczyć w Finderze";
 "PatchStatusSuccess" = "CrossOver.app został załatany pomyślnie";
 "RestoreButtonLabel" = "Przywróć";

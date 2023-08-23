@@ -26,7 +26,7 @@ Sollten nach dem Patchen Ihrer Installation Probleme auftreten, können Sie eine
 "InstructionsFunctionDescription" = "Dieser Patcher ändert Ihre CrossOver-Installation so, dass aktualisierte und optimierte Versionen von DXVK und MoltenVK verwendet werden, was in einigen Fällen die Kompatibilität oder Leistung einiger Spiele verbessert.";
 "InstructionsText" = "Stellen Sie sicher, dass Sie über eine unveränderte Release-Version von CrossOver verfügen, die Sie von Ihrer CodeWeavers-Kontoseite heruntergeladen haben. Stellen Sie sicher, dass CrossOver registriert und mindestens einmal ausgeführt wurde, um sicherzustellen, dass das neueste DXVK ordnungsgemäß aktiviert ist. Möglicherweise müssen Sie DXVK in CrossOver ein- und ausschalten. Sollte Ihre CrossOver-Installation aus irgendeinem Grund unbrauchbar werden, können Sie sie erneut von der CodeWeavers-Website herunterladen. Dieser Patcher nimmt keine dauerhaften Änderungen an Ihren CrossOver-Flaschen vor.";
 "PatchStatusAlreadyPatched" = "Diese CrossOver.app wurde bereits gepatcht!";
-"PatchStatusError" = "CrossOver.app konnte nicht gepatcht werden. Bitte stellen Sie sicher, dass Sie versuchen, die Release-Version von CrossOver.app von der CodeWeavers-Website zu patchen.";
+"PatchStatusError" = "CrossOver.app konnte nicht gepatcht werden. Bitte stellen Sie sicher, dass Sie versuchen, die Release-Version von CrossOver 22 von der CodeWeavers-Website zu patchen.";
 "PatchStatusReady" = "Ziehen Sie Ihre CrossOver.app hierhin \noder klicken Sie hier, um sie im Finder auszuwählen";
 "PatchStatusSuccess" = "CrossOver.app wurde erfolgreich gepatcht";
 "RestoreButtonLabel" = "Wiederherstellen";
@@ -41,5 +41,5 @@ Sollten nach dem Patchen Ihrer Installation Probleme auftreten, können Sie eine
 "GStreamerInstalled" = "GStreamer ist bereits installiert";
 "waitFor" = "Wir warten darauf, dass Sie den Haftungsausschluss lesen und bestätigen";
 "confirmationValue" = "Ich werde CodeWeavers nicht um Unterstützung oder Rückerstattung bitten";
-"confirmation" =  "Bitte geben Sie in das Eingabefeld unten „Ich werde CodeWeavers nicht um Unterstützung oder Rückerstattung bitten“ ein";
+"confirmation" = "Bitte geben Sie in das Eingabefeld unten „Ich werde CodeWeavers nicht um Unterstützung oder Rückerstattung bitten“ ein";
 "unsupported" = "nicht unterstützt";

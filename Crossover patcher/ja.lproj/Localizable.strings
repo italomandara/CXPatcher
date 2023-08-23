@@ -26,7 +26,7 @@
 "InstructionsFunctionDescription" = "このパッチャーは、CrossOverのインストールを更新および調整されたバージョンのDXVKとMoltenVKを使用するように変更します。これにより、一部のゲームの互換性やパフォーマンスが向上する場合があります。";
 "InstructionsText" = "CodeWeaversアカウントページからダウンロードした未変更のリリース版CrossOverを使用してください。最新のDXVKが正しくアクティブ化されるように、CrossOverを登録して少なくとも1回実行してください。CrossOver内でDXVKをオンとオフに切り替える必要があるかもしれません。何らかの理由でCrossOverのインストールが使用不能になった場合は、CodeWeaversのウェブサイトから再度ダウンロードすることができます。このパッチャーはCrossOverのボトルに永続的な変更を加えません。";
 "PatchStatusAlreadyPatched" = "このCrossOver.appはすでにパッチが適用されています！";
-"PatchStatusError" = "CrossOver.appのパッチを適用できませんでした。CodeWeaversのウェブサイトからリリースバージョンのCrossOver.appをパッチしようとしていることを確認してください。";
+"PatchStatusError" = "CrossOver.appのパッチを適用できませんでした。CodeWeaversのウェブサイトからリリースバージョンのCrossOver 22をパッチしようとしていることを確認してください。";
 "PatchStatusReady" = "CrossOver.appをここにドロップする\nまたはFinderで選択するためにクリックしてください";
 "PatchStatusSuccess" = "CrossOver.appは正常にパッチが適用されました";
 "RestoreButtonLabel" = "元に戻す";

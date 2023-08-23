@@ -26,7 +26,7 @@ Si encuentras algún problema después de parchear CrossOver, puedes descargar u
 "InstructionsFunctionDescription" = "Este parche modifica tu instalación de CrossOver para usar versiones actualizadas y ajustadas de DXVK y MoltenVK, lo que en algunos casos mejorará la compatibilidad y/o el rendimiento para algunos juegos.";
 "InstructionsText" = "Asegúrate de tener una versión sin modificar de CrossOver descargada de la página web de CodeWeavers. Verifica que CrossOver esté registrado y se haya ejecutado al menos una vez para asegurarse de que la última versión de DXVK esté activada correctamente. Es posible que debas desactivar y volver a activar DXVK en CrossOver. Si por alguna razón tu instalación de CrossOver se vuelve inutilizable, puedes descargar nuevamente el instalador de la página web de CodeWeavers; este parche no realizará modificaciones permanentes en tus botellas de CrossOver.";
 "PatchStatusAlreadyPatched" = "¡La aplicación CrossOver.app ya ha sido parcheada!";
-"PatchStatusError" = "No se pudo parchear CrossOver.app. Por favor, verifica que estás intentando parchear la última versión de CrossOver.app descargada del sitio web de CodeWeavers.";
+"PatchStatusError" = "No se pudo parchear CrossOver.app. Por favor, verifica que estás intentando parchear la última versión de CrossOver 22 descargada del sitio web de CodeWeavers.";
 "PatchStatusReady" = "Suelta CrossOver.app aquí \no haz clic para seleccionarlo desde Finder";
 "PatchStatusSuccess" = "¡CrossOver.app ha sido correctamente parcheada!";
 "RestoreButtonLabel" = "Restaurar";
