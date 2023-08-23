@@ -24,18 +24,18 @@ let SHARED_SUPPORT_PATH = "/Contents/SharedSupport/CrossOver"
 let LIB_PATH = "/lib/"
 let EXTERNAL_FRAMEWORK_PATH = "/lib/external"
 let EXTERNAL_WINE_PATHS: [String] = [
-    "/lib/wine/x86_64-unix/atidxx64.so",
-    "/lib/wine/x86_64-unix/d3d9.so",
-    "/lib/wine/x86_64-unix/d3d10.so",
-    "/lib/wine/x86_64-unix/d3d11.so",
-    "/lib/wine/x86_64-unix/d3d12.so",
-    "/lib/wine/x86_64-unix/dxgi.so",
-    "/lib/wine/x86_64-windows/atidxx64.dll",
-    "/lib/wine/x86_64-windows/d3d9.dll",
-    "/lib/wine/x86_64-windows/d3d10.dll",
-    "/lib/wine/x86_64-windows/d3d11.dll",
-    "/lib/wine/x86_64-windows/d3d12.dll",
-    "/lib/wine/x86_64-windows/dxgi.dll",
+    "/redist/lib/wine/x86_64-unix/atidxx64.so",
+    "/redist/lib/wine/x86_64-unix/d3d9.so",
+    "/redist/lib/wine/x86_64-unix/d3d10.so",
+    "/redist/lib/wine/x86_64-unix/d3d11.so",
+    "/redist/lib/wine/x86_64-unix/d3d12.so",
+    "/redist/lib/wine/x86_64-unix/dxgi.so",
+    "/redist/lib/wine/x86_64-windows/atidxx64.dll",
+    "/redist/lib/wine/x86_64-windows/d3d9.dll",
+    "/redist/lib/wine/x86_64-windows/d3d10.dll",
+    "/redist/lib/wine/x86_64-windows/d3d11.dll",
+    "/redist/lib/wine/x86_64-windows/d3d12.dll",
+    "/redist/lib/wine/x86_64-windows/dxgi.dll",
 ]
 
 private func getResourcesListFrom(url: URL) -> [(String, String, String?)]{
