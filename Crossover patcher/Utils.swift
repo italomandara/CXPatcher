@@ -37,277 +37,87 @@ let EXTERNAL_WINE_PATHS: [String] = [
     "/lib/wine/x86_64-windows/d3d12.dll",
     "/lib/wine/x86_64-windows/dxgi.dll",
 ]
+let WINE_RESOURCES_ROOT = "Crossover"
+let EXTERNAL_RESOURCES_ROOT = "gptk/redist"
+let WINE_RESOURCES_PATHS: [String] = [
+    "/lib64/libMoltenVK.dylib",
+    "/lib64/wine/dxvk",
+    "/lib/wine/dxvk",
+    "/lib/wine/x86_32on64-unix/crypt32.so",
+    "/lib/wine/x86_32on64-unix/ntdll.so",
+    "/lib/wine/x86_32on64-unix/qcap.so",
+    "/lib/wine/x86_32on64-unix/winegstreamer.so",
+    "/lib/wine/x86_64-unix/crypt32.so",
+    "/lib/wine/x86_64-unix/ntdll.so",
+    "/lib/wine/x86_64-unix/qcap.so",
+    "/lib/wine/x86_64-unix/winegstreamer.so",
+    "/lib/wine/x86_64-unix/winemac.drv.so",
+    "/lib/wine/i386-windows/advapi32.dll",
+    "/lib/wine/i386-windows/api-ms-win-core-psm-appnotify-l1-1-0.dll",
+    "/lib/wine/i386-windows/api-ms-win-power-base-l1-1-0.dll",
+    "/lib/wine/i386-windows/atiadlxx.dll",
+    "/lib/wine/i386-windows/crypt32.dll",
+    "/lib/wine/i386-windows/kernel32.dll",
+    "/lib/wine/i386-windows/kernelbase.dll",
+    "/lib/wine/i386-windows/mfmediaengine.dll",
+    "/lib/wine/i386-windows/mfplat.dll",
+    "/lib/wine/i386-windows/mfreadwrite.dll",
+    "/lib/wine/i386-windows/ntdll.dll",
+    "/lib/wine/i386-windows/qcap.dll",
+    "/lib/wine/i386-windows/quartz.dll",
+    "/lib/wine/i386-windows/windows.gaming.input.dll",
+    "/lib/wine/i386-windows/windows.gaming.ui.gamebar.dll",
+    "/lib/wine/i386-windows/wined3d.dll",
+    "/lib/wine/i386-windows/winegstreamer.dll",
+    "/lib/wine/i386-windows/wintrust.dll",
+    "/lib/wine/x86_64-windows/advapi32.dll",
+    "/lib/wine/x86_64-windows/api-ms-win-core-psm-appnotify-l1-1-0.dll",
+    "/lib/wine/x86_64-windows/api-ms-win-power-base-l1-1-0.dll",
+    "/lib/wine/x86_64-windows/atiadlxx.dll",
+    "/lib/wine/x86_64-windows/crypt32.dll",
+    "/lib/wine/x86_64-windows/kernel32.dll",
+    "/lib/wine/x86_64-windows/kernelbase.dll",
+    "/lib/wine/x86_64-windows/mfmediaengine.dll",
+    "/lib/wine/x86_64-windows/mfplat.dll",
+    "/lib/wine/x86_64-windows/mfreadwrite.dll",
+    "/lib/wine/x86_64-windows/ntdll.dll",
+    "/lib/wine/x86_64-windows/qcap.dll",
+    "/lib/wine/x86_64-windows/quartz.dll",
+    "/lib/wine/x86_64-windows/windows.gaming.input.dll",
+    "/lib/wine/x86_64-windows/windows.gaming.ui.gamebar.dll",
+    "/lib/wine/x86_64-windows/wined3d.dll",
+    "/lib/wine/x86_64-windows/winegstreamer.dll",
+    "/lib/wine/x86_64-windows/winemac.drv",
+    "/lib/wine/x86_64-windows/wintrust.dll",
+    "/CrossOver-Hosted Application/wine64-preloader",
+    "/share/crossover/bottle_data/crossover.inf",
+    "/share/wine/wine.inf"
+]
 
-private func getResourcesListFrom(url: URL) -> [(String, String, String?)]{
-    return [
+private func getResourcesListFrom(url: URL) -> [(String, String)]{
+    let list: [(String, String)]  = WINE_RESOURCES_PATHS.map { path in
         (
-            "libMoltenVK",
-            url.path + SHARED_SUPPORT_PATH + "/lib64/libMoltenVK",
-            "dylib"
-        ),
-        (
-            "64",
-            url.path + SHARED_SUPPORT_PATH + "/lib64/wine/dxvk",
-            nil
-        ),
-        (
-            "32",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/dxvk",
-            nil
-        ),
-        (
-            "x86_32on64-unix/crypt32.so",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_32on64-unix/crypt32.so",
-            nil
-        ),
-        (
-            "x86_32on64-unix/ntdll.so",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_32on64-unix/ntdll.so",
-            nil
-        ),
-        (
-            "x86_32on64-unix/qcap.so",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_32on64-unix/qcap.so",
-            nil
-        ),
-        (
-            "x86_32on64-unix/winegstreamer.so",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_32on64-unix/winegstreamer.so",
-            nil
-        ),
-        (
-            "x86_64-unix/crypt32.so",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-unix/crypt32.so",
-            nil
-        ),
-        (
-            "x86_64-unix/ntdll.so",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-unix/ntdll.so",
-            nil
-        ),
-        (
-            "x86_64-unix/qcap.so",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-unix/qcap.so",
-            nil
-        ),
-        (
-            "x86_64-unix/winegstreamer.so",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-unix/winegstreamer.so",
-            nil
-        ),
-        (
-            "x86_64-unix/winemac.drv.so",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-unix/winemac.drv.so",
-            nil
-        ),
-        (
-            "i386-windows/advapi32.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/advapi32.dll",
-            nil
-        ),
-        (
-            "i386-windows/api-ms-win-core-psm-appnotify-l1-1-0.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/api-ms-win-core-psm-appnotify-l1-1-0.dll",
-            nil
-        ),
-        (
-            "i386-windows/api-ms-win-power-base-l1-1-0.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/api-ms-win-power-base-l1-1-0.dll",
-            nil
-        ),
-        (
-            "i386-windows/atiadlxx.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/atiadlxx.dll",
-            nil
-        ),
-        (
-            "i386-windows/crypt32.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/crypt32.dll",
-            nil
-        ),
-        (
-            "i386-windows/kernel32.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/kernel32.dll",
-            nil
-        ),
-        (
-            "i386-windows/kernelbase.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/kernelbase.dll",
-            nil
-        ),
-        (
-            "i386-windows/mfmediaengine.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/mfmediaengine.dll",
-            nil
-        ),
-        (
-            "i386-windows/mfplat.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/mfplat.dll",
-            nil
-        ),
-        (
-            "i386-windows/mfreadwrite.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/mfreadwrite.dll",
-            nil
-        ),
-        (
-            "i386-windows/ntdll.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/ntdll.dll",
-            nil
-        ),
-        (
-            "i386-windows/qcap.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/qcap.dll",
-            nil
-        ),
-        (
-            "i386-windows/quartz.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/quartz.dll",
-            nil
-        ),
-        (
-            "i386-windows/windows.gaming.input.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/windows.gaming.input.dll",
-            nil
-        ),
-        (
-            "i386-windows/windows.gaming.ui.gamebar.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/windows.gaming.ui.gamebar.dll",
-            nil
-        ),
-        (
-            "i386-windows/wined3d.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/wined3d.dll",
-            nil
-        ),
-        (
-            "i386-windows/winegstreamer.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/winegstreamer.dll",
-            nil
-        ),
-        (
-            "i386-windows/wintrust.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/wintrust.dll",
-            nil
-        ),
-        (
-            "x86_64-windows/advapi32.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/advapi32.dll",
-            nil
-        ),
-        (
-            "x86_64-windows/api-ms-win-core-psm-appnotify-l1-1-0.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/api-ms-win-core-psm-appnotify-l1-1-0.dll",
-            nil
-        ),
-        (
-            "x86_64-windows/api-ms-win-power-base-l1-1-0.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/api-ms-win-power-base-l1-1-0.dll",
-            nil
-        ),
-        (
-            "x86_64-windows/atiadlxx.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/atiadlxx.dll",
-            nil
-        ),
-        (
-            "x86_64-windows/crypt32.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/crypt32.dll",
-            nil
-        ),
-        (
-            "x86_64-windows/kernel32.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/kernel32.dll",
-            nil
-        ),
-        (
-            "x86_64-windows/kernelbase.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/kernelbase.dll",
-            nil
-        ),
-        (
-            "x86_64-windows/mfmediaengine.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/mfmediaengine.dll",
-            nil
-        ),
-        (
-            "x86_64-windows/mfplat.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/mfplat.dll",
-            nil
-        ),
-        (
-            "x86_64-windows/mfreadwrite.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/mfreadwrite.dll",
-            nil
-        ),
-        (
-            "x86_64-windows/ntdll.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/ntdll.dll",
-            nil
-        ),
-        (
-            "x86_64-windows/qcap.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/qcap.dll",
-            nil
-        ),
-        (
-            "x86_64-windows/quartz.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/quartz.dll",
-            nil
-        ),
-        (
-            "x86_64-windows/windows.gaming.input.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/windows.gaming.input.dll",
-            nil
-        ),
-        (
-            "x86_64-windows/windows.gaming.ui.gamebar.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/windows.gaming.ui.gamebar.dll",
-            nil
-        ),
-        (
-            "x86_64-windows/wined3d.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/wined3d.dll",
-            nil
-        ),
-        (
-            "x86_64-windows/winegstreamer.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/winegstreamer.dll",
-            nil
-        ),
-        (
-            "x86_64-windows/winemac.drv",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/winemac.drv",
-            nil
-        ),
-        (
-            "x86_64-windows/wintrust.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/wintrust.dll",
-            nil
-        ),
-        (
-            "wine64-preloader",
-            url.path + SHARED_SUPPORT_PATH + "/CrossOver-Hosted Application/wine64-preloader",
-            nil
-        ),
-        (
-            "crossover.inf",
-            url.path + SHARED_SUPPORT_PATH + "/share/crossover/bottle_data/crossover.inf",
-            nil
-        ),
-        (
-             "wine.inf",
-             url.path + SHARED_SUPPORT_PATH + "/share/wine/wine.inf",
-             nil
-         ),
-    ]
+            WINE_RESOURCES_ROOT + path,
+            url.path + SHARED_SUPPORT_PATH + path
+        )
+    }
+    return list
 }
 
-private func getExternalResourcesList(fromUrl: URL, toUrl: URL) -> [(String, String)]{
+//private func getExternalResourcesList(fromUrl: URL, toUrl: URL) -> [(String, String)]{
+//    return EXTERNAL_WINE_PATHS.map { path in
+//        (
+//            fromUrl.path + "/redist" + path,
+//            toUrl.path + SHARED_SUPPORT_PATH + path
+//        )
+//    }
+//}
+
+private func getExternalResourcesList(url: URL) -> [(String, String)]{
     return EXTERNAL_WINE_PATHS.map { path in
         (
-            fromUrl.path + "/redist" + path,
-            toUrl.path + SHARED_SUPPORT_PATH + path
+            EXTERNAL_RESOURCES_ROOT + path,
+            url.path + SHARED_SUPPORT_PATH + path
         )
     }
 }
@@ -317,8 +127,8 @@ private func maybeExt(_ ext: String?) -> String {
 }
 
 private func  getBackupListFrom(url: URL) -> [String] {
-    let internalRes = getResourcesListFrom(url: url).map { (_, path, ext) in
-        path + "_orig" + maybeExt(ext)
+    let internalRes = getResourcesListFrom(url: url).map { (_, path) in
+        path + "_orig"
     }
     return internalRes
 }
@@ -328,6 +138,18 @@ private func  getExternalBackupListFrom(url: URL) -> [String] {
         url.path + "_orig" + SHARED_SUPPORT_PATH + path
     }
     return externalRes
+}
+
+private func resCopy(res: String, dest: String, ext: String? = nil) {
+    if let sourceUrl = Bundle.main.url(forResource: res, withExtension: ext) {
+        do { try f.copyItem(at: sourceUrl, to: URL(filePath: dest + maybeExt(ext)))
+            print("\(res) copied")
+        } catch {
+            print(error)
+        }
+    } else {
+        print("\(res) not found")
+    }
 }
 
 private func safeResCopy(res: String, dest: String, ext: String? = nil) {
@@ -340,15 +162,7 @@ private func safeResCopy(res: String, dest: String, ext: String? = nil) {
     } else {
         print("unexpected error: \(dest + maybeExt(ext)) doesn't have an original copy will just copy then")
     }
-    if let sourceUrl = Bundle.main.url(forResource: res, withExtension: ext) {
-        do { try f.copyItem(at: sourceUrl, to: URL(filePath: dest + maybeExt(ext)))
-            print("\(res) copied")
-        } catch {
-            print(error)
-        }
-    } else {
-        print("\(res) not found")
-    }
+    resCopy(res: res, dest: dest, ext: ext)
 }
 
 private func safeFileCopy(source: String, dest: String, ext: String? = nil) {
@@ -393,7 +207,6 @@ private func restoreFile(dest: String, ext: String? = nil) {
 
 func isAlreadyPatched(url: URL) -> Bool {
     let filesToCheck = getBackupListFrom(url: url)
-//    print(filesToCheck)
     return filesToCheck.contains { path in
         return f.fileExists(atPath: path)
     }
@@ -437,8 +250,28 @@ func isGStreamerInstalled() -> Bool {
     return false
 }
 
+//struct FileDropDelegate: DropDelegate {
+//    @Binding var externalUrl: URL?
+//    @Binding var status: Status
+//    @Binding var skipVersionCheck: Bool
+//    @Binding var repatch: Bool
+//    
+//    func performDrop(info: DropInfo) -> Bool {
+//        if let item = info.itemProviders(for: [.fileURL]).first {
+//            let _ = item.loadObject(ofClass: URL.self) { object, error in
+//                if let url = object {
+//                    restoreAndPatch(repatch: repatch, url: url, status: &status, externalUrl: externalUrl, skipVersionCheck: skipVersionCheck)
+//                }
+//            }
+//        } else {
+//            return false
+//        }
+//        return true
+//    }
+//}
+
 struct FileDropDelegate: DropDelegate {
-    @Binding var externalUrl: URL?
+    @Binding var copyGptk: Bool
     @Binding var status: Status
     @Binding var skipVersionCheck: Bool
     @Binding var repatch: Bool
@@ -447,7 +280,7 @@ struct FileDropDelegate: DropDelegate {
         if let item = info.itemProviders(for: [.fileURL]).first {
             let _ = item.loadObject(ofClass: URL.self) { object, error in
                 if let url = object {
-                    restoreAndPatch(repatch: repatch, url: url, status: &status, externalUrl: externalUrl, skipVersionCheck: skipVersionCheck)
+                    restoreAndPatch(repatch: repatch, url: url, status: &status, copyGptk: copyGptk, skipVersionCheck: skipVersionCheck)
                 }
             }
         } else {
@@ -492,8 +325,6 @@ func getIconBy(status: Status) -> String {
     }
 }
 
-
-
 func getTextBy(status: Status) -> String {
     switch status {
     case .error:
@@ -516,33 +347,74 @@ func hasExternal(url: URL) -> Bool{
     return f.fileExists(atPath: path)
 }
 
-func patch(url: URL, externalUrl: URL? = nil) {
-    let resources = externalUrl != nil ? getResourcesListFrom(url: url) : getResourcesListFrom(url: url).filter { elem in
+//func patch(url: URL, externalUrl: URL? = nil) {
+//    let resources = externalUrl != nil ? getResourcesListFrom(url: url) : getResourcesListFrom(url: url).filter { elem in
+//        elem.0 != "crossover.inf"
+//    }
+//    if(externalUrl != nil) {
+//        print("copying externals...")
+//        let at = URL(filePath: externalUrl!.path + "/redist" + EXTERNAL_FRAMEWORK_PATH)
+//        let to = URL(filePath: url.path + SHARED_SUPPORT_PATH + EXTERNAL_FRAMEWORK_PATH)
+//        print(at.path)
+//        print(to.path)
+//        do { try f.copyItem(at: at, to: to)
+//            print("\(at.path) copied")
+//        } catch {
+//            print(error)
+//            return
+//        }
+//        let externalResources = getExternalResourcesList(fromUrl: externalUrl!, toUrl: url)
+//        externalResources.forEach { resource in
+//            safeFileCopy(source: resource.0, dest: resource.1)
+//        }
+//    }
+//    resources.forEach { resource in
+//        safeResCopy(res: resource.0, dest: resource.1)
+//    }
+//}
+
+func patch(url: URL, copyGptk: Bool? = false) {
+    let resources = copyGptk != false ? getResourcesListFrom(url: url) : getResourcesListFrom(url: url).filter { elem in
         elem.0 != "crossover.inf"
     }
-    if(externalUrl != nil) {
+    if(copyGptk != false) {
         print("copying externals...")
-        let at = URL(filePath: externalUrl!.path + "/redist" + EXTERNAL_FRAMEWORK_PATH)
-        let to = URL(filePath: url.path + SHARED_SUPPORT_PATH + EXTERNAL_FRAMEWORK_PATH)
-        print(at.path)
-        print(to.path)
-        do { try f.copyItem(at: at, to: to)
-            print("\(at.path) copied")
-        } catch {
-            print(error)
-            return
-        }
-        let externalResources = getExternalResourcesList(fromUrl: externalUrl!, toUrl: url)
+        let res = EXTERNAL_RESOURCES_ROOT + EXTERNAL_FRAMEWORK_PATH
+        let dest = url.path + SHARED_SUPPORT_PATH + EXTERNAL_FRAMEWORK_PATH
+        resCopy(res: res, dest: dest)
+        let externalResources = getExternalResourcesList(url: url)
         externalResources.forEach { resource in
-            safeFileCopy(source: resource.0, dest: resource.1)
+            safeResCopy(res: resource.0, dest: resource.1)
         }
     }
     resources.forEach { resource in
-        safeResCopy(res: resource.0, dest: resource.1, ext: resource.2)
+        safeResCopy(res: resource.0, dest: resource.1)
     }
 }
 
-func applyPatch(url: URL, status: inout Status, externalUrl: URL? = nil, skipVersionCheck: Bool? = nil) {
+//func applyPatch(url: URL, status: inout Status, externalUrl: URL? = nil, skipVersionCheck: Bool? = nil) {
+//    if (isAlreadyPatched(url: url)) {
+//        print("App is already patched")
+//        status = .alreadyPatched
+//        return
+//    }
+//    if(!isCrossoverApp(url: url, skipVersionCheck: skipVersionCheck)) {
+//        print("it' s not crossover.app")
+//        status = .error
+//        return
+//    }
+//    print("it's a crossover app")
+//    if (externalUrl != nil){
+//        patch(url: url, externalUrl: externalUrl)
+//        status = .success
+//    } else {
+//        patch(url: url)
+//        status = .success
+//    }
+//    return
+//}
+
+func applyPatch(url: URL, status: inout Status, copyGptk: Bool? = false, skipVersionCheck: Bool? = nil) {
     if (isAlreadyPatched(url: url)) {
         print("App is already patched")
         status = .alreadyPatched
@@ -554,15 +426,40 @@ func applyPatch(url: URL, status: inout Status, externalUrl: URL? = nil, skipVer
         return
     }
     print("it's a crossover app")
-    if (externalUrl != nil){
-        patch(url: url, externalUrl: externalUrl)
-        status = .success
-    } else {
-        patch(url: url)
-        status = .success
-    }
+    patch(url: url, copyGptk: copyGptk)
+    status = .success
     return
 }
+
+//func restoreApp(url: URL) -> Bool {
+//    if(!isAlreadyPatched(url: url) || !isCrossoverApp(url: url)) {
+//        if(!isAlreadyPatched(url: url)) {
+//            print("it's not patched")
+//        }
+//        if (!isCrossoverApp(url: url)){
+//            print("it isn't a crossover app")
+//        }
+//        
+//        return false
+//    }
+//    let filesToRestore = getResourcesListFrom(url: url)
+//    if(hasExternal(url: url)) {
+//        let externalFilesToRestore = getExternalResourcesList(fromUrl: url, toUrl: url)
+//        let externalPath = getExternalPathFrom(url: url)
+//        do {try f.removeItem(atPath: externalPath)
+//            print("deleting external")
+//        } catch {
+//            print("can't delete file external")
+//        }
+//        externalFilesToRestore.forEach { file in
+//            restoreFile(dest: file.1, ext: nil)
+//        }
+//    }
+//    filesToRestore.forEach { file in
+//        restoreFile(dest: file.1, ext: file.2)
+//    }
+//    return true
+//}
 
 func restoreApp(url: URL) -> Bool {
     if(!isAlreadyPatched(url: url) || !isCrossoverApp(url: url)) {
@@ -577,7 +474,7 @@ func restoreApp(url: URL) -> Bool {
     }
     let filesToRestore = getResourcesListFrom(url: url)
     if(hasExternal(url: url)) {
-        let externalFilesToRestore = getExternalResourcesList(fromUrl: url, toUrl: url)
+        let externalFilesToRestore = getExternalResourcesList(url: url)
         let externalPath = getExternalPathFrom(url: url)
         do {try f.removeItem(atPath: externalPath)
             print("deleting external")
@@ -589,16 +486,23 @@ func restoreApp(url: URL) -> Bool {
         }
     }
     filesToRestore.forEach { file in
-        restoreFile(dest: file.1, ext: file.2)
+        restoreFile(dest: file.1)
     }
     return true
 }
 
-func restoreAndPatch(repatch: Bool, url: URL, status: inout Status, externalUrl: URL? = nil, skipVersionCheck: Bool?) {
+//func restoreAndPatch(repatch: Bool, url: URL, status: inout Status, externalUrl: URL? = nil, skipVersionCheck: Bool?) {
+//    if repatch && restoreApp(url: url) {
+//        print("Restoring first...")
+//    }
+//    applyPatch(url: url, status: &status, externalUrl: externalUrl, skipVersionCheck: skipVersionCheck)
+//}
+
+func restoreAndPatch(repatch: Bool, url: URL, status: inout Status, copyGptk: Bool? = false, skipVersionCheck: Bool?) {
     if repatch && restoreApp(url: url) {
         print("Restoring first...")
     }
-    applyPatch(url: url, status: &status, externalUrl: externalUrl, skipVersionCheck: skipVersionCheck)
+    applyPatch(url: url, status: &status, copyGptk: copyGptk, skipVersionCheck: skipVersionCheck)
 }
 
 func localizedCXPatcherString(forKey key: String) -> String {

@@ -14,14 +14,14 @@ struct ContentView: View {
     @State public var externalUrl: URL? = nil
     @State public var skipVersionCheck: Bool = false
     @State public var repatch: Bool = false
-    @State private var integrateExternals:Bool = false
+    @State private var integrateExternals: Bool = false
     
-    var shouldshowAppSelector: Bool {
-        if(integrateExternals) {
-            return externalUrl != nil
-        }
-        return true
-    }
+//    var shouldshowAppSelector: Bool {
+//        if(integrateExternals) {
+//            return externalUrl != nil
+//        }
+//        return true
+//    }
     
     var body: some View {
         VStack(alignment: .center) {
@@ -37,21 +37,25 @@ struct ContentView: View {
                 }
                 .padding(.bottom, 15.0)
                 .buttonStyle(.borderedProminent)
-                if(shouldshowAppSelector) {
+//                if(shouldshowAppSelector) {
                     AppSelector(
                         status: $status,
                         repatch: $repatch,
-                        externalUrl: $externalUrl,
+//                        externalUrl: $externalUrl,
+                        copyGptk: $integrateExternals,
                         skipVersionCheck: $skipVersionCheck
                     )
-                } else {
-                    ExternalResourcesSelector(externalUrl: $externalUrl)
-                }
+//                } else {
+//                    ExternalResourcesSelector(externalUrl: $externalUrl)
+//                }
                 VStack(alignment: .center) {
                     Divider()
+//                    IntegrateExternalsToggle(
+//                        integrateExternals: $integrateExternals,
+//                        externalUrl: $externalUrl
+//                    )
                     IntegrateExternalsToggle(
-                        integrateExternals: $integrateExternals,
-                        externalUrl: $externalUrl
+                        integrateExternals: $integrateExternals
                     )
                     if(ENABLE_SKIP_VERSION_CHECK_TOGGLE) {
                         Divider()
