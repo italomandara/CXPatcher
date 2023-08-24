@@ -37,270 +37,71 @@ let EXTERNAL_WINE_PATHS: [String] = [
     "/lib/wine/x86_64-windows/d3d12.dll",
     "/lib/wine/x86_64-windows/dxgi.dll",
 ]
+let WINE_RESOURCES_ROOT = "Crossover"
+let WINE_RESOURCES_PATHS = [
+    "/lib64/libMoltenVK.dylib",
+    "/lib64/wine/dxvk",
+    "/lib/wine/dxvk",
+    "/lib/wine/x86_32on64-unix/crypt32.so",
+    "/lib/wine/x86_32on64-unix/ntdll.so",
+    "/lib/wine/x86_32on64-unix/qcap.so",
+    "/lib/wine/x86_32on64-unix/winegstreamer.so",
+    "/lib/wine/x86_64-unix/crypt32.so",
+    "/lib/wine/x86_64-unix/ntdll.so",
+    "/lib/wine/x86_64-unix/qcap.so",
+    "/lib/wine/x86_64-unix/winegstreamer.so",
+    "/lib/wine/x86_64-unix/winemac.drv.so",
+    "/lib/wine/i386-windows/advapi32.dll",
+    "/lib/wine/i386-windows/api-ms-win-core-psm-appnotify-l1-1-0.dll",
+    "/lib/wine/i386-windows/api-ms-win-power-base-l1-1-0.dll",
+    "/lib/wine/i386-windows/atiadlxx.dll",
+    "/lib/wine/i386-windows/crypt32.dll",
+    "/lib/wine/i386-windows/kernel32.dll",
+    "/lib/wine/i386-windows/kernelbase.dll",
+    "/lib/wine/i386-windows/mfmediaengine.dll",
+    "/lib/wine/i386-windows/mfplat.dll",
+    "/lib/wine/i386-windows/mfreadwrite.dll",
+    "/lib/wine/i386-windows/ntdll.dll",
+    "/lib/wine/i386-windows/qcap.dll",
+    "/lib/wine/i386-windows/quartz.dll",
+    "/lib/wine/i386-windows/windows.gaming.input.dll",
+    "/lib/wine/i386-windows/windows.gaming.ui.gamebar.dll",
+    "/lib/wine/i386-windows/wined3d.dll",
+    "/lib/wine/i386-windows/winegstreamer.dll",
+    "/lib/wine/i386-windows/wintrust.dll",
+    "/lib/wine/x86_64-windows/advapi32.dll",
+    "/lib/wine/x86_64-windows/api-ms-win-core-psm-appnotify-l1-1-0.dll",
+    "/lib/wine/x86_64-windows/api-ms-win-power-base-l1-1-0.dll",
+    "/lib/wine/x86_64-windows/atiadlxx.dll",
+    "/lib/wine/x86_64-windows/crypt32.dll",
+    "/lib/wine/x86_64-windows/kernel32.dll",
+    "/lib/wine/x86_64-windows/kernelbase.dll",
+    "/lib/wine/x86_64-windows/mfmediaengine.dll",
+    "/lib/wine/x86_64-windows/mfplat.dll",
+    "/lib/wine/x86_64-windows/mfreadwrite.dll",
+    "/lib/wine/x86_64-windows/ntdll.dll",
+    "/lib/wine/x86_64-windows/qcap.dll",
+    "/lib/wine/x86_64-windows/quartz.dll",
+    "/lib/wine/x86_64-windows/windows.gaming.input.dll",
+    "/lib/wine/x86_64-windows/windows.gaming.ui.gamebar.dll",
+    "/lib/wine/x86_64-windows/wined3d.dll",
+    "/lib/wine/x86_64-windows/winegstreamer.dll",
+    "/lib/wine/x86_64-windows/winemac.drv",
+    "/lib/wine/x86_64-windows/wintrust.dll",
+    "/CrossOver-Hosted Application/wine64-preloader",
+    "/share/crossover/bottle_data/crossover.inf",
+    "/share/wine/wine.inf"
+]
 
 private func getResourcesListFrom(url: URL) -> [(String, String, String?)]{
-    return [
+    let list: [(String, String, String?)]  = WINE_RESOURCES_PATHS.map { path in
         (
-            "Crossover/lib64/libMoltenVK.dylib",
-            url.path + SHARED_SUPPORT_PATH + "/lib64/libMoltenVK.dylib",
+            WINE_RESOURCES_ROOT + path,
+            url.path + SHARED_SUPPORT_PATH + path,
             nil
-        ),
-        (
-            "Crossover/lib64/wine/dxvk",
-            url.path + SHARED_SUPPORT_PATH + "/lib64/wine/dxvk",
-            nil
-        ),
-        (
-            "Crossover/lib/wine/dxvk",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/dxvk",
-            nil
-        ),
-        (
-            "Crossover/lib/wine/x86_32on64-unix/crypt32.so",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_32on64-unix/crypt32.so",
-            nil
-        ),
-        (
-            "Crossover/lib/wine/x86_32on64-unix/ntdll.so",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_32on64-unix/ntdll.so",
-            nil
-        ),
-        (
-            "Crossover/lib/wine/x86_32on64-unix/qcap.so",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_32on64-unix/qcap.so",
-            nil
-        ),
-        (
-            "Crossover/lib/wine/x86_32on64-unix/winegstreamer.so",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_32on64-unix/winegstreamer.so",
-            nil
-        ),
-        (
-            "Crossover/lib/wine/x86_64-unix/crypt32.so",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-unix/crypt32.so",
-            nil
-        ),
-        (
-            "Crossover/lib/wine/x86_64-unix/ntdll.so",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-unix/ntdll.so",
-            nil
-        ),
-        (
-            "Crossover/lib/wine/x86_64-unix/qcap.so",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-unix/qcap.so",
-            nil
-        ),
-        (
-            "Crossover/lib/wine/x86_64-unix/winegstreamer.so",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-unix/winegstreamer.so",
-            nil
-        ),
-        (
-            "Crossover/lib/wine/x86_64-unix/winemac.drv.so",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-unix/winemac.drv.so",
-            nil
-        ),
-        (
-            "Crossover/lib/wine/i386-windows/advapi32.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/advapi32.dll",
-            nil
-        ),
-        (
-            "Crossover/lib/wine/i386-windows/api-ms-win-core-psm-appnotify-l1-1-0.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/api-ms-win-core-psm-appnotify-l1-1-0.dll",
-            nil
-        ),
-        (
-            "Crossover/lib/wine/i386-windows/api-ms-win-power-base-l1-1-0.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/api-ms-win-power-base-l1-1-0.dll",
-            nil
-        ),
-        (
-            "Crossover/lib/wine/i386-windows/atiadlxx.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/atiadlxx.dll",
-            nil
-        ),
-        (
-            "Crossover/lib/wine/i386-windows/crypt32.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/crypt32.dll",
-            nil
-        ),
-        (
-            "Crossover/lib/wine/i386-windows/kernel32.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/kernel32.dll",
-            nil
-        ),
-        (
-            "Crossover/lib/wine/i386-windows/kernelbase.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/kernelbase.dll",
-            nil
-        ),
-        (
-            "Crossover/lib/wine/i386-windows/mfmediaengine.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/mfmediaengine.dll",
-            nil
-        ),
-        (
-            "Crossover/lib/wine/i386-windows/mfplat.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/mfplat.dll",
-            nil
-        ),
-        (
-            "Crossover/lib/wine/i386-windows/mfreadwrite.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/mfreadwrite.dll",
-            nil
-        ),
-        (
-            "Crossover/lib/wine/i386-windows/ntdll.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/ntdll.dll",
-            nil
-        ),
-        (
-            "Crossover/lib/wine/i386-windows/qcap.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/qcap.dll",
-            nil
-        ),
-        (
-            "Crossover/lib/wine/i386-windows/quartz.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/quartz.dll",
-            nil
-        ),
-        (
-            "Crossover/lib/wine/i386-windows/windows.gaming.input.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/windows.gaming.input.dll",
-            nil
-        ),
-        (
-            "Crossover/lib/wine/i386-windows/windows.gaming.ui.gamebar.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/windows.gaming.ui.gamebar.dll",
-            nil
-        ),
-        (
-            "Crossover/lib/wine/i386-windows/wined3d.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/wined3d.dll",
-            nil
-        ),
-        (
-            "Crossover/lib/wine/i386-windows/winegstreamer.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/winegstreamer.dll",
-            nil
-        ),
-        (
-            "Crossover/lib/wine/i386-windows/wintrust.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/i386-windows/wintrust.dll",
-            nil
-        ),
-        (
-            "Crossover/lib/wine/x86_64-windows/advapi32.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/advapi32.dll",
-            nil
-        ),
-        (
-            "Crossover/lib/wine/x86_64-windows/api-ms-win-core-psm-appnotify-l1-1-0.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/api-ms-win-core-psm-appnotify-l1-1-0.dll",
-            nil
-        ),
-        (
-            "Crossover/lib/wine/x86_64-windows/api-ms-win-power-base-l1-1-0.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/api-ms-win-power-base-l1-1-0.dll",
-            nil
-        ),
-        (
-            "Crossover/lib/wine/x86_64-windows/atiadlxx.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/atiadlxx.dll",
-            nil
-        ),
-        (
-            "Crossover/lib/wine/x86_64-windows/crypt32.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/crypt32.dll",
-            nil
-        ),
-        (
-            "Crossover/lib/wine/x86_64-windows/kernel32.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/kernel32.dll",
-            nil
-        ),
-        (
-            "Crossover/lib/wine/x86_64-windows/kernelbase.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/kernelbase.dll",
-            nil
-        ),
-        (
-            "Crossover/lib/wine/x86_64-windows/mfmediaengine.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/mfmediaengine.dll",
-            nil
-        ),
-        (
-            "Crossover/lib/wine/x86_64-windows/mfplat.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/mfplat.dll",
-            nil
-        ),
-        (
-            "Crossover/lib/wine/x86_64-windows/mfreadwrite.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/mfreadwrite.dll",
-            nil
-        ),
-        (
-            "Crossover/lib/wine/x86_64-windows/ntdll.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/ntdll.dll",
-            nil
-        ),
-        (
-            "Crossover/lib/wine/x86_64-windows/qcap.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/qcap.dll",
-            nil
-        ),
-        (
-            "Crossover/lib/wine/x86_64-windows/quartz.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/quartz.dll",
-            nil
-        ),
-        (
-            "Crossover/lib/wine/x86_64-windows/windows.gaming.input.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/windows.gaming.input.dll",
-            nil
-        ),
-        (
-            "Crossover/lib/wine/x86_64-windows/windows.gaming.ui.gamebar.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/windows.gaming.ui.gamebar.dll",
-            nil
-        ),
-        (
-            "Crossover/lib/wine/x86_64-windows/wined3d.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/wined3d.dll",
-            nil
-        ),
-        (
-            "Crossover/lib/wine/x86_64-windows/winegstreamer.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/winegstreamer.dll",
-            nil
-        ),
-        (
-            "Crossover/lib/wine/x86_64-windows/winemac.drv",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/winemac.drv",
-            nil
-        ),
-        (
-            "Crossover/lib/wine/x86_64-windows/wintrust.dll",
-            url.path + SHARED_SUPPORT_PATH + "/lib/wine/x86_64-windows/wintrust.dll",
-            nil
-        ),
-        (
-            "Crossover/CrossOver-Hosted Application/wine64-preloader",
-            url.path + SHARED_SUPPORT_PATH + "/CrossOver-Hosted Application/wine64-preloader",
-            nil
-        ),
-        (
-            "Crossover/share/crossover/bottle_data/crossover.inf",
-            url.path + SHARED_SUPPORT_PATH + "/share/crossover/bottle_data/crossover.inf",
-            nil
-        ),
-        (
-             "Crossover/share/wine/wine.inf",
-             url.path + SHARED_SUPPORT_PATH + "/share/wine/wine.inf",
-             nil
-         ),
-    ]
+        )
+    }
+    return list
 }
 
 private func getExternalResourcesList(fromUrl: URL, toUrl: URL) -> [(String, String)]{
