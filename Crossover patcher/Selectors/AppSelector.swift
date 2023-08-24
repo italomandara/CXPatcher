@@ -12,7 +12,8 @@ import SwiftUI
 struct AppSelector: View {
     @Binding var status: Status
     @Binding var repatch: Bool
-    @Binding var externalUrl: URL?
+    @Binding var copyGptk: Bool
+//    @Binding var externalUrl: URL?
     @Binding var skipVersionCheck: Bool
     
     var body: some View {
@@ -35,18 +36,18 @@ struct AppSelector: View {
             .contentShape(RoundedRectangle(cornerRadius: 25))
             .onTapGesture {
                 if let url = openAppSelectorPanel() {
-                    restoreAndPatch(repatch: repatch, url: url, status: &status, externalUrl: externalUrl, skipVersionCheck: skipVersionCheck)
+                    restoreAndPatch(repatch: repatch, url: url, status: &status, copyGptk: copyGptk, skipVersionCheck: skipVersionCheck)
                 }
             }
-            .onDrop(of: [.fileURL], delegate: FileDropDelegate(externalUrl: $externalUrl, status: $status, skipVersionCheck: $skipVersionCheck, repatch: $repatch))
-        if(externalUrl != nil) {
-            HStack(alignment: .center) {
-                Image(systemName: "externaldrive.fill.badge.checkmark")
-                    .foregroundColor(.green)
-                Text("External: \(externalUrl!.path)")
-            }
-            .padding(.top, 5.0)
-        }
+            .onDrop(of: [.fileURL], delegate: FileDropDelegate(copyGptk: $copyGptk, status: $status, skipVersionCheck: $skipVersionCheck, repatch: $repatch))
+//        if(externalUrl != nil) {
+//            HStack(alignment: .center) {
+//                Image(systemName: "externaldrive.fill.badge.checkmark")
+//                    .foregroundColor(.green)
+//                Text("External: \(externalUrl!.path)")
+//            }
+//            .padding(.top, 5.0)
+//        }
         
         if(isGStreamerInstalled()) {
             HStack(alignment: .center) {
