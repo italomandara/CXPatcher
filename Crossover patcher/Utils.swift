@@ -104,15 +104,6 @@ private func getResourcesListFrom(url: URL) -> [(String, String)]{
     return list
 }
 
-//private func getExternalResourcesList(fromUrl: URL, toUrl: URL) -> [(String, String)]{
-//    return EXTERNAL_WINE_PATHS.map { path in
-//        (
-//            fromUrl.path + "/redist" + path,
-//            toUrl.path + SHARED_SUPPORT_PATH + path
-//        )
-//    }
-//}
-
 private func getExternalResourcesList(url: URL) -> [(String, String)]{
     return EXTERNAL_WINE_PATHS.map { path in
         (
@@ -250,26 +241,6 @@ func isGStreamerInstalled() -> Bool {
     return false
 }
 
-//struct FileDropDelegate: DropDelegate {
-//    @Binding var externalUrl: URL?
-//    @Binding var status: Status
-//    @Binding var skipVersionCheck: Bool
-//    @Binding var repatch: Bool
-//    
-//    func performDrop(info: DropInfo) -> Bool {
-//        if let item = info.itemProviders(for: [.fileURL]).first {
-//            let _ = item.loadObject(ofClass: URL.self) { object, error in
-//                if let url = object {
-//                    restoreAndPatch(repatch: repatch, url: url, status: &status, externalUrl: externalUrl, skipVersionCheck: skipVersionCheck)
-//                }
-//            }
-//        } else {
-//            return false
-//        }
-//        return true
-//    }
-//}
-
 struct FileDropDelegate: DropDelegate {
     @Binding var copyGptk: Bool
     @Binding var status: Status
@@ -347,32 +318,6 @@ func hasExternal(url: URL) -> Bool{
     return f.fileExists(atPath: path)
 }
 
-//func patch(url: URL, externalUrl: URL? = nil) {
-//    let resources = externalUrl != nil ? getResourcesListFrom(url: url) : getResourcesListFrom(url: url).filter { elem in
-//        elem.0 != "crossover.inf"
-//    }
-//    if(externalUrl != nil) {
-//        print("copying externals...")
-//        let at = URL(filePath: externalUrl!.path + "/redist" + EXTERNAL_FRAMEWORK_PATH)
-//        let to = URL(filePath: url.path + SHARED_SUPPORT_PATH + EXTERNAL_FRAMEWORK_PATH)
-//        print(at.path)
-//        print(to.path)
-//        do { try f.copyItem(at: at, to: to)
-//            print("\(at.path) copied")
-//        } catch {
-//            print(error)
-//            return
-//        }
-//        let externalResources = getExternalResourcesList(fromUrl: externalUrl!, toUrl: url)
-//        externalResources.forEach { resource in
-//            safeFileCopy(source: resource.0, dest: resource.1)
-//        }
-//    }
-//    resources.forEach { resource in
-//        safeResCopy(res: resource.0, dest: resource.1)
-//    }
-//}
-
 func patch(url: URL, copyGptk: Bool? = false) {
     let resources = copyGptk != false ? getResourcesListFrom(url: url) : getResourcesListFrom(url: url).filter { elem in
         elem.0 != "crossover.inf"
@@ -392,28 +337,6 @@ func patch(url: URL, copyGptk: Bool? = false) {
     }
 }
 
-//func applyPatch(url: URL, status: inout Status, externalUrl: URL? = nil, skipVersionCheck: Bool? = nil) {
-//    if (isAlreadyPatched(url: url)) {
-//        print("App is already patched")
-//        status = .alreadyPatched
-//        return
-//    }
-//    if(!isCrossoverApp(url: url, skipVersionCheck: skipVersionCheck)) {
-//        print("it' s not crossover.app")
-//        status = .error
-//        return
-//    }
-//    print("it's a crossover app")
-//    if (externalUrl != nil){
-//        patch(url: url, externalUrl: externalUrl)
-//        status = .success
-//    } else {
-//        patch(url: url)
-//        status = .success
-//    }
-//    return
-//}
-
 func applyPatch(url: URL, status: inout Status, copyGptk: Bool? = false, skipVersionCheck: Bool? = nil) {
     if (isAlreadyPatched(url: url)) {
         print("App is already patched")
@@ -430,36 +353,6 @@ func applyPatch(url: URL, status: inout Status, copyGptk: Bool? = false, skipVer
     status = .success
     return
 }
-
-//func restoreApp(url: URL) -> Bool {
-//    if(!isAlreadyPatched(url: url) || !isCrossoverApp(url: url)) {
-//        if(!isAlreadyPatched(url: url)) {
-//            print("it's not patched")
-//        }
-//        if (!isCrossoverApp(url: url)){
-//            print("it isn't a crossover app")
-//        }
-//        
-//        return false
-//    }
-//    let filesToRestore = getResourcesListFrom(url: url)
-//    if(hasExternal(url: url)) {
-//        let externalFilesToRestore = getExternalResourcesList(fromUrl: url, toUrl: url)
-//        let externalPath = getExternalPathFrom(url: url)
-//        do {try f.removeItem(atPath: externalPath)
-//            print("deleting external")
-//        } catch {
-//            print("can't delete file external")
-//        }
-//        externalFilesToRestore.forEach { file in
-//            restoreFile(dest: file.1, ext: nil)
-//        }
-//    }
-//    filesToRestore.forEach { file in
-//        restoreFile(dest: file.1, ext: file.2)
-//    }
-//    return true
-//}
 
 func restoreApp(url: URL) -> Bool {
     if(!isAlreadyPatched(url: url) || !isCrossoverApp(url: url)) {
@@ -491,13 +384,6 @@ func restoreApp(url: URL) -> Bool {
     return true
 }
 
-//func restoreAndPatch(repatch: Bool, url: URL, status: inout Status, externalUrl: URL? = nil, skipVersionCheck: Bool?) {
-//    if repatch && restoreApp(url: url) {
-//        print("Restoring first...")
-//    }
-//    applyPatch(url: url, status: &status, externalUrl: externalUrl, skipVersionCheck: skipVersionCheck)
-//}
-
 func restoreAndPatch(repatch: Bool, url: URL, status: inout Status, copyGptk: Bool? = false, skipVersionCheck: Bool?) {
     if repatch && restoreApp(url: url) {
         print("Restoring first...")
@@ -516,7 +402,7 @@ func localizedCXPatcherString(forKey key: String) -> String {
 }
 
 func validate(input: String) -> Bool {
-    if(input == localizedCXPatcherString(forKey:"confirmationValue")) {
+    if(input.lowercased() == localizedCXPatcherString(forKey:"confirmationValue").lowercased()) {
         return true
     }
     return false

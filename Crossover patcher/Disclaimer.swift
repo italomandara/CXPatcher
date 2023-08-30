@@ -49,6 +49,11 @@ struct Disclaimer: View {
             TextField("",
                       text: $inputText
             )
+            .onSubmit {
+                if (valid) {
+                    showDisclaimer = false
+                }
+            }
             .onChange(of: inputText) { newValue in
                 valid = validate(input: newValue)
             }
