@@ -70,6 +70,8 @@ let WINE_RESOURCES_PATHS: [String] = [
     "/lib/wine/i386-windows/wined3d.dll",
     "/lib/wine/i386-windows/winegstreamer.dll",
     "/lib/wine/i386-windows/wintrust.dll",
+    "/lib/wine/i386-windows/appwiz.cpl",
+    "/lib/wine/i386-windows/mscoree.dll",
     "/lib/wine/x86_64-windows/advapi32.dll",
     "/lib/wine/x86_64-windows/api-ms-win-core-psm-appnotify-l1-1-0.dll",
     "/lib/wine/x86_64-windows/api-ms-win-power-base-l1-1-0.dll",
@@ -89,9 +91,12 @@ let WINE_RESOURCES_PATHS: [String] = [
     "/lib/wine/x86_64-windows/winegstreamer.dll",
     "/lib/wine/x86_64-windows/winemac.drv",
     "/lib/wine/x86_64-windows/wintrust.dll",
+    "/lib/wine/x86_64-windows/appwiz.cpl",
+    "/lib/wine/x86_64-windows/mscoree.dll",
     "/CrossOver-Hosted Application/wine64-preloader",
     "/share/crossover/bottle_data/crossover.inf",
-    "/share/wine/wine.inf"
+    "/share/wine/wine.inf",
+    "/share/wine/mono/wine-mono-7.4.1"
 ]
 
 private func getResourcesListFrom(url: URL) -> [(String, String)]{
