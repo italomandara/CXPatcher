@@ -37,6 +37,10 @@ let EXTERNAL_WINE_PATHS: [String] = [
     "/lib/wine/x86_64-windows/d3d12.dll",
     "/lib/wine/x86_64-windows/dxgi.dll",
 ]
+let FILES_TO_DISABLE: [String] = [
+    "/Contents/CodeResources",
+    "/Contents/_CodeSignature",
+]
 let WINE_RESOURCES_ROOT = "Crossover"
 let EXTERNAL_RESOURCES_ROOT = "gptk/redist"
 let WINE_RESOURCES_PATHS: [String] = [
@@ -105,6 +109,13 @@ private func getResourcesListFrom(url: URL) -> [(String, String)]{
             WINE_RESOURCES_ROOT + path,
             url.path + SHARED_SUPPORT_PATH + path
         )
+    }
+    return list
+}
+
+private func getDisableListFrom(url: URL) -> [String]{
+    let list: [String]  = FILES_TO_DISABLE.map { path in
+        url.path + path
     }
     return list
 }
@@ -198,6 +209,22 @@ private func restoreFile(dest: String, ext: String? = nil) {
         }
     } else {
         print("file \(dest) doesn't exist... ignoring")
+    }
+}
+
+private func disable(dest: String) {
+    do {try f.moveItem(atPath: dest, toPath: dest  + "_disabled")
+        print("disabling \(dest)")
+    } catch {
+        print("can't move file \(dest)")
+    }
+}
+
+private func enable(dest: String) {
+    do {try f.moveItem(atPath: dest + "_disabled", toPath: dest)
+        print("disabling \(dest)")
+    } catch {
+        print("can't move file \(dest)")
     }
 }
 
@@ -327,6 +354,7 @@ func patch(url: URL, copyGptk: Bool? = false) {
     let resources = copyGptk != false ? getResourcesListFrom(url: url) : getResourcesListFrom(url: url).filter { elem in
         elem.0 != "crossover.inf"
     }
+    let filesToDisable = getDisableListFrom(url: url)
     if(copyGptk != false) {
         print("copying externals...")
         let res = EXTERNAL_RESOURCES_ROOT + EXTERNAL_FRAMEWORK_PATH
@@ -339,6 +367,9 @@ func patch(url: URL, copyGptk: Bool? = false) {
     }
     resources.forEach { resource in
         safeResCopy(res: resource.0, dest: resource.1)
+    }
+    filesToDisable.forEach { file in
+        disable(dest: file)
     }
 }
 
@@ -371,6 +402,7 @@ func restoreApp(url: URL) -> Bool {
         return false
     }
     let filesToRestore = getResourcesListFrom(url: url)
+    let filesToEnable = getDisableListFrom(url: url)
     if(hasExternal(url: url)) {
         let externalFilesToRestore = getExternalResourcesList(url: url)
         let externalPath = getExternalPathFrom(url: url)
@@ -385,6 +417,9 @@ func restoreApp(url: URL) -> Bool {
     }
     filesToRestore.forEach { file in
         restoreFile(dest: file.1)
+    }
+    filesToEnable.forEach { file in
+        enable(dest: file)
     }
     return true
 }
