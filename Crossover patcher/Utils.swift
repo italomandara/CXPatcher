@@ -20,88 +20,6 @@ enum Status {
 }
 
 var f = FileManager()
-let SHARED_SUPPORT_PATH = "/Contents/SharedSupport/CrossOver"
-let LIB_PATH = "/lib/"
-let EXTERNAL_FRAMEWORK_PATH = "/lib/external"
-let EXTERNAL_WINE_PATHS: [String] = [
-    "/lib/wine/x86_64-unix/atidxx64.so",
-    "/lib/wine/x86_64-unix/d3d9.so",
-    "/lib/wine/x86_64-unix/d3d10.so",
-    "/lib/wine/x86_64-unix/d3d11.so",
-    "/lib/wine/x86_64-unix/d3d12.so",
-    "/lib/wine/x86_64-unix/dxgi.so",
-    "/lib/wine/x86_64-windows/atidxx64.dll",
-    "/lib/wine/x86_64-windows/d3d9.dll",
-    "/lib/wine/x86_64-windows/d3d10.dll",
-    "/lib/wine/x86_64-windows/d3d11.dll",
-    "/lib/wine/x86_64-windows/d3d12.dll",
-    "/lib/wine/x86_64-windows/dxgi.dll",
-]
-let FILES_TO_DISABLE: [String] = [
-    "/Contents/CodeResources",
-    "/Contents/_CodeSignature",
-]
-let WINE_RESOURCES_ROOT = "Crossover"
-let EXTERNAL_RESOURCES_ROOT = "gptk/redist"
-let WINE_RESOURCES_PATHS: [String] = [
-    "/lib64/libMoltenVK.dylib",
-    "/lib64/wine/dxvk",
-    "/lib/wine/dxvk",
-    "/lib/wine/x86_32on64-unix/crypt32.so",
-    "/lib/wine/x86_32on64-unix/ntdll.so",
-    "/lib/wine/x86_32on64-unix/qcap.so",
-    "/lib/wine/x86_32on64-unix/winegstreamer.so",
-    "/lib/wine/x86_64-unix/crypt32.so",
-    "/lib/wine/x86_64-unix/ntdll.so",
-    "/lib/wine/x86_64-unix/qcap.so",
-    "/lib/wine/x86_64-unix/winegstreamer.so",
-    "/lib/wine/x86_64-unix/winemac.drv.so",
-    "/lib/wine/i386-windows/advapi32.dll",
-    "/lib/wine/i386-windows/api-ms-win-core-psm-appnotify-l1-1-0.dll",
-    "/lib/wine/i386-windows/api-ms-win-power-base-l1-1-0.dll",
-    "/lib/wine/i386-windows/atiadlxx.dll",
-    "/lib/wine/i386-windows/crypt32.dll",
-    "/lib/wine/i386-windows/kernel32.dll",
-    "/lib/wine/i386-windows/kernelbase.dll",
-    "/lib/wine/i386-windows/mfmediaengine.dll",
-    "/lib/wine/i386-windows/mfplat.dll",
-    "/lib/wine/i386-windows/mfreadwrite.dll",
-    "/lib/wine/i386-windows/ntdll.dll",
-    "/lib/wine/i386-windows/qcap.dll",
-    "/lib/wine/i386-windows/quartz.dll",
-    "/lib/wine/i386-windows/windows.gaming.input.dll",
-    "/lib/wine/i386-windows/windows.gaming.ui.gamebar.dll",
-    "/lib/wine/i386-windows/wined3d.dll",
-    "/lib/wine/i386-windows/winegstreamer.dll",
-    "/lib/wine/i386-windows/wintrust.dll",
-    "/lib/wine/i386-windows/appwiz.cpl",
-    "/lib/wine/i386-windows/mscoree.dll",
-    "/lib/wine/x86_64-windows/advapi32.dll",
-    "/lib/wine/x86_64-windows/api-ms-win-core-psm-appnotify-l1-1-0.dll",
-    "/lib/wine/x86_64-windows/api-ms-win-power-base-l1-1-0.dll",
-    "/lib/wine/x86_64-windows/atiadlxx.dll",
-    "/lib/wine/x86_64-windows/crypt32.dll",
-    "/lib/wine/x86_64-windows/kernel32.dll",
-    "/lib/wine/x86_64-windows/kernelbase.dll",
-    "/lib/wine/x86_64-windows/mfmediaengine.dll",
-    "/lib/wine/x86_64-windows/mfplat.dll",
-    "/lib/wine/x86_64-windows/mfreadwrite.dll",
-    "/lib/wine/x86_64-windows/ntdll.dll",
-    "/lib/wine/x86_64-windows/qcap.dll",
-    "/lib/wine/x86_64-windows/quartz.dll",
-    "/lib/wine/x86_64-windows/windows.gaming.input.dll",
-    "/lib/wine/x86_64-windows/windows.gaming.ui.gamebar.dll",
-    "/lib/wine/x86_64-windows/wined3d.dll",
-    "/lib/wine/x86_64-windows/winegstreamer.dll",
-    "/lib/wine/x86_64-windows/winemac.drv",
-    "/lib/wine/x86_64-windows/wintrust.dll",
-    "/lib/wine/x86_64-windows/appwiz.cpl",
-    "/lib/wine/x86_64-windows/mscoree.dll",
-    "/CrossOver-Hosted Application/wine64-preloader",
-    "/share/crossover/bottle_data/crossover.inf",
-    "/share/wine/wine.inf",
-    "/share/wine/mono/wine-mono-7.4.1"
-]
 
 private func getResourcesListFrom(url: URL) -> [(String, String)]{
     let list: [(String, String)]  = WINE_RESOURCES_PATHS.map { path in
@@ -129,10 +47,6 @@ private func getExternalResourcesList(url: URL) -> [(String, String)]{
     }
 }
 
-private func maybeExt(_ ext: String?) -> String {
-    return ext != nil ? "." + ext! : ""
-}
-
 private func  getBackupListFrom(url: URL) -> [String] {
     let internalRes = getResourcesListFrom(url: url).map { (_, path) in
         path + "_orig"
@@ -147,9 +61,9 @@ private func  getExternalBackupListFrom(url: URL) -> [String] {
     return externalRes
 }
 
-private func resCopy(res: String, dest: String, ext: String? = nil) {
-    if let sourceUrl = Bundle.main.url(forResource: res, withExtension: ext) {
-        do { try f.copyItem(at: sourceUrl, to: URL(filePath: dest + maybeExt(ext)))
+private func resCopy(res: String, dest: String) {
+    if let sourceUrl = Bundle.main.url(forResource: res, withExtension: nil) {
+        do { try f.copyItem(at: sourceUrl, to: URL(filePath: dest))
             print("\(res) copied")
         } catch {
             print(error)
@@ -159,31 +73,31 @@ private func resCopy(res: String, dest: String, ext: String? = nil) {
     }
 }
 
-private func safeResCopy(res: String, dest: String, ext: String? = nil) {
+private func safeResCopy(res: String, dest: String) {
 //    print("moving \(dest + maybeExt(ext))")
-    if(f.fileExists(atPath: dest + maybeExt(ext))) {
-        do {try f.moveItem(atPath: dest + maybeExt(ext), toPath: dest + "_orig" + maybeExt(ext))
+    if(f.fileExists(atPath: dest)) {
+        do {try f.moveItem(atPath: dest, toPath: dest + "_orig")
         } catch {
-            print("\(dest + maybeExt(ext)) does not exist!")
+            print("\(dest) does not exist!")
         }
     } else {
-        print("unexpected error: \(dest + maybeExt(ext)) doesn't have an original copy will just copy then")
+        print("unexpected error: \(dest) doesn't have an original copy will just copy then")
     }
-    resCopy(res: res, dest: dest, ext: ext)
+    resCopy(res: res, dest: dest)
 }
 
-private func safeFileCopy(source: String, dest: String, ext: String? = nil) {
+private func safeFileCopy(source: String, dest: String) {
 //    print("moving \(dest + maybeExt(ext))")
-    if(f.fileExists(atPath: dest + maybeExt(ext))) {
-        do {try f.moveItem(atPath: dest + maybeExt(ext), toPath: dest + "_orig" + maybeExt(ext))
+    if(f.fileExists(atPath: dest)) {
+        do {try f.moveItem(atPath: dest, toPath: dest + "_orig")
         } catch {
-            print("\(dest + maybeExt(ext)) does not exist!")
+            print("\(dest) does not exist!")
         }
     } else {
         print("file doesn't exist I'll just copy then")
     }
 
-    do { try f.copyItem(at: URL(filePath: source), to: URL(filePath: dest + maybeExt(ext)))
+    do { try f.copyItem(at: URL(filePath: source), to: URL(filePath: dest))
         print("\(source) copied")
     } catch {
         print(error)
@@ -191,9 +105,9 @@ private func safeFileCopy(source: String, dest: String, ext: String? = nil) {
 
 }
 
-private func restoreFile(dest: String, ext: String? = nil) {
-    if(f.fileExists(atPath: dest + maybeExt(ext) )) {
-        do {try f.removeItem(atPath: dest + maybeExt(ext))
+private func restoreFile(dest: String) {
+    if(f.fileExists(atPath: dest)) {
+        do {try f.removeItem(atPath: dest)
             print("deleting \(dest)")
         } catch {
             print("can't delete file \(dest)")
@@ -201,8 +115,8 @@ private func restoreFile(dest: String, ext: String? = nil) {
     } else {
         print("file \(dest) doesn't exist... ignoring and deleting just _orig if found")
     }
-    if(f.fileExists(atPath: dest + "_orig" + maybeExt(ext) )) {
-        do {try f.moveItem(atPath: dest + "_orig" + maybeExt(ext), toPath: dest + maybeExt(ext))
+    if(f.fileExists(atPath: dest + "_orig")) {
+        do {try f.moveItem(atPath: dest + "_orig", toPath: dest)
             print("copying \(dest)")
         } catch {
             print("can't move file \(dest)")
@@ -386,6 +300,7 @@ func applyPatch(url: URL, status: inout Status, copyGptk: Bool? = false, skipVer
     }
     print("it's a crossover app")
     patch(url: url, copyGptk: copyGptk)
+    disableAutoUpdate(url: url)
     status = .success
     return
 }
@@ -412,7 +327,7 @@ func restoreApp(url: URL) -> Bool {
             print("can't delete file external")
         }
         externalFilesToRestore.forEach { file in
-            restoreFile(dest: file.1, ext: nil)
+            restoreFile(dest: file.1)
         }
     }
     filesToRestore.forEach { file in
@@ -421,6 +336,7 @@ func restoreApp(url: URL) -> Bool {
     filesToEnable.forEach { file in
         enable(dest: file)
     }
+    restoreAutoUpdate(url: url)
     return true
 }
 
@@ -446,4 +362,48 @@ func validate(input: String) -> Bool {
         return true
     }
     return false
+}
+
+class ParseXML : NSObject, XMLParserDelegate {
+    var dict: [String : String] = [:]
+    
+    func parser(
+        _ parser: XMLParser,
+        didStartElement elementName: String,
+        namespaceURI: String?,
+        qualifiedName qName: String?,
+        attributes attributeDict: [String : String] = [:]
+    ){
+        for (attr_key, attr_val) in attributeDict {
+            dict[attr_key] = attr_val
+            print("Key: \(attr_key), value: \(attr_val)")
+        }
+    }
+}
+
+func editPlist(at: URL, key: String, value: String) {
+    let url = at.appendingPathComponent(PLIST_PATH)
+    var plist: [String:Any] = [:]
+    if let data = f.contents(atPath: url.path) {
+        do {
+            plist = try PropertyListSerialization.propertyList(from: data, options:PropertyListSerialization.ReadOptions(), format:nil) as! [String:Any]
+            plist[key] = value
+        } catch {
+            print(error)
+        }
+    }
+    do {try f.moveItem(atPath: url.path, toPath: url.path + "_orig")
+    } catch {
+        print("\(url.path) does not exist!")
+    }
+    NSDictionary(dictionary: plist).write(to: url, atomically: true)
+}
+
+func disableAutoUpdate(url: URL) {
+    editPlist(at: url, key: "SUFeedURL", value: "")
+}
+
+func restoreAutoUpdate(url: URL) {
+    let plistURL = url.appendingPathComponent(PLIST_PATH)
+    restoreFile(dest: plistURL.path)
 }
