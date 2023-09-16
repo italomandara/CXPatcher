@@ -364,23 +364,6 @@ func validate(input: String) -> Bool {
     return false
 }
 
-class ParseXML : NSObject, XMLParserDelegate {
-    var dict: [String : String] = [:]
-    
-    func parser(
-        _ parser: XMLParser,
-        didStartElement elementName: String,
-        namespaceURI: String?,
-        qualifiedName qName: String?,
-        attributes attributeDict: [String : String] = [:]
-    ){
-        for (attr_key, attr_val) in attributeDict {
-            dict[attr_key] = attr_val
-            print("Key: \(attr_key), value: \(attr_val)")
-        }
-    }
-}
-
 func editPlist(at: URL, key: String, value: String) {
     let url = at.appendingPathComponent(PLIST_PATH)
     var plist: [String:Any] = [:]
