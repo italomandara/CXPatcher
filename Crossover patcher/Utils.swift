@@ -300,6 +300,7 @@ func applyPatch(url: URL, status: inout Status, copyGptk: Bool? = false, skipVer
     }
     print("it's a crossover app")
     patch(url: url, copyGptk: copyGptk)
+    disableAutoUpdate(url: url)
     status = .success
     return
 }
@@ -335,6 +336,7 @@ func restoreApp(url: URL) -> Bool {
     filesToEnable.forEach { file in
         enable(dest: file)
     }
+    restoreAutoUpdate(url: url)
     return true
 }
 
@@ -360,4 +362,48 @@ func validate(input: String) -> Bool {
         return true
     }
     return false
+}
+
+class ParseXML : NSObject, XMLParserDelegate {
+    var dict: [String : String] = [:]
+    
+    func parser(
+        _ parser: XMLParser,
+        didStartElement elementName: String,
+        namespaceURI: String?,
+        qualifiedName qName: String?,
+        attributes attributeDict: [String : String] = [:]
+    ){
+        for (attr_key, attr_val) in attributeDict {
+            dict[attr_key] = attr_val
+            print("Key: \(attr_key), value: \(attr_val)")
+        }
+    }
+}
+
+func editPlist(at: URL, key: String, value: String) {
+    let url = at.appendingPathComponent(PLIST_PATH)
+    var plist: [String:Any] = [:]
+    if let data = f.contents(atPath: url.path) {
+        do {
+            plist = try PropertyListSerialization.propertyList(from: data, options:PropertyListSerialization.ReadOptions(), format:nil) as! [String:Any]
+            plist[key] = value
+        } catch {
+            print(error)
+        }
+    }
+    do {try f.moveItem(atPath: url.path, toPath: url.path + "_orig")
+    } catch {
+        print("\(url.path) does not exist!")
+    }
+    NSDictionary(dictionary: plist).write(to: url, atomically: true)
+}
+
+func disableAutoUpdate(url: URL) {
+    editPlist(at: url, key: "SUFeedURL", value: "")
+}
+
+func restoreAutoUpdate(url: URL) {
+    let plistURL = url.appendingPathComponent(PLIST_PATH)
+    restoreFile(dest: plistURL.path)
 }
