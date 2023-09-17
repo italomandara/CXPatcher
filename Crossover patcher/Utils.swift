@@ -371,8 +371,9 @@ func editInfoPlist(at: URL, key: String, value: String) {
         do {
             plist = try PropertyListSerialization.propertyList(from: data, options:PropertyListSerialization.ReadOptions(), format:nil) as! [String:Any]
             plist[key] = value
+            print("set info property list \(key) = \(value)")
         } catch {
-            print(error)
+            print("\(error) - there was a problem parsing the xml")
         }
     }
     do {try f.moveItem(atPath: url.path, toPath: url.path + "_orig")
@@ -389,4 +390,5 @@ func disableAutoUpdate(url: URL) {
 func restoreAutoUpdate(url: URL) {
     let plistURL = url.appendingPathComponent(PLIST_PATH)
     restoreFile(dest: plistURL.path)
+    print("restored original Info.plist")
 }
