@@ -364,7 +364,7 @@ func validate(input: String) -> Bool {
     return false
 }
 
-func editPlist(at: URL, key: String, value: String) {
+func editInfoPlist(at: URL, key: String, value: String) {
     let url = at.appendingPathComponent(PLIST_PATH)
     var plist: [String:Any] = [:]
     if let data = f.contents(atPath: url.path) {
@@ -383,7 +383,7 @@ func editPlist(at: URL, key: String, value: String) {
 }
 
 func disableAutoUpdate(url: URL) {
-    editPlist(at: url, key: "SUFeedURL", value: "")
+    editInfoPlist(at: url, key: "SUFeedURL", value: "")
 }
 
 func restoreAutoUpdate(url: URL) {
