@@ -62,25 +62,14 @@ Alternatively, you may use Homebrew. See the
 [homebrew-CXPatcher repo](https://github.com/italomandara/homebrew-CXPatcher)
 for detailed instructions.
 
-## Patching with a new external framework
+## Patching with gptk
 
 There are new upcoming technologies developed this year that are capable of
 running DirectX 12 games and now you can have those embedded in CrossOver!
-In order to integrate that in CrossOver you need to:
-
-- [download](https://developer.apple.com/download/all/?q=game%20porting%20toolkit) the dmg image file (GPTK)
-- mount the dmg image
-- switch on "Integrate D3DMetal (GPTK)"
+In order to integrate that in CrossOver you just need switch on "Integrate D3DMetal (GPTK)"
 
 <img width="300" alt="integrate external resources" src="https://github.com/italomandara/CXPatcher/assets/12135454/0da08a95-5003-46c1-985c-80f2ff6dd256">
 <img width="401" alt="integrate external resources" src="https://github.com/italomandara/CXPatcher/assets/12135454/9f709365-cd25-4d34-a737-6f68ff2bb491">
-
-
-
-- click the "Locate external resources" button and select the volume you just mounted
-
-<img width="300" alt="locate external resources" src="https://github.com/italomandara/CXPatcher/assets/12135454/fb624623-de5e-4af1-bb83-2346e9a81897">
-
 
 - now you can patch CrossOver as usual via either drag'n'drop or file selector
 (click in the drop area)
