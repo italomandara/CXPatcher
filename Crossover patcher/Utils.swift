@@ -5,12 +5,12 @@
 //  Created by Italo Mandara on 03/04/2023.
 //
 
+import Foundation
+import SwiftUI
+
 var isVentura: Bool {
     SKIP_VENTURA_CHECK ? false : ProcessInfo().operatingSystemVersion.majorVersion < 14
 }
-
-import Foundation
-import SwiftUI
 
 enum Status {
     case alreadyPatched
