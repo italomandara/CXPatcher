@@ -11,10 +11,12 @@ struct ContentView: View {
     @Environment(\.openWindow) var openWindow
     @State private var showDisclaimer = true
     @State public var status: Status = .unpatched
-    @State public var externalUrl: URL? = nil
+//    @State public var externalUrl: URL? = nil
     @State public var skipVersionCheck: Bool = false
     @State public var repatch: Bool = false
     @State private var integrateExternals: Bool = false
+    @State private var bottlePath: Bool = true
+    @State private var config = Opts()
     
 //    var shouldshowAppSelector: Bool {
 //        if(integrateExternals) {
@@ -54,6 +56,10 @@ struct ContentView: View {
 //                        integrateExternals: $integrateExternals,
 //                        externalUrl: $externalUrl
 //                    )
+                    BottlesPathToggle(
+                        bottlePath: $bottlePath
+                    )
+                    Divider()
                     IntegrateExternalsToggle(
                         integrateExternals: $integrateExternals
                     )

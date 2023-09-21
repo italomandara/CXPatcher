@@ -19,6 +19,15 @@ enum Status {
     case error
 }
 
+struct Opts {
+    var showDisclaimer: Bool = true
+    var status: Status = .unpatched
+    var skipVersionCheck: Bool = false
+    var repatch: Bool = false
+    var integrateExternals: Bool = false
+    var bottlePath: Bool = true
+}
+
 var f = FileManager()
 
 private func getResourcesListFrom(url: URL) -> [(String, String)]{
