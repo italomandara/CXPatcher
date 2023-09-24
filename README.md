@@ -64,7 +64,7 @@ for detailed instructions.
 
 ### New Bottle path
 
-CXPatcher will override the default bottle path to have it's own folder prefixed with 'CXP' in the same one that contains the 'Bottles' folder.
+CXPatcher will override the default bottle path to have its own folder prefixed with 'CXP' in the same one that contains the 'Bottles' folder.
 That's because lots of users keep having trouble when using old bottles created with the original Crossover.
 This way you'll be forced to create a new bottle just for the Patched Crossover so that you'll no longer have this kind of issue.
 
