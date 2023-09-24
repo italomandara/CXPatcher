@@ -62,6 +62,17 @@ Alternatively, you may use Homebrew. See the
 [homebrew-CXPatcher repo](https://github.com/italomandara/homebrew-CXPatcher)
 for detailed instructions.
 
+### New Bottle path
+
+CXPatcher will override the default bottle path to have it's own folder prefixed with 'CXP' in the same one that contains the 'Bottles' folder.
+That's because lots of users keep having trouble when using old bottles created with the original Crossover.
+This way you'll be forced to create a new bottle just for the Patched Crossover so that you'll no longer have this kind of issue.
+
+If you don't like that you can disable it, it's enabled by default as you can see in the picture below:
+
+<img width="452" alt="Screenshot 2023-09-24 at 18 09 09" src="https://github.com/italomandara/CXPatcher/assets/12135454/b421b96e-5951-48e9-a333-42977021ca54">
+
+
 ## Patching with gptk
 
 There are new upcoming technologies developed this year that are capable of
