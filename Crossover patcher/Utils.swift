@@ -24,7 +24,7 @@ struct Opts {
     var status: Status = .unpatched
     var skipVersionCheck: Bool = false
     var repatch: Bool = false
-    var sepBottlePath: Bool = true
+    var overrideBottlePath: Bool = true
     var copyGptk = false
 }
 
@@ -270,12 +270,12 @@ func hasExternal(url: URL) -> Bool{
     return f.fileExists(atPath: path)
 }
 
-func patch(url: URL, copyGptk: Bool? = false) {
-    let resources = copyGptk != false ? getResourcesListFrom(url: url) : getResourcesListFrom(url: url).filter { elem in
+func patch(url: URL, opts: Opts) {
+    let resources = opts.copyGptk != false ? getResourcesListFrom(url: url) : getResourcesListFrom(url: url).filter { elem in
         elem.0 != "crossover.inf"
     }
     let filesToDisable = getDisableListFrom(url: url)
-    if(copyGptk != false) {
+    if(opts.copyGptk == true) {
         print("copying externals...")
         let res = EXTERNAL_RESOURCES_ROOT + EXTERNAL_FRAMEWORK_PATH
         let dest = url.path + SHARED_SUPPORT_PATH + EXTERNAL_FRAMEWORK_PATH
@@ -291,6 +291,9 @@ func patch(url: URL, copyGptk: Bool? = false) {
     filesToDisable.forEach { file in
         disable(dest: file)
     }
+    if(opts.overrideBottlePath == true) {
+        overrideBottlePath(url: url)
+    }
 }
 
 func applyPatch(url: URL, opts: inout Opts) {
@@ -305,7 +308,7 @@ func applyPatch(url: URL, opts: inout Opts) {
         return
     }
     print("it's a crossover app")
-    patch(url: url, copyGptk: opts.copyGptk)
+    patch(url: url, opts: opts)
     disableAutoUpdate(url: url)
     opts.status = .success
     return
@@ -343,6 +346,7 @@ func restoreApp(url: URL) -> Bool {
         enable(dest: file)
     }
     restoreAutoUpdate(url: url)
+    removeOverrideBottlePath(url: url)
     return true
 }
 
@@ -397,4 +401,12 @@ func restoreAutoUpdate(url: URL) {
     let plistURL = url.appendingPathComponent(PLIST_PATH)
     restoreFile(dest: plistURL.path)
     print("restored original Info.plist")
+}
+
+func overrideBottlePath(url: URL) {
+    safeResCopy(res: WINE_RESOURCES_ROOT + BOTTLE_PATH_OVERRIDE, dest: url.path + SHARED_SUPPORT_PATH + BOTTLE_PATH_OVERRIDE)
+}
+
+func removeOverrideBottlePath(url: URL) {
+    restoreFile(dest: url.path + SHARED_SUPPORT_PATH + BOTTLE_PATH_OVERRIDE)
 }

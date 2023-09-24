@@ -9,11 +9,11 @@ import Foundation
 import SwiftUI
 
 struct BottlesPathToggle: View {
-    @Binding var sepBottlePath: Bool
+    @Binding var overrideBottlePath: Bool
 //    @Binding var externalUrl: URL?
     
     var body: some View {
-        Toggle(isOn: $sepBottlePath) {
+        Toggle(isOn: $overrideBottlePath) {
             VStack(alignment: .leading) {
                 HStack(alignment: .center) {
                     Image(systemName: "waterbottle")

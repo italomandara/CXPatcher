@@ -15,7 +15,7 @@ struct ContentView: View {
     @State public var skipVersionCheck: Bool = false
     @State public var repatch: Bool = false
     @State private var integrateExternals: Bool = false
-    @State private var sepBottlePath: Bool = true
+    @State private var overrideBottlePath: Bool = true
     @State private var opts = Opts()
     
 //    var shouldshowAppSelector: Bool {
@@ -54,7 +54,7 @@ struct ContentView: View {
 //                        externalUrl: $externalUrl
 //                    )
                     BottlesPathToggle(
-                        sepBottlePath: $opts.sepBottlePath
+                        overrideBottlePath: $opts.overrideBottlePath
                     )
                     Divider()
                     IntegrateExternalsToggle(

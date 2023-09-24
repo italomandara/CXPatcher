@@ -8,7 +8,7 @@
 import Foundation
 
 let SKIP_VENTURA_CHECK = false
-let SKIP_DISCLAIMER_CHECK = true
+let SKIP_DISCLAIMER_CHECK = false
 let ENABLE_SKIP_VERSION_CHECK_TOGGLE = false
 let ENABLE_REPATCH_TOGGLE = true
 let ENABLE_RESTORE = true
@@ -96,5 +96,7 @@ let WINE_RESOURCES_PATHS: [String] = [
     "/share/wine/wine.inf",
     "/share/wine/mono/wine-mono-7.4.1"
 ]
+
+let BOTTLE_PATH_OVERRIDE = "/etc/CrossOver.conf"
 
 let PLIST_PATH = "Contents/Info.plist"
