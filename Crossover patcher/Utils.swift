@@ -24,8 +24,8 @@ struct Opts {
     var status: Status = .unpatched
     var skipVersionCheck: Bool = false
     var repatch: Bool = false
-    var integrateExternals: Bool = false
-    var bottlePath: Bool = true
+    var sepBottlePath: Bool = true
+    var copyGptk = false
 }
 
 var f = FileManager()
@@ -197,16 +197,13 @@ func isGStreamerInstalled() -> Bool {
 }
 
 struct FileDropDelegate: DropDelegate {
-    @Binding var copyGptk: Bool
-    @Binding var status: Status
-    @Binding var skipVersionCheck: Bool
-    @Binding var repatch: Bool
+    @Binding var opts: Opts
     
     func performDrop(info: DropInfo) -> Bool {
         if let item = info.itemProviders(for: [.fileURL]).first {
             let _ = item.loadObject(ofClass: URL.self) { object, error in
                 if let url = object {
-                    restoreAndPatch(repatch: repatch, url: url, status: &status, copyGptk: copyGptk, skipVersionCheck: skipVersionCheck)
+                    restoreAndPatch(url: url, opts: &opts)
                 }
             }
         } else {
@@ -296,21 +293,21 @@ func patch(url: URL, copyGptk: Bool? = false) {
     }
 }
 
-func applyPatch(url: URL, status: inout Status, copyGptk: Bool? = false, skipVersionCheck: Bool? = nil) {
+func applyPatch(url: URL, opts: inout Opts) {
     if (isAlreadyPatched(url: url)) {
         print("App is already patched")
-        status = .alreadyPatched
+        opts.status = .alreadyPatched
         return
     }
-    if(!isCrossoverApp(url: url, skipVersionCheck: skipVersionCheck)) {
+    if(!isCrossoverApp(url: url, skipVersionCheck: opts.skipVersionCheck)) {
         print("it' s not crossover.app")
-        status = .error
+        opts.status = .error
         return
     }
     print("it's a crossover app")
-    patch(url: url, copyGptk: copyGptk)
+    patch(url: url, copyGptk: opts.copyGptk)
     disableAutoUpdate(url: url)
-    status = .success
+    opts.status = .success
     return
 }
 
@@ -349,11 +346,11 @@ func restoreApp(url: URL) -> Bool {
     return true
 }
 
-func restoreAndPatch(repatch: Bool, url: URL, status: inout Status, copyGptk: Bool? = false, skipVersionCheck: Bool?) {
-    if repatch && restoreApp(url: url) {
+func restoreAndPatch(url: URL, opts: inout Opts) {
+    if opts.repatch && restoreApp(url: url) {
         print("Restoring first...")
     }
-    applyPatch(url: url, status: &status, copyGptk: copyGptk, skipVersionCheck: skipVersionCheck)
+    applyPatch(url: url, opts: &opts)
 }
 
 func localizedCXPatcherString(forKey key: String) -> String {

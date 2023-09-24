@@ -15,8 +15,8 @@ struct ContentView: View {
     @State public var skipVersionCheck: Bool = false
     @State public var repatch: Bool = false
     @State private var integrateExternals: Bool = false
-    @State private var bottlePath: Bool = true
-    @State private var config = Opts()
+    @State private var sepBottlePath: Bool = true
+    @State private var opts = Opts()
     
 //    var shouldshowAppSelector: Bool {
 //        if(integrateExternals) {
@@ -41,11 +41,8 @@ struct ContentView: View {
                 .buttonStyle(.borderedProminent)
 //                if(shouldshowAppSelector) {
                     AppSelector(
-                        status: $status,
-                        repatch: $repatch,
 //                        externalUrl: $externalUrl,
-                        copyGptk: $integrateExternals,
-                        skipVersionCheck: $skipVersionCheck
+                        opts: $opts
                     )
 //                } else {
 //                    ExternalResourcesSelector(externalUrl: $externalUrl)
@@ -57,19 +54,19 @@ struct ContentView: View {
 //                        externalUrl: $externalUrl
 //                    )
                     BottlesPathToggle(
-                        bottlePath: $bottlePath
+                        sepBottlePath: $opts.sepBottlePath
                     )
                     Divider()
                     IntegrateExternalsToggle(
-                        integrateExternals: $integrateExternals
+                        copyGptk: $opts.copyGptk
                     )
                     if(ENABLE_SKIP_VERSION_CHECK_TOGGLE) {
                         Divider()
-                        SkipVersionCheckToggle(skipVersionCheck: $skipVersionCheck)
+                        SkipVersionCheckToggle(skipVersionCheck: $opts.skipVersionCheck)
                     }
                     if(ENABLE_REPATCH_TOGGLE) {
                         Divider()
-                        RepatchToggle(repatch: $repatch)
+                        RepatchToggle(repatch: $opts.repatch)
                         Divider()
                     }
                     if(ENABLE_RESTORE) {

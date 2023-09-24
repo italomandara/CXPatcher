@@ -10,22 +10,19 @@ import Foundation
 import SwiftUI
 
 struct AppSelector: View {
-    @Binding var status: Status
-    @Binding var repatch: Bool
-    @Binding var copyGptk: Bool
 //    @Binding var externalUrl: URL?
-    @Binding var skipVersionCheck: Bool
+    @Binding var opts: Opts
     
     var body: some View {
         RoundedRectangle(cornerRadius: 25)
-            .stroke(getColorBy(status: status), style: StrokeStyle(lineWidth: 6, dash: [11.7]))
+            .stroke(getColorBy(status: opts.status), style: StrokeStyle(lineWidth: 6, dash: [11.7]))
             .foregroundColor(Color.black.opacity(0.5))
             .frame(width: 340, height: 300)
             .overlay(
                 VStack() {
-                    Image(systemName: getIconBy(status: status)).foregroundColor(getColorBy(status: status)).font(.system(size: 60))
-                    Text(getTextBy(status: status))
-                        .foregroundColor(getColorBy(status: status))
+                    Image(systemName: getIconBy(status: opts.status)).foregroundColor(getColorBy(status: opts.status)).font(.system(size: 60))
+                    Text(getTextBy(status: opts.status))
+                        .foregroundColor(getColorBy(status: opts.status))
                         .font(.title2)
                         .fontWeight(.bold)
                         .multilineTextAlignment(.center)
@@ -36,10 +33,10 @@ struct AppSelector: View {
             .contentShape(RoundedRectangle(cornerRadius: 25))
             .onTapGesture {
                 if let url = openAppSelectorPanel() {
-                    restoreAndPatch(repatch: repatch, url: url, status: &status, copyGptk: copyGptk, skipVersionCheck: skipVersionCheck)
+                    restoreAndPatch(url: url, opts: &opts)
                 }
             }
-            .onDrop(of: [.fileURL], delegate: FileDropDelegate(copyGptk: $copyGptk, status: $status, skipVersionCheck: $skipVersionCheck, repatch: $repatch))
+            .onDrop(of: [.fileURL], delegate: FileDropDelegate(opts: $opts))
 //        if(externalUrl != nil) {
 //            HStack(alignment: .center) {
 //                Image(systemName: "externaldrive.fill.badge.checkmark")
