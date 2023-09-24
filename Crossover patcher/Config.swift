@@ -97,4 +97,6 @@ let WINE_RESOURCES_PATHS: [String] = [
     "/share/wine/mono/wine-mono-7.4.1"
 ]
 
+let BOTTLE_PATH_OVERRIDE = "/etc/CrossOver.conf"
+
 let PLIST_PATH = "Contents/Info.plist"

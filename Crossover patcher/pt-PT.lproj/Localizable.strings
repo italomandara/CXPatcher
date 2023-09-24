@@ -43,3 +43,4 @@ Se você enfrentar problemas após a instalação ser patcheada, você pode baix
 "confirmationValue" = "Eu não solicitarei suporte ou reembolso à CodeWeavers";
 "confirmation" = "Digite 'Eu não solicitarei suporte ou reembolso à CodeWeavers' no campo de entrada abaixo";
 "unsupported" = "sem suporte";
+"bottlesPathToggle" = "Use um caminho separado para as garrafas";

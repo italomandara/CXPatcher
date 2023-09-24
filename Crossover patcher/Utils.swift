@@ -19,6 +19,15 @@ enum Status {
     case error
 }
 
+struct Opts {
+    var showDisclaimer: Bool = true
+    var status: Status = .unpatched
+    var skipVersionCheck: Bool = false
+    var repatch: Bool = false
+    var overrideBottlePath: Bool = true
+    var copyGptk = false
+}
+
 var f = FileManager()
 
 private func getResourcesListFrom(url: URL) -> [(String, String)]{
@@ -188,16 +197,13 @@ func isGStreamerInstalled() -> Bool {
 }
 
 struct FileDropDelegate: DropDelegate {
-    @Binding var copyGptk: Bool
-    @Binding var status: Status
-    @Binding var skipVersionCheck: Bool
-    @Binding var repatch: Bool
+    @Binding var opts: Opts
     
     func performDrop(info: DropInfo) -> Bool {
         if let item = info.itemProviders(for: [.fileURL]).first {
             let _ = item.loadObject(ofClass: URL.self) { object, error in
                 if let url = object {
-                    restoreAndPatch(repatch: repatch, url: url, status: &status, copyGptk: copyGptk, skipVersionCheck: skipVersionCheck)
+                    restoreAndPatch(url: url, opts: &opts)
                 }
             }
         } else {
@@ -264,12 +270,12 @@ func hasExternal(url: URL) -> Bool{
     return f.fileExists(atPath: path)
 }
 
-func patch(url: URL, copyGptk: Bool? = false) {
-    let resources = copyGptk != false ? getResourcesListFrom(url: url) : getResourcesListFrom(url: url).filter { elem in
+func patch(url: URL, opts: Opts) {
+    let resources = opts.copyGptk != false ? getResourcesListFrom(url: url) : getResourcesListFrom(url: url).filter { elem in
         elem.0 != "crossover.inf"
     }
     let filesToDisable = getDisableListFrom(url: url)
-    if(copyGptk != false) {
+    if(opts.copyGptk == true) {
         print("copying externals...")
         let res = EXTERNAL_RESOURCES_ROOT + EXTERNAL_FRAMEWORK_PATH
         let dest = url.path + SHARED_SUPPORT_PATH + EXTERNAL_FRAMEWORK_PATH
@@ -285,23 +291,26 @@ func patch(url: URL, copyGptk: Bool? = false) {
     filesToDisable.forEach { file in
         disable(dest: file)
     }
+    if(opts.overrideBottlePath == true) {
+        overrideBottlePath(url: url)
+    }
 }
 
-func applyPatch(url: URL, status: inout Status, copyGptk: Bool? = false, skipVersionCheck: Bool? = nil) {
+func applyPatch(url: URL, opts: inout Opts) {
     if (isAlreadyPatched(url: url)) {
         print("App is already patched")
-        status = .alreadyPatched
+        opts.status = .alreadyPatched
         return
     }
-    if(!isCrossoverApp(url: url, skipVersionCheck: skipVersionCheck)) {
+    if(!isCrossoverApp(url: url, skipVersionCheck: opts.skipVersionCheck)) {
         print("it' s not crossover.app")
-        status = .error
+        opts.status = .error
         return
     }
     print("it's a crossover app")
-    patch(url: url, copyGptk: copyGptk)
+    patch(url: url, opts: opts)
     disableAutoUpdate(url: url)
-    status = .success
+    opts.status = .success
     return
 }
 
@@ -337,14 +346,15 @@ func restoreApp(url: URL) -> Bool {
         enable(dest: file)
     }
     restoreAutoUpdate(url: url)
+    removeOverrideBottlePath(url: url)
     return true
 }
 
-func restoreAndPatch(repatch: Bool, url: URL, status: inout Status, copyGptk: Bool? = false, skipVersionCheck: Bool?) {
-    if repatch && restoreApp(url: url) {
+func restoreAndPatch(url: URL, opts: inout Opts) {
+    if opts.repatch && restoreApp(url: url) {
         print("Restoring first...")
     }
-    applyPatch(url: url, status: &status, copyGptk: copyGptk, skipVersionCheck: skipVersionCheck)
+    applyPatch(url: url, opts: &opts)
 }
 
 func localizedCXPatcherString(forKey key: String) -> String {
@@ -391,4 +401,12 @@ func restoreAutoUpdate(url: URL) {
     let plistURL = url.appendingPathComponent(PLIST_PATH)
     restoreFile(dest: plistURL.path)
     print("restored original Info.plist")
+}
+
+func overrideBottlePath(url: URL) {
+    safeResCopy(res: WINE_RESOURCES_ROOT + BOTTLE_PATH_OVERRIDE, dest: url.path + SHARED_SUPPORT_PATH + BOTTLE_PATH_OVERRIDE)
+}
+
+func removeOverrideBottlePath(url: URL) {
+    restoreFile(dest: url.path + SHARED_SUPPORT_PATH + BOTTLE_PATH_OVERRIDE)
 }
