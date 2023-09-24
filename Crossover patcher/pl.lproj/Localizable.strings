@@ -43,4 +43,4 @@ Jeśli napotkasz jakiekolwiek problemy z instalacją CrossOver, możesz pobrać 
 "confirmationValue" = "Nie będę prosić CodeWeavers o wsparcie ani zwrot pieniędzy";
 "confirmation" =  "Wpisz 'Nie będę prosić CodeWeavers o wsparcie ani zwrot pieniędzy' w polu wejściowym poniżej";
 "unsupported" = "nieobsługiwany";
-"bottlesPathToggle" = "Użyj osobnej ścieżki na bottles";
+"bottlesPathToggle" = "Użyj osobnej ścieżki dla butelek";
