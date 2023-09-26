@@ -62,7 +62,7 @@ Alternatively, you may use Homebrew. See the
 [homebrew-CXPatcher repo](https://github.com/italomandara/homebrew-CXPatcher)
 for detailed instructions.
 
-### New Bottle path
+## New Bottle path
 
 CXPatcher will override the default bottle path to have its own folder prefixed with 'CXP' in the same one that contains the 'Bottles' folder.
 That's because lots of users keep having trouble when using old bottles created with the original Crossover.
