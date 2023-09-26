@@ -451,6 +451,8 @@ HKCU,"Software\Wine\DllOverrides","dxgi",,"native, builtin"
 HKCU,"Software\Wine\AppDefaults\steamwebhelper.exe\DllOverrides","*dxgi",,"builtin"
 HKCU,Software\Wine\AppDefaults\UplayWebCore.exe\DllOverrides,"*dxgi",,"builtin"
 
+; Fix Resident Evil 7 audio
+HKCU,"Software\Wine\AppDefaults\re7.exe\DllOverrides","*msspatial",,""
 
 [WineDllOverridesReg9x]
 ;;HKCU,"Software\Wine\DllOverrides","oleaut32",,"native, builtin"  ;;will be set by reboot.exe
