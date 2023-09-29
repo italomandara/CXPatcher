@@ -9,15 +9,16 @@ import SwiftUI
 
 @main
 struct Crossover_patcherApp: App {    
+    @State private var opts = Opts()
     var body: some Scene {
         WindowGroup {
-            ContentView().fixedSize()
+            ContentView(opts: opts).fixedSize()
         }
         .windowResizability(.contentSize)
         .commands {
             CommandGroup(after: .newItem) {
                 if(ENABLE_RESTORE) {
-                    RestoreButtonDialog()
+                    RestoreButtonDialog(opts: opts)
                 }
             }
         }

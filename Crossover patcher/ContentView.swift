@@ -16,7 +16,7 @@ struct ContentView: View {
     @State public var repatch: Bool = false
     @State private var integrateExternals: Bool = false
     @State private var overrideBottlePath: Bool = true
-    @State private var opts = Opts()
+    @State public var opts: Opts
     
 //    var shouldshowAppSelector: Bool {
 //        if(integrateExternals) {
@@ -70,7 +70,7 @@ struct ContentView: View {
                         Divider()
                     }
                     if(ENABLE_RESTORE) {
-                        RestoreButtonDialog()
+                        RestoreButtonDialog(opts: opts)
                             .padding(.top, 6.0)
                     }
                 }
@@ -86,6 +86,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(opts: Opts())
     }
 }
