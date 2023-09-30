@@ -10,7 +10,7 @@ import SwiftUI
 
 struct CustomButton: View {
     @State var title: String
-    @State var action: () -> ()
+    @State var action: () -> Void
     @State var color: Color
     var body: some View {
         Button {

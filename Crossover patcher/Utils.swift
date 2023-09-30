@@ -27,17 +27,18 @@ struct Opts {
     var overrideBottlePath: Bool = true
     var copyGptk = false
     var progress: Float16 = 0.0
+    var busy: Bool = false
     func getTotalProgress() -> Float16 {
         if(self.copyGptk && self.repatch) {
-            return 145.0
+            return 136.0
         }
         if(self.copyGptk) {
-            return 74.0
+            return 75.0
         }
         if(self.repatch) {
-            return 121.0
+            return 124.0
         }
-        return 62
+        return 63
     }
 }
 
@@ -211,7 +212,7 @@ func isGStreamerInstalled() -> Bool {
 
 struct FileDropDelegate: DropDelegate {
     @Binding var opts: Opts
-    public var onPatch: () -> () = {}
+    public var onPatch: () -> Void = {}
     func performDrop(info: DropInfo) -> Bool {
         if let item = info.itemProviders(for: [.fileURL]).first {
             let _ = item.loadObject(ofClass: URL.self) { object, error in
@@ -313,6 +314,9 @@ func patch(url: URL, opts: inout Opts) {
         overrideBottlePath(url: url)
     }
     opts.progress += 1
+    disableAutoUpdate(url: url)
+    opts.progress += 1
+    opts.status = .success
 }
 
 func applyPatch(url: URL, opts: inout Opts, onPatch: () -> Void = {}) {
@@ -329,8 +333,6 @@ func applyPatch(url: URL, opts: inout Opts, onPatch: () -> Void = {}) {
     print("it's a crossover app")
     onPatch()
     patch(url: url, opts: &opts)
-    disableAutoUpdate(url: url)
-    opts.status = .success
     return
 }
 
@@ -358,7 +360,6 @@ func restoreApp(url: URL, opts: inout Opts, onRestore: () -> Void = {}) -> Bool 
         }
         externalFilesToRestore.forEach { file in
             restoreFile(dest: file.1)
-            opts.progress += 1
         }
     }
     filesToRestore.forEach { file in
@@ -370,15 +371,23 @@ func restoreApp(url: URL, opts: inout Opts, onRestore: () -> Void = {}) -> Bool 
         opts.progress += 1
     }
     restoreAutoUpdate(url: url)
+    opts.progress += 1
     removeOverrideBottlePath(url: url)
+    opts.progress += 1
     return true
 }
 
 func restoreAndPatch(url: URL, opts: inout Opts, onPatch: () -> Void = {}) {
+    if (opts.busy) {
+        return
+    }
+    opts.progress = 0.0
+    opts.busy = true
     if opts.repatch && restoreApp(url: url, opts: &opts) {
         print("Restoring first...")
     }
     applyPatch(url: url, opts: &opts, onPatch: onPatch)
+    opts.busy = false
 }
 
 func localizedCXPatcherString(forKey key: String) -> String {
