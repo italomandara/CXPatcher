@@ -13,7 +13,7 @@ struct AppSelector: View {
 //    @Binding var externalUrl: URL?
     @Binding var opts: Opts
     @State private var progressVisible: Bool = false
-    @State private var total: Float16 = 300.0
+    @State private var total: Int32 = 300
     private func onPatch() {
         total = opts.getTotalProgress()
         progressVisible = true

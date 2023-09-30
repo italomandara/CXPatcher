@@ -26,17 +26,17 @@ struct Opts {
     var repatch: Bool = false
     var overrideBottlePath: Bool = true
     var copyGptk = false
-    var progress: Float16 = 0.0
+    var progress: Float = 0.0
     var busy: Bool = false
-    func getTotalProgress() -> Float16 {
+    func getTotalProgress() -> Int32 {
         if(self.copyGptk && self.repatch) {
-            return 136.0
+            return 136
         }
         if(self.copyGptk) {
-            return 75.0
+            return 75
         }
         if(self.repatch) {
-            return 124.0
+            return 124
         }
         return 63
     }
@@ -319,7 +319,7 @@ func patch(url: URL, opts: inout Opts) {
     opts.status = .success
 }
 
-func applyPatch(url: URL, opts: inout Opts, onPatch: () -> Void = {}) {
+func validateAndPatch(url: URL, opts: inout Opts, onPatch: () -> Void = {}) {
     if (isAlreadyPatched(url: url)) {
         print("App is already patched")
         opts.status = .alreadyPatched
@@ -386,7 +386,7 @@ func restoreAndPatch(url: URL, opts: inout Opts, onPatch: () -> Void = {}) {
     if opts.repatch && restoreApp(url: url, opts: &opts) {
         print("Restoring first...")
     }
-    applyPatch(url: url, opts: &opts, onPatch: onPatch)
+    validateAndPatch(url: url, opts: &opts, onPatch: onPatch)
     opts.busy = false
 }
 

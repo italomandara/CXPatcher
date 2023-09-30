@@ -39,6 +39,7 @@
 		384E11E72A5E2A2200850EBF /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		384E11E82A5E2A7400850EBF /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		384E11E92A5E2CF200850EBF /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3851266D2AC87E7A0067C568 /* CXPatcherDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CXPatcherDebug.entitlements; sourceTree = "<group>"; };
 		386E0B242AC76A9400D09956 /* ProgressDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProgressDialog.swift; path = Dialogs/ProgressDialog.swift; sourceTree = "<group>"; };
 		386E0B272AC7706200D09956 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		3888B8AB2ABCDECB005B57BA /* BottlePathToggle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottlePathToggle.swift; sourceTree = "<group>"; };
@@ -73,6 +74,7 @@
 		38ACB38829D773CA00A450A0 = {
 			isa = PBXGroup;
 			children = (
+				3851266D2AC87E7A0067C568 /* CXPatcherDebug.entitlements */,
 				38ACB39329D773CA00A450A0 /* Crossover patcher */,
 				38ACB39229D773CA00A450A0 /* Products */,
 			);
@@ -439,7 +441,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "Crossover patcher/Crossover_patcher.entitlements";
+				CODE_SIGN_ENTITLEMENTS = CXPatcherDebug.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				CODE_SIGN_STYLE = Manual;
