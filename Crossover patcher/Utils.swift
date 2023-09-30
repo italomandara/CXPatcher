@@ -26,6 +26,20 @@ struct Opts {
     var repatch: Bool = false
     var overrideBottlePath: Bool = true
     var copyGptk = false
+    var progress: Float = 0.0
+    var busy: Bool = false
+    func getTotalProgress() -> Int32 {
+        if(self.copyGptk && self.repatch) {
+            return 136
+        }
+        if(self.copyGptk) {
+            return 75
+        }
+        if(self.repatch) {
+            return 124
+        }
+        return 63
+    }
 }
 
 var f = FileManager()
@@ -198,12 +212,12 @@ func isGStreamerInstalled() -> Bool {
 
 struct FileDropDelegate: DropDelegate {
     @Binding var opts: Opts
-    
+    public var onPatch: () -> Void = {}
     func performDrop(info: DropInfo) -> Bool {
         if let item = info.itemProviders(for: [.fileURL]).first {
             let _ = item.loadObject(ofClass: URL.self) { object, error in
                 if let url = object {
-                    restoreAndPatch(url: url, opts: &opts)
+                    restoreAndPatch(url: url, opts: &opts, onPatch: onPatch)
                 }
             }
         } else {
@@ -270,11 +284,13 @@ func hasExternal(url: URL) -> Bool{
     return f.fileExists(atPath: path)
 }
 
-func patch(url: URL, opts: Opts) {
+func patch(url: URL, opts: inout Opts) {
     let resources = opts.copyGptk != false ? getResourcesListFrom(url: url) : getResourcesListFrom(url: url).filter { elem in
         elem.0 != "crossover.inf"
     }
+    opts.progress += 1
     let filesToDisable = getDisableListFrom(url: url)
+    opts.progress += 1
     if(opts.copyGptk == true) {
         print("copying externals...")
         let res = EXTERNAL_RESOURCES_ROOT + EXTERNAL_FRAMEWORK_PATH
@@ -283,20 +299,27 @@ func patch(url: URL, opts: Opts) {
         let externalResources = getExternalResourcesList(url: url)
         externalResources.forEach { resource in
             safeResCopy(res: resource.0, dest: resource.1)
+            opts.progress += 1
         }
     }
     resources.forEach { resource in
         safeResCopy(res: resource.0, dest: resource.1)
+        opts.progress += 1
     }
     filesToDisable.forEach { file in
         disable(dest: file)
+        opts.progress += 1
     }
     if(opts.overrideBottlePath == true) {
         overrideBottlePath(url: url)
     }
+    opts.progress += 1
+    disableAutoUpdate(url: url)
+    opts.progress += 1
+    opts.status = .success
 }
 
-func applyPatch(url: URL, opts: inout Opts) {
+func validateAndPatch(url: URL, opts: inout Opts, onPatch: () -> Void = {}) {
     if (isAlreadyPatched(url: url)) {
         print("App is already patched")
         opts.status = .alreadyPatched
@@ -308,13 +331,12 @@ func applyPatch(url: URL, opts: inout Opts) {
         return
     }
     print("it's a crossover app")
-    patch(url: url, opts: opts)
-    disableAutoUpdate(url: url)
-    opts.status = .success
+    onPatch()
+    patch(url: url, opts: &opts)
     return
 }
 
-func restoreApp(url: URL) -> Bool {
+func restoreApp(url: URL, opts: inout Opts, onRestore: () -> Void = {}) -> Bool {
     if(!isAlreadyPatched(url: url) || !isCrossoverApp(url: url)) {
         if(!isAlreadyPatched(url: url)) {
             print("it's not patched")
@@ -325,6 +347,7 @@ func restoreApp(url: URL) -> Bool {
         
         return false
     }
+    onRestore()
     let filesToRestore = getResourcesListFrom(url: url)
     let filesToEnable = getDisableListFrom(url: url)
     if(hasExternal(url: url)) {
@@ -341,20 +364,30 @@ func restoreApp(url: URL) -> Bool {
     }
     filesToRestore.forEach { file in
         restoreFile(dest: file.1)
+        opts.progress += 1
     }
     filesToEnable.forEach { file in
         enable(dest: file)
+        opts.progress += 1
     }
     restoreAutoUpdate(url: url)
+    opts.progress += 1
     removeOverrideBottlePath(url: url)
+    opts.progress += 1
     return true
 }
 
-func restoreAndPatch(url: URL, opts: inout Opts) {
-    if opts.repatch && restoreApp(url: url) {
+func restoreAndPatch(url: URL, opts: inout Opts, onPatch: () -> Void = {}) {
+    if (opts.busy) {
+        return
+    }
+    opts.progress = 0.0
+    opts.busy = true
+    if opts.repatch && restoreApp(url: url, opts: &opts) {
         print("Restoring first...")
     }
-    applyPatch(url: url, opts: &opts)
+    validateAndPatch(url: url, opts: &opts, onPatch: onPatch)
+    opts.busy = false
 }
 
 func localizedCXPatcherString(forKey key: String) -> String {

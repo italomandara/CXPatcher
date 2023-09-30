@@ -10,11 +10,12 @@ import SwiftUI
 struct RestoreButtonDialog: View {
     @State private var showingAlert = false
     @State private var message = ""
+    @State var opts: Opts
     
     var body: some View {
         Button {
             if let url = openAppSelectorPanel() {
-                let restoreResult = restoreApp(url: url)
+                let restoreResult = restoreApp(url: url, opts: &opts)
                 if restoreResult {
                     message = localizedCXPatcherString(forKey: "RestoreSuccess")
                     showingAlert = true

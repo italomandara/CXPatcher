@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0D9AC2C22A49F96000101F43 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0D9AC2C42A49F96000101F43 /* Localizable.strings */; };
 		382F4C0729DA516C00824358 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382F4C0629DA516C00824358 /* Utils.swift */; };
+		386E0B252AC76A9400D09956 /* ProgressDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386E0B242AC76A9400D09956 /* ProgressDialog.swift */; };
+		386E0B282AC7706200D09956 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386E0B272AC7706200D09956 /* CustomButton.swift */; };
 		3888B8AC2ABCDECB005B57BA /* BottlePathToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3888B8AB2ABCDECB005B57BA /* BottlePathToggle.swift */; };
 		38998DFA2A3BAD6400F1963A /* ExternalResButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38998DF92A3BAD6400F1963A /* ExternalResButton.swift */; };
 		389D6BCF2A47599900A4C8EB /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389D6BCE2A47599900A4C8EB /* Config.swift */; };
@@ -37,6 +39,9 @@
 		384E11E72A5E2A2200850EBF /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		384E11E82A5E2A7400850EBF /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		384E11E92A5E2CF200850EBF /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3851266D2AC87E7A0067C568 /* CXPatcherDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CXPatcherDebug.entitlements; sourceTree = "<group>"; };
+		386E0B242AC76A9400D09956 /* ProgressDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProgressDialog.swift; path = Dialogs/ProgressDialog.swift; sourceTree = "<group>"; };
+		386E0B272AC7706200D09956 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		3888B8AB2ABCDECB005B57BA /* BottlePathToggle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottlePathToggle.swift; sourceTree = "<group>"; };
 		38998DF92A3BAD6400F1963A /* ExternalResButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalResButton.swift; sourceTree = "<group>"; };
 		389D6BCE2A47599900A4C8EB /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
@@ -69,6 +74,7 @@
 		38ACB38829D773CA00A450A0 = {
 			isa = PBXGroup;
 			children = (
+				3851266D2AC87E7A0067C568 /* CXPatcherDebug.entitlements */,
 				38ACB39329D773CA00A450A0 /* Crossover patcher */,
 				38ACB39229D773CA00A450A0 /* Products */,
 			);
@@ -90,6 +96,7 @@
 				38ACB39429D773CA00A450A0 /* Crossover_patcherApp.swift */,
 				389D6BCE2A47599900A4C8EB /* Config.swift */,
 				38ACB39629D773CA00A450A0 /* ContentView.swift */,
+				386E0B242AC76A9400D09956 /* ProgressDialog.swift */,
 				38ACB39829D773CA00A450A0 /* Assets.xcassets */,
 				38ACB39D29D773CA00A450A0 /* Crossover_patcher.entitlements */,
 				38ACB39A29D773CA00A450A0 /* Preview Content */,
@@ -155,6 +162,7 @@
 			children = (
 				38CB03592A0ACF7200AE3637 /* RestoreButtonDialog.swift */,
 				38998DF92A3BAD6400F1963A /* ExternalResButton.swift */,
+				386E0B272AC7706200D09956 /* CustomButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -187,7 +195,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					38ACB39029D773CA00A450A0 = {
 						CreatedOnToolsVersion = 14.2;
@@ -267,6 +275,7 @@
 				38F7B2212A5DD60000CD9511 /* RepatchToggle.swift in Sources */,
 				38ACB39729D773CA00A450A0 /* ContentView.swift in Sources */,
 				38ACB39529D773CA00A450A0 /* Crossover_patcherApp.swift in Sources */,
+				386E0B252AC76A9400D09956 /* ProgressDialog.swift in Sources */,
 				3888B8AC2ABCDECB005B57BA /* BottlePathToggle.swift in Sources */,
 				38D93E5829DC4E4F00D4B0D8 /* Disclaimer.swift in Sources */,
 				38998DFA2A3BAD6400F1963A /* ExternalResButton.swift in Sources */,
@@ -275,6 +284,7 @@
 				382F4C0729DA516C00824358 /* Utils.swift in Sources */,
 				38CB035A2A0ACF7200AE3637 /* RestoreButtonDialog.swift in Sources */,
 				38F7B2172A5DCF7500CD9511 /* AppSelector.swift in Sources */,
+				386E0B282AC7706200D09956 /* CustomButton.swift in Sources */,
 				389D6BCF2A47599900A4C8EB /* Config.swift in Sources */,
 				38C678A629DB3FE800EB19BE /* Instructions.swift in Sources */,
 				38F7B2192A5DD19D00CD9511 /* ExternalResourcesSelector.swift in Sources */,
@@ -345,6 +355,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -407,6 +418,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -429,15 +441,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "Crossover patcher/Crossover_patcher.entitlements";
-				CODE_SIGN_IDENTITY = "Apple Development: italomandara@gmail.com (8728ENA4AR)";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_ENTITLEMENTS = CXPatcherDebug.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Crossover patcher/Preview Content\"";
-				DEVELOPMENT_TEAM = S5P3AKN3YC;
+				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=macosx*]" = S5P3AKN3YC;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -459,6 +471,7 @@
 				MARKETING_VERSION = 0.3.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.italomandara.Crossover-patcher";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
