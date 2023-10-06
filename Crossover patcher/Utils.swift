@@ -25,7 +25,7 @@ struct Opts {
     var skipVersionCheck: Bool = false
     var repatch: Bool = false
     var overrideBottlePath: Bool = true
-    var copyGptk = false
+    var copyGptk = true
     var progress: Float = 0.0
     var busy: Bool = false
     func getTotalProgress() -> Int32 {
@@ -64,8 +64,8 @@ private func getDisableListFrom(url: URL) -> [String]{
 private func getExternalResourcesList(url: URL) -> [(String, String)]{
     return EXTERNAL_WINE_PATHS.map { path in
         (
-            EXTERNAL_RESOURCES_ROOT + path,
-            url.path + SHARED_SUPPORT_PATH + path
+            "Crossover" + EXTERNAL_RESOURCES_ROOT + path,
+            url.path + SHARED_SUPPORT_PATH + EXTERNAL_RESOURCES_ROOT + path
         )
     }
 }
@@ -79,7 +79,7 @@ private func  getBackupListFrom(url: URL) -> [String] {
 
 private func  getExternalBackupListFrom(url: URL) -> [String] {
     let externalRes = EXTERNAL_WINE_PATHS.map { path in
-        url.path + "_orig" + SHARED_SUPPORT_PATH + path
+        url.path + SHARED_SUPPORT_PATH + path + "_orig"
     }
     return externalRes
 }
@@ -276,7 +276,7 @@ func getTextBy(status: Status) -> String {
 }
 
 func getExternalPathFrom(url: URL) -> String {
-    return url.path + SHARED_SUPPORT_PATH + EXTERNAL_FRAMEWORK_PATH
+    return url.path + SHARED_SUPPORT_PATH + EXTERNAL_RESOURCES_ROOT
 }
 
 func hasExternal(url: URL) -> Bool{
@@ -293,9 +293,9 @@ func patch(url: URL, opts: inout Opts) {
     opts.progress += 1
     if(opts.copyGptk == true) {
         print("copying externals...")
-        let res = EXTERNAL_RESOURCES_ROOT + EXTERNAL_FRAMEWORK_PATH
-        let dest = url.path + SHARED_SUPPORT_PATH + EXTERNAL_FRAMEWORK_PATH
-        resCopy(res: res, dest: dest)
+//        let res = EXTERNAL_RESOURCES_ROOT
+//        let dest = url.path + SHARED_SUPPORT_PATH + EXTERNAL_RESOURCES_ROOT
+//        resCopy(res: res, dest: dest)
         let externalResources = getExternalResourcesList(url: url)
         externalResources.forEach { resource in
             safeResCopy(res: resource.0, dest: resource.1)

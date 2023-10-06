@@ -9,13 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     @Environment(\.openWindow) var openWindow
-    @State private var showDisclaimer = true
-    @State public var status: Status = .unpatched
+//    @State private var showDisclaimer = true
+//    @State public var status: Status = .unpatched
 //    @State public var externalUrl: URL? = nil
-    @State public var skipVersionCheck: Bool = false
-    @State public var repatch: Bool = false
-    @State private var integrateExternals: Bool = false
-    @State private var overrideBottlePath: Bool = true
+//    @State public var skipVersionCheck: Bool = false
+//    @State public var repatch: Bool = false
+//    @State private var integrateExternals: Bool = false
+//    @State private var overrideBottlePath: Bool = true
     @State public var opts: Opts
     
 //    var shouldshowAppSelector: Bool {
@@ -28,8 +28,8 @@ struct ContentView: View {
     var body: some View {
         VStack(alignment: .center) {
             Logo()
-            if(showDisclaimer) {
-                Disclaimer(showDisclaimer: $showDisclaimer)
+            if(opts.showDisclaimer) {
+                Disclaimer(showDisclaimer: $opts.showDisclaimer)
             } else {
                 Button() {
                     openWindow(id: "instructions")
