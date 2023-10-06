@@ -20,7 +20,7 @@
 \margl1440\margr1440\vieww28400\viewh15820\viewkind0
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
-\f0\b\fs36 \cf0 Game Porting Toolkit 1.0 Beta 4 README\
+\f0\b\fs36 \cf0 Game Porting Toolkit 1.0 README\
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
 \f1\b0\fs24 \cf0 \
@@ -36,7 +36,7 @@ The Game Porting Toolkit helps game developers create an environment for evaluat
 \f1\b0\fs24 \
 \
 \pard\tx220\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li720\fi-720\pardirnatural\partightenfactor0
-\ls1\ilvl0\cf0 {\listtext	\uc0\u8226 	}The Game Porting Toolkit currently only runs on Apple Silicon Macs running macOS 14 Sonoma Beta.\
+\ls1\ilvl0\cf0 {\listtext	\uc0\u8226 	}The Game Porting Toolkit currently only runs on Apple Silicon Macs running macOS 14 Sonoma.\
 {\listtext	\uc0\u8226 	}Translated games require more resources, so developer-focused Macs with 16GB of RAM or more are recommended.\
 {\listtext	\uc0\u8226 	}The provided macOS graphics bridge libraries must be configured with a custom version of the Wine translation environment in order to create your game evaluation environment.\
 {\listtext	\uc0\u8226 	}Instructions and scripts for building and configuring the custom version of Wine are included here.\
@@ -53,7 +53,7 @@ The Game Porting Toolkit helps game developers create an environment for evaluat
 \f0\b \cf0 1. Setup your development and Homebrew environment
 \f1\b0 \
 \pard\tx220\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li720\fi-720\sb240\pardirnatural\partightenfactor0
-\ls2\ilvl0\cf0 {\listtext	\uc0\u8226 	}Ensure the latest Command Line Tools for Xcode 15 beta are installed. Visit https://developer.apple.com/downloads to download these tools.\
+\ls2\ilvl0\cf0 {\listtext	\uc0\u8226 	}Ensure the latest Command Line Tools for Xcode 15, or Xcode 15 itself are installed. Visit https://developer.apple.com/downloads to download these tools.\
 \pard\tx220\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li720\fi-720\sb240\pardirnatural\partightenfactor0
 \ls3\ilvl0\cf0 {\listtext	\uc0\u8226 	}Open Terminal.\
 \pard\tx220\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li720\fi-720\sb240\pardirnatural\partightenfactor0
@@ -228,7 +228,9 @@ Logging output will appear in the Terminal window in which you launch your game 
 \f2 gameportingtoolkit*
 \f1  scripts will filter to just the 
 \f0\b D3DM
-\f1\b0 -prefixed messages.\
+\f1\b0 -prefixed messages. If you are experiencing an issue and want to send logging information through https://feedbackassistant.apple.com, please send the full logs without filtering to 
+\f0\b D3DM.
+\f1\b0 \
 \
 
 \f0\b\fs28 Troubleshooting
@@ -247,7 +249,7 @@ Invalid instruction crashes are often (but not always) caused when Rosetta 2 is 
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
 \f1\b0 \cf0 \
-You may be able to rebuild a custom version of your game in your Windows development environment with anti-cheat or DRM disabled for your own evaluation purposes. When porting your code natively to Apple Silicon and macOS, contact your anti-cheat or DRM provider\'97most have native Apple Silicon solutions for your native build.\
+You may be able to rebuild a custom version of your game in your Windows development environment with anti-cheat or DRM disabled for your own evaluation purposes. When porting your code natively to Apple Silicon and macOS, contact your anti-cheat or DRM provider\'97most have native Apple Silicon solutions for your native build, or you may find that existing macOS solutions like Hardened Runtime and Application Sandbox prevent forms of cheating that concern you.\
 \
 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
