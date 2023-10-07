@@ -327,8 +327,8 @@ RegisterDlls=RegisterDllsSection
 HKLM,%CurrentVersionNT%,"CSDVersion",,""
 HKLM,%CurrentVersionNT%,"CurrentMajorVersionNumber",0x10001,10
 HKLM,%CurrentVersionNT%,"CurrentMinorVersionNumber",0x10001,0
-HKLM,%CurrentVersionNT%,"CurrentBuildNumber",,"18362"
-HKLM,%CurrentVersionNT%,"CurrentBuild",,"18362"
+HKLM,%CurrentVersionNT%,"CurrentBuild",,"19043"
+HKLM,%CurrentVersionNT%,"CurrentBuildNumber",,"19043"
 HKLM,%CurrentVersionNT%,"CurrentType",,"Multiprocessor Free"
 HKLM,%CurrentVersionNT%,"CurrentVersion",,"6.3"
 HKLM,%CurrentVersionNT%,"ProductName",,"Windows 10 Pro"
