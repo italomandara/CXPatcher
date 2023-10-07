@@ -32,7 +32,7 @@ let WINE_RESOURCES_PATHS: [String] = [
     "/lib64/libMoltenVK.dylib",
     "/lib64/wine/dxvk",
     "/lib/wine/dxvk",
-//    "/share/crossover/bottle_data/crossover.inf",
+    "/share/crossover/bottle_data/crossover.inf",
 //    "/share/wine/wine.inf",
 ]
 

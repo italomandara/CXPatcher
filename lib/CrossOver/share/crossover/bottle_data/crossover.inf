@@ -146,7 +146,10 @@ RegisterDlls=RegisterDllsSection
 
 [VersionInfo2000]
 HKLM,%CurrentVersionNT%,"CSDVersion",,"Service Pack 4"
+HKLM,%CurrentVersionNT%,"CurrentMajorVersionNumber",0x10001,5
+HKLM,%CurrentVersionNT%,"CurrentMinorVersionNumber",0x10001,0
 HKLM,%CurrentVersionNT%,"CurrentBuildNumber",,"2195"
+HKLM,%CurrentVersionNT%,"CurrentBuild",,"2195"
 HKLM,%CurrentVersionNT%,"CurrentType",,"Uniprocessor Free"
 HKLM,%CurrentVersionNT%,"CurrentVersion",,"5.0"
 HKLM,%CurrentVersionNT%,"ProductName",,"Microsoft Windows 2000"
@@ -181,7 +184,10 @@ RegisterDlls=RegisterDllsSection
 
 [VersionInfoXP]
 HKLM,%CurrentVersionNT%,"CSDVersion",,"Service Pack 3"
+HKLM,%CurrentVersionNT%,"CurrentMajorVersionNumber",0x10001,5
+HKLM,%CurrentVersionNT%,"CurrentMinorVersionNumber",0x10001,1
 HKLM,%CurrentVersionNT%,"CurrentBuildNumber",,"2600"
+HKLM,%CurrentVersionNT%,"CurrentBuild",,"2600"
 HKLM,%CurrentVersionNT%,"CurrentType",,"Uniprocessor Free"
 HKLM,%CurrentVersionNT%,"CurrentVersion",,"5.1"
 HKLM,%CurrentVersionNT%,"ProductName",,"Microsoft Windows XP"
@@ -214,7 +220,10 @@ RegisterDlls=RegisterDllsSection
 
 [VersionInfoVista]
 HKLM,%CurrentVersionNT%,"CSDVersion",,"Service Pack 2"
+HKLM,%CurrentVersionNT%,"CurrentMajorVersionNumber",0x10001,6
+HKLM,%CurrentVersionNT%,"CurrentMinorVersionNumber",0x10001,0
 HKLM,%CurrentVersionNT%,"CurrentBuildNumber",,"6002"
+HKLM,%CurrentVersionNT%,"CurrentBuild",,"6002"
 HKLM,%CurrentVersionNT%,"CurrentType",,"Uniprocessor Free"
 HKLM,%CurrentVersionNT%,"CurrentVersion",,"6.0"
 HKLM,%CurrentVersionNT%,"ProductName",,"Microsoft Windows Vista"
@@ -246,7 +255,10 @@ RegisterDlls=RegisterDllsSection
 
 [VersionInfo7]
 HKLM,%CurrentVersionNT%,"CSDVersion",,"Service Pack 1"
+HKLM,%CurrentVersionNT%,"CurrentMajorVersionNumber",0x10001,6
+HKLM,%CurrentVersionNT%,"CurrentMinorVersionNumber",0x10001,1
 HKLM,%CurrentVersionNT%,"CurrentBuildNumber",,"7601"
+HKLM,%CurrentVersionNT%,"CurrentBuild",,"7601"
 HKLM,%CurrentVersionNT%,"CurrentType",,"Uniprocessor Free"
 HKLM,%CurrentVersionNT%,"CurrentVersion",,"6.1"
 HKLM,%CurrentVersionNT%,"ProductName",,"Microsoft Windows 7"
@@ -278,7 +290,10 @@ RegisterDlls=RegisterDllsSection
 
 [VersionInfo8]
 HKLM,%CurrentVersionNT%,"CSDVersion",,""
+HKLM,%CurrentVersionNT%,"CurrentMajorVersionNumber",0x10001,6
+HKLM,%CurrentVersionNT%,"CurrentMinorVersionNumber",0x10001,2
 HKLM,%CurrentVersionNT%,"CurrentBuildNumber",,"9200"
+HKLM,%CurrentVersionNT%,"CurrentBuild",,"9200"
 HKLM,%CurrentVersionNT%,"CurrentType",,"Uniprocessor Free"
 HKLM,%CurrentVersionNT%,"CurrentVersion",,"6.2"
 HKLM,%CurrentVersionNT%,"ProductName",,"Microsoft Windows 8"
@@ -310,11 +325,48 @@ RegisterDlls=RegisterDllsSection
 
 [VersionInfo10]
 HKLM,%CurrentVersionNT%,"CSDVersion",,""
-HKLM,%CurrentVersionNT%,"CurrentBuild",,"19043"
-HKLM,%CurrentVersionNT%,"CurrentBuildNumber",,"19043"
-HKLM,%CurrentVersionNT%,"CurrentType",,"Uniprocessor Free"
-HKLM,%CurrentVersionNT%,"CurrentVersion",,"10.0"
-HKLM,%CurrentVersionNT%,"ProductName",,"Microsoft Windows 10"
+HKLM,%CurrentVersionNT%,"CurrentMajorVersionNumber",0x10001,10
+HKLM,%CurrentVersionNT%,"CurrentMinorVersionNumber",0x10001,0
+HKLM,%CurrentVersionNT%,"CurrentBuildNumber",,"18362"
+HKLM,%CurrentVersionNT%,"CurrentBuild",,"18362"
+HKLM,%CurrentVersionNT%,"CurrentType",,"Multiprocessor Free"
+HKLM,%CurrentVersionNT%,"CurrentVersion",,"6.3"
+HKLM,%CurrentVersionNT%,"ProductName",,"Windows 10 Pro"
+HKLM,%Control%\Windows,"CSDVersion",0x10001,0x00000000
+HKLM,%Control%\Session Manager\Environment,"OS",,"Windows_NT"
+
+;------------------------------------------------------------
+
+[Win11Install]
+AddReg=\
+    VersionInfo11,\
+    ColorsReg,\
+    DrivesReg,\
+    FallbackAssociationReg,\
+    MiscReg,\
+    WineDllOverridesReg,\
+    WineDllOverridesRegNT,\
+    WineSettingsReg, \
+    ODBCReg
+DelReg=\
+    ObsoleteRegHacks
+CopyFiles=\
+    MediaFiles,\
+    CatFiles
+DelFiles=\
+    ObsoleteSysApps,\
+    ObsoleteWinApps
+RegisterDlls=RegisterDllsSection
+
+[VersionInfo11]
+HKLM,%CurrentVersionNT%,"CSDVersion",,""
+HKLM,%CurrentVersionNT%,"CurrentMajorVersionNumber",0x10001,10
+HKLM,%CurrentVersionNT%,"CurrentMinorVersionNumber",0x10001,0
+HKLM,%CurrentVersionNT%,"CurrentBuildNumber",,"22000"
+HKLM,%CurrentVersionNT%,"CurrentBuild",,"22000"
+HKLM,%CurrentVersionNT%,"CurrentType",,"Multiprocessor Free"
+HKLM,%CurrentVersionNT%,"CurrentVersion",,"6.3"
+HKLM,%CurrentVersionNT%,"ProductName",,"Windows 11 Pro"
 HKLM,%Control%\Windows,"CSDVersion",0x10001,0x00000000
 HKLM,%Control%\Session Manager\Environment,"OS",,"Windows_NT"
 
@@ -424,6 +476,8 @@ HKCU,"Software\Wine\DllOverrides","wscript.exe",,"native, builtin"
 
 HKCU,"Software\Wine\DllOverrides","odbc32",,"native, builtin"
 
+; Fix Resident Evil 7 audio
+ HKCU,"Software\Wine\AppDefaults\re7.exe\DllOverrides","*msspatial",,""
 
 HKCU,"Software\Wine\DllOverrides","*autorun.exe",,"native,builtin"
 HKCU,"Software\Wine\DllOverrides","*ctfmon.exe",,"builtin"
@@ -446,13 +500,6 @@ HKCU,"Software\Wine\AppDefaults\cxwget.exe\DllOverrides","wininet",,"builtin"
 HKCU,"Software\Wine\AppDefaults\winewrapper.exe\DllOverrides","crypt32",,"builtin"
 HKCU,"Software\Wine\AppDefaults\winewrapper.exe\DllOverrides","rsabase",,"builtin"
 HKCU,"Software\Wine\AppDefaults\winewrapper.exe\DllOverrides","rsaenh",,"builtin"
-
-HKCU,"Software\Wine\DllOverrides","dxgi",,"native, builtin"
-HKCU,"Software\Wine\AppDefaults\steamwebhelper.exe\DllOverrides","*dxgi",,"builtin"
-HKCU,Software\Wine\AppDefaults\UplayWebCore.exe\DllOverrides,"*dxgi",,"builtin"
-
-; Fix Resident Evil 7 audio
-HKCU,"Software\Wine\AppDefaults\re7.exe\DllOverrides","*msspatial",,""
 
 [WineDllOverridesReg9x]
 ;;HKCU,"Software\Wine\DllOverrides","oleaut32",,"native, builtin"  ;;will be set by reboot.exe
@@ -581,6 +628,7 @@ HKCU,"Software\Wine\Fonts\Replacements","Gulim",2,"NanumGothic"
 HKCU,"Software\Wine\Systray","Hidden",0x10003,1
 HKCU,"Software\Wine\X11 Driver","ShowSystray",2,"false"
 
+; Rocket League performance
 HKCU,"Software\Wine\Direct3D","cb_access_map_w",0x10003,1
 
 [ODBCReg]
