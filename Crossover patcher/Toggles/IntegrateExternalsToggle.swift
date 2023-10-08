@@ -33,10 +33,5 @@ struct IntegrateExternalsToggle: View {
         .controlSize(/*@START_MENU_TOKEN@*/.mini/*@END_MENU_TOKEN@*/)
         .disabled(isVentura)
         .help(isVentura ? "GPTK is supported on Sonoma only" : "Enables installation of D3dMetal")
-//        .onChange(of: copyGptk) { value in
-//            if (value == false) {
-//                externalUrl = nil
-//            }
-//        }
     }
 }

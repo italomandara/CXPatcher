@@ -9,21 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @Environment(\.openWindow) var openWindow
-//    @State private var showDisclaimer = true
-//    @State public var status: Status = .unpatched
-//    @State public var externalUrl: URL? = nil
-//    @State public var skipVersionCheck: Bool = false
-//    @State public var repatch: Bool = false
-//    @State private var integrateExternals: Bool = false
-//    @State private var overrideBottlePath: Bool = true
     @State public var opts: Opts
-    
-//    var shouldshowAppSelector: Bool {
-//        if(integrateExternals) {
-//            return externalUrl != nil
-//        }
-//        return true
-//    }
     
     var body: some View {
         VStack(alignment: .center) {
@@ -39,20 +25,12 @@ struct ContentView: View {
                 }
                 .padding(.bottom, 15.0)
                 .buttonStyle(.borderedProminent)
-//                if(shouldshowAppSelector) {
+
                     AppSelector(
-//                        externalUrl: $externalUrl,
                         opts: $opts
                     )
-//                } else {
-//                    ExternalResourcesSelector(externalUrl: $externalUrl)
-//                }
                 VStack(alignment: .center) {
                     Divider()
-//                    IntegrateExternalsToggle(
-//                        integrateExternals: $integrateExternals,
-//                        externalUrl: $externalUrl
-//                    )
                     BottlesPathToggle(
                         overrideBottlePath: $opts.overrideBottlePath
                     )

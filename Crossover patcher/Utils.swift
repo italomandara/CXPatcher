@@ -293,9 +293,6 @@ func patch(url: URL, opts: inout Opts) {
     opts.progress += 1
     if(opts.copyGptk == true) {
         print("copying externals...")
-//        let res = EXTERNAL_RESOURCES_ROOT
-//        let dest = url.path + SHARED_SUPPORT_PATH + EXTERNAL_RESOURCES_ROOT
-//        resCopy(res: res, dest: dest)
         let externalResources = getExternalResourcesList(url: url)
         externalResources.forEach { resource in
             safeResCopy(res: resource.0, dest: resource.1)

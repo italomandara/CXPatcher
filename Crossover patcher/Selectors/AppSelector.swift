@@ -10,7 +10,6 @@ import Foundation
 import SwiftUI
 
 struct AppSelector: View {
-//    @Binding var externalUrl: URL?
     @Binding var opts: Opts
     @State private var progressVisible: Bool = false
     @State private var total: Int32 = 300
@@ -45,14 +44,6 @@ struct AppSelector: View {
                     }
                 }
                 .onDrop(of: [.fileURL], delegate: FileDropDelegate(opts: $opts, onPatch: onPatch))
-            //        if(externalUrl != nil) {
-            //            HStack(alignment: .center) {
-            //                Image(systemName: "externaldrive.fill.badge.checkmark")
-            //                    .foregroundColor(.green)
-            //                Text("External: \(externalUrl!.path)")
-            //            }
-            //            .padding(.top, 5.0)
-            //        }
             if(ENABLE_GSTREAMER == true) {
                 if(isGStreamerInstalled()) {
                     HStack(alignment: .center) {
