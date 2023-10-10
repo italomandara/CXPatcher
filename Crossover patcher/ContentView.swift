@@ -32,7 +32,7 @@ struct ContentView: View {
                 VStack(alignment: .center) {
                     Divider()
                     BottlesPathToggle(
-                        overrideBottlePath: $opts.overrideBottlePath
+                        opts: $opts
                     )
                     Divider()
                     IntegrateExternalsToggle(

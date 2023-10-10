@@ -28,6 +28,7 @@ struct Opts {
     var copyGptk = true
     var progress: Float = 0.0
     var busy: Bool = false
+    var cxbottlesPath = BOTTLE_PATH_OVERRIDE
     func getTotalProgress() -> Int32 {
         if(self.copyGptk && self.repatch) {
             return 136
@@ -308,7 +309,7 @@ func patch(url: URL, opts: inout Opts) {
         opts.progress += 1
     }
     if(opts.overrideBottlePath == true) {
-        overrideBottlePath(url: url)
+        overrideBottlePath(url: url, path: opts.cxbottlesPath)
     }
     opts.progress += 1
     disableAutoUpdate(url: url)
@@ -433,8 +434,8 @@ func restoreAutoUpdate(url: URL) {
     print("restored original Info.plist")
 }
 
-func overrideBottlePath(url: URL) {
-    safeResCopy(res: WINE_RESOURCES_ROOT + BOTTLE_PATH_OVERRIDE, dest: url.path + SHARED_SUPPORT_PATH + BOTTLE_PATH_OVERRIDE)
+func overrideBottlePath(url: URL, path: String) {
+    safeResCopy(res: WINE_RESOURCES_ROOT + path, dest: url.path + SHARED_SUPPORT_PATH + BOTTLE_PATH_OVERRIDE)
 }
 
 func removeOverrideBottlePath(url: URL) {

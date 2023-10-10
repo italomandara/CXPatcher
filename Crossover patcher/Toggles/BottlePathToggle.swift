@@ -9,16 +9,22 @@ import Foundation
 import SwiftUI
 
 struct BottlesPathToggle: View {
-    @Binding var overrideBottlePath: Bool
-//    @Binding var externalUrl: URL?
-    
+    @Binding var opts: Opts
+    @State var isEditable = false
     var body: some View {
-        Toggle(isOn: $overrideBottlePath) {
+        Toggle(isOn: $opts.overrideBottlePath) {
             VStack(alignment: .leading) {
                 HStack(alignment: .center) {
-                    Image(systemName: "waterbottle")
-                    Text(localizedCXPatcherString(forKey: "bottlesPathToggle"))
-                    Spacer()
+                    if(isEditable) {
+                        TextField("",
+                                  text: $opts.cxbottlesPath
+                        )
+                    } else {
+                        Image(systemName: "waterbottle")
+                        Text(localizedCXPatcherString(forKey: "bottlesPathToggle"))
+                        Spacer()
+                        Image(systemName: "gear")
+                    }
                 }
             }
         }
@@ -26,5 +32,12 @@ struct BottlesPathToggle: View {
         .toggleStyle(.switch)
         .controlSize(/*@START_MENU_TOKEN@*/.mini/*@END_MENU_TOKEN@*/)
         .disabled(isVentura)
+    }
+}
+
+struct BottlesPathToggle_Previews: PreviewProvider {
+    static var previews: some View {
+        @State var opts = Opts()
+        BottlesPathToggle(opts: $opts)
     }
 }

@@ -8,7 +8,12 @@
 import Foundation
 
 let SKIP_VENTURA_CHECK = false
+#if DEBUG
+let SKIP_DISCLAIMER_CHECK = true
+#else
 let SKIP_DISCLAIMER_CHECK = false
+#endif
+
 let ENABLE_SKIP_VERSION_CHECK_TOGGLE = false
 let ENABLE_REPATCH_TOGGLE = true
 let ENABLE_RESTORE = true
