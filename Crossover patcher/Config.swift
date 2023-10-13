@@ -38,6 +38,8 @@ let FILES_TO_DISABLE: [String] = [
 let WINE_RESOURCES_ROOT = "Crossover"
 let EXTERNAL_RESOURCES_ROOT = "gptk/redist"
 let WINE_RESOURCES_PATHS: [String] = [
+    "/bin/wine64-preloader",
+    "/bin/wineserver",
     "/lib64/libMoltenVK.dylib",
     "/lib64/wine/dxvk",
     "/lib/wine/dxvk",
