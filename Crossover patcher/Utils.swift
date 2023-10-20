@@ -28,6 +28,7 @@ struct Opts {
     var copyGptk = true
     var progress: Float = 0.0
     var busy: Bool = false
+    var cxbottlesPath = DEFAULT_CX_BOTTLES_PATH
     func getTotalProgress() -> Int32 {
         if(self.copyGptk && self.repatch) {
             return 136
@@ -308,7 +309,7 @@ func patch(url: URL, opts: inout Opts) {
         opts.progress += 1
     }
     if(opts.overrideBottlePath == true) {
-        overrideBottlePath(url: url)
+        overrideBottlePath(url: url, path: opts.cxbottlesPath)
     }
     opts.progress += 1
     disableAutoUpdate(url: url)
@@ -404,7 +405,7 @@ func validate(input: String) -> Bool {
     return false
 }
 
-func editInfoPlist(at: URL, key: String, value: String) {
+private func editInfoPlist(at: URL, key: String, value: String) {
     let url = at.appendingPathComponent(PLIST_PATH)
     var plist: [String:Any] = [:]
     if let data = f.contents(atPath: url.path) {
@@ -433,10 +434,32 @@ func restoreAutoUpdate(url: URL) {
     print("restored original Info.plist")
 }
 
-func overrideBottlePath(url: URL) {
-    safeResCopy(res: WINE_RESOURCES_ROOT + BOTTLE_PATH_OVERRIDE, dest: url.path + SHARED_SUPPORT_PATH + BOTTLE_PATH_OVERRIDE)
+private func getOverrideConfigfile(path: String) -> String {
+    let filePath = WINE_RESOURCES_ROOT + BOTTLE_PATH_OVERRIDE
+    print("tryng to read \(filePath)")
+    if let sourceUrl = Bundle.main.url(forResource:  filePath, withExtension: nil) {
+        print(sourceUrl)
+        do { let text = try String(contentsOf: sourceUrl, encoding: .utf8)
+            return text + "\"CX_BOTTLE_PATH\"=\"\(path)\""
+        } catch {
+            print("failed opening config file")
+        }
+    } else {
+        print("\(filePath) not found")
+    }
+    return ""
+}
+
+func overrideBottlePath(url: URL, path: String) {
+    disable(dest: url.path + SHARED_SUPPORT_PATH + BOTTLE_PATH_OVERRIDE)
+    let file = getOverrideConfigfile(path: path)
+    do {
+        try file.write(to: url.appendingPathComponent(SHARED_SUPPORT_PATH + BOTTLE_PATH_OVERRIDE), atomically: false, encoding: .utf8)
+    } catch {
+        print(error)
+    }
 }
 
 func removeOverrideBottlePath(url: URL) {
-    restoreFile(dest: url.path + SHARED_SUPPORT_PATH + BOTTLE_PATH_OVERRIDE)
+    enable(dest: url.path + SHARED_SUPPORT_PATH + BOTTLE_PATH_OVERRIDE)
 }

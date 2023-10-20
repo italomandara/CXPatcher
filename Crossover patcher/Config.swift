@@ -22,6 +22,7 @@ let SUPPORTED_CROSSOVER_VERSION = "23."
 let ENABLE_GSTREAMER = false
 
 let SHARED_SUPPORT_PATH = "/Contents/SharedSupport/CrossOver"
+let DEFAULT_CX_BOTTLES_PATH = "/Users/${USER}/CXPBottles"
 let LIB_PATH = "/lib/"
 
 let EXTERNAL_RESOURCES_ROOT = "/lib64/apple_gpt"
