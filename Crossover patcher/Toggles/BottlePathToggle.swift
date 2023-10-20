@@ -11,6 +11,9 @@ import SwiftUI
 struct BottlesPathToggle: View {
     @Binding var opts: Opts
     @State var isEditable = false
+    var customColor: Color? {
+        return (opts.cxbottlesPath != DEFAULT_CX_BOTTLES_PATH) ? Color.green : nil
+    }
     var body: some View {
         Toggle(isOn: $opts.overrideBottlePath) {
             VStack(alignment: .leading) {
@@ -23,7 +26,20 @@ struct BottlesPathToggle: View {
                         Image(systemName: "waterbottle")
                         Text(localizedCXPatcherString(forKey: "bottlesPathToggle"))
                         Spacer()
-                        Image(systemName: "gear")
+                        Button() {
+                            let panel = NSOpenPanel()
+                            panel.allowsMultipleSelection = false
+                            panel.canChooseDirectories = true
+                            panel.canChooseFiles = false
+                            if panel.runModal() == .OK {
+                                opts.cxbottlesPath = panel.url?.path ?? DEFAULT_CX_BOTTLES_PATH
+                            }
+                        } label: {
+                            Image(systemName: "gear").foregroundColor(customColor)
+                        }
+                        .buttonStyle(.plain)
+                        .help(opts.cxbottlesPath)
+                        
                     }
                 }
             }
