@@ -18,7 +18,7 @@ let SKIP_VENTURA_CHECK = false
 let ENABLE_SKIP_VERSION_CHECK_TOGGLE = false
 let ENABLE_REPATCH_TOGGLE = true
 let ENABLE_RESTORE = true
-let SUPPORTED_CROSSOVER_VERSION = 23.5
+let SUPPORTED_CROSSOVER_VERSION = "23."
 let ENABLE_GSTREAMER = false
 
 let SHARED_SUPPORT_PATH = "/Contents/SharedSupport/CrossOver"
@@ -27,7 +27,14 @@ let LIB_PATH = "/lib/"
 let EXTERNAL_RESOURCES_ROOT = "/lib64/apple_gpt"
 let EXTERNAL_WINE_PATHS: [String] = [
     "/external",
-    "/wine",
+    "/wine/x86_64-unix/atidxx64.so",
+    "/wine/x86_64-unix/d3d11.so",
+    "/wine/x86_64-unix/d3d12.so",
+    "/wine/x86_64-unix/dxgi.so",
+    "/wine/x86_64-windows/atidxx64.dll",
+    "/wine/x86_64-windows/d3d11.dll",
+    "/wine/x86_64-windows/d3d12.dll",
+    "/wine/x86_64-windows/dxgi.dll",
 ]
 let FILES_TO_DISABLE: [String] = [
     "/Contents/CodeResources",
