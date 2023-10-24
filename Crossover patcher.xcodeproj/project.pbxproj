@@ -16,6 +16,9 @@
 		389D6BCF2A47599900A4C8EB /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389D6BCE2A47599900A4C8EB /* Config.swift */; };
 		38ACB39529D773CA00A450A0 /* Crossover_patcherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ACB39429D773CA00A450A0 /* Crossover_patcherApp.swift */; };
 		38ACB39729D773CA00A450A0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ACB39629D773CA00A450A0 /* ContentView.swift */; };
+		38C291E62AE8523B00D0703E /* MoltenVKToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C291E52AE8523B00D0703E /* MoltenVKToggle.swift */; };
+		38C291E82AE852BD00D0703E /* DXVKToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C291E72AE852BD00D0703E /* DXVKToggle.swift */; };
+		38C291EA2AE85A7C00D0703E /* RemoveSignatureToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C291E92AE85A7C00D0703E /* RemoveSignatureToggle.swift */; };
 		38C678A229DAEF8500EB19BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38ACB39829D773CA00A450A0 /* Assets.xcassets */; };
 		38C678A629DB3FE800EB19BE /* Instructions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C678A529DB3FE800EB19BE /* Instructions.swift */; };
 		38CB035A2A0ACF7200AE3637 /* RestoreButtonDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CB03592A0ACF7200AE3637 /* RestoreButtonDialog.swift */; };
@@ -50,6 +53,9 @@
 		38ACB39829D773CA00A450A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "Crossover patcher/Assets.xcassets"; sourceTree = SOURCE_ROOT; };
 		38ACB39B29D773CA00A450A0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		38ACB39D29D773CA00A450A0 /* Crossover_patcher.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Crossover_patcher.entitlements; sourceTree = "<group>"; };
+		38C291E52AE8523B00D0703E /* MoltenVKToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoltenVKToggle.swift; sourceTree = "<group>"; };
+		38C291E72AE852BD00D0703E /* DXVKToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DXVKToggle.swift; sourceTree = "<group>"; };
+		38C291E92AE85A7C00D0703E /* RemoveSignatureToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveSignatureToggle.swift; sourceTree = "<group>"; };
 		38C678A129DADD5300EB19BE /* Crossover-patcher-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Crossover-patcher-Info.plist"; sourceTree = SOURCE_ROOT; };
 		38C678A529DB3FE800EB19BE /* Instructions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instructions.swift; sourceTree = "<group>"; };
 		38CB03592A0ACF7200AE3637 /* RestoreButtonDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestoreButtonDialog.swift; sourceTree = "<group>"; };
@@ -141,6 +147,9 @@
 				3888B8AB2ABCDECB005B57BA /* BottlePathToggle.swift */,
 				38F7B2202A5DD60000CD9511 /* RepatchToggle.swift */,
 				38F7B21E2A5DD58600CD9511 /* SkipVersionCheckToggle.swift */,
+				38C291E52AE8523B00D0703E /* MoltenVKToggle.swift */,
+				38C291E72AE852BD00D0703E /* DXVKToggle.swift */,
+				38C291E92AE85A7C00D0703E /* RemoveSignatureToggle.swift */,
 			);
 			path = Toggles;
 			sourceTree = "<group>";
@@ -267,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38C291E82AE852BD00D0703E /* DXVKToggle.swift in Sources */,
 				38F7B21F2A5DD58600CD9511 /* SkipVersionCheckToggle.swift in Sources */,
 				38F7B2212A5DD60000CD9511 /* RepatchToggle.swift in Sources */,
 				38ACB39729D773CA00A450A0 /* ContentView.swift in Sources */,
@@ -278,9 +288,11 @@
 				38F7B21D2A5DD4E100CD9511 /* IntegrateExternalsToggle.swift in Sources */,
 				38F7B21B2A5DD33A00CD9511 /* Logo.swift in Sources */,
 				382F4C0729DA516C00824358 /* Utils.swift in Sources */,
+				38C291E62AE8523B00D0703E /* MoltenVKToggle.swift in Sources */,
 				38CB035A2A0ACF7200AE3637 /* RestoreButtonDialog.swift in Sources */,
 				38F7B2172A5DCF7500CD9511 /* AppSelector.swift in Sources */,
 				386E0B282AC7706200D09956 /* CustomButton.swift in Sources */,
+				38C291EA2AE85A7C00D0703E /* RemoveSignatureToggle.swift in Sources */,
 				389D6BCF2A47599900A4C8EB /* Config.swift in Sources */,
 				38C678A629DB3FE800EB19BE /* Instructions.swift in Sources */,
 				38F7B2192A5DD19D00CD9511 /* ExternalResourcesSelector.swift in Sources */,

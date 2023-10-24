@@ -29,6 +29,9 @@ struct Opts {
     var progress: Float = 0.0
     var busy: Bool = false
     var cxbottlesPath = DEFAULT_CX_BOTTLES_PATH
+    var patchMVK = true
+    var patchDXVK = true
+    var removeSignaure = true
     func getTotalProgress() -> Int32 {
         if(self.copyGptk && self.repatch) {
             return 136
@@ -286,11 +289,20 @@ func hasExternal(url: URL) -> Bool{
 }
 
 func patch(url: URL, opts: inout Opts) {
-    let resources = opts.copyGptk != false ? getResourcesListFrom(url: url) : getResourcesListFrom(url: url).filter { elem in
-        elem.0 != "crossover.inf"
+    let resources = getResourcesListFrom(url: url)
+    .filter { elem in
+        (opts.copyGptk == false && elem.0 != "crossover.inf")
+    }
+    .filter { elem in
+        (opts.patchMVK == false && elem.0 != "/lib64/libMoltenVK.dylib")
+    }
+    .filter { elem in
+        (opts.patchDXVK == false && elem.0 != "/lib64/wine/dxvk" && elem.0 != "/lib/wine/dxvk")
     }
     opts.progress += 1
-    let filesToDisable = getDisableListFrom(url: url)
+    let filesToDisable = getDisableListFrom(url: url).filter { elem in
+        opts.removeSignaure == false && elem != "/Contents/CodeResources" && elem != "/Contents/_CodeSignature"
+    }
     opts.progress += 1
     if(opts.copyGptk == true) {
         print("copying externals...")

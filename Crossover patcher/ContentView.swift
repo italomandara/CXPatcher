@@ -38,6 +38,18 @@ struct ContentView: View {
                     IntegrateExternalsToggle(
                         copyGptk: $opts.copyGptk
                     )
+                    Divider()
+                    MoltenVKToggle(
+                        opts: $opts
+                    )
+                    Divider()
+                    DXVKToggle(
+                        opts: $opts
+                    )
+                    Divider()
+                    RemoveSignatureToggle(
+                        opts: $opts
+                    )
                     if(ENABLE_SKIP_VERSION_CHECK_TOGGLE) {
                         Divider()
                         SkipVersionCheckToggle(skipVersionCheck: $opts.skipVersionCheck)
