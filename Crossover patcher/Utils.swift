@@ -289,19 +289,16 @@ func hasExternal(url: URL) -> Bool{
 }
 
 func patch(url: URL, opts: inout Opts) {
-    let resources = getResourcesListFrom(url: url)
-    .filter { elem in
-        opts.copyGptk ? true : elem.0 != "crossover.inf"
-    }
-    .filter { elem in
-        opts.patchMVK ? true : elem.0 != "/lib64/libMoltenVK.dylib"
-    }
-    .filter { elem in
-        opts.patchDXVK ? true : (elem.0 != "/lib64/wine/dxvk" && elem.0 != "/lib/wine/dxvk")
+    let resources = getResourcesListFrom(url: url).filter { elem in
+        opts.copyGptk ? true : !elem.0.contains("crossover.inf")
+    }.filter { elem in
+        opts.patchMVK ? true : !elem.0.contains("libMoltenVK.dylib")
+    }.filter { elem in
+        opts.patchDXVK ? true : (!elem.0.contains("dxvk") && !elem.0.contains("dxvk"))
     }
     opts.progress += 1
     let filesToDisable = getDisableListFrom(url: url).filter { elem in
-        opts.removeSignaure == false && elem != "/Contents/CodeResources" && elem != "/Contents/_CodeSignature"
+        opts.removeSignaure ? true : (!elem.contains("CodeResources") && !elem.contains("_CodeSignature"))
     }
     opts.progress += 1
     if(opts.copyGptk == true) {
@@ -316,11 +313,7 @@ func patch(url: URL, opts: inout Opts) {
         safeResCopy(res: resource.0, dest: resource.1)
         opts.progress += 1
     }
-    filesToDisable
-    .filter { file in
-        opts.removeSignaure ? true : (file != "/Contents/CodeResources" && file != "/Contents/_CodeSignature")
-    }
-    .forEach { file in
+    filesToDisable.forEach { file in
         disable(dest: file)
         opts.progress += 1
     }
