@@ -291,13 +291,13 @@ func hasExternal(url: URL) -> Bool{
 func patch(url: URL, opts: inout Opts) {
     let resources = getResourcesListFrom(url: url)
     .filter { elem in
-        (opts.copyGptk == false && elem.0 != "crossover.inf")
+        opts.copyGptk ? true : elem.0 != "crossover.inf"
     }
     .filter { elem in
-        (opts.patchMVK == false && elem.0 != "/lib64/libMoltenVK.dylib")
+        opts.patchMVK ? true : elem.0 != "/lib64/libMoltenVK.dylib"
     }
     .filter { elem in
-        (opts.patchDXVK == false && elem.0 != "/lib64/wine/dxvk" && elem.0 != "/lib/wine/dxvk")
+        opts.patchDXVK ? true : (elem.0 != "/lib64/wine/dxvk" && elem.0 != "/lib/wine/dxvk")
     }
     opts.progress += 1
     let filesToDisable = getDisableListFrom(url: url).filter { elem in
