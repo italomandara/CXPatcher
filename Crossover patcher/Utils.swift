@@ -316,7 +316,11 @@ func patch(url: URL, opts: inout Opts) {
         safeResCopy(res: resource.0, dest: resource.1)
         opts.progress += 1
     }
-    filesToDisable.forEach { file in
+    filesToDisable
+    .filter { file in
+        opts.removeSignaure ? true : (file != "/Contents/CodeResources" && file != "/Contents/_CodeSignature")
+    }
+    .forEach { file in
         disable(dest: file)
         opts.progress += 1
     }
