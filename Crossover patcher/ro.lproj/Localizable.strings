@@ -44,3 +44,5 @@ Dacă întâmpinați probleme după ce instalația a fost patch-uită, puteți d
 "confirmation" = "Vă rugăm să tastați „Nu voi solicita suport sau rambursare de la CodeWeavers” în câmpul de introducere de mai jos";
 "unsupported" = "nesuportat";
 "bottlesPathToggle" = "Folosește o cale separată pentru sticle";
+"optionsButtonText" = "Opțiuni Avansate";
+"options" = "Opțiuni";

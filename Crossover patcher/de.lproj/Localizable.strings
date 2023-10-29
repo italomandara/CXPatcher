@@ -44,3 +44,5 @@ Sollten nach dem Patchen Ihrer Installation Probleme auftreten, können Sie eine
 "confirmation" = "Bitte geben Sie in das Eingabefeld unten „Ich werde CodeWeavers nicht um Unterstützung oder Rückerstattung bitten“ ein";
 "unsupported" = "nicht unterstützt";
 "bottlesPathToggle" = "Verwenden Sie einen separaten Flaschenweg";
+"optionsButtonText" = "Erweiterte Optionen";
+"options" = "Optionen";

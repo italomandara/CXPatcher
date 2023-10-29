@@ -12,7 +12,7 @@ struct Crossover_patcherApp: App {
     @State private var opts = Opts()
     var body: some Scene {
         WindowGroup {
-            ContentView(opts: opts).fixedSize()
+            ContentView(opts: $opts).fixedSize()
         }
         .windowResizability(.contentSize)
         .commands {
@@ -24,6 +24,9 @@ struct Crossover_patcherApp: App {
         }
         Window("Instructions", id: "instructions") {
             Instructions().fixedSize()
+        }
+        Window("Options", id: "options") {
+            Options(opts: $opts).fixedSize()
         }
         .windowResizability(.contentSize)
         .windowStyle(.hiddenTitleBar)

@@ -44,3 +44,5 @@ Si encuentras algún problema después de parchear CrossOver, puedes descargar u
 "confirmation" = "Por favor, escribe en el campo inferior 'No demandaré ayuda a CodeWeavers por soporte o reembolso'.";
 "unsupported" = "sin apoyo";
 "bottlesPathToggle" = "Usa una ruta separada para las botellas";
+"optionsButtonText" = "Opciones Avanzadas";
+"options" = "Opciones";

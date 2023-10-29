@@ -44,3 +44,5 @@
 "confirmation" = "请在下方输入框中输入“我不会向 CodeWeavers 请求支持或退款”";
 "unsupported" = "不支持的";
 "bottlesPathToggle" = "使用分开的瓶子路径";
+"optionsButtonText" = "高级选项";
+"options" = "选项";
