@@ -44,3 +44,5 @@ If you face any issues after your installation has been patched, you may downloa
 "confirmation" =  "Please type 'I will not ask CodeWeavers for support or refund' in the input field below";
 "unsupported" = "unsupported";
 "bottlesPathToggle" = "Use separate bottles path";
+"optionsButtonText" = "Advanced Options";
+"options" = "Options";

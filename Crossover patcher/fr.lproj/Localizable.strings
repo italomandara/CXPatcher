@@ -44,3 +44,5 @@ Si vous rencontrez des problèmes après avoir appliqué le patch, vous pouvez t
 "confirmation" = "Veuillez taper 'Je ne demanderai pas de support ou de remboursement à CodeWeavers' dans le champ de saisie ci-dessous";
 "unsupported" = "non pris en charge";
 "bottlesPathToggle" = "Utilisez un chemin séparé pour les bouteilles";
+"optionsButtonText" = "Options Avancées";
+"options" = "Options";

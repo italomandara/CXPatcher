@@ -44,3 +44,5 @@ Om du stöter på problem efter att din installation har blivit patchad kan du l
 "confirmation" = "Skriv 'Jag kommer inte att begära support eller återbetalning från CodeWeavers' i inmatningsfältet nedan";
 "unsupported" = "utan stöd";
 "bottlesPathToggle" = "Använd en separat flaskväg";
+"optionsButtonText" = "Avancerade alternativ";
+"options" = "Alternativ";

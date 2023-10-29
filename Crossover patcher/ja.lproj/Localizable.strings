@@ -44,3 +44,5 @@
 "confirmation" = "以下の入力欄に「CodeWeaversにサポートや返金を要求しないでください」と入力してください";
 "unsupported" = "サポートされていない";
 "bottlesPathToggle" = "別々のボトルの経路を使用してください";
+"optionsButtonText" = "詳細オプション";
+"options" = "オプション";

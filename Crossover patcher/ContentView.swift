@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @Environment(\.openWindow) var openWindow
-    @State public var opts: Opts
+    @Binding public var opts: Opts
     
     var body: some View {
         VStack(alignment: .center) {
@@ -30,14 +30,6 @@ struct ContentView: View {
                         opts: $opts
                     )
                 VStack(alignment: .center) {
-                    Divider()
-                    BottlesPathToggle(
-                        opts: $opts
-                    )
-                    Divider()
-                    IntegrateExternalsToggle(
-                        copyGptk: $opts.copyGptk
-                    )
                     if(ENABLE_SKIP_VERSION_CHECK_TOGGLE) {
                         Divider()
                         SkipVersionCheckToggle(skipVersionCheck: $opts.skipVersionCheck)
@@ -47,9 +39,12 @@ struct ContentView: View {
                         RepatchToggle(repatch: $opts.repatch)
                         Divider()
                     }
-                    if(ENABLE_RESTORE) {
-                        RestoreButtonDialog(opts: opts)
-                            .padding(.top, 6.0)
+                    HStack {
+                        if(ENABLE_RESTORE) {
+                            RestoreButtonDialog(opts: opts)
+                                .padding(.top, 6.0)
+                        }
+                        OptionsButton()
                     }
                 }
                 .padding(.top, 12.0)
@@ -64,6 +59,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(opts: Opts())
+        @State var opts = Opts()
+        ContentView(opts: $opts)
     }
 }
