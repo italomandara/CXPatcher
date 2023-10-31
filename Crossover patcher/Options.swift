@@ -14,9 +14,6 @@ struct Options: View {
     @Binding var opts: Opts
     var body: some View {
         VStack(alignment: .center) {
-            Text(localizedCXPatcherString(forKey: "options"))
-                .font(.title)
-                .padding(.bottom, 20)
             BottlesPathToggle(
                 opts: $opts
             )

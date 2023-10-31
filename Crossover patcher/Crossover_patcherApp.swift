@@ -29,6 +29,5 @@ struct Crossover_patcherApp: App {
             Options(opts: $opts).fixedSize()
         }
         .windowResizability(.contentSize)
-        .windowStyle(.hiddenTitleBar)
     }
 }
