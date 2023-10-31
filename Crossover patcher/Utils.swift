@@ -443,12 +443,16 @@ func restoreAutoUpdate(url: URL) {
     print("restored original Info.plist")
 }
 
-private func appendLineToFile(filePath: String, additionalLine: String) -> String {
+private func appendLinesToFile(filePath: String, additionalLines: [String]) -> String {
     print("tryng to read \(filePath)")
     if let sourceUrl = Bundle.main.url(forResource:  filePath, withExtension: nil) {
         print(sourceUrl)
         do { let text = try String(contentsOf: sourceUrl, encoding: .utf8)
-            return text + additionalLine
+            var finalLines: String = ""
+            for additionalLine in additionalLines {
+                finalLines += additionalLine + "\n"
+            }
+            return text + finalLines
         } catch {
             print("failed opening config file")
         }
@@ -460,7 +464,7 @@ private func appendLineToFile(filePath: String, additionalLine: String) -> Strin
 
 private func getENVOverrideConfigfile(key: String, value: String) -> String {
     let filePath = WINE_RESOURCES_ROOT + BOTTLE_PATH_OVERRIDE
-    return appendLineToFile(filePath: filePath, additionalLine: "\"\(key)\"=\"\(value)\"")
+    return appendLinesToFile(filePath: filePath, additionalLines: ["\"\(key)\"=\"\(value)\""])
 }
 
 func overrideBottlePath(url: URL, path: String) {
