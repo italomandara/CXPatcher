@@ -443,13 +443,12 @@ func restoreAutoUpdate(url: URL) {
     print("restored original Info.plist")
 }
 
-private func getOverrideConfigfile(path: String) -> String {
-    let filePath = WINE_RESOURCES_ROOT + BOTTLE_PATH_OVERRIDE
+private func appendLineToFile(filePath: String, additionalLine: String) -> String {
     print("tryng to read \(filePath)")
     if let sourceUrl = Bundle.main.url(forResource:  filePath, withExtension: nil) {
         print(sourceUrl)
         do { let text = try String(contentsOf: sourceUrl, encoding: .utf8)
-            return text + "\"CX_BOTTLE_PATH\"=\"\(path)\""
+            return text + additionalLine
         } catch {
             print("failed opening config file")
         }
@@ -459,9 +458,14 @@ private func getOverrideConfigfile(path: String) -> String {
     return ""
 }
 
+private func getENVOverrideConfigfile(key: String, value: String) -> String {
+    let filePath = WINE_RESOURCES_ROOT + BOTTLE_PATH_OVERRIDE
+    return appendLineToFile(filePath: filePath, additionalLine: "\"\(key)\"=\"\(value)\"")
+}
+
 func overrideBottlePath(url: URL, path: String) {
     disable(dest: url.path + SHARED_SUPPORT_PATH + BOTTLE_PATH_OVERRIDE)
-    let file = getOverrideConfigfile(path: path)
+    let file = getENVOverrideConfigfile(key: "CX_BOTTLE_PATH", value: path)
     do {
         try file.write(to: url.appendingPathComponent(SHARED_SUPPORT_PATH + BOTTLE_PATH_OVERRIDE), atomically: false, encoding: .utf8)
     } catch {
