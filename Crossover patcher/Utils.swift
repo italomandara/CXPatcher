@@ -462,9 +462,13 @@ private func appendLinesToFile(filePath: String, additionalLines: [String]) -> S
     return ""
 }
 
+private func toCrossoverENVString(_ key: String, _ value: String) -> String {
+    return "\"\(key)\"=\"\(value)\""
+}
+
 private func getENVOverrideConfigfile(key: String, value: String) -> String {
     let filePath = WINE_RESOURCES_ROOT + BOTTLE_PATH_OVERRIDE
-    return appendLinesToFile(filePath: filePath, additionalLines: ["\"\(key)\"=\"\(value)\""])
+    return appendLinesToFile(filePath: filePath, additionalLines: [toCrossoverENVString(key, value)])
 }
 
 func overrideBottlePath(url: URL, path: String) {
