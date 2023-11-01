@@ -19,6 +19,11 @@ enum Status {
     case error
 }
 
+struct Env {
+    var key: String
+    var value: String
+}
+
 struct Opts {
     var showDisclaimer: Bool = true
     var status: Status = .unpatched
@@ -31,6 +36,10 @@ struct Opts {
     var cxbottlesPath = DEFAULT_CX_BOTTLES_PATH
     var patchMVK = true
     var patchDXVK = true
+    var envs: [String: Bool] = [
+        "disablefastmath": false,
+        "enablehud": false
+    ]
     var removeSignaure = true
     func getTotalProgress() -> Int32 {
         if(self.copyGptk && self.repatch) {
@@ -460,14 +469,18 @@ private func toCrossoverENVString(_ key: String, _ value: String) -> String {
     return "\"\(key)\"=\"\(value)\""
 }
 
-private func getENVOverrideConfigfile(key: String, value: String) -> String {
+private func getENVOverrideConfigfile(envs: [Env]) -> String {
     let filePath = WINE_RESOURCES_ROOT + BOTTLE_PATH_OVERRIDE
-    return appendLinesToFile(filePath: filePath, additionalLines: [toCrossoverENVString(key, value)])
+    let additionallines: [String] = envs.map { env in
+        toCrossoverENVString(env.key, env.value)
+    }
+    return appendLinesToFile(filePath: filePath, additionalLines: additionallines)
 }
 
 func overrideBottlePath(url: URL, path: String) {
     disable(dest: url.path + SHARED_SUPPORT_PATH + BOTTLE_PATH_OVERRIDE)
-    let file = getENVOverrideConfigfile(key: "CX_BOTTLE_PATH", value: path)
+    let envs: [Env] = [Env(key: "CX_BOTTLE_PATH", value: path)]
+    let file = getENVOverrideConfigfile(envs: envs)
     do {
         try file.write(to: url.appendingPathComponent(SHARED_SUPPORT_PATH + BOTTLE_PATH_OVERRIDE), atomically: false, encoding: .utf8)
     } catch {
