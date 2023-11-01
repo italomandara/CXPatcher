@@ -478,7 +478,9 @@ HKCU,"Software\Wine\DllOverrides","odbc32",,"native, builtin"
 
 ; Fix Resident Evil 7 audio
  HKCU,"Software\Wine\AppDefaults\re7.exe\DllOverrides","*msspatial",,""
-
+; Disable Dying Light 2 AVX
+ HKCU,"Software\Wine\AppDefaults\DyinglightGame_x64_rwdi.exe\DllOverrides","*runtime_dx11",,""
+ 
 HKCU,"Software\Wine\DllOverrides","*autorun.exe",,"native,builtin"
 HKCU,"Software\Wine\DllOverrides","*ctfmon.exe",,"builtin"
 HKCU,"Software\Wine\DllOverrides","*ddhelp.exe",,"builtin"
