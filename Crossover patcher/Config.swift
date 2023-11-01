@@ -17,17 +17,8 @@ let SKIP_VENTURA_CHECK = false
 
 let ENABLE_SKIP_VERSION_CHECK_TOGGLE = false
 
-#if DEBUG
-    let ENABLE_REPATCH_TOGGLE = true
-#else
-    let ENABLE_REPATCH_TOGGLE = false
-#endif
-
-#if DEBUG
-    let ENABLE_RESTORE = true
-#else
-    let ENABLE_RESTORE = false
-#endif
+let ENABLE_REPATCH_TOGGLE = true
+let ENABLE_RESTORE = true
 
 let SUPPORTED_CROSSOVER_VERSION = "23."
 let ENABLE_GSTREAMER = false
