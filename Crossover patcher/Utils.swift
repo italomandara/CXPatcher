@@ -359,12 +359,6 @@ func restoreApp(url: URL, opts: inout Opts, onRestore: () -> Void = {}) -> Bool 
     let filesToEnable = getDisableListFrom(url: url)
     if(hasExternal(url: url)) {
         let externalFilesToRestore = getExternalResourcesList(url: url)
-        let externalPath = getExternalPathFrom(url: url)
-        do {try f.removeItem(atPath: externalPath)
-            print("deleting external")
-        } catch {
-            print("can't delete file external")
-        }
         externalFilesToRestore.forEach { file in
             restoreFile(dest: file.1)
         }
