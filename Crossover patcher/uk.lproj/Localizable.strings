@@ -46,3 +46,6 @@
 "bottlesPathToggle" = "Використовуйте окремий шлях для пляшок";
 "optionsButtonText" = "Розширені опції";
 "options" = "Опції";
+"MTLHUDToggle" = "METAL HUD завжди увімкнено";
+"MsyncToggle" = "Увімкнути Msync";
+"DisableFastMathToggle" = "Вимкнути швидку математику";

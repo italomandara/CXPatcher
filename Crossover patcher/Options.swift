@@ -29,10 +29,17 @@ struct Options: View {
             RemoveSignatureToggle(
                 opts: $opts
             )
-            if(ENABLE_SKIP_VERSION_CHECK_TOGGLE) {
-                Divider()
-                SkipVersionCheckToggle(skipVersionCheck: $opts.skipVersionCheck)
-            }
+            Divider().padding(.vertical, 2)
+            Text(localizedCXPatcherString(forKey: "Environment Globals")).padding(.top, 2)
+            FastMathToggle(
+                opts: $opts
+            )
+            MTLHUDToggle(
+                opts: $opts
+            )
+            MsyncToggle(
+                opts: $opts
+            )
         }.padding(20)
         .frame(width: 400.0)
         .fixedSize()

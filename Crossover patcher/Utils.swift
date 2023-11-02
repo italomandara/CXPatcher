@@ -24,6 +24,12 @@ struct Env {
     var value: String
 }
 
+struct GlobalEnvs {
+    var fastMathDisabled = false
+    var mtlHudEnabled = false
+    var msyncEnabled = false
+}
+
 struct Opts {
     var showDisclaimer: Bool = true
     var status: Status = .unpatched
@@ -36,10 +42,7 @@ struct Opts {
     var cxbottlesPath = DEFAULT_CX_BOTTLES_PATH
     var patchMVK = true
     var patchDXVK = true
-    var envs: [String: Bool] = [
-        "disablefastmath": false,
-        "enablehud": false
-    ]
+    var globalEnvs = GlobalEnvs()
     var removeSignaure = true
     func getTotalProgress() -> Int32 {
         if(self.copyGptk && self.repatch) {
@@ -327,7 +330,7 @@ func patch(url: URL, opts: inout Opts) {
         opts.progress += 1
     }
     if(opts.overrideBottlePath == true) {
-        overrideBottlePath(url: url, path: opts.cxbottlesPath)
+        addGlobals(url: url, opts: opts)
     }
     opts.progress += 1
     disableAutoUpdate(url: url)
@@ -382,7 +385,7 @@ func restoreApp(url: URL, opts: inout Opts, onRestore: () -> Void = {}) -> Bool 
     }
     restoreAutoUpdate(url: url)
     opts.progress += 1
-    removeOverrideBottlePath(url: url)
+    removeGlobals(url: url)
     opts.progress += 1
     return true
 }
@@ -452,9 +455,12 @@ private func appendLinesToFile(filePath: String, additionalLines: [String]) -> S
         print(sourceUrl)
         do { let text = try String(contentsOf: sourceUrl, encoding: .utf8)
             var finalLines: String = ""
+            print("total envs: \(additionalLines.count)")
             for additionalLine in additionalLines {
                 finalLines += additionalLine + "\n"
+                print(additionalLine)
             }
+            print(finalLines)
             return text + finalLines
         } catch {
             print("failed opening config file")
@@ -477,9 +483,21 @@ private func getENVOverrideConfigfile(envs: [Env]) -> String {
     return appendLinesToFile(filePath: filePath, additionalLines: additionallines)
 }
 
-func overrideBottlePath(url: URL, path: String) {
+func addGlobals(url: URL, opts: Opts) {
     disable(dest: url.path + SHARED_SUPPORT_PATH + BOTTLE_PATH_OVERRIDE)
-    let envs: [Env] = [Env(key: "CX_BOTTLE_PATH", value: path)]
+    var envs: [Env] = [Env(key: "CX_BOTTLE_PATH", value: opts.cxbottlesPath)]
+    if(opts.globalEnvs.mtlHudEnabled == true) {
+        print("add mtlHudEnabled env")
+        envs += [Env(key: "MTL_HUD_ENABLED", value: "1")]
+    }
+    if(opts.globalEnvs.fastMathDisabled == true) {
+        print("add fastMathDisabled env")
+        envs += [Env(key: "MVK_CONFIG_FAST_MATH_ENABLED", value: "0")]
+    }
+    if(opts.globalEnvs.msyncEnabled == true) {
+        print("add msyncEnabled env")
+        envs += [Env(key: "WINEMSYNC", value: "1")]
+    }
     let file = getENVOverrideConfigfile(envs: envs)
     do {
         try file.write(to: url.appendingPathComponent(SHARED_SUPPORT_PATH + BOTTLE_PATH_OVERRIDE), atomically: false, encoding: .utf8)
@@ -488,6 +506,11 @@ func overrideBottlePath(url: URL, path: String) {
     }
 }
 
-func removeOverrideBottlePath(url: URL) {
+func removeGlobals(url: URL) {
+    do {
+        try f.removeItem(atPath: url.path + SHARED_SUPPORT_PATH + BOTTLE_PATH_OVERRIDE)
+    } catch {
+        print(error)
+    }
     enable(dest: url.path + SHARED_SUPPORT_PATH + BOTTLE_PATH_OVERRIDE)
 }

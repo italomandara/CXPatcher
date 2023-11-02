@@ -46,3 +46,6 @@ Jeśli napotkasz jakiekolwiek problemy z instalacją CrossOver, możesz pobrać 
 "bottlesPathToggle" = "Użyj osobnej ścieżki dla butelek";
 "optionsButtonText" = "Zaawansowane opcje";
 "options" = "Opcje";
+"MTLHUDToggle" = "METAL HUD zawsze włączony";
+"MsyncToggle" = "Włącz Msync";
+"DisableFastMathToggle" = "Wyłącz szybką matematykę";

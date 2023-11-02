@@ -34,6 +34,10 @@ struct ContentView: View {
                         Divider()
                         SkipVersionCheckToggle(skipVersionCheck: $opts.skipVersionCheck)
                     }
+                    if(ENABLE_SKIP_VERSION_CHECK_TOGGLE) {
+                        Divider()
+                        SkipVersionCheckToggle(skipVersionCheck: $opts.skipVersionCheck)
+                    }
                     if(ENABLE_REPATCH_TOGGLE) {
                         Divider()
                         RepatchToggle(repatch: $opts.repatch)

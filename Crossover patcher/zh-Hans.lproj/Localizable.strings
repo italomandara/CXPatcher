@@ -46,3 +46,6 @@
 "bottlesPathToggle" = "使用分开的瓶子路径";
 "optionsButtonText" = "高级选项";
 "options" = "选项";
+"MTLHUDToggle" = "METAL HUD始终打开";
+"MsyncToggle" = "启用Msync";
+"DisableFastMathToggle" = "禁用快速数学";

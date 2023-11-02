@@ -46,3 +46,6 @@ Om du stöter på problem efter att din installation har blivit patchad kan du l
 "bottlesPathToggle" = "Använd en separat flaskväg";
 "optionsButtonText" = "Avancerade alternativ";
 "options" = "Alternativ";
+"MTLHUDToggle" = "METAL HUD alltid på";
+"MsyncToggle" = "Aktivera Msync";
+"DisableFastMathToggle" = "Inaktivera snabb matematik";

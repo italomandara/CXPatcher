@@ -46,3 +46,6 @@ Si encuentras algún problema después de parchear CrossOver, puedes descargar u
 "bottlesPathToggle" = "Usa una ruta separada para las botellas";
 "optionsButtonText" = "Opciones Avanzadas";
 "options" = "Opciones";
+"MTLHUDToggle" = "METAL HUD siempre activo";
+"MsyncToggle" = "Habilitar Msync";
+"DisableFastMathToggle" = "Desactivar matemáticas rápidas";

@@ -46,3 +46,6 @@ If you face any issues after your installation has been patched, you may downloa
 "bottlesPathToggle" = "Use separate bottles path";
 "optionsButtonText" = "Advanced Options";
 "options" = "Options";
+"MTLHUDToggle" = "METAL HUD always on";
+"MsyncToggle" = "Enable Msync";
+"DisableFastMathToggle" = "Disable fast math";

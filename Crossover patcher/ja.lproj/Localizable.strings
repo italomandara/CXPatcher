@@ -46,3 +46,6 @@
 "bottlesPathToggle" = "別々のボトルの経路を使用してください";
 "optionsButtonText" = "詳細オプション";
 "options" = "オプション";
+"MTLHUDToggle" = "METAL HUDは常にオンです";
+"MsyncToggle" = "Msync を有効にする";
+"DisableFastMathToggle" = "高速数学を無効にする";

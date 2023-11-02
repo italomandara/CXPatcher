@@ -46,3 +46,6 @@ Se você enfrentar problemas após a instalação ser patcheada, você pode baix
 "bottlesPathToggle" = "Use um caminho separado para as garrafas";
 "optionsButtonText" = "Opções Avançadas";
 "options" = "Opções";
+"MTLHUDToggle" = "METAL HUD sempre ativo";
+"MsyncToggle" = "Ativar Msync";
+"DisableFastMathToggle" = "Desativar matemática rápida";

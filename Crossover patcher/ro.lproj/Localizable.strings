@@ -46,3 +46,6 @@ Dacă întâmpinați probleme după ce instalația a fost patch-uită, puteți d
 "bottlesPathToggle" = "Folosește o cale separată pentru sticle";
 "optionsButtonText" = "Opțiuni Avansate";
 "options" = "Opțiuni";
+"MTLHUDToggle" = "METAL HUD întotdeauna activat";
+"MsyncToggle" = "Activează Msync";
+"DisableFastMathToggle" = "Dezactivează matematica rapidă";
