@@ -29,6 +29,9 @@ struct Options: View {
             RemoveSignatureToggle(
                 opts: $opts
             )
+            AutoUpdateDisableToggle(
+                opts: $opts
+            )
             Divider().padding(.vertical, 2)
             Text(localizedCXPatcherString(forKey: "Environment Globals")).padding(.top, 2)
             FastMathToggle(

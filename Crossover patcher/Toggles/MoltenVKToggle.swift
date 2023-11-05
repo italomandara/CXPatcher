@@ -13,7 +13,7 @@ struct MoltenVKToggle: View {
     var body: some View {
         Toggle(isOn: $opts.patchMVK) {
             HStack(alignment: .center) {
-                Image(systemName: "wand.and.stars")
+                Image(systemName: "square.3.layers.3d.down.right")
                 Text(localizedCXPatcherString(forKey: "Patch MoltenVK"))
                 Spacer()
             }

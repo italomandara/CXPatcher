@@ -49,3 +49,4 @@ Se você enfrentar problemas após a instalação ser patcheada, você pode baix
 "MTLHUDToggle" = "METAL HUD sempre ativo";
 "MsyncToggle" = "Ativar Msync";
 "DisableFastMathToggle" = "Desativar matemática rápida";
+"DisableAutoUpdate" = "Desativar a atualização automática do CrossOver";

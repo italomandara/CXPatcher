@@ -41,6 +41,7 @@ struct Opts {
     var busy: Bool = false
     var cxbottlesPath = DEFAULT_CX_BOTTLES_PATH
     var patchMVK = true
+    var autoUpdateDisable = true
     var patchDXVK = true
     var globalEnvs = GlobalEnvs()
     var removeSignaure = true
@@ -333,7 +334,9 @@ func patch(url: URL, opts: inout Opts) {
         addGlobals(url: url, opts: opts)
     }
     opts.progress += 1
-    disableAutoUpdate(url: url)
+    if(opts.autoUpdateDisable) {
+        disableAutoUpdate(url: url)
+    }
     opts.progress += 1
     opts.status = .success
 }
@@ -498,6 +501,7 @@ func addGlobals(url: URL, opts: Opts) {
         print("add msyncEnabled env")
         envs += [Env(key: "WINEMSYNC", value: "1")]
     }
+
     let file = getENVOverrideConfigfile(envs: envs)
     do {
         try file.write(to: url.appendingPathComponent(SHARED_SUPPORT_PATH + BOTTLE_PATH_OVERRIDE), atomically: false, encoding: .utf8)

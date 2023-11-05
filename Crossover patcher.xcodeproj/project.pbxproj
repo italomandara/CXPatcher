@@ -10,6 +10,7 @@
 		0D9AC2C22A49F96000101F43 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0D9AC2C42A49F96000101F43 /* Localizable.strings */; };
 		382499E42AEE946400578AA3 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382499E32AEE946400578AA3 /* Options.swift */; };
 		382499E62AEE984600578AA3 /* OptionsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382499E52AEE984600578AA3 /* OptionsButton.swift */; };
+		382AC3172AF8246800097003 /* AutoUpdateDisableToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382AC3162AF8246800097003 /* AutoUpdateDisableToggle.swift */; };
 		382F4C0729DA516C00824358 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382F4C0629DA516C00824358 /* Utils.swift */; };
 		384681FD2AF4544200CEF539 /* MTLHUDToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384681FC2AF4544200CEF539 /* MTLHUDToggle.swift */; };
 		384681FF2AF4549500CEF539 /* MsyncToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384681FE2AF4549500CEF539 /* MsyncToggle.swift */; };
@@ -41,6 +42,7 @@
 		0D9AC2C32A49F96000101F43 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		382499E32AEE946400578AA3 /* Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
 		382499E52AEE984600578AA3 /* OptionsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsButton.swift; sourceTree = "<group>"; };
+		382AC3162AF8246800097003 /* AutoUpdateDisableToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoUpdateDisableToggle.swift; sourceTree = "<group>"; };
 		382F4C0629DA516C00824358 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		384681FC2AF4544200CEF539 /* MTLHUDToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTLHUDToggle.swift; sourceTree = "<group>"; };
 		384681FE2AF4549500CEF539 /* MsyncToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MsyncToggle.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				384681FC2AF4544200CEF539 /* MTLHUDToggle.swift */,
 				384681FE2AF4549500CEF539 /* MsyncToggle.swift */,
 				384682002AF454F700CEF539 /* FastMathToggle.swift */,
+				382AC3162AF8246800097003 /* AutoUpdateDisableToggle.swift */,
 			);
 			path = Toggles;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				382499E62AEE984600578AA3 /* OptionsButton.swift in Sources */,
 				384681FD2AF4544200CEF539 /* MTLHUDToggle.swift in Sources */,
 				389D6BCF2A47599900A4C8EB /* Config.swift in Sources */,
+				382AC3172AF8246800097003 /* AutoUpdateDisableToggle.swift in Sources */,
 				38C678A629DB3FE800EB19BE /* Instructions.swift in Sources */,
 				384682012AF454F700CEF539 /* FastMathToggle.swift in Sources */,
 				38F7B2192A5DD19D00CD9511 /* ExternalResourcesSelector.swift in Sources */,

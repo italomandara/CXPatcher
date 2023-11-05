@@ -49,3 +49,4 @@
 "MTLHUDToggle" = "METAL HUD始终打开";
 "MsyncToggle" = "启用Msync";
 "DisableFastMathToggle" = "禁用快速数学";
+"DisableAutoUpdate" = "禁用 CrossOver 自动更新";

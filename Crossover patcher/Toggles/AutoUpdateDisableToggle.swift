@@ -1,21 +1,21 @@
 //
-//  DXVKToggle.swift
+//  AutoUpdateDisableToggle.swift
 //  CXPatcher
 //
-//  Created by Italo Mandara on 24/10/2023.
+//  Created by Italo Mandara on 05/11/2023.
 //
 
 import Foundation
 import SwiftUI
 
-struct DXVKToggle: View {
+struct AutoUpdateDisableToggle: View {
     @Binding var opts: Opts
     
     var body: some View {
-        Toggle(isOn: $opts.patchDXVK) {
+        Toggle(isOn: $opts.autoUpdateDisable) {
             HStack(alignment: .center) {
-                Image(systemName: "square.3.layers.3d.down.right")
-                Text(localizedCXPatcherString(forKey: "Patch DXVK"))
+                Image(systemName: "arrow.triangle.2.circlepath.circle")
+                Text(localizedCXPatcherString(forKey: "DisableAutoUpdate"))
                 Spacer()
             }
         }

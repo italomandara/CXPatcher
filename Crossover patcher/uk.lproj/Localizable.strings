@@ -49,3 +49,4 @@
 "MTLHUDToggle" = "METAL HUD завжди увімкнено";
 "MsyncToggle" = "Увімкнути Msync";
 "DisableFastMathToggle" = "Вимкнути швидку математику";
+"DisableAutoUpdate" = "Вимкнути автоматичне оновлення CrossOver";

@@ -49,3 +49,4 @@ Jeśli napotkasz jakiekolwiek problemy z instalacją CrossOver, możesz pobrać 
 "MTLHUDToggle" = "METAL HUD zawsze włączony";
 "MsyncToggle" = "Włącz Msync";
 "DisableFastMathToggle" = "Wyłącz szybką matematykę";
+"DisableAutoUpdate" = "Wyłącz automatyczną aktualizację CrossOver";

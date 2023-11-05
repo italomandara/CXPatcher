@@ -49,3 +49,4 @@
 "MTLHUDToggle" = "METAL HUDは常にオンです";
 "MsyncToggle" = "Msync を有効にする";
 "DisableFastMathToggle" = "高速数学を無効にする";
+"DisableAutoUpdate" = "CrossOverの自動アップデートを無効にする";

@@ -49,3 +49,4 @@ If you face any issues after your installation has been patched, you may downloa
 "MTLHUDToggle" = "METAL HUD always on";
 "MsyncToggle" = "Enable Msync";
 "DisableFastMathToggle" = "Disable fast math";
+"DisableAutoUpdate" = "Disable Crossover auto update";

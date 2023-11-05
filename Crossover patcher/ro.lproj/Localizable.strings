@@ -49,3 +49,4 @@ Dacă întâmpinați probleme după ce instalația a fost patch-uită, puteți d
 "MTLHUDToggle" = "METAL HUD întotdeauna activat";
 "MsyncToggle" = "Activează Msync";
 "DisableFastMathToggle" = "Dezactivează matematica rapidă";
+"DisableAutoUpdate" = "Dezactivați actualizarea automată CrossOver";

@@ -49,3 +49,4 @@ Si encuentras algún problema después de parchear CrossOver, puedes descargar u
 "MTLHUDToggle" = "METAL HUD siempre activo";
 "MsyncToggle" = "Habilitar Msync";
 "DisableFastMathToggle" = "Desactivar matemáticas rápidas";
+"DisableAutoUpdate" = "Desactivar la actualización automática de CrossOver";
