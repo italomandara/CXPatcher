@@ -25,6 +25,7 @@ struct BottlesPathToggle: View {
                     } else {
                         Image(systemName: "waterbottle")
                         Text(localizedCXPatcherString(forKey: "bottlesPathToggle"))
+                            .help(localizedCXPatcherString(forKey: "bottlesToggleHelp"))
                         Spacer()
                         Button() {
                             let panel = NSOpenPanel()

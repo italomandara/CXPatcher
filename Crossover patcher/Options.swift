@@ -20,29 +20,37 @@ struct Options: View {
             IntegrateExternalsToggle(
                 copyGptk: $opts.copyGptk
             )
+            .help(localizedCXPatcherString(forKey: "gptkToggleHelp"))
             MoltenVKToggle(
                 opts: $opts
             )
+            .help(localizedCXPatcherString(forKey: "mkvToggleHelp"))
             DXVKToggle(
                 opts: $opts
             )
+            .help(localizedCXPatcherString(forKey: "dxvkToggleHelp"))
             RemoveSignatureToggle(
                 opts: $opts
             )
+            .help(localizedCXPatcherString(forKey: "signatureToggleHelp"))
             AutoUpdateDisableToggle(
                 opts: $opts
             )
+            .help(localizedCXPatcherString(forKey: "autoUpdateToggleHelp"))
             Divider().padding(.vertical, 2)
             Text(localizedCXPatcherString(forKey: "Environment Globals")).padding(.top, 2)
             FastMathToggle(
                 opts: $opts
             )
+            .help(localizedCXPatcherString(forKey: "fastMathToggleHelp"))
             MTLHUDToggle(
                 opts: $opts
             )
+            .help(localizedCXPatcherString(forKey: "hudToggleHelp"))
             MsyncToggle(
                 opts: $opts
             )
+            .help(localizedCXPatcherString(forKey: "msyncToggleHelp"))
         }.padding(20)
         .frame(width: 400.0)
         .fixedSize()
