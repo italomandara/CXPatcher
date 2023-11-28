@@ -47,10 +47,6 @@ struct Options: View {
                 opts: $opts
             )
             .help(localizedCXPatcherString(forKey: "hudToggleHelp"))
-            MsyncToggle(
-                opts: $opts
-            )
-            .help(localizedCXPatcherString(forKey: "msyncToggleHelp"))
         }.padding(20)
         .frame(width: 400.0)
         .fixedSize()
