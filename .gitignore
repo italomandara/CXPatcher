@@ -2,7 +2,6 @@
 ###################
 *.com
 *.class
-*.exe
 *.o
 
 # Packages #
