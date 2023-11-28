@@ -215,19 +215,25 @@ let FILES_TO_DISABLE: [String] = [
 let WINE_RESOURCES_ROOT = "Crossover"
 let WINE_RESOURCES_PATHS: [String] = [
     "/lib64/libMoltenVK.dylib",
+    "/lib64/libinotify.0.dylib",
+    "/lib64/libinotify.dylib",
     "/lib64/wine/dxvk",
     "/lib/wine/dxvk",
     "/lib/wine/i386-windows/kernelbase.dll",
     "/lib/wine/i386-windows/ntdll.dll",
     "/lib/wine/i386-windows/winegstreamer.dll",
+    "lib/wine/i386-windows/wineboot.exe",
+    "/lib/wine/i386-windows/winecfg.exe",
     "/lib/wine/x86_64-unix/ntdll.so",
     "/lib/wine/x86_64-unix/winegstreamer.so",
     "/lib/wine/x86_64-windows/kernelbase.dll",
     "/lib/wine/x86_64-windows/ntdll.dll",
+    "/lib/wine/x86_64-windows/wineboot.exe",
+    "/lib/wine/x86_64-windows/winecfg.exe",
     "/lib/wine/x86_64-windows/winegstreamer.dll",
     "/share/crossover/bottle_data/crossover.inf",
-    "/CrossOver-Hosted Application/wineserver"
-//    "/share/wine/wine.inf",
+    "/CrossOver-Hosted Application/wineserver",
+    "/share/wine/wine.inf",
 ]
 
 let BOTTLE_PATH_OVERRIDE = "/etc/CrossOver.conf"
