@@ -17,10 +17,10 @@ struct Options: View {
             BottlesPathToggle(
                 opts: $opts
             )
-            IntegrateExternalsToggle(
-                copyGptk: $opts.copyGptk
-            )
-            .help(localizedCXPatcherString(forKey: "gptkToggleHelp"))
+//            IntegrateExternalsToggle(
+//                copyGptk: $opts.copyGptk
+//            )
+//            .help(localizedCXPatcherString(forKey: "gptkToggleHelp"))
             MoltenVKToggle(
                 opts: $opts
             )
@@ -47,6 +47,10 @@ struct Options: View {
                 opts: $opts
             )
             .help(localizedCXPatcherString(forKey: "hudToggleHelp"))
+//            MsyncToggle(
+//                opts: $opts
+//            )
+//            .help(localizedCXPatcherString(forKey: "msyncToggleHelp"))
         }.padding(20)
         .frame(width: 400.0)
         .fixedSize()
