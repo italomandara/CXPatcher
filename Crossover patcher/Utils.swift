@@ -36,7 +36,7 @@ struct Opts {
     var skipVersionCheck: Bool = false
     var repatch: Bool = false
     var overrideBottlePath: Bool = true
-    var copyGptk = true
+    var copyGptk = false
     var progress: Float = 0.0
     var busy: Bool = false
     var cxbottlesPath = DEFAULT_CX_BOTTLES_PATH
