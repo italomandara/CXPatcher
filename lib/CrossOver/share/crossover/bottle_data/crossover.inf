@@ -264,6 +264,10 @@ HKLM,%CurrentVersionNT%,"CurrentVersion",,"6.1"
 HKLM,%CurrentVersionNT%,"ProductName",,"Microsoft Windows 7"
 HKLM,%Control%\Windows,"CSDVersion",0x10001,0x00000100
 HKLM,%Control%\Session Manager\Environment,"OS",,"Windows_NT"
+; CW bugs 22414 & 22893
+HKCU,"Software\Wine\DllOverrides","api-ms-win-core-ioring-l1-1-0",,""
+HKCU,"Software\Wine\DllOverrides","dstorage",,""
+HKCU,"Software\Wine\DllOverrides","dstoragecore",,""
 
 ;------------------------------------------------------------
 
@@ -299,6 +303,10 @@ HKLM,%CurrentVersionNT%,"CurrentVersion",,"6.2"
 HKLM,%CurrentVersionNT%,"ProductName",,"Microsoft Windows 8"
 HKLM,%Control%\Windows,"CSDVersion",0x10001,0x00000000
 HKLM,%Control%\Session Manager\Environment,"OS",,"Windows_NT"
+; CW bugs 22414 & 22893
+HKCU,"Software\Wine\DllOverrides","api-ms-win-core-ioring-l1-1-0",,""
+HKCU,"Software\Wine\DllOverrides","dstorage",,""
+HKCU,"Software\Wine\DllOverrides","dstoragecore",,""
 
 ;------------------------------------------------------------
 
@@ -334,6 +342,10 @@ HKLM,%CurrentVersionNT%,"CurrentVersion",,"6.3"
 HKLM,%CurrentVersionNT%,"ProductName",,"Windows 10 Pro"
 HKLM,%Control%\Windows,"CSDVersion",0x10001,0x00000000
 HKLM,%Control%\Session Manager\Environment,"OS",,"Windows_NT"
+; CW bugs 22414 & 22893
+HKCU,"Software\Wine\DllOverrides","api-ms-win-core-ioring-l1-1-0",,""
+HKCU,"Software\Wine\DllOverrides","dstorage",,""
+HKCU,"Software\Wine\DllOverrides","dstoragecore",,""
 
 ;------------------------------------------------------------
 
@@ -369,6 +381,10 @@ HKLM,%CurrentVersionNT%,"CurrentVersion",,"6.3"
 HKLM,%CurrentVersionNT%,"ProductName",,"Windows 11 Pro"
 HKLM,%Control%\Windows,"CSDVersion",0x10001,0x00000000
 HKLM,%Control%\Session Manager\Environment,"OS",,"Windows_NT"
+; CW bugs 22414 & 22893 (shouldn't be needed for Win11)
+HKCU,"Software\Wine\DllOverrides","api-ms-win-core-ioring-l1-1-0",,""
+HKCU,"Software\Wine\DllOverrides","dstorage",,""
+HKCU,"Software\Wine\DllOverrides","dstoragecore",,""
 
 ;------------------------------------------------------------
 
