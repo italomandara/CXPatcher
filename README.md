@@ -19,7 +19,8 @@ For more info: [https://www.codeweavers.com/support/forums/general/?t=27;msg=257
 
 ## What version of CrossOver does it support?
 
-Currently only 22.x.x
+CXPatcher up to 0.3 will support only 22.x.x
+CXPatcher from 0.4 on will support 23.x.x but keep an eye on the specific verson
 
 ## What MacOS does it support
 
