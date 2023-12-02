@@ -14,7 +14,6 @@ struct MsyncToggle: View {
     var body: some View {
         Toggle(isOn: $opts.globalEnvs.msyncEnabled) {
             HStack(alignment: .center) {
-//                Image(systemName: "wand.and.stars")
                 Text(localizedCXPatcherString(forKey: "MsyncToggle"))
                 Spacer()
             }
