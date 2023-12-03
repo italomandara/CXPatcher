@@ -66,3 +66,6 @@ Si encuentras algún problema después de parchear CrossOver, puedes descargar u
 "fastMathToggleHelp" = "Corrige algunos problemas de renderización en algunos juegos que utilizan DXVK (MÁS LENTO) para todas las botellas";
 "hudToggleHelp" = "Habilita el Hud de Metal para todas las botellas";
 "msyncToggleHelp" = "Habilita msync para todas las botellas cuando esync está desactivado";
+"MVKdontPatch" = "No patch";
+"MVKbaseline" = "Base MVK + UE4 fix";
+"MVKexperimental" = "Última versión MVK + UE4 fix";

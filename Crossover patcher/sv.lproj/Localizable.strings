@@ -66,3 +66,6 @@ Om du stöter på problem efter att din installation har blivit patchad kan du l
 "fastMathToggleHelp" = "Åtgärdar vissa renderingsproblem med vissa spel som använder DXVK (LÅNGSAMMARE) för alla flaskor";
 "hudToggleHelp" = "Aktiverar Metal Hud för alla flaskor";
 "msyncToggleHelp" = "Aktiverar msync för alla flaskor när esync är avstängt";
+"MVKdontPatch" = "På grund av inte lappa";
+"MVKbaseline" = "Bas MVK + UE4 hack";
+"MVKexperimental" = "Senaste MVK + UE4 hack";

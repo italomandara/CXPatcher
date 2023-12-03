@@ -66,3 +66,6 @@ Se você enfrentar problemas após a instalação ser patcheada, você pode baix
 "fastMathToggleHelp" = "Corrige alguns problemas de renderização em alguns jogos que usam o DXVK (MAIS LENTO) para todas as garrafas";
 "hudToggleHelp" = "Ativa o Metal Hud para todas as garrafas";
 "msyncToggleHelp" = "Ativa o msync para todas as garrafas quando o esync está desativado";
+"MVKdontPatch" = "Não patchear";
+"MVKbaseline" = "Base MVK + truque UE4";
+"MVKexperimental" = "Última versão MVK + truque UE4";

@@ -66,3 +66,6 @@ Si vous rencontrez des problèmes après avoir appliqué le patch, vous pouvez t
 "fastMathToggleHelp" = "Corrige certains problèmes d'affichage dans certains jeux utilisant DXVK (PLUS LENT) pour toutes les bouteilles";
 "hudToggleHelp" = "Active le Hud Metal pour toutes les bouteilles";
 "msyncToggleHelp" = "Active msync pour toutes les bouteilles lorsque esync est désactivé";
+"MVKdontPatch" = "Ne pas patcher";
+"MVKbaseline" = "Base MVK + astuce UE4";
+"MVKexperimental" = "Dernière version MVK + astuce UE4";

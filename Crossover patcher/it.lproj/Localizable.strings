@@ -66,3 +66,6 @@ Se incontri problemi dopo aver patchato la tua installazione, puoi scaricare una
 "fastMathToggleHelp" = "Corregge alcuni problemi di rendering con alcuni giochi che utilizzano DXVK (PIÙ LENTO) per tutte le bottiglie";
 "hudToggleHelp" = "Abilita Metal Hud per tutte le bottiglie";
 "msyncToggleHelp" = "Abilita msync per tutte le bottiglie quando esync è disabilitato";
+"MVKdontPatch" = "Nessuna patch";
+"MVKbaseline" = "Base MVK + trucco UE4";
+"MVKexperimental" = "Ultima versione MVK + trucco UE4";

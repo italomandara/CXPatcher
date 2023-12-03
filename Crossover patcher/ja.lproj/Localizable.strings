@@ -66,3 +66,6 @@
 "fastMathToggleHelp" = "一部のゲームのレンダリングの問題を修正します（すべてのボトルで DXVK を使用）";
 "hudToggleHelp" = "すべてのボトルに Metal Hud を有効にする";
 "msyncToggleHelp" = "esync がオフの場合、すべてのボトルで msync を有効にする";
+"MVKdontPatch" = "パッチしないでください";
+"MVKbaseline" = "基本 MVK + UE4 ハック";
+"MVKexperimental" = "最新の MVK + UE4 ハック";

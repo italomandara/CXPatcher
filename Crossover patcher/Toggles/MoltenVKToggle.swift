@@ -11,15 +11,23 @@ struct MoltenVKToggle: View {
     @Binding var opts: Opts
     
     var body: some View {
-        Toggle(isOn: $opts.patchMVK) {
+        Picker(selection: $opts.patchMVK, label:
             HStack(alignment: .center) {
                 Image(systemName: "square.3.layers.3d.down.right")
                 Text(localizedCXPatcherString(forKey: "Patch MoltenVK"))
-                Spacer()
             }
-        }
+        ) {
+            Text(localizedCXPatcherString(forKey:"MVKdontPatch")).tag(PatchMVK.none)
+            Text(localizedCXPatcherString(forKey:"MVKbaseline")).tag(PatchMVK.legacyUE4)
+            Text(localizedCXPatcherString(forKey:"MVKexperimental")).tag(PatchMVK.latestUE4)
+        }.pickerStyle(.menu)
         .padding(.vertical, 6.0)
-        .toggleStyle(.switch)
-        .controlSize(/*@START_MENU_TOKEN@*/.mini/*@END_MENU_TOKEN@*/)
+    }
+}
+
+struct MoltenVKToggle_Previews: PreviewProvider {
+    static var previews: some View {
+        @State var opts = Opts()
+        MoltenVKToggle(opts: $opts)
     }
 }

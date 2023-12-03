@@ -213,8 +213,11 @@ let FILES_TO_DISABLE: [String] = [
 ] + BUILTIN_LIBS_GSTREAMER + BUILTIN_LIBS_GSTREAMER64
 
 let WINE_RESOURCES_ROOT = "Crossover"
+
+let MOLTENVK_BASELINE = "/lib64/libMoltenVK.dylib"
+
 let WINE_RESOURCES_PATHS: [String] = [
-    "/lib64/libMoltenVK.dylib",
+    MOLTENVK_BASELINE,
     "/lib64/libinotify.0.dylib",
     "/lib64/libinotify.dylib",
     "/lib64/wine/dxvk",
@@ -235,6 +238,8 @@ let WINE_RESOURCES_PATHS: [String] = [
     "/CrossOver-Hosted Application/wineserver",
     "/share/wine/wine.inf",
 ]
+
+let MOLTENVK_LATEST = "/lib64/libMoltenVK-latest.dylib"
 
 let BOTTLE_PATH_OVERRIDE = "/etc/CrossOver.conf"
 

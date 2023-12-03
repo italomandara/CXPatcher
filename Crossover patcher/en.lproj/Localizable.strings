@@ -59,3 +59,6 @@ If you face any issues after your installation has been patched, you may downloa
 "fastMathToggleHelp" = "Fixes some rendering issues with some games using DXVK (SLOWER) for all bottles";
 "hudToggleHelp" = "Enables The Metal Hud For all bottles";
 "msyncToggleHelp" = "Enables msync for all the bottles when esync is turned off";
+"MVKdontPatch" = "Don't patch";
+"MVKbaseline" = "Base MVK + UE4 hack";
+"MVKexperimental" = "Latest MVK + UE4 hack";

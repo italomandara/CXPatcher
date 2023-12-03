@@ -30,6 +30,12 @@ struct GlobalEnvs {
     var msyncEnabled = false
 }
 
+enum PatchMVK {
+    case legacyUE4
+    case latestUE4
+    case none
+}
+
 struct Opts {
     var showDisclaimer: Bool = true
     var status: Status = .unpatched
@@ -40,7 +46,7 @@ struct Opts {
     var progress: Float = 0.0
     var busy: Bool = false
     var cxbottlesPath = DEFAULT_CX_BOTTLES_PATH
-    var patchMVK = true
+    var patchMVK: PatchMVK = PatchMVK.legacyUE4
     var autoUpdateDisable = true
     var patchDXVK = true
     var globalEnvs = GlobalEnvs()
@@ -305,7 +311,7 @@ func patch(url: URL, opts: inout Opts) {
     let resources = getResourcesListFrom(url: url).filter { elem in
         opts.copyGptk ? true : !elem.0.contains("crossover.inf")
     }.filter { elem in
-        opts.patchMVK ? true : !elem.0.contains("libMoltenVK.dylib")
+        opts.patchMVK == PatchMVK.legacyUE4 ? true : !elem.0.contains("libMoltenVK.dylib")
     }.filter { elem in
         opts.patchDXVK ? true : (!elem.0.contains("dxvk") && !elem.0.contains("dxvk"))
     }
@@ -325,6 +331,13 @@ func patch(url: URL, opts: inout Opts) {
     resources.forEach { resource in
         safeResCopy(res: resource.0, dest: resource.1)
         opts.progress += 1
+    }
+    if(opts.patchMVK == PatchMVK.latestUE4) {
+        let latestMVKResource = (
+            WINE_RESOURCES_ROOT + MOLTENVK_LATEST,
+            url.path + SHARED_SUPPORT_PATH + MOLTENVK_BASELINE
+        )
+        safeResCopy(res: latestMVKResource.0, dest: latestMVKResource.1)
     }
     filesToDisable.forEach { file in
         disable(dest: file)

@@ -66,3 +66,6 @@ Jeśli napotkasz jakiekolwiek problemy z instalacją CrossOver, możesz pobrać 
 "fastMathToggleHelp" = "Naprawia niektóre problemy z renderowaniem w niektórych grach przy użyciu DXVK (WOLNIEJ) dla wszystkich butelek";
 "hudToggleHelp" = "Włącza Metal Hud dla wszystkich butelek";
 "msyncToggleHelp" = "Włącza msync dla wszystkich butelek, gdy esync jest wyłączony";
+"MVKdontPatch" = "Nie łataj";
+"MVKbaseline" = "Baza MVK + oszustwo UE4";
+"MVKexperimental" = "Najnowsza wersja MVK + oszustwo UE4";

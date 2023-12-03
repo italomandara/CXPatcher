@@ -14,9 +14,6 @@ struct Options: View {
     @Binding var opts: Opts
     var body: some View {
         VStack(alignment: .center) {
-            BottlesPathToggle(
-                opts: $opts
-            )
 //            IntegrateExternalsToggle(
 //                copyGptk: $opts.copyGptk
 //            )
@@ -29,6 +26,9 @@ struct Options: View {
                 opts: $opts
             )
             .help(localizedCXPatcherString(forKey: "dxvkToggleHelp"))
+            BottlesPathToggle(
+                opts: $opts
+            )
             RemoveSignatureToggle(
                 opts: $opts
             )

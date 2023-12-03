@@ -66,3 +66,6 @@
 "fastMathToggleHelp" = "为所有瓶子修复一些使用DXVK的游戏的渲染问题（更慢）";
 "hudToggleHelp" = "为所有瓶子启用METAL HUD";
 "msyncToggleHelp" = "在esync关闭时为所有瓶子启用msync";
+"MVKdontPatch" = "不要打补丁";
+"MVKbaseline" = "基础 MVK + UE4 黑客";
+"MVKexperimental" = "最新 MVK + UE4 黑客";

@@ -66,3 +66,6 @@ Dacă întâmpinați probleme după ce instalația a fost patch-uită, puteți d
 "fastMathToggleHelp" = "Rezolvă unele probleme de redare cu anumite jocuri folosind DXVK (MAI LENT) pentru toate sticlele";
 "hudToggleHelp" = "Activează Metal Hud pentru toate sticlele";
 "msyncToggleHelp" = "Activează msync pentru toate sticlele atunci când esync este dezactivat";
+"MVKdontPatch" = "Nu faceți patch";
+"MVKbaseline" = "Bază MVK + hack UE4";
+"MVKexperimental" = "Ultima versiune MVK + hack UE4";

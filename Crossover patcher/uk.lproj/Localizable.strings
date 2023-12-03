@@ -66,3 +66,6 @@
 "fastMathToggleHelp" = "Вирішує деякі проблеми з відтворенням деяких ігор за допомогою DXVK (ПОВІЛЬНІШЕ) для всіх пляшок";
 "hudToggleHelp" = "Увімкнути Metal Hud для всіх пляшок";
 "msyncToggleHelp" = "Увімкнути msync для всіх пляшок, коли esync вимкнено";
+"MVKdontPatch" = "Не патчити";
+"MVKbaseline" = "Базовий MVK + хак UE4";
+"MVKexperimental" = "Остання версія MVK + хак UE4";
