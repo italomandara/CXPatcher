@@ -28,6 +28,7 @@ struct GlobalEnvs {
     var fastMathDisabled = false
     var mtlHudEnabled = false
     var msyncEnabled = false
+    var dxvkAsync = true // TO DO: add toggle
 }
 
 enum PatchMVK {
@@ -308,6 +309,17 @@ func hasExternal(url: URL) -> Bool{
 }
 
 func patch(url: URL, opts: inout Opts) {
+    if(ENABLE_BACKUP) {
+        do
+        {
+            try backup(appRoot: url)
+        }
+        catch {
+            print(error)
+            print("couldn't create the backup")
+            return
+        }
+    }
     let resources = getResourcesListFrom(url: url).filter { elem in
         opts.copyGptk ? true : !elem.0.contains("crossover.inf")
     }.filter { elem in
@@ -463,6 +475,14 @@ func restoreAutoUpdate(url: URL) {
     let plistURL = url.appendingPathComponent(PLIST_PATH)
     restoreFile(dest: plistURL.path)
     print("restored original Info.plist")
+}
+
+func backup(appRoot: URL) throws {
+    var backupUrl = appRoot
+    backupUrl.deleteLastPathComponent()
+    backupUrl.appendPathComponent("Crossover_original.app")
+    print(backupUrl)
+    try f.copyItem(at: appRoot, to: backupUrl)
 }
 
 private func appendLinesToFile(filePath: String, additionalLines: [String]) -> String {
