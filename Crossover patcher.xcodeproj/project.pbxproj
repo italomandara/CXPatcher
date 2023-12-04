@@ -15,6 +15,7 @@
 		384681FD2AF4544200CEF539 /* MTLHUDToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384681FC2AF4544200CEF539 /* MTLHUDToggle.swift */; };
 		384681FF2AF4549500CEF539 /* MsyncToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384681FE2AF4549500CEF539 /* MsyncToggle.swift */; };
 		384682012AF454F700CEF539 /* FastMathToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384682002AF454F700CEF539 /* FastMathToggle.swift */; };
+		385793592B1E725100310960 /* DXVKAsyncToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385793582B1E725100310960 /* DXVKAsyncToggle.swift */; };
 		386E0B252AC76A9400D09956 /* ProgressDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386E0B242AC76A9400D09956 /* ProgressDialog.swift */; };
 		386E0B282AC7706200D09956 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386E0B272AC7706200D09956 /* CustomButton.swift */; };
 		3888B8AC2ABCDECB005B57BA /* BottlePathToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3888B8AB2ABCDECB005B57BA /* BottlePathToggle.swift */; };
@@ -54,6 +55,7 @@
 		384E11E82A5E2A7400850EBF /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		384E11E92A5E2CF200850EBF /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3851266D2AC87E7A0067C568 /* CXPatcherDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CXPatcherDebug.entitlements; sourceTree = "<group>"; };
+		385793582B1E725100310960 /* DXVKAsyncToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DXVKAsyncToggle.swift; sourceTree = "<group>"; };
 		386E0B242AC76A9400D09956 /* ProgressDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProgressDialog.swift; path = Dialogs/ProgressDialog.swift; sourceTree = "<group>"; };
 		386E0B272AC7706200D09956 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		3888B8AB2ABCDECB005B57BA /* BottlePathToggle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottlePathToggle.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				384681FE2AF4549500CEF539 /* MsyncToggle.swift */,
 				384682002AF454F700CEF539 /* FastMathToggle.swift */,
 				382AC3162AF8246800097003 /* AutoUpdateDisableToggle.swift */,
+				385793582B1E725100310960 /* DXVKAsyncToggle.swift */,
 			);
 			path = Toggles;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				384681FD2AF4544200CEF539 /* MTLHUDToggle.swift in Sources */,
 				389D6BCF2A47599900A4C8EB /* Config.swift in Sources */,
 				382AC3172AF8246800097003 /* AutoUpdateDisableToggle.swift in Sources */,
+				385793592B1E725100310960 /* DXVKAsyncToggle.swift in Sources */,
 				38C678A629DB3FE800EB19BE /* Instructions.swift in Sources */,
 				384682012AF454F700CEF539 /* FastMathToggle.swift in Sources */,
 				38F7B2192A5DD19D00CD9511 /* ExternalResourcesSelector.swift in Sources */,

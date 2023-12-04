@@ -28,7 +28,7 @@ struct GlobalEnvs {
     var fastMathDisabled = false
     var mtlHudEnabled = false
     var msyncEnabled = false
-    var dxvkAsync = true // TO DO: add toggle
+    var dxvkAsync = true
 }
 
 enum PatchMVK {
@@ -530,10 +530,14 @@ func addGlobals(url: URL, opts: Opts) {
         print("add fastMathDisabled env")
         envs += [Env(key: "MVK_CONFIG_FAST_MATH_ENABLED", value: "0")]
     }
-    if(opts.globalEnvs.msyncEnabled == true) {
-        print("add msyncEnabled env")
-        envs += [Env(key: "WINEMSYNC", value: "1")]
+    if(opts.globalEnvs.dxvkAsync == true) {
+        print("add DXVK async env")
+        envs += [Env(key: "DXVK_ASYNC", value: "1")]
     }
+//    if(opts.globalEnvs.msyncEnabled == true) {
+//        print("add msyncEnabled env")
+//        envs += [Env(key: "WINEMSYNC", value: "1")]
+//    }
 
     let file = getENVOverrideConfigfile(envs: envs)
     do {
