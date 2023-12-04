@@ -478,9 +478,12 @@ func restoreAutoUpdate(url: URL) {
 }
 
 func backup(appRoot: URL) throws {
+    //    let downloadsDirectory = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask).first!
+    //    var backupUrl = downloadsDirectory
     var backupUrl = appRoot
+    let appName = appRoot.lastPathComponent.replacingOccurrences(of: ".app", with: "")
     backupUrl.deleteLastPathComponent()
-    backupUrl.appendPathComponent("Crossover_original.app")
+    backupUrl.appendPathComponent(appName + "_original.app")
     print(backupUrl)
     try f.copyItem(at: appRoot, to: backupUrl)
 }
