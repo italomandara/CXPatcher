@@ -39,10 +39,10 @@ struct Options: View {
             .help(localizedCXPatcherString(forKey: "autoUpdateToggleHelp"))
             Divider().padding(.vertical, 2)
             Text(localizedCXPatcherString(forKey: "Environment Globals")).padding(.top, 2)
-//            DXVKAsyncToggle(
-//                opts: $opts
-//            )
-//            .help(localizedCXPatcherString(forKey: "DXVKAsyncToggleHelp"))
+            DXVKAsyncToggle(
+                opts: $opts
+            )
+            .help(localizedCXPatcherString(forKey: "DXVKAsyncToggleHelp"))
             FastMathToggle(
                 opts: $opts
             )
