@@ -69,3 +69,5 @@ Jeśli napotkasz jakiekolwiek problemy z instalacją CrossOver, możesz pobrać 
 "MVKdontPatch" = "Nie łataj";
 "MVKbaseline" = "Baza MVK + oszustwo UE4";
 "MVKexperimental" = "Najnowsza wersja MVK + oszustwo UE4";
+"DXVKAsyncToggle" = "Asynchroniczne DXVK";
+"DXVKAsyncToggleHelp" = "Włącza asynchroniczną kompilację shaderów DXVK";

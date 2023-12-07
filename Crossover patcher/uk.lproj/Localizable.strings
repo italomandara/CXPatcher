@@ -69,3 +69,5 @@
 "MVKdontPatch" = "Не патчити";
 "MVKbaseline" = "Базовий MVK + хак UE4";
 "MVKexperimental" = "Остання версія MVK + хак UE4";
+"DXVKAsyncToggle" = "Асинхронний DXVK";
+"DXVKAsyncToggleHelp" = "Увімкнення асинхронної компіляції шейдерів DXVK";

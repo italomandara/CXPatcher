@@ -69,3 +69,5 @@ Om du stöter på problem efter att din installation har blivit patchad kan du l
 "MVKdontPatch" = "På grund av inte lappa";
 "MVKbaseline" = "Bas MVK + UE4 hack";
 "MVKexperimental" = "Senaste MVK + UE4 hack";
+"DXVKAsyncToggle" = "Asynkron DXVK";
+"DXVKAsyncToggleHelp" = "Aktiverar asynkron kompilering av DXVK-shaders";

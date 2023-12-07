@@ -69,3 +69,5 @@
 "MVKdontPatch" = "パッチしないでください";
 "MVKbaseline" = "基本 MVK + UE4 ハック";
 "MVKexperimental" = "最新の MVK + UE4 ハック";
+"DXVKAsyncToggle" = "DXVK 非同期";
+"DXVKAsyncToggleHelp" = "DXVK 非同期シェーダーコンパイルを有効にします";
