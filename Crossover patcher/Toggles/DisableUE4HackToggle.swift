@@ -1,20 +1,20 @@
 //
-//  MsyncToggle.swift
+//  DisableUE4HackToggle.swift
 //  CXPatcher
 //
-//  Created by Italo Mandara on 02/11/2023.
+//  Created by Italo Mandara on 08/12/2023.
 //
 
 import Foundation
 import SwiftUI
 
-struct MsyncToggle: View {
+struct DisableUE4HackToggle: View {
     @Binding var opts: Opts
     
     var body: some View {
-        Toggle(isOn: $opts.globalEnvs.msyncEnabled) {
+        Toggle(isOn: $opts.globalEnvs.disableUE4Hack) {
             HStack(alignment: .center) {
-                Text(localizedCXPatcherString(forKey: "MsyncToggle"))
+                Text(localizedCXPatcherString(forKey: "DisableUE4HackToggle"))
                 Spacer()
             }
         }

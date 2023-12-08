@@ -23,6 +23,7 @@
 		389D6BCF2A47599900A4C8EB /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389D6BCE2A47599900A4C8EB /* Config.swift */; };
 		38ACB39529D773CA00A450A0 /* Crossover_patcherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ACB39429D773CA00A450A0 /* Crossover_patcherApp.swift */; };
 		38ACB39729D773CA00A450A0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ACB39629D773CA00A450A0 /* ContentView.swift */; };
+		38C099812B2398DD00C83814 /* DisableUE4HackToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C099802B2398DD00C83814 /* DisableUE4HackToggle.swift */; };
 		38C291E62AE8523B00D0703E /* MoltenVKToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C291E52AE8523B00D0703E /* MoltenVKToggle.swift */; };
 		38C291E82AE852BD00D0703E /* DXVKToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C291E72AE852BD00D0703E /* DXVKToggle.swift */; };
 		38C291EA2AE85A7C00D0703E /* RemoveSignatureToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C291E92AE85A7C00D0703E /* RemoveSignatureToggle.swift */; };
@@ -67,6 +68,7 @@
 		38ACB39829D773CA00A450A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "Crossover patcher/Assets.xcassets"; sourceTree = SOURCE_ROOT; };
 		38ACB39B29D773CA00A450A0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		38ACB39D29D773CA00A450A0 /* Crossover_patcher.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Crossover_patcher.entitlements; sourceTree = "<group>"; };
+		38C099802B2398DD00C83814 /* DisableUE4HackToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisableUE4HackToggle.swift; sourceTree = "<group>"; };
 		38C291E52AE8523B00D0703E /* MoltenVKToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoltenVKToggle.swift; sourceTree = "<group>"; };
 		38C291E72AE852BD00D0703E /* DXVKToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DXVKToggle.swift; sourceTree = "<group>"; };
 		38C291E92AE85A7C00D0703E /* RemoveSignatureToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveSignatureToggle.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				384682002AF454F700CEF539 /* FastMathToggle.swift */,
 				382AC3162AF8246800097003 /* AutoUpdateDisableToggle.swift */,
 				385793582B1E725100310960 /* DXVKAsyncToggle.swift */,
+				38C099802B2398DD00C83814 /* DisableUE4HackToggle.swift */,
 			);
 			path = Toggles;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38C099812B2398DD00C83814 /* DisableUE4HackToggle.swift in Sources */,
 				38C291E82AE852BD00D0703E /* DXVKToggle.swift in Sources */,
 				38F7B21F2A5DD58600CD9511 /* SkipVersionCheckToggle.swift in Sources */,
 				38F7B2212A5DD60000CD9511 /* RepatchToggle.swift in Sources */,

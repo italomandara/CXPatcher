@@ -64,3 +64,5 @@ If you face any issues after your installation has been patched, you may downloa
 "MVKexperimental" = "Latest MVK + UE4 hack";
 "DXVKAsyncToggle" = "DXVK Async";
 "DXVKAsyncToggleHelp" = "Enables DXVK Asynchronous Shader compilation";
+"DisableUE4HackToggle" = "Disable UE4 Hack";
+"DisableUE4HackToggleHelp" = "Disables the UE4 Hack (use this option if you have graphical issues)";

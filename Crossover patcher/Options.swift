@@ -51,10 +51,10 @@ struct Options: View {
                 opts: $opts
             )
             .help(localizedCXPatcherString(forKey: "hudToggleHelp"))
-//            MsyncToggle(
-//                opts: $opts
-//            )
-//            .help(localizedCXPatcherString(forKey: "msyncToggleHelp"))
+            DisableUE4HackToggle(
+                opts: $opts
+            )
+            .help(localizedCXPatcherString(forKey: "DisableUE4HackToggleHelp"))
         }.padding(20)
         .frame(width: 400.0)
         .fixedSize()

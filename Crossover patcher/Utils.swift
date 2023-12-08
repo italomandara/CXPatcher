@@ -27,8 +27,8 @@ struct Env {
 struct GlobalEnvs {
     var fastMathDisabled = false
     var mtlHudEnabled = false
-    var msyncEnabled = false
     var dxvkAsync = true
+    var disableUE4Hack = false
 }
 
 enum PatchMVK {
@@ -537,10 +537,10 @@ func addGlobals(url: URL, opts: Opts) {
         print("add DXVK async env")
         envs += [Env(key: "DXVK_ASYNC", value: "1")]
     }
-//    if(opts.globalEnvs.msyncEnabled == true) {
-//        print("add msyncEnabled env")
-//        envs += [Env(key: "WINEMSYNC", value: "1")]
-//    }
+    if(opts.globalEnvs.disableUE4Hack == true) {
+        print("add UE4 disable env")
+        envs += [Env(key: "NAS_DISABLE_UE4_HACK", value: "1")]
+    }
 
     let file = getENVOverrideConfigfile(envs: envs)
     do {
