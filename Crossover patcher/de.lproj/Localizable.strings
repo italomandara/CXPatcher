@@ -47,14 +47,6 @@ Sollten nach dem Patchen Ihrer Installation Probleme auftreten, können Sie eine
 "optionsButtonText" = "Erweiterte Optionen";
 "options" = "Optionen";
 "MTLHUDToggle" = "METAL HUD immer aktiviert";
-"MsyncToggle" = "Msync aktivieren";
-"DisableFastMathToggle" = "Schnelle Mathematik deaktivieren";
-"DisableAutoUpdate" = "CrossOver-Auto-Update deaktivieren";
-"bottlesPathToggle" = "Verwende separaten Pfad für Flaschen";
-"optionsButtonText" = "Erweiterte Optionen";
-"options" = "Optionen";
-"MTLHUDToggle" = "METAL HUD immer aktiviert";
-"MsyncToggle" = "Msync aktivieren";
 "DisableFastMathToggle" = "Schnelle Mathematik deaktivieren";
 "DisableAutoUpdate" = "Automatische Crossover-Aktualisierung deaktivieren";
 "bottlesToggleHelp" = "Die Flaschen werden in einem anderen Ordner gespeichert. Crossover wird nicht die mit dem Standard-Crossover generierten Flaschen verwenden. Möglicherweise müssen Sie eine neue Flasche erstellen. Es gibt eine Option, um den Pfad anzupassen, in dem sich die Flaschen befinden.";
@@ -65,7 +57,6 @@ Sollten nach dem Patchen Ihrer Installation Probleme auftreten, können Sie eine
 "autoUpdateToggleHelp" = "Deaktiviert die Update-Überprüfung von Crossover";
 "fastMathToggleHelp" = "Behebt einige Darstellungsprobleme bei einigen Spielen, die DXVK verwenden (LANGSAMER) für alle Flaschen";
 "hudToggleHelp" = "Aktiviert das Metal Hud für alle Flaschen";
-"msyncToggleHelp" = "Aktiviert msync für alle Flaschen, wenn esync deaktiviert ist";
 "MVKdontPatch" = "Nicht patchen";
 "MVKbaseline" = "Basis MVK + UE4 Hack";
 "MVKexperimental" = "Neueste MVK + UE4 Hack";

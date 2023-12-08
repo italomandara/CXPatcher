@@ -46,15 +46,7 @@ Jeśli napotkasz jakiekolwiek problemy z instalacją CrossOver, możesz pobrać 
 "bottlesPathToggle" = "Użyj osobnej ścieżki dla butelek";
 "optionsButtonText" = "Zaawansowane opcje";
 "options" = "Opcje";
-"MTLHUDToggle" = "METAL HUD zawsze włączony";
-"MsyncToggle" = "Włącz Msync";
-"DisableFastMathToggle" = "Wyłącz szybką matematykę";
-"DisableAutoUpdate" = "Wyłącz automatyczną aktualizację CrossOver";
-"bottlesPathToggle" = "Użyj oddzielnego ścieżki butelek";
-"optionsButtonText" = "Opcje zaawansowane";
-"options" = "Opcje";
 "MTLHUDToggle" = "Zawsze włączony METAL HUD";
-"MsyncToggle" = "Włącz Msync";
 "DisableFastMathToggle" = "Wyłącz szybką matematykę";
 "DisableAutoUpdate" = "Wyłącz automatyczne aktualizacje Crossover";
 "bottlesToggleHelp" = "Buteleki zostaną zapisane w innym folderze, Crossover nie będzie używać butelek wygenerowanych z Crossover, możesz potrzebować stworzyć nową butelkę, jest opcja dostosowania ścieżki, gdzie butelki są przechowywane";
@@ -65,7 +57,6 @@ Jeśli napotkasz jakiekolwiek problemy z instalacją CrossOver, możesz pobrać 
 "autoUpdateToggleHelp" = "Wyłącza sprawdzanie aktualizacji Crossover";
 "fastMathToggleHelp" = "Naprawia niektóre problemy z renderowaniem w niektórych grach przy użyciu DXVK (WOLNIEJ) dla wszystkich butelek";
 "hudToggleHelp" = "Włącza Metal Hud dla wszystkich butelek";
-"msyncToggleHelp" = "Włącza msync dla wszystkich butelek, gdy esync jest wyłączony";
 "MVKdontPatch" = "Nie łataj";
 "MVKbaseline" = "Baza MVK + oszustwo UE4";
 "MVKexperimental" = "Najnowsza wersja MVK + oszustwo UE4";

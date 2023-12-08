@@ -47,14 +47,6 @@ Om du stöter på problem efter att din installation har blivit patchad kan du l
 "optionsButtonText" = "Avancerade alternativ";
 "options" = "Alternativ";
 "MTLHUDToggle" = "METAL HUD alltid på";
-"MsyncToggle" = "Aktivera Msync";
-"DisableFastMathToggle" = "Inaktivera snabb matematik";
-"DisableAutoUpdate" = "Inaktivera automatisk uppdatering av CrossOver";
-"bottlesPathToggle" = "Använd separat flaskväg";
-"optionsButtonText" = "Avancerade alternativ";
-"options" = "Alternativ";
-"MTLHUDToggle" = "METAL HUD alltid på";
-"MsyncToggle" = "Aktivera Msync";
 "DisableFastMathToggle" = "Inaktivera snabb matematik";
 "DisableAutoUpdate" = "Inaktivera automatisk uppdatering av Crossover";
 "bottlesToggleHelp" = "Flaskor kommer att sparas i en annan mapp. Crossover kommer inte att använda de flaskor som genererats med standard-Crossover. Du kanske behöver skapa en ny flaska. Det finns ett alternativ att anpassa vägen där flaskorna är placerade.";
@@ -65,7 +57,6 @@ Om du stöter på problem efter att din installation har blivit patchad kan du l
 "autoUpdateToggleHelp" = "Inaktiverar Crossovers uppdateringskontrollmeddelande";
 "fastMathToggleHelp" = "Åtgärdar vissa renderingsproblem med vissa spel som använder DXVK (LÅNGSAMMARE) för alla flaskor";
 "hudToggleHelp" = "Aktiverar Metal Hud för alla flaskor";
-"msyncToggleHelp" = "Aktiverar msync för alla flaskor när esync är avstängt";
 "MVKdontPatch" = "På grund av inte lappa";
 "MVKbaseline" = "Bas MVK + UE4 hack";
 "MVKexperimental" = "Senaste MVK + UE4 hack";

@@ -46,15 +46,7 @@ Dacă întâmpinați probleme după ce instalația a fost patch-uită, puteți d
 "bottlesPathToggle" = "Folosește o cale separată pentru sticle";
 "optionsButtonText" = "Opțiuni Avansate";
 "options" = "Opțiuni";
-"MTLHUDToggle" = "METAL HUD întotdeauna activat";
-"MsyncToggle" = "Activează Msync";
-"DisableFastMathToggle" = "Dezactivează matematica rapidă";
-"DisableAutoUpdate" = "Dezactivați actualizarea automată CrossOver";
-"bottlesPathToggle" = "Utilizați calea separată pentru sticle";
-"optionsButtonText" = "Opțiuni avansate";
-"options" = "Opțiuni";
 "MTLHUDToggle" = "METAL HUD mereu activat";
-"MsyncToggle" = "Activați Msync";
 "DisableFastMathToggle" = "Dezactivați matematica rapidă";
 "DisableAutoUpdate" = "Dezactivați actualizarea automată a Crossover";
 "bottlesToggleHelp" = "Sticlele vor fi salvate într-un folder diferit. Crossover nu va utiliza sticlele generate cu Crossover-ul standard. Este posibil să fie nevoie să creați o sticlă nouă. Există o opțiune pentru personalizarea căii în care se află sticlele.";
@@ -65,7 +57,6 @@ Dacă întâmpinați probleme după ce instalația a fost patch-uită, puteți d
 "autoUpdateToggleHelp" = "Dezactivează verificarea actualizărilor Crossover";
 "fastMathToggleHelp" = "Rezolvă unele probleme de redare cu anumite jocuri folosind DXVK (MAI LENT) pentru toate sticlele";
 "hudToggleHelp" = "Activează Metal Hud pentru toate sticlele";
-"msyncToggleHelp" = "Activează msync pentru toate sticlele atunci când esync este dezactivat";
 "MVKdontPatch" = "Nu faceți patch";
 "MVKbaseline" = "Bază MVK + hack UE4";
 "MVKexperimental" = "Ultima versiune MVK + hack UE4";

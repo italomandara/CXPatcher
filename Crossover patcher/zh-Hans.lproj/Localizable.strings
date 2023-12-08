@@ -47,7 +47,6 @@
 "optionsButtonText" = "高级选项";
 "options" = "选项";
 "MTLHUDToggle" = "始终开启 METAL HUD";
-"MsyncToggle" = "启用 MSync";
 "DisableFastMathToggle" = "禁用快速数学计算";
 "DisableAutoUpdate" = "禁用 CrossOver 自动更新";
 "bottlesToggleHelp" = "容器将保存在不同的文件夹中，CrossOver 不会使用使用标准 CrossOver 生成的容器，您可能需要创建一个新容器，有一个选项可以自定义容器存储的路径";
@@ -58,7 +57,6 @@
 "autoUpdateToggleHelp" = "禁用 CrossOver 的更新检查提示";
 "fastMathToggleHelp" = "为所有容器修复特定 DXVK 的游戏的渲染问题（此选项将会降低性能）";
 "hudToggleHelp" = "为所有容器启用 METAL HUD";
-"msyncToggleHelp" = "在 ESync 关闭时为所有容器启用 MSync";
 "MVKdontPatch" = "不要打补丁";
 "MVKbaseline" = "稳定版 MVK + UE4 Hack";
 "MVKexperimental" = "实验性 MVK + UE4 Hack";

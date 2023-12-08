@@ -13,7 +13,6 @@
 		382AC3172AF8246800097003 /* AutoUpdateDisableToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382AC3162AF8246800097003 /* AutoUpdateDisableToggle.swift */; };
 		382F4C0729DA516C00824358 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382F4C0629DA516C00824358 /* Utils.swift */; };
 		384681FD2AF4544200CEF539 /* MTLHUDToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384681FC2AF4544200CEF539 /* MTLHUDToggle.swift */; };
-		384681FF2AF4549500CEF539 /* MsyncToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384681FE2AF4549500CEF539 /* MsyncToggle.swift */; };
 		384682012AF454F700CEF539 /* FastMathToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384682002AF454F700CEF539 /* FastMathToggle.swift */; };
 		385793592B1E725100310960 /* DXVKAsyncToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385793582B1E725100310960 /* DXVKAsyncToggle.swift */; };
 		386E0B252AC76A9400D09956 /* ProgressDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386E0B242AC76A9400D09956 /* ProgressDialog.swift */; };
@@ -47,7 +46,6 @@
 		382AC3162AF8246800097003 /* AutoUpdateDisableToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoUpdateDisableToggle.swift; sourceTree = "<group>"; };
 		382F4C0629DA516C00824358 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		384681FC2AF4544200CEF539 /* MTLHUDToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTLHUDToggle.swift; sourceTree = "<group>"; };
-		384681FE2AF4549500CEF539 /* MsyncToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MsyncToggle.swift; sourceTree = "<group>"; };
 		384682002AF454F700CEF539 /* FastMathToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastMathToggle.swift; sourceTree = "<group>"; };
 		384E11E42A5E1EF300850EBF /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		384E11E52A5E21A300850EBF /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -168,7 +166,6 @@
 				38C291E72AE852BD00D0703E /* DXVKToggle.swift */,
 				38C291E92AE85A7C00D0703E /* RemoveSignatureToggle.swift */,
 				384681FC2AF4544200CEF539 /* MTLHUDToggle.swift */,
-				384681FE2AF4549500CEF539 /* MsyncToggle.swift */,
 				384682002AF454F700CEF539 /* FastMathToggle.swift */,
 				382AC3162AF8246800097003 /* AutoUpdateDisableToggle.swift */,
 				385793582B1E725100310960 /* DXVKAsyncToggle.swift */,
@@ -317,7 +314,6 @@
 				382499E42AEE946400578AA3 /* Options.swift in Sources */,
 				38CB035A2A0ACF7200AE3637 /* RestoreButtonDialog.swift in Sources */,
 				38F7B2172A5DCF7500CD9511 /* AppSelector.swift in Sources */,
-				384681FF2AF4549500CEF539 /* MsyncToggle.swift in Sources */,
 				386E0B282AC7706200D09956 /* CustomButton.swift in Sources */,
 				38C291EA2AE85A7C00D0703E /* RemoveSignatureToggle.swift in Sources */,
 				382499E62AEE984600578AA3 /* OptionsButton.swift in Sources */,

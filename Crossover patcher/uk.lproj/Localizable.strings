@@ -47,14 +47,6 @@
 "optionsButtonText" = "Розширені опції";
 "options" = "Опції";
 "MTLHUDToggle" = "METAL HUD завжди увімкнено";
-"MsyncToggle" = "Увімкнути Msync";
-"DisableFastMathToggle" = "Вимкнути швидку математику";
-"DisableAutoUpdate" = "Вимкнути автоматичне оновлення CrossOver";
-"bottlesPathToggle" = "Використовувати окремий шлях для пляшок";
-"optionsButtonText" = "Розширені параметри";
-"options" = "Параметри";
-"MTLHUDToggle" = "METAL HUD завжди увімкнено";
-"MsyncToggle" = "Увімкнути Msync";
 "DisableFastMathToggle" = "Вимкнути швидку математику";
 "DisableAutoUpdate" = "Вимкнути автоматичне оновлення CrossOver";
 "bottlesToggleHelp" = "Пляшки будуть зберігатися в іншій текі, CrossOver не буде використовувати пляшки, створені зі стандартним CrossOver, можливо, вам доведеться створити нову пляшку, є опція настроювання шляху, де зберігаються пляшки";
@@ -65,7 +57,6 @@
 "autoUpdateToggleHelp" = "Вимикає перевірку оновлень CrossOver";
 "fastMathToggleHelp" = "Вирішує деякі проблеми з відтворенням деяких ігор за допомогою DXVK (ПОВІЛЬНІШЕ) для всіх пляшок";
 "hudToggleHelp" = "Увімкнути Metal Hud для всіх пляшок";
-"msyncToggleHelp" = "Увімкнути msync для всіх пляшок, коли esync вимкнено";
 "MVKdontPatch" = "Не патчити";
 "MVKbaseline" = "Базовий MVK + хак UE4";
 "MVKexperimental" = "Остання версія MVK + хак UE4";

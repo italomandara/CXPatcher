@@ -46,15 +46,7 @@
 "bottlesPathToggle" = "別々のボトルの経路を使用してください";
 "optionsButtonText" = "詳細オプション";
 "options" = "オプション";
-"MTLHUDToggle" = "METAL HUDは常にオンです";
-"MsyncToggle" = "Msync を有効にする";
-"DisableFastMathToggle" = "高速数学を無効にする";
-"DisableAutoUpdate" = "CrossOverの自動アップデートを無効にする";
-"bottlesPathToggle" = "別個のボトル パスを使用";
-"optionsButtonText" = "詳細オプション";
-"options" = "オプション";
 "MTLHUDToggle" = "METAL HUD 常にオン";
-"MsyncToggle" = "Msync を有効にする";
 "DisableFastMathToggle" = "高速計算を無効にする";
 "DisableAutoUpdate" = "Crossover の自動更新を無効にする";
 "bottlesToggleHelp" = "ボトルは異なるフォルダに保存され、Crossover は標準の Crossover で生成されたボトルを使用しません。新しいボトルを作成する必要がある場合があり、ボトルが保存されるパスをカスタマイズするオプションがあります";
@@ -65,7 +57,6 @@
 "autoUpdateToggleHelp" = "Crossover の更新チェックプロンプトを無効にする";
 "fastMathToggleHelp" = "一部のゲームのレンダリングの問題を修正します（すべてのボトルで DXVK を使用）";
 "hudToggleHelp" = "すべてのボトルに Metal Hud を有効にする";
-"msyncToggleHelp" = "esync がオフの場合、すべてのボトルで msync を有効にする";
 "MVKdontPatch" = "パッチしないでください";
 "MVKbaseline" = "基本 MVK + UE4 ハック";
 "MVKexperimental" = "最新の MVK + UE4 ハック";

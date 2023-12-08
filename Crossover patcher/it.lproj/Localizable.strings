@@ -47,14 +47,6 @@ Se incontri problemi dopo aver patchato la tua installazione, puoi scaricare una
 "optionsButtonText" = "Opzioni Avanzate";
 "options" = "Opzioni";
 "MTLHUDToggle" = "METAL HUD sempre attivo";
-"MsyncToggle" = "Abilita Msync";
-"DisableFastMathToggle" = "Disabilita la matematica veloce";
-"DisableAutoUpdate" = "Disabilita l'aggiornamento automatico di CrossOver";
-"bottlesPathToggle" = "Usa un percorso bottiglie separato";
-"optionsButtonText" = "Opzioni avanzate";
-"options" = "Opzioni";
-"MTLHUDToggle" = "METAL HUD sempre attivo";
-"MsyncToggle" = "Abilita Msync";
 "DisableFastMathToggle" = "Disabilita FastMath";
 "DisableAutoUpdate" = "Disabilita l'aggiornamento automatico di Crossover";
 "bottlesToggleHelp" = "Le bottiglie verranno salvate in una cartella diversa, Crossover non utilizzerà le bottiglie generate con Crossover predefinito, potrebbe essere necessario creare una nuova bottiglia, c'è un'opzione per personalizzare il percorso in cui sono collocate le bottiglie";
@@ -65,7 +57,6 @@ Se incontri problemi dopo aver patchato la tua installazione, puoi scaricare una
 "autoUpdateToggleHelp" = "Disabilita la verifica dell'aggiornamento di Crossover";
 "fastMathToggleHelp" = "Corregge alcuni problemi di rendering con alcuni giochi che utilizzano DXVK (PIÙ LENTO) per tutte le bottiglie";
 "hudToggleHelp" = "Abilita Metal Hud per tutte le bottiglie";
-"msyncToggleHelp" = "Abilita msync per tutte le bottiglie quando esync è disabilitato";
 "MVKdontPatch" = "Nessuna patch";
 "MVKbaseline" = "Base MVK + trucco UE4";
 "MVKexperimental" = "Ultima versione MVK + trucco UE4";
