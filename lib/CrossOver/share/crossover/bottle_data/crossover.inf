@@ -264,10 +264,6 @@ HKLM,%CurrentVersionNT%,"CurrentVersion",,"6.1"
 HKLM,%CurrentVersionNT%,"ProductName",,"Microsoft Windows 7"
 HKLM,%Control%\Windows,"CSDVersion",0x10001,0x00000100
 HKLM,%Control%\Session Manager\Environment,"OS",,"Windows_NT"
-; CW bugs 22414 & 22893
-HKCU,"Software\Wine\DllOverrides","api-ms-win-core-ioring-l1-1-0",,""
-HKCU,"Software\Wine\DllOverrides","dstorage",,""
-HKCU,"Software\Wine\DllOverrides","dstoragecore",,""
 
 ;------------------------------------------------------------
 
@@ -303,10 +299,6 @@ HKLM,%CurrentVersionNT%,"CurrentVersion",,"6.2"
 HKLM,%CurrentVersionNT%,"ProductName",,"Microsoft Windows 8"
 HKLM,%Control%\Windows,"CSDVersion",0x10001,0x00000000
 HKLM,%Control%\Session Manager\Environment,"OS",,"Windows_NT"
-; CW bugs 22414 & 22893
-HKCU,"Software\Wine\DllOverrides","api-ms-win-core-ioring-l1-1-0",,""
-HKCU,"Software\Wine\DllOverrides","dstorage",,""
-HKCU,"Software\Wine\DllOverrides","dstoragecore",,""
 
 ;------------------------------------------------------------
 
@@ -335,17 +327,13 @@ RegisterDlls=RegisterDllsSection
 HKLM,%CurrentVersionNT%,"CSDVersion",,""
 HKLM,%CurrentVersionNT%,"CurrentMajorVersionNumber",0x10001,10
 HKLM,%CurrentVersionNT%,"CurrentMinorVersionNumber",0x10001,0
-HKLM,%CurrentVersionNT%,"CurrentBuild",,"19043"
 HKLM,%CurrentVersionNT%,"CurrentBuildNumber",,"19043"
+HKLM,%CurrentVersionNT%,"CurrentBuild",,"19043"
 HKLM,%CurrentVersionNT%,"CurrentType",,"Multiprocessor Free"
 HKLM,%CurrentVersionNT%,"CurrentVersion",,"6.3"
 HKLM,%CurrentVersionNT%,"ProductName",,"Windows 10 Pro"
 HKLM,%Control%\Windows,"CSDVersion",0x10001,0x00000000
 HKLM,%Control%\Session Manager\Environment,"OS",,"Windows_NT"
-; CW bugs 22414 & 22893
-HKCU,"Software\Wine\DllOverrides","api-ms-win-core-ioring-l1-1-0",,""
-HKCU,"Software\Wine\DllOverrides","dstorage",,""
-HKCU,"Software\Wine\DllOverrides","dstoragecore",,""
 
 ;------------------------------------------------------------
 
@@ -381,10 +369,6 @@ HKLM,%CurrentVersionNT%,"CurrentVersion",,"6.3"
 HKLM,%CurrentVersionNT%,"ProductName",,"Windows 11 Pro"
 HKLM,%Control%\Windows,"CSDVersion",0x10001,0x00000000
 HKLM,%Control%\Session Manager\Environment,"OS",,"Windows_NT"
-; CW bugs 22414 & 22893 (shouldn't be needed for Win11)
-HKCU,"Software\Wine\DllOverrides","api-ms-win-core-ioring-l1-1-0",,""
-HKCU,"Software\Wine\DllOverrides","dstorage",,""
-HKCU,"Software\Wine\DllOverrides","dstoragecore",,""
 
 ;------------------------------------------------------------
 
@@ -492,11 +476,7 @@ HKCU,"Software\Wine\DllOverrides","wscript.exe",,"native, builtin"
 
 HKCU,"Software\Wine\DllOverrides","odbc32",,"native, builtin"
 
-; Fix Resident Evil 7 audio
- HKCU,"Software\Wine\AppDefaults\re7.exe\DllOverrides","*msspatial",,""
-; Disable Dying Light 2 AVX
- HKCU,"Software\Wine\AppDefaults\DyinglightGame_x64_rwdi.exe\DllOverrides","*runtime_dx11",,""
- 
+
 HKCU,"Software\Wine\DllOverrides","*autorun.exe",,"native,builtin"
 HKCU,"Software\Wine\DllOverrides","*ctfmon.exe",,"builtin"
 HKCU,"Software\Wine\DllOverrides","*ddhelp.exe",,"builtin"
@@ -513,6 +493,11 @@ HKCU,"Software\Wine\DllOverrides","*ieinfo5.ocx",2,"builtin"
 
 ; Needed to counteract the Win9x bottle's DllOverrides
 HKCU,"Software\Wine\AppDefaults\cxwget.exe\DllOverrides","wininet",,"builtin"
+
+; Fix Resident Evil 7 audio
+ HKCU,"Software\Wine\AppDefaults\re7.exe\DllOverrides","*msspatial",,""
+; Disable Dying Light 2 AVX
+ HKCU,"Software\Wine\AppDefaults\DyinglightGame_x64_rwdi.exe\DllOverrides","*runtime_dx11",,""
 
 ; Make sure that winewrapper isn't hotwired with an alternative crypt32.
 HKCU,"Software\Wine\AppDefaults\winewrapper.exe\DllOverrides","crypt32",,"builtin"
