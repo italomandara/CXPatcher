@@ -22,7 +22,7 @@ let ENABLE_REPATCH_TOGGLE = ENABLE_RESTORE
 let ENABLE_BACKUP = !ENABLE_RESTORE
 
 let SUPPORTED_CROSSOVER_VERSION = "24"
-let ENABLE_GSTREAMER = true
+let ENABLE_GSTREAMER = false
 
 let SHARED_SUPPORT_PATH = "/Contents/SharedSupport/CrossOver"
 let DEFAULT_CX_BOTTLES_PATH = "/Users/${USER}/CXPBottles"
@@ -221,8 +221,8 @@ let WINE_RESOURCES_PATHS: [String] = [
     MOLTENVK_BASELINE,
 //    "/lib64/libinotify.0.dylib",
 //    "/lib64/libinotify.dylib",
-//    "/lib64/wine/dxvk",
-//    "/lib/wine/dxvk",
+    "/lib64/wine/dxvk",
+    "/lib/wine/dxvk",
 //    "/lib/wine/i386-windows/kernelbase.dll",
 //    "/lib/wine/i386-windows/ntdll.dll",
 //    "/lib/wine/i386-windows/winegstreamer.dll",

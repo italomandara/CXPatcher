@@ -49,7 +49,7 @@ struct Opts {
     var cxbottlesPath = DEFAULT_CX_BOTTLES_PATH
     var patchMVK: PatchMVK = PatchMVK.legacyUE4
     var autoUpdateDisable = true
-    var patchDXVK = false
+    var patchDXVK = true
     var globalEnvs = GlobalEnvs()
     var removeSignaure = true
     func getTotalProgress() -> Int32 {
