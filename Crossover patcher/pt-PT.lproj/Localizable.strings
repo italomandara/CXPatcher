@@ -48,13 +48,13 @@ Se você enfrentar problemas após a instalação ser patcheada, você pode baix
 "options" = "Opções";
 "MTLHUDToggle" = "METAL HUD sempre ativo";
 "DisableFastMathToggle" = "Desativar matemática rápida";
-"DisableAutoUpdate" = "Desativar atualização automática do Crossover";
-"bottlesToggleHelp" = "As garrafas serão salvas em uma pasta diferente. O Crossover não usará as garrafas geradas com o Crossover padrão. Pode ser necessário criar uma nova garrafa. Existe uma opção para personalizar o caminho onde as garrafas estão localizadas.";
+"DisableAutoUpdate" = "Impedir a atualização automática do CrossOver";
+"bottlesToggleHelp" = "As garrafas serão salvas em uma pasta diferente. O CrossOver não usará as garrafas geradas com o CrossOver padrão. Pode ser necessário criar uma nova garrafa. Existe uma opção para personalizar o caminho onde as garrafas estão localizadas.";
 "gptkToggleHelp" = "Atualiza as bibliotecas atuais do Gameporting toolkit";
 "mkvToggleHelp" = "Atualiza as bibliotecas do MoltenVK (com o hack UE4)";
 "dxvkToggleHelp" = "Atualiza as bibliotecas do DXVK";
 "signatureToggleHelp" = "Remove a assinatura do aplicativo para corrigir problemas do GateKeeper (o aplicativo será aberto com o clique direito)";
-"autoUpdateToggleHelp" = "Desativa a verificação de atualização do Crossover";
+"autoUpdateToggleHelp" = "Desativa a verificação de atualização do CrossOver";
 "fastMathToggleHelp" = "Corrige alguns problemas de renderização em alguns jogos que usam o DXVK (MAIS LENTO) para todas as garrafas";
 "hudToggleHelp" = "Ativa o Metal Hud para todas as garrafas";
 "MVKdontPatch" = "Não patchear";

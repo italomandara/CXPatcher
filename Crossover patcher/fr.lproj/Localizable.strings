@@ -48,13 +48,13 @@ Si vous rencontrez des problèmes après avoir appliqué le patch, vous pouvez t
 "options" = "Options";
 "MTLHUDToggle" = "METAL HUD toujours activé";
 "DisableFastMathToggle" = "Désactiver les calculs rapides";
-"DisableAutoUpdate" = "Désactiver la mise à jour automatique de Crossover";
-"bottlesToggleHelp" = "Les bouteilles seront enregistrées dans un dossier différent, Crossover n'utilisera pas les bouteilles générées avec le Crossover standard, vous devrez peut-être créer une nouvelle bouteille, il existe une option pour personnaliser le chemin où sont situées les bouteilles";
+"DisableAutoUpdate" = "Empêcher la mise à jour automatique de CrossOver";
+"bottlesToggleHelp" = "Les bouteilles seront enregistrées dans un dossier différent, CrossOver n'utilisera pas les bouteilles générées avec le CrossOver standard, vous devrez peut-être créer une nouvelle bouteille, il existe une option pour personnaliser le chemin où sont situées les bouteilles";
 "gptkToggleHelp" = "Mise à jour des bibliothèques actuelles de l'outil Gameporting";
 "mkvToggleHelp" = "Mise à jour de MoltenVK (avec le Hack UE4)";
 "dxvkToggleHelp" = "Mise à jour des bibliothèques DXVK";
 "signatureToggleHelp" = "Supprime la signature de l'application pour résoudre les problèmes de GateKeeper (l'application s'ouvrira avec le clic droit)";
-"autoUpdateToggleHelp" = "Désactive la vérification des mises à jour de Crossover";
+"autoUpdateToggleHelp" = "Désactive la vérification des mises à jour de CrossOver";
 "fastMathToggleHelp" = "Corrige certains problèmes d'affichage dans certains jeux utilisant DXVK (PLUS LENT) pour toutes les bouteilles";
 "hudToggleHelp" = "Active le Hud Metal pour toutes les bouteilles";
 "MVKdontPatch" = "Ne pas patcher";

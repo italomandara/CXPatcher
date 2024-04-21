@@ -48,7 +48,7 @@
 "options" = "Опції";
 "MTLHUDToggle" = "METAL HUD завжди увімкнено";
 "DisableFastMathToggle" = "Вимкнути швидку математику";
-"DisableAutoUpdate" = "Вимкнути автоматичне оновлення CrossOver";
+"DisableAutoUpdate" = "Заборонити автоматичне оновлення CrossOver";
 "bottlesToggleHelp" = "Пляшки будуть зберігатися в іншій текі, CrossOver не буде використовувати пляшки, створені зі стандартним CrossOver, можливо, вам доведеться створити нову пляшку, є опція настроювання шляху, де зберігаються пляшки";
 "gptkToggleHelp" = "Оновлює поточні бібліотеки інструментарію для грипортингу";
 "mkvToggleHelp" = "Оновлює бібліотеки MoltenVK (з UE4 Hack)";

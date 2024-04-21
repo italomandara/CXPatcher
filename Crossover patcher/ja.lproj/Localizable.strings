@@ -48,13 +48,13 @@
 "options" = "オプション";
 "MTLHUDToggle" = "METAL HUD 常にオン";
 "DisableFastMathToggle" = "高速計算を無効にする";
-"DisableAutoUpdate" = "Crossover の自動更新を無効にする";
-"bottlesToggleHelp" = "ボトルは異なるフォルダに保存され、Crossover は標準の Crossover で生成されたボトルを使用しません。新しいボトルを作成する必要がある場合があり、ボトルが保存されるパスをカスタマイズするオプションがあります";
+"DisableAutoUpdate" = "CrossOver の自動更新を防止する";
+"bottlesToggleHelp" = "ボトルは異なるフォルダに保存され、CrossOver は標準の CrossOver で生成されたボトルを使用しません。新しいボトルを作成する必要がある場合があり、ボトルが保存されるパスをカスタマイズするオプションがあります";
 "gptkToggleHelp" = "現在のゲームポーティング ツールキット ライブラリを更新";
 "mkvToggleHelp" = "MoltenVK（UE4 ハックを使用）を更新";
 "dxvkToggleHelp" = "DXVK ライブラリを更新";
 "signatureToggleHelp" = "GateKeeper の問題を修正するためにアプリケーションの署名を削除します（アプリケーションは右クリックで開きます）";
-"autoUpdateToggleHelp" = "Crossover の更新チェックプロンプトを無効にする";
+"autoUpdateToggleHelp" = "CrossOver の更新チェックプロンプトを無効にする";
 "fastMathToggleHelp" = "一部のゲームのレンダリングの問題を修正します（すべてのボトルで DXVK を使用）";
 "hudToggleHelp" = "すべてのボトルに Metal Hud を有効にする";
 "MVKdontPatch" = "パッチしないでください";

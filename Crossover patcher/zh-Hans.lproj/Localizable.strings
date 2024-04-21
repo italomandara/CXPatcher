@@ -48,7 +48,7 @@
 "options" = "选项";
 "MTLHUDToggle" = "始终开启 METAL HUD";
 "DisableFastMathToggle" = "禁用快速数学计算";
-"DisableAutoUpdate" = "禁用 CrossOver 自动更新";
+"DisableAutoUpdate" = "阻止 CrossOver 的自动更新";
 "bottlesToggleHelp" = "容器将保存在不同的文件夹中，CrossOver 不会使用使用标准 CrossOver 生成的容器，您可能需要创建一个新容器，有一个选项可以自定义容器存储的路径";
 "gptkToggleHelp" = "更新当前的游戏移植工具库";
 "mkvToggleHelp" = "更新 MoltenVK 库（带有 UE4 Hack）";

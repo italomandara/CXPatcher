@@ -48,13 +48,13 @@ Jeśli napotkasz jakiekolwiek problemy z instalacją CrossOver, możesz pobrać 
 "options" = "Opcje";
 "MTLHUDToggle" = "Zawsze włączony METAL HUD";
 "DisableFastMathToggle" = "Wyłącz szybką matematykę";
-"DisableAutoUpdate" = "Wyłącz automatyczne aktualizacje Crossover";
-"bottlesToggleHelp" = "Buteleki zostaną zapisane w innym folderze, Crossover nie będzie używać butelek wygenerowanych z Crossover, możesz potrzebować stworzyć nową butelkę, jest opcja dostosowania ścieżki, gdzie butelki są przechowywane";
+"DisableAutoUpdate" = "Zapobiegaj automatycznej aktualizacji CrossOver";
+"bottlesToggleHelp" = "Buteleki zostaną zapisane w innym folderze, CrossOver nie będzie używać butelek wygenerowanych z CrossOver, możesz potrzebować stworzyć nową butelkę, jest opcja dostosowania ścieżki, gdzie butelki są przechowywane";
 "gptkToggleHelp" = "Aktualizuje bieżące biblioteki Gameporting toolkit";
 "mkvToggleHelp" = "Aktualizuje biblioteki MoltenVK (z Hackiem UE4)";
 "dxvkToggleHelp" = "Aktualizuje biblioteki DXVK";
 "signatureToggleHelp" = "Usuwa podpis aplikacji, aby naprawić problemy z GateKeeper (aplikacja otworzy się za pomocą prawego przycisku myszy)";
-"autoUpdateToggleHelp" = "Wyłącza sprawdzanie aktualizacji Crossover";
+"autoUpdateToggleHelp" = "Wyłącza sprawdzanie aktualizacji CrossOver";
 "fastMathToggleHelp" = "Naprawia niektóre problemy z renderowaniem w niektórych grach przy użyciu DXVK (WOLNIEJ) dla wszystkich butelek";
 "hudToggleHelp" = "Włącza Metal Hud dla wszystkich butelek";
 "MVKdontPatch" = "Nie łataj";
