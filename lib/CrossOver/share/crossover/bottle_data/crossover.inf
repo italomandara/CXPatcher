@@ -494,6 +494,8 @@ HKCU,"Software\Wine\DllOverrides","*ieinfo5.ocx",2,"builtin"
 ; Needed to counteract the Win9x bottle's DllOverrides
 HKCU,"Software\Wine\AppDefaults\cxwget.exe\DllOverrides","wininet",,"builtin"
 
+; Fix Heavy Rain audio
+ HKCU,"Software\Wine\AppDefaults\HeavyRain.exe\DllOverrides","*xaudio2_7",,"native"
 ; Fix Resident Evil 7 audio
  HKCU,"Software\Wine\AppDefaults\re7.exe\DllOverrides","*msspatial",,""
 ; Disable Dying Light 2 AVX
