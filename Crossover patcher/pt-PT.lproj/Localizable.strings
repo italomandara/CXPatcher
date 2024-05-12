@@ -62,3 +62,4 @@ Se você enfrentar problemas após a instalação ser patcheada, você pode baix
 "MVKexperimental" = "Última versão MVK + truque UE4";
 "DXVKAsyncToggle" = "DXVK Assíncrono";
 "DXVKAsyncToggleHelp" = "Ativa a compilação assíncrona de shaders do DXVK";
+"continue" = "Continuar";

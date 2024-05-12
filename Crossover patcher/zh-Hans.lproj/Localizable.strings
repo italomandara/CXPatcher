@@ -62,3 +62,4 @@
 "MVKexperimental" = "实验性 MVK + UE4 Hack";
 "DXVKAsyncToggle" = "DXVK 异步";
 "DXVKAsyncToggleHelp" = "启用 DXVK 异步着色器编译";
+"continue" = "继续";

@@ -25,7 +25,7 @@ struct ProgressDialog: View {
             if(visible) {
                 VStack{
                     if(!opts.busy){
-                        CustomButton(title: "Continue", action: action, color: .green)
+                        CustomButton(title: localizedCXPatcherString(forKey: "continue"), action: action, color: .green)
                     } else {
                         ProgressView(value: computedValue).accentColor(.gray)
                     }

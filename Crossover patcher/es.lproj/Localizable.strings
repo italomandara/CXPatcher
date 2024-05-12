@@ -62,3 +62,4 @@ Si encuentras algún problema después de parchear CrossOver, puedes descargar u
 "MVKexperimental" = "Última versión MVK + UE4 fix";
 "DXVKAsyncToggle" = "DXVK Asíncrono";
 "DXVKAsyncToggleHelp" = "Habilita la compilación de sombreadores asincrónica de DXVK";
+"continue" = "Continuar";
