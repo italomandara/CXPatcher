@@ -43,6 +43,23 @@ struct ContentView: View {
                         RepatchToggle(repatch: $opts.repatch)
                         Divider()
                     }
+                    VStack {
+                        if(ENABLE_CLEAR_D3DMETAL_CACHE) {
+                            CustomButton(title: localizedCXPatcherString(forKey: "Clear d3dmetal cache"), action: {
+                                // do nothing
+                            }, color: .gray)
+                        }
+                        if(ENABLE_CLEAR_D3DMETAL_CACHE) {
+                            CustomButton(title: localizedCXPatcherString(forKey: "Clear steam shader cache"), action: {
+                                // do nothing
+                            }, color: .gray)
+                        }
+                        if(ENABLE_FIX_CX_CODESIGN) {
+                            CustomButton(title: localizedCXPatcherString(forKey: "Fix CX codesign"), action: {
+                                // do nothing
+                            }, color: .gray)
+                        }
+                    }
                     HStack {
                         if(ENABLE_RESTORE) {
                             RestoreButtonDialog(opts: opts)
@@ -63,7 +80,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        @State var opts = Opts()
+        @State var opts = Opts(showDisclaimer: false)
         ContentView(opts: $opts)
     }
 }
