@@ -60,11 +60,6 @@ struct ContentView: View {
                                 // do nothing
                             }, color: .gray)
                         }
-                        if(ENABLE_FIX_CX_CODESIGN) {
-                            CustomButton(title: localizedCXPatcherString(forKey: "Fix CX codesign"), action: {
-                                // do nothing
-                            }, color: .gray)
-                        }
                     }
                     HStack {
                         if(ENABLE_RESTORE) {

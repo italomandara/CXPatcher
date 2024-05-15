@@ -434,6 +434,9 @@ func restoreAndPatch(url: URL, opts: inout Opts, onPatch: () -> Void = {}) {
         print("Restoring first...")
     }
     validateAndPatch(url: url, opts: &opts, onPatch: onPatch)
+    if(ENABLE_FIX_CX_CODESIGN) {
+        //TO DO: implement codesign fix
+    }
     opts.busy = false
 }
 
