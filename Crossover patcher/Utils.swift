@@ -19,6 +19,12 @@ enum Status {
     case error
 }
 
+enum DeleteStatus {
+    case failed
+    case success
+    case idle
+}
+
 struct Env {
     var key: String
     var value: String
@@ -557,4 +563,60 @@ func removeGlobals(url: URL) {
         print(error)
     }
     enable(dest: url.path + SHARED_SUPPORT_PATH + BOTTLE_PATH_OVERRIDE)
+}
+
+func safeShell(_ command: String) throws -> String {
+    let task = Process()
+    let pipe = Pipe()
+    
+    task.standardOutput = pipe
+    task.standardError = pipe
+    task.arguments = ["-c", command]
+    task.executableURL = URL(fileURLWithPath: "/bin/zsh") //<--updated
+    task.standardInput = nil
+
+    try task.run() //<--updated
+    
+    let data = pipe.fileHandleForReading.readDataToEndOfFile()
+    let output = String(data: data, encoding: .utf8)!
+    
+    return output
+}
+
+func removeD3DMetalCaches() -> DeleteStatus {
+    var status: DeleteStatus = DeleteStatus.success
+    do {
+        let darwinUserCacheDir: String = try safeShell("echo $(getconf DARWIN_USER_CACHE_DIR)")
+        let d3dmPath = darwinUserCacheDir.replacingOccurrences(of: "\n", with: "") + D3DM_CACHE_FOLDER
+        do {
+            let _items = try f.contentsOfDirectory(atPath: d3dmPath)
+            let items = _items.filter { d3dmPath in
+                do {
+                    let pattern = try Regex(#"^.*\.exe$"#)
+                    return d3dmPath.contains(pattern)
+                }
+                catch {
+                    print(error)
+                    status = DeleteStatus.failed
+                }
+                return false
+            }
+            for itemPath in items {
+                print("Deleting \(itemPath)")
+                do {
+                    try f.removeItem(atPath: d3dmPath + "/"  + itemPath)
+                } catch {
+                    print(error)
+                    status = DeleteStatus.failed
+                }
+            }
+        } catch {
+            print(error)
+            status = DeleteStatus.failed
+        }
+    } catch {
+        print(error)
+        status = DeleteStatus.failed
+    }
+    return status
 }

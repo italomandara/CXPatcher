@@ -8,8 +8,9 @@
 import Foundation
 
 let SKIP_VENTURA_CHECK = false
-let ENABLE_CLEAR_D3DMETAL_CACHE = false
+let ENABLE_CLEAR_D3DMETAL_CACHE = true
 let ENABLE_CLEAR_STEAM_CACHE = false
+let D3DM_CACHE_FOLDER = "d3dm"
 let ENABLE_FIX_CX_CODESIGN = false ///usr/bin/codesign --force --deep --sign - (app)
 
 #if DEBUG
