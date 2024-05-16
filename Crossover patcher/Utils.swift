@@ -588,38 +588,35 @@ func safeShell(_ command: String) throws -> String {
 
 func removeD3DMetalCaches() -> DeleteStatus {
     var status: DeleteStatus = DeleteStatus.success
+    let cachesDirectory = f.urls(for: .cachesDirectory, in: .userDomainMask).first
+    let darwinUserCacheDir = cachesDirectory!.appendingPathComponent("com.apple.darwin.user-cache", isDirectory: true).absoluteString
+    let d3dmPath = darwinUserCacheDir.replacingOccurrences(of: "\n", with: "") + D3DM_CACHE_FOLDER
     do {
-        let darwinUserCacheDir: String = try safeShell("echo $(getconf DARWIN_USER_CACHE_DIR)")
-        let d3dmPath = darwinUserCacheDir.replacingOccurrences(of: "\n", with: "") + D3DM_CACHE_FOLDER
-        do {
-            let _items = try f.contentsOfDirectory(atPath: d3dmPath)
-            let items = _items.filter { d3dmPath in
-                do {
-                    let pattern = try Regex(#"^.*\.exe$"#)
-                    return d3dmPath.contains(pattern)
-                }
-                catch {
-                    print(error)
-                    status = DeleteStatus.failed
-                }
-                return false
+        let _items = try f.contentsOfDirectory(atPath: d3dmPath)
+        let items = _items.filter { d3dmPath in
+            do {
+                let pattern = try Regex(#"^.*\.exe$"#)
+                return d3dmPath.contains(pattern)
             }
-            for itemPath in items {
-                print("Deleting \(itemPath)")
-                do {
-                    try f.removeItem(atPath: d3dmPath + "/"  + itemPath)
-                } catch {
-                    print(error)
-                    status = DeleteStatus.failed
-                }
+            catch {
+                print(error)
+                status = DeleteStatus.failed
             }
-        } catch {
-            print(error)
-            status = DeleteStatus.failed
+            return false
+        }
+        for itemPath in items {
+            print("Deleting \(itemPath)")
+            do {
+                try f.removeItem(atPath: d3dmPath + "/"  + itemPath)
+            } catch {
+                print(error)
+                status = DeleteStatus.failed
+            }
         }
     } catch {
         print(error)
         status = DeleteStatus.failed
     }
+
     return status
 }
