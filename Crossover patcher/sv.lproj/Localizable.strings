@@ -63,3 +63,15 @@ Om du stöter på problem efter att din installation har blivit patchad kan du l
 "DXVKAsyncToggle" = "Asynkron DXVK";
 "DXVKAsyncToggleHelp" = "Aktiverar asynkron kompilering av DXVK-shaders";
 "continue" = "Fortsätt";
+"d3dMetalCache" = "D3dMetal-cache";
+"clearD3dmetalCache" = "Rensa";
+"ShowD3dmetalCacheFolder" = "Visa mapp";
+"findSteamCaches" = "Hitta Steam-cacher";
+"d3dmetalCacheDeleted" = "All D3dMetal-cache har rensats";
+"d3dmetalCacheDeleteFailed" = "Det gick inte att ta bort d3dmetal-cache";
+"scanningSteamFolders" = "Söker efter Steam-cache-mappar";
+"clickFindSteamCaches" = "Klicka för att skanna Steam-cache-mappar";
+"steamCacheDeleted" = "Den valda Steam-cache-mappen har rensats";
+"steamCacheDeleteFailed" = "Det gick inte att ta bort vald Steam-cache";
+"steamCacheDeleteInProgress" = "Rensar vald Steam-cache";
+"toolsButtonText" = "Verktyg";

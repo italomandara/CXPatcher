@@ -10,7 +10,6 @@ import SwiftUI
 struct ContentView: View {
     @Environment(\.openWindow) var openWindow
     @Binding public var opts: Opts
-    @State var Cleard3dmCacheStatus: DeleteStatus = DeleteStatus.idle
     var body: some View {
         VStack(alignment: .center) {
             Logo()
@@ -43,30 +42,13 @@ struct ContentView: View {
                         RepatchToggle(repatch: $opts.repatch)
                         Divider()
                     }
-                    VStack {
-                        if(ENABLE_CLEAR_D3DMETAL_CACHE) {
-                            CustomButton(title: localizedCXPatcherString(forKey: "Clear d3dmetal cache"), action: {Cleard3dmCacheStatus = removeD3DMetalCaches()}, color: .gray)
-                            switch Cleard3dmCacheStatus {
-                            case DeleteStatus.success:
-                                Text(localizedCXPatcherString(forKey: "d3dmetal cache deleted"))
-                            case DeleteStatus.failed:
-                                Text(localizedCXPatcherString(forKey: "d3dmetal cache delete failed"))
-                            default:
-                                EmptyView()
-                            }
-                        }
-                        if(ENABLE_CLEAR_STEAM_CACHE) {
-                            CustomButton(title: localizedCXPatcherString(forKey: "Clear steam shader cache"), action: {
-                                // do nothing
-                            }, color: .gray)
-                        }
-                    }
                     HStack {
                         if(ENABLE_RESTORE) {
                             RestoreButtonDialog(opts: opts)
                                 .padding(.top, 6.0)
                         }
                         OptionsButton()
+                        ToolsButton()
                     }
                 }
                 .padding(.top, 12.0)

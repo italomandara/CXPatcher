@@ -63,3 +63,15 @@ Si encuentras algún problema después de parchear CrossOver, puedes descargar u
 "DXVKAsyncToggle" = "DXVK Asíncrono";
 "DXVKAsyncToggleHelp" = "Habilita la compilación de sombreadores asincrónica de DXVK";
 "continue" = "Continuar";
+"d3dMetalCache" = "Cache D3dMetal";
+"clearD3dmetalCache" = "Limpiar";
+"ShowD3dmetalCacheFolder" = "Mostrar carpeta";
+"findSteamCaches" = "Buscar cachés de Steam";
+"d3dmetalCacheDeleted" = "Se ha borrado toda la caché de D3dMetal";
+"d3dmetalCacheDeleteFailed" = "No se pudo borrar la caché de d3dmetal";
+"scanningSteamFolders" = "Explorando carpetas de caché de Steam";
+"clickFindSteamCaches" = "Haz clic para buscar carpetas de caché de Steam";
+"steamCacheDeleted" = "Se ha borrado la carpeta de caché de Steam seleccionada";
+"steamCacheDeleteFailed" = "No se pudo borrar la caché de Steam seleccionada";
+"steamCacheDeleteInProgress" = "Borrando la caché de Steam seleccionada";
+"toolsButtonText" = "Herramientas";

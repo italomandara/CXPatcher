@@ -63,3 +63,15 @@
 "DXVKAsyncToggle" = "DXVK 非同期";
 "DXVKAsyncToggleHelp" = "DXVK 非同期シェーダーコンパイルを有効にします";
 "continue" = "続ける";
+"d3dMetalCache" = "D3dMetal キャッシュ";
+"clearD3dmetalCache" = "クリア";
+"ShowD3dmetalCacheFolder" = "フォルダを表示";
+"findSteamCaches" = "Steam キャッシュを検索";
+"d3dmetalCacheDeleted" = "すべての D3dMetal キャッシュがクリアされました";
+"d3dmetalCacheDeleteFailed" = "D3dMetal キャッシュの削除に失敗しました";
+"scanningSteamFolders" = "Steam キャッシュフォルダのスキャン";
+"clickFindSteamCaches" = "Steam キャッシュフォルダをスキャンするにはクリックしてください";
+"steamCacheDeleted" = "選択した Steam キャッシュフォルダが削除されました";
+"steamCacheDeleteFailed" = "選択した Steam キャッシュの削除に失敗しました";
+"steamCacheDeleteInProgress" = "選択した Steam キャッシュのクリア中";
+"toolsButtonText" = "ツール";

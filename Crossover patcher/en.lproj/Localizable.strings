@@ -65,3 +65,15 @@ If you face any issues after your installation has been patched, you may downloa
 "DisableUE4HackToggle" = "Disable UE4 Hack";
 "DisableUE4HackToggleHelp" = "Disables the UE4 Hack (use this option if you have graphical issues)";
 "continue" = "Continue";
+"d3dMetalCache" = "D3dMetal cache";
+"clearD3dmetalCache" = "Clear";
+"ShowD3dmetalCacheFolder" = "Show folder";
+"findSteamCaches" = "Find Steam Caches";
+"d3dmetalCacheDeleted" = "All D3dMetal cache has been cleared";
+"d3dmetalCacheDeleteFailed" = "Failed to delete d3dmetal cache";
+"scanningSteamFolders" = "Scanning Steam cache folders";
+"clickFindSteamCaches" = "Click to scan Steam cache folders";
+"steamCacheDeleted" = "The Selected Steam cache folder has been cleared";
+"steamCacheDeleteFailed" = "Failed to delete selected steam cache";
+"steamCacheDeleteInProgress" = "Clearing selected Steam cache";
+"toolsButtonText" = "Tools";

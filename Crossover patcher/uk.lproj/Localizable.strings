@@ -63,3 +63,15 @@
 "DXVKAsyncToggle" = "Асинхронний DXVK";
 "DXVKAsyncToggleHelp" = "Увімкнення асинхронної компіляції шейдерів DXVK";
 "continue" = "Продовжити";
+"d3dMetalCache" = "Кеш D3dMetal";
+"clearD3dmetalCache" = "Очистити";
+"ShowD3dmetalCacheFolder" = "Показати теку";
+"findSteamCaches" = "Знайти кеші Steam";
+"d3dmetalCacheDeleted" = "Усі файли кешу D3dMetal були очищені";
+"d3dmetalCacheDeleteFailed" = "Не вдалося видалити кеш d3dmetal";
+"scanningSteamFolders" = "Сканування тек кешу Steam";
+"clickFindSteamCaches" = "Клацніть, щоб сканувати теки кешу Steam";
+"steamCacheDeleted" = "Вибрана тека кешу Steam була очищена";
+"steamCacheDeleteFailed" = "Не вдалося видалити вибраний кеш Steam";
+"steamCacheDeleteInProgress" = "Очищення вибраного кешу Steam";
+"toolsButtonText" = "Інструменти";

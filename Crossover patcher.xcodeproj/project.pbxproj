@@ -10,6 +10,8 @@
 		0D9AC2C22A49F96000101F43 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0D9AC2C42A49F96000101F43 /* Localizable.strings */; };
 		382499E42AEE946400578AA3 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382499E32AEE946400578AA3 /* Options.swift */; };
 		382499E62AEE984600578AA3 /* OptionsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382499E52AEE984600578AA3 /* OptionsButton.swift */; };
+		38284A282BF7B075008C38CC /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38284A272BF7B075008C38CC /* Tools.swift */; };
+		38284A2A2BF7C03E008C38CC /* ToolsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38284A292BF7C03E008C38CC /* ToolsButton.swift */; };
 		382AC3172AF8246800097003 /* AutoUpdateDisableToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382AC3162AF8246800097003 /* AutoUpdateDisableToggle.swift */; };
 		382F4C0729DA516C00824358 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382F4C0629DA516C00824358 /* Utils.swift */; };
 		384681FD2AF4544200CEF539 /* MTLHUDToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384681FC2AF4544200CEF539 /* MTLHUDToggle.swift */; };
@@ -43,6 +45,8 @@
 		0D9AC2C32A49F96000101F43 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		382499E32AEE946400578AA3 /* Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
 		382499E52AEE984600578AA3 /* OptionsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsButton.swift; sourceTree = "<group>"; };
+		38284A272BF7B075008C38CC /* Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
+		38284A292BF7C03E008C38CC /* ToolsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsButton.swift; sourceTree = "<group>"; };
 		382AC3162AF8246800097003 /* AutoUpdateDisableToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoUpdateDisableToggle.swift; sourceTree = "<group>"; };
 		382F4C0629DA516C00824358 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		384681FC2AF4544200CEF539 /* MTLHUDToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTLHUDToggle.swift; sourceTree = "<group>"; };
@@ -126,6 +130,7 @@
 				38F7B21A2A5DD33A00CD9511 /* Logo.swift */,
 				38F7B2222A5DD70F00CD9511 /* Toggles */,
 				382499E32AEE946400578AA3 /* Options.swift */,
+				38284A272BF7B075008C38CC /* Tools.swift */,
 			);
 			path = "Crossover patcher";
 			sourceTree = "<group>";
@@ -190,6 +195,7 @@
 				38998DF92A3BAD6400F1963A /* ExternalResButton.swift */,
 				386E0B272AC7706200D09956 /* CustomButton.swift */,
 				382499E52AEE984600578AA3 /* OptionsButton.swift */,
+				38284A292BF7C03E008C38CC /* ToolsButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -307,7 +313,9 @@
 				3888B8AC2ABCDECB005B57BA /* BottlePathToggle.swift in Sources */,
 				38D93E5829DC4E4F00D4B0D8 /* Disclaimer.swift in Sources */,
 				38998DFA2A3BAD6400F1963A /* ExternalResButton.swift in Sources */,
+				38284A2A2BF7C03E008C38CC /* ToolsButton.swift in Sources */,
 				38F7B21D2A5DD4E100CD9511 /* IntegrateExternalsToggle.swift in Sources */,
+				38284A282BF7B075008C38CC /* Tools.swift in Sources */,
 				38F7B21B2A5DD33A00CD9511 /* Logo.swift in Sources */,
 				382F4C0729DA516C00824358 /* Utils.swift in Sources */,
 				38C291E62AE8523B00D0703E /* MoltenVKToggle.swift in Sources */,

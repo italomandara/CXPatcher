@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import Cocoa
 
 @main
 struct Crossover_patcherApp: App {    
     @State private var opts = Opts()
+    
     var body: some Scene {
         WindowGroup {
             ContentView(opts: $opts).fixedSize()
@@ -27,6 +29,9 @@ struct Crossover_patcherApp: App {
         }
         Window("Options", id: "options") {
             Options(opts: $opts).fixedSize()
+        }
+        Window("Tools", id: "tools") {
+            Tools().fixedSize()
         }
         .windowResizability(.contentSize)
     }

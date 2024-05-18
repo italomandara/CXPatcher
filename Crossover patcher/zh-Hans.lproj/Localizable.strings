@@ -63,3 +63,15 @@
 "DXVKAsyncToggle" = "DXVK 异步";
 "DXVKAsyncToggleHelp" = "启用 DXVK 异步着色器编译";
 "continue" = "继续";
+"d3dMetalCache" = "D3dMetal 缓存";
+"clearD3dmetalCache" = "清除";
+"ShowD3dmetalCacheFolder" = "显示文件夹";
+"findSteamCaches" = "查找 Steam 缓存";
+"d3dmetalCacheDeleted" = "所有 D3dMetal 缓存已清除";
+"d3dmetalCacheDeleteFailed" = "删除 D3dMetal 缓存失败";
+"scanningSteamFolders" = "扫描 Steam 缓存文件夹";
+"clickFindSteamCaches" = "单击以扫描 Steam 缓存文件夹";
+"steamCacheDeleted" = "所选的 Steam 缓存文件夹已清除";
+"steamCacheDeleteFailed" = "无法删除所选的 Steam 缓存";
+"steamCacheDeleteInProgress" = "清除所选的 Steam 缓存";
+"toolsButtonText" = "工具";

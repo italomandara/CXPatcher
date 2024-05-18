@@ -63,3 +63,15 @@ Si vous rencontrez des problèmes après avoir appliqué le patch, vous pouvez t
 "DXVKAsyncToggle" = "DXVK Asynchrone";
 "DXVKAsyncToggleHelp" = "Active la compilation asynchrone des shaders DXVK";
 "continue" = "Continuer";
+"d3dMetalCache" = "Cache D3dMetal";
+"clearD3dmetalCache" = "Effacer";
+"ShowD3dmetalCacheFolder" = "Afficher le dossier";
+"findSteamCaches" = "Trouver les caches Steam";
+"d3dmetalCacheDeleted" = "Toutes les caches D3dMetal ont été effacées";
+"d3dmetalCacheDeleteFailed" = "Échec de la suppression du cache d3dmetal";
+"scanningSteamFolders" = "Exploration des dossiers de cache Steam";
+"clickFindSteamCaches" = "Cliquez pour scanner les dossiers de cache Steam";
+"steamCacheDeleted" = "Le dossier de cache Steam sélectionné a été effacé";
+"steamCacheDeleteFailed" = "Échec de la suppression du cache Steam sélectionné";
+"steamCacheDeleteInProgress" = "Effacement du cache Steam sélectionné";
+"toolsButtonText" = "Outils";

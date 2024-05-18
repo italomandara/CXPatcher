@@ -23,6 +23,7 @@ enum DeleteStatus {
     case failed
     case success
     case idle
+    case progress
 }
 
 struct Env {
@@ -72,7 +73,7 @@ struct Opts {
     }
 }
 
-var f = FileManager()
+var f = FileManager.default
 
 private func getResourcesListFrom(url: URL) -> [(String, String)]{
     let list: [(String, String)]  = WINE_RESOURCES_PATHS.map { path in
@@ -586,37 +587,81 @@ func safeShell(_ command: String) throws -> String {
     return output
 }
 
+func darwinUserCacheDir() -> URL? {
+    var buf = [CChar](repeating: 0, count: 1024)
+    let success = confstr(_CS_DARWIN_USER_CACHE_DIR, &buf, buf.count) >= 0
+    guard success else { return nil }
+    return URL(fileURLWithFileSystemRepresentation: &buf, isDirectory: true, relativeTo: nil)
+}
+
 func removeD3DMetalCaches() -> DeleteStatus {
-    var status: DeleteStatus = DeleteStatus.success
-    let cachesDirectory = f.urls(for: .cachesDirectory, in: .userDomainMask).first
-    let darwinUserCacheDir = cachesDirectory!.appendingPathComponent("com.apple.darwin.user-cache", isDirectory: true).absoluteString
-    let d3dmPath = darwinUserCacheDir.replacingOccurrences(of: "\n", with: "") + D3DM_CACHE_FOLDER
     do {
+//        let darwinUserCacheDir: String = try safeShell("echo $(getconf DARWIN_USER_CACHE_DIR)")
+//        let d3dmPath = darwinUserCacheDir.replacingOccurrences(of: "\n", with: "") + D3DM_CACHE_FOLDER
+        let d3dmPath = darwinUserCacheDir()!.appendingPathComponent(D3DM_CACHE_FOLDER, isDirectory: true).path
+
         let _items = try f.contentsOfDirectory(atPath: d3dmPath)
-        let items = _items.filter { d3dmPath in
-            do {
+        let items = try _items.filter { d3dmPath in
                 let pattern = try Regex(#"^.*\.exe$"#)
                 return d3dmPath.contains(pattern)
-            }
-            catch {
-                print(error)
-                status = DeleteStatus.failed
-            }
-            return false
         }
         for itemPath in items {
             print("Deleting \(itemPath)")
-            do {
-                try f.removeItem(atPath: d3dmPath + "/"  + itemPath)
-            } catch {
-                print(error)
-                status = DeleteStatus.failed
-            }
+            try f.removeItem(atPath: d3dmPath + "/"  + itemPath)
         }
     } catch {
         print(error)
-        status = DeleteStatus.failed
+        return DeleteStatus.failed
     }
 
-    return status
+    return DeleteStatus.success
+}
+
+func getAllSteamShaderCacheDirectories() -> [URL] {
+    var shaderCacheDirectories = [URL]()
+    
+    // Get all mounted volumes
+    if let volumes = FileManager.default.mountedVolumeURLs(includingResourceValuesForKeys: nil, options: .skipHiddenVolumes) {
+        for volumeURL in volumes {
+            // Enumerate contents of each volume
+            if let enumerator = FileManager.default.enumerator(at: volumeURL, includingPropertiesForKeys: nil, options: [.skipsHiddenFiles, .skipsPackageDescendants]) {
+                for case let fileURL as URL in enumerator {
+                    // Check if the file URL matches "steamapps/shadercache"
+                    let pathComponents = fileURL.pathComponents
+                    if pathComponents.contains("steamapps") && pathComponents.contains("shadercache") {
+                        if let steamappsIndex = pathComponents.firstIndex(of: "steamapps"),
+                           let shaderCacheIndex = pathComponents.firstIndex(of: "shadercache"),
+                           shaderCacheIndex == steamappsIndex + 1,
+                           pathComponents.count == steamappsIndex + 2 {
+                            shaderCacheDirectories.append(fileURL)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    return shaderCacheDirectories
+}
+
+func shortenSteamCachePath(_ path: String) -> String {
+    return path.replacingOccurrences(of:"file://", with: "")
+        .replacingOccurrences(of: "/Users/(.*?)/", with: "~/", options: .regularExpression)
+        .replacingOccurrences(of: "/Volumes/(.*?)/", with: "$1/", options: .regularExpression)
+        .replacingOccurrences(of: ".*/CXPBottles/(.*?)/.*", with: "$1:", options: .regularExpression)
+        .replacingOccurrences(of: "steamapps/shadercache/", with: "")
+}
+
+func removeAllSteamCachesFrom(path: String) -> DeleteStatus {
+    do {
+        let items = try f.contentsOfDirectory(atPath: path)
+        for item in items {
+            print("deleting \(path + "/" + item)")
+            try f.removeItem(atPath: path + "/" + item)
+        }
+    } catch {
+        print(error)
+        return DeleteStatus.failed
+    }
+    return DeleteStatus.success
 }

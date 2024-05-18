@@ -63,3 +63,15 @@ Dacă întâmpinați probleme după ce instalația a fost patch-uită, puteți d
 "DXVKAsyncToggle" = "DXVK Asincron";
 "DXVKAsyncToggleHelp" = "Activează compilarea asincronă a shaderelor DXVK";
 "continue" = "Continuați";
+"d3dMetalCache" = "Cache D3dMetal";
+"clearD3dmetalCache" = "Șterge";
+"ShowD3dmetalCacheFolder" = "Afișare folder";
+"findSteamCaches" = "Găsește Căile de acces Steam";
+"d3dmetalCacheDeleted" = "Toate cache-urile D3dMetal au fost șterse";
+"d3dmetalCacheDeleteFailed" = "Nu s-a putut șterge cache-ul D3dMetal";
+"scanningSteamFolders" = "Scanarea dosarelor cache Steam";
+"clickFindSteamCaches" = "Faceți clic pentru a scana dosarele cache Steam";
+"steamCacheDeleted" = "Dosarul de cache Steam selectat a fost șters";
+"steamCacheDeleteFailed" = "Nu s-a putut șterge cache-ul Steam selectat";
+"steamCacheDeleteInProgress" = "Se șterge cache-ul Steam selectat";
+"toolsButtonText" = "Instrumente";

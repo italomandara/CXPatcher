@@ -63,3 +63,15 @@ Jeśli napotkasz jakiekolwiek problemy z instalacją CrossOver, możesz pobrać 
 "DXVKAsyncToggle" = "Asynchroniczne DXVK";
 "DXVKAsyncToggleHelp" = "Włącza asynchroniczną kompilację shaderów DXVK";
 "continue" = "Kontynuuj";
+"d3dMetalCache" = "Cache D3dMetal";
+"clearD3dmetalCache" = "Wyczyść";
+"ShowD3dmetalCacheFolder" = "Pokaż folder";
+"findSteamCaches" = "Znajdź pliki cache Steam";
+"d3dmetalCacheDeleted" = "Wszystkie pliki cache D3dMetal zostały wyczyszczone";
+"d3dmetalCacheDeleteFailed" = "Nie udało się usunąć plików cache d3dmetal";
+"scanningSteamFolders" = "Skanowanie folderów cache Steam";
+"clickFindSteamCaches" = "Kliknij, aby przeskanować foldery cache Steam";
+"steamCacheDeleted" = "Wybrany folder cache Steam został wyczyszczony";
+"steamCacheDeleteFailed" = "Nie udało się usunąć wybranego pliku cache Steam";
+"steamCacheDeleteInProgress" = "Usuwanie wybranego pliku cache Steam";
+"toolsButtonText" = "Narzędzia";

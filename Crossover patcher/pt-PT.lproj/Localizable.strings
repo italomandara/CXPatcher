@@ -63,3 +63,15 @@ Se você enfrentar problemas após a instalação ser patcheada, você pode baix
 "DXVKAsyncToggle" = "DXVK Assíncrono";
 "DXVKAsyncToggleHelp" = "Ativa a compilação assíncrona de shaders do DXVK";
 "continue" = "Continuar";
+"d3dMetalCache" = "Cache D3dMetal";
+"clearD3dmetalCache" = "Limpar";
+"ShowD3dmetalCacheFolder" = "Mostrar pasta";
+"findSteamCaches" = "Encontrar caches do Steam";
+"d3dmetalCacheDeleted" = "Todo o cache D3dMetal foi limpo";
+"d3dmetalCacheDeleteFailed" = "Falha ao excluir o cache d3dmetal";
+"scanningSteamFolders" = "Escaneando pastas de cache do Steam";
+"clickFindSteamCaches" = "Clique para escanear pastas de cache do Steam";
+"steamCacheDeleted" = "A pasta de cache do Steam selecionada foi limpa";
+"steamCacheDeleteFailed" = "Falha ao excluir o cache do Steam selecionado";
+"steamCacheDeleteInProgress" = "Limpando o cache do Steam selecionado";
+"toolsButtonText" = "Ferramentas";
