@@ -436,7 +436,12 @@ func restoreAndPatch(url: URL, opts: inout Opts, onPatch: () -> Void = {}) {
     }
     validateAndPatch(url: url, opts: &opts, onPatch: onPatch)
     if(ENABLE_FIX_CX_CODESIGN) {
-        //TO DO: implement codesign fix
+        do {
+            print("patching \(url.path)")
+            try safeShell("/usr/bin/xattr -cr \(url.path) && /usr/bin/codesign --force --deep --sign - \(url.path)")
+        } catch {
+            print("xattr or codesign failed")
+        }
     }
     opts.busy = false
 }
@@ -569,6 +574,7 @@ func removeGlobals(url: URL) {
     enable(dest: url.path + SHARED_SUPPORT_PATH + BOTTLE_PATH_OVERRIDE)
 }
 
+@discardableResult
 func safeShell(_ command: String) throws -> String {
     let task = Process()
     let pipe = Pipe()
@@ -596,8 +602,6 @@ func darwinUserCacheDir() -> URL? {
 
 func removeD3DMetalCaches() -> DeleteStatus {
     do {
-//        let darwinUserCacheDir: String = try safeShell("echo $(getconf DARWIN_USER_CACHE_DIR)")
-//        let d3dmPath = darwinUserCacheDir.replacingOccurrences(of: "\n", with: "") + D3DM_CACHE_FOLDER
         let d3dmPath = darwinUserCacheDir()!.appendingPathComponent(D3DM_CACHE_FOLDER, isDirectory: true).path
 
         let _items = try f.contentsOfDirectory(atPath: d3dmPath)

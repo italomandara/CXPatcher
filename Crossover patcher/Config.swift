@@ -11,7 +11,7 @@ let SKIP_VENTURA_CHECK = false
 let ENABLE_CLEAR_D3DMETAL_CACHE = true
 let ENABLE_CLEAR_STEAM_CACHE = true
 let D3DM_CACHE_FOLDER = "d3dm"
-let ENABLE_FIX_CX_CODESIGN = false  // /usr/bin/codesign --force --deep --sign - (app)
+let ENABLE_FIX_CX_CODESIGN = true
 enum UIGlobals: CGFloat {
     case radius = 10.00
 }
