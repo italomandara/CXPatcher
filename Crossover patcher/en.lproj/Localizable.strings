@@ -21,6 +21,7 @@ If you face any issues after your installation has been patched, you may downloa
 "ExternalResourcesPathLabelText" = "External resource drive path:";
 "ExternalResourcesToggle" = "Integrate D3DMetal (GPTK)";
 "ForcePatch" = "Force Patch";
+"Instructions" = "Instructions";
 "InstructionsAskWhatDo" = "What does this program do?";
 "InstructionsButtonText" = "Instructions";
 "InstructionsFunctionDescription" = "This patcher modifies your CrossOver installation to use updated and tweaked versions of DXVK and MoltenVK, which in some instances will improve compatibility or performance for some games.";

@@ -21,6 +21,7 @@ Si encuentras algún problema después de parchear CrossOver, puedes descargar u
 "ExternalResourcesPathLabelText" = "Ruta de unidad de recursos externos:";
 "ExternalResourcesToggle" = "Integrar D3DMetal (GPTK)";
 "ForcePatch" = "Forzar parche";
+"Instructions" = "Instrucciones";
 "InstructionsAskWhatDo" = "¿Qué hace este programa?";
 "InstructionsButtonText" = "Instrucciones";
 "InstructionsFunctionDescription" = "Este parche modifica tu instalación de CrossOver para usar versiones actualizadas y ajustadas de DXVK y MoltenVK, lo que en algunos casos mejorará la compatibilidad y/o el rendimiento para algunos juegos.";

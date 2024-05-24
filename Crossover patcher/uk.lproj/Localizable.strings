@@ -21,6 +21,7 @@
 "ExternalResourcesPathLabelText" = "Шлях до зовнішнього диска ресурсів:";
 "ExternalResourcesToggle" = "Інтегрувати D3DMetal (GPTK)";
 "ForcePatch" = "Примусовий патч";
+"Instructions" = "Інструкції";
 "InstructionsAskWhatDo" = "Що робить ця програма?";
 "InstructionsButtonText" = "Інструкції";
 "InstructionsFunctionDescription" = "Цей патчер модифікує вашу установку CrossOver для використання оновлених і налаштованих версій DXVK і MoltenVK, що у деяких випадках покращує сумісність або продуктивність деяких ігор.";

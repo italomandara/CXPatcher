@@ -21,6 +21,7 @@ Sollten nach dem Patchen Ihrer Installation Probleme auftreten, können Sie eine
 "ExternalResourcesPathLabelText" = "Pfad zum externen Ressourcenlaufwerks:";
 "ExternalResourcesToggle" = "D3DMetal (GPTK) integrieren";
 "ForcePatch" = "Patch erzwingen";
+"Instructions" = "Anweisungen";
 "InstructionsAskWhatDo" = "Was macht dieses Programm?";
 "InstructionsButtonText" = "Anweisungen";
 "InstructionsFunctionDescription" = "Dieser Patcher ändert Ihre CrossOver-Installation so, dass aktualisierte und optimierte Versionen von DXVK und MoltenVK verwendet werden, was in einigen Fällen die Kompatibilität oder Leistung einiger Spiele verbessert.";

@@ -21,6 +21,7 @@
 "ExternalResourcesPathLabelText" = "外部リソースドライブのパス：";
 "ExternalResourcesToggle" = "D3DMetal（GPTK）を統合する";
 "ForcePatch" = "パッチを強制する";
+"Instructions" = "指示";
 "InstructionsAskWhatDo" = "このプログラムは何をするのですか？";
 "InstructionsButtonText" = "手順";
 "InstructionsFunctionDescription" = "このパッチャーは、CrossOverのインストールを更新および調整されたバージョンのDXVKとMoltenVKを使用するように変更します。これにより、一部のゲームの互換性やパフォーマンスが向上する場合があります。";

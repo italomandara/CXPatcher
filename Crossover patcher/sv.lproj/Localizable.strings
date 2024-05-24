@@ -21,6 +21,7 @@ Om du stöter på problem efter att din installation har blivit patchad kan du l
 "ExternalResourcesPathLabelText" = "Sökväg till externa resursenheten:";
 "ExternalResourcesToggle" = "Integrera D3DMetal (GPTK)";
 "ForcePatch" = "Tvinga patch";
+"Instructions" = "Instruktioner";
 "InstructionsAskWhatDo" = "Vad gör detta program?";
 "InstructionsButtonText" = "Instruktioner";
 "InstructionsFunctionDescription" = "Denna patcher modifierar din CrossOver-installation för att använda uppdaterade och justerade versioner av DXVK och MoltenVK, vilket i vissa fall kommer att förbättra kompatibilitet eller prestanda för vissa spel.";

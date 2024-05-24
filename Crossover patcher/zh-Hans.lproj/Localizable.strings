@@ -21,6 +21,7 @@
 "ExternalResourcesPathLabelText" = "外部资源驱动器路径：";
 "ExternalResourcesToggle" = "集成 D3DMetal（GPTK）";
 "ForcePatch" = "强制打补丁";
+"Instructions" = "说明";
 "InstructionsAskWhatDo" = "这个程序是做什么的？";
 "InstructionsButtonText" = "说明";
 "InstructionsFunctionDescription" = "此补丁程序将修改您的 CrossOver 安装，使用更新和优化版本的 DXVK 和 MoltenVK，有时会提高某些游戏的兼容性或性能。";
