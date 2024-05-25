@@ -31,7 +31,9 @@ struct Disclaimer: View {
             .padding(.top, 1.0)
         if(SKIP_DISCLAIMER_CHECK) {
             Button() {
-                showDisclaimer = false
+                withAnimation {
+                    showDisclaimer = false
+                }
             } label: {
                 Image(systemName: "exclamationmark.triangle.fill")
                 Text(localizedCXPatcherString(forKey: "AgreeAndProceedButtonText"))

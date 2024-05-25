@@ -12,10 +12,11 @@ struct ContentView: View {
     @Binding public var opts: Opts
     var body: some View {
         VStack(alignment: .center) {
-            Logo()
             if(opts.showDisclaimer) {
+                Logo()
                 Disclaimer(showDisclaimer: $opts.showDisclaimer)
             } else {
+                Logo()
                 Button() {
                     openWindow(id: "instructions")
                 } label: {
@@ -57,6 +58,7 @@ struct ContentView: View {
         .padding(20)
         .frame(width: 400.0)
         .fixedSize()
+        .transition(.opacity)
     }
 
 }
