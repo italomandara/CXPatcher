@@ -14,14 +14,14 @@ struct Options: View {
     @Binding var opts: Opts
     var body: some View {
         VStack(alignment: .center) {
-//            IntegrateExternalsToggle(
-//                copyGptk: $opts.copyGptk
-//            )
-//            .help(localizedCXPatcherString(forKey: "gptkToggleHelp"))
             MoltenVKToggle(
                 opts: $opts
             )
             .help(localizedCXPatcherString(forKey: "mkvToggleHelp"))
+            IntegrateExternalsToggle(
+                copyGptk: $opts.copyGptk
+            )
+            .help(localizedCXPatcherString(forKey: "gptkToggleHelp"))
             DXVKToggle(
                 opts: $opts
             )

@@ -5,12 +5,12 @@
 	<key>BuildVersion</key>
 	<string>1</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.1</string>
+	<string>2.0b1</string>
 	<key>CFBundleVersion</key>
-	<string>1.1</string>
+	<string>2.0b1</string>
 	<key>ProjectName</key>
 	<string>D3DRendererMetal</string>
 	<key>SourceVersion</key>
-	<string>18000000000000</string>
+	<string>25011000000000</string>
 </dict>
 </plist>

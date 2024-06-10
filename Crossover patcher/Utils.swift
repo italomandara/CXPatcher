@@ -50,7 +50,7 @@ struct Opts {
     var skipVersionCheck: Bool = false
     var repatch: Bool = false
     var overrideBottlePath: Bool = true
-    var copyGptk = false
+    var copyGptk = true
     var progress: Float = 0.0
     var busy: Bool = false
     var cxbottlesPath = DEFAULT_CX_BOTTLES_PATH
@@ -628,16 +628,17 @@ func getAllSteamShaderCacheDirectories() -> [URL] {
     if let volumes = FileManager.default.mountedVolumeURLs(includingResourceValuesForKeys: nil, options: .skipHiddenVolumes) {
         for volumeURL in volumes {
             // Enumerate contents of each volume
-            if let enumerator = FileManager.default.enumerator(at: volumeURL, includingPropertiesForKeys: nil, options: [.skipsHiddenFiles, .skipsPackageDescendants]) {
+            if let enumerator = FileManager.default.enumerator(at: volumeURL, includingPropertiesForKeys: [.isDirectoryKey], options: [.skipsHiddenFiles, .skipsPackageDescendants]) {
                 for case let fileURL as URL in enumerator {
-                    // Check if the file URL matches "steamapps/shadercache"
-                    let pathComponents = fileURL.pathComponents
-                    if pathComponents.contains("steamapps") && pathComponents.contains("shadercache") {
-                        if let steamappsIndex = pathComponents.firstIndex(of: "steamapps"),
-                           let shaderCacheIndex = pathComponents.firstIndex(of: "shadercache"),
-                           shaderCacheIndex == steamappsIndex + 1,
-                           pathComponents.count == steamappsIndex + 2 {
+                    // Check if the file URL is a directory
+                    if let resourceValues = try? fileURL.resourceValues(forKeys: [.isDirectoryKey]),
+                       resourceValues.isDirectory == true {
+                        // Directly match the "steamapps/shadercache" path
+                        let path = fileURL.path
+                        if path.hasSuffix("/steamapps/shadercache") {
                             shaderCacheDirectories.append(fileURL)
+                            // Skip the contents of this directory
+                            enumerator.skipDescendants()
                         }
                     }
                 }

@@ -35,7 +35,7 @@ let SHARED_SUPPORT_PATH = "/Contents/SharedSupport/CrossOver"
 let DEFAULT_CX_BOTTLES_PATH = "/Users/${USER}/CXPBottles"
 let LIB_PATH = "/lib/"
 
-let EXTERNAL_RESOURCES_ROOT = "/lib64/apple_gpt"
+let EXTERNAL_RESOURCES_ROOT = "/lib64/apple_gptk"
 let EXTERNAL_WINE_PATHS: [String] = [
     "/external",
     "/wine/x86_64-unix/atidxx64.so",
