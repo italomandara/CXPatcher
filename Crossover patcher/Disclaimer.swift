@@ -32,7 +32,7 @@ struct Disclaimer: View {
         if(SKIP_DISCLAIMER_CHECK) {
             Button() {
                 withAnimation {
-                    showDisclaimer = false
+                    acceptAgreement(&showDisclaimer)
                 }
             } label: {
                 Image(systemName: "exclamationmark.triangle.fill")
@@ -53,7 +53,7 @@ struct Disclaimer: View {
             )
             .onSubmit {
                 if (valid) {
-                    showDisclaimer = false
+                    acceptAgreement(&showDisclaimer)
                 }
             }
             .onChange(of: inputText) { newValue in
@@ -61,7 +61,7 @@ struct Disclaimer: View {
             }
             .disableAutocorrection(true)
             Button() {
-                showDisclaimer = false
+                acceptAgreement(&showDisclaimer)
             } label: {
                 Image(systemName: "exclamationmark.triangle.fill")
                 if(valid) {

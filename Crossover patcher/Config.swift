@@ -19,7 +19,7 @@ enum UIGlobals: CGFloat {
 #if DEBUG
     let SKIP_DISCLAIMER_CHECK = true
 #else
-    let SKIP_DISCLAIMER_CHECK = false
+let SKIP_DISCLAIMER_CHECK = false
 #endif
 
 let ENABLE_SKIP_VERSION_CHECK_TOGGLE = false

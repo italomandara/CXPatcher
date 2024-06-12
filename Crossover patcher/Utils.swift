@@ -44,8 +44,13 @@ enum PatchMVK {
     case none
 }
 
+func acceptAgreement(_ showDisclaimer: inout Bool) {
+    showDisclaimer = false
+    UserDefaults.standard.set(true, forKey: "I will not ask CodeWeavers for support or refund")
+}
+
 struct Opts {
-    var showDisclaimer: Bool = true
+    var showDisclaimer: Bool = !UserDefaults.standard.bool(forKey: "I will not ask CodeWeavers for support or refund")
     var status: Status = .unpatched
     var skipVersionCheck: Bool = false
     var repatch: Bool = false
@@ -438,7 +443,8 @@ func restoreAndPatch(url: URL, opts: inout Opts, onPatch: () -> Void = {}) {
     if(ENABLE_FIX_CX_CODESIGN) {
         do {
             print("patching \(url.path)")
-            try safeShell("/usr/bin/xattr -cr \(url.path) && /usr/bin/codesign --force --deep --sign - \(url.path)")
+            let p = try safeShell("/usr/bin/xattr -cr \(url.path) && /usr/bin/codesign --force --deep --sign - \(url.path)")
+            print(p)
         } catch {
             print("xattr or codesign failed")
         }
