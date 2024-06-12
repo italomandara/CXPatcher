@@ -27,7 +27,7 @@ Om du stöter på problem efter att din installation har blivit patchad kan du l
 "InstructionsFunctionDescription" = "Denna patcher modifierar din CrossOver-installation för att använda uppdaterade och justerade versioner av DXVK och MoltenVK, vilket i vissa fall kommer att förbättra kompatibilitet eller prestanda för vissa spel.";
 "InstructionsText" = "Se till att du har en oförändrad version av CrossOver, som har laddats ner från ditt CodeWeavers-konto. Se till att CrossOver har registrerats och körts minst en gång för att säkerställa att den senaste DXVK-versionen aktiveras korrekt. Du kan behöva slå av och på DXVK i CrossOver. Om din CrossOver-installation av någon anledning blir oanvändbar kan du ladda ner den igen från CodeWeavers webbplats; denna patcher kommer inte att göra några permanenta ändringar i dina CrossOver-flaskor.";
 "PatchStatusAlreadyPatched" = "Denna CrossOver.app har redan blivit patchad!";
-"PatchStatusError" = "Kunde inte patcha CrossOver.app. Var god kontrollera att du försöker patcha den officiella versionen av CrossOver 22 från CodeWeavers webbplats.";
+"PatchStatusError" = "Kunde inte patcha CrossOver.app. Var god kontrollera att du försöker patcha den officiella versionen av CrossOver %@ från CodeWeavers webbplats.";
 "PatchStatusReady" = "Släpp din CrossOver.app här\neller klicka för att välja den i Finder";
 "PatchStatusSuccess" = "CrossOver.app har blivit framgångsrikt patchad";
 "RestoreButtonLabel" = "Återställ";

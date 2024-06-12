@@ -296,7 +296,7 @@ func getIconBy(status: Status) -> String {
 func getTextBy(status: Status) -> String {
     switch status {
     case .error:
-        return localizedCXPatcherString(forKey: "PatchStatusError")
+        return localizedCXPatcherString(forKey: "PatchStatusError", value: SUPPORTED_CROSSOVER_VERSION)
     case .unpatched:
         return localizedCXPatcherString(forKey: "PatchStatusReady")
     case .success:
@@ -446,14 +446,14 @@ func restoreAndPatch(url: URL, opts: inout Opts, onPatch: () -> Void = {}) {
     opts.busy = false
 }
 
-func localizedCXPatcherString(forKey key: String) -> String {
+func localizedCXPatcherString(forKey key: String, value: String? = nil) -> String {
     var message = Bundle.main.localizedString(forKey: key, value: nil, table: "Localizable")
     if message == key {
         let enPath = Bundle.main.path(forResource: "en", ofType: "lproj")
         let enBundle = Bundle(path: enPath!)
         message = enBundle?.localizedString(forKey: key, value: nil, table: "Localizable") ?? key
     }
-    return message
+    return value == nil  ? message : String(format: message , value!)
 }
 
 func validate(input: String) -> Bool {

@@ -27,7 +27,7 @@
 "InstructionsFunctionDescription" = "Цей патчер модифікує вашу установку CrossOver для використання оновлених і налаштованих версій DXVK і MoltenVK, що у деяких випадках покращує сумісність або продуктивність деяких ігор.";
 "InstructionsText" = "Переконайтеся, що у вас є незмінена версія CrossOver, завантажена зі сторінки вашого облікового запису CodeWeavers. Переконайтеся, що CrossOver зареєстрована і запущена хоча б один раз, щоб гарантувати правильне активування останньої версії DXVK. Можливо, вам доведеться вимкнути та увімкнути DXVK у CrossOver. Якщо з якихось причин ваша установка CrossOver стала непридатною, її можна завантажити знову з веб-сайту CodeWeavers; цей патчер не внесе жодних постійних змін до вашої установки CrossOver.";
 "PatchStatusAlreadyPatched" = "Цей CrossOver.app вже патчений!";
-"PatchStatusError" = "Не вдалося патчувати CrossOver.app. Будь ласка, перевірте, чи намагаєтеся ви патчувати версію випуску CrossOver 22 з веб-сайту CodeWeavers.";
+"PatchStatusError" = "Не вдалося патчувати CrossOver.app. Будь ласка, перевірте, чи намагаєтеся ви патчувати версію випуску CrossOver %@ з веб-сайту CodeWeavers.";
 "PatchStatusReady" = "Перетягніть сюди свій CrossOver.app\nабо клацніть, щоб вибрати його в Finder";
 "PatchStatusSuccess" = "CrossOver.app успішно патчений";
 "RestoreButtonLabel" = "Відновити";

@@ -27,7 +27,7 @@
 "InstructionsFunctionDescription" = "此补丁程序将修改您的 CrossOver 安装，使用更新和优化版本的 DXVK 和 MoltenVK，有时会提高某些游戏的兼容性或性能。";
 "InstructionsText" = "请确保您从 CodeWeavers 账户页面下载了未经修改的 CrossOver 发布版本。确保 CrossOver 已注册并至少运行一次，以确保最新的 DXVK 已正确启用。您可能需要在 CrossOver 中切换启用或禁用 DXVK。若有任何原因导致您的 CrossOver 无法使用，您可以从 CodeWeavers 网站重新下载它，此补丁程序不会对您的 CrossOver 容器进行任何永久性修改。";
 "PatchStatusAlreadyPatched" = "此 CrossOver.app 已经打过补丁！";
-"PatchStatusError" = "无法为该版本的 CrossOver 打补丁。请从 CodeWeavers 网站下载 CrossOver 22。";
+"PatchStatusError" = "无法为该版本的 CrossOver 打补丁。请从 CodeWeavers 网站下载 CrossOver %@。";
 "PatchStatusReady" = "将您的 CrossOver.app 拖到此处\n或点击以在访达中选择它";
 "PatchStatusSuccess" = "已成功为 CrossOver.app 打补丁";
 "RestoreButtonLabel" = "恢复";
