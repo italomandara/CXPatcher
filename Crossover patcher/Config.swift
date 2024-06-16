@@ -245,7 +245,7 @@ let WINE_RESOURCES_PATHS: [String] = [
 //    "/lib/wine/x86_64-windows/wineboot.exe",
 //    "/lib/wine/x86_64-windows/winecfg.exe",
 //    "/lib/wine/x86_64-windows/winegstreamer.dll",
-//    "/share/crossover/bottle_data/crossover.inf",
+    "/share/crossover/bottle_data/crossover.inf",
 //    "/CrossOver-Hosted Application/wineserver",
 //    "/share/wine/wine.inf",
 ]

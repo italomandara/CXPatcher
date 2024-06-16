@@ -500,7 +500,7 @@ HKCU,"Software\Wine\AppDefaults\cxwget.exe\DllOverrides","wininet",,"builtin"
  HKCU,"Software\Wine\AppDefaults\re7.exe\DllOverrides","*msspatial",,""
 ; Disable Dying Light 2 AVX
  HKCU,"Software\Wine\AppDefaults\DyinglightGame_x64_rwdi.exe\DllOverrides","*runtime_dx11",,""
- HKCU,"Software\Wine\AppDefaults\DyingLightGame_x64_rwdi.exe\DllOverrides","*runtime_dx11",,""
+
 
 ; Make sure that winewrapper isn't hotwired with an alternative crypt32.
 HKCU,"Software\Wine\AppDefaults\winewrapper.exe\DllOverrides","crypt32",,"builtin"
