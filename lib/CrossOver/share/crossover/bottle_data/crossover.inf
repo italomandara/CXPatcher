@@ -502,6 +502,11 @@ HKCU,"Software\Wine\AppDefaults\cxwget.exe\DllOverrides","wininet",,"builtin"
  HKCU,"Software\Wine\AppDefaults\DyinglightGame_x64_rwdi.exe\DllOverrides","*runtime_dx11",,""
 
 
+; Fix for the Cyber Engine Tweaks and RED4ext in Cyberpunk 2077 (credits: https://wiki.redmodding.org/cyber-engine-tweaks/getting-started/installing/linux-proton)
+ HKCU,"Software\Wine\AppDefaults\Cyberpunk2077.exe\DllOverrides","d3dcompiler_47",,"native,builtin"
+ HKCU,"Software\Wine\AppDefaults\Cyberpunk2077.exe\DllOverrides","version",,"native,builtin"
+ HKCU,"Software\Wine\AppDefaults\Cyberpunk2077.exe\DllOverrides","winmm",,"native,builtin"
+
 ; Make sure that winewrapper isn't hotwired with an alternative crypt32.
 HKCU,"Software\Wine\AppDefaults\winewrapper.exe\DllOverrides","crypt32",,"builtin"
 HKCU,"Software\Wine\AppDefaults\winewrapper.exe\DllOverrides","rsabase",,"builtin"
