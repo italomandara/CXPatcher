@@ -133,8 +133,13 @@ private func resCopy(res: String, dest: String) {
 }
 
 private func safeResCopy(res: String, dest: String) {
-//    print("moving \(dest + maybeExt(ext))")
-    if(f.fileExists(atPath: dest)) {
+    //    print("moving \(dest + maybeExt(ext))")
+    if(ENABLE_RESTORE != true){
+        do {try f.removeItem(atPath: dest)
+        } catch {
+            print("\(dest) does not exist!")
+        }
+    } else if(f.fileExists(atPath: dest)) {
         do {try f.moveItem(atPath: dest, toPath: dest + "_orig")
         } catch {
             print("\(dest) does not exist!")
@@ -147,7 +152,12 @@ private func safeResCopy(res: String, dest: String) {
 
 private func safeFileCopy(source: String, dest: String) {
 //    print("moving \(dest + maybeExt(ext))")
-    if(f.fileExists(atPath: dest)) {
+    if(ENABLE_RESTORE != true){
+        do {try f.removeItem(atPath: dest)
+        } catch {
+            print("\(dest) does not exist!")
+        }
+    } else if(f.fileExists(atPath: dest)) {
         do {try f.moveItem(atPath: dest, toPath: dest + "_orig")
         } catch {
             print("\(dest) does not exist!")
@@ -447,6 +457,7 @@ func restoreAndPatch(url: URL, opts: inout Opts, onPatch: () -> Void = {}) {
             print(p)
         } catch {
             print("xattr or codesign failed")
+            print(error)
         }
     }
     opts.busy = false

@@ -222,7 +222,7 @@ let BUILTIN_LIBS_GSTREAMER64 = [
 let FILES_TO_DISABLE: [String] = [
     "/Contents/CodeResources",
     "/Contents/_CodeSignature",
-] + BUILTIN_LIBS_GSTREAMER + BUILTIN_LIBS_GSTREAMER64
+]
 
 let WINE_RESOURCES_ROOT = "Crossover"
 
