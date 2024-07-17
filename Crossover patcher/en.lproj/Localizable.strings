@@ -57,6 +57,8 @@ If you face any issues after your installation has been patched, you may downloa
 "signatureToggleHelp" = "removes app signature to fix GateKeeper issues (app will open with the right click)";
 "autoUpdateToggleHelp" = "Disable CrossOver's update check prompt";
 "fastMathToggleHelp" = "Fixes some rendering issues with some games using DXVK (SLOWER) for all bottles";
+"advertiseAVXToggle" = "Always Advertises AVX";
+"advertiseAVXToggleHelp" = "This forces rosetta to advertise AVX, instead of only using it on demand (Some games like Yakuza need that to run) will make some games run but could potentially slow down or break other games if not sure leave unchecked";
 "hudToggleHelp" = "Enables The Metal Hud For all bottles";
 "MVKdontPatch" = "Don't patch";
 "MVKbaseline" = "Base MVK + UE4 hack";

@@ -57,6 +57,8 @@
 "signatureToggleHelp" = "GateKeeper の問題を修正するためにアプリケーションの署名を削除します（アプリケーションは右クリックで開きます）";
 "autoUpdateToggleHelp" = "CrossOver の更新チェックプロンプトを無効にする";
 "fastMathToggleHelp" = "一部のゲームのレンダリングの問題を修正します（すべてのボトルで DXVK を使用）";
+"advertiseAVXToggle" = "常にAVXを宣伝";
+"advertiseAVXToggleHelp" = "これにより、Rosettaが要求に応じてのみ使用するのではなく、常にAVXを宣伝するようになります（Yakuzaのような一部のゲームはそれを実行するために必要です）。一部のゲームを動作させることができますが、他のゲームを遅くしたり壊したりする可能性があります。確信が持てない場合はチェックを外したままにしてください";
 "hudToggleHelp" = "すべてのボトルに Metal Hud を有効にする";
 "MVKdontPatch" = "パッチしないでください";
 "MVKbaseline" = "基本 MVK + UE4 ハック";

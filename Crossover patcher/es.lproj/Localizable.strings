@@ -57,6 +57,8 @@ Si encuentras algún problema después de parchear CrossOver, puedes descargar u
 "signatureToggleHelp" = "Elimina la firma de la aplicación para solucionar problemas de GateKeeper (la aplicación se abrirá con clic derecho)";
 "autoUpdateToggleHelp" = "Desactiva la comprobación de actualizaciones de CrossOver";
 "fastMathToggleHelp" = "Corrige algunos problemas de renderización en algunos juegos que utilizan DXVK (MÁS LENTO) para todas las botellas";
+"advertiseAVXToggle" = "Siempre anuncia AVX";
+"advertiseAVXToggleHelp" = "Esto obliga a rosetta a anunciar AVX, en lugar de usarlo solo bajo demanda (algunos juegos como Yakuza necesitan eso para funcionar). Podría hacer que algunos juegos funcionen, pero potencialmente ralentizar o romper otros juegos. Si no estás seguro, déjalo sin marcar";
 "hudToggleHelp" = "Habilita el Hud de Metal para todas las botellas";
 "MVKdontPatch" = "No patch";
 "MVKbaseline" = "Base MVK + UE4 fix";

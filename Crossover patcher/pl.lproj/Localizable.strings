@@ -58,6 +58,8 @@ Jeśli napotkasz jakiekolwiek problemy z instalacją CrossOver, możesz pobrać 
 "signatureToggleHelp" = "Usuwa podpis aplikacji, aby naprawić problemy z GateKeeper (aplikacja otworzy się za pomocą prawego przycisku myszy)";
 "autoUpdateToggleHelp" = "Wyłącza sprawdzanie aktualizacji CrossOver";
 "fastMathToggleHelp" = "Naprawia niektóre problemy z renderowaniem w niektórych grach przy użyciu DXVK (WOLNIEJSZE) dla wszystkich butelek";
+"advertiseAVXToggle" = "Zawsze reklamuje AVX";
+"advertiseAVXToggleHelp" = "Wymusza na rosecie reklamowanie AVX, zamiast używać go tylko na żądanie (niektóre gry, takie jak Yakuza, tego potrzebują, aby działać). Może sprawić, że niektóre gry będą działać, ale potencjalnie spowolnić lub zepsuć inne gry. Jeśli nie jesteś pewien, zostaw niezaznaczone";
 "hudToggleHelp" = "Włącza Metal HUD dla wszystkich butelek";
 "MVKdontPatch" = "Nie łataj";
 "MVKbaseline" = "Stabilna wersja MVK + poprawki UE4";

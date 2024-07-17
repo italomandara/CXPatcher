@@ -57,6 +57,8 @@ Se incontri problemi dopo aver patchato la tua installazione, puoi scaricare una
 "signatureToggleHelp" = "Rimuove la firma dell'applicazione per risolvere i problemi di GateKeeper (l'applicazione si aprirà con il clic destro)";
 "autoUpdateToggleHelp" = "Disabilita la verifica dell'aggiornamento di CrossOver";
 "fastMathToggleHelp" = "Corregge alcuni problemi di rendering con alcuni giochi che utilizzano DXVK (PIÙ LENTO) per tutte le bottiglie";
+"advertiseAVXToggle" = "Pubblicizza sempre AVX";
+"advertiseAVXToggleHelp" = "Questo forza rosetta a pubblicizzare AVX, invece di usarlo solo su richiesta (alcuni giochi come Yakuza ne hanno bisogno per funzionare). Può far funzionare alcuni giochi, ma potrebbe potenzialmente rallentare o rompere altri giochi. Se non sei sicuro, lascia non selezionato";
 "hudToggleHelp" = "Abilita Metal Hud per tutte le bottiglie";
 "MVKdontPatch" = "Nessuna patch";
 "MVKbaseline" = "Base MVK + trucco UE4";

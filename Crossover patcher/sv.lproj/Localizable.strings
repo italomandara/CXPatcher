@@ -57,6 +57,8 @@ Om du stöter på problem efter att din installation har blivit patchad kan du l
 "signatureToggleHelp" = "Tar bort appens signatur för att åtgärda GateKeeper-problem (appen öppnas med högerklick)";
 "autoUpdateToggleHelp" = "Inaktiverar CrossOvers uppdateringskontrollmeddelande";
 "fastMathToggleHelp" = "Åtgärdar vissa renderingsproblem med vissa spel som använder DXVK (LÅNGSAMMARE) för alla flaskor";
+"advertiseAVXToggle" = "Alltid annonserar AVX";
+"advertiseAVXToggleHelp" = "Detta tvingar rosetta att annonsera AVX, istället för att bara använda det vid behov (vissa spel som Yakuza behöver det för att fungera). Kan få vissa spel att fungera men kan potentiellt sakta ner eller förstöra andra spel. Om du är osäker, lämna okryssad";
 "hudToggleHelp" = "Aktiverar Metal Hud för alla flaskor";
 "MVKdontPatch" = "På grund av inte lappa";
 "MVKbaseline" = "Bas MVK + UE4 hack";

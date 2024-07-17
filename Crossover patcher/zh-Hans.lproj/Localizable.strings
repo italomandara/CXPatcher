@@ -57,6 +57,8 @@
 "signatureToggleHelp" = "删除应用程序签名以解决 GateKeeper 问题（请稍后使用右键菜单打开应用程序）";
 "autoUpdateToggleHelp" = "禁用 CrossOver 的更新检查提示";
 "fastMathToggleHelp" = "为所有容器修复特定 DXVK 的游戏的渲染问题（此选项将会降低性能）";
+"advertiseAVXToggle" = "始终广告AVX";
+"advertiseAVXToggleHelp" = "这将强制Rosetta广告AVX，而不是仅在需要时使用它（某些游戏如Yakuza需要这样才能运行）。这可能会使某些游戏运行，但可能会减慢或破坏其他游戏。如果不确定，请保持未选中状态";
 "hudToggleHelp" = "为所有容器启用 METAL HUD";
 "MVKdontPatch" = "不要打补丁";
 "MVKbaseline" = "稳定版 MVK + UE4 Hack";

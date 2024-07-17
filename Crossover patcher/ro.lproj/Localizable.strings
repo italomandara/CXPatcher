@@ -57,6 +57,8 @@ Dacă întâmpinați probleme după ce instalația a fost patch-uită, puteți d
 "signatureToggleHelp" = "Elimină semnătura aplicației pentru a rezolva problemele cu GateKeeper (aplicația se va deschide cu clic dreapta)";
 "autoUpdateToggleHelp" = "Dezactivează verificarea actualizărilor CrossOver";
 "fastMathToggleHelp" = "Rezolvă unele probleme de redare cu anumite jocuri folosind DXVK (MAI LENT) pentru toate sticlele";
+"advertiseAVXToggle" = "Anunță întotdeauna AVX";
+"advertiseAVXToggleHelp" = "Aceasta forțează rosetta să anunțe AVX, în loc să îl folosească doar la cerere (unele jocuri, cum ar fi Yakuza, au nevoie de asta pentru a rula). Poate face ca unele jocuri să ruleze, dar ar putea încetini sau deteriora alte jocuri. Dacă nu ești sigur, lasă necompletat";
 "hudToggleHelp" = "Activează Metal Hud pentru toate sticlele";
 "MVKdontPatch" = "Nu faceți patch";
 "MVKbaseline" = "Bază MVK + hack UE4";

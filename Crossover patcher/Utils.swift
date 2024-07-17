@@ -36,6 +36,7 @@ struct GlobalEnvs {
     var mtlHudEnabled = false
     var dxvkAsync = true
     var disableUE4Hack = false
+    var advertiseAVX = false
 }
 
 enum PatchMVK {
@@ -560,6 +561,10 @@ func addGlobals(url: URL, opts: Opts) {
     if(opts.globalEnvs.mtlHudEnabled == true) {
         print("add mtlHudEnabled env")
         envs += [Env(key: "MTL_HUD_ENABLED", value: "1")]
+    }
+    if(opts.globalEnvs.advertiseAVX == true) {
+        print("add advertiseAVX env")
+        envs += [Env(key: "ROSETTA_ADVERTISE_AVX", value: "1")]
     }
     if(opts.globalEnvs.fastMathDisabled == true) {
         print("add fastMathDisabled env")

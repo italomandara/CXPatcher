@@ -57,6 +57,8 @@ Si vous rencontrez des problèmes après avoir appliqué le patch, vous pouvez t
 "signatureToggleHelp" = "Supprime la signature de l'application pour résoudre les problèmes de GateKeeper (l'application s'ouvrira avec le clic droit)";
 "autoUpdateToggleHelp" = "Désactive la vérification des mises à jour de CrossOver";
 "fastMathToggleHelp" = "Corrige certains problèmes d'affichage dans certains jeux utilisant DXVK (PLUS LENT) pour toutes les bouteilles";
+"advertiseAVXToggle" = "Annonce toujours AVX";
+"advertiseAVXToggleHelp" = "Cela force rosetta à annoncer AVX, au lieu de l'utiliser uniquement sur demande (certains jeux comme Yakuza en ont besoin pour fonctionner). Cela peut faire fonctionner certains jeux mais pourrait potentiellement ralentir ou casser d'autres jeux. Si vous n'êtes pas sûr, laissez décoché";
 "hudToggleHelp" = "Active le Hud Metal pour toutes les bouteilles";
 "MVKdontPatch" = "Ne pas patcher";
 "MVKbaseline" = "Base MVK + astuce UE4";

@@ -39,6 +39,10 @@ struct Options: View {
             .help(localizedCXPatcherString(forKey: "autoUpdateToggleHelp"))
             Divider().padding(.vertical, 2)
             Text(localizedCXPatcherString(forKey: "Environment Globals")).padding(.top, 2)
+            AdvertiseAVXToggle(
+                opts: $opts
+            )
+            .help(localizedCXPatcherString(forKey: "advertiseAVXToggleHelp"))
             DXVKAsyncToggle(
                 opts: $opts
             )
