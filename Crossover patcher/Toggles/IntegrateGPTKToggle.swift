@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct IntegrateExternalsToggle: View {
+struct IntegrateGPTKToggle: View {
     @Binding var copyGptk: Bool
 //    @Binding var externalUrl: URL?
     
