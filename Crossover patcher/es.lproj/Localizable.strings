@@ -19,7 +19,7 @@ Si encuentras algún problema después de parchear CrossOver, puedes descargar u
 "ExternalResourcesLabel" = "Instalar framework externo";
 "ExternalResourcesLocateText" = "Localiza la unidad DXMT usando el botón a continuación: ";
 "ExternalResourcesPathLabelText" = "Ruta de unidad de recursos externos:";
-"ExternalResourcesToggle" = "Integrar D3DMetal (GPTK)";
+"GPTKToggle" = "Integrar D3DMetal (GPTK)";
 "ForcePatch" = "Forzar parche";
 "Instructions" = "Instrucciones";
 "InstructionsAskWhatDo" = "¿Qué hace este programa?";

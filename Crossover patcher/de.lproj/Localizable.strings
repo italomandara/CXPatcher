@@ -19,7 +19,7 @@ Sollten nach dem Patchen Ihrer Installation Probleme auftreten, können Sie eine
 "ExternalResourcesLabel" = "Externes Framework installieren";
 "ExternalResourcesLocateText" = "Das DXMT-Laufwerk über die untenstehende Schaltfläche finden:";
 "ExternalResourcesPathLabelText" = "Pfad zum externen Ressourcenlaufwerks:";
-"ExternalResourcesToggle" = "D3DMetal (GPTK) integrieren";
+"GPTKToggle" = "D3DMetal (GPTK) integrieren";
 "ForcePatch" = "Patch erzwingen";
 "Instructions" = "Anweisungen";
 "InstructionsAskWhatDo" = "Was macht dieses Programm?";

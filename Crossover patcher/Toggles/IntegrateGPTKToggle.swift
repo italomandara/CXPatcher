@@ -17,7 +17,7 @@ struct IntegrateGPTKToggle: View {
             VStack(alignment: .leading) {
                 HStack(alignment: .center) {
                     Image(systemName: "wand.and.stars")
-                    Text(localizedCXPatcherString(forKey: "ExternalResourcesToggle"))
+                    Text(localizedCXPatcherString(forKey: "GPTKToggle"))
                     Spacer()
                 }
                 if(isVentura) {

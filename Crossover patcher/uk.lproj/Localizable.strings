@@ -19,7 +19,7 @@
 "ExternalResourcesLabel" = "Встановити зовнішній фреймворк";
 "ExternalResourcesLocateText" = "Знайдіть диск DXMT за допомогою кнопки нижче:";
 "ExternalResourcesPathLabelText" = "Шлях до зовнішнього диска ресурсів:";
-"ExternalResourcesToggle" = "Інтегрувати D3DMetal (GPTK)";
+"GPTKToggle" = "Інтегрувати D3DMetal (GPTK)";
 "ForcePatch" = "Примусовий патч";
 "Instructions" = "Інструкції";
 "InstructionsAskWhatDo" = "Що робить ця програма?";

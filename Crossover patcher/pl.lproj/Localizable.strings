@@ -19,7 +19,7 @@ Jeśli napotkasz jakiekolwiek problemy z instalacją CrossOver, możesz pobrać 
 "ExternalResourcesLabel" = "Zainstaluj zewnętrzną platformę";
 "ExternalResourcesLocateText" = "Zlokalizuj dysk DXMT za pomocą poniższego przycisku:";
 "ExternalResourcesPathLabelText" = "Ścieżka dysku zewnętrznego zasobu:";
-"ExternalResourcesToggle" = "Integracja D3DMetal (GPTK)";
+"GPTKToggle" = "Integracja D3DMetal (GPTK)";
 "ForcePatch" = "Wymuś łatanie";
 "Instructions" = "Instrukcja";
 "InstructionsAskWhatDo" = "Co umożliwia ten program?";

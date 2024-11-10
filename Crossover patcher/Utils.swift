@@ -66,6 +66,7 @@ struct Opts {
     var globalEnvs = GlobalEnvs()
     var removeSignaure = true
     var externalUrl: URL? = nil
+    var copyExternal = false
     func getTotalProgress() -> Int32 {
         if(self.copyGptk && self.repatch) {
             return 136

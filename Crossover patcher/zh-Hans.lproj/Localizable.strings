@@ -19,7 +19,7 @@
 "ExternalResourcesLabel" = "安装外部框架";
 "ExternalResourcesLocateText" = "使用下方按钮定位 DXMT 驱动器：";
 "ExternalResourcesPathLabelText" = "外部资源驱动器路径：";
-"ExternalResourcesToggle" = "集成 D3DMetal（GPTK）";
+"GPTKToggle" = "集成 D3DMetal（GPTK）";
 "ForcePatch" = "强制打补丁";
 "Instructions" = "说明";
 "InstructionsAskWhatDo" = "这个程序是做什么的？";

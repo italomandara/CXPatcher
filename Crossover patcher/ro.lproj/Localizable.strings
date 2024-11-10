@@ -19,7 +19,7 @@ Dacă întâmpinați probleme după ce instalația a fost patch-uită, puteți d
 "ExternalResourcesLabel" = "Instalare framework extern";
 "ExternalResourcesLocateText" = "Localizați unitatea DXMT utilizând butonul de mai jos:";
 "ExternalResourcesPathLabelText" = "Calea unității de resurse externe:";
-"ExternalResourcesToggle" = "Integrare D3DMetal (GPTK)";
+"GPTKToggle" = "Integrare D3DMetal (GPTK)";
 "ForcePatch" = "Forțează Patch-ul";
 "Instructions" = "Instrucțiuni";
 "InstructionsAskWhatDo" = "Ce face acest program?";

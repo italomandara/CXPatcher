@@ -19,7 +19,7 @@ If you face any issues after your installation has been patched, you may downloa
 "ExternalResourcesLabel" = "Install external framework";
 "ExternalResourcesLocateText" = "Locate the DXMT drive using the button below:";
 "ExternalResourcesPathLabelText" = "External resource drive path:";
-"ExternalResourcesToggle" = "Integrate D3DMetal (GPTK)";
+"GPTKToggle" = "Integrate D3DMetal (GPTK)";
 "ForcePatch" = "Force Patch";
 "Instructions" = "Instructions";
 "InstructionsAskWhatDo" = "What does this program do?";

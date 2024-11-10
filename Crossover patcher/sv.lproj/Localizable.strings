@@ -19,7 +19,7 @@ Om du stöter på problem efter att din installation har blivit patchad kan du l
 "ExternalResourcesLabel" = "Installera extern ramverk";
 "ExternalResourcesLocateText" = "Hitta DXMT-enheten genom att använda knappen nedan:";
 "ExternalResourcesPathLabelText" = "Sökväg till externa resursenheten:";
-"ExternalResourcesToggle" = "Integrera D3DMetal (GPTK)";
+"GPTKToggle" = "Integrera D3DMetal (GPTK)";
 "ForcePatch" = "Tvinga patch";
 "Instructions" = "Instruktioner";
 "InstructionsAskWhatDo" = "Vad gör detta program?";

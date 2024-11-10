@@ -19,7 +19,7 @@ Se incontri problemi dopo aver patchato la tua installazione, puoi scaricare una
 "ExternalResourcesLabel" = "Installa framework esterno";
 "ExternalResourcesLocateText" = "Cerca il drive DXMT utilizzando il pulsante sottostante:";
 "ExternalResourcesPathLabelText" = "Percorso dell'unità di risorse esterne:";
-"ExternalResourcesToggle" = "Integra D3DMetal (GPTK)";
+"GPTKToggle" = "Integra D3DMetal (GPTK)";
 "ForcePatch" = "Forza Patch";
 "Instructions" = "Istruzioni";
 "InstructionsAskWhatDo" = "Cosa fa questo programma?";

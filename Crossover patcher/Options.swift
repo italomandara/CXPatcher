@@ -18,10 +18,20 @@ struct Options: View {
                 opts: $opts
             )
             .help(localizedCXPatcherString(forKey: "mkvToggleHelp"))
-            IntegrateGPTKToggle(
-                copyGptk: $opts.copyGptk
-            )
-            .help(localizedCXPatcherString(forKey: "gptkToggleHelp"))
+            if(!opts.copyExternal) {
+                IntegrateGPTKToggle(
+                    copyGptk: $opts.copyGptk
+                ).help(localizedCXPatcherString(forKey: "gptkToggleHelp"))
+            }
+            if(ENABLE_EXTERNAL_RESOURCES) {
+                IntegrateExternalToggle(
+                    opts: $opts
+                ).help(localizedCXPatcherString(forKey: "ExternalsToggleHelp"))
+                if(opts.copyExternal) {
+                    ExternalResourcesSelector(externalUrl: $opts.externalUrl)
+                }
+            }
+
             DXVKToggle(
                 opts: $opts
             )

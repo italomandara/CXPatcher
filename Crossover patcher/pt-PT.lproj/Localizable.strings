@@ -19,7 +19,7 @@ Se você enfrentar problemas após a instalação ser patcheada, você pode baix
 "ExternalResourcesLabel" = "Instalar framework externo";
 "ExternalResourcesLocateText" = "Localize a unidade DXMT usando o botão abaixo:";
 "ExternalResourcesPathLabelText" = "Caminho da unidade de recursos externos:";
-"ExternalResourcesToggle" = "Integrar D3DMetal (GPTK)";
+"GPTKToggle" = "Integrar D3DMetal (GPTK)";
 "ForcePatch" = "Forçar Patch";
 "Instructions" = "Instruções";
 "InstructionsAskWhatDo" = "O que este programa faz?";

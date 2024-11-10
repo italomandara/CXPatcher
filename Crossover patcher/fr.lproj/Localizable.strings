@@ -19,7 +19,7 @@ Si vous rencontrez des problèmes après avoir appliqué le patch, vous pouvez t
 "ExternalResourcesLabel" = "Installer le framework externe";
 "ExternalResourcesLocateText" = "Localisez le lecteur DXMT à l'aide du bouton ci-dessous :";
 "ExternalResourcesPathLabelText" = "Chemin du lecteur de ressources externe :";
-"ExternalResourcesToggle" = "Intégrer D3DMetal (GPTK)";
+"GPTKToggle" = "Intégrer D3DMetal (GPTK)";
 "ForcePatch" = "Forcer le patch";
 "Instructions" = "Instructions";
 "InstructionsAskWhatDo" = "Que fait ce programme ?";

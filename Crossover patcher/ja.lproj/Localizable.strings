@@ -19,7 +19,7 @@
 "ExternalResourcesLabel" = "外部フレームワークをインストール";
 "ExternalResourcesLocateText" = "以下のボタンを使用してDXMTドライブを特定してください：";
 "ExternalResourcesPathLabelText" = "外部リソースドライブのパス：";
-"ExternalResourcesToggle" = "D3DMetal（GPTK）を統合する";
+"GPTKToggle" = "D3DMetal（GPTK）を統合する";
 "ForcePatch" = "パッチを強制する";
 "Instructions" = "指示";
 "InstructionsAskWhatDo" = "このプログラムは何をするのですか？";
