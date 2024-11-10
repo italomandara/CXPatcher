@@ -12,6 +12,7 @@ let ENABLE_CLEAR_D3DMETAL_CACHE = true
 let ENABLE_CLEAR_STEAM_CACHE = true
 let D3DM_CACHE_FOLDER = "d3dm"
 let ENABLE_FIX_CX_CODESIGN = true
+let ENABLE_EXTERNAL_RESOURCES = true
 enum UIGlobals: CGFloat {
     case radius = 10.00
 }

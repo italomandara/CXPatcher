@@ -15,9 +15,9 @@
 "DisclaimerText" = "Este software de parcheo no es oficial de CrossOver, por ende CodeWeavers no está involucrado en ningún ámbito del desarrollo. Aunque el software ha sido probado, puede generar que tu instalación de CrossOver se vuelva inutilizable o inestable. ÚSELO BAJO SU PROPIO RIESGO. El uso de éste parche anulará todo soporte oficial de CodeWeavers.
 
 Si encuentras algún problema después de parchear CrossOver, puedes descargar una nueva copia desde el sitio web de CodeWeavers.";
-"ExternalResourcesButtonText" = "Localizar unidad GPTK";
+"ExternalResourcesButtonText" = "Localizar unidad DXMT";
 "ExternalResourcesLabel" = "Instalar framework externo";
-"ExternalResourcesLocateText" = "Localiza la unidad GPTK usando el botón a continuación: ";
+"ExternalResourcesLocateText" = "Localiza la unidad DXMT usando el botón a continuación: ";
 "ExternalResourcesPathLabelText" = "Ruta de unidad de recursos externos:";
 "ExternalResourcesToggle" = "Integrar D3DMetal (GPTK)";
 "ForcePatch" = "Forzar parche";

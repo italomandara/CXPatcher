@@ -65,6 +65,7 @@ struct Opts {
     var patchDXVK = true
     var globalEnvs = GlobalEnvs()
     var removeSignaure = true
+    var externalUrl: URL? = nil
     func getTotalProgress() -> Int32 {
         if(self.copyGptk && self.repatch) {
             return 136

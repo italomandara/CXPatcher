@@ -15,9 +15,9 @@
 "DisclaimerText" = "Це неофіційна програма для патчування CrossOver, і CodeWeavers не має жодної причетності до її розробки. Незважаючи на те, що вона пройшла тестування, цей софт може зробити вашу установку CrossOver непридатною або незабезпеченою. ВИКОРИСТОВУЙТЕ НА ВЛАСНИЙ РИЗИК. Використання цього патчера також анулює будь-яку офіційну підтримку від CodeWeavers.
 
 Якщо виникнуть проблеми після патчення вашої установки, ви можете завантажити нову копію CrossOver з веб-сайту CodeWeavers.";
-"ExternalResourcesButtonText" = "Знайти диск GPTK";
+"ExternalResourcesButtonText" = "Знайти диск DXMT";
 "ExternalResourcesLabel" = "Встановити зовнішній фреймворк";
-"ExternalResourcesLocateText" = "Знайдіть диск GPTK за допомогою кнопки нижче:";
+"ExternalResourcesLocateText" = "Знайдіть диск DXMT за допомогою кнопки нижче:";
 "ExternalResourcesPathLabelText" = "Шлях до зовнішнього диска ресурсів:";
 "ExternalResourcesToggle" = "Інтегрувати D3DMetal (GPTK)";
 "ForcePatch" = "Примусовий патч";

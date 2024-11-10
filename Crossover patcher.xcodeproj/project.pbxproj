@@ -37,7 +37,7 @@
 		38F7B2172A5DCF7500CD9511 /* AppSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F7B2162A5DCF7500CD9511 /* AppSelector.swift */; };
 		38F7B2192A5DD19D00CD9511 /* ExternalResourcesSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F7B2182A5DD19D00CD9511 /* ExternalResourcesSelector.swift */; };
 		38F7B21B2A5DD33A00CD9511 /* Logo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F7B21A2A5DD33A00CD9511 /* Logo.swift */; };
-		38F7B21D2A5DD4E100CD9511 /* IntegrateExternalsToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F7B21C2A5DD4E100CD9511 /* IntegrateExternalsToggle.swift */; };
+		38F7B21D2A5DD4E100CD9511 /* IntegrateGPTKToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F7B21C2A5DD4E100CD9511 /* IntegrateGPTKToggle.swift */; };
 		38F7B21F2A5DD58600CD9511 /* SkipVersionCheckToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F7B21E2A5DD58600CD9511 /* SkipVersionCheckToggle.swift */; };
 		38F7B2212A5DD60000CD9511 /* RepatchToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F7B2202A5DD60000CD9511 /* RepatchToggle.swift */; };
 /* End PBXBuildFile section */
@@ -85,7 +85,7 @@
 		38F7B2162A5DCF7500CD9511 /* AppSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSelector.swift; sourceTree = "<group>"; };
 		38F7B2182A5DD19D00CD9511 /* ExternalResourcesSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalResourcesSelector.swift; sourceTree = "<group>"; };
 		38F7B21A2A5DD33A00CD9511 /* Logo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logo.swift; sourceTree = "<group>"; };
-		38F7B21C2A5DD4E100CD9511 /* IntegrateExternalsToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegrateExternalsToggle.swift; sourceTree = "<group>"; };
+		38F7B21C2A5DD4E100CD9511 /* IntegrateGPTKToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegrateGPTKToggle.swift; sourceTree = "<group>"; };
 		38F7B21E2A5DD58600CD9511 /* SkipVersionCheckToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkipVersionCheckToggle.swift; sourceTree = "<group>"; };
 		38F7B2202A5DD60000CD9511 /* RepatchToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepatchToggle.swift; sourceTree = "<group>"; };
 		38FC40102A606A53006E6A69 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -166,7 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				38EFF3BF2C47D9C200CA6209 /* AdvertiseAVXToggle.swift */,
-				38F7B21C2A5DD4E100CD9511 /* IntegrateExternalsToggle.swift */,
+				38F7B21C2A5DD4E100CD9511 /* IntegrateGPTKToggle.swift */,
 				3888B8AB2ABCDECB005B57BA /* BottlePathToggle.swift */,
 				38F7B2202A5DD60000CD9511 /* RepatchToggle.swift */,
 				38F7B21E2A5DD58600CD9511 /* SkipVersionCheckToggle.swift */,
@@ -317,7 +317,7 @@
 				38D93E5829DC4E4F00D4B0D8 /* Disclaimer.swift in Sources */,
 				38998DFA2A3BAD6400F1963A /* ExternalResButton.swift in Sources */,
 				38284A2A2BF7C03E008C38CC /* ToolsButton.swift in Sources */,
-				38F7B21D2A5DD4E100CD9511 /* IntegrateExternalsToggle.swift in Sources */,
+				38F7B21D2A5DD4E100CD9511 /* IntegrateGPTKToggle.swift in Sources */,
 				38284A282BF7B075008C38CC /* Tools.swift in Sources */,
 				38EFF3C02C47D9D300CA6209 /* AdvertiseAVXToggle.swift in Sources */,
 				38F7B21B2A5DD33A00CD9511 /* Logo.swift in Sources */,

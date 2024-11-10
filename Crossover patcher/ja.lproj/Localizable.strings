@@ -15,9 +15,9 @@
 "DisclaimerText" = "これはCrossOverの非公式のパッチプログラムであり、CodeWeaversはその開発に一切関与していません。テストされていますが、このソフトウェアはCrossOverのインストールを使用不能または不安定にする可能性があります。自己責任で使用してください。このパッチャーの使用により、CodeWeaversの公式サポートは無効になります。
 
 インストールがパッチされた後に問題が発生した場合は、CodeWeaversのウェブサイトから新しいCrossOverのコピーをダウンロードできます。";
-"ExternalResourcesButtonText" = "GPTKドライブの場所を特定する";
+"ExternalResourcesButtonText" = "DXMTドライブの場所を特定する";
 "ExternalResourcesLabel" = "外部フレームワークをインストール";
-"ExternalResourcesLocateText" = "以下のボタンを使用してGPTKドライブを特定してください：";
+"ExternalResourcesLocateText" = "以下のボタンを使用してDXMTドライブを特定してください：";
 "ExternalResourcesPathLabelText" = "外部リソースドライブのパス：";
 "ExternalResourcesToggle" = "D3DMetal（GPTK）を統合する";
 "ForcePatch" = "パッチを強制する";

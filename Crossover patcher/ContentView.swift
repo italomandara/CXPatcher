@@ -43,6 +43,9 @@ struct ContentView: View {
                         RepatchToggle(repatch: $opts.repatch)
                         Divider()
                     }
+                    if(ENABLE_EXTERNAL_RESOURCES) {
+                        ExternalResourcesSelector(externalUrl: $opts.externalUrl)
+                    }
                     HStack {
                         if(ENABLE_RESTORE) {
                             RestoreButtonDialog(opts: opts)

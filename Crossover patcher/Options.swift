@@ -18,7 +18,7 @@ struct Options: View {
                 opts: $opts
             )
             .help(localizedCXPatcherString(forKey: "mkvToggleHelp"))
-            IntegrateExternalsToggle(
+            IntegrateGPTKToggle(
                 copyGptk: $opts.copyGptk
             )
             .help(localizedCXPatcherString(forKey: "gptkToggleHelp"))

@@ -15,9 +15,9 @@
 "DisclaimerText" = "Acesta este un program de patch neoficial pentru CrossOver, iar CodeWeavers nu este în niciun fel implicată în dezvoltarea acestuia. Deși a fost testat, acest software poate face instalarea CrossOver inutilizabilă sau instabilă. FOLOSIȚI PE RISCUL PROPRIU. Utilizarea acestui patcher va anula și orice suport oficial oferit de CodeWeavers.
 
 Dacă întâmpinați probleme după ce instalația a fost patch-uită, puteți descărca o nouă copie a CrossOver de pe site-ul CodeWeavers.";
-"ExternalResourcesButtonText" = "Localizați unitatea GPTK";
+"ExternalResourcesButtonText" = "Localizați unitatea DXMT";
 "ExternalResourcesLabel" = "Instalare framework extern";
-"ExternalResourcesLocateText" = "Localizați unitatea GPTK utilizând butonul de mai jos:";
+"ExternalResourcesLocateText" = "Localizați unitatea DXMT utilizând butonul de mai jos:";
 "ExternalResourcesPathLabelText" = "Calea unității de resurse externe:";
 "ExternalResourcesToggle" = "Integrare D3DMetal (GPTK)";
 "ForcePatch" = "Forțează Patch-ul";

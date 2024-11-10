@@ -15,9 +15,9 @@
 "DisclaimerText" = "Dies ist ein inoffizielles Patch-Programm für CrossOver, an dessen Entwicklung CodeWeavers in keiner Weise beteiligt ist. Obwohl diese Software getestet wurde, kann sie dazu führen, dass Ihre CrossOver-Installation unbrauchbar oder instabil wird. BENUTZUNG AUF EIGENE GEFAHR. Durch die Verwendung dieses Patchers erlischt auch jegliche offizielle Unterstützung von CodeWeavers.
 
 Sollten nach dem Patchen Ihrer Installation Probleme auftreten, können Sie eine neue Kopie von CrossOver von der CodeWeavers-Website herunterladen.";
-"ExternalResourcesButtonText" = "GPTK-Laufwerk finden";
+"ExternalResourcesButtonText" = "DXMT-Laufwerk finden";
 "ExternalResourcesLabel" = "Externes Framework installieren";
-"ExternalResourcesLocateText" = "Das GPTK-Laufwerk über die untenstehende Schaltfläche finden:";
+"ExternalResourcesLocateText" = "Das DXMT-Laufwerk über die untenstehende Schaltfläche finden:";
 "ExternalResourcesPathLabelText" = "Pfad zum externen Ressourcenlaufwerks:";
 "ExternalResourcesToggle" = "D3DMetal (GPTK) integrieren";
 "ForcePatch" = "Patch erzwingen";
