@@ -12,7 +12,7 @@ struct XtLibsToggle: View {
     @Binding var opts: Opts
     
     var body: some View {
-        Toggle(isOn: $opts.copyExternal) {
+        Toggle(isOn: $opts.copyXtLibs) {
             VStack(alignment: .leading) {
                 HStack(alignment: .center) {
                     Image(systemName: "wand.and.stars")
@@ -20,7 +20,7 @@ struct XtLibsToggle: View {
                     Spacer()
                 }
             }
-        }.onChange(of: opts.copyExternal) { newValue in
+        }.onChange(of: opts.copyXtLibs) { newValue in
             if (newValue == true) {
                 opts.patchDXVK = false
             }

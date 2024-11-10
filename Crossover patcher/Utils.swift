@@ -70,8 +70,8 @@ struct Opts {
     var patchDXVK = true
     var globalEnvs = GlobalEnvs()
     var removeSignaure = true
-    var XtLibsUrl: URL? = nil
-    var copyExternal = false
+    var xtLibsUrl: URL? = nil
+    var copyXtLibs = false
     func getTotalProgress() -> Int32 {
         if(self.copyGptk && self.repatch) {
             return 136
@@ -338,6 +338,14 @@ func hasExternal(url: URL) -> Bool{
     return f.fileExists(atPath: path)
 }
 
+func installDXMT (url: URL, opts: Opts) {
+    if(opts.xtLibsUrl != nil) {
+        DXMT_PATHS.forEach { path in
+            safeFileCopy(source: opts.xtLibsUrl!.path() + path.src, dest: url.path + SHARED_SUPPORT_PATH + path.dst)
+        }
+    }
+}
+
 func patch(url: URL, opts: inout Opts) {
     if(ENABLE_BACKUP) {
         do
@@ -356,6 +364,9 @@ func patch(url: URL, opts: inout Opts) {
         opts.patchMVK == PatchMVK.legacyUE4 ? true : !elem.0.contains("libMoltenVK.dylib")
     }.filter { elem in
         opts.patchDXVK ? true : (!elem.0.contains("dxvk") && !elem.0.contains("dxvk"))
+    }
+    if(opts.copyXtLibs) {
+        installDXMT(url: url, opts: opts)
     }
     opts.progress += 1
     let filesToDisable = getDisableListFrom(url: url).filter { elem in

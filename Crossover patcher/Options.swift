@@ -25,8 +25,8 @@ struct Options: View {
                 XtLibsToggle(
                     opts: $opts
                 ).help(localizedCXPatcherString(forKey: "ExternalsToggleHelp"))
-                if(opts.copyExternal) {
-                    XtLibsUrlSelector(XtLibsUrl: $opts.XtLibsUrl)
+                if(opts.copyXtLibs) {
+                    XtLibsUrlSelector(XtLibsUrl: $opts.xtLibsUrl)
                 }
             }
             DXVKToggle(
