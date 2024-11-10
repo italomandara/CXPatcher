@@ -15,10 +15,11 @@
 "DisclaimerText" = "Це неофіційна програма для патчування CrossOver, і CodeWeavers не має жодної причетності до її розробки. Незважаючи на те, що вона пройшла тестування, цей софт може зробити вашу установку CrossOver непридатною або незабезпеченою. ВИКОРИСТОВУЙТЕ НА ВЛАСНИЙ РИЗИК. Використання цього патчера також анулює будь-яку офіційну підтримку від CodeWeavers.
 
 Якщо виникнуть проблеми після патчення вашої установки, ви можете завантажити нову копію CrossOver з веб-сайту CodeWeavers.";
-"ExternalResourcesButtonText" = "Знайти диск DXMT";
-"ExternalResourcesLabel" = "Встановити зовнішній фреймворк";
-"ExternalResourcesLocateText" = "Знайдіть диск DXMT за допомогою кнопки нижче:";
-"ExternalResourcesPathLabelText" = "Шлях до зовнішнього диска ресурсів:";
+"XtLibsButtonText" = "Знайти папку DXMT";
+"XtLibsLabel" = "Встановити зовнішню платформу";
+"XtLibsToggle" = "Встановити DXMT";
+"XtLibsLocateText" = "Знайдіть папку DXMT за допомогою кнопки нижче:";
+"XtLibsPathLabelText" = "Шлях до папки зовнішніх ресурсів";
 "GPTKToggle" = "Інтегрувати D3DMetal (GPTK)";
 "ForcePatch" = "Примусовий патч";
 "Instructions" = "Інструкції";

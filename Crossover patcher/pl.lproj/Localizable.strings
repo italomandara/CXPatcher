@@ -15,10 +15,11 @@
 "DisclaimerText" = "To jest nieoficjalny program umożliwiający łatanie programu CrossOver. CodeWeavers nie jest w żaden sposób związane z pracami i rozwojem tego programu. Pomimo przeprowadzonych testów, to oprogramowanie może spowodować, że CrossOver będzie działał w nieprawidłowy sposób. KORZYSTASZ NA WŁASNE RYZYKO. Korzystanie z tego oprogramowania narusza warunki oficjalnego wsparcia ze strony CodeWeavers.
 
 Jeśli napotkasz jakiekolwiek problemy z instalacją CrossOver, możesz pobrać nową kopię CrossOver ze strony CodeWeavers.";
-"ExternalResourcesButtonText" = "Zlokalizuj dysk DXMT";
-"ExternalResourcesLabel" = "Zainstaluj zewnętrzną platformę";
-"ExternalResourcesLocateText" = "Zlokalizuj dysk DXMT za pomocą poniższego przycisku:";
-"ExternalResourcesPathLabelText" = "Ścieżka dysku zewnętrznego zasobu:";
+"XtLibsButtonText" = "Zlokalizuj folder DXMT";
+"XtLibsLabel" = "Zainstaluj zewnętrzny framework";
+"XtLibsToggle" = "Zainstaluj DXMT";
+"XtLibsLocateText" = "Zlokalizuj folder DXMT za pomocą przycisku poniżej:";
+"XtLibsPathLabelText" = "Ścieżka do folderu zewnętrznych zasobów";
 "GPTKToggle" = "Integracja D3DMetal (GPTK)";
 "ForcePatch" = "Wymuś łatanie";
 "Instructions" = "Instrukcja";

@@ -15,10 +15,11 @@
 "DisclaimerText" = "Detta är ett inofficiellt patchningsprogram för CrossOver, och CodeWeavers är inte på något sätt involverade i dess utveckling. Även om det har testats kan denna programvara göra din CrossOver-installation oanvändbar eller instabil. ANVÄND PÅ EGEN RISK. Användning av denna patcher kommer också att ogiltigförklara all officiell support från CodeWeavers.
 
 Om du stöter på problem efter att din installation har blivit patchad kan du ladda ner en ny kopia av CrossOver från CodeWeavers webbplats.";
-"ExternalResourcesButtonText" = "Hitta DXMT-enhet";
-"ExternalResourcesLabel" = "Installera extern ramverk";
-"ExternalResourcesLocateText" = "Hitta DXMT-enheten genom att använda knappen nedan:";
-"ExternalResourcesPathLabelText" = "Sökväg till externa resursenheten:";
+"XtLibsButtonText" = "Hitta DXMT-mappen";
+"XtLibsLabel" = "Installera externt ramverk";
+"XtLibsToggle" = "Installera DXMT";
+"XtLibsLocateText" = "Hitta DXMT-mappen med knappen nedan:";
+"XtLibsPathLabelText" = "Sökväg till mappen med externa resurser";
 "GPTKToggle" = "Integrera D3DMetal (GPTK)";
 "ForcePatch" = "Tvinga patch";
 "Instructions" = "Instruktioner";

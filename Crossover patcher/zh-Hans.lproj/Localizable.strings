@@ -15,10 +15,11 @@
 "DisclaimerText" = "这是一个非官方的 CrossOver 补丁工具，CodeWeavers 没有以任何形式参与其开发。尽管经过了测试，此软件仍可能会导致您的 CrossOver 无法使用或不稳定。请自行承担风险！使用此打补丁程序还会使您失去 CodeWeavers 的官方支持。
 
 如果在打补丁后遇到任何问题，您可以从 CodeWeavers 网站下载新的 CrossOver 副本。";
-"ExternalResourcesButtonText" = "定位 DXMT 驱动器（DMG）";
-"ExternalResourcesLabel" = "安装外部框架";
-"ExternalResourcesLocateText" = "使用下方按钮定位 DXMT 驱动器：";
-"ExternalResourcesPathLabelText" = "外部资源驱动器路径：";
+"XtLibsButtonText" = "定位DXMT文件夹";
+"XtLibsLabel" = "安装外部框架";
+"XtLibsToggle" = "安装 DXMT";
+"XtLibsLocateText" = "使用下面的按钮定位DXMT文件夹：";
+"XtLibsPathLabelText" = "外部资源文件夹路径";
 "GPTKToggle" = "集成 D3DMetal（GPTK）";
 "ForcePatch" = "强制打补丁";
 "Instructions" = "说明";

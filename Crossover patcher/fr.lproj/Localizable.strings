@@ -15,10 +15,11 @@
 "DisclaimerText" = "Il s'agit d'un programme de patch non officiel pour CrossOver, et CodeWeavers n'est en aucun cas impliqué dans son développement. Bien qu'il ait été testé, ce logiciel peut rendre votre installation de CrossOver inutilisable ou instable. UTILISEZ À VOS PROPRES RISQUES. L'utilisation de ce patch annulera également tout support officiel de la part de CodeWeavers.
 
 Si vous rencontrez des problèmes après avoir appliqué le patch, vous pouvez télécharger une nouvelle copie de CrossOver depuis le site web de CodeWeavers.";
-"ExternalResourcesButtonText" = "Localiser le lecteur DXMT";
-"ExternalResourcesLabel" = "Installer le framework externe";
-"ExternalResourcesLocateText" = "Localisez le lecteur DXMT à l'aide du bouton ci-dessous :";
-"ExternalResourcesPathLabelText" = "Chemin du lecteur de ressources externe :";
+"XtLibsButtonText" = "Localiser le dossier DXMT";
+"XtLibsLabel" = "Installer un framework externe";
+"XtLibsToggle" = "Installer DXMT";
+"XtLibsLocateText" = "Localisez le dossier DXMT à l'aide du bouton ci-dessous :";
+"XtLibsPathLabelText" = "Chemin du dossier de ressources externes";
 "GPTKToggle" = "Intégrer D3DMetal (GPTK)";
 "ForcePatch" = "Forcer le patch";
 "Instructions" = "Instructions";
