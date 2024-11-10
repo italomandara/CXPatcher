@@ -8,22 +8,21 @@
 import Foundation
 import SwiftUI
 
-struct IntegrateExternalToggle: View {
+struct XtLibsToggle: View {
     @Binding var opts: Opts
-//    @Binding var externalUrl: URL?
     
     var body: some View {
         Toggle(isOn: $opts.copyExternal) {
             VStack(alignment: .leading) {
                 HStack(alignment: .center) {
                     Image(systemName: "wand.and.stars")
-                    Text(localizedCXPatcherString(forKey: "ExternalResourcesToggle"))
+                    Text(localizedCXPatcherString(forKey: "XtLibsToggle"))
                     Spacer()
                 }
             }
         }.onChange(of: opts.copyExternal) { newValue in
             if (newValue == true) {
-                opts.copyGptk = false
+                opts.patchDXVK = false
             }
         }
         .padding(.vertical, 6.0)

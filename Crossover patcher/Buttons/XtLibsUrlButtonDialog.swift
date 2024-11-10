@@ -7,20 +7,20 @@
 
 import SwiftUI
 
-struct ExternalResButtonDialog: View {
-    @Binding var externalUrl: URL?
+struct XtLibsUrlButtonDialog: View {
+    @Binding var XtLibsUrl: URL?
     var body: some View {
-        if(externalUrl != nil) {
-            Text("\(localizedCXPatcherString(forKey: "ExternalResourcesPathLabelText")): \(externalUrl!.path)")
+        if(XtLibsUrl != nil) {
+            Text("\(localizedCXPatcherString(forKey: "XtLibsPathLabelText")): \(XtLibsUrl!.path)")
         } else {
-            Button(localizedCXPatcherString(forKey: "ExternalResourcesButtonText")) {
+            Button(localizedCXPatcherString(forKey: "XtLibsButtonText")) {
                 let panel = NSOpenPanel()
                 panel.allowsMultipleSelection = false
                 panel.canChooseDirectories = true
                 panel.canChooseFiles = false
                 let response =  panel.runModal()
                 if (response == .OK && panel.urls.first != nil){
-                    externalUrl = panel.urls.first!
+                    XtLibsUrl = panel.urls.first!
                 } else {
                     print("aborted by user")
                 }

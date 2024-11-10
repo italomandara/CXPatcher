@@ -10,7 +10,6 @@ import SwiftUI
 
 struct IntegrateGPTKToggle: View {
     @Binding var copyGptk: Bool
-//    @Binding var externalUrl: URL?
     
     var body: some View {
         Toggle(isOn: $copyGptk) {

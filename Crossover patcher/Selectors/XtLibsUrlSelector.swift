@@ -8,8 +8,8 @@
 import Foundation
 import SwiftUI
 
-struct ExternalResourcesSelector: View {
-    @Binding var externalUrl: URL?
+struct XtLibsUrlSelector: View {
+    @Binding var XtLibsUrl: URL?
     
     var body: some View {
         RoundedRectangle(cornerRadius: 25)
@@ -17,12 +17,12 @@ struct ExternalResourcesSelector: View {
             .frame(width: 340, height: 200)
             .overlay(
                 VStack(alignment: .center) {
-                    Text(localizedCXPatcherString(forKey: "ExternalResourcesLabel"))
+                    Text(localizedCXPatcherString(forKey: "XtLibsLabel"))
                         .font(.title2)
-                    Text(localizedCXPatcherString(forKey: "ExternalResourcesLocateText"))
+                    Text(localizedCXPatcherString(forKey: "XtLibsLocateText"))
                         .padding(.vertical, 1.0)
                         .multilineTextAlignment(.center)
-                    ExternalResButtonDialog(externalUrl: $externalUrl)
+                    XtLibsUrlButtonDialog(XtLibsUrl: $XtLibsUrl)
                         .padding(.top, 6.0).controlSize(.large)
                 }
             )

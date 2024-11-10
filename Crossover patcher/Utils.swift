@@ -26,6 +26,11 @@ enum DeleteStatus {
     case progress
 }
 
+struct PathMap {
+    var src: String
+    var dst: String
+}
+
 struct Env {
     var key: String
     var value: String
@@ -65,7 +70,7 @@ struct Opts {
     var patchDXVK = true
     var globalEnvs = GlobalEnvs()
     var removeSignaure = true
-    var externalUrl: URL? = nil
+    var XtLibsUrl: URL? = nil
     var copyExternal = false
     func getTotalProgress() -> Int32 {
         if(self.copyGptk && self.repatch) {
