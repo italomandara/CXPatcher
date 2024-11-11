@@ -253,8 +253,8 @@ let WINE_RESOURCES_PATHS: [String] = [
 ]
 
 let DXMT_PATHS = [ // TODO: overrides WINEDLLOVERRIDES="dxgi,d3d11,d3d10core=n,b;"
-    PathMap(src: "src/winemetal/winemetal.dll", dst: "/lib/wine/x86_64-unix/winemetal.so"),
-    PathMap(src: "src/winemetal/unix/winemetal.so", dst: "/lib/wine/x86_64-windows/winemetal.dll"),
+    PathMap(src: "src/winemetal/winemetal.dll", dst: "/lib/wine/x86_64-windows/winemetal.dll"),
+    PathMap(src: "src/winemetal/unix/winemetal.so", dst: "/lib/wine/x86_64-unix/winemetal.so"),
     PathMap(src: "src/dxgi/dxgi.dll", dst: "/lib/wine/x86_64-windows/dxgi.dll"),
     PathMap(src: "src/d3d11/d3d11.dll", dst: "/lib/wine/x86_64-windows/d3d11.dll"),
     PathMap(src: "src/d3d10/d3d10core.dll", dst: "/lib/wine/x86_64-windows/d3d10core.dll"),
