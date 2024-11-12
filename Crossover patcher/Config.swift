@@ -252,7 +252,7 @@ let WINE_RESOURCES_PATHS: [String] = [
 //    "/share/wine/wine.inf",
 ]
 
-let DXMT_PATHS = [ // TODO: overrides WINEDLLOVERRIDES="dxgi,d3d11,d3d10core=n,b;"
+let DXMT_PATHS = [
     PathMap(src: "src/winemetal/winemetal.dll", dst: "/lib/wine/x86_64-windows/winemetal.dll"),
     PathMap(src: "src/winemetal/unix/winemetal.so", dst: "/lib/wine/x86_64-unix/winemetal.so"),
     PathMap(src: "src/dxgi/dxgi.dll", dst: "/lib/wine/x86_64-windows/dxgi.dll"),
@@ -261,6 +261,7 @@ let DXMT_PATHS = [ // TODO: overrides WINEDLLOVERRIDES="dxgi,d3d11,d3d10core=n,b
     PathMap(src: "src/dxgi/dxgi.dll", dst: "/lib64/wine/dxvk/dxgi.dll"),
     PathMap(src: "src/d3d11/d3d11.dll", dst: "/lib64/wine/dxvk/d3d11.dll"),
     PathMap(src: "src/d3d10/d3d10core.dll", dst: "/lib64/wine/dxvk/d3d10core.dll"),
+    PathMap(src: "src/winemetal/winemetal.dll", dst: "/lib64/wine/dxvk/winemetal.dll"),
 ]
 
 let MOLTENVK_LATEST = "/lib64/libMoltenVK-latest.dylib"

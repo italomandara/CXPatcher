@@ -346,6 +346,10 @@ func installDXMT (url: URL, opts: Opts) {
     }
 }
 
+func rewriteOverridesForDXMT() {
+    // TODO: overrides WINEDLLOVERRIDES="dxgi,d3d11,d3d10core=n,b;"
+}
+
 func patch(url: URL, opts: inout Opts) {
     if(ENABLE_BACKUP) {
         do
@@ -367,6 +371,7 @@ func patch(url: URL, opts: inout Opts) {
     }
     if(opts.copyXtLibs) {
         installDXMT(url: url, opts: opts)
+        rewriteOverridesForDXMT()
     }
     opts.progress += 1
     let filesToDisable = getDisableListFrom(url: url).filter { elem in
