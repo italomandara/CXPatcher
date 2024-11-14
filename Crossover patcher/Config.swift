@@ -33,7 +33,9 @@ let SUPPORTED_CROSSOVER_VERSION = "24"
 let ENABLE_GSTREAMER = true
 
 let SHARED_SUPPORT_PATH = "/Contents/SharedSupport/CrossOver"
-let DEFAULT_CX_BOTTLES_PATH = "/Users/${USER}/CXPBottles"
+let DEFAULT_CX_BOTTLES_ROOTPATH = "/Users/${USER}/"
+let DEFAULT_CX_BOTTLES_FOLDER = "CXPBottles"
+let DEFAULT_CX_BOTTLES_PATH = DEFAULT_CX_BOTTLES_ROOTPATH + DEFAULT_CX_BOTTLES_FOLDER
 let LIB_PATH = "/lib/"
 
 let EXTERNAL_RESOURCES_ROOT = "/lib64/apple_gptk"
@@ -261,7 +263,21 @@ let DXMT_PATHS = [
     PathMap(src: "src/dxgi/dxgi.dll", dst: "/lib64/wine/dxvk/dxgi.dll"),
     PathMap(src: "src/d3d11/d3d11.dll", dst: "/lib64/wine/dxvk/d3d11.dll"),
     PathMap(src: "src/d3d10/d3d10core.dll", dst: "/lib64/wine/dxvk/d3d10core.dll"),
-    PathMap(src: "src/winemetal/winemetal.dll", dst: "/lib64/wine/dxvk/winemetal.dll"),
+]
+
+struct ToBottlesPaths {
+    var fileName: String
+    var path: String
+    var fullPath: String {
+        return path + fileName
+    }
+}
+
+let DXMT_EVERY_BOTTLE_SYS_PATHS = [
+    ToBottlesPaths(
+        fileName: "winemetal.dll",
+        path: "src/winemetal/"
+    )
 ]
 
 let MOLTENVK_LATEST = "/lib64/libMoltenVK-latest.dylib"

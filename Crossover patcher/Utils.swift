@@ -348,6 +348,28 @@ func installDXMT (url: URL, opts: Opts) {
 
 func rewriteOverridesForDXMT() {
     // TODO: overrides WINEDLLOVERRIDES="dxgi,d3d11,d3d10core=n,b;"
+    // CXPatcher/lib/CrossOver/share/crossover/bottle_data/crossover.inf
+    // HKCU,"Software\Wine\DllOverrides","d3d11",,"native, builtin"
+    // HKCU,"Software\Wine\DllOverrides","dxgi",,"native, builtin"
+    // HKCU,"Software\Wine\DllOverrides","d3d10core",,"native, builtin"
+}
+
+func installWineMetalInAllBottles(opts: Opts) {
+    do {
+        let home: URL = f.homeDirectoryForCurrentUser
+        let bottlesFolder: URL = opts.cxbottlesPath == DEFAULT_CX_BOTTLES_PATH ? home.appendingPathComponent(DEFAULT_CX_BOTTLES_FOLDER) : URL(fileURLWithPath: opts.cxbottlesPath, isDirectory: true)
+        // list al bottles folders URLs
+        let bottleFolders: [URL] = try f.contentsOfDirectory(at: bottlesFolder, includingPropertiesForKeys: nil, options: [.skipsHiddenFiles])
+        let bottleUrls: [URL] = bottleFolders
+        print(bottleUrls)
+        bottleUrls.forEach { bottleUrl in
+            DXMT_EVERY_BOTTLE_SYS_PATHS.forEach { item in
+                safeFileCopy(source: opts.xtLibsUrl!.path() + item.fullPath, dest: bottleUrl.appendingPathComponent("drive_c/windows/system32/", isDirectory: true).path() + item.fileName)
+            }
+        }
+    } catch {
+        print(error)
+    }
 }
 
 func patch(url: URL, opts: inout Opts) {
@@ -371,7 +393,8 @@ func patch(url: URL, opts: inout Opts) {
     }
     if(opts.copyXtLibs) {
         installDXMT(url: url, opts: opts)
-        rewriteOverridesForDXMT()
+        installWineMetalInAllBottles(opts: opts)
+//        rewriteOverridesForDXMT()
     }
     opts.progress += 1
     let filesToDisable = getDisableListFrom(url: url).filter { elem in
