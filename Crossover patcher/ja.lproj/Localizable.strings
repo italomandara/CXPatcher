@@ -20,6 +20,7 @@
 "XtLibsToggle" = "DXMTをインストール";
 "XtLibsLocateText" = "下のボタンを使用してDXMTフォルダーを見つけてください:";
 "XtLibsPathLabelText" = "外部リソースフォルダのパス";
+"XtLibsDisclaimerText" = "警告: これはアルファ版です。不安定になったり、マシンがクラッシュする可能性があります。自己責任で使用してください。パッチが適用された場合、新しいボトルをDXMT用に作成する必要があります。";
 "GPTKToggle" = "D3DMetal（GPTK）を統合する";
 "ForcePatch" = "パッチを強制する";
 "Instructions" = "指示";

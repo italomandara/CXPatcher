@@ -20,6 +20,7 @@ If you face any issues after your installation has been patched, you may downloa
 "XtLibsToggle" = "Install DXMT";
 "XtLibsLocateText" = "Locate the DXMT folder using the button below:";
 "XtLibsPathLabelText" = "External resource folder path";
+"XtLibsDisclaimerText" = "WARNING: This is an Alpha release, it may be unstable and crash your machine, use at your own risk, When the patch is applied YOU NEED TO CREATE A NEW BOTTLE FOR DXMT";
 "GPTKToggle" = "Integrate D3DMetal (GPTK)";
 "ForcePatch" = "Force Patch";
 "Instructions" = "Instructions";

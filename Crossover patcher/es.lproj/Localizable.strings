@@ -20,6 +20,7 @@ Si encuentras algún problema después de parchear CrossOver, puedes descargar u
 "XtLibsToggle" = "Instalar DXMT";
 "XtLibsLocateText" = "Localiza la carpeta DXMT utilizando el botón a continuación:";
 "XtLibsPathLabelText" = "Ruta de la carpeta de recursos externos";
+"XtLibsDisclaimerText" = "ADVERTENCIA: Esta es una versión Alpha, puede ser inestable y causar fallos en tu máquina. Úsalo bajo tu propio riesgo. Cuando se aplique el parche, NECESITAS CREAR UNA NUEVA BOTELLA PARA DXMT";
 "GPTKToggle" = "Integrar D3DMetal (GPTK)";
 "ForcePatch" = "Forzar parche";
 "Instructions" = "Instrucciones";

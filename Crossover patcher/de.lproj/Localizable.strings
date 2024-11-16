@@ -20,6 +20,7 @@ Sollten nach dem Patchen Ihrer Installation Probleme auftreten, können Sie eine
 "XtLibsToggle" = "DXMT installieren";
 "XtLibsLocateText" = "Finden Sie den DXMT-Ordner mit der Schaltfläche unten:";
 "XtLibsPathLabelText" = "Pfad zum Ordner externer Ressourcen";
+"XtLibsDisclaimerText" = "WARNUNG: Dies ist eine Alpha-Version, sie kann instabil sein und Ihren Computer abstürzen lassen. Nutzung auf eigene Gefahr. Wenn der Patch angewendet wird, MÜSSEN SIE EINE NEUE FLASCHE FÜR DXMT ERSTELLEN";
 "GPTKToggle" = "D3DMetal (GPTK) integrieren";
 "ForcePatch" = "Patch erzwingen";
 "Instructions" = "Anweisungen";

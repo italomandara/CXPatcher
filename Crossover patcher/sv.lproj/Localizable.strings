@@ -20,6 +20,7 @@ Om du stöter på problem efter att din installation har blivit patchad kan du l
 "XtLibsToggle" = "Installera DXMT";
 "XtLibsLocateText" = "Hitta DXMT-mappen med knappen nedan:";
 "XtLibsPathLabelText" = "Sökväg till mappen med externa resurser";
+"XtLibsDisclaimerText" = "VARNING: Detta är en Alpha-version, den kan vara instabil och krascha din dator. Använd på egen risk. När patchen tillämpas MÅSTE DU SKAPA EN NY FLASKA FÖR DXMT";
 "GPTKToggle" = "Integrera D3DMetal (GPTK)";
 "ForcePatch" = "Tvinga patch";
 "Instructions" = "Instruktioner";

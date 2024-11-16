@@ -20,6 +20,7 @@ Dacă întâmpinați probleme după ce instalația a fost patch-uită, puteți d
 "XtLibsToggle" = "Instalează DXMT";
 "XtLibsLocateText" = "Localizează folderul DXMT folosind butonul de mai jos:";
 "XtLibsPathLabelText" = "Calea folderului de resurse externe";
+"XtLibsDisclaimerText" = "AVERTISMENT: Aceasta este o versiune Alpha, poate fi instabilă și poate cauza prăbușirea computerului. Folosiți pe propria răspundere. Când patch-ul este aplicat, TREBUIE SĂ CREAȚI O STICLĂ NOUĂ PENTRU DXMT";
 "GPTKToggle" = "Integrare D3DMetal (GPTK)";
 "ForcePatch" = "Forțează Patch-ul";
 "Instructions" = "Instrucțiuni";

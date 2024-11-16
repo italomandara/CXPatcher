@@ -19,7 +19,8 @@ Si vous rencontrez des problèmes après avoir appliqué le patch, vous pouvez t
 "XtLibsLabel" = "Installer un framework externe";
 "XtLibsToggle" = "Installer DXMT";
 "XtLibsLocateText" = "Localisez le dossier DXMT à l'aide du bouton ci-dessous :";
-"XtLibsPathLabelText" = "Chemin du dossier de ressources externes";
+"XtLibsPathLabelText" = "Chemin du dossier de ressources externes";\
+"XtLibsDisclaimerText" = "AVERTISSEMENT : Ceci est une version Alpha, elle peut être instable et provoquer le plantage de votre machine. Utilisez-la à vos propres risques. Lorsque le patch est appliqué, VOUS DEVEZ CRÉER UNE NOUVELLE BOUTEILLE POUR DXMT";
 "GPTKToggle" = "Intégrer D3DMetal (GPTK)";
 "ForcePatch" = "Forcer le patch";
 "Instructions" = "Instructions";

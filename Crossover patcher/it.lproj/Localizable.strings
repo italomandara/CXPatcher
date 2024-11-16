@@ -20,6 +20,7 @@ Se incontri problemi dopo aver patchato la tua installazione, puoi scaricare una
 "XtLibsToggle" = "Installa DXMT";
 "XtLibsLocateText" = "Individua la cartella DXMT utilizzando il pulsante qui sotto:";
 "XtLibsPathLabelText" = "Percorso della cartella delle risorse esterne";
+"XtLibsDisclaimerText" = "ATTENZIONE: Questa è una versione Alpha, potrebbe essere instabile e causare il crash del tuo computer. Usalo a tuo rischio. Quando la patch è applicata DEVI CREARE UNA NUOVA BOTTIGLIA PER DXMT";
 "GPTKToggle" = "Integra D3DMetal (GPTK)";
 "ForcePatch" = "Forza Patch";
 "Instructions" = "Istruzioni";

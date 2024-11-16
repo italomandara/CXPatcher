@@ -20,6 +20,7 @@
 "XtLibsToggle" = "安装 DXMT";
 "XtLibsLocateText" = "使用下面的按钮定位DXMT文件夹：";
 "XtLibsPathLabelText" = "外部资源文件夹路径";
+"XtLibsDisclaimerText" = "警告：这是一个Alpha版本，可能不稳定并导致您的计算机崩溃，请自行承担风险。当应用补丁时，您需要为DXMT创建一个新的瓶子。";
 "GPTKToggle" = "集成 D3DMetal（GPTK）";
 "ForcePatch" = "强制打补丁";
 "Instructions" = "说明";

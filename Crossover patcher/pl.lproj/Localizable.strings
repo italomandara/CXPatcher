@@ -20,6 +20,7 @@ Jeśli napotkasz jakiekolwiek problemy z instalacją CrossOver, możesz pobrać 
 "XtLibsToggle" = "Zainstaluj DXMT";
 "XtLibsLocateText" = "Zlokalizuj folder DXMT za pomocą przycisku poniżej:";
 "XtLibsPathLabelText" = "Ścieżka do folderu zewnętrznych zasobów";
+"XtLibsDisclaimerText" = "OSTRZEŻENIE: To jest wersja Alpha, może być niestabilna i spowodować awarię komputera. Używaj na własne ryzyko. Po zastosowaniu poprawki MUSISZ UTWORZYĆ NOWĄ BUTELKĘ DLA DXMT";
 "GPTKToggle" = "Integracja D3DMetal (GPTK)";
 "ForcePatch" = "Wymuś łatanie";
 "Instructions" = "Instrukcja";
