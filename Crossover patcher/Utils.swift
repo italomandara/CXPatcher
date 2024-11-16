@@ -392,7 +392,7 @@ func patch(url: URL, opts: inout Opts) {
     }
     if(opts.copyXtLibs) {
         installDXMT(url: url, opts: opts)
-        installWineMetalInAllBottles(opts: opts)
+//        installWineMetalInAllBottles(opts: opts) not needed at the moment, just create a new bottle
         addOverridesForDXMT(url: url)
     }
     opts.progress += 1

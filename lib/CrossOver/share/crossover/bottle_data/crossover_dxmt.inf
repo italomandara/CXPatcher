@@ -500,6 +500,10 @@ HKCU,"Software\Wine\AppDefaults\cxwget.exe\DllOverrides","wininet",,"builtin"
  HKCU,"Software\Wine\AppDefaults\re7.exe\DllOverrides","*msspatial",,""
 ; Disable Dying Light 2 AVX
  HKCU,"Software\Wine\AppDefaults\DyinglightGame_x64_rwdi.exe\DllOverrides","*runtime_dx11",,""
+; DXMT
+HKCU,"Software\Wine\DllOverrides","d3d11",,"native, builtin"
+HKCU,"Software\Wine\DllOverrides","dxgi",,"native, builtin"
+HKCU,"Software\Wine\DllOverrides","d3d10core",,"native, builtin"
 
 
 ; Fix for the Cyber Engine Tweaks and RED4ext in Cyberpunk 2077 (credits: https://wiki.redmodding.org/cyber-engine-tweaks/getting-started/installing/linux-proton)
@@ -551,7 +555,6 @@ HKCU,"Software\Wine\DllOverrides","olepro32",,"builtin"
 HKCU,"Software\Wine\DllOverrides","rpcrt4",,"builtin"
 # SSL doesn't work with native wininet as it depends on schannel in secur32 being implemented
 HKCU,"Software\Wine\DllOverrides","wininet",,"builtin"
-
 
 HKCU,"Software\Wine\AppDefaults\outlook.exe\DllOverrides","riched20",,"native"
 HKCU,"Software\Wine\AppDefaults\outlook.exe\DllOverrides","activeds",,"native,builtin"
@@ -670,8 +673,3 @@ SubDir="..\Builtin Tools"
 Name="Wine Configuration"
 CmdLine=11,,winecfg.exe
 SubDir="..\Builtin Tools"
-
-[DXMT]
-HKCU,"Software\Wine\DllOverrides","d3d11",,"native, builtin"
-HKCU,"Software\Wine\DllOverrides","dxgi",,"native, builtin"
-HKCU,"Software\Wine\DllOverrides","d3d10core",,"native, builtin"
