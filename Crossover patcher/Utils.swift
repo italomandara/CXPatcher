@@ -346,12 +346,11 @@ func installDXMT (url: URL, opts: Opts) {
     }
 }
 
-func rewriteOverridesForDXMT() {
-    // TODO: overrides WINEDLLOVERRIDES="dxgi,d3d11,d3d10core=n,b;"
-    // CXPatcher/lib/CrossOver/share/crossover/bottle_data/crossover.inf
-    // HKCU,"Software\Wine\DllOverrides","d3d11",,"native, builtin"
-    // HKCU,"Software\Wine\DllOverrides","dxgi",,"native, builtin"
-    // HKCU,"Software\Wine\DllOverrides","d3d10core",,"native, builtin"
+func addOverridesForDXMT(url: URL) {
+    safeResCopy(
+        res: WINE_RESOURCES_ROOT + "/share/crossover/bottle_data/crossover_dxmt.inf",
+        dest: url.path + SHARED_SUPPORT_PATH + "/share/crossover/bottle_data/crossover.inf"
+    )
 }
 
 func installWineMetalInAllBottles(opts: Opts) {
@@ -385,7 +384,7 @@ func patch(url: URL, opts: inout Opts) {
         }
     }
     let resources = getResourcesListFrom(url: url).filter { elem in
-        opts.copyGptk ? true : !elem.0.contains("crossover.inf")
+        opts.copyGptk && !opts.copyXtLibs ? true : !elem.0.contains("crossover.inf")
     }.filter { elem in
         opts.patchMVK == PatchMVK.legacyUE4 ? true : !elem.0.contains("libMoltenVK.dylib")
     }.filter { elem in
@@ -394,7 +393,7 @@ func patch(url: URL, opts: inout Opts) {
     if(opts.copyXtLibs) {
         installDXMT(url: url, opts: opts)
         installWineMetalInAllBottles(opts: opts)
-//        rewriteOverridesForDXMT()
+        addOverridesForDXMT(url: url)
     }
     opts.progress += 1
     let filesToDisable = getDisableListFrom(url: url).filter { elem in
