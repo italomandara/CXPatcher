@@ -28,12 +28,10 @@ struct Crossover_patcherApp: App {
             Instructions().fixedSize()
         }
         Window("Options", id: "options") {
-            Options(opts: $opts).fixedSize().onAppear {
-                if let window = NSApp.windows.first {
-                    window.setContentSize(NSSize(width: 400, height: 700))
-                }
-            }
+            Options(opts: $opts)
         }
+        .defaultSize(width: 400, height: 700)
+        .windowResizability(.contentSize)
         Window("Tools", id: "tools") {
             Tools().fixedSize()
         }
