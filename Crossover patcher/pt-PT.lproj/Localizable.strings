@@ -80,3 +80,9 @@ Se você enfrentar problemas após a instalação ser patcheada, você pode baix
 "steamCacheDeleteFailed" = "Falha ao excluir o cache do Steam selecionado";
 "steamCacheDeleteInProgress" = "Limpando o cache do Steam selecionado";
 "toolsButtonText" = "Ferramentas";
+"DXMTOptions" = "Opções DXMT";
+"preferredMaxFrameRate" = "Taxa Máxima de Quadros: %@";
+"preferredMaxFrameRateHelp" = "Pode ser configurado para que o ritmo de quadros da aplicação seja controlado pelo Metal. O valor deve ser um múltiplo da taxa de atualização do seu monitor. (ex.: 15/30/40/60/120 é válido para uma tela de 120 Hz).";
+"metalFXSpatial" = "Metal FX Espacial";
+"metalFXSpatialHelp" = "Ativa o ampliador espacial MetalFX na cadeia de troca de saída. Por padrão, ele duplicará a resolução de saída.";
+"metalSpatialUpscaleFactor" = "Fator de Ampliação: %@";

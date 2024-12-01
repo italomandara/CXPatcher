@@ -80,3 +80,9 @@
 "steamCacheDeleteFailed" = "選択した Steam キャッシュの削除に失敗しました";
 "steamCacheDeleteInProgress" = "選択した Steam キャッシュのクリア中";
 "toolsButtonText" = "ツール";
+"DXMTOptions" = "DXMT オプション";
+"preferredMaxFrameRate" = "最大フレームレート: %@";
+"preferredMaxFrameRateHelp" = "アプリケーションのフレームペーシングをMetalで制御するように設定できます。この値は、ディスプレイのリフレッシュレートの倍数でなければなりません。（例：120Hzのディスプレイでは15/30/40/60/120が有効です）。";
+"metalFXSpatial" = "Metal FX 空間";
+"metalFXSpatialHelp" = "出力スワップチェーンでMetalFX空間アップスケーラーを有効にします。デフォルトでは、出力解像度を2倍にします。";
+"metalSpatialUpscaleFactor" = "アップスケール係数: %@";

@@ -80,3 +80,9 @@ Om du stöter på problem efter att din installation har blivit patchad kan du l
 "steamCacheDeleteFailed" = "Det gick inte att ta bort vald Steam-cache";
 "steamCacheDeleteInProgress" = "Rensar vald Steam-cache";
 "toolsButtonText" = "Verktyg";
+"DXMTOptions" = "DXMT Alternativ";
+"preferredMaxFrameRate" = "Maximal Bildfrekvens: %@";
+"preferredMaxFrameRateHelp" = "Kan ställas in för att låta Metal kontrollera applikationens bildfrekvens. Värdet måste vara en multipel av skärmens uppdateringsfrekvens. (t.ex. 15/30/40/60/120 är giltigt för en 120Hz-skärm).";
+"metalFXSpatial" = "Metal FX Spatial";
+"metalFXSpatialHelp" = "Aktiverar MetalFX:s spatiala uppskalning på utgångskedjan. Som standard fördubblar den utgångsupplösningen.";
+"metalSpatialUpscaleFactor" = "Uppskalningsfaktor: %@";

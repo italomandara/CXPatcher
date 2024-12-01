@@ -80,3 +80,9 @@ Sollten nach dem Patchen Ihrer Installation Probleme auftreten, können Sie eine
 "steamCacheDeleteFailed" = "Löschen des ausgewählten Steam-Caches fehlgeschlagen";
 "steamCacheDeleteInProgress" = "Löschen des ausgewählten Steam-Caches";
 "toolsButtonText" = "Werkzeuge";
+"DXMTOptions" = "DXMT-Optionen";
+"preferredMaxFrameRate" = "Maximale Bildrate: %@";
+"preferredMaxFrameRateHelp" = "Kann so eingestellt werden, dass das Bildtempo der Anwendung von Metal gesteuert wird. Der Wert muss ein Vielfaches der Bildwiederholrate Ihres Displays sein (z. B. sind 15/30/40/60/120 für ein 120-Hz-Display gültig).";
+"metalFXSpatial" = "Metal FX Räumlich";
+"metalFXSpatialHelp" = "Aktiviert den MetalFX-räumlichen Upscaler in der Ausgabekette. Standardmäßig verdoppelt er die Ausgaberesolution.";
+"metalSpatialUpscaleFactor" = "Skalierungsfaktor: %@";

@@ -86,3 +86,9 @@ Jeśli napotkasz jakiekolwiek problemy z instalacją CrossOver, możesz pobrać 
 "steamCacheDeleteInProgress" = "Usuwanie wybranego pliku pamięci podręcznej Steam";
 "Tools" = "Narzędzia";
 "toolsButtonText" = "Narzędzia";
+"DXMTOptions" = "Opcje DXMT";
+"preferredMaxFrameRate" = "Maksymalna liczba klatek: %@";
+"preferredMaxFrameRateHelp" = "Można ustawić, aby wymusić sterowanie tempem klatek aplikacji przez Metal. Wartość musi być wielokrotnością częstotliwości odświeżania wyświetlacza. (np. 15/30/40/60/120 jest prawidłowe dla wyświetlacza 120 Hz).";
+"metalFXSpatial" = "Metal FX Przestrzenny";
+"metalFXSpatialHelp" = "Włącza przestrzenny skalator MetalFX na wyjściowym łańcuchu wymiany. Domyślnie podwaja rozdzielczość wyjściową.";
+"metalSpatialUpscaleFactor" = "Współczynnik Skalowania: %@";

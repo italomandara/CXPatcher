@@ -66,6 +66,8 @@ struct Options: View {
                 opts: $opts
             )
             .help(localizedCXPatcherString(forKey: "DisableUE4HackToggleHelp"))
+            Divider().padding(.vertical, 2)
+            DXMTOptions(globalEnvs: $opts.globalEnvs, enabled: $opts.copyXtLibs)
         }.padding(20)
         .frame(width: 400.0)
         .fixedSize()
@@ -75,7 +77,7 @@ struct Options: View {
 
 struct Options_Previews: PreviewProvider {
     static var previews: some View {
-        @State var opts = Opts()
+        @State var opts = Opts(copyXtLibs: true)
         Options(opts: $opts)
     }
 }

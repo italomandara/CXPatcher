@@ -42,6 +42,9 @@ struct GlobalEnvs {
     var dxvkAsync = true
     var disableUE4Hack = false
     var advertiseAVX = false
+    var preferredMaxFrameRate = 0.0
+    var metalSpatialUpscaleFactor = 0.50
+    var metalFXSpatial = false
 }
 
 enum PatchMVK {
@@ -603,6 +606,22 @@ private func getENVOverrideConfigfile(envs: [Env]) -> String {
 func addGlobals(url: URL, opts: Opts) {
     disable(dest: url.path + SHARED_SUPPORT_PATH + BOTTLE_PATH_OVERRIDE)
     var envs: [Env] = [Env(key: "CX_BOTTLE_PATH", value: opts.cxbottlesPath)]
+    var DXMTConfigvalues = ""
+    if(opts.globalEnvs.metalFXSpatial == true) {
+        print("add metalFXSpatial env")
+        envs += [Env(key: "DXMT_METALFX_SPATIAL_SWAPCHAIN", value: "1")]
+    }
+    if(opts.globalEnvs.metalSpatialUpscaleFactor > 0) {
+        print("add metalSpatialUpscaleFactor env")
+        DXMTConfigvalues += "d3d11.metalSpatialUpscaleFactor=\(String(opts.globalEnvs.metalSpatialUpscaleFactor));"
+    }
+    if(opts.globalEnvs.preferredMaxFrameRate > 29.0) {
+        print("add preferredMaxFrameRate env")
+        DXMTConfigvalues += "d3d11.preferredMaxFrameRate=\(String(opts.globalEnvs.preferredMaxFrameRate));"
+    }
+    if(opts.globalEnvs.metalSpatialUpscaleFactor > 0 || opts.globalEnvs.preferredMaxFrameRate > 29.0) {
+        envs += [Env(key: "DXMT_CONFIG", value: DXMTConfigvalues)]
+    }
     if(opts.globalEnvs.mtlHudEnabled == true) {
         print("add mtlHudEnabled env")
         envs += [Env(key: "MTL_HUD_ENABLED", value: "1")]

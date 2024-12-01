@@ -80,3 +80,9 @@
 "steamCacheDeleteFailed" = "Не вдалося видалити вибраний кеш Steam";
 "steamCacheDeleteInProgress" = "Очищення вибраного кешу Steam";
 "toolsButtonText" = "Інструменти";
+"DXMTOptions" = "Параметри DXMT";
+"preferredMaxFrameRate" = "Максимальна частота кадрів: %@";
+"preferredMaxFrameRateHelp" = "Можна налаштувати, щоб ритм кадрів програми контролювався Metal. Значення має бути кратним частоті оновлення вашого дисплея. (наприклад, 15/30/40/60/120 є дійсним для дисплея з частотою 120 Гц).";
+"metalFXSpatial" = "Metal FX Просторовий";
+"metalFXSpatialHelp" = "Увімкнути просторовий масштабатор MetalFX на вихідному ланцюжку обміну. За замовчуванням подвоїть роздільну здатність виводу.";
+"metalSpatialUpscaleFactor" = "Коефіцієнт масштабування: %@";

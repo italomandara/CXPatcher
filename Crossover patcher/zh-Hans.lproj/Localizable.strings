@@ -80,3 +80,9 @@
 "steamCacheDeleteFailed" = "无法删除所选的 Steam 缓存";
 "steamCacheDeleteInProgress" = "清除所选的 Steam 缓存";
 "toolsButtonText" = "工具";
+"DXMTOptions" = "DXMT选项";
+"preferredMaxFrameRate" = "最大帧率：%@";
+"preferredMaxFrameRateHelp" = "可以设置为由Metal控制应用程序的帧率节奏。值必须是显示器刷新率的倍数。（例如，15/30/40/60/120对120Hz显示器有效）。";
+"metalFXSpatial" = "Metal FX 空间";
+"metalFXSpatialHelp" = "在输出交换链上启用MetalFX空间升频器。默认情况下，它会将输出分辨率加倍。";
+"metalSpatialUpscaleFactor" = "升频因子：%@";

@@ -82,3 +82,9 @@ If you face any issues after your installation has been patched, you may downloa
 "steamCacheDeleteFailed" = "Failed to delete selected steam cache";
 "steamCacheDeleteInProgress" = "Clearing selected Steam cache";
 "toolsButtonText" = "Tools";
+"DXMTOptions" = "DXMT Options";
+"preferredMaxFrameRate" = "Max Frame Rate: %@";
+"preferredMaxFrameRateHelp" = "can be set to enforce the application's frame pacing being controled by Metal. The value must be a factor of your display's refresh rate. (e.g. 15/30/40/60/120 is valid for a 120hz display).";
+"metalFXSpatial" = "Metal FX Spatial";
+"metalFXSpatialHelp" = "Enables MetalFX spatial upscaler on output swapchain. By default it will double the output resolution.";
+"metalSpatialUpscaleFactor" = "Upscale Factor: %@";

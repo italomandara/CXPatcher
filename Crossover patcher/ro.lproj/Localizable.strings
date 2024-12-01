@@ -80,3 +80,9 @@ Dacă întâmpinați probleme după ce instalația a fost patch-uită, puteți d
 "steamCacheDeleteFailed" = "Nu s-a putut șterge cache-ul Steam selectat";
 "steamCacheDeleteInProgress" = "Se șterge cache-ul Steam selectat";
 "toolsButtonText" = "Instrumente";
+"DXMTOptions" = "Opțiuni DXMT";
+"preferredMaxFrameRate" = "Rată Maximă de Cadre: %@";
+"preferredMaxFrameRateHelp" = "Poate fi setată pentru a forța ritmul cadrelor aplicației să fie controlat de Metal. Valoarea trebuie să fie un multiplu al ratei de reîmprospătare a ecranului. (ex. 15/30/40/60/120 este valabil pentru un ecran de 120Hz).";
+"metalFXSpatial" = "Metal FX Spațial";
+"metalFXSpatialHelp" = "Activează scalatorul spațial MetalFX pe lanțul de schimbare a ieșirii. Implicit, va dubla rezoluția de ieșire.";
+"metalSpatialUpscaleFactor" = "Factor de Scalare: %@";

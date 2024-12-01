@@ -80,3 +80,9 @@ Si vous rencontrez des problèmes après avoir appliqué le patch, vous pouvez t
 "steamCacheDeleteFailed" = "Échec de la suppression du cache Steam sélectionné";
 "steamCacheDeleteInProgress" = "Effacement du cache Steam sélectionné";
 "toolsButtonText" = "Outils";
+"DXMTOptions" = "Options DXMT";
+"preferredMaxFrameRate" = "Taux de Rafraîchissement Max : %@";
+"preferredMaxFrameRateHelp" = "Peut être réglé pour que le rythme d'image de l'application soit contrôlé par Metal. La valeur doit être un multiple du taux de rafraîchissement de votre écran. (par ex. 15/30/40/60/120 est valide pour un écran de 120 Hz).";
+"metalFXSpatial" = "Metal FX Spatial";
+"metalFXSpatialHelp" = "Active le suréchantillonneur spatial MetalFX sur la chaîne d'échange de sortie. Par défaut, il double la résolution de sortie.";
+"metalSpatialUpscaleFactor" = "Facteur de Suréchantillonnage : %@";

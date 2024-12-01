@@ -80,3 +80,9 @@ Si encuentras algún problema después de parchear CrossOver, puedes descargar u
 "steamCacheDeleteFailed" = "No se pudo borrar la caché de Steam seleccionada";
 "steamCacheDeleteInProgress" = "Borrando la caché de Steam seleccionada";
 "toolsButtonText" = "Herramientas";
+"DXMTOptions" = "Opciones DXMT";
+"preferredMaxFrameRate" = "Máxima Tasa de Fotogramas: %@";
+"preferredMaxFrameRateHelp" = "Se puede configurar para que el ritmo de fotogramas de la aplicación sea controlado por Metal. El valor debe ser un múltiplo de la tasa de refresco de tu pantalla. (por ejemplo, 15/30/40/60/120 es válido para una pantalla de 120 Hz).";
+"metalFXSpatial" = "Metal FX Espacial";
+"metalFXSpatialHelp" = "Activa el escalador espacial MetalFX en la cadena de intercambio de salida. Por defecto, duplicará la resolución de salida.";
+"metalSpatialUpscaleFactor" = "Factor de Escalado: %@";
