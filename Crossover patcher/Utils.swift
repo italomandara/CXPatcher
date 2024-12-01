@@ -43,7 +43,7 @@ struct GlobalEnvs {
     var disableUE4Hack = false
     var advertiseAVX = false
     var preferredMaxFrameRate = 0.0
-    var metalSpatialUpscaleFactor = 0.50
+    var metalSpatialUpscaleFactor = 1.0
     var metalFXSpatial = false
 }
 

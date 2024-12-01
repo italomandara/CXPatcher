@@ -41,7 +41,7 @@ struct DXMTOptions: View {
             .disabled(!enabled)
             .onChange(of: globalEnvs.metalFXSpatial) { newValue in
                 if (!newValue) {
-                    $globalEnvs.metalSpatialUpscaleFactor.wrappedValue = 0.5
+                    $globalEnvs.metalSpatialUpscaleFactor.wrappedValue = 1.0
                 }
             }
             .padding(.vertical, 6.0)
@@ -52,7 +52,7 @@ struct DXMTOptions: View {
                 Slider(
                     value: $globalEnvs.metalSpatialUpscaleFactor,
                     in: 1.0...2.0,
-                    step: 0.25
+                    step: 0.125
                 )
                 .help(localizedCXPatcherString(forKey: "metalFXSpatialHelp"))
                 .disabled(!globalEnvs.metalFXSpatial || !enabled)
