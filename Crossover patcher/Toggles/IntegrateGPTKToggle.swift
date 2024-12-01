@@ -9,10 +9,10 @@ import Foundation
 import SwiftUI
 
 struct IntegrateGPTKToggle: View {
-    @Binding var copyGptk: Bool
+    @Binding var opts: Opts
     
     var body: some View {
-        Toggle(isOn: $copyGptk) {
+        Toggle(isOn: $opts.copyGptk) {
             VStack(alignment: .leading) {
                 HStack(alignment: .center) {
                     Image(systemName: "wand.and.stars")
@@ -30,7 +30,10 @@ struct IntegrateGPTKToggle: View {
         .padding(.vertical, 6.0)
         .toggleStyle(.switch)
         .controlSize(/*@START_MENU_TOKEN@*/.mini/*@END_MENU_TOKEN@*/)
-        .disabled(isVentura)
+        .disabled(
+            isVentura
+//            || opts.copyXtLibs
+        )
         .help(isVentura ? "GPTK is supported on Sonoma only" : "Enables installation of D3dMetal")
     }
 }

@@ -23,6 +23,7 @@ struct XtLibsToggle: View {
         }.onChange(of: opts.copyXtLibs) { newValue in
             if (newValue == true) {
                 opts.patchDXVK = false
+//                opts.copyGptk = false
             }
         }
         .padding(.vertical, 6.0)

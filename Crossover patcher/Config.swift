@@ -263,6 +263,9 @@ let DXMT_PATHS = [
     PathMap(src: "src/dxgi/dxgi.dll", dst: "/lib64/wine/dxvk/dxgi.dll"),
     PathMap(src: "src/d3d11/d3d11.dll", dst: "/lib64/wine/dxvk/d3d11.dll"),
     PathMap(src: "src/d3d10/d3d10core.dll", dst: "/lib64/wine/dxvk/d3d10core.dll"),
+//    PathMap(src: "src/dxgi/dxgi.dll", dst: "/lib64/apple_gptk/wine/x86_64-windows/dxgi.dll"),
+//    PathMap(src: "src/d3d11/d3d11.dll", dst: "/lib64/apple_gptk/wine/x86_64-windows/d3d11.dll"),
+//    PathMap(src: "src/d3d10/d3d10core.dll", dst: "/lib64/apple_gptk/wine/x86_64-windows/d3d10core.dll"),
 ]
 
 struct ToBottlesPaths {

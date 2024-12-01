@@ -19,7 +19,7 @@ struct Options: View {
             )
             .help(localizedCXPatcherString(forKey: "mkvToggleHelp"))
             IntegrateGPTKToggle(
-                copyGptk: $opts.copyGptk
+                opts: $opts
             ).help(localizedCXPatcherString(forKey: "gptkToggleHelp"))
             if(ENABLE_EXTERNAL_RESOURCES) {
                 XtLibsToggle(
