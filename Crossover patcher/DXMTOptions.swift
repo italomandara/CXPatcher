@@ -66,6 +66,7 @@ struct DXMTOptions: View {
             }
         }
         .opacity(enabled ? 1 : 0.5)
+        .padding(.top, 20)
     }
 }
 
