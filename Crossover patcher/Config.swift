@@ -183,8 +183,6 @@ let BUILTIN_LIBS_GSTREAMER64 = [
     "/Contents/SharedSupport/CrossOver/lib64/libgstvideo-1.0.dylib",
     "/Contents/SharedSupport/CrossOver/lib64/libgstfft-1.0.dylib",
     "/Contents/SharedSupport/CrossOver/lib64/libgstadaptivedemux-1.0.dylib",
-//    "/Contents/SharedSupport/CrossOver/lib64/libSDL2-2.0.0.dylib",
-//    "/Contents/SharedSupport/CrossOver/lib64/libSDL2.dylib",
     "/Contents/SharedSupport/CrossOver/lib64/libgmodule-2.0.0.dylib",
     "/Contents/SharedSupport/CrossOver/lib64/libgstbasecamerabinsrc-1.0.dylib",
     "/Contents/SharedSupport/CrossOver/lib64/libgstsctp-1.0.0.dylib",
@@ -225,7 +223,7 @@ let BUILTIN_LIBS_GSTREAMER64 = [
 let FILES_TO_DISABLE: [String] = [
     "/Contents/CodeResources",
     "/Contents/_CodeSignature",
-]
+] + BUILTIN_LIBS_GSTREAMER + BUILTIN_LIBS_GSTREAMER64
 
 let WINE_RESOURCES_ROOT = "Crossover"
 
