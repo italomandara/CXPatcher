@@ -101,8 +101,8 @@ private func getResourcesListFrom(url: URL) -> [(String, String)]{
     return list
 }
 
-private func getDisableListFrom(url: URL) -> [String]{
-    let list: [String]  = FILES_TO_DISABLE.map { path in
+private func getRemoveListFrom(url: URL) -> [String]{
+    let list: [String]  = FILES_TO_REMOVE.map { path in
         url.path + path
     }
     return list
@@ -211,6 +211,14 @@ private func disable(dest: String) {
         print("disabling \(dest)")
     } catch {
         print("can't move file \(dest)")
+    }
+}
+
+private func remove(dest: String) {
+    do {try f.removeItem(atPath: dest)
+        print("removing \(dest)")
+    } catch {
+        print("can't remove file \(dest)")
     }
 }
 
@@ -399,7 +407,10 @@ func patch(url: URL, opts: inout Opts) {
         addOverridesForDXMT(url: url)
     }
     opts.progress += 1
-    let filesToDisable = getDisableListFrom(url: url).filter { elem in
+//    let filesToDisable = getDisableListFrom(url: url).filter { elem in
+//        opts.removeSignaure ? true : (!elem.contains("CodeResources") && !elem.contains("_CodeSignature"))
+//    }
+    let filesToRemove = getRemoveListFrom(url: url).filter { elem in
         opts.removeSignaure ? true : (!elem.contains("CodeResources") && !elem.contains("_CodeSignature"))
     }
     opts.progress += 1
@@ -422,8 +433,12 @@ func patch(url: URL, opts: inout Opts) {
         )
         safeResCopy(res: latestMVKResource.0, dest: latestMVKResource.1)
     }
-    filesToDisable.forEach { file in
-        disable(dest: file)
+//    filesToDisable.forEach { file in
+//        disable(dest: file)
+//        opts.progress += 1
+//    }
+    filesToRemove.forEach { file in
+        remove(dest: file)
         opts.progress += 1
     }
     if(opts.overrideBottlePath == true) {
@@ -467,7 +482,7 @@ func restoreApp(url: URL, opts: inout Opts, onRestore: () -> Void = {}) -> Bool 
     }
     onRestore()
     let filesToRestore = getResourcesListFrom(url: url)
-    let filesToEnable = getDisableListFrom(url: url)
+//    let filesToEnable = getDisableListFrom(url: url)
     if(hasExternal(url: url)) {
         let externalFilesToRestore = getExternalResourcesList(url: url)
         externalFilesToRestore.forEach { file in
@@ -478,10 +493,10 @@ func restoreApp(url: URL, opts: inout Opts, onRestore: () -> Void = {}) -> Bool 
         restoreFile(dest: file.1)
         opts.progress += 1
     }
-    filesToEnable.forEach { file in
-        enable(dest: file)
-        opts.progress += 1
-    }
+//    filesToEnable.forEach { file in
+//        enable(dest: file)
+//        opts.progress += 1
+//    }
     restoreAutoUpdate(url: url)
     opts.progress += 1
     removeGlobals(url: url)

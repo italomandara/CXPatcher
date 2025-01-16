@@ -220,7 +220,7 @@ let BUILTIN_LIBS_GSTREAMER64 = [
     "/Contents/SharedSupport/CrossOver/lib64/gstreamer-1.0",
 ]
 
-let FILES_TO_DISABLE: [String] = [
+let FILES_TO_REMOVE: [String] = [
     "/Contents/CodeResources",
     "/Contents/_CodeSignature",
 ] + BUILTIN_LIBS_GSTREAMER64
