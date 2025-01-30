@@ -500,6 +500,34 @@ HKCU,"Software\Wine\AppDefaults\cxwget.exe\DllOverrides","wininet",,"builtin"
  HKCU,"Software\Wine\AppDefaults\re7.exe\DllOverrides","*msspatial",,""
 ; Disable Dying Light 2 AVX
  HKCU,"Software\Wine\AppDefaults\DyinglightGame_x64_rwdi.exe\DllOverrides","*runtime_dx11",,""
+; Fix for Tokio Extreme Racing
+ HKCU,"Software\Wine\AppDefaults\TokyoXtremeRacer-Win64-Shipping.exe\DllOverrides","*d3dcompiler_47",,"native"
+ HKCU,"Software\Wine\AppDefaults\TokyoXtremeRacer-Win64-Shipping.exe\DllOverrides","*EACrashReporter.exe",,""
+ HKCU,"Software\Wine\AppDefaults\TokyoXtremeRacer-Win64-Shipping.exe\DllOverrides","*msvcp140",,"native,builtin"
+ HKCU,"Software\Wine\AppDefaults\TokyoXtremeRacer-Win64-Shipping.exe\DllOverrides","*msvcp140_1",,"native,builtin"
+ HKCU,"Software\Wine\AppDefaults\TokyoXtremeRacer-Win64-Shipping.exe\DllOverrides","*msvcp140_2",,"native,builtin"
+ HKCU,"Software\Wine\AppDefaults\TokyoXtremeRacer-Win64-Shipping.exe\DllOverrides","*msvcp140_atomic_wait",,"native,builtin"
+ HKCU,"Software\Wine\AppDefaults\TokyoXtremeRacer-Win64-Shipping.exe\DllOverrides","**msvcp140_codecvt_ids",,"native,builtin"
+ HKCU,"Software\Wine\AppDefaults\TokyoXtremeRacer-Win64-Shipping.exe\DllOverrides","*ucrtbase",,"native,builtin"
+ HKCU,"Software\Wine\AppDefaults\TokyoXtremeRacer-Win64-Shipping.exe\DllOverrides","*vcamp140",,"native,builtin"
+ HKCU,"Software\Wine\AppDefaults\TokyoXtremeRacer-Win64-Shipping.exe\DllOverrides","*vccorlib140",,"native,builtin"
+ HKCU,"Software\Wine\AppDefaults\TokyoXtremeRacer-Win64-Shipping.exe\DllOverrides","*vcomp140",,"native,builtin"
+ HKCU,"Software\Wine\AppDefaults\TokyoXtremeRacer-Win64-Shipping.exe\DllOverrides","*vcruntime140",,"native,builtin"
+ HKCU,"Software\Wine\AppDefaults\TokyoXtremeRacer-Win64-Shipping.exe\DllOverrides","*vcruntime140_1",,"native,builtin
+; Fix for Ninja Gaiden 2
+ HKCU,"Software\Wine\AppDefaults\Software\Wine\AppDefaults\NINJAGAIDEN2BLACK.exe\DllOverrides","*d3dcompiler_47",,"native"
+ HKCU,"Software\Wine\AppDefaults\Software\Wine\AppDefaults\NINJAGAIDEN2BLACK.exe\DllOverrides","*EACrashReporter.exe",,""
+ HKCU,"Software\Wine\AppDefaults\Software\Wine\AppDefaults\NINJAGAIDEN2BLACK.exe\DllOverrides","*msvcp140",,"native,builtin"
+ HKCU,"Software\Wine\AppDefaults\Software\Wine\AppDefaults\NINJAGAIDEN2BLACK.exe\DllOverrides","*msvcp140_1",,"native,builtin"
+ HKCU,"Software\Wine\AppDefaults\Software\Wine\AppDefaults\NINJAGAIDEN2BLACK.exe\DllOverrides","*msvcp140_2",,"native,builtin"
+ HKCU,"Software\Wine\AppDefaults\Software\Wine\AppDefaults\NINJAGAIDEN2BLACK.exe\DllOverrides","*msvcp140_atomic_wait",,"native,builtin"
+ HKCU,"Software\Wine\AppDefaults\Software\Wine\AppDefaults\NINJAGAIDEN2BLACK.exe\DllOverrides","**msvcp140_codecvt_ids",,"native,builtin"
+ HKCU,"Software\Wine\AppDefaults\Software\Wine\AppDefaults\NINJAGAIDEN2BLACK.exe\DllOverrides","*ucrtbase",,"native,builtin"
+ HKCU,"Software\Wine\AppDefaults\Software\Wine\AppDefaults\NINJAGAIDEN2BLACK.exe\DllOverrides","*vcamp140",,"native,builtin"
+ HKCU,"Software\Wine\AppDefaults\Software\Wine\AppDefaults\NINJAGAIDEN2BLACK.exe\DllOverrides","*vccorlib140",,"native,builtin"
+ HKCU,"Software\Wine\AppDefaults\Software\Wine\AppDefaults\NINJAGAIDEN2BLACK.exe\DllOverrides","*vcomp140",,"native,builtin"
+ HKCU,"Software\Wine\AppDefaults\Software\Wine\AppDefaults\NINJAGAIDEN2BLACK.exe\DllOverrides","*vcruntime140",,"native,builtin"
+ HKCU,"Software\Wine\AppDefaults\Software\Wine\AppDefaults\NINJAGAIDEN2BLACK.exe\DllOverrides","*vcruntime140_1",,"native,builtin
 
 
 ; Fix for the Cyber Engine Tweaks and RED4ext in Cyberpunk 2077 (credits: https://wiki.redmodding.org/cyber-engine-tweaks/getting-started/installing/linux-proton)
