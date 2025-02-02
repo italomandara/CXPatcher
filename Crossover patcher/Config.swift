@@ -18,7 +18,7 @@ enum UIGlobals: CGFloat {
 }
 
 #if DEBUG
-    let SKIP_DISCLAIMER_CHECK = true
+let SKIP_DISCLAIMER_CHECK = true
 #else
 let SKIP_DISCLAIMER_CHECK = false
 #endif
@@ -231,25 +231,25 @@ let MOLTENVK_BASELINE = "/lib64/libMoltenVK.dylib"
 
 let WINE_RESOURCES_PATHS: [String] = [
     MOLTENVK_BASELINE,
-//    "/lib64/libinotify.0.dylib",
-//    "/lib64/libinotify.dylib",
+    //    "/lib64/libinotify.0.dylib",
+    //    "/lib64/libinotify.dylib",
     "/lib64/wine/dxvk",
     "/lib/wine/dxvk",
     "/lib/wine/i386-windows/kernelbase.dll",
-//    "/lib/wine/i386-windows/ntdll.dll",
-//    "/lib/wine/i386-windows/winegstreamer.dll",
-//    "lib/wine/i386-windows/wineboot.exe",
-//    "/lib/wine/i386-windows/winecfg.exe",
-//    "/lib/wine/x86_64-unix/ntdll.so",
+    //    "/lib/wine/i386-windows/ntdll.dll",
+    //    "/lib/wine/i386-windows/winegstreamer.dll",
+    //    "lib/wine/i386-windows/wineboot.exe",
+    //    "/lib/wine/i386-windows/winecfg.exe",
+    //    "/lib/wine/x86_64-unix/ntdll.so",
     "/lib/wine/x86_64-unix/winegstreamer.so",
     "/lib/wine/x86_64-windows/kernelbase.dll",
-//    "/lib/wine/x86_64-windows/ntdll.dll",
-//    "/lib/wine/x86_64-windows/wineboot.exe",
-//    "/lib/wine/x86_64-windows/winecfg.exe",
-//    "/lib/wine/x86_64-windows/winegstreamer.dll",
+    //    "/lib/wine/x86_64-windows/ntdll.dll",
+    //    "/lib/wine/x86_64-windows/wineboot.exe",
+    //    "/lib/wine/x86_64-windows/winecfg.exe",
+    //    "/lib/wine/x86_64-windows/winegstreamer.dll",
     "/share/crossover/bottle_data/crossover.inf",
-//    "/CrossOver-Hosted Application/wineserver",
-//    "/share/wine/wine.inf",
+    //    "/CrossOver-Hosted Application/wineserver",
+    //    "/share/wine/wine.inf",
 ]
 
 let DXMT_PATHS = [
@@ -261,9 +261,9 @@ let DXMT_PATHS = [
     PathMap(src: "src/dxgi/dxgi.dll", dst: "/lib64/wine/dxvk/dxgi.dll"),
     PathMap(src: "src/d3d11/d3d11.dll", dst: "/lib64/wine/dxvk/d3d11.dll"),
     PathMap(src: "src/d3d10/d3d10core.dll", dst: "/lib64/wine/dxvk/d3d10core.dll"),
-//    PathMap(src: "src/dxgi/dxgi.dll", dst: "/lib64/apple_gptk/wine/x86_64-windows/dxgi.dll"),
-//    PathMap(src: "src/d3d11/d3d11.dll", dst: "/lib64/apple_gptk/wine/x86_64-windows/d3d11.dll"),
-//    PathMap(src: "src/d3d10/d3d10core.dll", dst: "/lib64/apple_gptk/wine/x86_64-windows/d3d10core.dll"),
+    //    PathMap(src: "src/dxgi/dxgi.dll", dst: "/lib64/apple_gptk/wine/x86_64-windows/dxgi.dll"),
+    //    PathMap(src: "src/d3d11/d3d11.dll", dst: "/lib64/apple_gptk/wine/x86_64-windows/d3d11.dll"),
+    //    PathMap(src: "src/d3d10/d3d10core.dll", dst: "/lib64/apple_gptk/wine/x86_64-windows/d3d10core.dll"),
 ]
 
 struct ToBottlesPaths {
