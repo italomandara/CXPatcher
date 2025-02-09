@@ -16,9 +16,6 @@ struct DXMTOptions: View {
     }
     var body: some View {
         VStack(alignment: .center) {
-            //DXMT_CONFIG="d3d11.preferredMaxFrameRate=30;"
-            //DXMT_METALFX_SPATIAL_SWAPCHAIN=1
-            //d3d11.metalSpatialUpscaleFactor
             Text(localizedCXPatcherString(forKey: "DXMTOptions"))
             VStack(alignment: .center) {
                 Text(localizedCXPatcherString(forKey: "preferredMaxFrameRate", value: String(preferredMaxFrameRate)))
