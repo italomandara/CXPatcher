@@ -632,7 +632,7 @@ func addGlobals(url: URL, opts: Opts) {
     }
     if(opts.globalEnvs.preferredMaxFrameRate > 29.0) {
         print("add preferredMaxFrameRate env")
-        DXMTConfigvalues += "d3d11.preferredMaxFrameRate=\(String(Int8(opts.globalEnvs.preferredMaxFrameRate)));"
+        DXMTConfigvalues += "d3d11.preferredMaxFrameRate=\(String(Int(opts.globalEnvs.preferredMaxFrameRate)));"
     }
     if(opts.globalEnvs.metalSpatialUpscaleFactor > 0 || opts.globalEnvs.preferredMaxFrameRate > 29.0) {
         envs += [Env(key: "DXMT_CONFIG", value: DXMTConfigvalues)]
