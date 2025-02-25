@@ -50,6 +50,7 @@ struct GlobalEnvs {
 enum PatchMVK {
     case legacyUE4
     case latestUE4
+    case experimentalUE4
     case none
 }
 
@@ -429,6 +430,13 @@ func patch(url: URL, opts: inout Opts) {
     if(opts.patchMVK == PatchMVK.latestUE4) {
         let latestMVKResource = (
             WINE_RESOURCES_ROOT + MOLTENVK_LATEST,
+            url.path + SHARED_SUPPORT_PATH + MOLTENVK_BASELINE
+        )
+        safeResCopy(res: latestMVKResource.0, dest: latestMVKResource.1)
+    }
+    if(opts.patchMVK == PatchMVK.experimentalUE4) {
+        let latestMVKResource = (
+            WINE_RESOURCES_ROOT + MOLTENVK_EXPERIMENTAL,
             url.path + SHARED_SUPPORT_PATH + MOLTENVK_BASELINE
         )
         safeResCopy(res: latestMVKResource.0, dest: latestMVKResource.1)

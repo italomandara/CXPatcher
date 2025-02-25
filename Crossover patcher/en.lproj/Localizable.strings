@@ -64,7 +64,8 @@ If you face any issues after your installation has been patched, you may downloa
 "hudToggleHelp" = "Enables The Metal Hud For all bottles";
 "MVKdontPatch" = "Don't patch";
 "MVKbaseline" = "Base MVK + UE4 hack";
-"MVKexperimental" = "Latest MVK + UE4 hack";
+"MVKlatest" = "Latest MVK + UE4 hack";
+"MVKexperimental" = "Experimental MVK + UE4 hack";
 "DXVKAsyncToggle" = "DXVK Async";
 "DXVKAsyncToggleHelp" = "Enables DXVK Asynchronous Shader compilation";
 "DisableUE4HackToggle" = "Disable UE4 Hack";

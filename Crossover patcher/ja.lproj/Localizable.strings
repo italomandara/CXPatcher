@@ -64,7 +64,8 @@
 "hudToggleHelp" = "すべてのボトルに Metal Hud を有効にする";
 "MVKdontPatch" = "パッチしないでください";
 "MVKbaseline" = "基本 MVK + UE4 ハック";
-"MVKexperimental" = "最新の MVK + UE4 ハック";
+"MVKlatest" = "最新のMVK + UE4ハック";
+"MVKexperimental" = "実験的なMVK + UE4ハック";
 "DXVKAsyncToggle" = "DXVK 非同期";
 "DXVKAsyncToggleHelp" = "DXVK 非同期シェーダーコンパイルを有効にします";
 "continue" = "続ける";

@@ -64,7 +64,8 @@
 "hudToggleHelp" = "为所有容器启用 METAL HUD";
 "MVKdontPatch" = "不要打补丁";
 "MVKbaseline" = "稳定版 MVK + UE4 Hack";
-"MVKexperimental" = "实验性 MVK + UE4 Hack";
+"MVKlatest" = "最新MVK + UE4破解";
+"MVKexperimental" = "实验性MVK + UE4破解";
 "DXVKAsyncToggle" = "DXVK 异步";
 "DXVKAsyncToggleHelp" = "启用 DXVK 异步着色器编译";
 "continue" = "继续";

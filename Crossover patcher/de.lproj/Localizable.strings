@@ -64,7 +64,8 @@ Sollten nach dem Patchen Ihrer Installation Probleme auftreten, können Sie eine
 "hudToggleHelp" = "Aktiviert das Metal Hud für alle Flaschen";
 "MVKdontPatch" = "Nicht patchen";
 "MVKbaseline" = "Basis MVK + UE4 Hack";
-"MVKexperimental" = "Neueste MVK + UE4 Hack";
+"MVKlatest" = "Neueste MVK + UE4-Hack";
+"MVKexperimental" = "Experimentelle MVK + UE4-Hack";
 "DXVKAsyncToggle" = "DXVK Asynchron";
 "DXVKAsyncToggleHelp" = "Aktiviert die asynchrone Kompilierung von DXVK-Shadern";
 "continue" = "Weiter";

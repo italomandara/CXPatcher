@@ -64,7 +64,8 @@ Se incontri problemi dopo aver patchato la tua installazione, puoi scaricare una
 "hudToggleHelp" = "Abilita Metal Hud per tutte le bottiglie";
 "MVKdontPatch" = "Nessuna patch";
 "MVKbaseline" = "Base MVK + trucco UE4";
-"MVKexperimental" = "Ultima versione MVK + trucco UE4";
+"MVKlatest" = "Ultimo MVK + hack UE4";
+"MVKexperimental" = "MVK sperimentale + hack UE4";
 "DXVKAsyncToggle" = "DXVK Asincrono";
 "DXVKAsyncToggleHelp" = "Abilita la compilazione asincrona degli shader per DXVK";
 "continue" = "Continua";

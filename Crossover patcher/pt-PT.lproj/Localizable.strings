@@ -64,7 +64,8 @@ Se você enfrentar problemas após a instalação ser patcheada, você pode baix
 "hudToggleHelp" = "Ativa o Metal Hud para todas as garrafas";
 "MVKdontPatch" = "Não patchear";
 "MVKbaseline" = "Base MVK + truque UE4";
-"MVKexperimental" = "Última versão MVK + truque UE4";
+"MVKlatest" = "Último MVK + hack UE4";
+"MVKexperimental" = "MVK experimental + hack UE4";
 "DXVKAsyncToggle" = "DXVK Assíncrono";
 "DXVKAsyncToggleHelp" = "Ativa a compilação assíncrona de shaders do DXVK";
 "continue" = "Continuar";

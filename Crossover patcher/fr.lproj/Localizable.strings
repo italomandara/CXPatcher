@@ -64,7 +64,8 @@ Si vous rencontrez des problèmes après avoir appliqué le patch, vous pouvez t
 "hudToggleHelp" = "Active le Hud Metal pour toutes les bouteilles";
 "MVKdontPatch" = "Ne pas patcher";
 "MVKbaseline" = "Base MVK + astuce UE4";
-"MVKexperimental" = "Dernière version MVK + astuce UE4";
+"MVKlatest" = "Dernier MVK + hack UE4";
+"MVKexperimental" = "MVK expérimental + hack UE4";
 "DXVKAsyncToggle" = "DXVK Asynchrone";
 "DXVKAsyncToggleHelp" = "Active la compilation asynchrone des shaders DXVK";
 "continue" = "Continuer";

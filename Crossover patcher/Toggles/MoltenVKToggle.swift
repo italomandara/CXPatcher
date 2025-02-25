@@ -19,7 +19,8 @@ struct MoltenVKToggle: View {
         ) {
             Text(localizedCXPatcherString(forKey:"MVKdontPatch")).tag(PatchMVK.none)
             Text(localizedCXPatcherString(forKey:"MVKbaseline")).tag(PatchMVK.legacyUE4)
-            Text(localizedCXPatcherString(forKey:"MVKexperimental")).tag(PatchMVK.latestUE4)
+            Text(localizedCXPatcherString(forKey:"MVKlatest")).tag(PatchMVK.latestUE4)
+            Text(localizedCXPatcherString(forKey:"MVKexperimental")).tag(PatchMVK.experimentalUE4)
         }.pickerStyle(.menu)
         .padding(.vertical, 6.0)
     }

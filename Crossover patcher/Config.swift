@@ -282,6 +282,7 @@ let DXMT_EVERY_BOTTLE_SYS_PATHS = [
 ]
 
 let MOLTENVK_LATEST = "/lib64/libMoltenVK-latest.dylib"
+let MOLTENVK_EXPERIMENTAL = "/lib64/libMoltenVK-experimental.dylib"
 
 let BOTTLE_PATH_OVERRIDE = "/etc/CrossOver.conf"
 

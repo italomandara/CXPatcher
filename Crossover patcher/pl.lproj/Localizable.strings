@@ -65,7 +65,8 @@ Jeśli napotkasz jakiekolwiek problemy z instalacją CrossOver, możesz pobrać 
 "hudToggleHelp" = "Włącza Metal HUD dla wszystkich butelek";
 "MVKdontPatch" = "Nie łataj";
 "MVKbaseline" = "Stabilna wersja MVK + poprawki UE4";
-"MVKexperimental" = "Najnowsza wersja MVK + poprawki UE4";
+"MVKlatest" = "Najnowszy MVK + UE4 hack";
+"MVKexperimental" = "Eksperymentalny MVK + UE4 hack";
 "Patch DXVK" = "Łataj DXVK";
 "Patch MoltenVK" = "Łataj MoltenVK";
 "DXVKAsyncToggle" = "Asynchroniczne DXVK";

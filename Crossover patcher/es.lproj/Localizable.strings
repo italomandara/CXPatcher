@@ -64,7 +64,8 @@ Si encuentras algún problema después de parchear CrossOver, puedes descargar u
 "hudToggleHelp" = "Habilita el Hud de Metal para todas las botellas";
 "MVKdontPatch" = "No patch";
 "MVKbaseline" = "Base MVK + UE4 fix";
-"MVKexperimental" = "Última versión MVK + UE4 fix";
+"MVKlatest" = "Último MVK + hack de UE4";
+"MVKexperimental" = "MVK experimental + hack de UE4";
 "DXVKAsyncToggle" = "DXVK Asíncrono";
 "DXVKAsyncToggleHelp" = "Habilita la compilación de sombreadores asincrónica de DXVK";
 "continue" = "Continuar";

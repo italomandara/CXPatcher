@@ -64,7 +64,8 @@
 "hudToggleHelp" = "Увімкнути Metal Hud для всіх пляшок";
 "MVKdontPatch" = "Не патчити";
 "MVKbaseline" = "Базовий MVK + хак UE4";
-"MVKexperimental" = "Остання версія MVK + хак UE4";
+"MVKlatest" = "Останній MVK + UE4 хак";
+"MVKexperimental" = "Експериментальний MVK + UE4 хак";
 "DXVKAsyncToggle" = "Асинхронний DXVK";
 "DXVKAsyncToggleHelp" = "Увімкнення асинхронної компіляції шейдерів DXVK";
 "continue" = "Продовжити";

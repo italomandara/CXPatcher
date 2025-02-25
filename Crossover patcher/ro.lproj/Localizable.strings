@@ -64,7 +64,8 @@ Dacă întâmpinați probleme după ce instalația a fost patch-uită, puteți d
 "hudToggleHelp" = "Activează Metal Hud pentru toate sticlele";
 "MVKdontPatch" = "Nu faceți patch";
 "MVKbaseline" = "Bază MVK + hack UE4";
-"MVKexperimental" = "Ultima versiune MVK + hack UE4";
+"MVKlatest" = "Cel mai recent MVK + hack UE4";
+"MVKexperimental" = "MVK experimental + hack UE4";
 "DXVKAsyncToggle" = "DXVK Asincron";
 "DXVKAsyncToggleHelp" = "Activează compilarea asincronă a shaderelor DXVK";
 "continue" = "Continuați";
