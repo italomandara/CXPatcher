@@ -36,6 +36,7 @@
 		38D9D42D2CE0FC7000BBF1BA /* XtLibsToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D9D42C2CE0FC7000BBF1BA /* XtLibsToggle.swift */; };
 		38EDDA382A97A73D00FF2254 /* CrossOver in Resources */ = {isa = PBXBuildFile; fileRef = 38EDDA362A97A73C00FF2254 /* CrossOver */; };
 		38EFF3C02C47D9D300CA6209 /* AdvertiseAVXToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EFF3BF2C47D9C200CA6209 /* AdvertiseAVXToggle.swift */; };
+		38F4F3F42D81F5CA002EDF29 /* GStreamerToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F4F3F32D81F5CA002EDF29 /* GStreamerToggle.swift */; };
 		38F7B2172A5DCF7500CD9511 /* AppSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F7B2162A5DCF7500CD9511 /* AppSelector.swift */; };
 		38F7B2192A5DD19D00CD9511 /* XtLibsUrlSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F7B2182A5DD19D00CD9511 /* XtLibsUrlSelector.swift */; };
 		38F7B21B2A5DD33A00CD9511 /* Logo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F7B21A2A5DD33A00CD9511 /* Logo.swift */; };
@@ -86,6 +87,7 @@
 		38D9D42C2CE0FC7000BBF1BA /* XtLibsToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XtLibsToggle.swift; sourceTree = "<group>"; };
 		38EDDA362A97A73C00FF2254 /* CrossOver */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CrossOver; path = lib/CrossOver; sourceTree = SOURCE_ROOT; };
 		38EFF3BF2C47D9C200CA6209 /* AdvertiseAVXToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertiseAVXToggle.swift; sourceTree = "<group>"; };
+		38F4F3F32D81F5CA002EDF29 /* GStreamerToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GStreamerToggle.swift; sourceTree = "<group>"; };
 		38F7B2162A5DCF7500CD9511 /* AppSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSelector.swift; sourceTree = "<group>"; };
 		38F7B2182A5DD19D00CD9511 /* XtLibsUrlSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XtLibsUrlSelector.swift; sourceTree = "<group>"; };
 		38F7B21A2A5DD33A00CD9511 /* Logo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logo.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 				382AC3162AF8246800097003 /* AutoUpdateDisableToggle.swift */,
 				385793582B1E725100310960 /* DXVKAsyncToggle.swift */,
 				38C099802B2398DD00C83814 /* DisableUE4HackToggle.swift */,
+				38F4F3F32D81F5CA002EDF29 /* GStreamerToggle.swift */,
 			);
 			path = Toggles;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				38F7B21D2A5DD4E100CD9511 /* IntegrateGPTKToggle.swift in Sources */,
 				38284A282BF7B075008C38CC /* Tools.swift in Sources */,
 				38EFF3C02C47D9D300CA6209 /* AdvertiseAVXToggle.swift in Sources */,
+				38F4F3F42D81F5CA002EDF29 /* GStreamerToggle.swift in Sources */,
 				38F7B21B2A5DD33A00CD9511 /* Logo.swift in Sources */,
 				382F4C0729DA516C00824358 /* Utils.swift in Sources */,
 				38C291E62AE8523B00D0703E /* MoltenVKToggle.swift in Sources */,
@@ -526,7 +530,7 @@
 					"$(PROJECT_DIR)/Crossover\\ patcher/Resources",
 					"$(PROJECT_DIR)",
 				);
-				MARKETING_VERSION = 0.5.2;
+				MARKETING_VERSION = 0.6.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.italomandara.Crossover-patcher";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -568,7 +572,7 @@
 					"$(PROJECT_DIR)/Crossover\\ patcher/Resources",
 					"$(PROJECT_DIR)",
 				);
-				MARKETING_VERSION = 0.5.2;
+				MARKETING_VERSION = 0.6.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.italomandara.Crossover-patcher";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

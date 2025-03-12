@@ -48,13 +48,13 @@ struct Options: View {
                     .shadow(radius: 20)
                 }
                 VStack(alignment: .center) {
-                    MoltenVKToggle(
-                        opts: $opts
-                    )
-                    .help(localizedCXPatcherString(forKey: "mkvToggleHelp"))
-                    IntegrateGPTKToggle(
-                        opts: $opts
-                    ).help(localizedCXPatcherString(forKey: "gptkToggleHelp"))
+//                    MoltenVKToggle(
+//                        opts: $opts
+//                    )
+//                    .help(localizedCXPatcherString(forKey: "mkvToggleHelp"))
+//                    IntegrateGPTKToggle(
+//                        opts: $opts
+//                    ).help(localizedCXPatcherString(forKey: "gptkToggleHelp"))
                     if(ENABLE_EXTERNAL_RESOURCES) {
                         XtLibsToggle(
                             opts: $opts
@@ -66,10 +66,14 @@ struct Options: View {
                             }
                         }
                     }
-                    DXVKToggle(
-                        opts: $opts
-                    )
-                    .help(localizedCXPatcherString(forKey: "dxvkToggleHelp"))
+//                    DXVKToggle(
+//                        opts: $opts
+//                    )
+//                    .help(localizedCXPatcherString(forKey: "dxvkToggleHelp"))
+//                    GStreamerToggle(
+//                        opts: $opts
+//                    )
+//                    .help(localizedCXPatcherString(forKey: "GStreamerToggleHelp"))
                     BottlesPathToggle(
                         opts: $opts
                     )
@@ -87,10 +91,10 @@ struct Options: View {
                         opts: $opts
                     )
                     .help(localizedCXPatcherString(forKey: "advertiseAVXToggleHelp"))
-                    DXVKAsyncToggle(
-                        opts: $opts
-                    )
-                    .help(localizedCXPatcherString(forKey: "DXVKAsyncToggleHelp"))
+//                    DXVKAsyncToggle(
+//                        opts: $opts
+//                    )
+//                    .help(localizedCXPatcherString(forKey: "DXVKAsyncToggleHelp"))
                     FastMathToggle(
                         opts: $opts
                     )
@@ -99,11 +103,11 @@ struct Options: View {
                         opts: $opts
                     )
                     .help(localizedCXPatcherString(forKey: "hudToggleHelp"))
-                    DisableUE4HackToggle(
-                        opts: $opts
-                    )
-                    .help(localizedCXPatcherString(forKey: "DisableUE4HackToggleHelp"))
-                    Divider().padding(.vertical, 2)
+//                    DisableUE4HackToggle(
+//                        opts: $opts
+//                    )
+//                    .help(localizedCXPatcherString(forKey: "DisableUE4HackToggleHelp"))
+//                    Divider().padding(.vertical, 2)
                 }
                 .padding(20)
                 .frame(width: 400.0)

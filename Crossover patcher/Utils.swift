@@ -65,13 +65,14 @@ struct Opts {
     var skipVersionCheck: Bool = false
     var repatch: Bool = false
     var overrideBottlePath: Bool = true
-    var copyGptk = true
+    var copyGptk = false
     var progress: Float = 0.0
     var busy: Bool = false
     var cxbottlesPath = DEFAULT_CX_BOTTLES_PATH
-    var patchMVK: PatchMVK = PatchMVK.legacyUE4
+    var patchMVK: PatchMVK = PatchMVK.none
     var autoUpdateDisable = true
-    var patchDXVK = true
+    var patchDXVK = false
+    var patchGStreamer = false // unused for now
     var globalEnvs = GlobalEnvs()
     var removeSignaure = true
     var xtLibsUrl: URL? = nil
@@ -405,7 +406,7 @@ func patch(url: URL, opts: inout Opts) {
     if(opts.copyXtLibs) {
         installDXMT(url: url, opts: opts)
 //        installWineMetalInAllBottles(opts: opts) not needed at the moment, just create a new bottle
-        addOverridesForDXMT(url: url)
+//        addOverridesForDXMT(url: url)
     }
     opts.progress += 1
 //    let filesToDisable = getDisableListFrom(url: url).filter { elem in
