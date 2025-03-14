@@ -48,10 +48,10 @@ struct Options: View {
                     .shadow(radius: 20)
                 }
                 VStack(alignment: .center) {
-//                    MoltenVKToggle(
-//                        opts: $opts
-//                    )
-//                    .help(localizedCXPatcherString(forKey: "mkvToggleHelp"))
+                    MoltenVKToggle(
+                        opts: $opts
+                    )
+                    .help(localizedCXPatcherString(forKey: "mkvToggleHelp"))
 //                    IntegrateGPTKToggle(
 //                        opts: $opts
 //                    ).help(localizedCXPatcherString(forKey: "gptkToggleHelp"))
@@ -66,14 +66,14 @@ struct Options: View {
                             }
                         }
                     }
-//                    DXVKToggle(
-//                        opts: $opts
-//                    )
-//                    .help(localizedCXPatcherString(forKey: "dxvkToggleHelp"))
-//                    GStreamerToggle(
-//                        opts: $opts
-//                    )
-//                    .help(localizedCXPatcherString(forKey: "GStreamerToggleHelp"))
+                    DXVKToggle(
+                        opts: $opts
+                    )
+                    .help(localizedCXPatcherString(forKey: "dxvkToggleHelp"))
+                    GStreamerToggle(
+                        opts: $opts
+                    )
+                    .help(localizedCXPatcherString(forKey: "GStreamerToggleHelp"))
                     BottlesPathToggle(
                         opts: $opts
                     )
@@ -91,10 +91,10 @@ struct Options: View {
                         opts: $opts
                     )
                     .help(localizedCXPatcherString(forKey: "advertiseAVXToggleHelp"))
-//                    DXVKAsyncToggle(
-//                        opts: $opts
-//                    )
-//                    .help(localizedCXPatcherString(forKey: "DXVKAsyncToggleHelp"))
+                    DXVKAsyncToggle(
+                        opts: $opts
+                    )
+                    .help(localizedCXPatcherString(forKey: "DXVKAsyncToggleHelp"))
                     FastMathToggle(
                         opts: $opts
                     )

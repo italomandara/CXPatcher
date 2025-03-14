@@ -69,10 +69,10 @@ struct Opts {
     var progress: Float = 0.0
     var busy: Bool = false
     var cxbottlesPath = DEFAULT_CX_BOTTLES_PATH
-    var patchMVK: PatchMVK = PatchMVK.none
+    var patchMVK: PatchMVK = PatchMVK.legacyUE4
     var autoUpdateDisable = true
-    var patchDXVK = false
-    var patchGStreamer = false // unused for now
+    var patchDXVK = true
+    var patchGStreamer = true
     var globalEnvs = GlobalEnvs()
     var removeSignaure = true
     var xtLibsUrl: URL? = nil
@@ -631,11 +631,15 @@ func addGlobals(url: URL, opts: Opts) {
     disable(dest: url.path + SHARED_SUPPORT_PATH + BOTTLE_PATH_OVERRIDE)
     var envs: [Env] = [Env(key: "CX_BOTTLE_PATH", value: opts.cxbottlesPath)]
     var DXMTConfigvalues = ""
+    if(opts.patchMVK == .legacyUE4) {
+        print("add enable UE4 Hack env")
+        envs += [Env(key: "MVK_CONFIG_UE4_HACK_ENABLED", value: "1")]
+    }
     if(opts.globalEnvs.metalFXSpatial == true) {
         print("add metalFXSpatial env")
         envs += [Env(key: "DXMT_METALFX_SPATIAL_SWAPCHAIN", value: "1")]
     }
-    if(opts.globalEnvs.metalSpatialUpscaleFactor > 0) {
+    if(opts.globalEnvs.metalFXSpatial == true && opts.globalEnvs.metalSpatialUpscaleFactor > 0) {
         print("add metalSpatialUpscaleFactor env")
         DXMTConfigvalues += "d3d11.metalSpatialUpscaleFactor=\(String(opts.globalEnvs.metalSpatialUpscaleFactor));"
     }

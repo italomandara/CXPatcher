@@ -1,0 +1,692 @@
+;; (c) Copyright 2006-2010. CodeWeavers, Inc.
+
+[version]
+signature="$CHICAGO$"
+
+
+;------------------------------------------------------------
+
+; FIXME: Adding a DefaultDestDir field to the Fonts section should work but it doesn't
+[DestinationDirs]
+ObsoleteSysApps=11    ; c:\Windows\System(32)
+ObsoleteWinApps=10    ; c:\Windows
+CatFiles=11,\catroot\{f750e6c3-38ee-11d1-85e5-00c04fc295ee}           ; c:\Windows\System(32)
+MediaFiles= 10,\Media ; c:\Windows\Media
+
+[Strings]
+Control="System\CurrentControlSet\Control"
+CurrentVersion="Software\Microsoft\Windows\CurrentVersion"
+CurrentVersionNT="Software\Microsoft\Windows NT\CurrentVersion"
+
+;------------------------------------------------------------
+
+[PreUpgrade]
+DelReg=\
+    ShellReg
+
+[ShellReg]
+HKLM,%CurrentVersion%\Explorer\Shell Folders,"Personal"
+HKCU,%CurrentVersion%\Explorer\Shell Folders,"Personal"
+HKCU,%CurrentVersion%\Explorer\User Shell Folders,"Personal"
+HKU,.Default\%CurrentVersion%\Explorer\Shell Folders,"Personal"
+HKU,.Default\%CurrentVersion%\Explorer\User Shell Folders,"Personal"
+
+
+;------------------------------------------------------------
+
+[WineBrowserUpgrade]
+DelReg=\
+    WineBrowserReg
+
+[WineBrowserReg]
+HKCU,Software\Wine\WineBrowser,"Browsers"
+HKCU,Software\Wine\WineBrowser,"Mailers"
+
+[GoogleCloudPrintReg]
+
+;------------------------------------------------------------
+
+; Win98 upgrade
+[DefaultInstall]
+UpdateInis=\
+    WineDesktopIni
+AddReg=\
+    ColorsReg,\
+    DrivesReg,\
+    FallbackAssociationReg,\
+    MiscReg,\
+    WineDllOverridesReg,\
+    WineDllOverridesReg9x,\
+    WineSettingsReg
+DelReg=\
+    ObsoleteRegHacks
+CopyFiles=\
+    MediaFiles
+DelFiles=\
+    ObsoleteSysApps,\
+    ObsoleteWinApps
+RegisterDlls=RegisterDllsSection
+
+; WinXP creation, and upgrades for >= Win2000
+[DefaultInstall.NT]
+UpdateInis=\
+    WineDesktopIni
+AddReg=\
+    ColorsReg,\
+    DrivesReg,\
+    FallbackAssociationReg,\
+    MiscReg,\
+    WineDllOverridesReg,\
+    WineDllOverridesRegNT,\
+    WineSettingsReg, \
+    ODBCReg
+DelReg=\
+    ObsoleteRegHacks
+CopyFiles=\
+    MediaFiles,\
+    CatFiles
+DelFiles=\
+    ObsoleteSysApps,\
+    ObsoleteWinApps
+RegisterDlls=RegisterDllsSection
+
+;------------------------------------------------------------
+
+; Win98 creation
+[Win98Install]
+UpdateInis=\
+    WineDesktopIni
+AddReg=\
+    VersionInfo98,\
+    ColorsReg,\
+    DrivesReg,\
+    FallbackAssociationReg,\
+    MiscReg,\
+    WineDllOverridesReg,\
+    WineDllOverridesReg9x,\
+    WineSettingsReg
+DelReg=\
+    ObsoleteRegHacks
+CopyFiles=\
+    MediaFiles
+DelFiles=\
+    ObsoleteSysApps,\
+    ObsoleteWinApps
+RegisterDlls=RegisterDllsSection
+
+[VersionInfo98]
+HKLM,%CurrentVersion%,"Version",2,"Windows 98"
+HKLM,%CurrentVersion%,"VersionNumber",2,"4.10.2222"
+HKLM,%CurrentVersion%,"SubVersionNumber",2," A "
+
+;------------------------------------------------------------
+
+[Win2000Install]
+UpdateInis=\
+    WineDesktopIni
+AddReg=\
+    VersionInfo2000,\
+    ColorsReg,\
+    DrivesReg,\
+    FallbackAssociationReg,\
+    MiscReg,\
+    WineDllOverridesReg,\
+    WineDllOverridesRegNT,\
+    WineSettingsReg, \
+    ODBCReg
+DelReg=\
+    ObsoleteRegHacks
+CopyFiles=\
+    MediaFiles,\
+    CatFiles
+DelFiles=\
+    ObsoleteSysApps,\
+    ObsoleteWinApps
+RegisterDlls=RegisterDllsSection
+
+[VersionInfo2000]
+HKLM,%CurrentVersionNT%,"CSDVersion",,"Service Pack 4"
+HKLM,%CurrentVersionNT%,"CurrentMajorVersionNumber",0x10001,5
+HKLM,%CurrentVersionNT%,"CurrentMinorVersionNumber",0x10001,0
+HKLM,%CurrentVersionNT%,"CurrentBuildNumber",,"2195"
+HKLM,%CurrentVersionNT%,"CurrentBuild",,"2195"
+HKLM,%CurrentVersionNT%,"CurrentType",,"Uniprocessor Free"
+HKLM,%CurrentVersionNT%,"CurrentVersion",,"5.0"
+HKLM,%CurrentVersionNT%,"ProductName",,"Microsoft Windows 2000"
+HKLM,%Control%\ProductOptions,"ProductType",,"WinNT"
+HKLM,%Control%\Windows,"CSDVersion",0x10001,0x400
+HKLM,%Control%\Session Manager\Environment,"OS",,"Windows_NT"
+
+;------------------------------------------------------------
+
+[WinXPInstall]
+UpdateInis=\
+    WineDesktopIni
+AddReg=\
+    VersionInfoXP,\
+    ColorsReg,\
+    DrivesReg,\
+    FallbackAssociationReg,\
+    MiscReg,\
+    WineDllOverridesReg,\
+    WineDllOverridesRegNT,\
+    WineSettingsReg, \
+    ODBCReg
+DelReg=\
+    ObsoleteRegHacks
+CopyFiles=\
+    MediaFiles,\
+    CatFiles
+DelFiles=\
+    ObsoleteSysApps,\
+    ObsoleteWinApps
+RegisterDlls=RegisterDllsSection
+
+[VersionInfoXP]
+HKLM,%CurrentVersionNT%,"CSDVersion",,"Service Pack 3"
+HKLM,%CurrentVersionNT%,"CurrentMajorVersionNumber",0x10001,5
+HKLM,%CurrentVersionNT%,"CurrentMinorVersionNumber",0x10001,1
+HKLM,%CurrentVersionNT%,"CurrentBuildNumber",,"2600"
+HKLM,%CurrentVersionNT%,"CurrentBuild",,"2600"
+HKLM,%CurrentVersionNT%,"CurrentType",,"Uniprocessor Free"
+HKLM,%CurrentVersionNT%,"CurrentVersion",,"5.1"
+HKLM,%CurrentVersionNT%,"ProductName",,"Microsoft Windows XP"
+HKLM,%Control%\ProductOptions,"ProductType",,"WinNT"
+HKLM,%Control%\Windows,"CSDVersion",0x10001,0x300
+HKLM,%Control%\Session Manager\Environment,"OS",,"Windows_NT"
+
+;------------------------------------------------------------
+
+[VistaInstall]
+AddReg=\
+    VersionInfoVista,\
+    ColorsReg,\
+    DrivesReg,\
+    FallbackAssociationReg,\
+    MiscReg,\
+    WineDllOverridesReg,\
+    WineDllOverridesRegNT,\
+    WineSettingsReg, \
+    ODBCReg
+DelReg=\
+    ObsoleteRegHacks
+CopyFiles=\
+    MediaFiles,\
+    CatFiles
+DelFiles=\
+    ObsoleteSysApps,\
+    ObsoleteWinApps
+RegisterDlls=RegisterDllsSection
+
+[VersionInfoVista]
+HKLM,%CurrentVersionNT%,"CSDVersion",,"Service Pack 2"
+HKLM,%CurrentVersionNT%,"CurrentMajorVersionNumber",0x10001,6
+HKLM,%CurrentVersionNT%,"CurrentMinorVersionNumber",0x10001,0
+HKLM,%CurrentVersionNT%,"CurrentBuildNumber",,"6002"
+HKLM,%CurrentVersionNT%,"CurrentBuild",,"6002"
+HKLM,%CurrentVersionNT%,"CurrentType",,"Uniprocessor Free"
+HKLM,%CurrentVersionNT%,"CurrentVersion",,"6.0"
+HKLM,%CurrentVersionNT%,"ProductName",,"Microsoft Windows Vista"
+HKLM,%Control%\Windows,"CSDVersion",0x10001,0x00000200
+HKLM,%Control%\Session Manager\Environment,"OS",,"Windows_NT"
+
+;------------------------------------------------------------
+
+[Win7Install]
+AddReg=\
+    VersionInfo7,\
+    ColorsReg,\
+    DrivesReg,\
+    FallbackAssociationReg,\
+    MiscReg,\
+    WineDllOverridesReg,\
+    WineDllOverridesRegNT,\
+    WineSettingsReg, \
+    ODBCReg
+DelReg=\
+    ObsoleteRegHacks
+CopyFiles=\
+    MediaFiles,\
+    CatFiles
+DelFiles=\
+    ObsoleteSysApps,\
+    ObsoleteWinApps
+RegisterDlls=RegisterDllsSection
+
+[VersionInfo7]
+HKLM,%CurrentVersionNT%,"CSDVersion",,"Service Pack 1"
+HKLM,%CurrentVersionNT%,"CurrentMajorVersionNumber",0x10001,6
+HKLM,%CurrentVersionNT%,"CurrentMinorVersionNumber",0x10001,1
+HKLM,%CurrentVersionNT%,"CurrentBuildNumber",,"7601"
+HKLM,%CurrentVersionNT%,"CurrentBuild",,"7601"
+HKLM,%CurrentVersionNT%,"CurrentType",,"Uniprocessor Free"
+HKLM,%CurrentVersionNT%,"CurrentVersion",,"6.1"
+HKLM,%CurrentVersionNT%,"ProductName",,"Microsoft Windows 7"
+HKLM,%Control%\Windows,"CSDVersion",0x10001,0x00000100
+HKLM,%Control%\Session Manager\Environment,"OS",,"Windows_NT"
+
+;------------------------------------------------------------
+
+[Win8Install]
+AddReg=\
+    VersionInfo8,\
+    ColorsReg,\
+    DrivesReg,\
+    FallbackAssociationReg,\
+    MiscReg,\
+    WineDllOverridesReg,\
+    WineDllOverridesRegNT,\
+    WineSettingsReg, \
+    ODBCReg
+DelReg=\
+    ObsoleteRegHacks
+CopyFiles=\
+    MediaFiles,\
+    CatFiles
+DelFiles=\
+    ObsoleteSysApps,\
+    ObsoleteWinApps
+RegisterDlls=RegisterDllsSection
+
+[VersionInfo8]
+HKLM,%CurrentVersionNT%,"CSDVersion",,""
+HKLM,%CurrentVersionNT%,"CurrentMajorVersionNumber",0x10001,6
+HKLM,%CurrentVersionNT%,"CurrentMinorVersionNumber",0x10001,2
+HKLM,%CurrentVersionNT%,"CurrentBuildNumber",,"9200"
+HKLM,%CurrentVersionNT%,"CurrentBuild",,"9200"
+HKLM,%CurrentVersionNT%,"CurrentType",,"Uniprocessor Free"
+HKLM,%CurrentVersionNT%,"CurrentVersion",,"6.2"
+HKLM,%CurrentVersionNT%,"ProductName",,"Microsoft Windows 8"
+HKLM,%Control%\Windows,"CSDVersion",0x10001,0x00000000
+HKLM,%Control%\Session Manager\Environment,"OS",,"Windows_NT"
+
+;------------------------------------------------------------
+
+[Win10Install]
+AddReg=\
+    VersionInfo10,\
+    ColorsReg,\
+    DrivesReg,\
+    FallbackAssociationReg,\
+    MiscReg,\
+    WineDllOverridesReg,\
+    WineDllOverridesRegNT,\
+    WineSettingsReg, \
+    ODBCReg
+DelReg=\
+    ObsoleteRegHacks
+CopyFiles=\
+    MediaFiles,\
+    CatFiles
+DelFiles=\
+    ObsoleteSysApps,\
+    ObsoleteWinApps
+RegisterDlls=RegisterDllsSection
+
+[VersionInfo10]
+HKLM,%CurrentVersionNT%,"CSDVersion",,""
+HKLM,%CurrentVersionNT%,"CurrentMajorVersionNumber",0x10001,10
+HKLM,%CurrentVersionNT%,"CurrentMinorVersionNumber",0x10001,0
+HKLM,%CurrentVersionNT%,"CurrentBuildNumber",,"19043"
+HKLM,%CurrentVersionNT%,"CurrentBuild",,"19043"
+HKLM,%CurrentVersionNT%,"CurrentType",,"Multiprocessor Free"
+HKLM,%CurrentVersionNT%,"CurrentVersion",,"6.3"
+HKLM,%CurrentVersionNT%,"ProductName",,"Windows 10 Pro"
+HKLM,%Control%\Windows,"CSDVersion",0x10001,0x00000000
+HKLM,%Control%\Session Manager\Environment,"OS",,"Windows_NT"
+
+;------------------------------------------------------------
+
+[Win11Install]
+AddReg=\
+    VersionInfo11,\
+    ColorsReg,\
+    DrivesReg,\
+    FallbackAssociationReg,\
+    MiscReg,\
+    WineDllOverridesReg,\
+    WineDllOverridesRegNT,\
+    WineSettingsReg, \
+    ODBCReg
+DelReg=\
+    ObsoleteRegHacks
+CopyFiles=\
+    MediaFiles,\
+    CatFiles
+DelFiles=\
+    ObsoleteSysApps,\
+    ObsoleteWinApps
+RegisterDlls=RegisterDllsSection
+
+[VersionInfo11]
+HKLM,%CurrentVersionNT%,"CSDVersion",,""
+HKLM,%CurrentVersionNT%,"CurrentMajorVersionNumber",0x10001,10
+HKLM,%CurrentVersionNT%,"CurrentMinorVersionNumber",0x10001,0
+HKLM,%CurrentVersionNT%,"CurrentBuildNumber",,"22000"
+HKLM,%CurrentVersionNT%,"CurrentBuild",,"22000"
+HKLM,%CurrentVersionNT%,"CurrentType",,"Multiprocessor Free"
+HKLM,%CurrentVersionNT%,"CurrentVersion",,"6.3"
+HKLM,%CurrentVersionNT%,"ProductName",,"Windows 11 Pro"
+HKLM,%Control%\Windows,"CSDVersion",0x10001,0x00000000
+HKLM,%Control%\Session Manager\Environment,"OS",,"Windows_NT"
+
+;------------------------------------------------------------
+
+
+[ObsoleteSysApps]
+wcmd.exe
+
+[ObsoleteWinApps]
+rundll32.exe
+
+[ObsoleteRegHacks]
+HKLM,"Software\Wine\Drives"
+HKCU,"Software\Valve\Source\cstrike\Settings","DXLevel_V1"
+HKCU,"Software\Valve\Source\dod\Settings","DXLevel_V1"
+HKCU,"Software\Valve\Source\episodic\Settings","DXLevel_V1"
+HKCU,"Software\Valve\Source\hl2\Settings","DXLevel_V1"
+HKCU,"Software\Valve\Source\hl2mp\Settings","DXLevel_V1"
+HKCU,"Software\Wine\AppDefaults\ExeFile.exe\Direct3D","ResetFail"
+HKCU,"Software\Wine\AppDefaults\hl2.exe\Direct3D","tf2_alpha_hack"
+HKCU,"Software\Wine\AppDefaults\iTunes.exe\DllOverrides","wininet"
+HKCU,"Software\Wine\AppDefaults\itunes.exe\DllOverrides","userenv"
+HKCU,"Software\Wine\AppDefaults\s3.exe\DirectInput","MouseHack"
+HKCU,"Software\Wine\AppDefaults\SpellForce.exe\DirectInput","MouseHack"
+HKCU,"Software\Wine\AppDefaults\swep1rcr.exe\DirectInput","MouseHack"
+HKCU,"Software\Wine\DirectSound","HardwareAcceleration"
+HKCU,"Software\Wine\DllOverrides","*ose.exe"
+HKCU,"Software\Wine\AppDefaults\DXSETUP.exe","Version"
+HKCU,"Software\Wine\AppDefaults\DXSETUP.exe\DllOverrides","mscoree"
+HKCU,"Software\Wine\AppDefaults\jp_mabinogi_setup.exe\Explorer","Desktop"
+HKCU,"Software\Wine\Explorer\Desktops","jp_mabinogi_setup.exe"
+HKCU,"Software\Wine\AppDefaults\MaruJan.exe\osxIme","EnableSynchronize"
+HKCU,"Software\Wine\DllOverrides","ipodservice.exe"
+HKCU,"Software\Wine\DllOverrides","ipod~xqq.exe"
+
+
+[ColorsReg]
+HKCU,"Control Panel\Colors","ActiveBorder",2,"228 228 228"
+HKCU,"Control Panel\Colors","ButtonFace",2,"228 228 228"
+HKCU,"Control Panel\Colors","ButtonLight",2,"228 228 228"
+HKCU,"Control Panel\Colors","InactiveBorder",2,"228 228 228"
+HKCU,"Control Panel\Colors","Menu",2,"228 228 228"
+
+[WineDesktopIni]
+win.ini,"desktop",,"Wallpaper=share/images/wallpaper.bmp"
+
+[MiscReg]
+HKLM,"Software\Microsoft\Internet Explorer\Main","Start Page",2,"http://www.codeweavers.com"
+HKCU,"Software\Microsoft\Internet Explorer\International",,0x10,""
+HKLM,"Software\Crystal Decisions\9.0\Crystal Reports","CommonFiles",2,""
+HKCU,%CurrentVersion%\Explorer\Advanced,"HideFileExt",0x10003,0x00000000
+HKCU,"AppEvents\Schemes\Apps\.Default\MailBeep\.Default",,2,""C:\Windows\Media\Notify.wav"
+
+
+[CatFiles]
+oem0.cat
+
+[MediaFiles]
+Notify.wav
+
+
+[WineDllOverridesReg]
+; WARNING: Dlls marked as native-only must not be registered.
+;          So update wine.inf accordingly.
+HKCU,"Software\Wine\DllOverrides","atl",,"native, builtin"
+HKCU,"Software\Wine\DllOverrides","dciman32",,"native"
+HKCU,"Software\Wine\DllOverrides","hhctrl.ocx",,"native, builtin"
+HKCU,"Software\Wine\DllOverrides","iernonce",,"native, builtin"
+HKCU,"Software\Wine\DllOverrides","itss",,"native, builtin"
+HKCU,"Software\Wine\DllOverrides","mshtml",,"native, builtin"
+HKCU,"Software\Wine\DllOverrides","mlang",,"native, builtin"
+HKCU,"Software\Wine\DllOverrides","msvcirt",2,"native, builtin"
+HKCU,"Software\Wine\DllOverrides","msvcrt40",2,"native, builtin"
+HKCU,"Software\Wine\DllOverrides","msvcrtd",2,"native, builtin"
+HKCU,"Software\Wine\DllOverrides","odbccp32",,"native, builtin"
+HKCU,"Software\Wine\DllOverrides","riched20",2,"native, builtin"
+HKCU,"Software\Wine\DllOverrides","riched32",2,"native, builtin"
+HKCU,"Software\Wine\DllOverrides","softpub",,"native, builtin"
+HKCU,"Software\Wine\DllOverrides","dxdiagn",,"native, builtin"
+HKCU,"Software\Wine\DllOverrides","dplay",,"native, builtin"
+HKCU,"Software\Wine\DllOverrides","dplayx",,"native, builtin"
+HKCU,"Software\Wine\DllOverrides","dplaysvr.exe",,"native, builtin"
+HKCU,"Software\Wine\DllOverrides","dpnaddr",,"native, builtin"
+HKCU,"Software\Wine\DllOverrides","dpnet",,"native, builtin"
+HKCU,"Software\Wine\DllOverrides","dpnhpast",,"native, builtin"
+HKCU,"Software\Wine\DllOverrides","dpnhupnp",,"native, builtin"
+HKCU,"Software\Wine\DllOverrides","dpnlobby",,"native, builtin"
+HKCU,"Software\Wine\DllOverrides","dpnsvr.exe",,"native, builtin"
+HKCU,"Software\Wine\DllOverrides","dpnwsock",,"native, builtin"
+HKCU,"Software\Wine\DllOverrides","d3dxof",,"native, builtin"
+
+HKCU,"Software\Wine\DllOverrides","*docbox.api",2,""
+
+HKCU,"Software\Wine\DllOverrides","crypt32",,"native, builtin"
+HKCU,"Software\Wine\DllOverrides","devenum",,"native, builtin"
+HKCU,"Software\Wine\DllOverrides","hlink",,"native, builtin"
+HKCU,"Software\Wine\DllOverrides","jscript",,"native, builtin"
+HKCU,"Software\Wine\DllOverrides","quartz",,"native, builtin"
+HKCU,"Software\Wine\DllOverrides","rsabase",,"native, builtin"
+HKCU,"Software\Wine\DllOverrides","secur32",,"native, builtin"
+HKCU,"Software\Wine\DllOverrides","shdocvw",,"native, builtin"
+HKCU,"Software\Wine\DllOverrides","shdoclc",,"native, builtin"
+HKCU,"Software\Wine\DllOverrides","urlmon",,"native, builtin"
+HKCU,"Software\Wine\DllOverrides","wintrust",,"native, builtin"
+HKCU,"Software\Wine\DllOverrides","wscript.exe",,"native, builtin"
+
+HKCU,"Software\Wine\DllOverrides","odbc32",,"native, builtin"
+
+
+HKCU,"Software\Wine\DllOverrides","*autorun.exe",,"native,builtin"
+HKCU,"Software\Wine\DllOverrides","*ctfmon.exe",,"builtin"
+HKCU,"Software\Wine\DllOverrides","*ddhelp.exe",,"builtin"
+HKCU,"Software\Wine\DllOverrides","*findfast.exe",,"builtin"
+HKCU,"Software\Wine\DllOverrides","*maildoff.exe",,"builtin"
+HKCU,"Software\Wine\DllOverrides","*mdm.exe",,"builtin"
+HKCU,"Software\Wine\DllOverrides","*mosearch.exe",,"builtin"
+HKCU,"Software\Wine\DllOverrides","*pstores.exe",,"builtin"
+
+HKCU,"Software\Wine\DllOverrides","*user.exe",,"native,builtin"
+
+HKCU,"Software\Wine\DllOverrides","*ieinfo5.ocx",2,"builtin"
+
+
+; Needed to counteract the Win9x bottle's DllOverrides
+HKCU,"Software\Wine\AppDefaults\cxwget.exe\DllOverrides","wininet",,"builtin"
+
+; Fix Heavy Rain audio
+ HKCU,"Software\Wine\AppDefaults\HeavyRain.exe\DllOverrides","*xaudio2_7",,"native"
+; Fix Resident Evil 7 audio
+ HKCU,"Software\Wine\AppDefaults\re7.exe\DllOverrides","*msspatial",,""
+; Disable Dying Light 2 AVX
+ HKCU,"Software\Wine\AppDefaults\DyinglightGame_x64_rwdi.exe\DllOverrides","*runtime_dx11",,""
+; Fix for Tokio Extreme Racing
+ HKCU,"Software\Wine\AppDefaults\TokyoXtremeRacer-Win64-Shipping.exe\DllOverrides","*d3dcompiler_47",,"native"
+ HKCU,"Software\Wine\AppDefaults\TokyoXtremeRacer-Win64-Shipping.exe\DllOverrides","*EACrashReporter.exe",,""
+ HKCU,"Software\Wine\AppDefaults\TokyoXtremeRacer-Win64-Shipping.exe\DllOverrides","*msvcp140",,"native,builtin"
+ HKCU,"Software\Wine\AppDefaults\TokyoXtremeRacer-Win64-Shipping.exe\DllOverrides","*msvcp140_1",,"native,builtin"
+ HKCU,"Software\Wine\AppDefaults\TokyoXtremeRacer-Win64-Shipping.exe\DllOverrides","*msvcp140_2",,"native,builtin"
+ HKCU,"Software\Wine\AppDefaults\TokyoXtremeRacer-Win64-Shipping.exe\DllOverrides","*msvcp140_atomic_wait",,"native,builtin"
+ HKCU,"Software\Wine\AppDefaults\TokyoXtremeRacer-Win64-Shipping.exe\DllOverrides","**msvcp140_codecvt_ids",,"native,builtin"
+ HKCU,"Software\Wine\AppDefaults\TokyoXtremeRacer-Win64-Shipping.exe\DllOverrides","*ucrtbase",,"native,builtin"
+ HKCU,"Software\Wine\AppDefaults\TokyoXtremeRacer-Win64-Shipping.exe\DllOverrides","*vcamp140",,"native,builtin"
+ HKCU,"Software\Wine\AppDefaults\TokyoXtremeRacer-Win64-Shipping.exe\DllOverrides","*vccorlib140",,"native,builtin"
+ HKCU,"Software\Wine\AppDefaults\TokyoXtremeRacer-Win64-Shipping.exe\DllOverrides","*vcomp140",,"native,builtin"
+ HKCU,"Software\Wine\AppDefaults\TokyoXtremeRacer-Win64-Shipping.exe\DllOverrides","*vcruntime140",,"native,builtin"
+ HKCU,"Software\Wine\AppDefaults\TokyoXtremeRacer-Win64-Shipping.exe\DllOverrides","*vcruntime140_1",,"native,builtin
+; Fix for Ninja Gaiden 2
+ HKCU,"Software\Wine\AppDefaults\NINJAGAIDEN2BLACK.exe\DllOverrides","*msvcp140",,"native,builtin"
+ HKCU,"Software\Wine\AppDefaults\NINJAGAIDEN2BLACK.exe\DllOverrides","*msvcp140_1",,"native,builtin"
+ HKCU,"Software\Wine\AppDefaults\NINJAGAIDEN2BLACK.exe\DllOverrides","*msvcp140_2",,"native,builtin"
+ HKCU,"Software\Wine\AppDefaults\NINJAGAIDEN2BLACK.exe\DllOverrides","*vcruntime140",,"native,builtin"
+ HKCU,"Software\Wine\AppDefaults\NINJAGAIDEN2BLACK.exe\DllOverrides","*vcruntime140_1",,"native,builtin
+
+
+; Fix for the Cyber Engine Tweaks and RED4ext in Cyberpunk 2077 (credits: https://wiki.redmodding.org/cyber-engine-tweaks/getting-started/installing/linux-proton)
+ HKCU,"Software\Wine\AppDefaults\Cyberpunk2077.exe\DllOverrides","d3dcompiler_47",,"native,builtin"
+ HKCU,"Software\Wine\AppDefaults\Cyberpunk2077.exe\DllOverrides","version",,"native,builtin"
+ HKCU,"Software\Wine\AppDefaults\Cyberpunk2077.exe\DllOverrides","winmm",,"native,builtin"
+
+; Make sure that winewrapper isn't hotwired with an alternative crypt32.
+HKCU,"Software\Wine\AppDefaults\winewrapper.exe\DllOverrides","crypt32",,"builtin"
+HKCU,"Software\Wine\AppDefaults\winewrapper.exe\DllOverrides","rsabase",,"builtin"
+HKCU,"Software\Wine\AppDefaults\winewrapper.exe\DllOverrides","rsaenh",,"builtin"
+
+[WineDllOverridesReg9x]
+;;HKCU,"Software\Wine\DllOverrides","oleaut32",,"native, builtin"  ;;will be set by reboot.exe
+HKCU,"Software\Wine\DllOverrides","olepro32",,"native, builtin"
+HKCU,"Software\Wine\DllOverrides","rpcrt4",,"native, builtin"
+HKCU,"Software\Wine\DllOverrides","rsaenh",,"native, builtin"
+;; SFC does not exist on win98
+HKCU,"Software\Wine\DllOverrides","sfc",,""
+HKCU,"Software\Wine\DllOverrides","sfc_os",,""
+HKCU,"Software\Wine\DllOverrides","wininet",,"native, builtin"
+
+; The following DLL's were marked as native-only in CrossOver 10 and earlier.
+; For bottle upgrades to work properly, we need to change them to n,b.
+HKCU,"Software\Wine\DllOverrides","msi",,"native, builtin"
+HKCU,"Software\Wine\DllOverrides","*msiexec.exe",,"native, builtin"
+HKCU,"Software\Wine\DllOverrides","msxml3",,"native, builtin"
+HKCU,"Software\Wine\DllOverrides","odbccp32",,"native, builtin"
+HKCU,"Software\Wine\DllOverrides","ole32",,"native, builtin"
+
+
+
+; rpcrt4 from DCOM9x doesn't implement the W functions necessary for the svcctl client/server
+HKCU,"Software\Wine\AppDefaults\plugplay.exe\DllOverrides","rpcrt4",,"builtin"
+HKCU,"Software\Wine\AppDefaults\services.exe\DllOverrides","rpcrt4",,"builtin"
+HKCU,"Software\Wine\AppDefaults\spoolsv.exe\DllOverrides","rpcrt4",,"builtin"
+HKCU,"Software\Wine\AppDefaults\termsv.exe\DllOverrides","rpcrt4",,"builtin"
+HKCU,"Software\Wine\AppDefaults\wineboot.exe\DllOverrides","rpcrt4",,"builtin"
+HKCU,"Software\Wine\AppDefaults\winedevice.exe\DllOverrides","rpcrt4",,"builtin"
+
+
+[WineDllOverridesRegNT]
+HKCU,"Software\Wine\DllOverrides","amstream",,"native, builtin"
+HKCU,"Software\Wine\DllOverrides","msi",,"builtin"
+HKCU,"Software\Wine\DllOverrides","*msiexec.exe",,"builtin"
+HKCU,"Software\Wine\DllOverrides","ole32",,"builtin"
+HKCU,"Software\Wine\DllOverrides","oleaut32",,"builtin"
+HKCU,"Software\Wine\DllOverrides","olepro32",,"builtin"
+HKCU,"Software\Wine\DllOverrides","rpcrt4",,"builtin"
+# SSL doesn't work with native wininet as it depends on schannel in secur32 being implemented
+HKCU,"Software\Wine\DllOverrides","wininet",,"builtin"
+
+
+HKCU,"Software\Wine\AppDefaults\outlook.exe\DllOverrides","riched20",,"native"
+HKCU,"Software\Wine\AppDefaults\outlook.exe\DllOverrides","activeds",,"native,builtin"
+
+; VC2017 redist uses MSXML2, and the builtin one forwards to MSXML3.
+; Steam crosstie installs native MSXML3 and there's an 'n,b' override for it,
+; but builtin MSXML2 forwarding to native MSXML3 doesn't work.
+; For VC2017 redist, use builtin for both.
+HKCU,"Software\Wine\AppDefaults\vc_redist.x64.exe\DllOverrides","msxml2",,"builtin, native"
+HKCU,"Software\Wine\AppDefaults\vc_redist.x64.exe\DllOverrides","msxml3",,"builtin, native"
+HKCU,"Software\Wine\AppDefaults\vc_redist.x86.exe\DllOverrides","msxml2",,"builtin, native"
+HKCU,"Software\Wine\AppDefaults\vc_redist.x86.exe\DllOverrides","msxml3",,"builtin, native"
+
+; These VC2012/3 redists from the EA launcher have the same MSXML2/3 issue.
+HKCU,"Software\Wine\AppDefaults\vc_redist-11.0.61030.x86.exe\DllOverrides","msxml2",,"builtin, native"
+HKCU,"Software\Wine\AppDefaults\vc_redist-11.0.61030.x86.exe\DllOverrides","msxml3",,"builtin, native"
+HKCU,"Software\Wine\AppDefaults\vc_redist-12.0.40664.x86.exe\DllOverrides","msxml2",,"builtin, native"
+HKCU,"Software\Wine\AppDefaults\vc_redist-12.0.40664.x86.exe\DllOverrides","msxml3",,"builtin, native"
+
+; Same MSXML2/3 issue with the EA launcher installer itself.
+HKCU,"Software\Wine\AppDefaults\EAappInstaller.exe\DllOverrides","msxml2",,"builtin, native"
+HKCU,"Software\Wine\AppDefaults\EAappInstaller.exe\DllOverrides","msxml3",,"builtin, native"
+
+; Halo Master Chief Collection crashes without this
+HKCU,"Software\Wine\AppDefaults\MCC-Win64-Shipping.exe\DllOverrides","concrt140",,"native, builtin"
+
+
+[FallbackAssociationReg]
+HKLM,"Software\Classes\CrossOverFallback",,,"Open in a native application"
+HKLM,"Software\Classes\CrossOverFallback\shell\Open",,,"&Open"
+HKLM,"Software\Classes\CrossOverFallback\shell\Open\command",,,"cxnative.exe -- cxnativeopen --background ""%1"""
+
+
+[WineSettingsReg]
+HKCU,"Software\Wine\Fonts\Replacements","Arial",2,"Bitstream Vera Sans"
+; for steam
+HKCU,"Software\Wine\Fonts\Replacements","Lucida Console",2,"MS Sans Serif"
+
+HKCU,"Software\Wine\AppDefaults\cxcplinfo.exe\Explorer","Desktop",2,"root"
+HKCU,"Software\Wine\AppDefaults\cxmklnk.exe\Explorer","Desktop",2,"root"
+HKCU,"Software\Wine\AppDefaults\winemenubuilder.exe\Explorer","Desktop",2,"root"
+HKCU,"Software\Wine\AppDefaults\winewrapper.exe\Explorer","Desktop",2,"root"
+
+;Japanese Fonts
+HKCU,"Software\Wine\Fonts\Replacements","MS Gothic",2,"ヒラギノ角ゴ Pro W3"
+HKCU,"Software\Wine\Fonts\Replacements","MS PGothic",2,"ヒラギノ角ゴ Pro W3"
+HKCU,"Software\Wine\Fonts\Replacements","ＭＳ ゴシック",2,"ヒラギノ角ゴ Pro W3"
+HKCU,"Software\Wine\Fonts\Replacements","ＭＳ Ｐゴシック",2,"ヒラギノ角ゴ Pro W3"
+HKCU,"Software\Wine\Fonts\Replacements","ＭＳ 明朝",2,"ヒラギノ明朝 Pro W3"
+HKCU,"Software\Wine\Fonts\Replacements","ＭＳ Ｐ明朝",2,"ヒラギノ明朝 Pro W3"
+HKCU,"Software\Wine\Fonts\Replacements","@MS Gothic",2,"@ヒラギノ角ゴ Pro W3"
+HKCU,"Software\Wine\Fonts\Replacements","@MS PGothic",2,"@ヒラギノ角ゴ Pro W3"
+HKCU,"Software\Wine\Fonts\Replacements","@ＭＳ ゴシック",2,"@ヒラギノ角ゴ Pro W3"
+HKCU,"Software\Wine\Fonts\Replacements","@ＭＳ Ｐゴシック",2,"@ヒラギノ角ゴ Pro W3"
+HKCU,"Software\Wine\Fonts\Replacements","@ＭＳ 明朝",2,"@ヒラギノ明朝 Pro W3"
+HKCU,"Software\Wine\Fonts\Replacements","@ＭＳ Ｐ明朝",2,"@ヒラギノ明朝 Pro W3"
+; Simplified Chinese fonts
+HKCU,"Software\Wine\Fonts\Replacements","SimSun",2,"STSong"
+HKCU,"Software\Wine\Fonts\Replacements","宋体",2,"STSong"
+HKCU,"Software\Wine\Fonts\Replacements","NSimSun",2,"STSong"
+HKCU,"Software\Wine\Fonts\Replacements","新宋体",2,"STSong"
+HKCU,"Software\Wine\Fonts\Replacements","@SimSun",2,"@STSong"
+HKCU,"Software\Wine\Fonts\Replacements","@宋体",2,"@STSong"
+HKCU,"Software\Wine\Fonts\Replacements","@NSimSun",2,"@STSong"
+HKCU,"Software\Wine\Fonts\Replacements","@新宋体",2,"@STSong"
+; Traditional Chinese fonts
+HKCU,"Software\Wine\Fonts\Replacements","MingLiU",2,"LiSong Pro"
+HKCU,"Software\Wine\Fonts\Replacements","細明體",2,"LiSong Pro"
+HKCU,"Software\Wine\Fonts\Replacements","PMingLiU",2,"LiSong Pro"
+HKCU,"Software\Wine\Fonts\Replacements","新細明體",2,"LiSong Pro"
+HKCU,"Software\Wine\Fonts\Replacements","@MingLiU",2,"@LiSong Pro"
+HKCU,"Software\Wine\Fonts\Replacements","@細明體",2,"@LiSong Pro"
+HKCU,"Software\Wine\Fonts\Replacements","@PMingLiU",2,"@LiSong Pro"
+HKCU,"Software\Wine\Fonts\Replacements","@新細明體",2,"@LiSong Pro"
+; Unicode fonts
+HKCU,"Software\Wine\Fonts\Replacements","Microsoft Himalaya",2,"Kailasa"
+HKCU,"Software\Wine\Fonts\Replacements","Euphemia",2,"Euphemia UCAS"
+
+
+HKCU,"Software\Wine\Fonts\Replacements","MS UI Gothic",2,"Ume UI Gothic"
+HKCU,"Software\Wine\Fonts\Replacements","@MS UI Gothic",2,"@Ume UI Gothic"
+; Korean fonts
+HKCU,"Software\Wine\Fonts\Replacements","Gulim",2,"NanumGothic"
+
+HKCU,"Software\Wine\Systray","Hidden",0x10003,1
+HKCU,"Software\Wine\X11 Driver","ShowSystray",2,"false"
+
+; Rocket League performance
+HKCU,"Software\Wine\Direct3D","cb_access_map_w",0x10003,1
+
+[ODBCReg]
+HKLM,"SOFTWARE\ODBC\ODBC.INI\ODBC File DSN","DefaultDSNDir",,"C:\Program Files\Common Files\ODBC\Data Sources"
+
+[RegisterDllsSection]
+11,,actxprxy.dll,1
+
+[CXBuiltins]
+Name="..\Builtin Tools",4
+
+[Notepad]
+Name="Notepad"
+CmdLine=11,,notepad.exe
+SubDir="..\Builtin Tools"
+
+[FileExplorer]
+Name="File Explorer"
+CmdLine=11,,explorer.exe
+SubDir="..\Builtin Tools"
+
+[WineConsole]
+Name="Command Shell"
+CmdLine=11,,wineconsole.exe
+SubDir="..\Builtin Tools"
+
+[WineCfg]
+Name="Wine Configuration"
+CmdLine=11,,winecfg.exe
+SubDir="..\Builtin Tools"
