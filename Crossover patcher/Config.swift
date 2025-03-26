@@ -264,6 +264,14 @@ let DXMT_PATHS = [
     PathMap(src: "src/d3d10/d3d10core.dll", dst: "/lib/dxmt/x86_64-windows/d3d10core.dll"),
 ]
 
+let DXMT_PATHS_RELEASE = [
+    PathMap(src: "x86_64-unix/winemetal.so", dst: "/lib/dxmt/x86_64-unix/winemetal.so"),
+    PathMap(src: "x86_64-windows/winemetal.dll", dst: "/lib/dxmt/x86_64-windows/winemetal.dll"),
+    PathMap(src: "x86_64-windows/dxgi.dll", dst: "/lib/dxmt/x86_64-windows/dxgi.dll"),
+    PathMap(src: "x86_64-windows/d3d11.dll", dst: "/lib/dxmt/x86_64-windows/d3d11.dll"),
+    PathMap(src: "x86_64-windows/d3d10core.dll", dst: "/lib/dxmt/x86_64-windows/d3d10core.dll"),
+]
+
 struct ToBottlesPaths {
     var fileName: String
     var path: String

@@ -352,18 +352,21 @@ func hasExternal(url: URL) -> Bool{
 }
 
 func installDXMT (url: URL, opts: Opts) {
-    if(opts.xtLibsUrl != nil) {
+    if(opts.xtLibsUrl == nil) {
+        print("Could not find dxmt source, skipping installation")
+        return
+    }
+    if(f.fileExists(atPath: opts.xtLibsUrl!.path() + DXMT_PATHS[0].src)) {
+        print("Artifact version detected, copying DXMT")
         DXMT_PATHS.forEach { path in
             safeFileCopy(source: opts.xtLibsUrl!.path() + path.src, dest: url.path + SHARED_SUPPORT_PATH + path.dst)
         }
+    } else if (f.fileExists(atPath: opts.xtLibsUrl!.path() + DXMT_PATHS_RELEASE[0].src)) {
+        print("Release version detected, copying DXMT")
+        DXMT_PATHS_RELEASE.forEach { path in
+            safeFileCopy(source: opts.xtLibsUrl!.path() + path.src, dest: url.path + SHARED_SUPPORT_PATH + path.dst)
+        }
     }
-}
-
-func addOverridesForDXMT(url: URL) {
-    safeResCopy(
-        res: WINE_RESOURCES_ROOT + "/share/crossover/bottle_data/crossover_dxmt.inf",
-        dest: url.path + SHARED_SUPPORT_PATH + "/share/crossover/bottle_data/crossover.inf"
-    )
 }
 
 func installWineMetalInAllBottles(opts: Opts) {
@@ -406,12 +409,8 @@ func patch(url: URL, opts: inout Opts) {
     if(opts.copyXtLibs) {
         installDXMT(url: url, opts: opts)
 //        installWineMetalInAllBottles(opts: opts) not needed at the moment, just create a new bottle
-//        addOverridesForDXMT(url: url)
     }
     opts.progress += 1
-//    let filesToDisable = getDisableListFrom(url: url).filter { elem in
-//        opts.removeSignaure ? true : (!elem.contains("CodeResources") && !elem.contains("_CodeSignature"))
-//    }
     let filesToRemove = getRemoveListFrom(url: url).filter { elem in
         opts.removeSignaure ? true : (!elem.contains("CodeResources") && !elem.contains("_CodeSignature"))
     }

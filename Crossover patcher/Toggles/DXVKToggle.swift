@@ -21,7 +21,6 @@ struct DXVKToggle: View {
         }
         .padding(.vertical, 6.0)
         .toggleStyle(.switch)
-        .disabled(opts.copyXtLibs)
         .controlSize(/*@START_MENU_TOKEN@*/.mini/*@END_MENU_TOKEN@*/)
     }
 }
