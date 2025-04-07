@@ -93,3 +93,4 @@ Jeśli napotkasz jakiekolwiek problemy z instalacją CrossOver, możesz pobrać 
 "metalFXSpatial" = "Metal FX Przestrzenny";
 "metalFXSpatialHelp" = "Włącza przestrzenny skalator MetalFX na wyjściowym łańcuchu wymiany. Domyślnie podwaja rozdzielczość wyjściową.";
 "metalSpatialUpscaleFactor" = "Współczynnik Skalowania: %@";
+"hasAlreadyBackup" = "Nie mogę utworzyć kopii zapasowej aplikacji. Upewnij się, że w folderze z aplikacjami nie ma żadnych kopii Crossover_original.app i spróbuj ponownie.";

@@ -87,3 +87,4 @@ Si vous rencontrez des problèmes après avoir appliqué le patch, vous pouvez t
 "metalFXSpatial" = "Metal FX Spatial";
 "metalFXSpatialHelp" = "Active le suréchantillonneur spatial MetalFX sur la chaîne d'échange de sortie. Par défaut, il double la résolution de sortie.";
 "metalSpatialUpscaleFactor" = "Facteur de Suréchantillonnage : %@";
+"hasAlreadyBackup" = "Impossible de créer une sauvegarde de l'application. Veuillez vous assurer qu'aucune copie de Crossover_original.app ne se trouve dans votre dossier d'applications, puis réessayez.";

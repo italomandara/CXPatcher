@@ -87,3 +87,4 @@ Si encuentras algún problema después de parchear CrossOver, puedes descargar u
 "metalFXSpatial" = "Metal FX Espacial";
 "metalFXSpatialHelp" = "Activa el escalador espacial MetalFX en la cadena de intercambio de salida. Por defecto, duplicará la resolución de salida.";
 "metalSpatialUpscaleFactor" = "Factor de Escalado: %@";
+"hasAlreadyBackup" = "No puedo crear una copia de seguridad de la aplicación. Asegúrate de que no haya copias de Crossover_original.app en tu carpeta de aplicaciones e inténtalo de nuevo.";

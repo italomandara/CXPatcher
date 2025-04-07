@@ -87,3 +87,4 @@ Sollten nach dem Patchen Ihrer Installation Probleme auftreten, können Sie eine
 "metalFXSpatial" = "Metal FX Räumlich";
 "metalFXSpatialHelp" = "Aktiviert den MetalFX-räumlichen Upscaler in der Ausgabekette. Standardmäßig verdoppelt er die Ausgaberesolution.";
 "metalSpatialUpscaleFactor" = "Skalierungsfaktor: %@";
+"hasAlreadyBackup" = "Ich kann kein Backup der App erstellen. Bitte stelle sicher, dass sich keine Kopien von Crossover_original.app in deinem App-Ordner befinden, und versuche es erneut.";

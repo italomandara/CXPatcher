@@ -17,6 +17,7 @@ enum Status {
     case success
     case unpatched
     case error
+    case hasBackup
 }
 
 enum DeleteStatus {
@@ -239,6 +240,14 @@ func isAlreadyPatched(url: URL) -> Bool {
     }
 }
 
+func hasBackup(appRoot: URL) -> Bool {
+    var backupUrl = appRoot
+    let appName = appRoot.lastPathComponent.replacingOccurrences(of: ".app", with: "")
+    backupUrl.deleteLastPathComponent()
+    backupUrl.appendPathComponent(appName + "_original.app")
+    return f.fileExists(atPath: backupUrl.path())
+}
+
 struct CXPlist: Decodable {
     private enum CodingKeys: String, CodingKey {
         case CFBundleIdentifier, CFBundleShortVersionString
@@ -309,7 +318,7 @@ func getColorBy(status: Status) -> Color {
         return .gray
     case .success:
         return .green
-    case .alreadyPatched:
+    case .alreadyPatched, .hasBackup:
         return .orange
     case .error:
         return .red
@@ -322,7 +331,7 @@ func getIconBy(status: Status) -> String {
         return "plus.app"
     case .success:
         return "checkmark.circle.fill"
-    case .alreadyPatched:
+    case .alreadyPatched, .hasBackup:
         return "hand.raised.app.fill"
     case .error:
         return "x.circle.fill"
@@ -339,6 +348,8 @@ func getTextBy(status: Status) -> String {
         return localizedCXPatcherString(forKey: "PatchStatusSuccess")
     case .alreadyPatched:
         return localizedCXPatcherString(forKey: "PatchStatusAlreadyPatched")
+    case .hasBackup:
+        return localizedCXPatcherString(forKey: "hasAlreadyBackup")
     }
 }
 
@@ -470,6 +481,10 @@ func validateAndPatch(url: URL, opts: inout Opts, onPatch: () -> Void = {}) {
         print("it' s not crossover.app")
         opts.status = .error
         return
+    }
+    if(hasBackup(appRoot: url)) {
+        print("Can't patch the app if the backup is already there at \(url.path())")
+        opts.status = .hasBackup
     }
     print("it's a crossover app")
     onPatch()

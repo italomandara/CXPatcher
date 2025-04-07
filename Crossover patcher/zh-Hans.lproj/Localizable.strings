@@ -87,3 +87,4 @@
 "metalFXSpatial" = "Metal FX 空间";
 "metalFXSpatialHelp" = "在输出交换链上启用MetalFX空间升频器。默认情况下，它会将输出分辨率加倍。";
 "metalSpatialUpscaleFactor" = "升频因子：%@";
+"hasAlreadyBackup" = "无法创建应用的备份，请确保应用文件夹中没有 Crossover_original.app 的副本，然后重试。";

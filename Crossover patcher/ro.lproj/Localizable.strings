@@ -87,3 +87,5 @@ Dacă întâmpinați probleme după ce instalația a fost patch-uită, puteți d
 "metalFXSpatial" = "Metal FX Spațial";
 "metalFXSpatialHelp" = "Activează scalatorul spațial MetalFX pe lanțul de schimbare a ieșirii. Implicit, va dubla rezoluția de ieșire.";
 "metalSpatialUpscaleFactor" = "Factor de Scalare: %@";
+"hasAlreadyBackup" = "Nu pot crea un backup al aplicației. Te rog asigură-te că nu există copii ale Crossover_original.app în folderul tău de aplicații și încearcă din nou.";
+

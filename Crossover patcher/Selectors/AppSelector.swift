@@ -55,7 +55,7 @@ struct AppSelector: View {
                     Text(localizedCXPatcherString(forKey: "MediaFoundation"))
                         .padding(.top, 6.0)
                         .frame(alignment: .center)
-                    Link(localizedCXPatcherString(forKey: "DownloadGStreamer"), destination: URL(string: "https://gstreamer.freedesktop.org/data/pkg/osx/1.22.4/gstreamer-1.0-1.22.4-universal.pkg")!)
+                    Link(localizedCXPatcherString(forKey: "DownloadGStreamer"), destination: URL(string: "https://gstreamer.freedesktop.org/data/pkg/osx/")!)
                         .padding(.top, 6.0)
                         .buttonStyle(.borderedProminent)
                 }

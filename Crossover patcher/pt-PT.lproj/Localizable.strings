@@ -87,3 +87,5 @@ Se você enfrentar problemas após a instalação ser patcheada, você pode baix
 "metalFXSpatial" = "Metal FX Espacial";
 "metalFXSpatialHelp" = "Ativa o ampliador espacial MetalFX na cadeia de troca de saída. Por padrão, ele duplicará a resolução de saída.";
 "metalSpatialUpscaleFactor" = "Fator de Ampliação: %@";
+"hasAlreadyBackup" = "Não consigo criar um backup do aplicativo. Certifique-se de que não há cópias de Crossover_original.app na sua pasta de aplicativos e tente novamente.";
+
