@@ -72,7 +72,7 @@ struct Opts {
     var cxbottlesPath = DEFAULT_CX_BOTTLES_PATH
     var patchMVK: PatchMVK = PatchMVK.legacyUE4
     var autoUpdateDisable = true
-    var patchDXVK = true
+    var patchDXVK = false
     var patchGStreamer = true
     var globalEnvs = GlobalEnvs()
     var removeSignaure = true
