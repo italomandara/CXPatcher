@@ -377,6 +377,8 @@ func installDXMT (url: URL, opts: Opts) {
         DXMT_PATHS_RELEASE.forEach { path in
             safeFileCopy(source: opts.xtLibsUrl!.path() + path.src, dest: url.path + SHARED_SUPPORT_PATH + path.dst)
         }
+    } else {
+        print("Could not find dxmt source at \(url.path), skipping installation")
     }
 }
 
