@@ -299,7 +299,7 @@ struct FileDropDelegate: DropDelegate {
         if let item = info.itemProviders(for: [.fileURL]).first {
             let _ = item.loadObject(ofClass: URL.self) { object, error in
                 if let url = object {
-                    restoreAndPatch(url: url, opts: &opts, onPatch: onPatch)
+                    applyPatch(url: url, opts: &opts, onPatch: onPatch)
                 }
             }
         } else {
@@ -375,18 +375,28 @@ func installDXMT (url: URL, opts: Opts) {
         print("Could not find dxmt source, skipping installation")
         return
     }
-    if(f.fileExists(atPath: opts.xtLibsUrl!.path() + DXMT_PATHS[0].src)) {
+    
+    let dxmtPath = opts.xtLibsUrl!.path + "/"
+    
+    let artifactTestPath = URL(fileURLWithPath: dxmtPath + DXMT_PATHS[0].src).path
+    let releaseTestPath = URL(fileURLWithPath: dxmtPath + DXMT_PATHS_RELEASE[0].src).path
+    
+    if(f.fileExists(atPath: artifactTestPath)) {
         print("Artifact version detected, copying DXMT")
         DXMT_PATHS.forEach { path in
-            safeFileCopy(source: opts.xtLibsUrl!.path() + path.src, dest: url.path + SHARED_SUPPORT_PATH + path.dst)
+            let artifactPathSrc = URL(fileURLWithPath: dxmtPath + path.src).path
+            let artifactPathDest = URL(fileURLWithPath: url.path + SHARED_SUPPORT_PATH + path.dst).path
+            safeFileCopy(source: artifactPathSrc, dest: artifactPathDest)
         }
-    } else if (f.fileExists(atPath: opts.xtLibsUrl!.path() + DXMT_PATHS_RELEASE[0].src)) {
+    } else if (f.fileExists(atPath: releaseTestPath)) {
         print("Release version detected, copying DXMT")
         DXMT_PATHS_RELEASE.forEach { path in
-            safeFileCopy(source: opts.xtLibsUrl!.path() + path.src, dest: url.path + SHARED_SUPPORT_PATH + path.dst)
+            let releasePathSrc = URL(fileURLWithPath: dxmtPath + path.src).path
+            let releasePathDest = URL(fileURLWithPath: url.path + SHARED_SUPPORT_PATH + path.dst).path
+            safeFileCopy(source: releasePathSrc, dest: releasePathDest)
         }
     } else {
-        print("Could not find dxmt source at \(url.path), skipping installation")
+        print("Could not find dxmt source at '\(artifactTestPath)' nor '\(releaseTestPath)', skipping installation")
     }
 }
 
@@ -559,29 +569,6 @@ func restoreApp(url: URL, opts: inout Opts, onRestore: () -> Void = {}) -> Bool 
     removeGlobals(url: url)
     opts.progress += 1
     return true
-}
-
-func restoreAndPatch(url: URL, opts: inout Opts, onPatch: () -> Void = {}) {
-    if (opts.busy) {
-        return
-    }
-    opts.progress = 0.0
-    opts.busy = true
-    if opts.repatch && restoreApp(url: url, opts: &opts) {
-        print("Restoring first...")
-    }
-    validateAndPatch(url: url, opts: &opts, onPatch: onPatch)
-    if(ENABLE_FIX_CX_CODESIGN) {
-        do {
-            print("patching \(url.path)")
-            let p = try safeShell("/usr/bin/xattr -cr \(url.path) && /usr/bin/codesign --force --deep --sign - \(url.path)")
-            print(p)
-        } catch {
-            print("xattr or codesign failed")
-            print(error)
-        }
-    }
-    opts.busy = false
 }
 
 func localizedCXPatcherString(forKey key: String, value: String? = nil) -> String {

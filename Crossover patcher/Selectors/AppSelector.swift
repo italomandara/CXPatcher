@@ -40,7 +40,7 @@ struct AppSelector: View {
                 .contentShape(RoundedRectangle(cornerRadius: 25))
                 .onTapGesture {
                     if let url = openAppSelectorPanel() {
-                        restoreAndPatch(url: url, opts: &opts, onPatch: onPatch)
+                        applyPatch(url: url, opts: &opts, onPatch: onPatch)
                     }
                 }
                 .onDrop(of: [.fileURL], delegate: FileDropDelegate(opts: $opts, onPatch: onPatch))
