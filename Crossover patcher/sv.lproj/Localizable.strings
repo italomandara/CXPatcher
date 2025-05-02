@@ -88,3 +88,4 @@ Om du stöter på problem efter att din installation har blivit patchad kan du l
 "metalFXSpatialHelp" = "Aktiverar MetalFX:s spatiala uppskalning på utgångskedjan. Som standard fördubblar den utgångsupplösningen.";
 "metalSpatialUpscaleFactor" = "Uppskalningsfaktor: %@";
 "hasAlreadyBackup" = "Jag kan inte skapa en säkerhetskopia av appen. Kontrollera att det inte finns några kopior av Crossover_original.app i din app-mapp och försök igen.";
+"PatchStatusFileExists" = "En app med suffixet _patched finns redan";

@@ -88,3 +88,4 @@
 "metalFXSpatialHelp" = "出力スワップチェーンでMetalFX空間アップスケーラーを有効にします。デフォルトでは、出力解像度を2倍にします。";
 "metalSpatialUpscaleFactor" = "アップスケール係数: %@";
 "hasAlreadyBackup" = "アプリのバックアップを作成できません。アプリフォルダに Crossover_original.app のコピーがないことを確認して、もう一度お試しください。";
+"PatchStatusFileExists" = "接尾辞 _patched のアプリがすでに存在します";

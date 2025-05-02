@@ -88,3 +88,4 @@ Se incontri problemi dopo aver patchato la tua installazione, puoi scaricare una
 "metalFXSpatialHelp" = "Abilita il ridimensionatore spaziale MetalFX nella catena di scambio di output. Per impostazione predefinita, raddoppierà la risoluzione di uscita.";
 "metalSpatialUpscaleFactor" = "Fattore di Upscaling: %@";
 "hasAlreadyBackup" = "Non riesco a creare un backup dell'app. Assicurati che non ci siano copie di Crossover_original.app nella cartella delle app e riprova.";
+"PatchStatusFileExists" = "Un'app con il suffisso _patched esiste già";

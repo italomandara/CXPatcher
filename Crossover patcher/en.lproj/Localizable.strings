@@ -90,3 +90,4 @@ If you face any issues after your installation has been patched, you may downloa
 "metalFXSpatialHelp" = "Enables MetalFX spatial upscaler on output swapchain. By default it will double the output resolution.";
 "metalSpatialUpscaleFactor" = "Upscale Factor: %@";
 "hasAlreadyBackup" = "I can't create a backup of the app, please make sure there isn't any Crossover_original.app copies in your app folder and try again";
+"PatchStatusFileExists" = "An app with suffix _patched already exists";

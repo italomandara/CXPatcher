@@ -17,6 +17,7 @@ enum Status {
     case success
     case unpatched
     case error
+    case fileExists
     case hasBackup
 }
 
@@ -234,10 +235,15 @@ private func enable(dest: String) {
 }
 
 func isAlreadyPatched(url: URL) -> Bool {
-    let filesToCheck = getBackupListFrom(url: url)
-    return filesToCheck.contains { path in
-        return f.fileExists(atPath: path)
+    let plistPath = url.path + "/Contents/Info.plist"
+    if (f.fileExists(atPath: plistPath)) {
+        let plist = parseCXPlist(plistPath: plistPath)
+        if (plist.CFBundleShortVersionString.hasSuffix("p")) {
+            return true
+        }
+        return false
     }
+    return true
 }
 
 func hasBackup(appRoot: URL) -> Bool {
@@ -320,7 +326,7 @@ func getColorBy(status: Status) -> Color {
         return .green
     case .alreadyPatched, .hasBackup:
         return .orange
-    case .error:
+    case .error, .fileExists:
         return .red
     }
 }
@@ -333,7 +339,7 @@ func getIconBy(status: Status) -> String {
         return "checkmark.circle.fill"
     case .alreadyPatched, .hasBackup:
         return "hand.raised.app.fill"
-    case .error:
+    case .error, .fileExists:
         return "x.circle.fill"
     }
 }
@@ -350,6 +356,8 @@ func getTextBy(status: Status) -> String {
         return localizedCXPatcherString(forKey: "PatchStatusAlreadyPatched")
     case .hasBackup:
         return localizedCXPatcherString(forKey: "hasAlreadyBackup")
+    case.fileExists:
+        return localizedCXPatcherString(forKey: "PatchStatusFileExists")
     }
 }
 
@@ -470,7 +478,31 @@ func patch(url: URL, opts: inout Opts) {
         disableAutoUpdate(url: url)
     }
     opts.progress += 1
-    opts.status = .success
+    markAsPatched(url: url)
+    do {
+        try renameApp(url: url)
+        opts.status = .success
+    } catch {
+        print(error)
+        opts.status = .fileExists
+    }
+}
+
+func renameApp (url: URL) throws {
+    let appName = url.lastPathComponent.split(separator: ".").first ?? ""
+    let patchedName = url.deletingLastPathComponent().appendingPathComponent(appName + "_patched.app")
+    let originalName = url.deletingLastPathComponent().appendingPathComponent(appName + "_original.app")
+    if f.fileExists(atPath: patchedName.path) {
+        try f.removeItem(at: patchedName)
+    }
+    do {
+        try f.moveItem(at: url, to: patchedName)
+        print("renaming the app at \(url.path) to \(patchedName.path)")
+    }
+    do {
+        try f.moveItem(at: originalName, to: URL(fileURLWithPath: url.path))
+        print("renaming the app at \(originalName.path) to \(url.path)")
+    }
 }
 
 func validateAndPatch(url: URL, opts: inout Opts, onPatch: () -> Void = {}) {
@@ -590,6 +622,11 @@ private func editInfoPlist(at: URL, key: String, value: String) {
 
 func disableAutoUpdate(url: URL) {
     editInfoPlist(at: url, key: "SUFeedURL", value: "")
+}
+
+func markAsPatched(url: URL) {
+    let plist = parseCXPlist(plistPath: url.path + "/Contents/Info.plist")
+    editInfoPlist(at: url, key: "CFBundleShortVersionString", value: plist.CFBundleShortVersionString + "p")
 }
 
 func restoreAutoUpdate(url: URL) {
