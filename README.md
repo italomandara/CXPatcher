@@ -4,6 +4,8 @@
 
 A patcher to upgrade CrossOver dependencies and improve compatibility
 
+Discord: https://discord.com/channels/793156450821865513/1121334417344974929
+
 This is an **unofficial patcher** for CrossOver and CodeWeavers is not - by any
 means - involved in this or has anything to do with this app, and although has
 been tested, this software may render the app unusable or unstable,
@@ -20,7 +22,10 @@ For more info: [https://www.codeweavers.com/support/forums/general/?t=27;msg=257
 ## What version of CrossOver does it support?
 
 CXPatcher up to 0.3 will support only 22.x.x
-CXPatcher from 0.4 on will support 23.x.x but keep an eye on the specific verson
+CXPatcher from 0.4 on will support 23.x.x
+CXPatcher from 0.5 on will support 24.x.x
+CXPatcher from 0.6 on will support 25.x.x 
+(keep an eye on the specific verson)
 
 ## What MacOS does it support
 
