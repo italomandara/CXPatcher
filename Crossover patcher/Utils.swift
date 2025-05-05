@@ -56,6 +56,33 @@ enum PatchMVK {
     case none
 }
 
+class Console {
+    var logMessages: [String] = []
+    
+    func log(_ msg: String) {
+        print(msg)
+        logMessages.append(msg)
+    }
+    func saveLogs(to: URL) {
+        if f.fileExists(atPath: to.path()) {
+            do {
+                try f.removeItem(at: to)
+            } catch {
+                print(error)
+            }
+        }
+        let content = logMessages.joined(separator: "\n")
+        print("Saving logs to \(to)")
+        do {
+            try content.write(to: to, atomically: true, encoding: .utf8)
+        } catch {
+            print(error)
+        }
+    }
+}
+
+var console = Console()
+
 func acceptAgreement(_ showDisclaimer: inout Bool) {
     showDisclaimer = false
     UserDefaults.standard.set(true, forKey: "I will not ask CodeWeavers for support or refund")
@@ -138,53 +165,53 @@ private func  getExternalBackupListFrom(url: URL) -> [String] {
 private func resCopy(res: String, dest: String) {
     if let sourceUrl = Bundle.main.url(forResource: res, withExtension: nil) {
         do { try f.copyItem(at: sourceUrl, to: URL(filePath: dest))
-            print("\(res) copied")
+            console.log("\(res) copied")
         } catch {
-            print(error)
+            console.log(error.localizedDescription)
         }
     } else {
-        print("\(res) not found")
+        console.log("\(res) not found")
     }
 }
 
 private func safeResCopy(res: String, dest: String) {
-    //    print("moving \(dest + maybeExt(ext))")
+    //    console.log("moving \(dest + maybeExt(ext))")
     if(ENABLE_RESTORE != true){
         do {try f.removeItem(atPath: dest)
         } catch {
-            print("\(dest) does not exist!")
+            console.log("\(dest) does not exist!")
         }
     } else if(f.fileExists(atPath: dest)) {
         do {try f.moveItem(atPath: dest, toPath: dest + "_orig")
         } catch {
-            print("\(dest) does not exist!")
+            console.log("\(dest) does not exist!")
         }
     } else {
-        print("unexpected error: \(dest) doesn't have an original copy will just copy then")
+        console.log("unexpected error: \(dest) doesn't have an original copy will just copy then")
     }
     resCopy(res: res, dest: dest)
 }
 
 private func safeFileCopy(source: String, dest: String) {
-//    print("moving \(dest + maybeExt(ext))")
+//    console.log("moving \(dest + maybeExt(ext))")
     if(ENABLE_RESTORE != true){
         do {try f.removeItem(atPath: dest)
         } catch {
-            print("\(dest) does not exist!")
+            console.log("\(dest) does not exist!")
         }
     } else if(f.fileExists(atPath: dest)) {
         do {try f.moveItem(atPath: dest, toPath: dest + "_orig")
         } catch {
-            print("\(dest) does not exist!")
+            console.log("\(dest) does not exist!")
         }
     } else {
-        print("file doesn't exist I'll just copy then")
+        console.log("file doesn't exist I'll just copy then")
     }
 
     do { try f.copyItem(at: URL(filePath: source), to: URL(filePath: dest))
-        print("\(source) copied")
+        console.log("\(source) copied")
     } catch {
-        print(error)
+        console.log(error.localizedDescription)
     }
 
 }
@@ -192,45 +219,45 @@ private func safeFileCopy(source: String, dest: String) {
 private func restoreFile(dest: String) {
     if(f.fileExists(atPath: dest)) {
         do {try f.removeItem(atPath: dest)
-            print("deleting \(dest)")
+            console.log("deleting \(dest)")
         } catch {
-            print("can't delete file \(dest)")
+            console.log("can't delete file \(dest)")
         }
     } else {
-        print("file \(dest) doesn't exist... ignoring and deleting just _orig if found")
+        console.log("file \(dest) doesn't exist... ignoring and deleting just _orig if found")
     }
     if(f.fileExists(atPath: dest + "_orig")) {
         do {try f.moveItem(atPath: dest + "_orig", toPath: dest)
-            print("copying \(dest)")
+            console.log("copying \(dest)")
         } catch {
-            print("can't move file \(dest)")
+            console.log("can't move file \(dest)")
         }
     } else {
-        print("file \(dest) doesn't exist... ignoring")
+        console.log("file \(dest) doesn't exist... ignoring")
     }
 }
 
 private func disable(dest: String) {
     do {try f.moveItem(atPath: dest, toPath: dest  + "_disabled")
-        print("disabling \(dest)")
+        console.log("disabling \(dest)")
     } catch {
-        print("can't move file \(dest)")
+        console.log("can't move file \(dest)")
     }
 }
 
 private func remove(dest: String) {
     do {try f.removeItem(atPath: dest)
-        print("removing \(dest)")
+        console.log("removing \(dest)")
     } catch {
-        print("can't remove file \(dest)")
+        console.log("can't remove file \(dest)")
     }
 }
 
 private func enable(dest: String) {
     do {try f.moveItem(atPath: dest + "_disabled", toPath: dest)
-        print("disabling \(dest)")
+        console.log("disabling \(dest)")
     } catch {
-        print("can't move file \(dest)")
+        console.log("can't move file \(dest)")
     }
 }
 
@@ -277,11 +304,11 @@ func isCrossoverApp(url: URL, version: String? = nil, skipVersionCheck: Bool? = 
             return true
         }
         if (plist.CFBundleIdentifier == "com.codeweavers.CrossOver" && plist.CFBundleShortVersionString.starts(with: SUPPORTED_CROSSOVER_VERSION) ) {
-            print("app version is ok: \(plist.CFBundleShortVersionString)")
+            console.log("app version is ok: \(plist.CFBundleShortVersionString)")
             return true
         }
     }
-    print("file doesn't exist at \(plistPath)")
+    console.log("file doesn't exist at \(plistPath)")
     return false
 }
 
@@ -372,7 +399,7 @@ func hasExternal(url: URL) -> Bool{
 
 func installDXMT (url: URL, opts: Opts) {
     if(opts.xtLibsUrl == nil) {
-        print("Could not find dxmt source, skipping installation")
+        console.log("Could not find dxmt source, skipping installation")
         return
     }
     
@@ -382,21 +409,21 @@ func installDXMT (url: URL, opts: Opts) {
     let releaseTestPath = URL(fileURLWithPath: dxmtPath + DXMT_PATHS_RELEASE[0].src).path
     
     if(f.fileExists(atPath: artifactTestPath)) {
-        print("Artifact version detected, copying DXMT")
+        console.log("Artifact version detected, copying DXMT")
         DXMT_PATHS.forEach { path in
             let artifactPathSrc = URL(fileURLWithPath: dxmtPath + path.src).path
             let artifactPathDest = URL(fileURLWithPath: url.path + SHARED_SUPPORT_PATH + path.dst).path
             safeFileCopy(source: artifactPathSrc, dest: artifactPathDest)
         }
     } else if (f.fileExists(atPath: releaseTestPath)) {
-        print("Release version detected, copying DXMT")
+        console.log("Release version detected, copying DXMT")
         DXMT_PATHS_RELEASE.forEach { path in
             let releasePathSrc = URL(fileURLWithPath: dxmtPath + path.src).path
             let releasePathDest = URL(fileURLWithPath: url.path + SHARED_SUPPORT_PATH + path.dst).path
             safeFileCopy(source: releasePathSrc, dest: releasePathDest)
         }
     } else {
-        print("Could not find dxmt source at '\(artifactTestPath)' nor '\(releaseTestPath)', skipping installation")
+        console.log("Could not find dxmt source at '\(artifactTestPath)' nor '\(releaseTestPath)', skipping installation")
     }
 }
 
@@ -407,14 +434,14 @@ func installWineMetalInAllBottles(opts: Opts) {
         // list al bottles folders URLs
         let bottleFolders: [URL] = try f.contentsOfDirectory(at: bottlesFolder, includingPropertiesForKeys: nil, options: [.skipsHiddenFiles])
         let bottleUrls: [URL] = bottleFolders
-        print(bottleUrls)
+        console.log(bottleUrls.debugDescription)
         bottleUrls.forEach { bottleUrl in
             DXMT_EVERY_BOTTLE_SYS_PATHS.forEach { item in
                 safeFileCopy(source: opts.xtLibsUrl!.path() + item.fullPath, dest: bottleUrl.appendingPathComponent("drive_c/windows/system32/", isDirectory: true).path() + item.fileName)
             }
         }
     } catch {
-        print(error)
+        console.log(error.localizedDescription)
     }
 }
 
@@ -425,8 +452,8 @@ func patch(url: URL, opts: inout Opts) {
             try backup(appRoot: url)
         }
         catch {
-            print(error)
-            print("couldn't create the backup")
+            console.log(error.localizedDescription)
+            console.log("couldn't create the backup")
             return
         }
     }
@@ -447,7 +474,7 @@ func patch(url: URL, opts: inout Opts) {
     }
     opts.progress += 1
     if(opts.copyGptk == true) {
-        print("copying externals...")
+        console.log("copying externals...")
         let externalResources = getExternalResourcesList(url: url)
         externalResources.forEach { resource in
             safeResCopy(res: resource.0, dest: resource.1)
@@ -489,16 +516,9 @@ func patch(url: URL, opts: inout Opts) {
     }
     opts.progress += 1
     markAsPatched(url: url)
-    do {
-        try renameApp(url: url)
-        opts.status = .success
-    } catch {
-        print(error)
-        opts.status = .fileExists
-    }
 }
 
-func renameApp (url: URL) throws {
+func renameApp (url: URL) throws -> URL {
     let appName = url.lastPathComponent.split(separator: ".").first ?? ""
     let patchedName = url.deletingLastPathComponent().appendingPathComponent(appName + "_patched.app")
     let originalName = url.deletingLastPathComponent().appendingPathComponent(appName + "_original.app")
@@ -507,30 +527,32 @@ func renameApp (url: URL) throws {
     }
     do {
         try f.moveItem(at: url, to: patchedName)
-        print("renaming the app at \(url.path) to \(patchedName.path)")
+        console.log("renaming the app at \(url.path) to \(patchedName.path)")
     }
     do {
         try f.moveItem(at: originalName, to: URL(fileURLWithPath: url.path))
-        print("renaming the app at \(originalName.path) to \(url.path)")
+        console.log("renaming the app at \(originalName.path) to \(url.path)")
     }
+    console.log("renaming successful")
+    return patchedName
 }
 
 func validateAndPatch(url: URL, opts: inout Opts, onPatch: () -> Void = {}) {
     if (isAlreadyPatched(url: url)) {
-        print("App is already patched")
+        console.log("App is already patched")
         opts.status = .alreadyPatched
         return
     }
     if(!isCrossoverApp(url: url, skipVersionCheck: opts.skipVersionCheck)) {
-        print("it' s not crossover.app")
+        console.log("it' s not crossover.app")
         opts.status = .error
         return
     }
     if(hasBackup(appRoot: url)) {
-        print("Can't patch the app if the backup is already there at \(url.path())")
+        console.log("Can't patch the app if the backup is already there at \(url.path())")
         opts.status = .hasBackup
     }
-    print("it's a crossover app")
+    console.log("it's a crossover app")
     onPatch()
     patch(url: url, opts: &opts)
     return
@@ -539,10 +561,10 @@ func validateAndPatch(url: URL, opts: inout Opts, onPatch: () -> Void = {}) {
 func restoreApp(url: URL, opts: inout Opts, onRestore: () -> Void = {}) -> Bool {
     if(!isAlreadyPatched(url: url) || !isCrossoverApp(url: url)) {
         if(!isAlreadyPatched(url: url)) {
-            print("it's not patched")
+            console.log("it's not patched")
         }
         if (!isCrossoverApp(url: url)){
-            print("it isn't a crossover app")
+            console.log("it isn't a crossover app")
         }
         
         return false
@@ -595,14 +617,14 @@ private func editInfoPlist(at: URL, key: String, value: String) {
         do {
             plist = try PropertyListSerialization.propertyList(from: data, options:PropertyListSerialization.ReadOptions(), format:nil) as! [String:Any]
             plist[key] = value
-            print("set info property list \(key) = \(value)")
+            console.log("set info property list \(key) = \(value)")
         } catch {
-            print("\(error) - there was a problem parsing the xml")
+            console.log("\(error) - there was a problem parsing the xml")
         }
     }
     do {try f.moveItem(atPath: url.path, toPath: url.path + "_orig")
     } catch {
-        print("\(url.path) does not exist!")
+        console.log("\(url.path) does not exist!")
     }
     NSDictionary(dictionary: plist).write(to: url, atomically: true)
 }
@@ -619,7 +641,7 @@ func markAsPatched(url: URL) {
 func restoreAutoUpdate(url: URL) {
     let plistURL = url.appendingPathComponent(PLIST_PATH)
     restoreFile(dest: plistURL.path)
-    print("restored original Info.plist")
+    console.log("restored original Info.plist")
 }
 
 func backup(appRoot: URL) throws {
@@ -629,28 +651,28 @@ func backup(appRoot: URL) throws {
     let appName = appRoot.lastPathComponent.replacingOccurrences(of: ".app", with: "")
     backupUrl.deleteLastPathComponent()
     backupUrl.appendPathComponent(appName + "_original.app")
-    print(backupUrl)
+    console.log(backupUrl.debugDescription)
     try f.copyItem(at: appRoot, to: backupUrl)
 }
 
 private func appendLinesToFile(filePath: String, additionalLines: [String]) -> String {
-    print("tryng to read \(filePath)")
+    console.log("tryng to read \(filePath)")
     if let sourceUrl = Bundle.main.url(forResource:  filePath, withExtension: nil) {
-        print(sourceUrl)
+        console.log(sourceUrl.debugDescription)
         do { let text = try String(contentsOf: sourceUrl, encoding: .utf8)
             var finalLines: String = ""
-            print("total envs: \(additionalLines.count)")
+            console.log("total envs: \(additionalLines.count)")
             for additionalLine in additionalLines {
                 finalLines += additionalLine + "\n"
-                print(additionalLine)
+                console.log(additionalLine)
             }
-            print(finalLines)
+            console.log(finalLines)
             return text + finalLines
         } catch {
-            print("failed opening config file")
+            console.log("failed opening config file")
         }
     } else {
-        print("\(filePath) not found")
+        console.log("\(filePath) not found")
     }
     return ""
 }
@@ -672,42 +694,42 @@ func addGlobals(url: URL, opts: Opts) {
     var envs: [Env] = [Env(key: "CX_BOTTLE_PATH", value: opts.cxbottlesPath)]
     var DXMTConfigvalues = ""
     if(opts.patchMVK == .legacyUE4) {
-        print("add enable UE4 Hack env")
+        console.log("add enable UE4 Hack env")
         envs += [Env(key: "MVK_CONFIG_UE4_HACK_ENABLED", value: "1")]
     }
     if(opts.globalEnvs.metalFXSpatial == true) {
-        print("add metalFXSpatial env")
+        console.log("add metalFXSpatial env")
         envs += [Env(key: "DXMT_METALFX_SPATIAL_SWAPCHAIN", value: "1")]
     }
     if(opts.globalEnvs.metalFXSpatial == true && opts.globalEnvs.metalSpatialUpscaleFactor > 0) {
-        print("add metalSpatialUpscaleFactor env")
+        console.log("add metalSpatialUpscaleFactor env")
         DXMTConfigvalues += "d3d11.metalSpatialUpscaleFactor=\(String(opts.globalEnvs.metalSpatialUpscaleFactor));"
     }
     if(opts.globalEnvs.preferredMaxFrameRate > 29.0) {
-        print("add preferredMaxFrameRate env")
+        console.log("add preferredMaxFrameRate env")
         DXMTConfigvalues += "d3d11.preferredMaxFrameRate=\(String(Int(opts.globalEnvs.preferredMaxFrameRate)));"
     }
     if(opts.globalEnvs.metalSpatialUpscaleFactor > 0 || opts.globalEnvs.preferredMaxFrameRate > 29.0) {
         envs += [Env(key: "DXMT_CONFIG", value: DXMTConfigvalues)]
     }
     if(opts.globalEnvs.mtlHudEnabled == true) {
-        print("add mtlHudEnabled env")
+        console.log("add mtlHudEnabled env")
         envs += [Env(key: "MTL_HUD_ENABLED", value: "1")]
     }
     if(opts.globalEnvs.advertiseAVX == true) {
-        print("add advertiseAVX env")
+        console.log("add advertiseAVX env")
         envs += [Env(key: "ROSETTA_ADVERTISE_AVX", value: "1")]
     }
     if(opts.globalEnvs.fastMathDisabled == true) {
-        print("add fastMathDisabled env")
+        console.log("add fastMathDisabled env")
         envs += [Env(key: "MVK_CONFIG_FAST_MATH_ENABLED", value: "0")]
     }
     if(opts.globalEnvs.dxvkAsync == true) {
-        print("add DXVK async env")
+        console.log("add DXVK async env")
         envs += [Env(key: "DXVK_ASYNC", value: "1")]
     }
     if(opts.globalEnvs.disableUE4Hack == true) {
-        print("add UE4 disable env")
+        console.log("add UE4 disable env")
         envs += [Env(key: "NAS_DISABLE_UE4_HACK", value: "1")]
     }
 
@@ -715,7 +737,7 @@ func addGlobals(url: URL, opts: Opts) {
     do {
         try file.write(to: url.appendingPathComponent(SHARED_SUPPORT_PATH + BOTTLE_PATH_OVERRIDE), atomically: false, encoding: .utf8)
     } catch {
-        print(error)
+        console.log(error.localizedDescription)
     }
 }
 
@@ -723,7 +745,7 @@ func removeGlobals(url: URL) {
     do {
         try f.removeItem(atPath: url.path + SHARED_SUPPORT_PATH + BOTTLE_PATH_OVERRIDE)
     } catch {
-        print(error)
+        console.log(error.localizedDescription)
     }
     enable(dest: url.path + SHARED_SUPPORT_PATH + BOTTLE_PATH_OVERRIDE)
 }
@@ -764,11 +786,11 @@ func removeD3DMetalCaches() -> DeleteStatus {
                 return d3dmPath.contains(pattern)
         }
         for itemPath in items {
-            print("Deleting \(itemPath)")
+            console.log("Deleting \(itemPath)")
             try f.removeItem(atPath: d3dmPath + "/"  + itemPath)
         }
     } catch {
-        print(error)
+        console.log(error.localizedDescription)
         return DeleteStatus.failed
     }
 
@@ -815,11 +837,11 @@ func removeAllSteamCachesFrom(path: String) -> DeleteStatus {
     do {
         let items = try f.contentsOfDirectory(atPath: path)
         for item in items {
-            print("deleting \(path + "/" + item)")
+            console.log("deleting \(path + "/" + item)")
             try f.removeItem(atPath: path + "/" + item)
         }
     } catch {
-        print(error)
+        console.log(error.localizedDescription)
         return DeleteStatus.failed
     }
     return DeleteStatus.success

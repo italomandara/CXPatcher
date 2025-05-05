@@ -14,18 +14,29 @@ func applyPatch(url: URL, opts: inout Opts, onPatch: () -> Void = {}) {
     opts.progress = 0.0
     opts.busy = true
     if opts.repatch && restoreApp(url: url, opts: &opts) {
-        print("Restoring first...")
+        console.log("Restoring first...")
     }
     validateAndPatch(url: url, opts: &opts, onPatch: onPatch)
     if(ENABLE_FIX_CX_CODESIGN) {
         do {
-            print("patching \(url.path)")
+            console.log("patching \(url.path)")
             let p = try safeShell("/usr/bin/xattr -cr \(url.path) && /usr/bin/codesign --force --deep --sign - \(url.path)")
-            print(p)
+            console.log(p)
         } catch {
-            print("xattr or codesign failed")
-            print(error)
+            console.log("xattr or codesign failed")
+            console.log(error.localizedDescription)
         }
+    }
+    do {
+        let patchedUrl = try renameApp(url: url)
+        opts.status = .success
+        let logFile = patchedUrl.appendingPathComponent("Contents").appendingPathComponent("cxplog.txt")
+        console.saveLogs(to: logFile)
+    } catch {
+        console.log(error.localizedDescription)
+        opts.status = .fileExists
+        let logFile = url.deletingLastPathComponent().appendingPathComponent("cxplog.txt")
+        console.saveLogs(to: logFile)
     }
     opts.busy = false
 }

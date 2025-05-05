@@ -22,7 +22,7 @@ struct XtLibsUrlButtonDialog: View {
                 if (response == .OK && panel.urls.first != nil){
                     XtLibsUrl = panel.urls.first!
                 } else {
-                    print("aborted by user")
+                    console.log("aborted by user")
                 }
             }.buttonStyle(.borderedProminent)
         }
