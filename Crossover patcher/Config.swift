@@ -241,12 +241,14 @@ let WINE_RESOURCES_PATHS: [String] = [
     //    "/lib/dxvk/i386-windows",
     //    "/lib/dxvk/x86_64-windows",
     //    "/lib/wine/i386-windows/kernelbase.dll",
+        "/lib/wine/i386-windows/winemetal.dll",
     //    "/lib/wine/i386-windows/ntdll.dll",
     //    "/lib/wine/i386-windows/winegstreamer.dll",
     //    "lib/wine/i386-windows/wineboot.exe",
     //    "/lib/wine/i386-windows/winecfg.exe",
     //    "/lib/wine/x86_64-unix/ntdll.so",
         "/lib/wine/x86_64-unix/winegstreamer.so",
+        "/lib/wine/x86_64-windows/winemetal.dll",
     //    "/lib/wine/x86_64-windows/kernelbase.dll",
     //    "/lib/wine/x86_64-windows/ntdll.dll",
     //    "/lib/wine/x86_64-windows/wineboot.exe",
@@ -254,7 +256,7 @@ let WINE_RESOURCES_PATHS: [String] = [
     //    "/lib/wine/x86_64-windows/winegstreamer.dll",
     //    "/share/crossover/bottle_data/crossover.inf",
     //    "/CrossOver-Hosted Application/wineserver",
-    //    "/share/wine/wine.inf",
+        "/share/wine/wine.inf",
 ]
 
 let DXMT_PATHS = [
