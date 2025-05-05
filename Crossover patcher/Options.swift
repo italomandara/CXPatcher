@@ -66,10 +66,10 @@ struct Options: View {
                             }
                         }
                     }
-//                    DXVKToggle(
-//                        opts: $opts
-//                    )
-//                    .help(localizedCXPatcherString(forKey: "dxvkToggleHelp"))
+                    DXVKToggle(
+                        opts: $opts
+                    )
+                    .help(localizedCXPatcherString(forKey: "dxvkToggleHelp"))
                     GStreamerToggle(
                         opts: $opts
                     )
