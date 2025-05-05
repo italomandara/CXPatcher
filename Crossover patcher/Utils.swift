@@ -417,6 +417,17 @@ func installDXMT (url: URL, opts: Opts) {
         }
     } else if (f.fileExists(atPath: releaseTestPath)) {
         console.log("Release version detected, copying DXMT")
+        let dxmt32Folder = url.appendingPathComponent(SHARED_SUPPORT_PATH).appendingPathComponent("lib/dxmt/i386-windows")
+        
+        if(f.fileExists(atPath: dxmt32Folder.path() ) == false){
+            console.log("\(dxmt32Folder.path()) does not exist, creating")
+            do {
+                try f.createDirectory(at: dxmt32Folder, withIntermediateDirectories: true)
+                console.log("\(dxmt32Folder.path()) created")
+            } catch {
+                console.log(error.localizedDescription)
+            }
+        }
         DXMT_PATHS_RELEASE.forEach { path in
             let releasePathSrc = URL(fileURLWithPath: dxmtPath + path.src).path
             let releasePathDest = URL(fileURLWithPath: url.path + SHARED_SUPPORT_PATH + path.dst).path

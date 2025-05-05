@@ -32,7 +32,8 @@ let ENABLE_BACKUP = !ENABLE_RESTORE
 let SUPPORTED_CROSSOVER_VERSION = "25"
 let ENABLE_GSTREAMER = true
 
-let SHARED_SUPPORT_PATH = "/Contents/SharedSupport/CrossOver"
+let SHARED_SUPPORT_COMPONENT = "Contents/SharedSupport/CrossOver"
+let SHARED_SUPPORT_PATH = "/" + SHARED_SUPPORT_COMPONENT
 let DEFAULT_CX_BOTTLES_ROOTPATH = "/Users/${USER}/"
 let DEFAULT_CX_BOTTLES_FOLDER = "CXPBottles"
 let DEFAULT_CX_BOTTLES_PATH = DEFAULT_CX_BOTTLES_ROOTPATH + DEFAULT_CX_BOTTLES_FOLDER
@@ -270,6 +271,10 @@ let DXMT_PATHS_RELEASE = [
     PathMap(src: "x86_64-windows/dxgi.dll", dst: "/lib/dxmt/x86_64-windows/dxgi.dll"),
     PathMap(src: "x86_64-windows/d3d11.dll", dst: "/lib/dxmt/x86_64-windows/d3d11.dll"),
     PathMap(src: "x86_64-windows/d3d10core.dll", dst: "/lib/dxmt/x86_64-windows/d3d10core.dll"),
+    PathMap(src: "i386-windows/winemetal.dll", dst: "/lib/dxmt/i386-windows/winemetal.dll"),
+    PathMap(src: "i386-windows/dxgi.dll", dst: "/lib/dxmt/i386-windows/dxgi.dll"),
+    PathMap(src: "i386-windows/d3d11.dll", dst: "/lib/dxmt/i386-windows/d3d11.dll"),
+    PathMap(src: "i386-windows/d3d10core.dll", dst: "/lib/dxmt/i386-windows/d3d10core.dll"),
 ]
 
 struct ToBottlesPaths {
