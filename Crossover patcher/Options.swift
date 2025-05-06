@@ -60,15 +60,14 @@ struct Options: View {
                             opts: $opts
                         )
                         .help(localizedCXPatcherString(forKey: "ExternalsToggleHelp"))
-                        .onChange(of: opts.copyXtLibs) { enabled in
-                            if(enabled) {
-                                showXTLibsModal = true
-                            }
-                        }
+                        
                     }
                     DXVKToggle(
                         opts: $opts
                     )
+                    .onChange(of: opts.patchDXVK) { enabled in
+                        opts.globalEnvs.disableMVKArgumentBuffers = enabled
+                    }
                     .help(localizedCXPatcherString(forKey: "dxvkToggleHelp"))
                     GStreamerToggle(
                         opts: $opts

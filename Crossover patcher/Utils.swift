@@ -47,6 +47,7 @@ struct GlobalEnvs {
     var preferredMaxFrameRate = 0.0
     var metalSpatialUpscaleFactor = 1.0
     var metalFXSpatial = false
+    var disableMVKArgumentBuffers = false
 }
 
 enum PatchMVK {
@@ -742,6 +743,11 @@ func addGlobals(url: URL, opts: Opts) {
     if(opts.globalEnvs.disableUE4Hack == true) {
         console.log("add UE4 disable env")
         envs += [Env(key: "NAS_DISABLE_UE4_HACK", value: "1")]
+    }
+    
+    if(opts.globalEnvs.disableMVKArgumentBuffers == true) { // to add the option later
+        console.log("disable MoltenVK Argument Buffers")
+        envs += [Env(key: "MVK_CONFIG_USE_METAL_ARGUMENT_BUFFERS", value: "0")]
     }
 
     let file = getENVOverrideConfigfile(envs: envs)
