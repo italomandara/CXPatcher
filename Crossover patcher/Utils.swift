@@ -749,6 +749,9 @@ func addGlobals(url: URL, opts: Opts) {
         console.log("disable MoltenVK Argument Buffers")
         envs += [Env(key: "MVK_CONFIG_USE_METAL_ARGUMENT_BUFFERS", value: "0")]
     }
+    
+    console.log("enable MoltenVK UE4 HAck")
+    envs += [Env(key: "MVK_CONFIG_UE4_HACK_ENABLED", value: "1")]
 
     let file = getENVOverrideConfigfile(envs: envs)
     do {
