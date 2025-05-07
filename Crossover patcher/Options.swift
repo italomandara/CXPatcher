@@ -60,7 +60,9 @@ struct Options: View {
                             opts: $opts
                         )
                         .help(localizedCXPatcherString(forKey: "ExternalsToggleHelp"))
-                        
+                        .onChange(of: opts.copyXtLibs) { enabled in
+                            showXTLibsModal = enabled
+                        }
                     }
                     DXVKToggle(
                         opts: $opts
