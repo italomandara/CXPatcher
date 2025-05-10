@@ -47,7 +47,7 @@ struct GlobalEnvs {
     var preferredMaxFrameRate = 0.0
     var metalSpatialUpscaleFactor = 1.0
     var metalFXSpatial = false
-    var disableMVKArgumentBuffers = false
+    var disableMVKArgumentBuffers = true
 }
 
 enum PatchMVK {

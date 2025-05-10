@@ -67,9 +67,6 @@ struct Options: View {
                     DXVKToggle(
                         opts: $opts
                     )
-                    .onChange(of: opts.patchDXVK) { enabled in
-                        opts.globalEnvs.disableMVKArgumentBuffers = enabled
-                    }
                     .help(localizedCXPatcherString(forKey: "dxvkToggleHelp"))
                     GStreamerToggle(
                         opts: $opts
