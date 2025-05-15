@@ -11,13 +11,13 @@ func applyPatch(url: URL, opts: inout Opts, onPatch: () -> Void = {}) {
     if (opts.busy) {
         return
     }
+    console.log("--- BEGIN OPTIONS ---\n \(describe(opts)) \n --- END OPTIONS ---")
     opts.progress = 0.0
     opts.busy = true
     if opts.repatch && restoreApp(url: url, opts: &opts) {
         console.log("Restoring first...")
     }
     validateAndPatch(url: url, opts: &opts, onPatch: onPatch)
-    console.log("--- BEGIN OPTIONS ---\n \(describe(opts)) \n --- END OPTIONS ---")
     if(ENABLE_FIX_CX_CODESIGN) {
         do {
             console.log("patching \(url.path)")

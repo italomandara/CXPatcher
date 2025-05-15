@@ -350,6 +350,7 @@ struct FileDropDelegate: DropDelegate {
         if let item = info.itemProviders(for: [.fileURL]).first {
             let _ = item.loadObject(ofClass: URL.self) { object, error in
                 if let url = object {
+                    console.log("apply from drop action")
                     applyPatch(url: url, opts: &opts, onPatch: onPatch)
                 }
             }
@@ -691,7 +692,7 @@ func backup(appRoot: URL) throws {
 }
 
 private func appendLinesToFile(filePath: String, additionalLines: [String]) -> String {
-    console.log("tryng to read \(filePath)")
+    console.log("trying to read \(filePath)")
     if let sourceUrl = Bundle.main.url(forResource:  filePath, withExtension: nil) {
         console.log(sourceUrl.debugDescription)
         do { let text = try String(contentsOf: sourceUrl, encoding: .utf8)

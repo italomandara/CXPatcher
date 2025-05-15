@@ -40,6 +40,7 @@ struct AppSelector: View {
                 .contentShape(RoundedRectangle(cornerRadius: 25))
                 .onTapGesture {
                     if let url = openAppSelectorPanel() {
+                        console.log("apply from file dialog")
                         applyPatch(url: url, opts: &opts, onPatch: onPatch)
                     }
                 }
