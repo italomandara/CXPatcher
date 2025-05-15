@@ -89,6 +89,29 @@ func acceptAgreement(_ showDisclaimer: inout Bool) {
     UserDefaults.standard.set(true, forKey: "I will not ask CodeWeavers for support or refund")
 }
 
+func describe(_ any: Any, indent: String = "") -> String {
+    let mirror = Mirror(reflecting: any)
+    
+    // If it's a primitive or a type without children, just return it
+    if mirror.children.isEmpty {
+        return "\(any)"
+    }
+    
+    var result = ""
+    for (label, value) in mirror.children {
+        guard let label = label else { continue }
+        let valueMirror = Mirror(reflecting: value)
+        
+        if valueMirror.children.isEmpty {
+            result += "\(indent)\(label): \(value)\n"
+        } else {
+            result += "\(indent)\(label):\n"
+            result += describe(value, indent: indent + "  ")
+        }
+    }
+    return result
+}
+
 struct Opts {
     var showDisclaimer: Bool = !UserDefaults.standard.bool(forKey: "I will not ask CodeWeavers for support or refund")
     var status: Status = .unpatched

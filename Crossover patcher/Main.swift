@@ -17,6 +17,7 @@ func applyPatch(url: URL, opts: inout Opts, onPatch: () -> Void = {}) {
         console.log("Restoring first...")
     }
     validateAndPatch(url: url, opts: &opts, onPatch: onPatch)
+    console.log("--- BEGIN OPTIONS ---\n \(describe(opts)) \n --- END OPTIONS ---")
     if(ENABLE_FIX_CX_CODESIGN) {
         do {
             console.log("patching \(url.path)")
