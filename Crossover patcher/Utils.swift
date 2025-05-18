@@ -119,13 +119,13 @@ struct Opts {
     var repatch: Bool = false
     var overrideBottlePath: Bool = true
     var copyGptk = false
+    var patchGStreamer = true
     var progress: Float = 0.0
     var busy: Bool = false
     var cxbottlesPath = DEFAULT_CX_BOTTLES_PATH
     var patchMVK: PatchMVK = PatchMVK.legacyUE4
     var autoUpdateDisable = true
     var patchDXVK = false
-    var patchGStreamer = true
     var globalEnvs = GlobalEnvs()
     var removeSignaure = true
     var xtLibsUrl: URL? = nil
@@ -146,8 +146,9 @@ struct Opts {
 
 var f = FileManager.default
 
-private func getResourcesListFrom(url: URL) -> [(String, String)]{
-    let list: [(String, String)]  = WINE_RESOURCES_PATHS.map { path in
+private func getResourcesListFrom(url: URL, using: [String] = []) -> [(String, String)]{
+    let res = using.isEmpty ? WINE_RESOURCES_PATHS : using
+    let list: [(String, String)]  = res.map { path in
         (
             WINE_RESOURCES_ROOT + path,
             url.path + SHARED_SUPPORT_PATH + path
@@ -156,7 +157,8 @@ private func getResourcesListFrom(url: URL) -> [(String, String)]{
     return list
 }
 
-private func getRemoveListFrom(url: URL) -> [String]{
+private func getRemoveListFrom(url: URL, using: [String] = []) -> [String]{
+    let res = using.isEmpty ? WINE_RESOURCES_PATHS : using
     let list: [String]  = FILES_TO_REMOVE.map { path in
         url.path + path
     }
@@ -493,20 +495,48 @@ func patch(url: URL, opts: inout Opts) {
             return
         }
     }
-    let resources = getResourcesListFrom(url: url).filter { elem in
-        opts.copyGptk && !opts.copyXtLibs ? true : !elem.0.contains("crossover.inf")
-    }.filter { elem in
-        opts.patchMVK == PatchMVK.legacyUE4 ? true : !elem.0.contains("libMoltenVK.dylib")
-    }.filter { elem in
-        opts.patchDXVK ? true : (!elem.0.contains("dxvk") && !elem.0.contains("dxvk"))
+
+    var list: [String] = WINE_RESOURCES_PATHS
+    
+    list.append(WINE_WINEINF_PATH)
+    
+    switch(opts.patchMVK) {
+    case .legacyUE4:
+        let mvkResource = (
+            WINE_RESOURCES_ROOT + MOLTENVK_BASELINE,
+            url.path + SHARED_SUPPORT_PATH + MOLTENVK_BASELINE
+        )
+       safeResCopy(res: mvkResource.0, dest: mvkResource.1)
+        break
+    case .latestUE4:
+        let mvkResource = (
+            WINE_RESOURCES_ROOT + MOLTENVK_LATEST,
+            url.path + SHARED_SUPPORT_PATH + MOLTENVK_BASELINE
+        )
+       safeResCopy(res: mvkResource.0, dest: mvkResource.1)
+        break
+    case .experimentalUE4:
+        let mvkResource = (
+            WINE_RESOURCES_ROOT + MOLTENVK_EXPERIMENTAL,
+            url.path + SHARED_SUPPORT_PATH + MOLTENVK_BASELINE
+        )
+       safeResCopy(res: mvkResource.0, dest: mvkResource.1)
+        break
+    default:
+        break
     }
+    
+    if(opts.patchDXVK) {
+        list += WINE_DXVK_RESOURCES_PATHS
+    }
+
     if(opts.copyXtLibs) {
+        list += WINE_DXMT_RESOURCES_PATHS
         installDXMT(url: url, opts: opts)
 //        installWineMetalInAllBottles(opts: opts) not needed at the moment, just create a new bottle
     }
-    opts.progress += 1
-    let filesToRemove = getRemoveListFrom(url: url).filter { elem in
-        opts.removeSignaure ? true : (!elem.contains("CodeResources") && !elem.contains("_CodeSignature"))
+    if(opts.patchGStreamer) {
+        list += WINE_GSTREAMER_RESOURCES_PATHS
     }
     opts.progress += 1
     if(opts.copyGptk == true) {
@@ -517,29 +547,20 @@ func patch(url: URL, opts: inout Opts) {
             opts.progress += 1
         }
     }
+    opts.progress += 1
+    let resources = getResourcesListFrom(url: url, using: list)
     resources.forEach { resource in
         safeResCopy(res: resource.0, dest: resource.1)
         opts.progress += 1
     }
-    if(opts.patchMVK == PatchMVK.latestUE4) {
-        let latestMVKResource = (
-            WINE_RESOURCES_ROOT + MOLTENVK_LATEST,
-            url.path + SHARED_SUPPORT_PATH + MOLTENVK_BASELINE
-        )
-        safeResCopy(res: latestMVKResource.0, dest: latestMVKResource.1)
+    var filesToRemove: [String] = []
+    if(opts.removeSignaure) {
+        filesToRemove += FILES_TO_REMOVE
     }
-    if(opts.patchMVK == PatchMVK.experimentalUE4) {
-        let latestMVKResource = (
-            WINE_RESOURCES_ROOT + MOLTENVK_EXPERIMENTAL,
-            url.path + SHARED_SUPPORT_PATH + MOLTENVK_BASELINE
-        )
-        safeResCopy(res: latestMVKResource.0, dest: latestMVKResource.1)
+    if(opts.patchGStreamer) {
+        filesToRemove += BUILTIN_LIBS_GSTREAMER64
     }
-//    filesToDisable.forEach { file in
-//        disable(dest: file)
-//        opts.progress += 1
-//    }
-    filesToRemove.forEach { file in
+    getRemoveListFrom(url: url, using: filesToRemove).forEach { file in
         remove(dest: file)
         opts.progress += 1
     }

@@ -228,39 +228,55 @@ let BUILTIN_LIBS_GSTREAMER64 = [
 let FILES_TO_REMOVE: [String] = [
     "/Contents/CodeResources",
     "/Contents/_CodeSignature",
-] + BUILTIN_LIBS_GSTREAMER64
+]
 
 let WINE_RESOURCES_ROOT = "Crossover"
 
 let MOLTENVK_BASELINE = "/lib64/libMoltenVK.dylib"
+let MOLTENVK_LATEST = "/lib64/libMoltenVK-latest.dylib"
+let MOLTENVK_EXPERIMENTAL = "/lib64/libMoltenVK-experimental.dylib"
+
+let WINE_GSTREAMER_RESOURCES_PATHS: [String] = [
+    "/lib/wine/x86_64-unix/winegstreamer.so",
+]
+
+let WINE_DXMT_RESOURCES_PATHS: [String] = [
+    "/lib/wine/i386-windows/winemetal.dll",
+    "/lib/wine/x86_64-windows/winemetal.dll",
+]
+
+let WINE_DXVK_RESOURCES_PATHS: [String] = [
+    "/lib/dxvk/i386-windows/d3d10core.dll",
+    "/lib/dxvk/i386-windows/d3d11.dll",
+    "/lib/dxvk/x86_64-windows/d3d10core.dll",
+    "/lib/dxvk/x86_64-windows/d3d11.dll",
+]
+
+let WINE_WINEINF_PATH: String = "/share/wine/wine.inf"
+
 
 let WINE_RESOURCES_PATHS: [String] = [
-    MOLTENVK_BASELINE,
     //    "/lib64/libinotify.0.dylib",
     //    "/lib64/libinotify.dylib",
-        "/lib/dxvk/i386-windows/d3d10core.dll",
-        "/lib/dxvk/i386-windows/d3d11.dll",
-        "/lib/dxvk/x86_64-windows/d3d10core.dll",
-        "/lib/dxvk/x86_64-windows/d3d11.dll",
     //    "/lib/wine/i386-windows/kernelbase.dll",
-        "/lib/wine/i386-windows/winemetal.dll",
     //    "/lib/wine/i386-windows/ntdll.dll",
     //    "/lib/wine/i386-windows/winegstreamer.dll",
     //    "lib/wine/i386-windows/wineboot.exe",
     //    "/lib/wine/i386-windows/winecfg.exe",
     //    "/lib/wine/x86_64-unix/ntdll.so",
-        "/lib/wine/x86_64-unix/winegstreamer.so",
-        "/lib/wine/x86_64-windows/winemetal.dll",
     //    "/lib/wine/x86_64-windows/kernelbase.dll",
     //    "/lib/wine/x86_64-windows/ntdll.dll",
     //    "/lib/wine/x86_64-windows/wineboot.exe",
     //    "/lib/wine/x86_64-windows/winecfg.exe",
-    //    "/lib/wine/x86_64-windows/winegstreamer.dll",
     //    "/share/crossover/bottle_data/crossover.inf",
     //    "/CrossOver-Hosted Application/wineserver",
-        "/share/wine/wine.inf",
 ]
-
+//+ [MOLTENVK_BASELINE]
+//+ [WINE_WINEINF_PATH]
+//+ WINE_DXVK_RESOURCES_PATHS
+//+ WINE_GSTREAMER_RESOURCES_PATHS
+//+ WINE_DXMT_RESOURCES_PATHS
+    
 let DXMT_PATHS = [
     PathMap(src: "src/winemetal/unix/winemetal.so", dst: "/lib/dxmt/x86_64-unix/winemetal.so"),
     PathMap(src: "src/winemetal/winemetal.dll", dst: "/lib/dxmt/x86_64-windows/winemetal.dll"),
@@ -295,9 +311,6 @@ let DXMT_EVERY_BOTTLE_SYS_PATHS = [
         path: "src/winemetal/"
     )
 ]
-
-let MOLTENVK_LATEST = "/lib64/libMoltenVK-latest.dylib"
-let MOLTENVK_EXPERIMENTAL = "/lib64/libMoltenVK-experimental.dylib"
 
 let BOTTLE_PATH_OVERRIDE = "/etc/CrossOver.conf"
 
