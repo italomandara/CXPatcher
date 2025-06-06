@@ -158,8 +158,8 @@ private func getResourcesListFrom(url: URL, using: [String] = []) -> [(String, S
 }
 
 private func getRemoveListFrom(url: URL, using: [String] = []) -> [String]{
-    let res = using.isEmpty ? WINE_RESOURCES_PATHS : using
-    let list: [String]  = FILES_TO_REMOVE.map { path in
+    let res = using.isEmpty ? FILES_TO_REMOVE : using
+    let list: [String]  = res.map { path in
         url.path + path
     }
     return list
@@ -484,7 +484,7 @@ func installWineMetalInAllBottles(opts: Opts) {
 }
 
 func patch(url: URL, opts: inout Opts) {
-    if(ENABLE_BACKUP) {
+    if(ENABLE_BACKUP == true) {
         do
         {
             try backup(appRoot: url)
@@ -526,16 +526,16 @@ func patch(url: URL, opts: inout Opts) {
         break
     }
     
-    if(opts.patchDXVK) {
+    if(opts.patchDXVK == true) {
         list += WINE_DXVK_RESOURCES_PATHS
     }
 
-    if(opts.copyXtLibs) {
+    if(opts.copyXtLibs == true) {
         list += WINE_DXMT_RESOURCES_PATHS
         installDXMT(url: url, opts: opts)
 //        installWineMetalInAllBottles(opts: opts) not needed at the moment, just create a new bottle
     }
-    if(opts.patchGStreamer) {
+    if(opts.patchGStreamer == true) {
         list += WINE_GSTREAMER_RESOURCES_PATHS
     }
     opts.progress += 1
@@ -554,11 +554,12 @@ func patch(url: URL, opts: inout Opts) {
         opts.progress += 1
     }
     var filesToRemove: [String] = []
-    if(opts.removeSignaure) {
+    if(opts.removeSignaure == true) {
         filesToRemove += FILES_TO_REMOVE
     }
-    if(opts.patchGStreamer) {
+    if(opts.patchGStreamer == true) {
         filesToRemove += BUILTIN_LIBS_GSTREAMER64
+        console.log("preparing to remove Gstreamer files...")
     }
     getRemoveListFrom(url: url, using: filesToRemove).forEach { file in
         remove(dest: file)
@@ -568,7 +569,7 @@ func patch(url: URL, opts: inout Opts) {
         addGlobals(url: url, opts: opts)
     }
     opts.progress += 1
-    if(opts.autoUpdateDisable) {
+    if(opts.autoUpdateDisable == true) {
         disableAutoUpdate(url: url)
     }
     opts.progress += 1
