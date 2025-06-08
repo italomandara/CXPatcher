@@ -14,6 +14,7 @@ func applyPatch(url: URL, opts: inout Opts, onPatch: () -> Void = {}) {
     if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
         console.log("CXPatcher Version: \(version)")
     }
+    console.log("Patched on \(Date().ISO8601Format())")
     console.log("--- BEGIN OPTIONS ---\n \(describe(opts)) \n --- END OPTIONS ---")
     opts.progress = 0.0
     opts.busy = true
