@@ -93,7 +93,7 @@ In order to integrate that in CrossOver you just need switch on "Integrate D3DMe
 (click in the drop area)
 - enjoy your DX12 games!
 
-## Restoring a patched app to the original app
+## Restoring a patched app to the original app (unsupported in new versions)
 
 Maybe you changed your mind and prefer to use your original CrossOver app.
 You can restore by going to the `file -> restore menu`
