@@ -118,7 +118,7 @@ struct Opts {
     var skipVersionCheck: Bool = false
     var repatch: Bool = false
     var overrideBottlePath: Bool = true
-    var copyGptk = false
+    var copyGptk = true
     var patchGStreamer = true
     var progress: Float = 0.0
     var busy: Bool = false
@@ -693,7 +693,11 @@ func disableAutoUpdate(url: URL) {
 
 func markAsPatched(url: URL) {
     let plist = parseCXPlist(plistPath: url.path + "/Contents/Info.plist")
-    editInfoPlist(at: url, key: "CFBundleShortVersionString", value: plist.CFBundleShortVersionString + "p")
+    if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+        editInfoPlist(at: url, key: "CFBundleShortVersionString", value: plist.CFBundleShortVersionString + "p" + version)
+    } else {
+        editInfoPlist(at: url, key: "CFBundleShortVersionString", value: plist.CFBundleShortVersionString + "p")
+    }
 }
 
 func restoreAutoUpdate(url: URL) {

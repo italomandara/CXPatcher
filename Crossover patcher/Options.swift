@@ -52,9 +52,9 @@ struct Options: View {
                         opts: $opts
                     )
                     .help(localizedCXPatcherString(forKey: "mkvToggleHelp"))
-//                    IntegrateGPTKToggle(
-//                        opts: $opts
-//                    ).help(localizedCXPatcherString(forKey: "gptkToggleHelp"))
+                    IntegrateGPTKToggle(
+                        opts: $opts
+                    ).help(localizedCXPatcherString(forKey: "gptkToggleHelp"))
                     if(ENABLE_EXTERNAL_RESOURCES) {
                         XtLibsToggle(
                             opts: $opts
