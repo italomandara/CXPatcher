@@ -268,7 +268,7 @@ let WINE_RESOURCES_PATHS: [String] = [
     //    "/lib/wine/x86_64-windows/ntdll.dll",
     //    "/lib/wine/x86_64-windows/wineboot.exe",
     //    "/lib/wine/x86_64-windows/winecfg.exe",
-    //    "/share/crossover/bottle_data/crossover.inf",
+        "/share/crossover/bottle_data/crossover.inf",
     //    "/CrossOver-Hosted Application/wineserver",
 ]
 //+ [MOLTENVK_BASELINE]
