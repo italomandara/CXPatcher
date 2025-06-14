@@ -15,6 +15,7 @@ struct Options: View {
     @Binding var opts: Opts
     @State var showXTLibsModal: Bool = false
     @State var DXMTOptionsEnabled: Bool = false
+    @State var bottlesList: [URL] = []
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             ZStack {
@@ -55,6 +56,19 @@ struct Options: View {
                     IntegrateGPTKToggle(
                         opts: $opts
                     ).help(localizedCXPatcherString(forKey: "gptkToggleHelp"))
+                    if(opts.copyGptk) {
+                        GPTKExpMtlFXToggle(
+                            opts: $opts
+                        ).help(localizedCXPatcherString(forKey: "installExpMtlFXhelp"))
+                        .onChange(of: opts.enableExpMtlFX) { newValue in
+                            if(newValue == true) {
+                                bottlesList = getAllBottles(opts)
+                            }
+                        }
+                        if(opts.enableExpMtlFX) {
+                            BottlesList(list: $bottlesList, opts: $opts)
+                        }
+                    }
                     if(ENABLE_EXTERNAL_RESOURCES) {
                         XtLibsToggle(
                             opts: $opts
@@ -75,6 +89,9 @@ struct Options: View {
                     BottlesPathToggle(
                         opts: $opts
                     )
+                    .onChange(of: opts.overrideBottlePath) { newValue in
+                        bottlesList = getAllBottles(opts)
+                    }
                     RemoveSignatureToggle(
                         opts: $opts
                     )

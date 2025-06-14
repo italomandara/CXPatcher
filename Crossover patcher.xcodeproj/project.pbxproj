@@ -35,6 +35,8 @@
 		38CB035A2A0ACF7200AE3637 /* RestoreButtonDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CB03592A0ACF7200AE3637 /* RestoreButtonDialog.swift */; };
 		38D93E5829DC4E4F00D4B0D8 /* Disclaimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D93E5729DC4E4F00D4B0D8 /* Disclaimer.swift */; };
 		38D9D42D2CE0FC7000BBF1BA /* XtLibsToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D9D42C2CE0FC7000BBF1BA /* XtLibsToggle.swift */; };
+		38DCFBBA2DFA3C0800A1AE72 /* GPTKExpMtlFXToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DCFBB92DFA3C0400A1AE72 /* GPTKExpMtlFXToggle.swift */; };
+		38DCFBBC2DFCA7FC00A1AE72 /* BottlesListToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DCFBBB2DFCA7F500A1AE72 /* BottlesListToggle.swift */; };
 		38EDDA382A97A73D00FF2254 /* CrossOver in Resources */ = {isa = PBXBuildFile; fileRef = 38EDDA362A97A73C00FF2254 /* CrossOver */; };
 		38EFF3C02C47D9D300CA6209 /* AdvertiseAVXToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EFF3BF2C47D9C200CA6209 /* AdvertiseAVXToggle.swift */; };
 		38F4F3F42D81F5CA002EDF29 /* GStreamerToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F4F3F32D81F5CA002EDF29 /* GStreamerToggle.swift */; };
@@ -87,6 +89,8 @@
 		38D1F6C42A4CA3E9006C89B6 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		38D93E5729DC4E4F00D4B0D8 /* Disclaimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disclaimer.swift; sourceTree = "<group>"; };
 		38D9D42C2CE0FC7000BBF1BA /* XtLibsToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XtLibsToggle.swift; sourceTree = "<group>"; };
+		38DCFBB92DFA3C0400A1AE72 /* GPTKExpMtlFXToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTKExpMtlFXToggle.swift; sourceTree = "<group>"; };
+		38DCFBBB2DFCA7F500A1AE72 /* BottlesListToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottlesListToggle.swift; sourceTree = "<group>"; };
 		38EDDA362A97A73C00FF2254 /* CrossOver */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CrossOver; path = lib/CrossOver; sourceTree = SOURCE_ROOT; };
 		38EFF3BF2C47D9C200CA6209 /* AdvertiseAVXToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertiseAVXToggle.swift; sourceTree = "<group>"; };
 		38F4F3F32D81F5CA002EDF29 /* GStreamerToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GStreamerToggle.swift; sourceTree = "<group>"; };
@@ -175,6 +179,7 @@
 		38F7B2222A5DD70F00CD9511 /* Toggles */ = {
 			isa = PBXGroup;
 			children = (
+				38DCFBB92DFA3C0400A1AE72 /* GPTKExpMtlFXToggle.swift */,
 				38EFF3BF2C47D9C200CA6209 /* AdvertiseAVXToggle.swift */,
 				38F7B21C2A5DD4E100CD9511 /* IntegrateGPTKToggle.swift */,
 				38D9D42C2CE0FC7000BBF1BA /* XtLibsToggle.swift */,
@@ -190,6 +195,7 @@
 				385793582B1E725100310960 /* DXVKAsyncToggle.swift */,
 				38C099802B2398DD00C83814 /* DisableUE4HackToggle.swift */,
 				38F4F3F32D81F5CA002EDF29 /* GStreamerToggle.swift */,
+				38DCFBBB2DFCA7F500A1AE72 /* BottlesListToggle.swift */,
 			);
 			path = Toggles;
 			sourceTree = "<group>";
@@ -339,10 +345,12 @@
 				382499E42AEE946400578AA3 /* Options.swift in Sources */,
 				38C82D4D2CFA843A00AF3A02 /* DXMTOptions.swift in Sources */,
 				38CB035A2A0ACF7200AE3637 /* RestoreButtonDialog.swift in Sources */,
+				38DCFBBC2DFCA7FC00A1AE72 /* BottlesListToggle.swift in Sources */,
 				38F7B2172A5DCF7500CD9511 /* AppSelector.swift in Sources */,
 				383EC3352DC57F8100C0CA9C /* Main.swift in Sources */,
 				38D9D42D2CE0FC7000BBF1BA /* XtLibsToggle.swift in Sources */,
 				386E0B282AC7706200D09956 /* CustomButton.swift in Sources */,
+				38DCFBBA2DFA3C0800A1AE72 /* GPTKExpMtlFXToggle.swift in Sources */,
 				38C291EA2AE85A7C00D0703E /* RemoveSignatureToggle.swift in Sources */,
 				382499E62AEE984600578AA3 /* OptionsButton.swift in Sources */,
 				384681FD2AF4544200CEF539 /* MTLHUDToggle.swift in Sources */,
@@ -534,7 +542,7 @@
 					"$(PROJECT_DIR)/Crossover\\ patcher/Resources",
 					"$(PROJECT_DIR)",
 				);
-				MARKETING_VERSION = 0.6.4;
+				MARKETING_VERSION = 0.6.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.italomandara.Crossover-patcher";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -576,7 +584,7 @@
 					"$(PROJECT_DIR)/Crossover\\ patcher/Resources",
 					"$(PROJECT_DIR)",
 				);
-				MARKETING_VERSION = 0.6.4;
+				MARKETING_VERSION = 0.6.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.italomandara.Crossover-patcher";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

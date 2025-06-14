@@ -12,6 +12,10 @@ var isVentura: Bool {
     SKIP_VENTURA_CHECK ? false : ProcessInfo().operatingSystemVersion.majorVersion < 14
 }
 
+var isTahoeOrBetter: Bool {
+    ProcessInfo().operatingSystemVersion.majorVersion > 15
+}
+
 enum Status {
     case alreadyPatched
     case success
@@ -119,10 +123,12 @@ struct Opts {
     var repatch: Bool = false
     var overrideBottlePath: Bool = true
     var copyGptk = true
+    var enableExpMtlFX = false
     var patchGStreamer = true
     var progress: Float = 0.0
     var busy: Bool = false
     var cxbottlesPath = DEFAULT_CX_BOTTLES_PATH
+    var targetBottlePath: String = ""
     var patchMVK: PatchMVK = PatchMVK.legacyUE4
     var autoUpdateDisable = true
     var patchDXVK = false
@@ -191,12 +197,12 @@ private func  getExternalBackupListFrom(url: URL) -> [String] {
 private func resCopy(res: String, dest: String) {
     if let sourceUrl = Bundle.main.url(forResource: res, withExtension: nil) {
         do { try f.copyItem(at: sourceUrl, to: URL(filePath: dest))
-            console.log("\(res) copied")
+            console.log("\(res) copied in \(dest)")
         } catch {
             console.log(error.localizedDescription)
         }
     } else {
-        console.log("\(res) not found")
+        console.log("\(res) not found in CXP bundle (resCopy skipped)")
     }
 }
 
@@ -205,12 +211,12 @@ private func safeResCopy(res: String, dest: String) {
     if(ENABLE_RESTORE != true){
         do {try f.removeItem(atPath: dest)
         } catch {
-            console.log("\(dest) does not exist!")
+            console.log("\(dest) does not exist! ignoring")
         }
     } else if(f.fileExists(atPath: dest)) {
         do {try f.moveItem(atPath: dest, toPath: dest + "_orig")
         } catch {
-            console.log("\(dest) does not exist!")
+            console.log("\(dest) does not exist! ignoring")
         }
     } else {
         console.log("unexpected error: \(dest) doesn't have an original copy will just copy then")
@@ -465,24 +471,6 @@ func installDXMT (url: URL, opts: Opts) {
     }
 }
 
-func installWineMetalInAllBottles(opts: Opts) {
-    do {
-        let home: URL = f.homeDirectoryForCurrentUser
-        let bottlesFolder: URL = opts.cxbottlesPath == DEFAULT_CX_BOTTLES_PATH ? home.appendingPathComponent(DEFAULT_CX_BOTTLES_FOLDER) : URL(fileURLWithPath: opts.cxbottlesPath, isDirectory: true)
-        // list al bottles folders URLs
-        let bottleFolders: [URL] = try f.contentsOfDirectory(at: bottlesFolder, includingPropertiesForKeys: nil, options: [.skipsHiddenFiles])
-        let bottleUrls: [URL] = bottleFolders
-        console.log(bottleUrls.debugDescription)
-        bottleUrls.forEach { bottleUrl in
-            DXMT_EVERY_BOTTLE_SYS_PATHS.forEach { item in
-                safeFileCopy(source: opts.xtLibsUrl!.path() + item.fullPath, dest: bottleUrl.appendingPathComponent("drive_c/windows/system32/", isDirectory: true).path() + item.fileName)
-            }
-        }
-    } catch {
-        console.log(error.localizedDescription)
-    }
-}
-
 func patch(url: URL, opts: inout Opts) {
     if(ENABLE_BACKUP == true) {
         do
@@ -533,7 +521,6 @@ func patch(url: URL, opts: inout Opts) {
     if(opts.copyXtLibs == true) {
         list += WINE_DXMT_RESOURCES_PATHS
         installDXMT(url: url, opts: opts)
-//        installWineMetalInAllBottles(opts: opts) not needed at the moment, just create a new bottle
     }
     if(opts.patchGStreamer == true) {
         list += WINE_GSTREAMER_RESOURCES_PATHS
@@ -546,6 +533,9 @@ func patch(url: URL, opts: inout Opts) {
             safeResCopy(res: resource.0, dest: resource.1)
             opts.progress += 1
         }
+    }
+    if(opts.enableExpMtlFX == true) {
+        enableExpMtlFX(url: url, opts: opts)
     }
     opts.progress += 1
     let resources = getResourcesListFrom(url: url, using: list)
@@ -751,6 +741,85 @@ private func getENVOverrideConfigfile(envs: [Env]) -> String {
     return appendLinesToFile(filePath: filePath, additionalLines: additionallines)
 }
 
+func addEnvs(_ envs: [Env], to: URL) {
+    let file = getENVOverrideConfigfile(envs: envs)
+    do {
+        try file.write(to: to, atomically: false, encoding: .utf8)
+        console.log("added: \(envs) in \(to.path)")
+    } catch {
+        console.log(error.localizedDescription)
+    }
+}
+
+func addEnvToBottle(opts: Opts) {
+    let url = URL(string: opts.targetBottlePath)!
+    var envs: [Env] = []
+    if(opts.enableExpMtlFX) {
+        envs += [Env(key: "D3DM_ENABLE_METALFX", value: "1")]
+    }
+    if(!envs.isEmpty) {
+        addEnvs(envs, to: url.appendingPathComponent("CrossOver.conf"))
+    }
+}
+
+func enableExpMtlFX(url: URL, opts: Opts) {
+//    Copies and renames the following files:
+//    • Change wine/x86_64-windows/nvngx-on-metalfx.dll to nvngx.dll
+    
+    let resToCopy = [
+//        PathMap(src: "/wine/x86_64-unix/nvngx-on-metalfx.so", dst: "/lib/wine/x86_64-unix/nvngx.so"),
+        PathMap(src: "/wine/x86_64-windows/nvngx-on-metalfx.dll", dst: "/lib/wine/x86_64-windows/nvngx.dll"),
+    ]
+    
+    resToCopy.forEach { file in
+        let dst = url.path + SHARED_SUPPORT_PATH + file.dst
+        let src = "Crossover" + EXTERNAL_RESOURCES_ROOT + file.src
+        safeResCopy(res: src, dest: dst)
+    }
+    
+//    Simlink wine/x86_64-unix/nvngx-on-metalfx.so to /lib/wine/x86_64-windows/nvngx.so
+    let resToSimlink = [
+        PathMap(src: "/external/libd3dshared.dylib", dst: "/lib/wine/x86_64-unix/nvngx.so"),
+    ]
+    
+    resToSimlink.forEach { file in
+        let dst = URL(fileURLWithPath: url.path + SHARED_SUPPORT_PATH + file.dst)
+        let src = "Crossover" + EXTERNAL_RESOURCES_ROOT + file.src
+
+        if let sourceUrl = Bundle.main.url(forResource: src, withExtension: nil) {
+            do { try f.createSymbolicLink(at: dst, withDestinationURL: sourceUrl)
+                console.log("\(src) simlinked in \(dst)")
+            } catch {
+                print(dst.path())
+                console.log(error.localizedDescription)
+            }
+        } else {
+            console.log("\(src) not found in CXP bundle (resCopy skipped)")
+        }
+    }
+    
+//    Copies the following into user's Wine prefix’s system directory:
+//    • nvngx.dll
+//    • nvapi64.dll
+    if (!opts.targetBottlePath.isEmpty) {
+        let filesToCopy = [
+            PathMap(src: "/wine/x86_64-windows/nvapi64.dll", dst: "/drive_c/windows/system32/nvapi64.dll"),
+            PathMap(src: "/wine/x86_64-windows/nvngx-on-metalfx.dll", dst: "/drive_c/windows/system32/nvngx.dll"),
+        ]
+        
+        filesToCopy.forEach { file in
+            let dst = opts.targetBottlePath + file.dst
+            let src = "Crossover" + EXTERNAL_RESOURCES_ROOT + file.src
+            console.log("copying \(src) to \(dst)")
+            safeResCopy(res: src, dest: dst)
+        }
+        
+//    Adds the following env variable to the file cxbottle.conf inside the selected bottle:
+//    "D3DM_ENABLE_METALFX" = "1"
+        addEnvToBottle(opts: opts)
+    }
+}
+
 func addGlobals(url: URL, opts: Opts) {
     disable(dest: url.path + SHARED_SUPPORT_PATH + BOTTLE_PATH_OVERRIDE)
     var envs: [Env] = [Env(key: "CX_BOTTLE_PATH", value: opts.cxbottlesPath)]
@@ -802,13 +871,8 @@ func addGlobals(url: URL, opts: Opts) {
     
     console.log("enable MoltenVK UE4 HAck")
     envs += [Env(key: "MVK_CONFIG_UE4_HACK_ENABLED", value: "1")]
-
-    let file = getENVOverrideConfigfile(envs: envs)
-    do {
-        try file.write(to: url.appendingPathComponent(SHARED_SUPPORT_PATH + BOTTLE_PATH_OVERRIDE), atomically: false, encoding: .utf8)
-    } catch {
-        console.log(error.localizedDescription)
-    }
+    
+    addEnvs(envs, to: url.appendingPathComponent(SHARED_SUPPORT_PATH + BOTTLE_PATH_OVERRIDE))
 }
 
 func removeGlobals(url: URL) {
@@ -893,6 +957,20 @@ func getAllSteamShaderCacheDirectories() -> [URL] {
     }
     
     return shaderCacheDirectories
+}
+
+func getAllBottles(_ opts: Opts) -> [URL] {
+    let bottlePath = f.homeDirectoryForCurrentUser.relativePath + (opts.overrideBottlePath ? "/CXPBottles/" : DEFAULT_BOTTLE_PATH)
+    do {
+        let url = URL(fileURLWithPath: bottlePath)
+        let subfolders: [URL] = try f.contentsOfDirectory(at: url, includingPropertiesForKeys: [.isDirectoryKey], options: [])
+        return subfolders.filter { url in
+            (try? url.resourceValues(forKeys: [.isDirectoryKey]))?.isDirectory == true
+        }
+    } catch {
+        console.log(error.localizedDescription)
+    }
+    return []
 }
 
 func shortenSteamCachePath(_ path: String) -> String {
