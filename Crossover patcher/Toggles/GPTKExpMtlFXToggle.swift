@@ -30,9 +30,9 @@ struct GPTKExpMtlFXToggle: View {
         .padding(.vertical, 6.0)
         .toggleStyle(.switch)
         .controlSize(/*@START_MENU_TOKEN@*/.mini/*@END_MENU_TOKEN@*/)
-//        .disabled(
-//            !isTahoeOrBetter
-//        )
+        .disabled(
+            !isTahoeOrBetter
+        )
         .help(localizedCXPatcherString(forKey: "installExpMtlFXhelp"))
     }
 }
