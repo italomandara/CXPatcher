@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -106,6 +106,10 @@
 		38FC40132A606BAE006E6A69 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		38CE6C672DFEE43000DA9AE4 /* regedit */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = regedit; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXGroup section */
 		38ACB38829D773CA00A450A0 = {
 			isa = PBXGroup;
@@ -162,6 +166,7 @@
 		38ACB3A329D77ECE00A450A0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				38CE6C672DFEE43000DA9AE4 /* regedit */,
 				0D9AC2C42A49F96000101F43 /* Localizable.strings */,
 				38ACB3A729D77F0600A450A0 /* lib */,
 			);
@@ -235,6 +240,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				38CE6C672DFEE43000DA9AE4 /* regedit */,
 			);
 			name = CXPatcher;
 			productName = "Crossover patcher";

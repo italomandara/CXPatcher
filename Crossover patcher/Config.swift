@@ -23,6 +23,12 @@ let SKIP_DISCLAIMER_CHECK = true
 let SKIP_DISCLAIMER_CHECK = false
 #endif
 
+#if DEBUG
+let SKIP_TAHOE_CHECK = true
+#else
+let SKIP_TAHOE_CHECK = false
+#endif
+
 let ENABLE_SKIP_VERSION_CHECK_TOGGLE = false
 
 let ENABLE_RESTORE = false

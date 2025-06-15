@@ -11,7 +11,7 @@ struct BottlesList: View {
     @Binding var list: [URL]
     @Binding var opts: Opts
     var body: some View {
-        Picker(selection: $opts.targetBottlePath, label:
+        Picker(selection: $opts.selectedPrefix, label:
                 Text(localizedCXPatcherString(forKey: "Install MetalFX libs in this bottle:"))
         ) {
             Text(localizedCXPatcherString(forKey: "Please select an option")).tag("")

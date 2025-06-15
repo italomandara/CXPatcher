@@ -13,7 +13,7 @@ var isVentura: Bool {
 }
 
 var isTahoeOrBetter: Bool {
-    ProcessInfo().operatingSystemVersion.majorVersion > 15
+    SKIP_TAHOE_CHECK ? true : ProcessInfo().operatingSystemVersion.majorVersion > 15
 }
 
 enum Status {
@@ -128,7 +128,7 @@ struct Opts {
     var progress: Float = 0.0
     var busy: Bool = false
     var cxbottlesPath = DEFAULT_CX_BOTTLES_PATH
-    var targetBottlePath: String = ""
+    var selectedPrefix: String = ""
     var patchMVK: PatchMVK = PatchMVK.legacyUE4
     var autoUpdateDisable = true
     var patchDXVK = false
@@ -752,7 +752,7 @@ func addEnvs(_ envs: [Env], to: URL) {
 }
 
 func addEnvToBottle(opts: Opts) {
-    let url = URL(string: opts.targetBottlePath)!
+    let url = URL(string: opts.selectedPrefix)!
     var envs: [Env] = []
     if(opts.enableExpMtlFX) {
         envs += [Env(key: "D3DM_ENABLE_METALFX", value: "1")]
@@ -801,17 +801,25 @@ func enableExpMtlFX(url: URL, opts: Opts) {
 //    Copies the following into user's Wine prefix’s system directory:
 //    • nvngx.dll
 //    • nvapi64.dll
-    if (!opts.targetBottlePath.isEmpty) {
+    if (!opts.selectedPrefix.isEmpty) {
         let filesToCopy = [
             PathMap(src: "/wine/x86_64-windows/nvapi64.dll", dst: "/drive_c/windows/system32/nvapi64.dll"),
             PathMap(src: "/wine/x86_64-windows/nvngx-on-metalfx.dll", dst: "/drive_c/windows/system32/nvngx.dll"),
         ]
         
         filesToCopy.forEach { file in
-            let dst = opts.targetBottlePath + file.dst
+            let dst = opts.selectedPrefix + file.dst
             let src = "Crossover" + EXTERNAL_RESOURCES_ROOT + file.src
             console.log("copying \(src) to \(dst)")
             safeResCopy(res: src, dest: dst)
+        }
+// Apply dlss regex
+        let regeditPath = "dlss.reg"
+        console.log("Applying \(regeditPath)")
+        if let sourceUrl = Bundle.main.url(forResource: regeditPath, withExtension: nil) {
+            applyRegistry(toPrefixURL: opts.selectedPrefix, regURL: sourceUrl, currentAppUrl: url)
+        } else {
+            console.log("Could not find \(regeditPath)")
         }
         
 //    Adds the following env variable to the file cxbottle.conf inside the selected bottle:
@@ -899,7 +907,7 @@ func safeShell(_ command: String) throws -> String {
     
     let data = pipe.fileHandleForReading.readDataToEndOfFile()
     let output = String(data: data, encoding: .utf8)!
-    
+    console.log(output)
     return output
 }
 
@@ -993,4 +1001,15 @@ func removeAllSteamCachesFrom(path: String) -> DeleteStatus {
         return DeleteStatus.failed
     }
     return DeleteStatus.success
+}
+
+func applyRegistry(toPrefixURL: String, regURL: URL, currentAppUrl: URL) {
+    let crossoverCommandPath: String = currentAppUrl.appendingPathComponent(SHARED_SUPPORT_COMPONENT).appendingPathComponent("CrossOver-Hosted Application/").path.replacingOccurrences(of: " ", with: "\\ ")
+    print("exectuing 'WINEPREFIX=\(toPrefixURL) \(crossoverCommandPath)/wine regedit \(regURL.path)'")
+    do {
+        try safeShell("WINEPREFIX=\(toPrefixURL) \(crossoverCommandPath)/wine regedit \(regURL.path)")
+    } catch {
+        console.log("Couldn't apply \(regURL.lastPathComponent)")
+        console.log(error.localizedDescription)
+    }
 }
