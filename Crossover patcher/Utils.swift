@@ -790,7 +790,6 @@ func enableExpMtlFX(url: URL, opts: Opts) {
             do { try f.createSymbolicLink(at: dst, withDestinationURL: sourceUrl)
                 console.log("\(src) simlinked in \(dst)")
             } catch {
-                print(dst.path())
                 console.log(error.localizedDescription)
             }
         } else {
@@ -1005,7 +1004,7 @@ func removeAllSteamCachesFrom(path: String) -> DeleteStatus {
 
 func applyRegistry(toPrefixURL: String, regURL: URL, currentAppUrl: URL) {
     let crossoverCommandPath: String = currentAppUrl.appendingPathComponent(SHARED_SUPPORT_COMPONENT).appendingPathComponent("CrossOver-Hosted Application/").path.replacingOccurrences(of: " ", with: "\\ ")
-    print("exectuing 'WINEPREFIX=\(toPrefixURL) \(crossoverCommandPath)/wine regedit \(regURL.path)'")
+    console.log("executing 'WINEPREFIX=\(toPrefixURL) \(crossoverCommandPath)/wine regedit \(regURL.path)'")
     do {
         try safeShell("WINEPREFIX=\(toPrefixURL) \(crossoverCommandPath)/wine regedit \(regURL.path)")
     } catch {
