@@ -1004,9 +1004,10 @@ func removeAllSteamCachesFrom(path: String) -> DeleteStatus {
 
 func applyRegistry(toPrefixURL: String, regURL: URL, currentAppUrl: URL) {
     let crossoverCommandPath: String = currentAppUrl.appendingPathComponent(SHARED_SUPPORT_COMPONENT).appendingPathComponent("CrossOver-Hosted Application/").path.replacingOccurrences(of: " ", with: "\\ ")
-    console.log("executing 'WINEPREFIX=\(toPrefixURL) \(crossoverCommandPath)/wine regedit \(regURL.path)'")
+    let script = "\(crossoverCommandPath)/wine --bottle \(toPrefixURL) regedit \(regURL.path)"
+    console.log("executing \(script)")
     do {
-        try safeShell("WINEPREFIX=\(toPrefixURL) \(crossoverCommandPath)/wine regedit \(regURL.path)")
+        try safeShell(script)
     } catch {
         console.log("Couldn't apply \(regURL.lastPathComponent)")
         console.log(error.localizedDescription)
