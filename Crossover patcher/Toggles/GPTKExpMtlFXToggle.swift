@@ -19,19 +19,23 @@ struct GPTKExpMtlFXToggle: View {
                     Text(localizedCXPatcherString(forKey: "enableExpMtlFX"))
                     Spacer()
                 }
-                if(!isTahoeOrBetter) {
+                if(!shouldD3dMSupportMetalFX) {
                     HStack(alignment: .center) {
                         Image(systemName: "exclamationmark.triangle.fill")
                         Text("MacOS \(String(ProcessInfo().operatingSystemVersion.majorVersion)) \(localizedCXPatcherString(forKey: "unsupported"))")
                     }.foregroundColor(.red)
                 }
+                HStack(alignment: .center) {
+                    Image(systemName: "exclamationmark.triangle.fill")
+                    Text((localizedCXPatcherString(forKey: "Works only on M3 or better CPUs")))
+                }.foregroundColor(.yellow)
             }
         }
         .padding(.vertical, 6.0)
         .toggleStyle(.switch)
         .controlSize(/*@START_MENU_TOKEN@*/.mini/*@END_MENU_TOKEN@*/)
         .disabled(
-            !isTahoeOrBetter
+            !shouldD3dMSupportMetalFX
         )
         .help(localizedCXPatcherString(forKey: "installExpMtlFXhelp"))
     }

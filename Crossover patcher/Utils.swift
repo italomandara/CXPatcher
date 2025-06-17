@@ -16,6 +16,15 @@ var isTahoeOrBetter: Bool {
     SKIP_TAHOE_CHECK ? true : ProcessInfo().operatingSystemVersion.majorVersion > 15
 }
 
+var shouldD3dMSupportMetalFX: Bool {
+    if let path = ProcessInfo.processInfo.environment["SKIP_TAHOE_CHECK"] {
+        if (path == "1") {
+            return true
+        }
+    }
+    return isTahoeOrBetter
+}
+
 enum Status {
     case alreadyPatched
     case success
@@ -755,7 +764,7 @@ func addEnvToBottle(opts: Opts) {
     let url = URL(string: opts.selectedPrefix)!
     var envs: [Env] = []
     if(opts.enableExpMtlFX) {
-        envs += [Env(key: "D3DM_ENABLE_METALFX", value: "1")]
+        envs += [Env(key: "D3DM_ENABLE_METALFX", value: "1"), Env(key: "D3DM_SUPPORT_DXR", value: "1")]
     }
     if(!envs.isEmpty) {
         addEnvs(envs, to: url.appendingPathComponent("CrossOver.conf"))
@@ -779,22 +788,20 @@ func enableExpMtlFX(url: URL, opts: Opts) {
     
 //    Simlink wine/x86_64-unix/nvngx-on-metalfx.so to /lib/wine/x86_64-windows/nvngx.so
     let resToSimlink = [
-        PathMap(src: "/external/libd3dshared.dylib", dst: "/lib/wine/x86_64-unix/nvngx.so"),
+        PathMap(src: "/lib64/apple_gptk/external/libd3dshared.dylib", dst: "/lib/wine/x86_64-unix/nvngx.so"),
     ]
     
     resToSimlink.forEach { file in
         let dst = URL(fileURLWithPath: url.path + SHARED_SUPPORT_PATH + file.dst)
-        let src = "Crossover" + EXTERNAL_RESOURCES_ROOT + file.src
+        let src = URL(fileURLWithPath: url.path + SHARED_SUPPORT_PATH + file.src)
 
-        if let sourceUrl = Bundle.main.url(forResource: src, withExtension: nil) {
-            do { try f.createSymbolicLink(at: dst, withDestinationURL: sourceUrl)
+            do {
+                try f.createSymbolicLink(at: dst, withDestinationURL: src)
                 console.log("\(src) simlinked in \(dst)")
             } catch {
                 console.log(error.localizedDescription)
             }
-        } else {
-            console.log("\(src) not found in CXP bundle (resCopy skipped)")
-        }
+
     }
     
 //    Copies the following into user's Wine prefix’s system directory:
@@ -1003,8 +1010,8 @@ func removeAllSteamCachesFrom(path: String) -> DeleteStatus {
 }
 
 func applyRegistry(toPrefixURL: String, regURL: URL, currentAppUrl: URL) {
-    let crossoverCommandPath: String = currentAppUrl.appendingPathComponent(SHARED_SUPPORT_COMPONENT).appendingPathComponent("CrossOver-Hosted Application/").path.replacingOccurrences(of: " ", with: "\\ ")
-    let script = "\(crossoverCommandPath)/wine --bottle \(toPrefixURL) regedit \(regURL.path)"
+    let crossoverCommandPath: String = currentAppUrl.appendingPathComponent(SHARED_SUPPORT_COMPONENT).appendingPathComponent("CrossOver-Hosted Application/").path
+    let script = "'\(crossoverCommandPath)/wine' --bottle '\(toPrefixURL)' regedit '\(regURL.path)'"
     console.log("executing \(script)")
     do {
         try safeShell(script)
