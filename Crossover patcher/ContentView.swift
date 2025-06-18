@@ -26,9 +26,9 @@ struct ContentView: View {
                 .padding(.bottom, 15.0)
                 .buttonStyle(.borderedProminent)
 
-                    AppSelector(
-                        opts: $opts
-                    )
+                AppSelector(
+                    opts: $opts
+                )
                 VStack(alignment: .center) {
                     if(ENABLE_SKIP_VERSION_CHECK_TOGGLE) {
                         Divider()

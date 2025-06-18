@@ -16,6 +16,7 @@ struct ProgressDialog: View {
         visible = false
         opts.status = .unpatched
         opts.progress = 0.0
+        console.clear()
     }
     private var computedValue: Float {
         return opts.progress / Float(total) * 100
@@ -27,7 +28,7 @@ struct ProgressDialog: View {
                     if(!opts.busy){
                         CustomButton(title: localizedCXPatcherString(forKey: "continue"), action: action, color: .green)
                     } else {
-                        ProgressView(value: computedValue).accentColor(.gray)
+//                        ProgressView(value: computedValue).accentColor(.gray)
                     }
                 }.padding(.horizontal, 30)
                 .fixedSize(horizontal: false, vertical: true)

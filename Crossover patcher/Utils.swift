@@ -77,6 +77,9 @@ class Console {
         print(msg)
         logMessages.append(msg)
     }
+    func clear() {
+        self.logMessages.removeAll()
+    }
     func saveLogs(to: URL) {
         if f.fileExists(atPath: to.path()) {
             do {
@@ -347,9 +350,14 @@ func isCrossoverApp(url: URL, version: String? = nil, skipVersionCheck: Bool? = 
         if (plist.CFBundleIdentifier == "com.codeweavers.CrossOver" && plist.CFBundleShortVersionString.starts(with: SUPPORTED_CROSSOVER_VERSION) ) {
             console.log("app version is ok: \(plist.CFBundleShortVersionString)")
             return true
+        } else {
+            console.log("unsupported version \(plist.CFBundleShortVersionString)")
+            return false
         }
+    } else {
+        console.log("file doesn't exist at \(plistPath)")
     }
-    console.log("file doesn't exist at \(plistPath)")
+    
     return false
 }
 
@@ -480,7 +488,7 @@ func installDXMT (url: URL, opts: Opts) {
     }
 }
 
-func patch(url: URL, opts: inout Opts) {
+func patch(url: URL, opts: inout Opts) throws -> URL? {
     if(ENABLE_BACKUP == true) {
         do
         {
@@ -489,7 +497,7 @@ func patch(url: URL, opts: inout Opts) {
         catch {
             console.log(error.localizedDescription)
             console.log("couldn't create the backup")
-            return
+            return nil
         }
     }
 
@@ -572,7 +580,19 @@ func patch(url: URL, opts: inout Opts) {
         disableAutoUpdate(url: url)
     }
     opts.progress += 1
+    
+    if(ENABLE_FIX_CX_CODESIGN) {
+        do {
+            console.log("patching \(url.path)")
+            try safeShell("/usr/bin/xattr -cr '\(url.path)' && /usr/bin/codesign --force --deep --sign - '\(url.path)'")
+        } catch {
+            console.log("xattr or codesign failed")
+            console.log(error.localizedDescription)
+        }
+    }
+    let patchedUrl = try renameApp(url: url)
     markAsPatched(url: url)
+    return patchedUrl
 }
 
 func renameApp (url: URL) throws -> URL {
@@ -582,37 +602,42 @@ func renameApp (url: URL) throws -> URL {
     if f.fileExists(atPath: patchedName.path) {
         try f.removeItem(at: patchedName)
     }
-    do {
-        try f.moveItem(at: url, to: patchedName)
-        console.log("renaming the app at \(url.path) to \(patchedName.path)")
-    }
-    do {
-        try f.moveItem(at: originalName, to: URL(fileURLWithPath: url.path))
-        console.log("renaming the app at \(originalName.path) to \(url.path)")
-    }
+
+    try f.moveItem(at: url, to: patchedName)
+    console.log("renaming the app at \(url.path) to \(patchedName.path)")
+
+
+    try f.moveItem(at: originalName, to: URL(fileURLWithPath: url.path))
+    console.log("renaming the app at \(originalName.path) to \(url.path)")
+
     console.log("renaming successful")
     return patchedName
 }
 
-func validateAndPatch(url: URL, opts: inout Opts, onPatch: () -> Void = {}) {
+func validateAndPatch(url: URL, opts: inout Opts, onPatch: () -> Void = {}) throws -> URL?{
+    enum PatchError: Error {
+        case alreadyPatched
+        case error
+        case hasBackup
+    }
     if (isAlreadyPatched(url: url)) {
         console.log("App is already patched")
         opts.status = .alreadyPatched
-        return
+        throw PatchError.alreadyPatched
     }
     if(!isCrossoverApp(url: url, skipVersionCheck: opts.skipVersionCheck)) {
-        console.log("it' s not crossover.app")
+        console.log("can't patch this app, it's either an unsupported version or not a crossover app")
         opts.status = .error
-        return
+        throw PatchError.error
     }
     if(hasBackup(appRoot: url)) {
         console.log("Can't patch the app if the backup is already there at \(url.path())")
         opts.status = .hasBackup
+        throw PatchError.hasBackup
     }
     console.log("it's a crossover app")
     onPatch()
-    patch(url: url, opts: &opts)
-    return
+    return try patch(url: url, opts: &opts)
 }
 
 func restoreApp(url: URL, opts: inout Opts, onRestore: () -> Void = {}) -> Bool {
@@ -691,12 +716,11 @@ func disableAutoUpdate(url: URL) {
 }
 
 func markAsPatched(url: URL) {
-    let plist = parseCXPlist(plistPath: url.path + "/Contents/Info.plist")
-    if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
-        editInfoPlist(at: url, key: "CFBundleShortVersionString", value: plist.CFBundleShortVersionString + "p" + version)
-    } else {
-        editInfoPlist(at: url, key: "CFBundleShortVersionString", value: plist.CFBundleShortVersionString + "p")
-    }
+    print("mark as patched disabled")
+//    let plist = parseCXPlist(plistPath: url.path + "/Contents/Info.plist")
+//    if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+//        editInfoPlist(at: url, key: "CFBundleShortVersionString", value: plist.CFBundleShortVersionString + "p" + version)
+//    }
 }
 
 func restoreAutoUpdate(url: URL) {
@@ -716,24 +740,19 @@ func backup(appRoot: URL) throws {
     try f.copyItem(at: appRoot, to: backupUrl)
 }
 
-private func appendLinesToFile(filePath: String, additionalLines: [String]) -> String {
-    console.log("trying to read \(filePath)")
-    if let sourceUrl = Bundle.main.url(forResource:  filePath, withExtension: nil) {
-        console.log(sourceUrl.debugDescription)
-        do { let text = try String(contentsOf: sourceUrl, encoding: .utf8)
-            var finalLines: String = ""
-            console.log("total envs: \(additionalLines.count)")
-            for additionalLine in additionalLines {
-                finalLines += additionalLine + "\n"
-                console.log(additionalLine)
-            }
-            console.log(finalLines)
-            return text + finalLines
-        } catch {
-            console.log("failed opening config file")
+private func appendLinesToFile(fileURL: URL, additionalLines: [String]) -> String {
+    console.log("trying to read \(fileURL.debugDescription)")
+    do { let text = try String(contentsOf: fileURL, encoding: .utf8)
+        var finalLines: String = ""
+        console.log("total envs: \(additionalLines.count)")
+        for additionalLine in additionalLines {
+            finalLines += additionalLine + "\n"
+            console.log(additionalLine)
         }
-    } else {
-        console.log("\(filePath) not found")
+        return text + finalLines
+    } catch {
+        console.log("failed opening config file")
+        console.log(error.localizedDescription)
     }
     return ""
 }
@@ -742,36 +761,56 @@ private func toCrossoverENVString(_ key: String, _ value: String) -> String {
     return "\"\(key)\"=\"\(value)\""
 }
 
-private func getENVOverrideConfigfile(envs: [Env]) -> String {
-    let filePath = WINE_RESOURCES_ROOT + BOTTLE_PATH_OVERRIDE
+private func getENVOverrideConfigfile(envs: [Env], fileURL: URL? = nil) -> String {
     let additionallines: [String] = envs.map { env in
         toCrossoverENVString(env.key, env.value)
     }
-    return appendLinesToFile(filePath: filePath, additionalLines: additionallines)
+    
+    if(fileURL == nil) {
+        if let sourceUrl = Bundle.main.url(forResource:  WINE_RESOURCES_ROOT + BOTTLE_PATH_OVERRIDE, withExtension: nil) {
+            return appendLinesToFile(fileURL: sourceUrl, additionalLines: additionallines)
+        }
+    }
+    
+    return appendLinesToFile(fileURL: fileURL!, additionalLines: additionallines)
 }
 
-func addEnvs(_ envs: [Env], to: URL) {
-    let file = getENVOverrideConfigfile(envs: envs)
+private func addEnvs(_ envs: [Env], to: URL, from: URL? = nil) {
+    let file = from != nil ? getENVOverrideConfigfile(envs: envs, fileURL: from!) : getENVOverrideConfigfile(envs: envs)
     do {
         try file.write(to: to, atomically: false, encoding: .utf8)
         console.log("added: \(envs) in \(to.path)")
+        console.log(file.debugDescription)
     } catch {
+        console.log("There was an error writing the envs to the file \(to.path)")
         console.log(error.localizedDescription)
     }
 }
 
-func addEnvToBottle(opts: Opts) {
-    let url = URL(string: opts.selectedPrefix)!
+private func addEnvToBottle(opts: Opts) {
+    let prefixURL = URL(fileURLWithPath: opts.selectedPrefix)
+    let url = prefixURL.appendingPathComponent("cxbottle.conf")
+    let disabledURL = prefixURL.appendingPathComponent("cxbottle_orig.txt")
+    if(!f.fileExists(atPath: disabledURL.path)){
+        print("file doesn't exist")
+        do {
+            try f.copyItem(at: url, to: disabledURL) // copy, then overwrite
+        } catch {
+            console.log(error.localizedDescription)
+        }
+    } else {
+        print("file exists")
+    }
     var envs: [Env] = []
     if(opts.enableExpMtlFX) {
         envs += [Env(key: "D3DM_ENABLE_METALFX", value: "1"), Env(key: "D3DM_SUPPORT_DXR", value: "1")]
     }
     if(!envs.isEmpty) {
-        addEnvs(envs, to: url.appendingPathComponent("CrossOver.conf"))
+        addEnvs(envs, to: url, from: disabledURL)
     }
 }
 
-func enableExpMtlFX(url: URL, opts: Opts) {
+private func enableExpMtlFX(url: URL, opts: Opts) {
 //    Copies and renames the following files:
 //    • Change wine/x86_64-windows/nvngx-on-metalfx.dll to nvngx.dll
     
@@ -834,7 +873,7 @@ func enableExpMtlFX(url: URL, opts: Opts) {
     }
 }
 
-func addGlobals(url: URL, opts: Opts) {
+private func addGlobals(url: URL, opts: Opts) {
     disable(dest: url.path + SHARED_SUPPORT_PATH + BOTTLE_PATH_OVERRIDE)
     var envs: [Env] = [Env(key: "CX_BOTTLE_PATH", value: opts.cxbottlesPath)]
     var DXMTConfigvalues = ""
@@ -889,7 +928,7 @@ func addGlobals(url: URL, opts: Opts) {
     addEnvs(envs, to: url.appendingPathComponent(SHARED_SUPPORT_PATH + BOTTLE_PATH_OVERRIDE))
 }
 
-func removeGlobals(url: URL) {
+private func removeGlobals(url: URL) {
     do {
         try f.removeItem(atPath: url.path + SHARED_SUPPORT_PATH + BOTTLE_PATH_OVERRIDE)
     } catch {

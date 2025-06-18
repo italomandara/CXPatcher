@@ -184,7 +184,6 @@ let BUILTIN_LIBS_GSTREAMER64 = [
     "/Contents/SharedSupport/CrossOver/lib64/libgstvideo-1.0.0.dylib",
     "/Contents/SharedSupport/CrossOver/lib64/libgsttranscoder-1.0.0.dylib",
     "/Contents/SharedSupport/CrossOver/lib64/libgstrtp-1.0.0.dylib",
-    "/Contents/SharedSupport/CrossOver/lib64/gstreamer-1.0",
     "/Contents/SharedSupport/CrossOver/lib64/libgstanalytics-1.0.dylib",
     "/Contents/SharedSupport/CrossOver/lib64/libgstanalytics-1.0.0.dylib",
     "/Contents/SharedSupport/CrossOver/lib64/libgstmse-1.0.dylib",

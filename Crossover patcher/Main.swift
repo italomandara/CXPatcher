@@ -21,27 +21,20 @@ func applyPatch(url: URL, opts: inout Opts, onPatch: () -> Void = {}) {
     if opts.repatch && restoreApp(url: url, opts: &opts) {
         console.log("Restoring first...")
     }
-    validateAndPatch(url: url, opts: &opts, onPatch: onPatch)
-    if(ENABLE_FIX_CX_CODESIGN) {
-        do {
-            console.log("patching \(url.path)")
-            let p = try safeShell("/usr/bin/xattr -cr \(url.path) && /usr/bin/codesign --force --deep --sign - \(url.path)")
-            console.log(p)
-        } catch {
-            console.log("xattr or codesign failed")
-            console.log(error.localizedDescription)
-        }
-    }
+    var logFile: URL
     do {
-        let patchedUrl = try renameApp(url: url)
-        opts.status = .success
-        let logFile = patchedUrl.appendingPathComponent("Contents").appendingPathComponent("cxplog.txt")
-        console.saveLogs(to: logFile)
+        if let patchedUrl = try validateAndPatch(url: url, opts: &opts, onPatch: onPatch) {
+            opts.status = .success
+            logFile = patchedUrl.appendingPathComponent("Contents").appendingPathComponent("cxplog.txt")
+        } else {
+            opts.status = .error
+            logFile = url.deletingLastPathComponent().appendingPathComponent("cxplog.txt")
+        }
     } catch {
         console.log(error.localizedDescription)
-        opts.status = .fileExists
-        let logFile = url.deletingLastPathComponent().appendingPathComponent("cxplog.txt")
-        console.saveLogs(to: logFile)
+        opts.status = .error
+        logFile = url.deletingLastPathComponent().appendingPathComponent("cxplog.txt")
     }
+    console.saveLogs(to: logFile)
     opts.busy = false
 }
