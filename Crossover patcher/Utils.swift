@@ -780,7 +780,6 @@ private func addEnvs(_ envs: [Env], to: URL, from: URL? = nil) {
     do {
         try file.write(to: to, atomically: false, encoding: .utf8)
         console.log("added: \(envs) in \(to.path)")
-        console.log(file.debugDescription)
     } catch {
         console.log("There was an error writing the envs to the file \(to.path)")
         console.log(error.localizedDescription)
@@ -792,14 +791,11 @@ private func addEnvToBottle(opts: Opts) {
     let url = prefixURL.appendingPathComponent("cxbottle.conf")
     let disabledURL = prefixURL.appendingPathComponent("cxbottle_orig.txt")
     if(!f.fileExists(atPath: disabledURL.path)){
-        print("file doesn't exist")
         do {
             try f.copyItem(at: url, to: disabledURL) // copy, then overwrite
         } catch {
             console.log(error.localizedDescription)
         }
-    } else {
-        print("file exists")
     }
     var envs: [Env] = []
     if(opts.enableExpMtlFX) {
@@ -815,31 +811,39 @@ private func enableExpMtlFX(url: URL, opts: Opts) {
 //    • Change wine/x86_64-windows/nvngx-on-metalfx.dll to nvngx.dll
     
     let resToCopy = [
-//        PathMap(src: "/wine/x86_64-unix/nvngx-on-metalfx.so", dst: "/lib/wine/x86_64-unix/nvngx.so"),
-        PathMap(src: "/wine/x86_64-windows/nvngx-on-metalfx.dll", dst: "/lib/wine/x86_64-windows/nvngx.dll"),
+        PathMap(src: "/wine/x86_64-windows/nvngx-on-metalfx.dll", dst: "/wine/x86_64-windows/nvngx.dll"),
     ]
     
     resToCopy.forEach { file in
-        let dst = url.path + SHARED_SUPPORT_PATH + file.dst
+        let dsts = [
+//            url.path + SHARED_SUPPORT_PATH + "/lib" + file.dst, // not needed since crossover will do the copy when d3dmetal is selected
+            url.path + SHARED_SUPPORT_PATH + EXTERNAL_RESOURCES_ROOT + file.dst
+        ]
         let src = "Crossover" + EXTERNAL_RESOURCES_ROOT + file.src
-        safeResCopy(res: src, dest: dst)
+        dsts.forEach {dst in
+            safeResCopy(res: src, dest: dst)
+        }
     }
     
 //    Simlink wine/x86_64-unix/nvngx-on-metalfx.so to /lib/wine/x86_64-windows/nvngx.so
     let resToSimlink = [
-        PathMap(src: "/lib64/apple_gptk/external/libd3dshared.dylib", dst: "/lib/wine/x86_64-unix/nvngx.so"),
+        PathMap(src: "/lib64/apple_gptk/external/libd3dshared.dylib", dst: "/wine/x86_64-unix/nvngx.so"),
     ]
     
     resToSimlink.forEach { file in
-        let dst = URL(fileURLWithPath: url.path + SHARED_SUPPORT_PATH + file.dst)
+        let dsts = [
+//            URL(fileURLWithPath: url.path + SHARED_SUPPORT_PATH + "/lib" + file.dst), // not needed since crossover will do the copy when d3dmetal is selected
+            URL(fileURLWithPath: url.path + SHARED_SUPPORT_PATH + EXTERNAL_RESOURCES_ROOT + file.dst)
+        ]
         let src = URL(fileURLWithPath: url.path + SHARED_SUPPORT_PATH + file.src)
-
+        dsts.forEach { dst in
             do {
                 try f.createSymbolicLink(at: dst, withDestinationURL: src)
                 console.log("\(src) simlinked in \(dst)")
             } catch {
                 console.log(error.localizedDescription)
             }
+        }
 
     }
     

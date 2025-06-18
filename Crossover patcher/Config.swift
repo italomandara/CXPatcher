@@ -50,10 +50,12 @@ let EXTERNAL_RESOURCES_ROOT = "/lib64/apple_gptk"
 let EXTERNAL_WINE_PATHS: [String] = [
     "/external",
     "/wine/x86_64-unix/atidxx64.so",
+    "/wine/x86_64-unix/d3d10.so",
     "/wine/x86_64-unix/d3d11.so",
     "/wine/x86_64-unix/d3d12.so",
     "/wine/x86_64-unix/dxgi.so",
     "/wine/x86_64-windows/atidxx64.dll",
+    "/wine/x86_64-windows/d3d10.dll",
     "/wine/x86_64-windows/d3d11.dll",
     "/wine/x86_64-windows/d3d12.dll",
     "/wine/x86_64-windows/dxgi.dll",
