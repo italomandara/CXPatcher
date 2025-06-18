@@ -812,6 +812,7 @@ private func enableExpMtlFX(url: URL, opts: Opts) {
     
     let resToCopy = [
         PathMap(src: "/wine/x86_64-windows/nvngx-on-metalfx.dll", dst: "/wine/x86_64-windows/nvngx.dll"),
+        PathMap(src: "/wine/x86_64-unix/nvngx-on-metalfx.so", dst: "/wine/x86_64-unix/nvngx.so"),
     ]
     
     resToCopy.forEach { file in
@@ -823,28 +824,6 @@ private func enableExpMtlFX(url: URL, opts: Opts) {
         dsts.forEach {dst in
             safeResCopy(res: src, dest: dst)
         }
-    }
-    
-//    Simlink wine/x86_64-unix/nvngx-on-metalfx.so to /lib/wine/x86_64-windows/nvngx.so
-    let resToSimlink = [
-        PathMap(src: "/lib64/apple_gptk/external/libd3dshared.dylib", dst: "/wine/x86_64-unix/nvngx.so"),
-    ]
-    
-    resToSimlink.forEach { file in
-        let dsts = [
-//            URL(fileURLWithPath: url.path + SHARED_SUPPORT_PATH + "/lib" + file.dst), // not needed since crossover will do the copy when d3dmetal is selected
-            URL(fileURLWithPath: url.path + SHARED_SUPPORT_PATH + EXTERNAL_RESOURCES_ROOT + file.dst)
-        ]
-        let src = URL(fileURLWithPath: url.path + SHARED_SUPPORT_PATH + file.src)
-        dsts.forEach { dst in
-            do {
-                try f.createSymbolicLink(at: dst, withDestinationURL: src)
-                console.log("\(src) simlinked in \(dst)")
-            } catch {
-                console.log(error.localizedDescription)
-            }
-        }
-
     }
     
 //    Copies the following into user's Wine prefix’s system directory:
