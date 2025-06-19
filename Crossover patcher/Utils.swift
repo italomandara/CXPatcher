@@ -580,7 +580,7 @@ func patch(url: URL, opts: inout Opts) throws -> URL? {
         disableAutoUpdate(url: url)
     }
     opts.progress += 1
-    
+    markAsPatched(url: url)
     if(ENABLE_FIX_CX_CODESIGN) {
         do {
             console.log("patching \(url.path)")
@@ -591,7 +591,6 @@ func patch(url: URL, opts: inout Opts) throws -> URL? {
         }
     }
     let patchedUrl = try renameApp(url: url)
-    markAsPatched(url: url)
     return patchedUrl
 }
 
@@ -716,11 +715,10 @@ func disableAutoUpdate(url: URL) {
 }
 
 func markAsPatched(url: URL) {
-    print("mark as patched disabled")
-//    let plist = parseCXPlist(plistPath: url.path + "/Contents/Info.plist")
-//    if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
-//        editInfoPlist(at: url, key: "CFBundleShortVersionString", value: plist.CFBundleShortVersionString + "p" + version)
-//    }
+    let plist = parseCXPlist(plistPath: url.path + "/Contents/Info.plist")
+    if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+        editInfoPlist(at: url, key: "CFBundleShortVersionString", value: plist.CFBundleShortVersionString + "p" + version)
+    }
 }
 
 func restoreAutoUpdate(url: URL) {
@@ -813,6 +811,7 @@ private func enableExpMtlFX(url: URL, opts: Opts) {
     let resToCopy = [
         PathMap(src: "/wine/x86_64-windows/nvngx-on-metalfx.dll", dst: "/wine/x86_64-windows/nvngx.dll"),
         PathMap(src: "/wine/x86_64-unix/nvngx-on-metalfx.so", dst: "/wine/x86_64-unix/nvngx.so"),
+        PathMap(src: "/wine/x86_64-unix/nvapi64.so", dst: "/wine/x86_64-unix/nvapi64.so"),
     ]
     
     resToCopy.forEach { file in
