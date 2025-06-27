@@ -5,6 +5,7 @@
 A patcher to upgrade CrossOver dependencies and improve compatibility
 
 For questions about CXPatcher subscribe to the AppleGamingWiki Discord: https://discord.gg/28CAAr6SpB
+
 Discord channel for CXPatcher: https://discord.com/channels/793156450821865513/1121334417344974929
 
 This is an **unofficial patcher** for CrossOver and CodeWeavers is not - by any
