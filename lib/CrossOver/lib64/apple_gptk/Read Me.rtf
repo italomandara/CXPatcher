@@ -10,10 +10,10 @@
 {\list\listtemplateid4\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid301\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid4}
 {\list\listtemplateid5\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid401\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid5}}
 {\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}{\listoverride\listid4\listoverridecount0\ls4}{\listoverride\listid5\listoverridecount0\ls5}}
-\paperw12240\paperh15840\margl1440\margr1440\vieww25900\viewh27180\viewkind1
+\paperw12240\paperh15840\margl1440\margr1440\vieww31760\viewh27180\viewkind1
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
-\f0\b\fs36 \cf0 Evaluation environment for Windows games \cf2 3.0 beta 1\cf0  README\
+\f0\b\fs36 \cf0 Evaluation environment for Windows games \cf2 3.0 beta 2\cf0  README\
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
 \f1\b0\fs24 \cf0 \
@@ -22,7 +22,7 @@
 \f0\b\fs28 \cf0 Overview
 \f1\b0\fs24 \
 \
-The evaluation environment for Windows games is now a subset of the expanded Game Porting Toolkit. The evaluation environment helps game developers try out their existing Windows games right on Apple Silicon Macs running macOS 15 or higher. Using community projects that bundle the evaluation environment, or building your own environment using the included binaries and installation and configuration instructions, you can run your game to get a sense of how it can feel and play right away, even before you begin your porting journey.\
+The evaluation environment for Windows games is now a subset of the expanded Game Porting Toolkit. The evaluation environment helps game developers try out their existing Windows games right on Apple Silicon Macs running macOS 15 Sequoia or higher. Using community projects that bundle the evaluation environment, or building your own environment using the included binaries and installation and configuration instructions, you can run your game to get a sense of how it can feel and play right away, even before you begin your porting journey.\
 \
 
 \f0\b\fs28 Requirements
@@ -64,28 +64,28 @@ While simple to use once configured and installed, the evaluation environment fo
 \f0\b \cf0 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
-\f1\b0 \cf0 Note: early in the macOS 16 beta period these pre-built tools may still be carrying the prior version of D3DMetal. You can temporarily update these tools to use the latest version as follows.\
+\f1\b0 \cf0 Note: early in the macOS 26 Tahoe beta period these pre-built tools may still be carrying the prior version of D3DMetal. You can temporarily update these tools to use the latest version as follows.\
 \pard\tx220\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li720\fi-720\sb240\pardirnatural\partightenfactor0
 \ls3\ilvl0\cf0 {\listtext	\uc0\u8226 	}
 \f0\b homebrew-wine
 \f1\b0  and 
 \f0\b game-porting-toolkit
-\f1\b0  casks - you can replace the copies of the D3DMetal.framework and libd3dshared.dylib found at /Applications/Game\\ Porting\\ Toolkit.app/Contents/Resources/wine/lib/external/ with the libraries from this distribution:\
+\f1\b0  casks - you can replace the copies of the evaluation environment libraries found at /Applications/Game\\ Porting\\ Toolkit.app/Contents/Resources/wine/lib/ with the libraries from this distribution:\
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li1438\fi-3\sb120\pardirnatural\partightenfactor0
 
-\f3 \cf0 cd /Applications/Game\\ Porting\\ Toolkit.app/Contents/Resources/wine/lib/external\
-mv D3DMetal.framework D3DMetal.framework-old; mv libd3dshared.dylib libd3dshared.dylib-old\
-ditto "/Volumes/Evaluation environment for Windows games 3.0 beta 1/redist/lib/external/" .
+\f3 \cf0 cd /Applications/Game\\ Porting\\ Toolkit.app/Contents/Resources/wine/lib\
+mv external external.old; mv wine wine.old\
+ditto "/Volumes/Evaluation environment for Windows games 3.0 beta 2/redist/lib/" .
 \f1 \
 \pard\tx220\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li720\fi-720\sb240\pardirnatural\partightenfactor0
 \ls4\ilvl0\cf0 {\listtext	\uc0\u8226 	}
 \f0\b CrossOver
-\f1\b0 : replace CrossOver\'92s copies of the D3DMetal.framework and libd3dshared.dylib found at /Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib64/apple_gptk/external with the libraries from this distribution:\
+\f1\b0 : replace CrossOver\'92s copies of the evaluation environment libraries found at /Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib64/apple_gptk with the libraries from this distribution:\
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li1438\fi-3\sb120\pardirnatural\partightenfactor0
 
-\f3 \cf0 cd /Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib64/apple_gptk/external\
-mv D3DMetal.framework D3DMetal.framework-old; mv libd3dshared.dylib libd3dshared.dylib-old\
-ditto "/Volumes/Evaluation environment for Windows games 3.0 beta 1/redist/lib/external/" .
+\f3 \cf0 cd /Applications/CrossOver.app/Contents/SharedSupport/CrossOver/lib64/apple_gptk\
+mv external external.old; mv wine wine.old\
+ditto "/Volumes/Evaluation environment for Windows games 3.0 beta 2/redist/lib/" .
 \f1 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 \cf0 \
@@ -140,7 +140,7 @@ Environment variables can be used to control some aspects of translation and emu
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\tx9060\li1331\fi-854\pardirnatural\partightenfactor0
 
 \f2\b \cf0 D3DM_ENABLE_METALFX
-\f1\b0  - Defaults to 0 (OFF). On macOS 16, setting this environment variable to 1 (ON) causes DLSS functions to be converted to MetalFX where possible. Setting this environment variable to 0 (OFF) causes DLSS functions to be not be available.\
+\f1\b0  - Defaults to 0 (OFF). On macOS 26 Tahoe, setting this environment variable to 1 (ON) causes DLSS functions to be converted to MetalFX where possible. Setting this environment variable to 0 (OFF) causes DLSS functions to be not be available.\
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 \cf0 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
