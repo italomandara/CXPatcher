@@ -100,32 +100,29 @@ struct Options: View {
             .frame(width: 400.0)
             .sheet(isPresented: $showXTLibsModal) {
                 VStack(alignment: .center) {
-                    RoundedRectangle(cornerRadius: 25)
-                        .foregroundColor(colorScheme == .light ? .white: .gray)
-                        .frame(width: 340, height: 400)
-                        .overlay(
-                            VStack(alignment: .center) {
-                                XtLibsUrlSelector(XtLibsUrl: $opts.xtLibsUrl).onChange(of: opts.xtLibsUrl) { newValue in
-                                    if(newValue != nil) {
-                                        DXMTOptionsEnabled = true
-                                    }
-                                }
-                                DXMTOptions(globalEnvs: $opts.globalEnvs, enabled: $DXMTOptionsEnabled)
-                                if(opts.xtLibsUrl != nil) {
-                                    Button("OK") {
-                                        showXTLibsModal = false
-                                    }
-                                    .buttonStyle(.borderedProminent)
-                                    .padding(.top, 20)
-                                }
-                            }.padding(20)
-                        )
-                }.frame(maxHeight: .infinity)
+                    XtLibsUrlSelector(XtLibsUrl: $opts.xtLibsUrl).onChange(of: opts.xtLibsUrl) { newValue in
+                        if(newValue != nil) {
+                            DXMTOptionsEnabled = true
+                        }
+                    }
+                    DXMTOptions(globalEnvs: $opts.globalEnvs, enabled: $DXMTOptionsEnabled)
+                    if(opts.xtLibsUrl != nil) {
+                        Button("OK") {
+                            showXTLibsModal = false
+                        }
+                        .buttonStyle(.borderedProminent)
+                        .padding(.top, 20)
+                    }
+                }
+//                RoundedRectangle(cornerRadius: 25)
+                .cornerRadius(25)
+                .padding(20)
+                .frame(maxWidth: 350, maxHeight: .infinity)
                 .fixedSize(horizontal: false, vertical: true)
                 .background(colorScheme == .light ? .white.opacity(0.85): .black.opacity(0.85))
                 .shadow(radius: 20)
                 
-            }.frame(width: 400)
+            }
             
             
         }
