@@ -18,118 +18,117 @@ struct Options: View {
     @State var bottlesList: [URL] = []
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
-            ZStack {
-                if(showXTLibsModal) {
-                    VStack(alignment: .center) {
-                        RoundedRectangle(cornerRadius: 25)
-                            .foregroundColor(colorScheme == .light ? .white: .gray)
-                            .frame(width: 340, height: 500)
-                            .overlay(
-                                VStack(alignment: .center) {
-                                    XtLibsUrlSelector(XtLibsUrl: $opts.xtLibsUrl).onChange(of: opts.xtLibsUrl) { newValue in
-                                        if(newValue != nil) {
-                                            DXMTOptionsEnabled = true
-                                        }
-                                    }
-                                    DXMTOptions(globalEnvs: $opts.globalEnvs, enabled: $DXMTOptionsEnabled)
-                                    if(opts.xtLibsUrl != nil) {
-                                        Button("OK") {
-                                            showXTLibsModal = false
-                                        }
-                                        .buttonStyle(.borderedProminent)
-                                        .padding(.top, 20)
-                                    }
-                                }.padding(20)
-                            )
+            
+            
+            VStack(alignment: .center) {
+                //                    MoltenVKToggle(
+                //                        opts: $opts
+                //                    )
+                //                    .help(localizedCXPatcherString(forKey: "mkvToggleHelp"))
+                //                    IntegrateGPTKToggle(
+                //                        opts: $opts
+                //                    ).help(localizedCXPatcherString(forKey: "gptkToggleHelp"))
+                //                    if(opts.copyGptk) {
+                //                        GPTKExpMtlFXToggle(
+                //                            opts: $opts
+                //                        ).help(localizedCXPatcherString(forKey: "installExpMtlFXhelp"))
+                //                        .onChange(of: opts.enableExpMtlFX) { newValue in
+                //                            if(newValue == true) {
+                //                                bottlesList = getAllBottles(opts)
+                //                            }
+                //                        }
+                //                        if(opts.enableExpMtlFX) {
+                //                            BottlesList(list: $bottlesList, opts: $opts)
+                //                        }
+                //                    }
+                if(ENABLE_EXTERNAL_RESOURCES) {
+                    XtLibsToggle(
+                        opts: $opts
+                    )
+                    .help(localizedCXPatcherString(forKey: "ExternalsToggleHelp"))
+                    .onChange(of: opts.copyXtLibs) { enabled in
+                        showXTLibsModal = enabled
                     }
-                    .zIndex(10)
-                    .frame(width: 400, height: 800)
-                    .fixedSize(horizontal: false, vertical: true)
-                    .background(colorScheme == .light ? .white.opacity(0.85): .black.opacity(0.85))
-                    .shadow(radius: 20)
                 }
-                VStack(alignment: .center) {
-                    MoltenVKToggle(
-                        opts: $opts
-                    )
-                    .help(localizedCXPatcherString(forKey: "mkvToggleHelp"))
-                    IntegrateGPTKToggle(
-                        opts: $opts
-                    ).help(localizedCXPatcherString(forKey: "gptkToggleHelp"))
-                    if(opts.copyGptk) {
-                        GPTKExpMtlFXToggle(
-                            opts: $opts
-                        ).help(localizedCXPatcherString(forKey: "installExpMtlFXhelp"))
-                        .onChange(of: opts.enableExpMtlFX) { newValue in
-                            if(newValue == true) {
-                                bottlesList = getAllBottles(opts)
-                            }
-                        }
-                        if(opts.enableExpMtlFX) {
-                            BottlesList(list: $bottlesList, opts: $opts)
-                        }
-                    }
-                    if(ENABLE_EXTERNAL_RESOURCES) {
-                        XtLibsToggle(
-                            opts: $opts
-                        )
-                        .help(localizedCXPatcherString(forKey: "ExternalsToggleHelp"))
-                        .onChange(of: opts.copyXtLibs) { enabled in
-                            showXTLibsModal = enabled
-                        }
-                    }
-                    DXVKToggle(
-                        opts: $opts
-                    )
-                    .help(localizedCXPatcherString(forKey: "dxvkToggleHelp"))
-                    GStreamerToggle(
-                        opts: $opts
-                    )
-                    .help(localizedCXPatcherString(forKey: "GStreamerToggleHelp"))
-                    BottlesPathToggle(
-                        opts: $opts
-                    )
-                    .onChange(of: opts.overrideBottlePath) { newValue in
-                        bottlesList = getAllBottles(opts)
-                    }
-                    RemoveSignatureToggle(
-                        opts: $opts
-                    )
-                    .help(localizedCXPatcherString(forKey: "signatureToggleHelp"))
-                    AutoUpdateDisableToggle(
-                        opts: $opts
-                    )
-                    .help(localizedCXPatcherString(forKey: "autoUpdateToggleHelp"))
-                    Divider().padding(.vertical, 2)
-                    Text(localizedCXPatcherString(forKey: "Environment Globals")).padding(.top, 2)
-                    AdvertiseAVXToggle(
-                        opts: $opts
-                    )
-                    .help(localizedCXPatcherString(forKey: "advertiseAVXToggleHelp"))
-                    DXVKAsyncToggle(
-                        opts: $opts
-                    )
-                    .help(localizedCXPatcherString(forKey: "DXVKAsyncToggleHelp"))
-                    FastMathToggle(
-                        opts: $opts
-                    )
-                    .help(localizedCXPatcherString(forKey: "fastMathToggleHelp"))
-                    MTLHUDToggle(
-                        opts: $opts
-                    )
-                    .help(localizedCXPatcherString(forKey: "hudToggleHelp"))
-//                    DisableUE4HackToggle(
-//                        opts: $opts
-//                    )
-//                    .help(localizedCXPatcherString(forKey: "DisableUE4HackToggleHelp"))
-//                    Divider().padding(.vertical, 2)
+                DXVKToggle(
+                    opts: $opts
+                )
+                .help(localizedCXPatcherString(forKey: "dxvkToggleHelp"))
+                GStreamerToggle(
+                    opts: $opts
+                )
+                .help(localizedCXPatcherString(forKey: "GStreamerToggleHelp"))
+                BottlesPathToggle(
+                    opts: $opts
+                )
+                .onChange(of: opts.overrideBottlePath) { newValue in
+                    bottlesList = getAllBottles(opts)
                 }
-                .padding(20)
-                .frame(width: 400.0)
+                RemoveSignatureToggle(
+                    opts: $opts
+                )
+                .help(localizedCXPatcherString(forKey: "signatureToggleHelp"))
+                AutoUpdateDisableToggle(
+                    opts: $opts
+                )
+                .help(localizedCXPatcherString(forKey: "autoUpdateToggleHelp"))
+                Divider().padding(.vertical, 2)
+                Text(localizedCXPatcherString(forKey: "Environment Globals")).padding(.top, 2)
+                //                    AdvertiseAVXToggle( // not needed anymore
+                //                        opts: $opts
+                //                    )
+                //                    .help(localizedCXPatcherString(forKey: "advertiseAVXToggleHelp"))
+                DXVKAsyncToggle(
+                    opts: $opts
+                )
+                .help(localizedCXPatcherString(forKey: "DXVKAsyncToggleHelp"))
+                FastMathToggle(
+                    opts: $opts
+                )
+                .help(localizedCXPatcherString(forKey: "fastMathToggleHelp"))
+                MTLHUDToggle(
+                    opts: $opts
+                )
+                .help(localizedCXPatcherString(forKey: "hudToggleHelp"))
+                //                    DisableUE4HackToggle(
+                //                        opts: $opts
+                //                    )
+                //                    .help(localizedCXPatcherString(forKey: "DisableUE4HackToggleHelp"))
+                //                    Divider().padding(.vertical, 2)
             }
-            .frame(maxHeight: 700)
+            .padding(20)
+            .frame(width: 400.0)
+            .sheet(isPresented: $showXTLibsModal) {
+                VStack(alignment: .center) {
+                    RoundedRectangle(cornerRadius: 25)
+                        .foregroundColor(colorScheme == .light ? .white: .gray)
+                        .frame(width: 340, height: 400)
+                        .overlay(
+                            VStack(alignment: .center) {
+                                XtLibsUrlSelector(XtLibsUrl: $opts.xtLibsUrl).onChange(of: opts.xtLibsUrl) { newValue in
+                                    if(newValue != nil) {
+                                        DXMTOptionsEnabled = true
+                                    }
+                                }
+                                DXMTOptions(globalEnvs: $opts.globalEnvs, enabled: $DXMTOptionsEnabled)
+                                if(opts.xtLibsUrl != nil) {
+                                    Button("OK") {
+                                        showXTLibsModal = false
+                                    }
+                                    .buttonStyle(.borderedProminent)
+                                    .padding(.top, 20)
+                                }
+                            }.padding(20)
+                        )
+                }.frame(maxHeight: .infinity)
+                .fixedSize(horizontal: false, vertical: true)
+                .background(colorScheme == .light ? .white.opacity(0.85): .black.opacity(0.85))
+                .shadow(radius: 20)
+                
+            }.frame(width: 400)
+            
+            
         }
-        .frame(maxHeight: 700)
     }
 }
 

@@ -151,9 +151,9 @@ struct Opts {
     var busy: Bool = false
     var cxbottlesPath = DEFAULT_CX_BOTTLES_PATH
     var selectedPrefix: String = ""
-    var patchMVK: PatchMVK = PatchMVK.legacyUE4
+    var patchMVK: PatchMVK = PatchMVK.none
     var autoUpdateDisable = true
-    var patchDXVK = false
+    var patchDXVK = true
     var globalEnvs = GlobalEnvs()
     var removeSignaure = true
     var xtLibsUrl: URL? = nil

@@ -34,7 +34,6 @@ struct Crossover_patcherApp: App {
         Window(localizedCXPatcherString(forKey: "Options"), id: "options") {
             Options(opts: $opts)
         }
-        .defaultSize(width: 400, height: 700)
         .windowResizability(.contentSize)
         
 
