@@ -144,7 +144,7 @@ struct Opts {
     var skipVersionCheck: Bool = false
     var repatch: Bool = false
     var overrideBottlePath: Bool = true
-    var copyGptk = true
+    var copyGptk = false
     var enableExpMtlFX = false
     var patchGStreamer = true
     var progress: Float = 0.0

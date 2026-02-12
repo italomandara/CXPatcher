@@ -28,19 +28,19 @@ struct Options: View {
                 //                    IntegrateGPTKToggle(
                 //                        opts: $opts
                 //                    ).help(localizedCXPatcherString(forKey: "gptkToggleHelp"))
-                //                    if(opts.copyGptk) {
-                //                        GPTKExpMtlFXToggle(
-                //                            opts: $opts
-                //                        ).help(localizedCXPatcherString(forKey: "installExpMtlFXhelp"))
-                //                        .onChange(of: opts.enableExpMtlFX) { newValue in
-                //                            if(newValue == true) {
-                //                                bottlesList = getAllBottles(opts)
-                //                            }
-                //                        }
-                //                        if(opts.enableExpMtlFX) {
-                //                            BottlesList(list: $bottlesList, opts: $opts)
-                //                        }
-                //                    }
+//                                    if(opts.copyGptk) {
+//                                        GPTKExpMtlFXToggle(
+//                                            opts: $opts
+//                                        ).help(localizedCXPatcherString(forKey: "installExpMtlFXhelp"))
+//                                        .onChange(of: opts.enableExpMtlFX) { newValue in
+//                                            if(newValue == true) {
+//                                                bottlesList = getAllBottles(opts)
+//                                            }
+//                                        }
+//                                        if(opts.enableExpMtlFX) {
+//                                            BottlesList(list: $bottlesList, opts: $opts)
+//                                        }
+//                                    }
                 if(ENABLE_EXTERNAL_RESOURCES) {
                     XtLibsToggle(
                         opts: $opts
