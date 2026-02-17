@@ -102,6 +102,8 @@
 /* --- Environment Globals (Advanced) --- */
 "Environment Globals" = "Environment Globals";
 "advertiseAVXToggle" = "Anunță întotdeauna AVX";
+"X87Toggle" = "Activează Rosetta X87";
+"X87ToggleHelp" = "Activează Rosetta X87, o ajustare experimentală a Rosetta de la Apple care prioritizează viteza prin utilizarea unor gestionare de instrucțiuni x87 cu precizie redusă.";
 "advertiseAVXToggleHelp" = "Aceasta forțează rosetta să anunțe AVX, în loc să îl folosească doar la cerere (unele jocuri, cum ar fi Yakuza, au nevoie de asta pentru a rula). Poate face ca unele jocuri să ruleze, dar ar putea încetini sau deteriora alte jocuri. Dacă nu ești sigur, lasă necompletat";
 "DisableFastMathToggle" = "Dezactivați matematica rapidă";
 "fastMathToggleHelp" = "Rezolvă unele probleme de redare cu anumite jocuri folosind DXVK (MAI LENT) pentru toate sticlele";

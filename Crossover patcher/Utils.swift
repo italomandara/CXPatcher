@@ -99,6 +99,7 @@ struct GlobalEnvs {
     var metalSpatialUpscaleFactor = 1.0
     var metalFXSpatial = false
     var disableMVKArgumentBuffers = true
+    var x87Enabled = false
 }
 
 enum PatchMVK {
@@ -517,7 +518,7 @@ func patch(url: URL, opts: inout Opts) throws -> URL? {
 
     var list: [String] = WINE_RESOURCES_PATHS
     
-    list.append(WINE_WINEINF_PATH)
+//    list.append(WINE_WINEINF_PATH)
     
     switch(opts.patchMVK) {
     case .legacyUE4:
@@ -597,7 +598,7 @@ func patch(url: URL, opts: inout Opts) throws -> URL? {
     markAsPatched(url: url)
     if(ENABLE_FIX_CX_CODESIGN) {
         do {
-            console.log("patching \(url.path)")
+            console.log("codeSigning \(url.path)")
             try safeShell("/usr/bin/xattr -cr '\(url.path)' && /usr/bin/codesign --force --deep --sign - '\(url.path)'")
         } catch {
             console.error("\(error.localizedDescription)")
@@ -809,9 +810,9 @@ private func addEnvToBottle(opts: Opts) {
         }
     }
     var envs: [Env] = []
-    if(opts.enableExpMtlFX) {
-        envs += [Env(key: "D3DM_ENABLE_METALFX", value: "1"), Env(key: "D3DM_SUPPORT_DXR", value: "1")]
-    }
+//    if(opts.enableExpMtlFX) {
+//        envs += [Env(key: "D3DM_ENABLE_METALFX", value: "1"), Env(key: "D3DM_SUPPORT_DXR", value: "1")]
+//    }
     if(!envs.isEmpty) {
         addEnvs(envs, to: url, from: disabledURL)
     }
@@ -879,6 +880,11 @@ private func addGlobals(url: URL, opts: Opts) {
     if(opts.globalEnvs.metalFXSpatial == true) {
         console.log("add metalFXSpatial env")
         envs += [Env(key: "DXMT_METALFX_SPATIAL_SWAPCHAIN", value: "1")]
+    }
+    if(opts.globalEnvs.x87Enabled == true) {
+        console.log("add RosettaX87 env")
+        let patchedUrl = "/" + url.pathComponents.filter{ $0 != "/" }.map { $0 == "CrossOver.app" ? "CrossOver_patched.app" : $0 }.joined(separator: "/")
+        envs += [Env(key: "ROSETTA_X87_PATH", value: patchedUrl + SHARED_SUPPORT_PATH + "/lib/rosettax87/rosettax87")]
     }
     if(opts.globalEnvs.metalFXSpatial == true && opts.globalEnvs.metalSpatialUpscaleFactor > 0) {
         console.log("add metalSpatialUpscaleFactor env")

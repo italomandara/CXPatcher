@@ -102,6 +102,8 @@
 /* --- Environment Globals (Advanced) --- */
 "Environment Globals" = "Environment Globals";
 "advertiseAVXToggle" = "Always advertise AVX";
+"X87Toggle" = "Enable Rosetta X87";
+"X87ToggleHelp" = "Enables Rosetta X87, an experimental tweak to Apple’s Rosetta that prioritizes speed by using lower-precision x87 instruction handlers.";
 "advertiseAVXToggleHelp" = "This forces Rosetta to advertise AVX, instead of using it only on demand (some games like Yakuza need that to run). Can make some games work but potentially slow down or break other games. If unsure leave unchecked";
 "DisableFastMathToggle" = "Disable fast math";
 "fastMathToggleHelp" = "Fixes some rendering issues with some games using DXVK (SLOWER) for all bottles";

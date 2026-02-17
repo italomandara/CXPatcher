@@ -102,6 +102,8 @@
 /* --- Environment Globals (Advanced) --- */
 "Environment Globals" = "Environment Globals";
 "advertiseAVXToggle" = "始终广告AVX";
+"X87Toggle" = "启用 Rosetta X87";
+"X87ToggleHelp" = "启用 Rosetta X87，这是对 Apple Rosetta 的一项实验性调整，通过使用较低精度的 x87 指令处理程序来优先提升速度。";
 "advertiseAVXToggleHelp" = "这将强制Rosetta广告AVX，而不是仅在需要时使用它（某些游戏如Yakuza需要这样才能运行）。这可能会使某些游戏运行，但可能会减慢或破坏其他游戏。如果不确定，请保持未选中状态";
 "DisableFastMathToggle" = "禁用快速数学计算";
 "fastMathToggleHelp" = "为所有容器修复特定 DXVK 的游戏的渲染问题（此选项将会降低性能）";

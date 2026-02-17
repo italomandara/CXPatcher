@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0D9AC2C22A49F96000101F43 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0D9AC2C42A49F96000101F43 /* Localizable.strings */; };
+		38120F172F431A7000FDBBEB /* X87Toggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38120F162F431A7000FDBBEB /* X87Toggle.swift */; };
 		382499E42AEE946400578AA3 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382499E32AEE946400578AA3 /* Options.swift */; };
 		382499E62AEE984600578AA3 /* OptionsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382499E52AEE984600578AA3 /* OptionsButton.swift */; };
 		38284A282BF7B075008C38CC /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38284A272BF7B075008C38CC /* Tools.swift */; };
@@ -50,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		0D9AC2C32A49F96000101F43 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		38120F162F431A7000FDBBEB /* X87Toggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = X87Toggle.swift; sourceTree = "<group>"; };
 		382499E32AEE946400578AA3 /* Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
 		382499E52AEE984600578AA3 /* OptionsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsButton.swift; sourceTree = "<group>"; };
 		38284A272BF7B075008C38CC /* Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 				38C099802B2398DD00C83814 /* DisableUE4HackToggle.swift */,
 				38F4F3F32D81F5CA002EDF29 /* GStreamerToggle.swift */,
 				38DCFBBB2DFCA7F500A1AE72 /* BottlesListToggle.swift */,
+				38120F162F431A7000FDBBEB /* X87Toggle.swift */,
 			);
 			path = Toggles;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38120F172F431A7000FDBBEB /* X87Toggle.swift in Sources */,
 				38C099812B2398DD00C83814 /* DisableUE4HackToggle.swift in Sources */,
 				38C291E82AE852BD00D0703E /* DXVKToggle.swift in Sources */,
 				38F7B21F2A5DD58600CD9511 /* SkipVersionCheckToggle.swift in Sources */,

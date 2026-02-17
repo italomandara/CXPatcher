@@ -78,6 +78,13 @@ struct Options: View {
                 //                        opts: $opts
                 //                    )
                 //                    .help(localizedCXPatcherString(forKey: "advertiseAVXToggleHelp"))
+                X87Toggle(
+                    opts: $opts
+                )
+                .help(localizedCXPatcherString(forKey: "X87ToggleHelp"))
+                FastMathToggle(
+                    opts: $opts
+                )
                 DXVKAsyncToggle(
                     opts: $opts
                 )

@@ -102,6 +102,8 @@
 /* --- Environment Globals (Advanced) --- */
 "Environment Globals" = "Environment Globals";
 "advertiseAVXToggle" = "常にAVXを宣伝";
+"X87Toggle" = "Rosetta X87を有効化";
+"X87ToggleHelp" = "Rosetta X87を有効にします。これはAppleのRosettaに対する実験的な調整で、低精度のx87命令ハンドラーを使用して速度を優先します。";
 "advertiseAVXToggleHelp" = "これにより、Rosettaが要求に応じてのみ使用するのではなく、常にAVXを宣伝するようになります（Yakuzaのような一部のゲームはそれを実行するために必要です）。一部のゲームを動作させることができますが、他のゲームを遅くしたり壊したりする可能性があります。確信が持てない場合はチェックを外したままにしてください";
 "DisableFastMathToggle" = "高速計算を無効にする";
 "fastMathToggleHelp" = "一部のゲームのレンダリングの問題を修正します（すべてのボトルで DXVK を使用）";

@@ -102,6 +102,8 @@
 /* --- Environment Globals (Advanced) --- */
 "Environment Globals" = "Globalne zmienne środowiskowe";
 "advertiseAVXToggle" = "Zawsze reklamuje AVX";
+"X87Toggle" = "Włącz Rosetta X87";
+"X87ToggleHelp" = "Włącza Rosetta X87, eksperymentalną modyfikację Rosetty Apple, która priorytetowo traktuje szybkość, używając mniej precyzyjnych procedur obsługi instrukcji x87.";
 "advertiseAVXToggleHelp" = "Wymusza na Rosetcie reklamowanie AVX zamiast używania go tylko na żądanie (niektóre gry, np. Yakuza, tego potrzebują, aby działać). Może sprawić, że niektóre gry będą działać, ale potencjalnie spowolnić lub zepsuć inne. Jeśli nie jesteś pewien – zostaw niezaznaczone.";
 "DisableFastMathToggle" = "Wyłącz szybką matematykę";
 "fastMathToggleHelp" = "Naprawia niektóre problemy z renderowaniem w grach przy użyciu DXVK (WOLNIEJSZE) dla wszystkich butelek";
