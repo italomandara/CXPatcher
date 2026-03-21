@@ -21,26 +21,26 @@ struct Options: View {
             
             
             VStack(alignment: .center) {
-                //                    MoltenVKToggle(
-                //                        opts: $opts
-                //                    )
-                //                    .help(localizedCXPatcherString(forKey: "mkvToggleHelp"))
-                //                    IntegrateGPTKToggle(
-                //                        opts: $opts
-                //                    ).help(localizedCXPatcherString(forKey: "gptkToggleHelp"))
-//                                    if(opts.copyGptk) {
-//                                        GPTKExpMtlFXToggle(
-//                                            opts: $opts
-//                                        ).help(localizedCXPatcherString(forKey: "installExpMtlFXhelp"))
-//                                        .onChange(of: opts.enableExpMtlFX) { newValue in
-//                                            if(newValue == true) {
-//                                                bottlesList = getAllBottles(opts)
-//                                            }
-//                                        }
-//                                        if(opts.enableExpMtlFX) {
-//                                            BottlesList(list: $bottlesList, opts: $opts)
-//                                        }
-//                                    }
+                MoltenVKToggle(
+                    opts: $opts
+                )
+                .help(localizedCXPatcherString(forKey: "mkvToggleHelp"))
+                IntegrateGPTKToggle(
+                    opts: $opts
+                ).help(localizedCXPatcherString(forKey: "gptkToggleHelp"))
+                //                                    if(opts.copyGptk) {
+                //                                        GPTKExpMtlFXToggle(
+                //                                            opts: $opts
+                //                                        ).help(localizedCXPatcherString(forKey: "installExpMtlFXhelp"))
+                //                                        .onChange(of: opts.enableExpMtlFX) { newValue in
+                //                                            if(newValue == true) {
+                //                                                bottlesList = getAllBottles(opts)
+                //                                            }
+                //                                        }
+                //                                        if(opts.enableExpMtlFX) {
+                //                                            BottlesList(list: $bottlesList, opts: $opts)
+                //                                        }
+                //                                    }
                 if(ENABLE_EXTERNAL_RESOURCES) {
                     XtLibsToggle(
                         opts: $opts
@@ -114,7 +114,7 @@ struct Options: View {
                         .padding(.top, 20)
                     }
                 }
-//                RoundedRectangle(cornerRadius: 25)
+                //                RoundedRectangle(cornerRadius: 25)
                 .cornerRadius(25)
                 .padding(20)
                 .frame(maxWidth: 350, maxHeight: .infinity)
