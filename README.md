@@ -2,6 +2,8 @@
 
 # CXPatcher
 
+Soon to be replaced by [Procyon](https://github.com/italomandara/Procyon)
+
 A patcher to upgrade CrossOver dependencies and improve compatibility
 
 For questions about CXPatcher subscribe to the AppleGamingWiki Discord: https://discord.gg/28CAAr6SpB
